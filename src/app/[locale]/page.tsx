@@ -63,18 +63,16 @@ function HeroSection({ locale }: { locale: string }) {
 
           {/* CTAs */}
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Button size="xl" variant="primary" asChild>
-              <Link href={`/${locale}/signup`} className="gap-2">
-                {t("cta_primary")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button size="xl" variant="outline" asChild>
-              <Link href={`/${locale}/dashboard`} className="gap-2">
-                <Play className="h-4 w-4" />
-                {t("cta_secondary")}
-              </Link>
-            </Button>
+            <Link href={`/${locale}/signup`}
+              className="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-xl bg-brand-600 text-white hover:bg-brand-700 transition-all shadow-sm hover:shadow-md">
+              {t("cta_primary")}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href={`/${locale}/dashboard`}
+              className="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-xl border border-surface-200 bg-transparent text-surface-700 hover:bg-surface-50 hover:border-surface-300 transition-all">
+              <Play className="h-4 w-4" />
+              {t("cta_secondary")}
+            </Link>
           </div>
 
           {/* Trust indicators */}
@@ -271,12 +269,11 @@ function FooterCTA({ locale }: { locale: string }) {
         </h2>
         <p className="mt-4 text-surface-400">{t("footer_cta_sub")}</p>
         <div className="mt-8 flex justify-center">
-          <Button size="xl" variant="clinical" asChild>
-            <Link href={`/${locale}/signup`} className="gap-2">
-              {t("cta_primary")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+          <Link href={`/${locale}/signup`}
+            className="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-xl bg-clinical-500 text-white hover:bg-clinical-600 transition-all shadow-sm">
+            {t("cta_primary")}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
@@ -300,12 +297,14 @@ function LandingNav({ locale }: { locale: string }) {
 
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <Button variant="ghost" size="sm" asChild>
-            <Link href={`/${locale}/login`}>Sign in</Link>
-          </Button>
-          <Button variant="primary" size="sm" asChild>
-            <Link href={`/${locale}/signup`}>{t("cta_primary")}</Link>
-          </Button>
+          <Link href={`/${locale}/login`}
+            className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-xl text-surface-600 hover:bg-surface-100 hover:text-surface-800 transition-all">
+            Sign in
+          </Link>
+          <Link href={`/${locale}/signup`}
+            className="inline-flex items-center h-8 px-3 text-sm font-semibold rounded-xl bg-brand-600 text-white hover:bg-brand-700 transition-all">
+            {t("cta_primary")}
+          </Link>
         </div>
       </div>
     </nav>
