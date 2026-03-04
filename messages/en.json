@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Therapia Global — The World's Therapeutic Platform",
+    "description": "The global standard for physical therapists, osteopaths and health students."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "exercises": "Exercise Library",
+    "routines": "Routines",
+    "patients": "Patients",
+    "osteopathy": "Osteopathy",
+    "anatomy": "Anatomy",
+    "community": "Community",
+    "ai": "AI Engine",
+    "certifications": "Certifications",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "landing": {
+    "badge": "The global therapeutic standard",
+    "headline": "The operating system\nfor the modern therapist",
+    "subheadline": "Therapeutic exercise library, osteopathy techniques, anatomy and patient routines. All in one platform. All languages. Always free content.",
+    "cta_primary": "Start for free",
+    "cta_secondary": "Watch demo",
+    "stats": {
+      "therapists": "Therapists",
+      "exercises": "Exercises",
+      "languages": "Languages",
+      "countries": "Countries"
+    },
+    "features_title": "Everything you need. Nothing locked.",
+    "features": {
+      "routines": {
+        "title": "Smart Routine Builder",
+        "desc": "Create and send personalized exercise routines to patients in seconds. Email, WhatsApp or QR."
+      },
+      "library": {
+        "title": "Professional Library",
+        "desc": "3,000+ therapeutic exercises with clinical metadata, contraindications and multilingual subtitles."
+      },
+      "osteopathy": {
+        "title": "Osteopathy Techniques",
+        "desc": "Complete visceral, cranial and structural library with clinical explanation and action mechanisms."
+      },
+      "anatomy": {
+        "title": "Applied Anatomy",
+        "desc": "Interactive anatomy by region with 5 knowledge layers: anatomy, physiology, dysfunctions and technique effects."
+      },
+      "tracking": {
+        "title": "Patient Tracking",
+        "desc": "Monitor exercise adherence in real time. Automatic alerts for low adherence."
+      },
+      "ai": {
+        "title": "Clinical AI",
+        "desc": "AI suggests optimized routines based on diagnosis, region and patient profile. Trained on millions of clinical cases."
+      }
+    },
+    "comparison_title": "Why Therapia Global?",
+    "footer_cta": "Join the global therapeutic standard",
+    "footer_cta_sub": "Free forever for basic use. No credit card required."
+  },
+  "dashboard": {
+    "greeting": "Good {timeOfDay}, Dr. {name}",
+    "morning": "morning",
+    "afternoon": "afternoon",
+    "evening": "evening",
+    "active_patients": "Active patients",
+    "sent_routines": "Sent today",
+    "low_adherence": "Low adherence",
+    "ai_suggestion": "AI suggestion",
+    "recent_patients": "Recent patients",
+    "quick_actions": "Quick actions",
+    "new_routine": "New routine",
+    "add_patient": "Add patient",
+    "view_library": "View library",
+    "no_activity": "No activity in {days} days"
+  },
+  "exercises": {
+    "title": "Exercise Library",
+    "search_placeholder": "Search exercises, muscles, pathologies...",
+    "filters": {
+      "region": "Body region",
+      "difficulty": "Level",
+      "technique": "Technique",
+      "all": "All"
+    },
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "expert": "Expert"
+    },
+    "add_to_routine": "Add to routine",
+    "view_details": "View details",
+    "series": "Sets",
+    "reps": "Reps",
+    "duration": "Duration",
+    "indications": "Indications",
+    "contraindications": "Contraindications"
+  },
+  "patients": {
+    "title": "Patients",
+    "search_placeholder": "Search patients...",
+    "add_new": "New patient",
+    "active": "Active",
+    "inactive": "Inactive",
+    "last_session": "Last session",
+    "adherence": "Adherence",
+    "send_routine": "Send routine",
+    "view_history": "History"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "language": "Language",
+    "free_badge": "Free",
+    "new_badge": "New",
+    "pro_badge": "Pro"
+  },
+  "patient_view": {
+    "routine_from": "Your routine from",
+    "exercises_count": "{count} exercises",
+    "start": "Start routine",
+    "completed": "Completed",
+    "mark_done": "Mark as done",
+    "well_done": "Well done!",
+    "routine_complete": "You've completed all exercises",
+    "sets": "sets",
+    "reps": "reps",
+    "seconds": "sec"
+  }
+}

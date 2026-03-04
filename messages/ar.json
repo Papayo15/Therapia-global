@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Therapia Global — المنصة العلاجية العالمية",
+    "description": "المعيار العالمي لأخصائيي العلاج الطبيعي والعلاج بالتقويم وطلاب الصحة."
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "exercises": "مكتبة التمارين",
+    "routines": "البرامج",
+    "patients": "المرضى",
+    "osteopathy": "تقويم العظام",
+    "anatomy": "علم التشريح",
+    "community": "المجتمع",
+    "ai": "محرك الذكاء",
+    "certifications": "الشهادات",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج"
+  },
+  "landing": {
+    "badge": "المعيار العلاجي العالمي",
+    "headline": "نظام التشغيل\nللمعالج الحديث",
+    "subheadline": "مكتبة التمارين العلاجية وتقنيات تقويم العظام والتشريح وبرامج المرضى. كل شيء في منصة واحدة. جميع اللغات. المحتوى مجاني دائمًا.",
+    "cta_primary": "ابدأ مجانًا",
+    "cta_secondary": "مشاهدة العرض التوضيحي",
+    "stats": {
+      "therapists": "معالج",
+      "exercises": "تمرين",
+      "languages": "لغة",
+      "countries": "دولة"
+    },
+    "features_title": "كل ما تحتاجه. بدون قيود.",
+    "features": {
+      "routines": {
+        "title": "منشئ البرامج الذكي",
+        "desc": "أنشئ وأرسل برامج تمارين مخصصة للمرضى في ثوانٍ."
+      },
+      "library": {
+        "title": "المكتبة المهنية",
+        "desc": "أكثر من 3000 تمرين علاجي مع بيانات سريرية وترجمات متعددة."
+      },
+      "osteopathy": {
+        "title": "تقنيات تقويم العظام",
+        "desc": "مكتبة كاملة للعلاج الحشوي والقحفي والهيكلي."
+      },
+      "anatomy": {
+        "title": "علم التشريح التطبيقي",
+        "desc": "تشريح تفاعلي حسب المنطقة مع 5 طبقات من المعرفة."
+      },
+      "tracking": {
+        "title": "متابعة المرضى",
+        "desc": "مراقبة الالتزام بالتمارين في الوقت الفعلي."
+      },
+      "ai": {
+        "title": "الذكاء الاصطناعي السريري",
+        "desc": "يقترح الذكاء الاصطناعي برامج محسّنة بناءً على التشخيص."
+      }
+    },
+    "comparison_title": "لماذا Therapia Global؟",
+    "footer_cta": "انضم إلى المعيار العلاجي العالمي",
+    "footer_cta_sub": "مجاني للأبد للاستخدام الأساسي. لا حاجة لبطاقة ائتمان."
+  },
+  "dashboard": {
+    "greeting": "مرحباً، د. {name}",
+    "morning": "صباح",
+    "afternoon": "مساء",
+    "evening": "مساء",
+    "active_patients": "المرضى النشطون",
+    "sent_routines": "تم إرساله اليوم",
+    "low_adherence": "التزام منخفض",
+    "ai_suggestion": "اقتراح الذكاء الاصطناعي",
+    "recent_patients": "المرضى الأخيرون",
+    "quick_actions": "إجراءات سريعة",
+    "new_routine": "برنامج جديد",
+    "add_patient": "إضافة مريض",
+    "view_library": "عرض المكتبة",
+    "no_activity": "لا نشاط منذ {days} أيام"
+  },
+  "exercises": {
+    "title": "مكتبة التمارين",
+    "search_placeholder": "ابحث عن التمارين والعضلات والأمراض...",
+    "filters": {
+      "region": "منطقة الجسم",
+      "difficulty": "المستوى",
+      "technique": "الأسلوب",
+      "all": "الكل"
+    },
+    "difficulty": {
+      "beginner": "مبتدئ",
+      "intermediate": "متوسط",
+      "advanced": "متقدم",
+      "expert": "خبير"
+    },
+    "add_to_routine": "إضافة للبرنامج",
+    "view_details": "عرض التفاصيل",
+    "series": "مجموعات",
+    "reps": "تكرارات",
+    "duration": "المدة",
+    "indications": "المؤشرات",
+    "contraindications": "موانع الاستعمال"
+  },
+  "patients": {
+    "title": "المرضى",
+    "search_placeholder": "ابحث عن المرضى...",
+    "add_new": "مريض جديد",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "last_session": "آخر جلسة",
+    "adherence": "الالتزام",
+    "send_routine": "إرسال البرنامج",
+    "view_history": "السجل"
+  },
+  "common": {
+    "loading": "جار التحميل...",
+    "error": "حدث خطأ ما",
+    "retry": "إعادة المحاولة",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "back": "رجوع",
+    "next": "التالي",
+    "finish": "إنهاء",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "language": "اللغة",
+    "free_badge": "مجاني",
+    "new_badge": "جديد",
+    "pro_badge": "احترافي"
+  },
+  "patient_view": {
+    "routine_from": "برنامجك من",
+    "exercises_count": "{count} تمارين",
+    "start": "بدء البرنامج",
+    "completed": "مكتمل",
+    "mark_done": "وضع علامة مكتمل",
+    "well_done": "أحسنت!",
+    "routine_complete": "لقد أتممت جميع التمارين",
+    "sets": "مجموعات",
+    "reps": "تكرار",
+    "seconds": "ثانية"
+  }
+}

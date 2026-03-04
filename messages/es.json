@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Therapia Global — La Plataforma Terapéutica Mundial",
+    "description": "El estándar global para fisioterapeutas, osteópatas y estudiantes de salud."
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "exercises": "Biblioteca de ejercicios",
+    "routines": "Rutinas",
+    "patients": "Pacientes",
+    "osteopathy": "Osteopatía",
+    "anatomy": "Anatomía",
+    "community": "Comunidad",
+    "ai": "Motor IA",
+    "certifications": "Certificaciones",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión"
+  },
+  "landing": {
+    "badge": "El estándar terapéutico global",
+    "headline": "El sistema operativo\ndel terapeuta moderno",
+    "subheadline": "Biblioteca de ejercicios terapéuticos, técnicas de osteopatía, anatomía y rutinas para pacientes. Todo en una plataforma. Todos los idiomas. Contenido siempre libre.",
+    "cta_primary": "Empezar gratis",
+    "cta_secondary": "Ver demo",
+    "stats": {
+      "therapists": "Terapeutas",
+      "exercises": "Ejercicios",
+      "languages": "Idiomas",
+      "countries": "Países"
+    },
+    "features_title": "Todo lo que necesitas. Sin bloqueos.",
+    "features": {
+      "routines": {
+        "title": "Constructor de rutinas inteligente",
+        "desc": "Crea y envía rutinas de ejercicios personalizadas a pacientes en segundos. Email, WhatsApp o QR."
+      },
+      "library": {
+        "title": "Biblioteca profesional",
+        "desc": "3.000+ ejercicios terapéuticos con metadatos clínicos, contraindicaciones y subtítulos multilenguaje."
+      },
+      "osteopathy": {
+        "title": "Técnicas de osteopatía",
+        "desc": "Biblioteca completa visceral, craneal y estructural con explicación clínica y mecanismos de acción."
+      },
+      "anatomy": {
+        "title": "Anatomía aplicada",
+        "desc": "Anatomía interactiva por región con 5 capas de conocimiento: anatomía, fisiología, disfunciones y efecto de la técnica."
+      },
+      "tracking": {
+        "title": "Seguimiento de pacientes",
+        "desc": "Monitoriza la adherencia a los ejercicios en tiempo real. Alertas automáticas por baja adherencia."
+      },
+      "ai": {
+        "title": "IA Clínica",
+        "desc": "La IA sugiere rutinas optimizadas según diagnóstico, región y perfil del paciente. Entrenada con millones de casos clínicos."
+      }
+    },
+    "comparison_title": "¿Por qué Therapia Global?",
+    "footer_cta": "Únete al estándar terapéutico global",
+    "footer_cta_sub": "Gratis para siempre en uso básico. Sin tarjeta de crédito."
+  },
+  "dashboard": {
+    "greeting": "Buenos {timeOfDay}, Dr. {name}",
+    "morning": "días",
+    "afternoon": "tardes",
+    "evening": "noches",
+    "active_patients": "Pacientes activos",
+    "sent_routines": "Enviadas hoy",
+    "low_adherence": "Baja adherencia",
+    "ai_suggestion": "Sugerencia IA",
+    "recent_patients": "Pacientes recientes",
+    "quick_actions": "Acciones rápidas",
+    "new_routine": "Nueva rutina",
+    "add_patient": "Agregar paciente",
+    "view_library": "Ver biblioteca",
+    "no_activity": "Sin actividad hace {days} días"
+  },
+  "exercises": {
+    "title": "Biblioteca de ejercicios",
+    "search_placeholder": "Buscar ejercicios, músculos, patologías...",
+    "filters": {
+      "region": "Región corporal",
+      "difficulty": "Nivel",
+      "technique": "Técnica",
+      "all": "Todos"
+    },
+    "difficulty": {
+      "beginner": "Básico",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado",
+      "expert": "Experto"
+    },
+    "add_to_routine": "Agregar a rutina",
+    "view_details": "Ver detalle",
+    "series": "Series",
+    "reps": "Repeticiones",
+    "duration": "Duración",
+    "indications": "Indicaciones",
+    "contraindications": "Contraindicaciones"
+  },
+  "patients": {
+    "title": "Pacientes",
+    "search_placeholder": "Buscar pacientes...",
+    "add_new": "Nuevo paciente",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "last_session": "Última sesión",
+    "adherence": "Adherencia",
+    "send_routine": "Enviar rutina",
+    "view_history": "Historial"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "retry": "Reintentar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "finish": "Finalizar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "language": "Idioma",
+    "free_badge": "Gratis",
+    "new_badge": "Nuevo",
+    "pro_badge": "Pro"
+  },
+  "patient_view": {
+    "routine_from": "Tu rutina de",
+    "exercises_count": "{count} ejercicios",
+    "start": "Iniciar rutina",
+    "completed": "Completado",
+    "mark_done": "Marcar como hecho",
+    "well_done": "¡Muy bien!",
+    "routine_complete": "Completaste todos los ejercicios",
+    "sets": "series",
+    "reps": "reps",
+    "seconds": "seg"
+  }
+}

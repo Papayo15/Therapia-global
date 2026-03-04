@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Therapia Global — 世界の治療プラットフォーム",
+    "description": "理学療法士、整骨師、医療学生のためのグローバルスタンダード。"
+  },
+  "nav": {
+    "dashboard": "ダッシュボード",
+    "exercises": "エクササイズライブラリ",
+    "routines": "ルーティン",
+    "patients": "患者",
+    "osteopathy": "整骨療法",
+    "anatomy": "解剖学",
+    "community": "コミュニティ",
+    "ai": "AIエンジン",
+    "certifications": "認定",
+    "settings": "設定",
+    "logout": "ログアウト"
+  },
+  "landing": {
+    "badge": "グローバル治療スタンダード",
+    "headline": "現代のセラピストのための\nオペレーティングシステム",
+    "subheadline": "治療エクササイズライブラリ、整骨技術、解剖学、患者ルーティン。すべて一つのプラットフォームで。すべての言語。コンテンツは常に無料。",
+    "cta_primary": "無料で始める",
+    "cta_secondary": "デモを見る",
+    "stats": {
+      "therapists": "セラピスト",
+      "exercises": "エクササイズ",
+      "languages": "言語",
+      "countries": "国"
+    },
+    "features_title": "必要なすべて。ブロックなし。",
+    "features": {
+      "routines": {
+        "title": "スマートルーティンビルダー",
+        "desc": "数秒でパーソナライズされたルーティンを作成して患者に送信。"
+      },
+      "library": {
+        "title": "プロフェッショナルライブラリ",
+        "desc": "3,000以上の臨床メタデータ付き治療エクササイズ。"
+      },
+      "osteopathy": {
+        "title": "整骨技術",
+        "desc": "完全な内臓・頭蓋・構造的整骨ライブラリ。"
+      },
+      "anatomy": {
+        "title": "応用解剖学",
+        "desc": "5つの知識層を持つ地域別インタラクティブ解剖学。"
+      },
+      "tracking": {
+        "title": "患者トラッキング",
+        "desc": "リアルタイムでエクササイズアドヒアランスを監視。"
+      },
+      "ai": {
+        "title": "臨床AI",
+        "desc": "AIが診断に基づいて最適化されたルーティンを提案。"
+      }
+    },
+    "comparison_title": "なぜTherapia Globalなのか？",
+    "footer_cta": "グローバル治療スタンダードに参加",
+    "footer_cta_sub": "基本使用は永久無料。クレジットカード不要。"
+  },
+  "dashboard": {
+    "greeting": "こんにちは、{name}先生",
+    "morning": "おはよう",
+    "afternoon": "こんにちは",
+    "evening": "こんばんは",
+    "active_patients": "アクティブ患者",
+    "sent_routines": "本日送信",
+    "low_adherence": "低アドヒアランス",
+    "ai_suggestion": "AI提案",
+    "recent_patients": "最近の患者",
+    "quick_actions": "クイックアクション",
+    "new_routine": "新しいルーティン",
+    "add_patient": "患者を追加",
+    "view_library": "ライブラリを見る",
+    "no_activity": "{days}日間活動なし"
+  },
+  "exercises": {
+    "title": "エクササイズライブラリ",
+    "search_placeholder": "エクササイズ、筋肉、病理を検索...",
+    "filters": {
+      "region": "身体部位",
+      "difficulty": "レベル",
+      "technique": "技術",
+      "all": "すべて"
+    },
+    "difficulty": {
+      "beginner": "初級",
+      "intermediate": "中級",
+      "advanced": "上級",
+      "expert": "エキスパート"
+    },
+    "add_to_routine": "ルーティンに追加",
+    "view_details": "詳細を見る",
+    "series": "セット",
+    "reps": "回",
+    "duration": "時間",
+    "indications": "適応症",
+    "contraindications": "禁忌"
+  },
+  "patients": {
+    "title": "患者",
+    "search_placeholder": "患者を検索...",
+    "add_new": "新しい患者",
+    "active": "アクティブ",
+    "inactive": "非アクティブ",
+    "last_session": "前回のセッション",
+    "adherence": "アドヒアランス",
+    "send_routine": "ルーティンを送信",
+    "view_history": "履歴"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "retry": "再試行",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "delete": "削除",
+    "edit": "編集",
+    "view": "見る",
+    "back": "戻る",
+    "next": "次へ",
+    "finish": "完了",
+    "search": "検索",
+    "filter": "フィルター",
+    "sort": "並び替え",
+    "language": "言語",
+    "free_badge": "無料",
+    "new_badge": "新規",
+    "pro_badge": "プロ"
+  },
+  "patient_view": {
+    "routine_from": "ルーティン（担当：",
+    "exercises_count": "{count}エクササイズ",
+    "start": "ルーティン開始",
+    "completed": "完了",
+    "mark_done": "完了としてマーク",
+    "well_done": "よくできました！",
+    "routine_complete": "すべてのエクササイズを完了しました",
+    "sets": "セット",
+    "reps": "回",
+    "seconds": "秒"
+  }
+}

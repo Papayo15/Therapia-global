@@ -1,0 +1,353 @@
+// ─── Therapia Global — Prisma Schema ──────────────────────────────────────────
+// To use: npm install prisma @prisma/client
+//         Set DATABASE_URL in .env
+//         npx prisma migrate dev --name init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ─────────────────────────────────────────────────────────────────────
+
+enum Role {
+  THERAPIST
+  ADMIN
+  CLINIC_OWNER
+}
+
+enum Plan {
+  FREE
+  PROFESSIONAL
+  CLINIC
+  ENTERPRISE
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+enum Difficulty {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+  EXPERT
+}
+
+enum Phase {
+  ACUTE
+  SUBACUTE
+  CHRONIC
+  MAINTENANCE
+}
+
+enum ExerciseCategory {
+  STRENGTHENING
+  STABILIZATION
+  MOBILITY
+  STRETCHING
+  PROPRIOCEPTION
+  AEROBIC
+  ACTIVATION
+}
+
+enum DeliveryChannel {
+  EMAIL
+  WHATSAPP
+  QR
+  SMS
+  LINK
+}
+
+enum OsteopathyCategory {
+  VISCERAL
+  CRANIAL
+  STRUCTURAL
+}
+
+enum EvidenceLevel {
+  A
+  B
+  C
+}
+
+// ─── User (Therapist) ──────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String
+  avatarUrl     String?
+  role          Role      @default(THERAPIST)
+  plan          Plan      @default(FREE)
+  clinicId      String?
+  clinic        Clinic?   @relation(fields: [clinicId], references: [id])
+
+  // Profile
+  specialty     String?
+  licenseNumber String?
+  phone         String?
+  country       String?
+  locale        String    @default("es")
+
+  // Stats
+  patientsCount Int       @default(0)
+  routinesCount Int       @default(0)
+
+  // Relations
+  patients      Patient[]
+  routines      Routine[]
+  exercises     Exercise[]  @relation("CreatedBy")
+  aiRequests    AIRequest[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("users")
+}
+
+// ─── Clinic ────────────────────────────────────────────────────────────────────
+
+model Clinic {
+  id            String    @id @default(cuid())
+  name          String
+  logoUrl       String?
+  country       String?
+  plan          Plan      @default(CLINIC)
+  therapists    User[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("clinics")
+}
+
+// ─── Patient ───────────────────────────────────────────────────────────────────
+
+model Patient {
+  id                  String    @id @default(cuid())
+  therapistId         String
+  therapist           User      @relation(fields: [therapistId], references: [id])
+
+  name                String
+  email               String?
+  phone               String?
+  birthDate           DateTime?
+  gender              Gender?
+  occupation          String?
+
+  // Clinical
+  primaryDiagnosis    String
+  secondaryDiagnoses  String[]  @default([])
+  painLevel           Int       @default(5)   // 0-10
+  functionalGoals     String[]  @default([])
+  contraindications   String[]  @default([])
+  comorbidities       String[]  @default([])
+  notes               String?
+
+  // Status
+  isActive            Boolean   @default(true)
+  activeSince         DateTime  @default(now())
+  lastVisit           DateTime?
+  completionRate      Int       @default(0)   // 0-100
+
+  routines            Routine[]
+  aiRequests          AIRequest[]
+
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@map("patients")
+}
+
+// ─── Exercise ──────────────────────────────────────────────────────────────────
+
+model Exercise {
+  id                  String          @id @default(cuid())
+  createdById         String?
+  createdBy           User?           @relation("CreatedBy", fields: [createdById], references: [id])
+
+  name                String
+  nameEs              String?
+  nameFr              String?
+  namePt              String?
+  nameDe              String?
+  nameZh              String?
+  nameJa              String?
+  nameRu              String?
+  nameAr              String?
+  nameHi              String?
+
+  region              String
+  equipment           String
+  difficulty          Difficulty
+  category            ExerciseCategory
+  muscles             String[]        @default([])
+
+  sets                Int             @default(3)
+  reps                Int?
+  durationSeconds     Int?
+  restSeconds         Int             @default(30)
+
+  clinicalNotes       String?
+  evidenceLevel       EvidenceLevel?
+  videoUrl            String?
+  thumbnailUrl        String?
+
+  isCustom            Boolean         @default(false)
+  isActive            Boolean         @default(true)
+
+  routineExercises    RoutineExercise[]
+
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  @@map("exercises")
+}
+
+// ─── Routine ───────────────────────────────────────────────────────────────────
+
+model Routine {
+  id                  String          @id @default(cuid())
+  therapistId         String
+  therapist           User            @relation(fields: [therapistId], references: [id])
+  patientId           String?
+  patient             Patient?        @relation(fields: [patientId], references: [id])
+
+  name                String
+  description         String?
+  phase               Phase?
+  estimatedMinutes    Int             @default(0)
+  frequency           String?         // "3 veces por semana"
+
+  // Delivery
+  accessToken         String          @unique @default(cuid())
+  sentVia             DeliveryChannel?
+  sentAt              DateTime?
+
+  // Stats
+  completionRate      Int             @default(0)
+  viewCount           Int             @default(0)
+
+  exercises           RoutineExercise[]
+  sessions            PatientSession[]
+
+  isActive            Boolean         @default(true)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  @@map("routines")
+}
+
+// ─── RoutineExercise (junction) ────────────────────────────────────────────────
+
+model RoutineExercise {
+  id          String    @id @default(cuid())
+  routineId   String
+  routine     Routine   @relation(fields: [routineId], references: [id], onDelete: Cascade)
+  exerciseId  String
+  exercise    Exercise  @relation(fields: [exerciseId], references: [id])
+
+  order       Int
+  sets        Int       @default(3)
+  reps        Int?
+  restSeconds Int       @default(30)
+  notes       String?
+
+  @@unique([routineId, order])
+  @@map("routine_exercises")
+}
+
+// ─── PatientSession (tracking) ─────────────────────────────────────────────────
+
+model PatientSession {
+  id            String    @id @default(cuid())
+  routineId     String
+  routine       Routine   @relation(fields: [routineId], references: [id])
+
+  completedAt   DateTime  @default(now())
+  durationMin   Int?
+  painBefore    Int?      // 0-10
+  painAfter     Int?      // 0-10
+  notes         String?
+  completedExs  Int       @default(0)
+  totalExs      Int       @default(0)
+
+  @@map("patient_sessions")
+}
+
+// ─── AIRequest ─────────────────────────────────────────────────────────────────
+
+model AIRequest {
+  id            String    @id @default(cuid())
+  therapistId   String
+  therapist     User      @relation(fields: [therapistId], references: [id])
+  patientId     String?
+  patient       Patient?  @relation(fields: [patientId], references: [id])
+
+  // Input
+  diagnosis     String
+  region        String
+  phase         Phase
+  painLevel     Int
+  contraindications String[]  @default([])
+  goals         String[]      @default([])
+  equipment     String[]      @default([])
+
+  // Output
+  routineName   String?
+  exercisesJson Json?         // Full AI response stored as JSON
+  modelVersion  String        @default("TherapIA-v1.0")
+
+  // Billing
+  tokensUsed    Int           @default(0)
+
+  createdAt     DateTime      @default(now())
+
+  @@map("ai_requests")
+}
+
+// ─── OsteopathyTechnique ───────────────────────────────────────────────────────
+
+model OsteopathyTechnique {
+  id            String              @id @default(cuid())
+  name          String
+  nameEs        String?
+  category      OsteopathyCategory
+  region        String
+  technique     String
+  indication    String?
+  contraindication String?
+  clinicalNotes String?
+  videoUrl      String?
+  evidenceLevel EvidenceLevel?
+  isActive      Boolean             @default(true)
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+
+  @@map("osteopathy_techniques")
+}
+
+// ─── CommunityPost ─────────────────────────────────────────────────────────────
+
+model CommunityPost {
+  id          String    @id @default(cuid())
+  authorId    String
+  title       String
+  content     String
+  category    String
+  tags        String[]  @default([])
+  likes       Int       @default(0)
+  replies     Int       @default(0)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("community_posts")
+}

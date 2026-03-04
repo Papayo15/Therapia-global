@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Therapia Global — वैश्विक चिकित्सीय मंच",
+    "description": "फिजियोथेरेपिस्ट, ऑस्टियोपैथ और स्वास्थ्य छात्रों के लिए वैश्विक मानक।"
+  },
+  "nav": {
+    "dashboard": "डैशबोर्ड",
+    "exercises": "व्यायाम पुस्तकालय",
+    "routines": "दिनचर्या",
+    "patients": "मरीज़",
+    "osteopathy": "ऑस्टियोपैथी",
+    "anatomy": "शरीर रचना",
+    "community": "समुदाय",
+    "ai": "AI इंजन",
+    "certifications": "प्रमाणपत्र",
+    "settings": "सेटिंग्स",
+    "logout": "लॉग आउट"
+  },
+  "landing": {
+    "badge": "वैश्विक चिकित्सीय मानक",
+    "headline": "आधुनिक चिकित्सक का\nऑपरेटिंग सिस्टम",
+    "subheadline": "चिकित्सीय व्यायाम पुस्तकालय, ऑस्टियोपैथी तकनीक, शरीर रचना और रोगी दिनचर्या। सब कुछ एक मंच पर। सभी भाषाएं। सामग्री हमेशा मुफ्त।",
+    "cta_primary": "मुफ्त शुरू करें",
+    "cta_secondary": "डेमो देखें",
+    "stats": {
+      "therapists": "चिकित्सक",
+      "exercises": "व्यायाम",
+      "languages": "भाषाएं",
+      "countries": "देश"
+    },
+    "features_title": "जो चाहिए वो सब। कोई ब्लॉक नहीं।",
+    "features": {
+      "routines": {
+        "title": "स्मार्ट रूटीन बिल्डर",
+        "desc": "सेकंडों में व्यक्तिगत व्यायाम दिनचर्या बनाएं और भेजें।"
+      },
+      "library": {
+        "title": "पेशेवर पुस्तकालय",
+        "desc": "3,000+ चिकित्सीय व्यायाम क्लिनिकल मेटाडेटा के साथ।"
+      },
+      "osteopathy": {
+        "title": "ऑस्टियोपैथी तकनीक",
+        "desc": "पूर्ण आंत, कपाल और संरचनात्मक पुस्तकालय।"
+      },
+      "anatomy": {
+        "title": "अनुप्रयुक्त शरीर रचना",
+        "desc": "5 ज्ञान परतों के साथ क्षेत्रवार इंटरैक्टिव शरीर रचना।"
+      },
+      "tracking": {
+        "title": "रोगी ट्रैकिंग",
+        "desc": "वास्तविक समय में व्यायाम अनुपालन की निगरानी करें।"
+      },
+      "ai": {
+        "title": "क्लिनिकल AI",
+        "desc": "AI निदान के आधार पर अनुकूलित दिनचर्या सुझाता है।"
+      }
+    },
+    "comparison_title": "Therapia Global क्यों?",
+    "footer_cta": "वैश्विक चिकित्सीय मानक से जुड़ें",
+    "footer_cta_sub": "बुनियादी उपयोग के लिए हमेशा मुफ्त।"
+  },
+  "dashboard": {
+    "greeting": "नमस्ते, डॉ. {name}",
+    "morning": "सुबह",
+    "afternoon": "दोपहर",
+    "evening": "शाम",
+    "active_patients": "सक्रिय मरीज़",
+    "sent_routines": "आज भेजी",
+    "low_adherence": "कम अनुपालन",
+    "ai_suggestion": "AI सुझाव",
+    "recent_patients": "हाल के मरीज़",
+    "quick_actions": "त्वरित क्रियाएं",
+    "new_routine": "नई दिनचर्या",
+    "add_patient": "मरीज़ जोड़ें",
+    "view_library": "पुस्तकालय देखें",
+    "no_activity": "{days} दिनों से कोई गतिविधि नहीं"
+  },
+  "exercises": {
+    "title": "व्यायाम पुस्तकालय",
+    "search_placeholder": "व्यायाम, मांसपेशियां, विकृतियां खोजें...",
+    "filters": {
+      "region": "शरीर क्षेत्र",
+      "difficulty": "स्तर",
+      "technique": "तकनीक",
+      "all": "सभी"
+    },
+    "difficulty": {
+      "beginner": "शुरुआती",
+      "intermediate": "मध्यम",
+      "advanced": "उन्नत",
+      "expert": "विशेषज्ञ"
+    },
+    "add_to_routine": "दिनचर्या में जोड़ें",
+    "view_details": "विवरण देखें",
+    "series": "सेट",
+    "reps": "दोहराव",
+    "duration": "अवधि",
+    "indications": "संकेत",
+    "contraindications": "विपरीत संकेत"
+  },
+  "patients": {
+    "title": "मरीज़",
+    "search_placeholder": "मरीज़ खोजें...",
+    "add_new": "नया मरीज़",
+    "active": "सक्रिय",
+    "inactive": "निष्क्रिय",
+    "last_session": "अंतिम सत्र",
+    "adherence": "अनुपालन",
+    "send_routine": "दिनचर्या भेजें",
+    "view_history": "इतिहास"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हुआ",
+    "retry": "पुनः प्रयास",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "view": "देखें",
+    "back": "वापस",
+    "next": "अगला",
+    "finish": "समाप्त",
+    "search": "खोज",
+    "filter": "फ़िल्टर",
+    "sort": "क्रमबद्ध",
+    "language": "भाषा",
+    "free_badge": "मुफ्त",
+    "new_badge": "नया",
+    "pro_badge": "प्रो"
+  },
+  "patient_view": {
+    "routine_from": "आपकी दिनचर्या",
+    "exercises_count": "{count} व्यायाम",
+    "start": "दिनचर्या शुरू करें",
+    "completed": "पूर्ण",
+    "mark_done": "पूर्ण के रूप में चिह्नित करें",
+    "well_done": "बहुत अच्छे!",
+    "routine_complete": "आपने सभी व्यायाम पूरे कर लिए",
+    "sets": "सेट",
+    "reps": "बार",
+    "seconds": "सेकंड"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Therapia Global — 全球治疗平台",
+    "description": "物理治疗师、整骨师和医学生的全球标准。"
+  },
+  "nav": {
+    "dashboard": "仪表板",
+    "exercises": "练习库",
+    "routines": "训练计划",
+    "patients": "患者",
+    "osteopathy": "整骨疗法",
+    "anatomy": "解剖学",
+    "community": "社区",
+    "ai": "AI引擎",
+    "certifications": "认证",
+    "settings": "设置",
+    "logout": "退出登录"
+  },
+  "landing": {
+    "badge": "全球治疗标准",
+    "headline": "现代治疗师的\n操作系统",
+    "subheadline": "治疗练习库、整骨技术、解剖学和患者训练计划。一个平台，所有语言，内容永远免费。",
+    "cta_primary": "免费开始",
+    "cta_secondary": "观看演示",
+    "stats": {
+      "therapists": "治疗师",
+      "exercises": "练习",
+      "languages": "语言",
+      "countries": "国家"
+    },
+    "features_title": "您需要的一切。没有任何限制。",
+    "features": {
+      "routines": {
+        "title": "智能训练计划构建器",
+        "desc": "在几秒钟内创建并发送个性化训练计划给患者。"
+      },
+      "library": {
+        "title": "专业库",
+        "desc": "3000多个带有临床元数据和多语言字幕的治疗练习。"
+      },
+      "osteopathy": {
+        "title": "整骨技术",
+        "desc": "完整的内脏、颅骨和结构整骨库。"
+      },
+      "anatomy": {
+        "title": "应用解剖学",
+        "desc": "按区域的交互式解剖学，包含5层知识。"
+      },
+      "tracking": {
+        "title": "患者跟踪",
+        "desc": "实时监测练习依从性。"
+      },
+      "ai": {
+        "title": "临床AI",
+        "desc": "AI根据诊断建议优化的训练计划。"
+      }
+    },
+    "comparison_title": "为什么选择Therapia Global？",
+    "footer_cta": "加入全球治疗标准",
+    "footer_cta_sub": "基本使用永久免费。无需信用卡。"
+  },
+  "dashboard": {
+    "greeting": "{timeOfDay}好，{name}医生",
+    "morning": "早上",
+    "afternoon": "下午",
+    "evening": "晚上",
+    "active_patients": "活跃患者",
+    "sent_routines": "今日发送",
+    "low_adherence": "依从性低",
+    "ai_suggestion": "AI建议",
+    "recent_patients": "最近患者",
+    "quick_actions": "快速操作",
+    "new_routine": "新训练计划",
+    "add_patient": "添加患者",
+    "view_library": "查看库",
+    "no_activity": "{days}天无活动"
+  },
+  "exercises": {
+    "title": "练习库",
+    "search_placeholder": "搜索练习、肌肉、病理...",
+    "filters": {
+      "region": "身体区域",
+      "difficulty": "级别",
+      "technique": "技术",
+      "all": "全部"
+    },
+    "difficulty": {
+      "beginner": "初级",
+      "intermediate": "中级",
+      "advanced": "高级",
+      "expert": "专家"
+    },
+    "add_to_routine": "添加到计划",
+    "view_details": "查看详情",
+    "series": "组数",
+    "reps": "次数",
+    "duration": "时长",
+    "indications": "适应症",
+    "contraindications": "禁忌症"
+  },
+  "patients": {
+    "title": "患者",
+    "search_placeholder": "搜索患者...",
+    "add_new": "新患者",
+    "active": "活跃",
+    "inactive": "不活跃",
+    "last_session": "最后一次治疗",
+    "adherence": "依从性",
+    "send_routine": "发送训练计划",
+    "view_history": "历史记录"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "出了些问题",
+    "retry": "重试",
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "确认",
+    "delete": "删除",
+    "edit": "编辑",
+    "view": "查看",
+    "back": "返回",
+    "next": "下一步",
+    "finish": "完成",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "language": "语言",
+    "free_badge": "免费",
+    "new_badge": "新",
+    "pro_badge": "专业版"
+  },
+  "patient_view": {
+    "routine_from": "您的训练计划来自",
+    "exercises_count": "{count}个练习",
+    "start": "开始训练",
+    "completed": "已完成",
+    "mark_done": "标记为完成",
+    "well_done": "做得好！",
+    "routine_complete": "您已完成所有练习",
+    "sets": "组",
+    "reps": "次",
+    "seconds": "秒"
+  }
+}
