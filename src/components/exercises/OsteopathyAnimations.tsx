@@ -1,710 +1,411 @@
 "use client";
 
 /**
- * OsteopathyAnimations
- * ─────────────────────────────────────────────────────────────────────────────
- * Animaciones SVG para técnicas de osteopatía.
- * Cada animación muestra la posición terapeuta-paciente y el vector de fuerza.
- *
- * Categorías:
- *   🔵 Visceral  — Hígado, Intestinos, Riñón, Colon, Mesentérico
- *   🟣 Craneal   — CV4, SBS, Frontal, Temporal, Sacro craneal
- *   🟠 Estructural — HVLA Lumbar, Muscle Energy Sacro, Thrust Torácico,
- *                    Counterstrain, MET Cervical
- * ─────────────────────────────────────────────────────────────────────────────
+ * OsteopathyAnimations — 12 techniques
+ * "Thera" patient + therapist hands for manual therapy techniques.
+ * Each animation shows the therapist's contact point and movement clearly.
  */
 
-// ══════════════════════════════════════════════════════════════════════════════
-// 🔵 VISCERAL
-// ══════════════════════════════════════════════════════════════════════════════
+import { C, Face } from "./ExerciseCharacter";
 
-/** Hepatic Pump — bomba hepática */
+// Therapist colors (slightly different from patient)
+const T = {
+  skin:  "#FBBF8A",
+  shirt: "#6366F1",  // indigo — therapist wears different color
+  pants: "#1E3A5F",
+  shoes: "#1C1C1E",
+  hand:  "#FBBF8A",
+  contact: "#F59E0B",   // amber — contact point
+  arrow: "#3B82F6",
+};
+
+function Mat() { return <rect x="20" y="150" width="180" height="10" rx="5" fill="#A7F3D0" />; }
+
+// Therapist hands
+function TherapistHand({ cx, cy, angle = 0 }: { cx: number; cy: number; angle?: number }) {
+  return (
+    <g transform={`rotate(${angle} ${cx} ${cy})`}>
+      <ellipse cx={cx} cy={cy} rx="14" ry="9" fill={T.skin} stroke={T.contact} strokeWidth="2" />
+      <line x1={cx - 8} y1={cy - 3} x2={cx - 14} y2={cy - 8} stroke={T.skin} strokeWidth="4" strokeLinecap="round" />
+    </g>
+  );
+}
+
+// Contact indicator (pulsing circle)
+function ContactPulse({ cx, cy }: { cx: number; cy: number }) {
+  return (
+    <g>
+      <style>{`
+        @keyframes pulse_contact { 0%,100%{r:10;opacity:0.6} 50%{r:16;opacity:0.2} }
+      `}</style>
+      <circle cx={cx} cy={cy} r="10" fill={T.contact} opacity="0.5">
+        <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx={cx} cy={cy} r="5" fill={T.contact} opacity="0.9" />
+    </g>
+  );
+}
+
+// Supine patient body
+function SupinePatient({ label }: { label?: string }) {
+  return (
+    <g>
+      <circle cx="22" cy="118" r="14" fill={C.skin} />
+      <ellipse cx="22" cy="110" rx="13" ry="8" fill={C.hair} />
+      <circle cx="17" cy="116" r="2" fill="#1C1C1E" />
+      <circle cx="27" cy="116" r="2" fill="#1C1C1E" />
+      <path d="M18,124 Q22,128 26,124" stroke="#1C1C1E" strokeWidth="1.8" fill="none" strokeLinecap="round" />
+      <line x1="36" y1="118" x2="160" y2="118" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <line x1="160" y1="118" x2="175" y2="118" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <ellipse cx="183" cy="118" rx="14" ry="6" fill={C.shoes} />
+    </g>
+  );
+}
+
+// ─── 1. Hepatic Pump ──────────────────────────────────────────────────────────
 export function AnimHepaticPump() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes pump { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-        @keyframes livPulse { 0%,100%{opacity:0.3;r:28} 50%{opacity:0.55;r:34} }
-        .pump-hand { animation: pump 1.6s ease-in-out infinite; }
+        @keyframes hp_hand { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        .hp-hand { animation:hp_hand 1.8s ease-in-out infinite; }
       `}</style>
-
-      {/* Paciente en supino */}
-      <rect x="20" y="105" width="200" height="18" rx="8" fill="#232d4a" opacity="0.85" />
-      <circle cx="14" cy="114" r="13" fill="#232d4a" />
-
-      {/* Mesa de tratamiento */}
-      <rect x="10" y="122" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Hígado highlight */}
-      <circle cx="148" cy="110" r="28" fill="#10b981" opacity="0.18">
-        <animate attributeName="r" values="28;34;28" dur="1.6s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.18;0.35;0.18" dur="1.6s" repeatCount="indefinite" />
-      </circle>
-      <text x="148" y="84" textAnchor="middle" fontSize="8" fill="#10b981" fontFamily="system-ui" fontWeight="600">
-        Hígado
-      </text>
-
-      {/* Terapeuta */}
-      <circle cx="195" cy="52" r="13" fill="#364060" />
-      <rect x="175" y="64" width="40" height="36" rx="8" fill="#364060" opacity="0.9" />
-
-      {/* Manos del terapeuta — animadas */}
-      <g className="pump-hand">
-        <rect x="136" y="90" width="30" height="14" rx="6" fill="#3362ff" opacity="0.85" />
-        <ellipse cx="130" cy="97" rx="10" ry="6" fill="#3362ff" opacity="0.75" />
-        <ellipse cx="168" cy="97" rx="10" ry="6" fill="#3362ff" opacity="0.75" />
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <SupinePatient />
+      {/* Liver area — right upper abdomen */}
+      <rect x="95" y="108" width="40" height="18" rx="6" fill="#FDE68A" opacity="0.5" />
+      <text x="115" y="120" textAnchor="middle" fontSize="7" fontWeight="700" fill="#92400E">Hígado</text>
+      {/* Therapist hands */}
+      <g className="hp-hand">
+        <TherapistHand cx={115} cy={102} />
+        <TherapistHand cx={115} cy={90} />
       </g>
-
-      {/* Brazo del terapeuta */}
-      <rect x="176" y="96" width="12" height="28" rx="5" fill="#364060" />
-      <rect x="198" y="96" width="12" height="28" rx="5" fill="#364060" />
-
-      {/* Vector de fuerza */}
-      <path d="M151,78 L151,88" stroke="#3362ff" strokeWidth="2.5" strokeLinecap="round" fill="none">
-        <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite" />
-      </path>
-      <polygon points="147,88 155,88 151,96" fill="#3362ff" opacity="0.8" />
-
-      <text x="120" y="168" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        Bomba Hepática (Hepatic Pump)
-      </text>
+      <ContactPulse cx={115} cy={108} />
+      {/* Therapist silhouette (standing) */}
+      <line x1="115" y1="70" x2="115" y2="30" stroke={T.shirt} strokeWidth="14" strokeLinecap="round" />
+      <circle cx="115" cy="22" r="11" fill={T.skin} />
+      <ellipse cx="115" cy="16" rx="10" ry="7" fill={T.shoes} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Bomba Hepática</text>
     </svg>
   );
 }
 
-/** Mesenteric Release — liberación mesentérica */
+// ─── 2. Mesenteric Release ────────────────────────────────────────────────────
 export function AnimMesentericRelease() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes slideRelease {
-          0%,100%{transform:translate(0,0)} 40%{transform:translate(-12px,8px)} 80%{transform:translate(8px,-5px)}
-        }
-        @keyframes mesGlow { 0%,100%{opacity:0.2} 50%{opacity:0.5} }
-        .mes-hands { animation: slideRelease 4s ease-in-out infinite; }
-        .mes-glow   { animation: mesGlow 4s ease-in-out infinite; }
+        @keyframes mr_hands { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-6px) rotate(5deg)} }
+        .mr-hands { animation:mr_hands 3s ease-in-out infinite; }
       `}</style>
-
-      {/* Paciente supino */}
-      <rect x="20" y="105" width="200" height="18" rx="8" fill="#232d4a" opacity="0.85" />
-      <circle cx="14" cy="114" r="13" fill="#232d4a" />
-      <rect x="10" y="122" width="220" height="7" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Mesenteric fan shape */}
-      <path d="M130,115 Q108,95 90,110 Q110,80 150,88 Q170,95 148,115 Z"
-        fill="#8b5cf6" opacity="0.18" className="mes-glow" />
-      <text x="128" y="78" textAnchor="middle" fontSize="8" fill="#8b5cf6" fontFamily="system-ui">Mesenterio</text>
-
-      {/* Terapeuta */}
-      <circle cx="56" cy="52" r="13" fill="#364060" />
-      <rect x="38" y="64" width="36" height="34" rx="8" fill="#364060" opacity="0.9" />
-
-      {/* Manos deslizando */}
-      <g className="mes-hands">
-        <ellipse cx="100" cy="110" rx="18" ry="8" fill="#3362ff" opacity="0.8" />
-        <rect x="72" y="104" width="22" height="12" rx="5" fill="#364060" />
-        <rect x="106" y="104" width="22" height="12" rx="5" fill="#364060" />
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <SupinePatient />
+      {/* Abdomen/mesentery area */}
+      <ellipse cx="100" cy="115" rx="32" ry="14" fill="#FDE68A" opacity="0.4" />
+      <text x="100" y="118" textAnchor="middle" fontSize="6.5" fontWeight="700" fill="#92400E">Mesenterio</text>
+      <g className="mr-hands">
+        <TherapistHand cx={88} cy={104} angle={-15} />
+        <TherapistHand cx={112} cy={104} angle={15} />
       </g>
-
-      {/* Brazos */}
-      <rect x="50" y="95" width="12" height="22" rx="5" fill="#364060" />
-      <rect x="64" y="95" width="12" height="22" rx="5" fill="#364060" />
-
-      {/* Flechas de deslizamiento */}
-      <path d="M90,100 L75,92" stroke="#3362ff" strokeWidth="1.5" strokeDasharray="3 2" fill="none" />
-      <path d="M148,100 L163,92" stroke="#3362ff" strokeWidth="1.5" strokeDasharray="3 2" fill="none" />
-
-      <text x="120" y="168" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        Liberación Mesentérica
-      </text>
+      <ContactPulse cx={100} cy={114} />
+      <line x1="100" y1="78" x2="100" y2="35" stroke={T.shirt} strokeWidth="14" strokeLinecap="round" />
+      <circle cx="100" cy="26" r="11" fill={T.skin} />
+      <ellipse cx="100" cy="20" rx="10" ry="7" fill={T.shoes} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Release Mesentérico</text>
     </svg>
   );
 }
 
-/** Kidney Mobilization — movilización renal */
+// ─── 3. Kidney Mobilization ───────────────────────────────────────────────────
 export function AnimKidneyMobilization() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes kidneyFloat {
-          0%,100%{transform:translateY(0px)} 50%{transform:translateY(-10px)}
-        }
-        @keyframes kidneyPulse { 0%,100%{opacity:0.25} 50%{opacity:0.5} }
-        .kidney-move { animation: kidneyFloat 3s ease-in-out infinite; }
+        @keyframes km { 0%,100%{transform:translateY(0)} 40%{transform:translateY(-10px)} 80%{transform:translateY(0)} }
+        .km-hand { animation:km 2.5s ease-in-out infinite; }
       `}</style>
-
-      {/* Paciente lateral */}
-      <rect x="30" y="95" width="180" height="22" rx="10" fill="#232d4a" opacity="0.85" />
-      <circle cx="24" cy="106" r="14" fill="#232d4a" />
-      <rect x="20" y="116" width="200" height="7" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Riñón */}
-      <g className="kidney-move">
-        <ellipse cx="145" cy="100" rx="22" ry="14" fill="#ec4899" opacity="0.3" />
-        <ellipse cx="145" cy="100" rx="14" ry="9" fill="#ec4899" opacity="0.4" />
-        <text x="145" y="77" textAnchor="middle" fontSize="8" fill="#ec4899" fontFamily="system-ui">Riñón</text>
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <SupinePatient />
+      {/* Kidney zones */}
+      <ellipse cx="90" cy="114" rx="14" ry="10" fill="#A78BFA" opacity="0.4" />
+      <ellipse cx="130" cy="114" rx="14" ry="10" fill="#A78BFA" opacity="0.4" />
+      <text x="90" y="117" textAnchor="middle" fontSize="6" fontWeight="700" fill="#5B21B6">Riñón</text>
+      <text x="130" y="117" textAnchor="middle" fontSize="6" fontWeight="700" fill="#5B21B6">Riñón</text>
+      <g className="km-hand">
+        <TherapistHand cx={90} cy={102} />
+        <TherapistHand cx={130} cy={102} />
       </g>
-
-      {/* Terapeuta detrás */}
-      <circle cx="205" cy="48" r="13" fill="#364060" />
-      <rect x="186" y="60" width="38" height="34" rx="8" fill="#364060" opacity="0.9" />
-
-      {/* Manos anterior + posterior */}
-      <ellipse cx="110" cy="104" rx="16" ry="7" fill="#3362ff" opacity="0.7" />
-      <ellipse cx="172" cy="100" rx="16" ry="7" fill="#3362ff" opacity="0.7" />
-
-      {/* Pinzamiento bimanual */}
-      <path d="M125,104 L155,102" stroke="#3362ff" strokeWidth="2" strokeDasharray="4 3" fill="none" />
-      <text x="120" y="72" textAnchor="middle" fontSize="8" fill="#3362ff" fontFamily="system-ui">← Bimanual →</text>
-
-      {/* Brazos del terapeuta */}
-      <rect x="188" y="92" width="12" height="22" rx="5" fill="#364060" />
-      <rect x="200" y="92" width="12" height="22" rx="5" fill="#364060" />
-
-      <text x="120" y="168" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        Movilización Renal (Bimanual)
-      </text>
+      <ContactPulse cx={90} cy={113} />
+      <ContactPulse cx={130} cy={113} />
+      <line x1="110" y1="76" x2="110" y2="33" stroke={T.shirt} strokeWidth="14" strokeLinecap="round" />
+      <circle cx="110" cy="24" r="11" fill={T.skin} />
+      <ellipse cx="110" cy="18" rx="10" ry="7" fill={T.shoes} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Movilización Renal</text>
     </svg>
   );
 }
 
-/** Colon Release — liberación del colon */
+// ─── 4. Colon Release ─────────────────────────────────────────────────────────
 export function AnimColonRelease() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes colonWave {
-          0%{transform:scaleX(1) scaleY(1)} 33%{transform:scaleX(1.05) scaleY(0.95)}
-          66%{transform:scaleX(0.97) scaleY(1.04)} 100%{transform:scaleX(1) scaleY(1)}
-        }
-        .colon-move { animation: colonWave 3s ease-in-out infinite; transform-origin: 120px 105px; }
+        @keyframes cr { 0%{cx:75px} 25%{cx:120px} 50%{cx:145px} 75%{cx:100px} 100%{cx:75px} }
+        @keyframes cr_hand { 0%{transform:translateX(0)} 25%{transform:translateX(45px)} 50%{transform:translateX(70px)} 75%{transform:translateX(25px)} 100%{transform:translateX(0)} }
+        .cr-hand { animation:cr_hand 5s ease-in-out infinite; }
       `}</style>
-
-      <rect x="20" y="105" width="200" height="18" rx="8" fill="#232d4a" opacity="0.85" />
-      <circle cx="14" cy="114" r="13" fill="#232d4a" />
-      <rect x="10" y="122" width="220" height="7" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Colon path */}
-      <g className="colon-move">
-        <path d="M80,92 Q80,75 100,75 Q140,75 160,75 Q178,75 178,92 Q178,115 158,115 Q140,115 140,130 Q140,140 120,140 Q100,140 100,130 Q100,115 80,115 Q62,115 62,98 Q62,82 80,82"
-          fill="none" stroke="#f97316" strokeWidth="10" strokeLinecap="round" opacity="0.4" />
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <SupinePatient />
+      {/* Colon path sketch */}
+      <path d="M75,125 L75,105 Q75,100 80,100 L145,100 Q150,100 150,105 L150,125" stroke="#FDE68A" strokeWidth="6" fill="none" strokeLinecap="round" opacity="0.6" />
+      <text x="112" y="98" textAnchor="middle" fontSize="6.5" fontWeight="700" fill="#92400E">Colon</text>
+      <g className="cr-hand">
+        <TherapistHand cx={75} cy={104} />
       </g>
-      <text x="120" y="68" textAnchor="middle" fontSize="8" fill="#f97316" fontFamily="system-ui">Colon</text>
-
-      {/* Terapeuta */}
-      <circle cx="50" cy="46" r="13" fill="#364060" />
-      <rect x="32" y="58" width="36" height="34" rx="8" fill="#364060" opacity="0.9" />
-
-      {/* Manos sobre el colon */}
-      <ellipse cx="80" cy="106" rx="18" ry="8" fill="#3362ff" opacity="0.75" />
-      <ellipse cx="160" cy="106" rx="18" ry="8" fill="#3362ff" opacity="0.75" />
-
-      {/* Brazos */}
-      <rect x="36" y="90" width="12" height="22" rx="5" fill="#364060" />
-      <rect x="50" y="90" width="12" height="22" rx="5" fill="#364060" />
-
-      <text x="120" y="168" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        Liberación del Colon
-      </text>
+      <line x1="85" y1="78" x2="85" y2="35" stroke={T.shirt} strokeWidth="14" strokeLinecap="round" />
+      <circle cx="85" cy="26" r="11" fill={T.skin} />
+      <ellipse cx="85" cy="20" rx="10" ry="7" fill={T.shoes} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Release de Colon</text>
     </svg>
   );
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// 🟣 CRANEAL
-// ══════════════════════════════════════════════════════════════════════════════
-
-/** CV4 — compresión del 4° ventrículo */
+// ─── 5. CV4 (Cranial) ─────────────────────────────────────────────────────────
 export function AnimCV4() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes cranialRhythm {
-          0%,100%{transform:scale(1)}
-          25%{transform:scale(1.025)}
-          75%{transform:scale(0.978)}
-        }
-        @keyframes stillPoint {
-          0%,60%{opacity:0.6}
-          65%,85%{opacity:0.15}
-          90%,100%{opacity:0.6}
-        }
-        .cranium { animation: cranialRhythm 8s ease-in-out infinite; transform-origin: 120px 72px; }
-        .still   { animation: stillPoint 8s ease-in-out infinite; }
+        @keyframes cv4_head { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+        .cv4-head { animation:cv4_head 5s ease-in-out infinite; transform-origin:40px 115px; }
       `}</style>
-
-      {/* Mesa */}
-      <rect x="10" y="148" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Paciente supino — cabeza */}
-      <g className="cranium">
-        <ellipse cx="120" cy="72" rx="46" ry="38" fill="#232d4a" opacity="0.9" />
-        {/* Cerebro */}
-        <ellipse cx="120" cy="68" rx="32" ry="26" fill="#364060" opacity="0.5" />
-        {/* 4th ventricle */}
-        <ellipse cx="120" cy="80" rx="10" ry="8" fill="#3362ff" opacity="0.5" className="still" />
-        <text x="120" y="83" textAnchor="middle" fontSize="6" fill="#93c5fd" fontFamily="system-ui">V4</text>
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <line x1="55" y1="118" x2="180" y2="118" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <line x1="180" y1="118" x2="196" y2="118" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <ellipse cx="204" cy="118" rx="12" ry="6" fill={C.shoes} />
+      {/* Animated head */}
+      <g className="cv4-head">
+        <circle cx="40" cy="115" r="17" fill={C.skin} />
+        <ellipse cx="40" cy="106" rx="16" ry="10" fill={C.hair} />
+        <circle cx="35" cy="113" r="2.5" fill="#1C1C1E" />
+        <circle cx="45" cy="113" r="2.5" fill="#1C1C1E" />
+        <path d="M36,122 Q40,126 44,122" stroke="#1C1C1E" strokeWidth="1.8" fill="none" strokeLinecap="round" />
       </g>
-
-      {/* Cuello */}
-      <rect x="108" y="108" width="24" height="20" rx="6" fill="#232d4a" opacity="0.8" />
-
-      {/* Manos del terapeuta bajo el occipital */}
-      <ellipse cx="88" cy="106" rx="20" ry="8" fill="#3362ff" opacity="0.7" />
-      <ellipse cx="152" cy="106" rx="20" ry="8" fill="#3362ff" opacity="0.7" />
-
-      {/* Manos juntas bajo occipital */}
-      <text x="120" y="120" textAnchor="middle" fontSize="8" fill="#3362ff" fontFamily="system-ui">
-        Thenar → Occipital
-      </text>
-
-      {/* Pulso craneal animado */}
-      <circle cx="120" cy="72" r="50" fill="none" stroke="#8b5cf6" strokeWidth="2"
-        strokeDasharray="6 4" opacity="0.4">
-        <animate attributeName="r" values="50;56;50" dur="8s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.4;0.1;0.4" dur="8s" repeatCount="indefinite" />
-      </circle>
-
-      {/* Terapeuta sentado detrás (minimalista) */}
-      <circle cx="120" cy="152" r="12" fill="#364060" />
-
-      {/* Legend */}
-      <text x="45" y="38" fontSize="8" fill="#8b5cf6" fontFamily="system-ui">Ritmo primario</text>
-      <text x="45" y="50" fontSize="8" fill="#3362ff" fontFamily="system-ui">→ Still point</text>
-
-      <text x="120" y="175" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        CV4 — Compresión del 4° Ventrículo
-      </text>
+      {/* Therapist cupping occiput */}
+      <TherapistHand cx={22} cy={118} angle={0} />
+      <TherapistHand cx={58} cy={118} angle={180} />
+      <ContactPulse cx={40} cy={118} />
+      <text x="40" y="108" textAnchor="middle" fontSize="6" fontWeight="700" fill="#1D4ED8">CV4</text>
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>CV4 — Compresión 4to Ventrículo</text>
     </svg>
   );
 }
 
-/** SBS — Sínfisis esfenobailar */
+// ─── 6. SBS (Sphenobasilar) ───────────────────────────────────────────────────
 export function AnimSBS() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes sbsFlex {
-          0%,100%{transform:rotate(0deg)}
-          33%{transform:rotate(2.5deg)}
-          66%{transform:rotate(-2.5deg)}
-        }
-        @keyframes sbsExt {
-          0%,100%{transform:rotate(0deg)}
-          33%{transform:rotate(-2.5deg)}
-          66%{transform:rotate(2.5deg)}
-        }
-        .sphenoid { animation: sbsFlex 6s ease-in-out infinite; transform-origin: 100px 70px; }
-        .occiput  { animation: sbsExt  6s ease-in-out infinite; transform-origin: 140px 70px; }
+        @keyframes sbs { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(2deg)} }
+        .sbs-head { animation:sbs 6s ease-in-out infinite; transform-origin:40px 115px; }
       `}</style>
-
-      <rect x="10" y="148" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Cráneo base */}
-      <ellipse cx="120" cy="72" rx="46" ry="38" fill="#232d4a" opacity="0.85" />
-
-      {/* Esfenoides — parte anterior */}
-      <g className="sphenoid">
-        <ellipse cx="96" cy="72" rx="28" ry="24" fill="#3362ff" opacity="0.35" />
-        <text x="90" y="64" fontSize="7" fill="#93c5fd" fontFamily="system-ui" fontWeight="600">Esfenoides</text>
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <line x1="55" y1="118" x2="195" y2="118" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <ellipse cx="205" cy="118" rx="12" ry="6" fill={C.shoes} />
+      <g className="sbs-head">
+        <circle cx="40" cy="115" r="17" fill={C.skin} />
+        <ellipse cx="40" cy="106" rx="16" ry="10" fill={C.hair} />
+        <circle cx="35" cy="113" r="2.5" fill="#1C1C1E" />
+        <circle cx="45" cy="113" r="2.5" fill="#1C1C1E" />
+        {/* SBS suture lines */}
+        <line x1="35" y1="108" x2="40" y2="115" stroke="#6366F1" strokeWidth="1.5" opacity="0.7" />
+        <line x1="45" y1="108" x2="40" y2="115" stroke="#6366F1" strokeWidth="1.5" opacity="0.7" />
       </g>
-
-      {/* Occipital — parte posterior */}
-      <g className="occiput">
-        <ellipse cx="144" cy="72" rx="28" ry="24" fill="#8b5cf6" opacity="0.35" />
-        <text x="138" y="90" fontSize="7" fill="#c4b5fd" fontFamily="system-ui" fontWeight="600">Occipital</text>
-      </g>
-
-      {/* Línea SBS */}
-      <path d="M120,50 L120,95" stroke="#f59e0b" strokeWidth="2" strokeDasharray="4 3" />
-      <text x="124" y="76" fontSize="7" fill="#f59e0b" fontFamily="system-ui" fontWeight="600">SBS</text>
-
-      {/* Cuello */}
-      <rect x="108" y="108" width="24" height="20" rx="6" fill="#232d4a" opacity="0.8" />
-
-      {/* Manos laterales terapeuta */}
-      <ellipse cx="68" cy="72" rx="14" ry="8" fill="#3362ff" opacity="0.6" />
-      <ellipse cx="172" cy="72" rx="14" ry="8" fill="#8b5cf6" opacity="0.6" />
-      <text x="46" y="76" fontSize="7" fill="#3362ff" fontFamily="system-ui">Temporal</text>
-      <text x="164" y="76" fontSize="7" fill="#8b5cf6" fontFamily="system-ui">Temporal</text>
-
-      {/* Terapeuta */}
-      <circle cx="120" cy="150" r="12" fill="#364060" />
-
-      <text x="120" y="175" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        Evaluación SBS (Sínfisis Esfeno-Basilar)
-      </text>
+      <TherapistHand cx={18} cy={116} angle={0} />
+      <TherapistHand cx={62} cy={116} angle={180} />
+      <ContactPulse cx={40} cy={115} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>SBS — Sínfisis Esfenobasilar</text>
     </svg>
   );
 }
 
-/** Frontal Lift — elevación del frontal */
+// ─── 7. Frontal Lift ──────────────────────────────────────────────────────────
 export function AnimFrontalLift() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes frontalRise {
-          0%,100%{transform:translateY(0)}
-          50%{transform:translateY(-4px)}
-        }
-        .frontal { animation: frontalRise 5s ease-in-out infinite; }
+        @keyframes fl { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+        .fl-hand { animation:fl 4s ease-in-out infinite; }
       `}</style>
-
-      <rect x="10" y="148" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-      <rect x="108" y="110" width="24" height="22" rx="6" fill="#232d4a" opacity="0.8" />
-
-      {/* Cráneo base */}
-      <ellipse cx="120" cy="74" rx="46" ry="38" fill="#232d4a" opacity="0.85" />
-
-      {/* Frontal */}
-      <g className="frontal">
-        <path d="M76,58 Q90,44 120,42 Q150,44 164,58 Q140,50 120,50 Q100,50 76,58 Z"
-          fill="#f59e0b" opacity="0.45" />
-        <path d="M76,58 Q90,44 120,42 Q150,44 164,58"
-          fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
-        <text x="120" y="52" textAnchor="middle" fontSize="7" fill="#f59e0b" fontFamily="system-ui" fontWeight="600">Frontal</text>
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <line x1="55" y1="118" x2="195" y2="118" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <ellipse cx="205" cy="118" rx="12" ry="6" fill={C.shoes} />
+      <circle cx="40" cy="115" r="17" fill={C.skin} />
+      <ellipse cx="40" cy="106" rx="16" ry="10" fill={C.hair} />
+      <circle cx="35" cy="113" r="2.5" fill="#1C1C1E" />
+      <circle cx="45" cy="113" r="2.5" fill="#1C1C1E" />
+      {/* Frontal bone highlight */}
+      <rect x="28" y="104" width="24" height="8" rx="4" fill="#FDE68A" opacity="0.7" />
+      <text x="40" y="110" textAnchor="middle" fontSize="6" fontWeight="700" fill="#92400E">Frontal</text>
+      <g className="fl-hand">
+        <ellipse cx="40" cy="99" rx="20" ry="7" fill={T.skin} opacity="0.9" stroke={T.contact} strokeWidth="1.5" />
       </g>
-
-      {/* Pulgares sobre frontal */}
-      <ellipse cx="100" cy="56" rx="12" ry="6" fill="#3362ff" opacity="0.7" className="frontal" />
-      <ellipse cx="140" cy="56" rx="12" ry="6" fill="#3362ff" opacity="0.7" className="frontal" />
-
-      {/* Dirección del lift */}
-      <path d="M120,44 L120,32" stroke="#3362ff" strokeWidth="2" strokeDasharray="3 2" className="frontal" />
-      <polygon points="116,32 124,32 120,25" fill="#3362ff" className="frontal" />
-
-      {/* Terapeuta */}
-      <circle cx="120" cy="150" r="12" fill="#364060" />
-
-      {/* Face features */}
-      <circle cx="108" cy="78" r="3" fill="#364060" opacity="0.6" />
-      <circle cx="132" cy="78" r="3" fill="#364060" opacity="0.6" />
-      <path d="M112,92 Q120,98 128,92" stroke="#364060" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.5" />
-
-      <text x="120" y="175" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        Elevación del Frontal
-      </text>
+      <ContactPulse cx={40} cy={105} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Lift Frontal</text>
     </svg>
   );
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// 🟠 ESTRUCTURAL
-// ══════════════════════════════════════════════════════════════════════════════
-
-/** HVLA Lumbar Roll — thrust lumbar */
+// ─── 8. HVLA Lumbar Roll ──────────────────────────────────────────────────────
 export function AnimHVLALumbarRoll() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes hvlaThrust {
-          0%,85%,100%{transform:rotate(0deg)}
-          90%{transform:rotate(18deg)}
-          95%{transform:rotate(-5deg)}
-        }
-        @keyframes flashImpact {
-          0%,85%,100%{opacity:0}
-          90%,94%{opacity:1}
-        }
-        .hvla-twist { animation: hvlaThrust 3s ease-in-out infinite; transform-origin: 120px 110px; }
-        .impact     { animation: flashImpact 3s ease-in-out infinite; }
+        @keyframes hvla { 0%,100%{transform:rotate(0deg)} 45%{transform:rotate(8deg)} 55%{transform:rotate(8deg)} 60%{transform:rotate(-2deg)} 100%{transform:rotate(0deg)} }
+        .hvla-body { animation:hvla 4s ease-in-out infinite; transform-origin:110px 128px; }
       `}</style>
-
-      <rect x="10" y="148" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Paciente en decúbito lateral */}
-      <g className="hvla-twist">
-        <rect x="50" y="100" width="140" height="20" rx="9" fill="#232d4a" opacity="0.85" />
-        {/* Pelvis */}
-        <ellipse cx="165" cy="110" rx="22" ry="14" fill="#364060" />
-        {/* Piernas */}
-        <rect x="170" y="105" width="44" height="13" rx="6" fill="#232d4a" />
-        <rect x="170" y="116" width="44" height="12" rx="5" fill="#232d4a" opacity="0.8" />
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      {/* Side-lying patient */}
+      <g className="hvla-body">
+        <circle cx="28" cy="115" r="14" fill={C.skin} />
+        <ellipse cx="28" cy="108" rx="13" ry="8" fill={C.hair} />
+        <circle cx="23" cy="113" r="2" fill="#1C1C1E" />
+        <circle cx="33" cy="113" r="2" fill="#1C1C1E" />
+        <line x1="42" y1="116" x2="105" y2="120" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+        <rect x="105" y="114" width="40" height="14" rx="6" fill={C.highlight} opacity="0.5" />
+        <line x1="142" y1="120" x2="185" y2="135" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+        <line x1="130" y1="120" x2="160" y2="148" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <ellipse cx="190" cy="138" rx="12" ry="5" fill={C.shoes} />
+        <ellipse cx="164" cy="152" rx="12" ry="5" fill={C.shoes} />
       </g>
-      {/* Cabeza */}
-      <circle cx="46" cy="110" r="14" fill="#232d4a" />
-
-      {/* Flash de impacto */}
-      <circle cx="135" cy="110" r="16" fill="#f59e0b" className="impact" opacity="0" />
-
-      {/* Terapeuta — manos en posición */}
-      <circle cx="120" cy="44" r="13" fill="#364060" />
-      <rect x="102" y="56" width="36" height="32" rx="8" fill="#364060" opacity="0.9" />
-
-      {/* Mano anterior (hombro) */}
-      <ellipse cx="80" cy="106" rx="20" ry="9" fill="#3362ff" opacity="0.75" />
-      {/* Mano posterior (pelvis) */}
-      <ellipse cx="164" cy="106" rx="20" ry="9" fill="#3362ff" opacity="0.75" />
-
-      {/* Brazos del terapeuta */}
-      <rect x="106" y="86" width="10" height="24" rx="4" fill="#364060" />
-      <rect x="124" y="86" width="10" height="24" rx="4" fill="#364060" />
-
-      {/* Flecha de HVLA */}
-      <text x="160" y="80" fontSize="8" fill="#ef4444" fontFamily="system-ui" fontWeight="700">HVLA →</text>
-      <path d="M158,84 L168,92" stroke="#ef4444" strokeWidth="2" fill="none" />
-
-      <text x="120" y="168" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        HVLA — Thrust Lumbar en Roll
-      </text>
+      {/* Therapist hands on pelvis/lumbar */}
+      <TherapistHand cx={118} cy={108} />
+      <TherapistHand cx={118} cy={130} angle={180} />
+      <ContactPulse cx={118} cy={118} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>HVLA Lumbar Roll</text>
     </svg>
   );
 }
 
-/** Muscle Energy Sacrum — MET sacro */
+// ─── 9. Muscle Energy Sacrum ──────────────────────────────────────────────────
 export function AnimMuscleEnergySacrum() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes contract {
-          0%,100%{transform:rotate(0deg)}
-          40%,60%{transform:rotate(-12deg)}
-        }
-        @keyframes counterforce {
-          0%,100%{transform:translateX(0)}
-          40%,60%{transform:translateX(-8px)}
-        }
-        .leg-contract  { animation: contract     3s ease-in-out infinite; transform-origin: 140px 126px; }
-        .hand-counter  { animation: counterforce 3s ease-in-out infinite; }
+        @keyframes mes { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+        .mes-sacrum { animation:mes 3s ease-in-out infinite; }
       `}</style>
-
-      <rect x="10" y="148" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Paciente prono */}
-      <rect x="20" y="100" width="155" height="20" rx="9" fill="#232d4a" opacity="0.85" />
-      <circle cx="14" cy="110" r="13" fill="#232d4a" />
-      <rect x="20" y="118" width="155" height="6" rx="3" fill="#9ba5be" opacity="0.2" />
-
-      {/* Sacro highlight */}
-      <ellipse cx="138" cy="110" rx="18" ry="10" fill="#f59e0b" opacity="0.3">
-        <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
-      </ellipse>
-      <text x="140" y="90" textAnchor="middle" fontSize="8" fill="#f59e0b" fontFamily="system-ui">Sacro</text>
-
-      {/* Pierna contraída */}
-      <g className="leg-contract">
-        <rect x="144" y="100" width="14" height="44" rx="6" fill="#3362ff" opacity="0.85" />
-        <circle cx="151" cy="146" r="8" fill="#8b5cf6" />
-        <rect x="144" y="152" width="14" height="18" rx="5" fill="#3362ff" opacity="0.75" />
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <SupinePatient />
+      {/* Sacrum area */}
+      <rect x="88" y="128" width="44" height="16" rx="7" fill="#FDE68A" opacity="0.5" />
+      <text x="110" y="139" textAnchor="middle" fontSize="6.5" fontWeight="700" fill="#92400E">Sacro</text>
+      <g className="mes-sacrum">
+        <TherapistHand cx={98} cy={118} angle={-10} />
+        <TherapistHand cx={122} cy={118} angle={10} />
       </g>
-
-      {/* Segunda pierna estática */}
-      <rect x="120" y="118" width="14" height="30" rx="6" fill="#232d4a" />
-
-      {/* Mano del terapeuta — contrafuerza en talón */}
-      <g className="hand-counter">
-        <ellipse cx="180" cy="145" rx="20" ry="8" fill="#3362ff" opacity="0.7" />
-      </g>
-
-      {/* Terapeuta */}
-      <circle cx="204" cy="64" r="13" fill="#364060" />
-      <rect x="186" y="76" width="36" height="30" rx="8" fill="#364060" opacity="0.9" />
-      <rect x="190" y="104" width="10" height="34" rx="4" fill="#364060" />
-      <rect x="202" y="104" width="10" height="34" rx="4" fill="#364060" />
-
-      {/* Labels */}
-      <text x="190" y="130" fontSize="7" fill="#3362ff" fontFamily="system-ui">← Contrafuerza</text>
-      <text x="155" y="100" fontSize="7" fill="#8b5cf6" fontFamily="system-ui">Contracción</text>
-
-      <text x="110" y="168" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        MET — Muscle Energy para Sacro
-      </text>
+      <ContactPulse cx={110} cy={128} />
+      <line x1="110" y1="92" x2="110" y2="50" stroke={T.shirt} strokeWidth="14" strokeLinecap="round" />
+      <circle cx="110" cy="41" r="11" fill={T.skin} />
+      <ellipse cx="110" cy="35" rx="10" ry="7" fill={T.shoes} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Energía Muscular — Sacro</text>
     </svg>
   );
 }
 
-/** Thoracic Thrust — thrust torácico */
+// ─── 10. Thoracic Thrust ──────────────────────────────────────────────────────
 export function AnimThoracicThrust() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes thrustDown {
-          0%,80%,100%{transform:translateY(0)}
-          88%{transform:translateY(14px)}
-          94%{transform:translateY(-4px)}
-        }
-        @keyframes impactFlash {
-          0%,80%,100%{opacity:0}
-          88%,92%{opacity:0.9}
-        }
-        .thrust-hands { animation: thrustDown  3s ease-in-out infinite; }
-        .impact-ring  { animation: impactFlash 3s ease-in-out infinite; }
+        @keyframes tt { 0%,100%{transform:translateY(0)} 45%{transform:translateY(-6px)} 55%{transform:translateY(-6px)} 62%{transform:translateY(0)} }
+        .tt-thrust { animation:tt 3.5s ease-in-out infinite; }
       `}</style>
-
-      <rect x="10" y="148" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Paciente supino */}
-      <rect x="20" y="100" width="200" height="20" rx="9" fill="#232d4a" opacity="0.85" />
-      <circle cx="14" cy="110" r="13" fill="#232d4a" />
-
-      {/* Mesa */}
-      <rect x="10" y="118" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.4" />
-
-      {/* Torácica highlight */}
-      <rect x="85" y="92" width="70" height="28" rx="8" fill="#3362ff" opacity="0.2">
-        <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite" />
-      </rect>
-      <text x="120" y="85" textAnchor="middle" fontSize="8" fill="#3362ff" fontFamily="system-ui">T4–T8</text>
-
-      {/* Flash de impacto */}
-      <circle cx="120" cy="108" r="22" fill="none" stroke="#f59e0b" strokeWidth="3"
-        className="impact-ring" opacity="0" />
-
-      {/* Terapeuta sobre el paciente */}
-      <circle cx="120" cy="44" r="13" fill="#364060" />
-      <rect x="102" y="56" width="36" height="28" rx="8" fill="#364060" opacity="0.9" />
-
-      {/* Manos del terapeuta */}
-      <g className="thrust-hands">
-        <rect x="96" y="82" width="48" height="16" rx="7" fill="#3362ff" opacity="0.85" />
-        <ellipse cx="120" cy="90" rx="30" ry="8" fill="#3362ff" opacity="0.6" />
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <SupinePatient />
+      {/* Thoracic spine */}
+      <rect x="60" y="108" width="80" height="14" rx="5" fill="#A5F3FC" opacity="0.5" />
+      <text x="100" y="118" textAnchor="middle" fontSize="6.5" fontWeight="700" fill="#0E7490">T4-T6</text>
+      <g className="tt-thrust">
+        <TherapistHand cx={80} cy={100} angle={-20} />
+        <TherapistHand cx={120} cy={100} angle={20} />
+        {/* Impulse indicator */}
+        <text x="100" y="94" textAnchor="middle" fontSize="14" fill={T.contact} opacity="0.8">↓</text>
       </g>
-
-      {/* Brazo vector fuerza */}
-      <path d="M120,68 L120,80" stroke="#ef4444" strokeWidth="3" strokeLinecap="round"
-        fill="none" className="thrust-hands" />
-      <polygon points="115,80 125,80 120,88" fill="#ef4444" className="thrust-hands" />
-
-      {/* Arms */}
-      <rect x="108" y="82" width="10" height="8" rx="4" fill="#364060" />
-      <rect x="122" y="82" width="10" height="8" rx="4" fill="#364060" />
-
-      <text x="120" y="168" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        Thrust Torácico (HVLA Anterior)
-      </text>
+      <ContactPulse cx={100} cy={108} />
+      <line x1="100" y1="75" x2="100" y2="35" stroke={T.shirt} strokeWidth="14" strokeLinecap="round" />
+      <circle cx="100" cy="26" r="11" fill={T.skin} />
+      <ellipse cx="100" cy="20" rx="10" ry="7" fill={T.shoes} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Thrust Torácico</text>
     </svg>
   );
 }
 
-/** Counterstrain — tensión y contratensión */
+// ─── 11. Counterstrain ────────────────────────────────────────────────────────
 export function AnimCounterstrain() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes positionFind {
-          0%,100%{transform:rotate(0deg)}
-          20%,40%{transform:rotate(-8deg)}
-          60%,80%{transform:rotate(4deg)}
-        }
-        @keyframes tenderPulse {
-          0%,100%{opacity:0.3;r:8}
-          50%{opacity:0.7;r:12}
-        }
-        .position-body { animation: positionFind 6s ease-in-out infinite; transform-origin: 110px 110px; }
+        @keyframes cs2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(10deg)} }
+        .cs2-leg { animation:cs2 4s ease-in-out infinite; transform-origin:165px 118px; }
       `}</style>
-
-      <rect x="10" y="148" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Paciente supino */}
-      <g className="position-body">
-        <rect x="30" y="100" width="175" height="20" rx="9" fill="#232d4a" opacity="0.85" />
-        {/* Piernas en posición de comfort */}
-        <rect x="155" y="100" width="50" height="12" rx="5" fill="#232d4a" />
-        <rect x="155" y="110" width="44" height="10" rx="5" fill="#232d4a" opacity="0.8" />
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <SupinePatient />
+      {/* One leg in flexion (counterstrain position) */}
+      <g className="cs2-leg">
+        <line x1="165" y1="118" x2="175" y2="152" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+        <circle cx="175" cy="152" r="8" fill={C.pants} />
+        <line x1="175" y1="152" x2="190" y2="152" stroke={C.pants} strokeWidth="12" strokeLinecap="round" />
+        <ellipse cx="194" cy="152" rx="12" ry="6" fill={C.shoes} />
       </g>
-      <circle cx="24" cy="110" r="13" fill="#232d4a" />
-
       {/* Tender point */}
-      <circle cx="108" cy="107" r="8" fill="#ef4444" opacity="0.3">
-        <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <text x="108" y="88" textAnchor="middle" fontSize="7" fill="#ef4444" fontFamily="system-ui">Tender point</text>
-
-      {/* Terapeuta */}
-      <circle cx="196" cy="52" r="13" fill="#364060" />
-      <rect x="178" y="64" width="36" height="30" rx="8" fill="#364060" opacity="0.9" />
-
-      {/* Mano monitorizando */}
-      <ellipse cx="108" cy="106" rx="16" ry="7" fill="#3362ff" opacity="0.6" />
-      <rect x="180" y="92" width="10" height="22" rx="4" fill="#364060" />
-      <rect x="192" y="92" width="10" height="22" rx="4" fill="#364060" />
-
-      {/* Legend */}
-      <rect x="32" y="30" width="80" height="34" rx="6" fill="#232d4a" opacity="0.6" />
-      <text x="72" y="44" textAnchor="middle" fontSize="7" fill="#10b981" fontFamily="system-ui">1. Posición comfort</text>
-      <text x="72" y="54" textAnchor="middle" fontSize="7" fill="#10b981" fontFamily="system-ui">2. Monitor 90s</text>
-      <text x="72" y="64" textAnchor="middle" fontSize="7" fill="#10b981" fontFamily="system-ui">3. Retorno lento</text>
-
-      <text x="120" y="168" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        Counterstrain — Tensión y Contratensión
-      </text>
+      <ContactPulse cx={135} cy={118} />
+      <text x="135" y="112" textAnchor="middle" fontSize="6" fontWeight="700" fill="#B45309">TP</text>
+      <TherapistHand cx={135} cy={106} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Counterstrain</text>
     </svg>
   );
 }
 
-/** MET Cervical — muscle energy cervical */
+// ─── 12. MET Cervical ─────────────────────────────────────────────────────────
 export function AnimMETCervical() {
   return (
-    <svg viewBox="0 0 240 180" className="w-full h-full">
+    <svg viewBox="0 0 220 175" className="w-full h-full">
       <style>{`
-        @keyframes headRotate {
-          0%,100%{transform:rotate(0deg)}
-          30%,70%{transform:rotate(18deg)}
-        }
-        @keyframes handResist {
-          0%,100%{transform:translateX(0)}
-          30%,70%{transform:translateX(10px)}
-        }
-        .head-rotate  { animation: headRotate 4s ease-in-out infinite; transform-origin: 120px 72px; }
-        .hand-resist  { animation: handResist 4s ease-in-out infinite; }
+        @keyframes metc { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-12deg)} }
+        .metc-head { animation:metc 3s ease-in-out infinite; transform-origin:40px 115px; }
       `}</style>
-
-      <rect x="10" y="148" width="220" height="8" rx="3" fill="#9ba5be" opacity="0.3" />
-
-      {/* Torso sentado */}
-      <rect x="86" y="110" width="68" height="38" rx="10" fill="#232d4a" opacity="0.85" />
-
-      {/* Cabeza — rotación */}
-      <g className="head-rotate">
-        <rect x="104" y="88" width="32" height="24" rx="6" fill="#232d4a" opacity="0.85" />
-        <circle cx="120" cy="68" r="22" fill="#232d4a" opacity="0.9" />
-        {/* Nariz indicadora */}
-        <circle cx="130" cy="65" r="3.5" fill="#364060" opacity="0.7" />
+      <rect width="220" height="175" fill={C.bg} rx="12" />
+      <Mat />
+      <line x1="55" y1="118" x2="195" y2="118" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <ellipse cx="205" cy="118" rx="12" ry="6" fill={C.shoes} />
+      {/* Animated head — neck rotation */}
+      <g className="metc-head">
+        <circle cx="40" cy="115" r="17" fill={C.skin} />
+        <ellipse cx="40" cy="106" rx="16" ry="10" fill={C.hair} />
+        <circle cx="35" cy="113" r="2.5" fill="#1C1C1E" />
+        <circle cx="45" cy="113" r="2.5" fill="#1C1C1E" />
+        <path d="M36,122 Q40,126 44,122" stroke="#1C1C1E" strokeWidth="1.8" fill="none" strokeLinecap="round" />
       </g>
-
-      {/* Terapeuta detrás */}
-      <circle cx="120" cy="150" r="12" fill="#364060" />
-
-      {/* Mano del terapeuta resistiendo la rotación */}
-      <g className="hand-resist">
-        <ellipse cx="148" cy="68" rx="16" ry="9" fill="#3362ff" opacity="0.75" />
-      </g>
-
-      {/* Mano estabilizando hombro */}
-      <ellipse cx="84" cy="118" rx="18" ry="7" fill="#364060" opacity="0.6" />
-
-      {/* Flecha de contrafuerza */}
-      <text x="172" y="60" fontSize="7" fill="#3362ff" fontFamily="system-ui">← Resistencia</text>
-      <text x="172" y="70" fontSize="7" fill="#ef4444" fontFamily="system-ui">→ Contracción</text>
-
       {/* Cervical highlight */}
-      <rect x="110" y="88" width="20" height="24" rx="5" fill="#f59e0b" opacity="0.2">
-        <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite" />
-      </rect>
-
-      <text x="120" y="175" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">
-        MET Cervical — Muscle Energy
-      </text>
+      <rect x="32" y="128" width="16" height="10" rx="4" fill={T.contact} opacity="0.5" />
+      <text x="40" y="136" textAnchor="middle" fontSize="6" fontWeight="700" fill="#B45309">C1-C4</text>
+      {/* Therapist hands */}
+      <TherapistHand cx={20} cy={115} angle={-20} />
+      <TherapistHand cx={60} cy={115} angle={20} />
+      <ContactPulse cx={40} cy={128} />
+      <text x="110" y="172" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>TEM — Cervical</text>
     </svg>
   );
 }
-
-// ─── Registry ─────────────────────────────────────────────────────────────────
-export const OSTEOPATHY_ANIMATIONS: Record<string, React.FC> = {
-  // Visceral
-  "hepatic-pump":         AnimHepaticPump,
-  "mesenteric-release":   AnimMesentericRelease,
-  "kidney-mobilization":  AnimKidneyMobilization,
-  "colon-release":        AnimColonRelease,
-  // Craneal
-  "cv4":                  AnimCV4,
-  "sbs":                  AnimSBS,
-  "frontal-lift":         AnimFrontalLift,
-  // Estructural
-  "hvla-lumbar-roll":     AnimHVLALumbarRoll,
-  "met-sacrum":           AnimMuscleEnergySacrum,
-  "thoracic-thrust":      AnimThoracicThrust,
-  "counterstrain":        AnimCounterstrain,
-  "met-cervical":         AnimMETCervical,
-};

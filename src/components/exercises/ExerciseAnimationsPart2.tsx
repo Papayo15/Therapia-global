@@ -1,850 +1,805 @@
 "use client";
 
 /**
- * ExerciseAnimations — Part 2
- * ─────────────────────────────────────────────────────────────────────────────
- * 🟡 PELOTA TERAPÉUTICA (5 exercises)
- * 🔴 LIGAS / BANDAS (5 exercises)
- * 🔵 MANCUERNAS / PESAS (5 exercises)
- * 🟢 PESO CORPORAL (5 exercises)
- * 🟠 BOSU / FITBALL (5 exercises)
- * ─────────────────────────────────────────────────────────────────────────────
+ * ExerciseAnimations — Part 2 (25 exercises)
+ * Equipment-based exercises using "Thera" mascot.
  */
 
-import { PilatesBall, ExerciseMat, ResistanceBand, Dumbbell, StepBox, FoamRoller } from "./Equipment";
+import { C, Face, Arc } from "./ExerciseCharacter";
 
-// ══════════════════════════════════════════════════════════════════════════════
-// 🟡 PELOTA TERAPÉUTICA
-// ══════════════════════════════════════════════════════════════════════════════
+// ─── Shared helpers ───────────────────────────────────────────────────────────
+function Ground() { return <ellipse cx="100" cy="186" rx="60" ry="7" fill={C.ground} />; }
+function Mat() { return <rect x="20" y="176" width="160" height="10" rx="5" fill="#A7F3D0" />; }
 
-/** Ball Bridge — glúteos + core */
+function StandLegs() {
+  return (
+    <g>
+      <line x1="84" y1="112" x2="82" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <line x1="82" y1="148" x2="82" y2="177" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+      <circle cx="82" cy="148" r="8" fill={C.pants} />
+      <ellipse cx="82" cy="180" rx="14" ry="6" fill={C.shoes} />
+      <line x1="116" y1="112" x2="118" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <line x1="118" y1="148" x2="118" y2="177" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+      <circle cx="118" cy="148" r="8" fill={C.pants} />
+      <ellipse cx="118" cy="180" rx="14" ry="6" fill={C.shoes} />
+    </g>
+  );
+}
+function StandTorso() {
+  return <path d="M74,52 L70,106 L130,106 L126,52 Q113,47 100,47 Q87,47 74,52Z" fill={C.shirt} />;
+}
+function StandArms() {
+  return (
+    <g>
+      <line x1="74" y1="58" x2="58" y2="93" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <line x1="58" y1="93" x2="56" y2="118" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+      <circle cx="56" cy="122" r="7" fill={C.skin} />
+      <line x1="126" y1="58" x2="142" y2="93" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <line x1="142" y1="93" x2="144" y2="118" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+      <circle cx="144" cy="122" r="7" fill={C.skin} />
+    </g>
+  );
+}
+function NeckFace() {
+  return (
+    <g>
+      <rect x="95" y="43" width="10" height="9" rx="3" fill={C.skin} />
+      <Face x={100} y={25} />
+    </g>
+  );
+}
+function DB({ x, y }: { x: number; y: number }) {
+  return (
+    <g fill={C.equipment}>
+      <rect x={x - 2} y={y - 12} width="4" height="24" rx="2" />
+      <rect x={x - 7} y={y - 14} width="14" height="7" rx="3" />
+      <rect x={x - 7} y={y + 7} width="14" height="7" rx="3" />
+    </g>
+  );
+}
+function Band({ x1, y1, x2, y2 }: { x1: number | string; y1: number | string; x2: number | string; y2: number | string }) {
+  return <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#EF4444" strokeWidth="5" strokeLinecap="round" />;
+}
+function Ball({ cx, cy, r = 26 }: { cx: number; cy: number; r?: number }) {
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={r} fill="#FDE68A" stroke="#F59E0B" strokeWidth="2" />
+      <ellipse cx={cx - r * 0.25} cy={cy - r * 0.25} rx={r * 0.2} ry={r * 0.15} fill="white" opacity="0.4" />
+    </g>
+  );
+}
+function Bosu({ cx = 100, y = 175 }: { cx?: number; y?: number }) {
+  return (
+    <g>
+      <rect x={cx - 40} y={y} width="80" height="8" rx="3" fill="#374151" />
+      <ellipse cx={cx} cy={y} rx="40" ry="18" fill="#60A5FA" />
+      <ellipse cx={cx} cy={y} rx="28" ry="12" fill="#93C5FD" opacity="0.5" />
+    </g>
+  );
+}
+
+// ─── 1. Ball Bridge ───────────────────────────────────────────────────────────
 export function AnimBallBridge() {
   return (
-    <svg viewBox="0 0 220 160" className="w-full h-full">
+    <svg viewBox="0 0 220 170" className="w-full h-full">
       <style>{`
-        @keyframes bridgeUp { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-22px)} }
-        .bridge-hips { animation: bridgeUp 2.2s ease-in-out infinite; }
+        @keyframes bb_h { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-22px)} }
+        .bb-h { animation:bb_h 2.5s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={110} y={148} width={210} height={10} />
-      <PilatesBall cx={155} cy={120} r={22} />
-      {/* Lying body */}
-      <rect x="18" y="92" width="82" height="20" rx="8" fill="#232d4a" opacity="0.9" />
-      <circle cx="12" cy="102" r="12" fill="#232d4a" />
-      {/* Arms on floor */}
-      <rect x="30" y="108" width="30" height="8" rx="4" fill="#232d4a" opacity="0.6" />
-      <rect x="56" y="108" width="30" height="8" rx="4" fill="#232d4a" opacity="0.6" />
-      {/* Hips elevating */}
-      <g className="bridge-hips">
-        <rect x="96" y="82" width="28" height="22" rx="8" fill="#3362ff" opacity="0.9" />
-        {/* Thighs on ball */}
-        <rect x="120" y="90" width="38" height="14" rx="6" fill="#232d4a" />
-        {/* Calves on ball */}
-        <rect x="154" y="96" width="30" height="12" rx="5" fill="#232d4a" />
+      <rect width="220" height="170" fill={C.bg} rx="12" />
+      <Mat />
+      <circle cx="22" cy="115" r="13" fill={C.skin} />
+      <ellipse cx="22" cy="108" rx="12" ry="8" fill={C.hair} />
+      <circle cx="17" cy="113" r="2" fill="#1C1C1E" />
+      <circle cx="27" cy="113" r="2" fill="#1C1C1E" />
+      <line x1="35" y1="112" x2="75" y2="112" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <g className="bb-h">
+        <rect x="75" y="104" width="36" height="18" rx="8" fill={C.highlight} />
+        <line x1="80" y1="115" x2="80" y2="140" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <line x1="80" y1="140" x2="95" y2="140" stroke={C.pants} strokeWidth="12" strokeLinecap="round" />
+        <line x1="107" y1="115" x2="107" y2="140" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <line x1="107" y1="140" x2="122" y2="140" stroke={C.pants} strokeWidth="12" strokeLinecap="round" />
+        <ellipse cx="97" cy="140" rx="10" ry="5" fill={C.shoes} />
+        <ellipse cx="124" cy="140" rx="10" ry="5" fill={C.shoes} />
       </g>
-      {/* Hip highlight */}
-      <circle cx="110" cy="96" r="14" fill="#f59e0b" opacity="0.15">
-        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2.2s" repeatCount="indefinite" />
-      </circle>
-      <text x="110" y="157" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Ball Bridge — Glutes + Core</text>
+      <Ball cx={158} cy={140} r={22} />
+      <line x1="122" y1="138" x2="136" y2="140" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+      <text x="110" y="166" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Puente con Balón</text>
     </svg>
   );
 }
 
-/** Ball Hamstring Curl — isquiotibiales */
+// ─── 2. Ball Hamstring Curl ───────────────────────────────────────────────────
 export function AnimBallHamstringCurl() {
   return (
-    <svg viewBox="0 0 220 160" className="w-full h-full">
+    <svg viewBox="0 0 220 170" className="w-full h-full">
       <style>{`
-        @keyframes curl { 0%,100%{transform:translateX(0) rotate(0)} 50%{transform:translateX(-30px) rotate(-25deg)} }
-        .curl-legs { animation: curl 2s ease-in-out infinite; transform-origin: 120px 110px; }
+        @keyframes bhc { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-45deg)} }
+        .bhc-legs { animation:bhc 2.5s ease-in-out infinite; transform-origin:88px 110px; }
       `}</style>
-      <ExerciseMat x={110} y={148} width={210} height={10} />
-      {/* Body lying */}
-      <rect x="18" y="90" width="80" height="20" rx="8" fill="#232d4a" opacity="0.9" />
-      <circle cx="12" cy="100" r="12" fill="#232d4a" />
-      <rect x="94" y="88" width="24" height="22" rx="8" fill="#3362ff" opacity="0.8" />
-      {/* Arms on floor */}
-      <rect x="30" y="106" width="60" height="8" rx="4" fill="#232d4a" opacity="0.6" />
-      {/* Legs with ball */}
-      <g className="curl-legs">
-        <rect x="116" y="92" width="52" height="14" rx="6" fill="#232d4a" />
-        <PilatesBall cx={185} cy={104} r={18} />
+      <rect width="220" height="170" fill={C.bg} rx="12" />
+      <Mat />
+      <circle cx="22" cy="110" r="13" fill={C.skin} />
+      <ellipse cx="22" cy="103" rx="12" ry="8" fill={C.hair} />
+      <circle cx="17" cy="108" r="2" fill="#1C1C1E" />
+      <circle cx="27" cy="108" r="2" fill="#1C1C1E" />
+      <line x1="35" y1="110" x2="88" y2="110" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <rect x="80" y="104" width="38" height="14" rx="7" fill={C.highlight} />
+      <g className="bhc-legs">
+        <line x1="88" y1="110" x2="130" y2="110" stroke={C.highlight} strokeWidth="16" strokeLinecap="round" />
+        <circle cx="130" cy="110" r="8" fill={C.highlight} />
+        <line x1="130" y1="110" x2="160" y2="110" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
       </g>
-      <text x="110" y="157" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Ball Hamstring Curl</text>
+      <Ball cx={165} cy={120} r={22} />
+      <text x="110" y="165" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Curl Isquios c/Balón</text>
     </svg>
   );
 }
 
-/** Ball Push-Up — pectorales + estabilización */
+// ─── 3. Ball Push Up ──────────────────────────────────────────────────────────
 export function AnimBallPushUp() {
   return (
-    <svg viewBox="0 0 220 180" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes pushUp { 0%,100%{transform:translateY(8px)} 50%{transform:translateY(-8px)} }
-        .pushup-body { animation: pushUp 1.8s ease-in-out infinite; }
+        @keyframes bpu3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+        .bpu3-body { animation:bpu3 2s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={110} y={168} width={210} height={10} />
-      <PilatesBall cx={110} cy={135} r={26} />
-      <g className="pushup-body">
-        {/* Head */}
-        <circle cx="28" cy="90" r="12" fill="#232d4a" />
-        {/* Torso prone */}
-        <rect x="38" y="84" width="80" height="18" rx="8" fill="#232d4a" opacity="0.9" />
-        {/* Arms on ball */}
-        <rect x="82" y="96" width="14" height="26" rx="6" fill="#232d4a" />
-        <rect x="104" y="96" width="14" height="26" rx="6" fill="#232d4a" />
-        {/* Legs extended */}
-        <rect x="116" y="84" width="60" height="14" rx="6" fill="#232d4a" />
-        <ellipse cx="180" cy="91" rx="12" ry="6" fill="#232d4a" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Ball cx={55} cy={148} r={26} />
+      <g className="bpu3-body">
+        <circle cx="158" cy="98" r="13" fill={C.skin} />
+        <ellipse cx="158" cy="91" rx="12" ry="8" fill={C.hair} />
+        <circle cx="153" cy="96" r="2" fill="#1C1C1E" />
+        <circle cx="163" cy="96" r="2" fill="#1C1C1E" />
+        <line x1="145" y1="102" x2="86" y2="122" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+        <line x1="86" y1="122" x2="56" y2="124" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <line x1="145" y1="108" x2="152" y2="148" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <line x1="160" y1="106" x2="168" y2="148" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <ellipse cx="152" cy="150" rx="12" ry="5" fill={C.shoes} />
+        <ellipse cx="168" cy="150" rx="12" ry="5" fill={C.shoes} />
       </g>
-      <text x="110" y="176" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Ball Push-Up (Unstable)</text>
+      <text x="100" y="175" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Push-Up con Balón</text>
     </svg>
   );
 }
 
-/** Ball Lumbar Extension — columna lumbar */
+// ─── 4. Ball Lumbar Extension ─────────────────────────────────────────────────
 export function AnimBallLumbarExtension() {
   return (
-    <svg viewBox="0 0 220 180" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes lumbarExt { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-22deg)} }
-        .lumbar-ext { animation: lumbarExt 2.8s ease-in-out infinite; transform-origin: 92px 112px; }
+        @keyframes ble2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-22deg)} }
+        .ble2-upper { animation:ble2 3s ease-in-out infinite; transform-origin:100px 118px; }
       `}</style>
-      <ExerciseMat x={110} y={170} width={210} height={10} />
-      <PilatesBall cx={110} cy={128} r={30} />
-      <g className="lumbar-ext">
-        {/* Upper body draping over ball */}
-        <rect x="40" y="95" width="56" height="20" rx="8" fill="#232d4a" opacity="0.9" />
-        <circle cx="32" cy="105" r="12" fill="#232d4a" />
-        {/* Arms crossed on chest */}
-        <rect x="44" y="108" width="28" height="8" rx="4" fill="#364060" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Ball cx={100} cy={148} r={32} />
+      <line x1="68" y1="138" x2="132" y2="138" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <ellipse cx="64" cy="148" rx="13" ry="5" fill={C.shoes} />
+      <ellipse cx="136" cy="148" rx="13" ry="5" fill={C.shoes} />
+      <rect x="78" y="118" width="44" height="14" rx="6" fill={C.highlight} opacity="0.35" />
+      <g className="ble2-upper">
+        <path d="M78,100 L74,130 L126,130 L122,100 Q112,95 100,95 Q88,95 78,100Z" fill={C.shirt} />
+        <rect x="95" y="90" width="10" height="9" rx="3" fill={C.skin} />
+        <Face x={100} y={73} />
       </g>
-      {/* Lower body static */}
-      <rect x="136" y="110" width="50" height="16" rx="7" fill="#232d4a" />
-      <rect x="138" y="124" width="16" height="36" rx="7" fill="#232d4a" />
-      <rect x="156" y="124" width="16" height="36" rx="7" fill="#232d4a" />
-      <ellipse cx="146" cy="162" rx="11" ry="5" fill="#232d4a" />
-      <ellipse cx="164" cy="162" rx="11" ry="5" fill="#232d4a" />
-      <text x="110" y="178" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Ball Lumbar Extension</text>
+      <text x="100" y="192" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Ext. Lumbar c/Balón</text>
     </svg>
   );
 }
 
-/** Ball Lateral Flexion — flexión lateral */
+// ─── 5. Ball Lateral Flex ─────────────────────────────────────────────────────
 export function AnimBallLateralFlex() {
   return (
-    <svg viewBox="0 0 220 180" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes lateralFlex { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-28deg)} }
-        .lat-flex { animation: lateralFlex 3s ease-in-out infinite; transform-origin: 110px 115px; }
+        @keyframes blf2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(28deg)} }
+        .blf2-upper { animation:blf2 3s ease-in-out infinite; transform-origin:100px 105px; }
       `}</style>
-      <ExerciseMat x={110} y={170} width={210} height={10} />
-      <PilatesBall cx={110} cy={132} r={28} />
-      <g className="lat-flex">
-        <rect x="82" y="70" width="56" height="18" rx="8" fill="#232d4a" opacity="0.9" />
-        <circle cx="110" cy="58" r="12" fill="#232d4a" />
-        <rect x="50" y="78" width="38" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-        <rect x="132" y="78" width="38" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-        <rect x="84" y="86" width="50" height="28" rx="8" fill="#3362ff" opacity="0.8" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Arc cx={100} cy={105} r={60} a1={-90} a2={-60} color={C.highlight} />
+      <Ground />
+      <StandLegs />
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <g className="blf2-upper">
+        <StandTorso />
+        <StandArms />
+        <NeckFace />
       </g>
-      <rect x="80" y="134" width="18" height="32" rx="8" fill="#232d4a" />
-      <rect x="122" y="134" width="18" height="32" rx="8" fill="#232d4a" />
-      <text x="110" y="178" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Ball Lateral Flexion</text>
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Flex. Lateral c/Balón</text>
     </svg>
   );
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// 🔴 LIGAS / BANDAS ELÁSTICAS
-// ══════════════════════════════════════════════════════════════════════════════
-
-/** Band Hip Abduction — abductores de cadera */
+// ─── 6. Band Hip Abduction ────────────────────────────────────────────────────
 export function AnimBandHipAbduction() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes abduct { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(28deg)} }
-        .abduct-leg { animation: abduct 2.2s ease-in-out infinite; transform-origin: 80px 150px; }
+        @keyframes bha2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(28deg)} }
+        .bha2-leg { animation:bha2 2.5s ease-in-out infinite; transform-origin:116px 112px; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={12} />
-      {/* Standing on left leg */}
-      <circle cx="100" cy="36" r="14" fill="#232d4a" />
-      <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-      <rect x="78" y="60" width="44" height="58" rx="10" fill="#232d4a" opacity="0.9" />
-      <rect x="56" y="70" width="22" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-      <rect x="122" y="70" width="22" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-      {/* Support leg */}
-      <rect x="78" y="116" width="16" height="72" rx="7" fill="#232d4a" />
-      <ellipse cx="86" cy="191" rx="11" ry="5" fill="#232d4a" />
-      {/* Abducting leg */}
-      <g className="abduct-leg">
-        <rect x="106" y="116" width="16" height="70" rx="7" fill="#3362ff" opacity="0.85" />
-        <ellipse cx="114" cy="188" rx="11" ry="5" fill="#3362ff" opacity="0.85" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Arc cx={116} cy={112} r={52} a1={88} a2={116} color={C.highlight} />
+      <Ground />
+      <line x1="84" y1="112" x2="82" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <line x1="82" y1="148" x2="82" y2="177" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+      <circle cx="82" cy="148" r="8" fill={C.pants} />
+      <ellipse cx="82" cy="180" rx="14" ry="6" fill={C.shoes} />
+      <Band x1="82" y1="152" x2="118" y2="152" />
+      <g className="bha2-leg">
+        <line x1="116" y1="112" x2="118" y2="148" stroke={C.highlight} strokeWidth="16" strokeLinecap="round" />
+        <circle cx="118" cy="148" r="8" fill={C.highlight} />
+        <line x1="118" y1="148" x2="118" y2="177" stroke={C.highlight} strokeWidth="13" strokeLinecap="round" />
+        <ellipse cx="118" cy="180" rx="14" ry="6" fill={C.shoes} />
       </g>
-      {/* Band around ankles */}
-      <line x1="87" y1="178" x2="110" y2="178" stroke="#ef4444" strokeWidth="5" strokeLinecap="round">
-        <animate attributeName="x2" values="110;130;110" dur="2.2s" repeatCount="indefinite" />
-      </line>
-      <text x="100" y="214" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Band Hip Abduction</text>
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <StandTorso />
+      <StandArms />
+      <NeckFace />
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Abd. Cadera c/Banda</text>
     </svg>
   );
 }
 
-/** Band Pull Apart — retractores escapulares */
+// ─── 7. Band Pull Apart ───────────────────────────────────────────────────────
 export function AnimBandPullApart() {
   return (
     <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes pullApart { 0%,100%{transform:scaleX(1)} 50%{transform:scaleX(1.5)} }
-        .pull-arms { animation: pullApart 2s ease-in-out infinite; transform-origin: 100px 88px; }
+        @keyframes bpa2 { 0%,100%{transform:scaleX(1)} 50%{transform:scaleX(1.3)} }
+        .bpa2-arms { animation:bpa2 2.2s ease-in-out infinite; transform-origin:100px 78px; }
       `}</style>
-      <ExerciseMat x={100} y={188} width={180} height={10} />
-      <circle cx="100" cy="36" r="14" fill="#232d4a" />
-      <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-      <rect x="78" y="60" width="44" height="58" rx="10" fill="#232d4a" opacity="0.9" />
-      <rect x="80" y="116" width="16" height="62" rx="7" fill="#232d4a" />
-      <rect x="104" y="116" width="16" height="62" rx="7" fill="#232d4a" />
-      <ellipse cx="88"  cy="181" rx="11" ry="5" fill="#232d4a" />
-      <ellipse cx="112" cy="181" rx="11" ry="5" fill="#232d4a" />
-      {/* Arms holding band */}
-      <g className="pull-arms">
-        <rect x="38" y="82" width="36" height="12" rx="5" fill="#232d4a" />
-        <rect x="126" y="82" width="36" height="12" rx="5" fill="#232d4a" />
-        {/* Band */}
-        <rect x="73" y="83" width="54" height="10" rx="4" fill="#ef4444" opacity="0.85" />
-        <ellipse cx="73"  cy="88" rx="8" ry="7" fill="#364060" />
-        <ellipse cx="127" cy="88" rx="8" ry="7" fill="#364060" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Ground />
+      <StandLegs />
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <StandTorso />
+      <g className="bpa2-arms">
+        <line x1="74" y1="68" x2="38" y2="78" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <line x1="126" y1="68" x2="162" y2="78" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <circle cx="36" cy="78" r="7" fill={C.skin} />
+        <circle cx="164" cy="78" r="7" fill={C.skin} />
+        <line x1="38" y1="78" x2="162" y2="78" stroke="#EF4444" strokeWidth="5" strokeLinecap="round" />
       </g>
-      {/* Scapula highlight */}
-      <rect x="78" y="60" width="44" height="28" rx="8" fill="#10b981" opacity="0.2">
-        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2s" repeatCount="indefinite" />
-      </rect>
-      <text x="100" y="196" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Band Pull Apart — Scapular</text>
+      <circle cx="100" cy="56" r="10" fill={C.highlight} opacity="0.3" />
+      <NeckFace />
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Apertura Pectoral c/Banda</text>
     </svg>
   );
 }
 
-/** Band Glute Kickback */
+// ─── 8. Band Glute Kickback ───────────────────────────────────────────────────
 export function AnimBandGluteKickback() {
   return (
-    <svg viewBox="0 0 220 160" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes kickback { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-50deg)} }
-        .kick-leg { animation: kickback 2s ease-in-out infinite; transform-origin: 125px 90px; }
+        @keyframes bgk2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-45deg)} }
+        .bgk2-leg { animation:bgk2 2.5s ease-in-out infinite; transform-origin:116px 112px; }
       `}</style>
-      <ExerciseMat x={110} y={148} width={210} height={10} />
-      {/* Quadruped */}
-      <circle cx="28" cy="72" r="12" fill="#232d4a" />
-      <rect x="38" y="66" width="8" height="8" rx="2" fill="#232d4a" />
-      <rect x="44" y="56" width="84" height="22" rx="9" fill="#232d4a" opacity="0.9" />
-      <rect x="40" y="78" width="12" height="30" rx="5" fill="#232d4a" />
-      <rect x="68" y="78" width="12" height="30" rx="5" fill="#232d4a" />
-      <ellipse cx="46" cy="111" rx="8" ry="5" fill="#232d4a" />
-      <ellipse cx="74" cy="111" rx="8" ry="5" fill="#232d4a" />
-      {/* Support leg */}
-      <rect x="96" y="78" width="12" height="30" rx="5" fill="#232d4a" />
-      <ellipse cx="102" cy="111" rx="8" ry="5" fill="#232d4a" />
-      {/* Kicking leg */}
-      <g className="kick-leg">
-        <rect x="119" y="72" width="38" height="12" rx="5" fill="#3362ff" opacity="0.85" />
-        <circle cx="160" cy="78" r="6" fill="#f59e0b" />
-        <rect x="162" y="72" width="8" height="22" rx="4" fill="#3362ff" opacity="0.85" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Arc cx={116} cy={112} r={50} a1={90} a2={48} color={C.highlight} />
+      <Ground />
+      <line x1="84" y1="112" x2="82" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <line x1="82" y1="148" x2="82" y2="177" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+      <circle cx="82" cy="148" r="8" fill={C.pants} />
+      <ellipse cx="82" cy="180" rx="14" ry="6" fill={C.shoes} />
+      <Band x1="82" y1="152" x2="118" y2="152" />
+      <g className="bgk2-leg">
+        <line x1="116" y1="112" x2="118" y2="148" stroke={C.highlight} strokeWidth="16" strokeLinecap="round" />
+        <circle cx="118" cy="148" r="8" fill={C.highlight} />
+        <line x1="118" y1="148" x2="118" y2="177" stroke={C.highlight} strokeWidth="13" strokeLinecap="round" />
+        <ellipse cx="118" cy="180" rx="14" ry="6" fill={C.shoes} />
       </g>
-      {/* Band from ankle to wall */}
-      <line x1="36" y1="116" x2="122" y2="88" stroke="#ef4444" strokeWidth="4" strokeLinecap="round" strokeDasharray="4 2" />
-      <rect x="28" y="105" width="10" height="22" rx="3" fill="#ef4444" opacity="0.6" />
-      <text x="110" y="156" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Band Glute Kickback</text>
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <StandTorso />
+      <StandArms />
+      <NeckFace />
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Kickback Glúteo c/Banda</text>
     </svg>
   );
 }
 
-/** Band Shoulder External Rotation (seated) */
+// ─── 9. Band Shoulder Rotation ────────────────────────────────────────────────
 export function AnimBandShoulderRotation() {
   return (
     <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes bandRotOut { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-55deg)} }
-        .band-arm { animation: bandRotOut 2.2s ease-in-out infinite; transform-origin: 88px 110px; }
+        @keyframes bsr2 { 0%,100%{transform:rotate(-30deg)} 50%{transform:rotate(30deg)} }
+        .bsr2-fore { animation:bsr2 2.2s ease-in-out infinite; transform-origin:142px 88px; }
       `}</style>
-      {/* Chair */}
-      <rect x="68" y="105" width="78" height="8" rx="3" fill="#9ba5be" opacity="0.4" />
-      <rect x="68" y="113" width="6" height="55" rx="3" fill="#9ba5be" opacity="0.3" />
-      <rect x="140" y="113" width="6" height="55" rx="3" fill="#9ba5be" opacity="0.3" />
-      <rect x="58" y="95" width="6" height="75" rx="3" fill="#9ba5be" opacity="0.3" />
-      {/* Figure seated */}
-      <circle cx="107" cy="38" r="13" fill="#232d4a" />
-      <rect x="100" y="51" width="14" height="10" rx="3" fill="#232d4a" />
-      <rect x="80" y="60" width="54" height="50" rx="10" fill="#232d4a" opacity="0.9" />
-      <rect x="78" y="106" width="60" height="16" rx="7" fill="#232d4a" />
-      <rect x="80" y="118" width="16" height="40" rx="7" fill="#232d4a" />
-      <rect x="104" y="118" width="16" height="40" rx="7" fill="#232d4a" />
-      {/* Static arm */}
-      <rect x="138" y="74" width="12" height="28" rx="5" fill="#232d4a" />
-      <rect x="138" y="100" width="12" height="22" rx="5" fill="#364060" />
-      {/* Rotating arm with band */}
-      <g className="band-arm">
-        <rect x="80" y="100" width="12" height="24" rx="5" fill="#3362ff" opacity="0.85" />
-        <ellipse cx="86" cy="127" rx="8" ry="6" fill="#364060" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Arc cx={142} cy={88} r={34} a1={-110} a2={20} color={C.highlight} />
+      <Ground />
+      <StandLegs />
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <StandTorso />
+      <line x1="74" y1="58" x2="58" y2="93" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <line x1="58" y1="93" x2="56" y2="118" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+      <circle cx="56" cy="122" r="7" fill={C.skin} />
+      <line x1="126" y1="58" x2="142" y2="88" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <Band x1="56" y1="100" x2="142" y2="88" />
+      <g className="bsr2-fore">
+        <line x1="142" y1="88" x2="170" y2="86" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+        <circle cx="172" cy="86" r="7" fill={C.skin} />
       </g>
-      {/* Band between hands */}
-      <line x1="88" y1="125" x2="142" y2="112" stroke="#ef4444" strokeWidth="4" strokeLinecap="round">
-        <animate attributeName="x1" values="88;96;88" dur="2.2s" repeatCount="indefinite" />
-        <animate attributeName="y1" values="125;108;125" dur="2.2s" repeatCount="indefinite" />
-      </line>
-      <text x="107" y="192" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Band Shoulder Rotation</text>
+      <NeckFace />
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Rotación Hombro c/Banda</text>
     </svg>
   );
 }
 
-/** Band Calf Raise */
+// ─── 10. Band Calf Raise ──────────────────────────────────────────────────────
 export function AnimBandCalfRaise() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes calfRaise { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
-        @keyframes bandTighten { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(0.7)} }
-        .calf-body  { animation: calfRaise   1.8s ease-in-out infinite; }
-        .band-tight { animation: bandTighten 1.8s ease-in-out infinite; transform-origin: 100px 175px; }
+        @keyframes bcr2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+        .bcr2-body { animation:bcr2 2s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      {/* Band anchored under foot */}
-      <g className="band-tight">
-        <ellipse cx="90"  cy="196" rx="10" ry="4" fill="#ef4444" opacity="0.7" />
-        <ellipse cx="110" cy="196" rx="10" ry="4" fill="#ef4444" opacity="0.7" />
-        <line x1="90" y1="192" x2="90"  y2="145" stroke="#ef4444" strokeWidth="4" strokeLinecap="round" />
-        <line x1="110" y1="192" x2="110" y2="145" stroke="#ef4444" strokeWidth="4" strokeLinecap="round" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Ground />
+      <g className="bcr2-body">
+        <line x1="84" y1="112" x2="82" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+        <line x1="82" y1="148" x2="82" y2="177" stroke={C.highlight} strokeWidth="13" strokeLinecap="round" />
+        <circle cx="82" cy="148" r="8" fill={C.pants} />
+        <ellipse cx="82" cy="180" rx="14" ry="6" fill={C.shoes} />
+        <line x1="116" y1="112" x2="118" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+        <line x1="118" y1="148" x2="118" y2="177" stroke={C.highlight} strokeWidth="13" strokeLinecap="round" />
+        <circle cx="118" cy="148" r="8" fill={C.pants} />
+        <ellipse cx="118" cy="180" rx="14" ry="6" fill={C.shoes} />
+        <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+        <StandTorso />
+        <line x1="74" y1="68" x2="50" y2="80" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <line x1="126" y1="68" x2="150" y2="80" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <Band x1="50" y1="80" x2="150" y2="80" />
+        <circle cx="50" cy="80" r="6" fill={C.skin} />
+        <circle cx="150" cy="80" r="6" fill={C.skin} />
+        <NeckFace />
       </g>
-      <g className="calf-body">
-        <circle cx="100" cy="36" r="14" fill="#232d4a" />
-        <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-        <rect x="78" y="60" width="44" height="58" rx="10" fill="#232d4a" opacity="0.9" />
-        <rect x="56" y="72" width="20" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-        <rect x="124" y="72" width="20" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-        <rect x="80" y="116" width="16" height="40" rx="7" fill="#232d4a" />
-        <rect x="104" y="116" width="16" height="40" rx="7" fill="#232d4a" />
-        <circle cx="88"  cy="158" r="7" fill="#8b5cf6" />
-        <circle cx="112" cy="158" r="7" fill="#8b5cf6" />
-        {/* Raised calves */}
-        <rect x="81"  y="163" width="14" height="26" rx="6" fill="#232d4a" />
-        <rect x="105" y="163" width="14" height="26" rx="6" fill="#232d4a" />
-        <ellipse cx="88"  cy="192" rx="11" ry="5" fill="#232d4a" />
-        <ellipse cx="112" cy="192" rx="11" ry="5" fill="#232d4a" />
-      </g>
-      <text x="100" y="214" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Band Calf Raise</text>
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Elevación Talones c/Banda</text>
     </svg>
   );
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// 🔵 MANCUERNAS / PESAS
-// ══════════════════════════════════════════════════════════════════════════════
-
-/** Dumbbell Bicep Curl */
+// ─── 11. Dumbbell Bicep Curl ──────────────────────────────────────────────────
 export function AnimDumbbellBicepCurl() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes curlUp { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-110deg)} }
-        @keyframes curlUpR { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(110deg)} }
-        .curl-l { animation: curlUp  1.8s ease-in-out infinite; transform-origin: 72px 100px; }
-        .curl-r { animation: curlUpR 1.8s ease-in-out infinite; transform-origin: 128px 100px; }
+        @keyframes dbc2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-110deg)} }
+        .dbc2-fore { animation:dbc2 2s ease-in-out infinite; transform-origin:142px 90px; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      <circle cx="100" cy="36" r="14" fill="#232d4a" />
-      <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-      <rect x="78" y="60" width="44" height="58" rx="10" fill="#232d4a" opacity="0.9" />
-      <rect x="80" y="116" width="16" height="44" rx="7" fill="#232d4a" />
-      <rect x="104" y="116" width="16" height="44" rx="7" fill="#232d4a" />
-      <ellipse cx="88"  cy="163" rx="11" ry="5" fill="#232d4a" />
-      <ellipse cx="112" cy="163" rx="11" ry="5" fill="#232d4a" />
-      {/* Upper arms static */}
-      <rect x="58" y="64" width="13" height="30" rx="5" fill="#232d4a" />
-      <rect x="129" y="64" width="13" height="30" rx="5" fill="#232d4a" />
-      {/* Curling forearms */}
-      <g className="curl-l">
-        <rect x="58" y="93" width="13" height="28" rx="5" fill="#3362ff" opacity="0.9" />
-        <Dumbbell x={64} y={126} angle={0} weight="medium" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Arc cx={142} cy={90} r={34} a1={80} a2={-30} color={C.highlight} />
+      <Ground />
+      <StandLegs />
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <StandTorso />
+      <line x1="74" y1="58" x2="58" y2="93" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <line x1="58" y1="93" x2="56" y2="118" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+      <circle cx="56" cy="122" r="7" fill={C.skin} />
+      <DB x={56} y={130} />
+      <line x1="126" y1="58" x2="142" y2="90" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <rect x="134" y="62" width="12" height="26" rx="6" fill={C.highlight} opacity="0.4" />
+      <g className="dbc2-fore">
+        <line x1="142" y1="90" x2="144" y2="118" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+        <circle cx="144" cy="121" r="7" fill={C.skin} />
+        <DB x={144} y={132} />
       </g>
-      <g className="curl-r">
-        <rect x="129" y="93" width="13" height="28" rx="5" fill="#3362ff" opacity="0.9" />
-        <Dumbbell x={136} y={126} angle={0} weight="medium" />
-      </g>
-      <text x="100" y="215" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Dumbbell Bicep Curl</text>
+      <NeckFace />
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Curl Bícep c/Mancuerna</text>
     </svg>
   );
 }
 
-/** Dumbbell Bent-Over Row */
+// ─── 12. Dumbbell Bent Row ────────────────────────────────────────────────────
 export function AnimDumbbellBentRow() {
   return (
     <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes bentRow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-22px)} }
-        .bent-arms { animation: bentRow 2s ease-in-out infinite; }
+        @keyframes dbr2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-30px)} }
+        .dbr2-arm { animation:dbr2 2.2s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={100} y={188} width={180} height={10} />
-      {/* Hinged figure */}
-      <circle cx="50" cy="58" r="13" fill="#232d4a" />
-      <rect x="61" y="68" width="66" height="20" rx="9" fill="#232d4a" opacity="0.9" />
-      <rect x="62" y="86" width="16" height="42" rx="7" fill="#232d4a" transform="rotate(-15,70,86)" />
-      <rect x="90" y="86" width="16" height="42" rx="7" fill="#232d4a" transform="rotate(-15,98,86)" />
-      <ellipse cx="70"  cy="130" rx="11" ry="5" fill="#232d4a" transform="rotate(-15,70,130)" />
-      <ellipse cx="98"  cy="130" rx="11" ry="5" fill="#232d4a" transform="rotate(-15,98,130)" />
-      {/* Rowing arms */}
-      <g className="bent-arms">
-        <rect x="102" y="76" width="12" height="32" rx="5" fill="#3362ff" opacity="0.9" transform="rotate(15,108,80)" />
-        <rect x="118" y="76" width="12" height="32" rx="5" fill="#3362ff" opacity="0.9" transform="rotate(15,124,80)" />
-        <Dumbbell x={110} y={115} angle={0} weight="medium" />
-        <Dumbbell x={130} y={115} angle={0} weight="medium" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Ground />
+      <StandLegs />
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      {/* Bent forward torso */}
+      <path d="M74,62 L68,106 L100,106 L100,62 Q87,57 74,62Z" fill={C.shirt} transform="rotate(40 82 90)" />
+      <circle cx="55" cy="52" r="13" fill={C.skin} />
+      <ellipse cx="55" cy="45" rx="12" ry="8" fill={C.hair} />
+      <circle cx="50" cy="50" r="2" fill="#1C1C1E" />
+      <circle cx="60" cy="50" r="2" fill="#1C1C1E" />
+      {/* Static support arm */}
+      <line x1="68" y1="82" x2="55" y2="110" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+      <circle cx="55" cy="113" r="6" fill={C.skin} />
+      {/* Pulling arm animated */}
+      <g className="dbr2-arm">
+        <line x1="112" y1="82" x2="132" y2="112" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+        <circle cx="132" cy="115" r="6" fill={C.skin} />
+        <DB x={132} y={126} />
       </g>
-      <text x="100" y="196" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Dumbbell Bent-Over Row</text>
+      <rect x="80" y="66" width="40" height="14" rx="6" fill={C.highlight} opacity="0.3" />
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Remo c/Mancuerna</text>
     </svg>
   );
 }
 
-/** Dumbbell Romanian Deadlift */
+// ─── 13. Romanian Deadlift ────────────────────────────────────────────────────
 export function AnimRomanianDeadlift() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes rdl { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(48deg)} }
-        .rdl-hinge { animation: rdl 2.5s ease-in-out infinite; transform-origin: 100px 115px; }
+        @keyframes rdl2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(48deg)} }
+        .rdl2-upper { animation:rdl2 3s ease-in-out infinite; transform-origin:100px 105px; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      <g className="rdl-hinge">
-        <circle cx="100" cy="36" r="13" fill="#232d4a" />
-        <rect x="93" y="49" width="14" height="10" rx="3" fill="#232d4a" />
-        <rect x="78" y="58" width="44" height="56" rx="10" fill="#232d4a" opacity="0.9" />
-        {/* Arms hanging with dumbbells */}
-        <rect x="66" y="90" width="12" height="38" rx="5" fill="#3362ff" opacity="0.9" />
-        <rect x="122" y="90" width="12" height="38" rx="5" fill="#3362ff" opacity="0.9" />
-        <Dumbbell x={72}  y={134} angle={0} weight="heavy" />
-        <Dumbbell x={128} y={134} angle={0} weight="heavy" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Ground />
+      <StandLegs />
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <rect x="77" y="88" width="46" height="18" rx="6" fill={C.highlight} opacity="0.25" />
+      <g className="rdl2-upper">
+        <StandTorso />
+        <line x1="74" y1="58" x2="58" y2="93" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <line x1="58" y1="93" x2="60" y2="120" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+        <circle cx="60" cy="123" r="7" fill={C.skin} />
+        <DB x={60} y={135} />
+        <line x1="126" y1="58" x2="142" y2="93" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <line x1="142" y1="93" x2="140" y2="120" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+        <circle cx="140" cy="123" r="7" fill={C.skin} />
+        <DB x={140} y={135} />
+        <rect x="95" y="43" width="10" height="9" rx="3" fill={C.skin} />
+        <Face x={100} y={25} />
       </g>
-      {/* Legs static */}
-      <rect x="82"  y="113" width="16" height="60" rx="7" fill="#232d4a" />
-      <rect x="102" y="113" width="16" height="60" rx="7" fill="#232d4a" />
-      <ellipse cx="90"  cy="176" rx="11" ry="5" fill="#232d4a" />
-      <ellipse cx="110" cy="176" rx="11" ry="5" fill="#232d4a" />
-      {/* Hamstring highlight */}
-      <rect x="82" y="115" width="36" height="55" rx="7" fill="#ef4444" opacity="0.12">
-        <animate attributeName="opacity" values="0.08;0.2;0.08" dur="2.5s" repeatCount="indefinite" />
-      </rect>
-      <text x="100" y="215" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Romanian Deadlift</text>
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Peso Muerto Rumano</text>
     </svg>
   );
 }
 
-/** Dumbbell Tricep Extension */
+// ─── 14. Tricep Extension ─────────────────────────────────────────────────────
 export function AnimTricepExtension() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes tricep { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(80deg)} }
-        .tri-l { animation: tricep 2s ease-in-out infinite; transform-origin: 72px 82px; }
-        .tri-r { animation: tricep 2s ease-in-out infinite; transform-origin: 128px 82px; }
+        @keyframes te2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(90deg)} }
+        .te2-fore { animation:te2 2s ease-in-out infinite; transform-origin:126px 40px; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      <circle cx="100" cy="36" r="14" fill="#232d4a" />
-      <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-      <rect x="78" y="60" width="44" height="58" rx="10" fill="#232d4a" opacity="0.9" />
-      <rect x="80" y="116" width="16" height="44" rx="7" fill="#232d4a" />
-      <rect x="104" y="116" width="16" height="44" rx="7" fill="#232d4a" />
-      <ellipse cx="88" cy="163"  rx="11" ry="5" fill="#232d4a" />
-      <ellipse cx="112" cy="163" rx="11" ry="5" fill="#232d4a" />
-      {/* Arms overhead static upper */}
-      <rect x="60" y="52" width="12" height="28" rx="5" fill="#232d4a" transform="rotate(-20,66,55)" />
-      <rect x="128" y="52" width="12" height="28" rx="5" fill="#232d4a" transform="rotate(20,134,55)" />
-      {/* Tricep extension forearms */}
-      <g className="tri-l">
-        <rect x="60" y="78" width="12" height="32" rx="5" fill="#3362ff" opacity="0.9" />
-        <Dumbbell x={66} y={115} angle={0} weight="light" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Arc cx={126} cy={40} r={32} a1={-90} a2={0} color={C.highlight} />
+      <Ground />
+      <StandLegs />
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <StandTorso />
+      <line x1="74" y1="58" x2="58" y2="93" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <line x1="58" y1="93" x2="56" y2="118" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+      <circle cx="56" cy="122" r="7" fill={C.skin} />
+      <line x1="126" y1="56" x2="126" y2="40" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <rect x="118" y="42" width="12" height="22" rx="6" fill={C.highlight} opacity="0.4" />
+      <g className="te2-fore">
+        <line x1="126" y1="40" x2="126" y2="68" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+        <circle cx="126" cy="71" r="7" fill={C.skin} />
+        <DB x={126} y={82} />
       </g>
-      <g className="tri-r">
-        <rect x="128" y="78" width="12" height="32" rx="5" fill="#3362ff" opacity="0.9" />
-        <Dumbbell x={134} y={115} angle={0} weight="light" />
-      </g>
-      <text x="100" y="215" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Overhead Tricep Extension</text>
+      <NeckFace />
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Extensión Tríceps</text>
     </svg>
   );
 }
 
-/** Dumbbell Goblet Squat */
+// ─── 15. Goblet Squat ─────────────────────────────────────────────────────────
 export function AnimGobletSquat() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes goblet { 0%,100%{transform:translateY(0)} 50%{transform:translateY(32px)} }
-        .goblet-body { animation: goblet 2.3s ease-in-out infinite; }
+        @keyframes gs2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(26px)} }
+        .gs2-body { animation:gs2 2.8s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      <g className="goblet-body">
-        <circle cx="100" cy="36" r="14" fill="#232d4a" />
-        <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-        <rect x="78" y="60" width="44" height="52" rx="10" fill="#232d4a" opacity="0.9" />
-        {/* Arms holding dumbbell in front */}
-        <rect x="72" y="76" width="18" height="10" rx="4" fill="#232d4a" />
-        <rect x="110" y="76" width="18" height="10" rx="4" fill="#232d4a" />
-        <Dumbbell x={100} y={80} angle={90} weight="heavy" />
-        {/* Legs in squat */}
-        <rect x="80" y="110" width="16" height="42" rx="7" fill="#232d4a" />
-        <rect x="104" y="110" width="16" height="42" rx="7" fill="#232d4a" />
-        <circle cx="88"  cy="154" r="8" fill="#f59e0b" />
-        <circle cx="112" cy="154" r="8" fill="#f59e0b" />
-        <rect x="81"  y="160" width="14" height="30" rx="6" fill="#232d4a" />
-        <rect x="105" y="160" width="14" height="30" rx="6" fill="#232d4a" />
-        <ellipse cx="88"  cy="192" rx="11" ry="5" fill="#232d4a" />
-        <ellipse cx="112" cy="192" rx="11" ry="5" fill="#232d4a" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Ground />
+      <ellipse cx="82" cy="180" rx="14" ry="6" fill={C.shoes} />
+      <ellipse cx="118" cy="180" rx="14" ry="6" fill={C.shoes} />
+      <g className="gs2-body">
+        <line x1="84" y1="112" x2="78" y2="148" stroke={C.highlight} strokeWidth="16" strokeLinecap="round" />
+        <circle cx="78" cy="148" r="8" fill={C.highlight} />
+        <line x1="78" y1="148" x2="82" y2="172" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+        <line x1="116" y1="112" x2="122" y2="148" stroke={C.highlight} strokeWidth="16" strokeLinecap="round" />
+        <circle cx="122" cy="148" r="8" fill={C.highlight} />
+        <line x1="122" y1="148" x2="118" y2="172" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+        <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+        <StandTorso />
+        <line x1="74" y1="66" x2="80" y2="84" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <line x1="126" y1="66" x2="120" y2="84" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <rect x="88" y="83" width="24" height="16" rx="7" fill={C.equipment} />
+        <NeckFace />
       </g>
-      <text x="100" y="214" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Goblet Squat</text>
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Sentadilla Goblet</text>
     </svg>
   );
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// 🟢 PESO CORPORAL
-// ══════════════════════════════════════════════════════════════════════════════
-
-/** Bodyweight Plank */
+// ─── 16. Plank ────────────────────────────────────────────────────────────────
 export function AnimPlank() {
   return (
-    <svg viewBox="0 0 220 140" className="w-full h-full">
+    <svg viewBox="0 0 220 160" className="w-full h-full">
       <style>{`
-        @keyframes breathe { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(1.06)} }
-        .plank-body { animation: breathe 3s ease-in-out infinite; transform-origin: 110px 88px; }
+        @keyframes plank2 { 0%,100%{opacity:0.35} 50%{opacity:0.9} }
+        .plank2-core { animation:plank2 2s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={110} y={128} width={210} height={10} />
-      <g className="plank-body">
-        <circle cx="26" cy="78" r="12" fill="#232d4a" />
-        <rect x="36" y="72" width="90" height="18" rx="8" fill="#232d4a" opacity="0.9" />
-        {/* Elbows on floor */}
-        <rect x="38" y="88" width="14" height="24" rx="5" fill="#232d4a" />
-        <rect x="62" y="88" width="14" height="24" rx="5" fill="#232d4a" />
-        <ellipse cx="45" cy="114" rx="10" ry="5" fill="#3362ff" opacity="0.7" />
-        <ellipse cx="69" cy="114" rx="10" ry="5" fill="#3362ff" opacity="0.7" />
-        {/* Legs extended */}
-        <rect x="124" y="72" width="60" height="14" rx="6" fill="#232d4a" />
-        <rect x="180" y="84" width="14" height="28" rx="6" fill="#232d4a" />
-        <ellipse cx="187" cy="114" rx="10" ry="5" fill="#232d4a" />
-      </g>
-      {/* Core highlight */}
-      <rect x="82" y="72" width="46" height="18" rx="6" fill="#f97316" opacity="0.15">
-        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite" />
-      </rect>
-      <text x="110" y="136" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Plank — Core Isometric</text>
+      <rect width="220" height="160" fill={C.bg} rx="12" />
+      <Mat />
+      <circle cx="185" cy="100" r="13" fill={C.skin} />
+      <ellipse cx="185" cy="93" rx="12" ry="8" fill={C.hair} />
+      <circle cx="180" cy="98" r="2" fill="#1C1C1E" />
+      <circle cx="190" cy="98" r="2" fill="#1C1C1E" />
+      <line x1="172" y1="104" x2="60" y2="118" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <rect className="plank2-core" x="100" y="110" width="50" height="12" rx="6" fill={C.highlight} />
+      <line x1="60" y1="118" x2="35" y2="118" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <ellipse cx="30" cy="118" rx="12" ry="6" fill={C.skin} />
+      <line x1="172" y1="118" x2="172" y2="150" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+      <line x1="185" y1="118" x2="185" y2="150" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+      <ellipse cx="172" cy="152" rx="12" ry="5" fill={C.shoes} />
+      <ellipse cx="185" cy="152" rx="12" ry="5" fill={C.shoes} />
+      <text x="110" y="158" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Plancha Abdominal</text>
     </svg>
   );
 }
 
-/** Bodyweight Lunge */
+// ─── 17. Lunge ────────────────────────────────────────────────────────────────
 export function AnimLunge() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes lungeDown { 0%,100%{transform:translateY(0)} 50%{transform:translateY(24px)} }
-        .lunge-body { animation: lungeDown 2.2s ease-in-out infinite; }
+        @keyframes lunge2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(22px)} }
+        .lunge2-body { animation:lunge2 2.5s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      <g className="lunge-body">
-        <circle cx="100" cy="36" r="14" fill="#232d4a" />
-        <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-        <rect x="78" y="60" width="44" height="52" rx="10" fill="#232d4a" opacity="0.9" />
-        <rect x="56" y="72" width="20" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-        <rect x="124" y="72" width="20" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-        {/* Front leg bent */}
-        <rect x="76" y="110" width="16" height="40" rx="7" fill="#3362ff" opacity="0.85" />
-        <circle cx="84" cy="152" r="8" fill="#f59e0b" />
-        <rect x="76" y="158" width="16" height="28" rx="6" fill="#3362ff" opacity="0.85" />
-        <ellipse cx="84" cy="188" rx="11" ry="5" fill="#232d4a" />
-        {/* Back leg extending */}
-        <rect x="110" y="110" width="16" height="40" rx="7" fill="#232d4a" />
-        <circle cx="118" cy="152" r="8" fill="#f59e0b" />
-        <rect x="110" y="158" width="16" height="28" rx="6" fill="#232d4a" />
-        <ellipse cx="118" cy="188" rx="11" ry="5" fill="#232d4a" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Ground />
+      <ellipse cx="140" cy="183" rx="14" ry="6" fill={C.shoes} />
+      <g className="lunge2-body">
+        <line x1="116" y1="112" x2="140" y2="148" stroke={C.highlight} strokeWidth="16" strokeLinecap="round" />
+        <line x1="140" y1="148" x2="140" y2="176" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+        <circle cx="140" cy="148" r="8" fill={C.highlight} />
+        <line x1="84" y1="112" x2="80" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+        <line x1="80" y1="148" x2="82" y2="176" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+        <circle cx="80" cy="148" r="8" fill={C.pants} />
+        <ellipse cx="82" cy="179" rx="14" ry="6" fill={C.shoes} />
+        <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+        <StandTorso />
+        <StandArms />
+        <NeckFace />
       </g>
-      <text x="100" y="214" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Bodyweight Lunge</text>
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Zancada (Lunge)</text>
     </svg>
   );
 }
 
-/** Glute Bridge (no equipment) */
+// ─── 18. Glute Bridge ─────────────────────────────────────────────────────────
 export function AnimGluteBridge() {
   return (
     <svg viewBox="0 0 220 160" className="w-full h-full">
       <style>{`
-        @keyframes bridgeNoEquip { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-24px)} }
-        .bridge-up { animation: bridgeNoEquip 2s ease-in-out infinite; }
+        @keyframes glb2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-24px)} }
+        .glb2-hips { animation:glb2 2.5s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={110} y={148} width={210} height={10} />
-      <rect x="18" y="88" width="80" height="20" rx="8" fill="#232d4a" opacity="0.9" />
-      <circle cx="12" cy="98" r="12" fill="#232d4a" />
-      <rect x="30" y="104" width="56" height="8" rx="4" fill="#232d4a" opacity="0.6" />
-      <g className="bridge-up">
-        <rect x="94" y="78" width="30" height="26" rx="9" fill="#3362ff" opacity="0.9" />
-        <rect x="92" y="100" width="16" height="34" rx="7" fill="#232d4a" />
-        <rect x="115" y="100" width="16" height="34" rx="7" fill="#232d4a" />
-        <circle cx="100" cy="136" r="7" fill="#f59e0b" />
-        <circle cx="123" cy="136" r="7" fill="#f59e0b" />
-        <rect x="93"  y="141" width="13" height="6" rx="3" fill="#232d4a" />
-        <rect x="115" y="141" width="13" height="6" rx="3" fill="#232d4a" />
+      <rect width="220" height="160" fill={C.bg} rx="12" />
+      <Mat />
+      <circle cx="20" cy="110" r="13" fill={C.skin} />
+      <ellipse cx="20" cy="103" rx="12" ry="8" fill={C.hair} />
+      <circle cx="15" cy="108" r="2" fill="#1C1C1E" />
+      <circle cx="25" cy="108" r="2" fill="#1C1C1E" />
+      <line x1="33" y1="110" x2="75" y2="110" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <line x1="40" y1="118" x2="40" y2="140" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+      <line x1="58" y1="118" x2="58" y2="140" stroke={C.skin} strokeWidth="10" strokeLinecap="round" />
+      <g className="glb2-hips">
+        <rect x="75" y="103" width="38" height="16" rx="7" fill={C.highlight} />
+        <text x="94" y="115" textAnchor="middle" fontSize="7" fontWeight="800" fill="white">GLÚTEO</text>
+        <line x1="80" y1="113" x2="80" y2="136" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <line x1="80" y1="136" x2="95" y2="136" stroke={C.pants} strokeWidth="12" strokeLinecap="round" />
+        <line x1="108" y1="113" x2="108" y2="136" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <line x1="108" y1="136" x2="122" y2="136" stroke={C.pants} strokeWidth="12" strokeLinecap="round" />
+        <ellipse cx="97" cy="136" rx="10" ry="5" fill={C.shoes} />
+        <ellipse cx="124" cy="136" rx="10" ry="5" fill={C.shoes} />
       </g>
-      <circle cx="112" cy="88" r="12" fill="#ef4444" opacity="0.15">
-        <animate attributeName="r" values="12;16;12" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <text x="110" y="156" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Glute Bridge</text>
+      <text x="110" y="157" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Puente de Glúteos</text>
     </svg>
   );
 }
 
-/** Dead Bug — Core motor control */
+// ─── 19. Dead Bug ─────────────────────────────────────────────────────────────
 export function AnimDeadBug() {
   return (
-    <svg viewBox="0 0 220 160" className="w-full h-full">
+    <svg viewBox="0 0 220 170" className="w-full h-full">
       <style>{`
-        @keyframes deadBugArm { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-70deg)} }
-        @keyframes deadBugLeg { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(60deg)} }
-        .db-arm { animation: deadBugArm 2.5s ease-in-out infinite; transform-origin: 80px 78px; }
-        .db-leg { animation: deadBugLeg 2.5s ease-in-out infinite; transform-origin: 140px 95px; }
+        @keyframes db2_a { 0%,100%{transform:rotate(0deg)} 25%{transform:rotate(-40deg)} 75%{transform:rotate(40deg)} }
+        .db2-rarm { animation:db2_a 3s ease-in-out infinite; transform-origin:88px 92px; }
+        .db2-lleg { animation:db2_a 3s ease-in-out infinite reverse; transform-origin:132px 110px; }
       `}</style>
-      <ExerciseMat x={110} y={148} width={210} height={10} />
-      {/* Lying supine */}
-      <rect x="30" y="82" width="80" height="20" rx="8" fill="#232d4a" opacity="0.9" />
-      <circle cx="24" cy="92" r="12" fill="#232d4a" />
-      {/* Hip area */}
-      <rect x="106" y="84" width="30" height="20" rx="8" fill="#3362ff" opacity="0.8" />
-      {/* Extending arm */}
-      <g className="db-arm">
-        <rect x="70" y="62" width="10" height="28" rx="5" fill="#3362ff" opacity="0.85" />
-        <ellipse cx="75" cy="62" rx="7" ry="5" fill="#3362ff" opacity="0.85" />
+      <rect width="220" height="170" fill={C.bg} rx="12" />
+      <Mat />
+      <circle cx="22" cy="96" r="13" fill={C.skin} />
+      <ellipse cx="22" cy="89" rx="12" ry="8" fill={C.hair} />
+      <circle cx="17" cy="94" r="2" fill="#1C1C1E" />
+      <circle cx="27" cy="94" r="2" fill="#1C1C1E" />
+      <line x1="35" y1="96" x2="75" y2="96" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <rect x="66" y="89" width="52" height="14" rx="6" fill={C.highlight} opacity="0.3" />
+      <line x1="56" y1="89" x2="42" y2="62" stroke={C.skin} strokeWidth="11" strokeLinecap="round" />
+      <circle cx="40" cy="59" r="7" fill={C.skin} />
+      <g className="db2-rarm">
+        <line x1="88" y1="92" x2="74" y2="62" stroke={C.skin} strokeWidth="11" strokeLinecap="round" />
+        <circle cx="72" cy="59" r="7" fill={C.skin} />
       </g>
-      {/* Static arm */}
-      <rect x="90" y="62" width="10" height="24" rx="5" fill="#232d4a" />
-      {/* Extending leg */}
-      <g className="db-leg">
-        <rect x="134" y="80" width="12" height="36" rx="5" fill="#10b981" opacity="0.9" />
-        <ellipse cx="140" cy="118" rx="9" ry="6" fill="#10b981" opacity="0.9" />
+      <rect x="113" y="91" width="46" height="18" rx="8" fill={C.pants} />
+      <line x1="148" y1="100" x2="148" y2="132" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+      <line x1="148" y1="132" x2="168" y2="132" stroke={C.pants} strokeWidth="12" strokeLinecap="round" />
+      <ellipse cx="170" cy="132" rx="10" ry="5" fill={C.shoes} />
+      <g className="db2-lleg">
+        <line x1="132" y1="110" x2="132" y2="142" stroke={C.highlight} strokeWidth="14" strokeLinecap="round" />
+        <line x1="132" y1="142" x2="110" y2="142" stroke={C.highlight} strokeWidth="12" strokeLinecap="round" />
+        <ellipse cx="108" cy="142" rx="10" ry="5" fill={C.shoes} />
       </g>
-      {/* Static leg up */}
-      <rect x="150" y="70" width="12" height="38" rx="5" fill="#232d4a" />
-      <ellipse cx="156" cy="108" rx="9" ry="6" fill="#232d4a" />
-      <text x="110" y="156" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Dead Bug — Motor Control</text>
+      <text x="110" y="166" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Dead Bug</text>
     </svg>
   );
 }
 
-/** Wall Sit */
+// ─── 20. Wall Sit ─────────────────────────────────────────────────────────────
 export function AnimWallSit() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes wallPulse { 0%,100%{opacity:0.15} 50%{opacity:0.35} }
-        .quad-high { animation: wallPulse 2s ease-in-out infinite; }
+        @keyframes ws2 { 0%,100%{opacity:0.3} 50%{opacity:0.75} }
+        .ws2-quads { animation:ws2 2s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      {/* Wall */}
-      <rect x="148" y="20" width="14" height="188" rx="4" fill="#e4e7f0" />
-      {/* Figure against wall */}
-      <circle cx="100" cy="36" r="14" fill="#232d4a" />
-      <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-      <rect x="78" y="60" width="44" height="58" rx="10" fill="#232d4a" opacity="0.9" />
-      <rect x="56" y="72" width="20" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-      <rect x="124" y="72" width="20" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-      {/* 90-degree legs */}
-      <rect x="80" y="116" width="52" height="18" rx="8" fill="#232d4a" />
-      {/* Shins down */}
-      <rect x="80" y="132" width="16" height="56" rx="7" fill="#232d4a" />
-      <rect x="116" y="132" width="16" height="56" rx="7" fill="#232d4a" />
-      <ellipse cx="88"  cy="191" rx="11" ry="5" fill="#232d4a" />
-      <ellipse cx="124" cy="191" rx="11" ry="5" fill="#232d4a" />
-      {/* Quad highlight */}
-      <rect x="80" y="116" width="52" height="18" rx="8" fill="#ef4444" className="quad-high" />
-      <text x="100" y="214" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Wall Sit — Isometric Quad</text>
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <rect x="155" y="10" width="16" height="170" rx="4" fill="#CBD5E1" />
+      <rect x="20" y="175" width="145" height="10" rx="4" fill={C.ground} />
+      <rect className="ws2-quads" x="82" y="110" width="52" height="28" rx="8" fill={C.highlight} />
+      <line x1="84" y1="138" x2="82" y2="175" stroke={C.pants} strokeWidth="15" strokeLinecap="round" />
+      <circle cx="82" cy="148" r="8" fill={C.pants} />
+      <line x1="116" y1="138" x2="118" y2="175" stroke={C.pants} strokeWidth="15" strokeLinecap="round" />
+      <circle cx="118" cy="148" r="8" fill={C.pants} />
+      <ellipse cx="82" cy="178" rx="14" ry="6" fill={C.shoes} />
+      <ellipse cx="118" cy="178" rx="14" ry="6" fill={C.shoes} />
+      <path d="M76,60 L74,112 L126,112 L124,60 Q113,55 100,55 Q87,55 76,60Z" fill={C.shirt} />
+      <rect x="74" y="108" width="52" height="12" rx="6" fill={C.pants} />
+      <line x1="76" y1="80" x2="82" y2="118" stroke={C.skin} strokeWidth="11" strokeLinecap="round" />
+      <circle cx="82" cy="120" r="6" fill={C.skin} />
+      <line x1="124" y1="80" x2="118" y2="118" stroke={C.skin} strokeWidth="11" strokeLinecap="round" />
+      <circle cx="118" cy="120" r="6" fill={C.skin} />
+      <rect x="95" y="50" width="10" height="9" rx="3" fill={C.skin} />
+      <Face x={100} y={33} />
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Sentadilla en Pared</text>
     </svg>
   );
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// 🟠 BOSU / FITBALL (equilibrio + propiocepción)
-// ══════════════════════════════════════════════════════════════════════════════
-
-/** Bosu Single Leg Balance */
+// ─── 21–25. BOSU exercises ────────────────────────────────────────────────────
 export function AnimBosuBalance() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes wobble { 0%,100%{transform:rotate(-4deg)} 25%{transform:rotate(4deg)} 75%{transform:rotate(-2deg)} }
-        .bosu-figure { animation: wobble 2s ease-in-out infinite; transform-origin: 100px 165px; }
+        @keyframes bosu2_bal { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+        .bosu2-body { animation:bosu2_bal 2.5s ease-in-out infinite; transform-origin:100px 155px; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      {/* Bosu dome */}
-      <ellipse cx="100" cy="172" rx="44" ry="8" fill="#f97316" opacity="0.5" />
-      <path d="M56,172 A44,44 0 0,1 144,172" fill="#f97316" opacity="0.85" />
-      {/* Flat base */}
-      <rect x="54" y="172" width="92" height="8" rx="3" fill="#ea580c" />
-      <g className="bosu-figure">
-        <circle cx="100" cy="36" r="14" fill="#232d4a" />
-        <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-        <rect x="78" y="60" width="44" height="58" rx="10" fill="#232d4a" opacity="0.9" />
-        {/* Arms out for balance */}
-        <rect x="40" y="70" width="36" height="10" rx="5" fill="#232d4a" opacity="0.75" />
-        <rect x="124" y="70" width="36" height="10" rx="5" fill="#232d4a" opacity="0.75" />
-        {/* Standing leg */}
-        <rect x="86" y="116" width="16" height="50" rx="7" fill="#232d4a" />
-        <ellipse cx="94" cy="168" rx="11" ry="5" fill="#232d4a" />
-        {/* Raised knee */}
-        <rect x="104" y="116" width="16" height="30" rx="7" fill="#3362ff" opacity="0.9" />
-        <circle cx="112" cy="148" r="8" fill="#f59e0b" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Bosu />
+      <g className="bosu2-body">
+        <StandLegs />
+        <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+        <StandTorso />
+        <StandArms />
+        <NeckFace />
       </g>
-      <text x="100" y="215" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Bosu Single Leg Balance</text>
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Equilibrio BOSU</text>
     </svg>
   );
 }
 
-/** Bosu Squat — proprioception */
 export function AnimBosuSquat() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes bosuSq { 0%,100%{transform:translateY(0)} 50%{transform:translateY(28px)} }
-        .bosu-sq { animation: bosuSq 2.4s ease-in-out infinite; }
+        @keyframes bsq2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(22px)} }
+        .bsq2-body { animation:bsq2 2.5s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      {/* Bosu */}
-      <rect x="58" y="168" width="84" height="10" rx="3" fill="#ea580c" />
-      <path d="M58,168 A42,42 0 0,1 142,168" fill="#f97316" opacity="0.85" />
-      <g className="bosu-sq">
-        <circle cx="100" cy="36" r="14" fill="#232d4a" />
-        <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-        <rect x="78" y="60" width="44" height="52" rx="10" fill="#232d4a" opacity="0.9" />
-        <rect x="56" y="68" width="20" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-        <rect x="124" y="68" width="20" height="10" rx="5" fill="#232d4a" opacity="0.7" />
-        <rect x="80" y="110" width="16" height="38" rx="7" fill="#232d4a" />
-        <rect x="104" y="110" width="16" height="38" rx="7" fill="#232d4a" />
-        <circle cx="88"  cy="150" r="8" fill="#f59e0b" />
-        <circle cx="112" cy="150" r="8" fill="#f59e0b" />
-        <rect x="81"  y="156" width="14" height="22" rx="6" fill="#232d4a" />
-        <rect x="105" y="156" width="14" height="22" rx="6" fill="#232d4a" />
-        <ellipse cx="88"  cy="180" rx="11" ry="5" fill="#232d4a" />
-        <ellipse cx="112" cy="180" rx="11" ry="5" fill="#232d4a" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Bosu />
+      <ellipse cx="82" cy="162" rx="14" ry="5" fill={C.shoes} />
+      <ellipse cx="118" cy="162" rx="14" ry="5" fill={C.shoes} />
+      <g className="bsq2-body">
+        <line x1="84" y1="112" x2="78" y2="148" stroke={C.highlight} strokeWidth="16" strokeLinecap="round" />
+        <circle cx="78" cy="148" r="8" fill={C.highlight} />
+        <line x1="78" y1="148" x2="82" y2="157" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+        <line x1="116" y1="112" x2="122" y2="148" stroke={C.highlight} strokeWidth="16" strokeLinecap="round" />
+        <circle cx="122" cy="148" r="8" fill={C.highlight} />
+        <line x1="122" y1="148" x2="118" y2="157" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+        <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+        <StandTorso />
+        <StandArms />
+        <NeckFace />
       </g>
-      <text x="100" y="215" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Bosu Squat — Proprioception</text>
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Sentadilla BOSU</text>
     </svg>
   );
 }
 
-/** Bosu Push-Up */
 export function AnimBosuPushUp() {
   return (
-    <svg viewBox="0 0 220 180" className="w-full h-full">
+    <svg viewBox="0 0 220 170" className="w-full h-full">
       <style>{`
-        @keyframes bosuPush { 0%,100%{transform:translateY(6px)} 50%{transform:translateY(-10px)} }
-        .bosu-push { animation: bosuPush 1.8s ease-in-out infinite; }
+        @keyframes bpu4 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+        .bpu4-upper { animation:bpu4 2s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={110} y={168} width={210} height={10} />
-      {/* Bosu upside down */}
-      <ellipse cx="90" cy="140" rx="36" ry="14" fill="#f97316" opacity="0.85" />
-      <circle cx="90" cy="128" r="8" fill="#ea580c" opacity="0.5" />
-      <g className="bosu-push">
-        <circle cx="28" cy="80" r="12" fill="#232d4a" />
-        <rect x="38" y="74" width="80" height="18" rx="8" fill="#232d4a" opacity="0.9" />
-        <rect x="68" y="90" width="12" height="36" rx="5" fill="#232d4a" />
-        <rect x="90" y="90" width="12" height="36" rx="5" fill="#232d4a" />
-        <rect x="116" y="74" width="62" height="14" rx="6" fill="#232d4a" />
-        <ellipse cx="180" cy="81" rx="11" ry="6" fill="#232d4a" />
-        <rect x="168" y="86" width="13" height="32" rx="5" fill="#232d4a" />
+      <rect width="220" height="170" fill={C.bg} rx="12" />
+      <Bosu cx={75} y={148} />
+      <g className="bpu4-upper">
+        <circle cx="185" cy="96" r="13" fill={C.skin} />
+        <ellipse cx="185" cy="89" rx="12" ry="8" fill={C.hair} />
+        <circle cx="180" cy="94" r="2" fill="#1C1C1E" />
+        <circle cx="190" cy="94" r="2" fill="#1C1C1E" />
+        <line x1="172" y1="100" x2="80" y2="122" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+        <line x1="80" y1="122" x2="55" y2="130" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+        <ellipse cx="50" cy="130" rx="10" ry="5" fill={C.skin} />
+        <line x1="155" y1="110" x2="158" y2="148" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <line x1="170" y1="107" x2="173" y2="148" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+        <ellipse cx="158" cy="150" rx="12" ry="5" fill={C.shoes} />
+        <ellipse cx="173" cy="150" rx="12" ry="5" fill={C.shoes} />
       </g>
-      <text x="110" y="177" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Bosu Push-Up (Unstable)</text>
+      <text x="110" y="165" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Push-Up BOSU</text>
     </svg>
   );
 }
 
-/** Bosu Hip Hinge */
 export function AnimBosuHipHinge() {
   return (
-    <svg viewBox="0 0 200 220" className="w-full h-full">
+    <svg viewBox="0 0 200 200" className="w-full h-full">
       <style>{`
-        @keyframes bosuHinge { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(42deg)} }
-        .bosu-hinge { animation: bosuHinge 2.6s ease-in-out infinite; transform-origin: 100px 112px; }
+        @keyframes bhh2 { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(42deg)} }
+        .bhh2-upper { animation:bhh2 3s ease-in-out infinite; transform-origin:100px 105px; }
       `}</style>
-      <ExerciseMat x={100} y={208} width={180} height={10} />
-      <rect x="58" y="172" width="84" height="10" rx="3" fill="#ea580c" />
-      <path d="M58,172 A42,42 0 0,1 142,172" fill="#f97316" opacity="0.85" />
-      <g className="bosu-hinge">
-        <circle cx="100" cy="36" r="14" fill="#232d4a" />
-        <rect x="93" y="50" width="14" height="10" rx="3" fill="#232d4a" />
-        <rect x="78" y="60" width="44" height="52" rx="10" fill="#232d4a" opacity="0.9" />
-        <rect x="64" y="88" width="16" height="10" rx="4" fill="#232d4a" opacity="0.7" />
-        <rect x="120" y="88" width="16" height="10" rx="4" fill="#232d4a" opacity="0.7" />
+      <rect width="200" height="200" fill={C.bg} rx="12" />
+      <Bosu />
+      <line x1="84" y1="112" x2="82" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <line x1="82" y1="148" x2="82" y2="170" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+      <circle cx="82" cy="148" r="8" fill={C.pants} />
+      <ellipse cx="82" cy="172" rx="14" ry="5" fill={C.shoes} />
+      <line x1="116" y1="112" x2="118" y2="148" stroke={C.pants} strokeWidth="16" strokeLinecap="round" />
+      <line x1="118" y1="148" x2="118" y2="170" stroke={C.pants} strokeWidth="13" strokeLinecap="round" />
+      <circle cx="118" cy="148" r="8" fill={C.pants} />
+      <ellipse cx="118" cy="172" rx="14" ry="5" fill={C.shoes} />
+      <rect x="74" y="104" width="52" height="12" rx="6" fill={C.pants} />
+      <g className="bhh2-upper">
+        <StandTorso />
+        <StandArms />
+        <NeckFace />
       </g>
-      <rect x="82" y="112" width="36" height="60" rx="8" fill="#232d4a" />
-      <rect x="80" y="112" width="16" height="60" rx="7" fill="#232d4a" />
-      <rect x="104" y="112" width="16" height="60" rx="7" fill="#232d4a" />
-      <ellipse cx="88"  cy="174" rx="11" ry="5" fill="#232d4a" />
-      <ellipse cx="112" cy="174" rx="11" ry="5" fill="#232d4a" />
-      <text x="100" y="215" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Bosu Hip Hinge Balance</text>
+      <text x="100" y="197" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Hip Hinge BOSU</text>
     </svg>
   );
 }
 
-/** Bosu Plank */
 export function AnimBosuPlank() {
   return (
-    <svg viewBox="0 0 220 160" className="w-full h-full">
+    <svg viewBox="0 0 220 170" className="w-full h-full">
       <style>{`
-        @keyframes bosuBreath { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(1.05)} }
-        .bosu-pl { animation: bosuBreath 3s ease-in-out infinite; transform-origin: 90px 84px; }
+        @keyframes bpl2 { 0%,100%{opacity:0.3} 50%{opacity:0.85} }
+        .bpl2-core { animation:bpl2 2s ease-in-out infinite; }
       `}</style>
-      <ExerciseMat x={110} y={148} width={210} height={10} />
-      {/* Bosu upside down */}
-      <ellipse cx="72" cy="118" rx="36" ry="14" fill="#f97316" opacity="0.85" />
-      <circle  cx="72" cy="106" r="8" fill="#ea580c" opacity="0.5" />
-      <g className="bosu-pl">
-        <circle cx="24" cy="76" r="12" fill="#232d4a" />
-        <rect x="34" y="70" width="100" height="18" rx="8" fill="#232d4a" opacity="0.9" />
-        {/* Arms on bosu */}
-        <rect x="50" y="86" width="12" height="28" rx="5" fill="#232d4a" />
-        <rect x="74" y="86" width="12" height="28" rx="5" fill="#232d4a" />
-        {/* Legs extended */}
-        <rect x="132" y="70" width="60" height="14" rx="6" fill="#232d4a" />
-        <rect x="186" y="82" width="13" height="30" rx="5" fill="#232d4a" />
-        <ellipse cx="192" cy="114" rx="10" ry="5" fill="#232d4a" />
-      </g>
-      <text x="110" y="156" textAnchor="middle" fontSize="9" fill="#6b7899" fontFamily="system-ui">Bosu Plank — Core Unstable</text>
+      <rect width="220" height="170" fill={C.bg} rx="12" />
+      <Bosu cx={75} y={145} />
+      <circle cx="185" cy="102" r="13" fill={C.skin} />
+      <ellipse cx="185" cy="95" rx="12" ry="8" fill={C.hair} />
+      <circle cx="180" cy="100" r="2" fill="#1C1C1E" />
+      <circle cx="190" cy="100" r="2" fill="#1C1C1E" />
+      <line x1="172" y1="106" x2="72" y2="120" stroke={C.shirt} strokeWidth="18" strokeLinecap="round" />
+      <rect className="bpl2-core" x="100" y="112" width="50" height="12" rx="6" fill={C.highlight} />
+      <line x1="72" y1="120" x2="48" y2="125" stroke={C.skin} strokeWidth="12" strokeLinecap="round" />
+      <ellipse cx="44" cy="125" rx="10" ry="5" fill={C.skin} />
+      <line x1="175" y1="118" x2="175" y2="148" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+      <line x1="188" y1="115" x2="188" y2="148" stroke={C.pants} strokeWidth="14" strokeLinecap="round" />
+      <ellipse cx="175" cy="150" rx="12" ry="5" fill={C.shoes} />
+      <ellipse cx="188" cy="150" rx="12" ry="5" fill={C.shoes} />
+      <text x="110" y="165" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={C.shirtShade}>Plancha BOSU</text>
     </svg>
   );
 }
-
-// ─── Extended Registry ────────────────────────────────────────────────────────
-export const EXERCISE_ANIMATIONS_P2: Record<string, React.FC> = {
-  // 🟡 Ball
-  "ball-bridge":            AnimBallBridge,
-  "ball-hamstring-curl":    AnimBallHamstringCurl,
-  "ball-push-up":           AnimBallPushUp,
-  "ball-lumbar-extension":  AnimBallLumbarExtension,
-  "ball-lateral-flex":      AnimBallLateralFlex,
-  // 🔴 Band
-  "band-hip-abduction":     AnimBandHipAbduction,
-  "band-pull-apart":        AnimBandPullApart,
-  "band-glute-kickback":    AnimBandGluteKickback,
-  "band-shoulder-rotation": AnimBandShoulderRotation,
-  "band-calf-raise":        AnimBandCalfRaise,
-  // 🔵 Dumbbell
-  "dumbbell-bicep-curl":    AnimDumbbellBicepCurl,
-  "dumbbell-bent-row":      AnimDumbbellBentRow,
-  "romanian-deadlift":      AnimRomanianDeadlift,
-  "tricep-extension":       AnimTricepExtension,
-  "goblet-squat":           AnimGobletSquat,
-  // 🟢 Bodyweight
-  "plank":                  AnimPlank,
-  "lunge":                  AnimLunge,
-  "glute-bridge":           AnimGluteBridge,
-  "dead-bug":               AnimDeadBug,
-  "wall-sit":               AnimWallSit,
-  // 🟠 Bosu
-  "bosu-balance":           AnimBosuBalance,
-  "bosu-squat":             AnimBosuSquat,
-  "bosu-push-up":           AnimBosuPushUp,
-  "bosu-hip-hinge":         AnimBosuHipHinge,
-  "bosu-plank":             AnimBosuPlank,
-};
