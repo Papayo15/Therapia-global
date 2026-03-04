@@ -5,7 +5,7 @@
 
 ## VISIÓN
 Plataforma #1 mundial de educación terapéutica y osteopatía.
-Superior a Wibbi en todos los niveles.
+Superior a Other platforms en todos los niveles.
 No bloquea contenido. Monetiza por servicios, IA, certificaciones y marca blanca.
 
 ---

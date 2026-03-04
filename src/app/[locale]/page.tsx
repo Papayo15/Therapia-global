@@ -186,17 +186,17 @@ function ComparisonSection() {
   const t = useTranslations("landing");
 
   const comparisons = [
-    { label: "Complete exercise library", wibbi: false, therapia: true },
-    { label: "Osteopathy techniques", wibbi: false, therapia: true },
-    { label: "Applied anatomy", wibbi: false, therapia: true },
-    { label: "10 languages", wibbi: false, therapia: true },
-    { label: "Arabic RTL support", wibbi: false, therapia: true },
-    { label: "Clinical AI recommendations", wibbi: false, therapia: true },
-    { label: "Professional network", wibbi: false, therapia: true },
-    { label: "Certifications", wibbi: false, therapia: true },
-    { label: "WhatsApp delivery", wibbi: true, therapia: true },
-    { label: "Patient adherence tracking", wibbi: true, therapia: true },
-    { label: "Unlimited content access", wibbi: false, therapia: true },
+    { label: "Complete exercise library", other: false, therapia: true },
+    { label: "Osteopathy techniques", other: false, therapia: true },
+    { label: "Applied anatomy", other: false, therapia: true },
+    { label: "10 languages", other: false, therapia: true },
+    { label: "Arabic RTL support", other: false, therapia: true },
+    { label: "Clinical AI recommendations", other: false, therapia: true },
+    { label: "Professional network", other: false, therapia: true },
+    { label: "Certifications", other: false, therapia: true },
+    { label: "WhatsApp delivery", other: true, therapia: true },
+    { label: "Patient adherence tracking", other: true, therapia: true },
+    { label: "Unlimited content access", other: false, therapia: true },
   ];
 
   return (
@@ -216,7 +216,7 @@ function ComparisonSection() {
                   Feature
                 </th>
                 <th className="px-6 py-4 text-center text-sm font-semibold text-surface-400 whitespace-nowrap">
-                  Wibbi
+                  Other platforms
                 </th>
                 <th className="px-6 py-4 text-center text-sm font-bold text-brand-600 whitespace-nowrap">
                   Therapia Global
@@ -228,7 +228,7 @@ function ComparisonSection() {
                 <tr key={i} className="hover:bg-surface-50/50 transition-colors">
                   <td className="px-6 py-3.5 text-sm text-surface-700">{row.label}</td>
                   <td className="px-6 py-3.5 text-center">
-                    {row.wibbi ? (
+                    {row.other ? (
                       <Check className="mx-auto h-4 w-4 text-surface-400" />
                     ) : (
                       <span className="text-surface-300">—</span>
