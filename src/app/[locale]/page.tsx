@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 
-function HeroSection() {
+function HeroSection({ locale }: { locale: string }) {
   const t = useTranslations("landing");
 
   const stats = [
@@ -64,13 +64,13 @@ function HeroSection() {
           {/* CTAs */}
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button size="xl" variant="primary" asChild>
-              <Link href="#signup" className="gap-2">
+              <Link href={`/${locale}/signup`} className="gap-2">
                 {t("cta_primary")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button size="xl" variant="outline" asChild>
-              <Link href="#demo" className="gap-2">
+              <Link href={`/${locale}/dashboard`} className="gap-2">
                 <Play className="h-4 w-4" />
                 {t("cta_secondary")}
               </Link>
@@ -253,7 +253,7 @@ function ComparisonSection() {
 
 // ─── Footer CTA ───────────────────────────────────────────────────────────────
 
-function FooterCTA() {
+function FooterCTA({ locale }: { locale: string }) {
   const t = useTranslations("landing");
 
   return (
@@ -272,7 +272,7 @@ function FooterCTA() {
         <p className="mt-4 text-surface-400">{t("footer_cta_sub")}</p>
         <div className="mt-8 flex justify-center">
           <Button size="xl" variant="clinical" asChild>
-            <Link href="#signup" className="gap-2">
+            <Link href={`/${locale}/signup`} className="gap-2">
               {t("cta_primary")}
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -285,7 +285,7 @@ function FooterCTA() {
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
 
-function LandingNav() {
+function LandingNav({ locale }: { locale: string }) {
   const t = useTranslations("landing");
 
   return (
@@ -301,10 +301,10 @@ function LandingNav() {
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
           <Button variant="ghost" size="sm" asChild>
-            <Link href="#login">Sign in</Link>
+            <Link href={`/${locale}/login`}>Sign in</Link>
           </Button>
           <Button variant="primary" size="sm" asChild>
-            <Link href="#signup">{t("cta_primary")}</Link>
+            <Link href={`/${locale}/signup`}>{t("cta_primary")}</Link>
           </Button>
         </div>
       </div>
@@ -334,15 +334,16 @@ function SparklesIcon({ className }: { className?: string }) {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function LandingPage() {
+export default async function LandingPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen">
-      <LandingNav />
+      <LandingNav locale={locale} />
       <main>
-        <HeroSection />
+        <HeroSection locale={locale} />
         <FeaturesSection />
         <ComparisonSection />
-        <FooterCTA />
+        <FooterCTA locale={locale} />
       </main>
       <footer className="border-t border-surface-200 bg-white py-8">
         <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
