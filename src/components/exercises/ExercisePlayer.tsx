@@ -10,10 +10,9 @@
  */
 
 import { useState, useEffect, useRef } from "react";
-import { X, ChevronLeft, ChevronRight, CheckCircle2, Star, AlertCircle, Clock, Repeat2, Target, Zap } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, CheckCircle2, Star, AlertCircle, Clock, Repeat2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ExerciseGif } from "./ExerciseGif";
 
 // ─── Tipos públicos ───────────────────────────────────────────────────────────
 export interface ExerciseData {
@@ -27,11 +26,14 @@ export interface ExerciseData {
   durationSeconds?: number; // si es por tiempo
   restSeconds?: number;
   musclesWorked: string[];
-  steps: string[];          // instrucciones paso a paso (≤6 pasos)
+  steps: string[];          // instrucciones paso a paso
   tip?: string;
   keyPoint?: string;        // el punto clínico más importante (1 línea)
   contraindications?: string;
-  AnimComponent?: React.FC; // animación SVG
+  youtubeId?: string;       // ID de video específico (ej: "dQw4w9WgXcQ")
+  youtubeSearch?: string;   // término de búsqueda si no hay ID específico
+  /** @deprecated usar youtubeId/youtubeSearch */
+  AnimComponent?: React.FC;
 }
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -101,8 +103,14 @@ export function ExercisePlayer({
 
   if (!isOpen) return null;
 
-  const AnimComponent = exercise.AnimComponent;
   const totalSteps = exercise.steps.length;
+
+  // Construir URL del embed de YouTube
+  const youtubeEmbedUrl = exercise.youtubeId
+    ? `https://www.youtube-nocookie.com/embed/${exercise.youtubeId}?rel=0&modestbranding=1`
+    : exercise.youtubeSearch
+    ? `https://www.youtube-nocookie.com/embed?listType=search&list=${encodeURIComponent(exercise.youtubeSearch)}&rel=0&modestbranding=1`
+    : null;
 
   function handleAdd() {
     onAddToRoutine?.(exercise);
@@ -150,24 +158,36 @@ export function ExercisePlayer({
 
         {/* ── Scrollable body ────────────────────────────────────────────── */}
         <div className="overflow-y-auto flex-1">
-          {/* GIF animado / SVG fallback */}
-          <div className="relative bg-white" style={{ aspectRatio: "16/9" }}>
-            <ExerciseGif
-              exerciseName={exercise.name}
-              fallback={AnimComponent ?? undefined}
-              className="absolute inset-0"
-            />
+          {/* ── Video YouTube ───────────────────────────────────────────── */}
+          <div className="relative bg-black" style={{ aspectRatio: "16/9" }}>
+            {youtubeEmbedUrl ? (
+              <iframe
+                src={youtubeEmbedUrl}
+                title={exercise.nameLocal || exercise.name}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            ) : (
+              /* Placeholder si no hay video */
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-brand-900/40 to-surface-900 gap-3">
+                <div className="w-16 h-16 rounded-2xl bg-brand-600/20 border border-brand-600/30 flex items-center justify-center">
+                  <span className="text-3xl">🎬</span>
+                </div>
+                <p className="text-surface-400 text-sm">Video en preparación</p>
+              </div>
+            )}
 
-            {/* Badge de duración sobre la animación */}
-            <div className="absolute bottom-3 end-3 z-20 flex items-center gap-3">
+            {/* Badges de duración/series */}
+            <div className="absolute bottom-3 end-3 z-20 flex items-center gap-2 pointer-events-none">
               {exercise.durationSeconds && (
-                <span className="flex items-center gap-1 text-xs font-medium text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                <span className="flex items-center gap-1 text-xs font-medium text-white bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
                   <Clock className="h-3 w-3" />
                   {exercise.durationSeconds}s
                 </span>
               )}
               {exercise.sets && exercise.reps && (
-                <span className="flex items-center gap-1 text-xs font-medium text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                <span className="flex items-center gap-1 text-xs font-medium text-white bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
                   <Repeat2 className="h-3 w-3" />
                   {exercise.sets}×{exercise.reps}
                 </span>

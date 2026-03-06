@@ -1,50 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Search, Clock, Repeat2, CheckCircle2 } from "lucide-react";
+import { Search, Clock, Repeat2, CheckCircle2, Play } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
-import { ExerciseGif } from "@/components/exercises/ExerciseGif";
-
-// Animaciones disponibles
-import {
-  AnimShoulderExternalRotation,
-  AnimBirdDog,
-  AnimHipFlexorStretch,
-  AnimResistanceBandRow,
-  AnimDumbbellLateralRaise,
-  AnimCervicalRetraction,
-  AnimAnklePumps,
-  AnimFoamRollerThoracic,
-  AnimSeatedKneeExtension,
-  AnimShoulderPress,
-} from "@/components/exercises/ExerciseAnimations";
-
-import {
-  AnimGluteBridge,
-  AnimDeadBug,
-  AnimPlank,
-  AnimLunge,
-  AnimWallSit,
-  AnimDumbbellBicepCurl,
-  AnimRomanianDeadlift,
-  AnimBandHipAbduction,
-  AnimBallBridge,
-} from "@/components/exercises/ExerciseAnimationsPart2";
-
-import {
-  AnimCatCow,
-  AnimNerveFlossingSciatica,
-  AnimPelvicTilt,
-  AnimLumbarRotation,
-  AnimMcKenziePress,
-  AnimKneeToChest,
-  AnimProneHipExtension,
-} from "@/components/exercises/ExerciseAnimationsPart3";
 
 // ─── Base de datos de ejercicios con instrucciones completas ─────────────────
 const ALL_EXERCISES: ExerciseData[] = [
@@ -66,7 +29,7 @@ const ALL_EXERCISES: ExerciseData[] = [
     ],
     tip: "Si sientes tensión en el trapecio, baja el hombro antes de cada repetición.",
     contraindications: "Evitar en fase aguda post-operatoria sin autorización médica.",
-    AnimComponent: AnimShoulderExternalRotation,
+    youtubeSearch: "shoulder external rotation exercise physical therapy",
   },
   {
     id: "bird-dog",
@@ -85,7 +48,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Regresa con control y cambia de lado. Alterna.",
     ],
     tip: "Imagina que tienes un vaso de agua en la espalda — no lo derames.",
-    AnimComponent: AnimBirdDog,
+    youtubeSearch: "bird dog exercise physical therapy tutorial",
   },
   {
     id: "hip-flexor-stretch",
@@ -104,7 +67,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Para intensificar: eleva el brazo del mismo lado hacia arriba.",
     ],
     tip: "Sin retroversión pélvica, el estiramiento es superficial. Ese es el error más común.",
-    AnimComponent: AnimHipFlexorStretch,
+    youtubeSearch: "hip flexor stretch physical therapy tutorial",
   },
   {
     id: "resistance-band-row",
@@ -123,7 +86,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Extiende lentamente hasta posición inicial (3 segundos).",
     ],
     tip: "Si los hombros suben hacia las orejas, reduce el peso. El trapecio superior no debe dominar.",
-    AnimComponent: AnimResistanceBandRow,
+    youtubeSearch: "resistance band row exercise tutorial",
   },
   {
     id: "dumbbell-lateral-raise",
@@ -142,7 +105,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "No uses el impulso del cuerpo — movimiento puro del deltoides.",
     ],
     tip: "Si no puedes controlar el descenso, el peso es demasiado alto. Prioriza la excéntrica.",
-    AnimComponent: AnimDumbbellLateralRaise,
+    youtubeSearch: "dumbbell lateral raise exercise tutorial",
   },
   {
     id: "glute-bridge",
@@ -161,7 +124,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja lentamente vértebra a vértebra. No te desplomes.",
     ],
     tip: "Si sientes la lumbar, empuja más con los talones y aprieta más los glúteos.",
-    AnimComponent: AnimGluteBridge,
+    youtubeSearch: "glute bridge exercise physical therapy",
   },
   {
     id: "dead-bug",
@@ -181,7 +144,7 @@ const ALL_EXERCISES: ExerciseData[] = [
     ],
     tip: "Exhala profundo antes de mover las extremidades. El diafragma es parte del core.",
     contraindications: "Evitar en hernias discales agudas o dolor lumbar irradiado activo.",
-    AnimComponent: AnimDeadBug,
+    youtubeSearch: "dead bug exercise physical therapy core",
   },
   {
     id: "plank",
@@ -200,7 +163,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Si la forma cae, termina la serie. Calidad > cantidad.",
     ],
     tip: "Aprieta los puños y empuja contra el suelo — activa más el core.",
-    AnimComponent: AnimPlank,
+    youtubeSearch: "plank exercise proper form tutorial",
   },
   {
     id: "cervical-retraction",
@@ -219,7 +182,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Repite 10 veces. Con ojos en un punto fijo al frente.",
     ],
     tip: "Si tienes dolor de cabeza al hacerlo, el rango es demasiado amplio. Reduce.",
-    AnimComponent: AnimCervicalRetraction,
+    youtubeSearch: "cervical retraction chin tuck exercise physical therapy",
   },
   {
     id: "ankle-pumps",
@@ -238,7 +201,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "20 repeticiones por tobillo, dos veces al día si es post-quirúrgico.",
     ],
     tip: "Fundamental en las primeras 24–48h post-cirugía para prevenir TVP.",
-    AnimComponent: AnimAnklePumps,
+    youtubeSearch: "ankle pumps exercise physical therapy post surgery",
   },
   {
     id: "cat-cow",
@@ -257,7 +220,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Mantén cada posición 1–2 respiraciones. Fluye sin forzar.",
     ],
     tip: "Más lento = más efectivo. No rebotes. Siente cada vértebra moverse.",
-    AnimComponent: AnimCatCow,
+    youtubeSearch: "cat cow stretch exercise tutorial",
   },
   {
     id: "nerve-flossing",
@@ -277,7 +240,7 @@ const ALL_EXERCISES: ExerciseData[] = [
     ],
     tip: "No lo hagas en fase aguda de hernia discal con neurológico activo.",
     contraindications: "Hernia discal en fase aguda con irradiación severa.",
-    AnimComponent: AnimNerveFlossingSciatica,
+    youtubeSearch: "sciatic nerve flossing exercise tutorial",
   },
   {
     id: "pelvic-tilt",
@@ -296,7 +259,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Relaja. La columna debe moverse solo unos centímetros.",
     ],
     tip: "Este es el primer ejercicio que debe dominar cualquier paciente con lumbalgia.",
-    AnimComponent: AnimPelvicTilt,
+    youtubeSearch: "pelvic tilt exercise physical therapy",
   },
   {
     id: "lumbar-rotation",
@@ -315,7 +278,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Regresa al centro y cambia de lado.",
     ],
     tip: "Si las rodillas no llegan al suelo, coloca un cojín debajo. No fuerces.",
-    AnimComponent: AnimLumbarRotation,
+    youtubeSearch: "lumbar rotation stretch exercise tutorial",
   },
   {
     id: "mckenzie-press",
@@ -335,7 +298,7 @@ const ALL_EXERCISES: ExerciseData[] = [
     ],
     tip: "La centralización del dolor (de pierna a lumbar) es el objetivo terapéutico.",
     contraindications: "Contraindicado en estenosis de canal, espondilolistesis inestable.",
-    AnimComponent: AnimMcKenziePress,
+    youtubeSearch: "McKenzie press up extension exercise physical therapy",
   },
   {
     id: "knee-to-chest",
@@ -354,7 +317,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Cambia de lado. Luego puedes hacer las dos rodillas juntas.",
     ],
     tip: "No levantes la cabeza. Mantén el cuello relajado.",
-    AnimComponent: AnimKneeToChest,
+    youtubeSearch: "knee to chest stretch exercise tutorial",
   },
   {
     id: "romanian-deadlift",
@@ -373,7 +336,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Vuelve empujando el suelo con los pies y apretando los glúteos.",
     ],
     tip: "Las mancuernas deben rozar las piernas en todo momento — si se separan, la técnica falla.",
-    AnimComponent: AnimRomanianDeadlift,
+    youtubeSearch: "romanian deadlift proper form tutorial",
   },
   {
     id: "lunge",
@@ -392,7 +355,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Empuja con el talón delantero para volver. Alterna lados.",
     ],
     tip: "Si la rodilla colapsa hacia dentro, trabaja primero la fuerza de glúteo.",
-    AnimComponent: AnimLunge,
+    youtubeSearch: "lunge exercise proper form tutorial",
   },
   {
     id: "band-hip-abduction",
@@ -411,7 +374,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "O: tumbado de lado, eleva la pierna superior 45°.",
     ],
     tip: "El glúteo medio es el estabilizador principal de la rodilla.",
-    AnimComponent: AnimBandHipAbduction,
+    youtubeSearch: "band hip abduction exercise glute med",
   },
   {
     id: "ball-bridge",
@@ -430,7 +393,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Progresión: haz el puente con una sola pierna.",
     ],
     tip: "Si la pelota rueda, reduce el rango hasta controlar la estabilidad.",
-    AnimComponent: AnimBallBridge,
+    youtubeSearch: "exercise ball bridge hamstring curl tutorial",
   },
   {
     id: "wall-sit",
@@ -449,7 +412,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "30 segundos. Si no llegas, empieza en 15s e incrementa 5s por sesión.",
     ],
     tip: "Rodillas en línea con los pies. Si duelen, sube un poco (ángulo menor de 90°).",
-    AnimComponent: AnimWallSit,
+    youtubeSearch: "wall sit exercise physical therapy quadriceps",
   },
   {
     id: "foam-roller-thoracic",
@@ -468,7 +431,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Trabaja de T6 a T12. Evita la zona lumbar y cervical.",
     ],
     tip: "Si cruje — es normal y suele ser alivio. Si duele — cambia el ángulo.",
-    AnimComponent: AnimFoamRollerThoracic,
+    youtubeSearch: "thoracic extension foam roller exercise tutorial",
   },
   {
     id: "seated-knee-extension",
@@ -487,7 +450,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja en 3 segundos con control total. No dejes caer.",
     ],
     tip: "La velocidad del descenso (excéntrica lenta) es más importante que subir.",
-    AnimComponent: AnimSeatedKneeExtension,
+    youtubeSearch: "seated knee extension exercise physical therapy",
   },
   {
     id: "dumbbell-bicep-curl",
@@ -506,7 +469,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja en 3 segundos con control. Evita el balanceo de tronco.",
     ],
     tip: "Si el tronco se balancea, el peso es demasiado alto.",
-    AnimComponent: AnimDumbbellBicepCurl,
+    youtubeSearch: "dumbbell bicep curl proper form tutorial",
   },
   {
     id: "prone-hip-extension",
@@ -525,7 +488,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja con control. Cambia de lado.",
     ],
     tip: "Si la lumbar se arquea, la pierna sube demasiado o el glúteo no está activado.",
-    AnimComponent: AnimProneHipExtension,
+    youtubeSearch: "prone hip extension exercise glute activation",
   },
   {
     id: "shoulder-press",
@@ -544,7 +507,7 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja lentamente en 3 segundos. No dejes caer.",
     ],
     tip: "Si arqueas la lumbar para terminar la repetición, el peso es demasiado alto.",
-    AnimComponent: AnimShoulderPress,
+    youtubeSearch: "dumbbell shoulder press proper form tutorial",
   },
 ];
 
@@ -559,6 +522,42 @@ const DIFFICULTY_BG: Record<string, string> = {
   expert:       "bg-red-500/10 text-red-700 border-red-500/20",
 };
 
+// ─── Colores por región para el thumbnail ──────────────────────────────────
+const REGION_GRADIENT: Record<string, string> = {
+  "Hombro":         "from-sky-500 to-blue-600",
+  "Lumbar / Core":  "from-teal-500 to-emerald-600",
+  "Lumbar / Lumbar":"from-teal-500 to-emerald-600",
+  "Lumbar / Torácica":"from-teal-500 to-emerald-600",
+  "Lumbar / Sacroilíaca":"from-teal-500 to-emerald-600",
+  "Cadera":         "from-violet-500 to-purple-600",
+  "Cadera / Glúteo":"from-violet-500 to-purple-600",
+  "Core":           "from-teal-500 to-emerald-600",
+  "Cervical":       "from-pink-500 to-rose-600",
+  "Tobillo":        "from-lime-500 to-green-600",
+  "Torácica":       "from-amber-500 to-orange-600",
+  "Rodilla / Cuádriceps": "from-orange-500 to-red-600",
+  "Cuádriceps / Rodilla": "from-orange-500 to-red-600",
+  "Glúteo / Lumbar":      "from-violet-500 to-purple-600",
+  "Glúteo / Core":        "from-violet-500 to-purple-600",
+  "Isquiotibiales / Lumbar": "from-indigo-500 to-blue-600",
+  "Pierna / Rodilla":     "from-orange-500 to-red-600",
+  "Codo / Bíceps":        "from-sky-500 to-blue-600",
+  "Espalda media":        "from-indigo-500 to-blue-600",
+  "Nervio Ciático":       "from-rose-500 to-pink-600",
+  "Lumbar / Pelvis":      "from-teal-500 to-emerald-600",
+  "Lumbar":               "from-teal-500 to-emerald-600",
+};
+
+const REGION_EMOJI: Record<string, string> = {
+  "Hombro": "🦾", "Lumbar / Core": "🎯", "Core": "🎯", "Cadera": "🦵",
+  "Cadera / Glúteo": "🦵", "Cervical": "🧠", "Tobillo": "🦶", "Torácica": "🫁",
+  "Rodilla / Cuádriceps": "🦵", "Cuádriceps / Rodilla": "🦵", "Glúteo / Lumbar": "🍑",
+  "Glúteo / Core": "🍑", "Isquiotibiales / Lumbar": "🦵", "Pierna / Rodilla": "🦵",
+  "Codo / Bíceps": "💪", "Espalda media": "🔙", "Nervio Ciático": "⚡",
+  "Lumbar / Pelvis": "🎯", "Lumbar": "🎯", "Lumbar / Torácica": "🫁",
+  "Lumbar / Sacroilíaca": "🎯", "Lumbar / Lumbar": "🎯",
+};
+
 // ─── Tarjeta de ejercicio ─────────────────────────────────────────────────────
 function ExerciseCard({
   exercise,
@@ -571,27 +570,38 @@ function ExerciseCard({
   onAdd: () => void;
   added: boolean;
 }) {
+  const gradient = REGION_GRADIENT[exercise.region] ?? "from-brand-500 to-brand-700";
+  const emoji = REGION_EMOJI[exercise.region] ?? "🏃";
+  const hasVideo = !!(exercise.youtubeId || exercise.youtubeSearch);
+
   return (
-    <Card className="group overflow-hidden hover:shadow-card-md transition-all duration-200 hover:-translate-y-0.5 border border-surface-200 bg-white">
-      {/* Thumbnail — GIF animado (fallback: SVG) */}
+    <Card className="group overflow-hidden hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 border border-surface-200 bg-white">
+      {/* Thumbnail con gradiente + ícono de región */}
       <button
         onClick={onPlay}
-        className="relative block w-full overflow-hidden bg-white"
+        className="relative block w-full overflow-hidden"
         style={{ aspectRatio: "16/10" }}
       >
-        <ExerciseGif
-          exerciseName={exercise.name}
-          fallback={exercise.AnimComponent}
-          compact
-          className="pointer-events-none"
-        />
+        <div className={cn("absolute inset-0 bg-gradient-to-br", gradient)} />
 
-        {/* Overlay hover */}
-        <div className="absolute inset-0 bg-brand-900/0 group-hover:bg-brand-900/50 transition-all duration-200 flex items-center justify-center">
-          <div className="opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-90 group-hover:scale-100 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-xl">
-            <span className="text-brand-600 text-xl font-bold">▶</span>
+        {/* Emoji región */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-5xl opacity-25 select-none">{emoji}</span>
+        </div>
+
+        {/* Play button */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-full bg-white/20 border-2 border-white/60 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-all duration-200 group-hover:scale-110">
+            <Play className="h-6 w-6 text-white fill-white translate-x-0.5" />
           </div>
         </div>
+
+        {/* Badge: Video disponible */}
+        {hasVideo && (
+          <div className="absolute top-2 start-2 z-10 flex items-center gap-1 bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded-full">
+            <span className="text-[10px] text-white font-medium">▶ Video</span>
+          </div>
+        )}
 
         {/* Badge dificultad */}
         <div className="absolute top-2 end-2 z-10">
@@ -602,7 +612,7 @@ function ExerciseCard({
 
         {/* Badge duración/series */}
         {(exercise.durationSeconds || (exercise.sets && exercise.reps)) && (
-          <div className="absolute bottom-2 start-2 z-10 flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5">
+          <div className="absolute bottom-2 start-2 z-10 flex items-center gap-1 rounded-full bg-black/50 px-2 py-0.5">
             {exercise.durationSeconds ? (
               <>
                 <Clock className="h-2.5 w-2.5 text-white" />

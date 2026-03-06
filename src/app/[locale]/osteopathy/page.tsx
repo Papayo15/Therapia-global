@@ -8,23 +8,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
-import {
-  AnimHepaticPump,
-  AnimMesentericRelease,
-  AnimKidneyMobilization,
-  AnimColonRelease,
-  AnimCV4,
-  AnimSBS,
-  AnimFrontalLift,
-  AnimHVLALumbarRoll,
-  AnimMuscleEnergySacrum,
-  AnimThoracicThrust,
-  AnimCounterstrain,
-  AnimMETCervical,
-} from "@/components/exercises/OsteopathyAnimations";
+import { Play } from "lucide-react";
 
 // ─── Técnicas de osteopatía con instrucciones completas ──────────────────────
-const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; contraindications_brief?: string })[] = [
+const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[] = [
   // ── VISCERAL ──────────────────────────────────────────────────────────────
   {
     id: "hepatic-pump",
@@ -37,15 +24,16 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     musclesWorked: ["Cápsula de Glisson", "Ligamentos hepatoduodenales", "Sistema porta"],
     keyPoint: "El ritmo es la clave: 2 Hz. Demasiado rápido pierde efectividad linfática.",
     steps: [
-      "Paciente en supino, terapeuta a su derecha.",
-      "Coloca ambas manos sobre el hipocondrio derecho, solapadas.",
-      "Aplica una compresión suave y rítmica hacia el diafragma (2 por segundo).",
-      "Mantén 30–60 segundos. La presión debe ser tolerable — nunca dolorosa.",
-      "Busca el 'punto de quietud' hepática y mantén hasta sentir la relajación.",
+      "POSICIÓN PACIENTE: Decúbito supino, brazos relajados a los lados.",
+      "POSICIÓN TERAPEUTA: De pie a la derecha del paciente, a la altura del tórax.",
+      "CONTACTO: Ambas manos superpuestas sobre el hipocondrio derecho, talón de mano sobre el reborde costal.",
+      "TÉCNICA: Aplicar compresión rítmica suave hacia el diafragma a 2 Hz (2 compresiones/segundo).",
+      "DURACIÓN: Mantener 30–60 segundos. Buscar el 'punto de quietud' (pausa en el ritmo hepático) y mantener hasta sentir la relajación tisular.",
+      "RETEST: Palpar el hipocondrio y evaluar cambio en la tensión hepática.",
     ],
     tip: "Si el paciente restringe la respiración, pídele que exhale profundo. La respiración amplifica el efecto.",
     contraindications: "Hepatitis aguda, cirrosis avanzada, carcinoma hepático activo.",
-    AnimComponent: AnimHepaticPump,
+    youtubeSearch: "hepatic pump osteopathy visceral technique",
   },
   {
     id: "mesenteric-release",
@@ -58,15 +46,16 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     musclesWorked: ["Raíz del mesenterio", "Fascia peritoneal", "Arteria mesentérica superior"],
     keyPoint: "El mesenterio va de L2 a la fosa ilíaca derecha — sigue ese vector.",
     steps: [
-      "Paciente en supino, piernas ligeramente flexionadas.",
-      "Palpa la raíz del mesenterio: desde el ombligo hacia la fosa ilíaca derecha.",
-      "Con ambas manos, eleva suavemente los tejidos hacia el esternón.",
-      "Sigue la dirección de menor resistencia (sigue el tejido, no lo fuerzas).",
-      "Mantén 30–90 segundos hasta sentir la liberación (sensación de 'soltar').",
+      "POSICIÓN PACIENTE: Supino con rodillas flexionadas a 45° para relajar los psoas.",
+      "POSICIÓN TERAPEUTA: De pie a la derecha, a la altura del abdomen.",
+      "CONTACTO: Yemas de los dedos de ambas manos en la zona umbilical, profundizando hacia la raíz del mesenterio.",
+      "EVALUACIÓN: Palpa la dirección de mayor restricción tisular (vector de la raíz del mesenterio: ombligo → fosa ilíaca derecha).",
+      "TÉCNICA: Eleva suavemente los tejidos hacia el esternón, siguiendo la dirección de menor resistencia. No fuerces.",
+      "MANTENER: 30–90 segundos hasta sentir la liberación (sensación de 'soltar' o calor).",
     ],
-    tip: "Pide al paciente que flexione las rodillas — relaja los psoas y facilita el acceso al mesenterio.",
+    tip: "Rodillas flexionadas relajan los psoas y facilitan el acceso al mesenterio. Fundamental.",
     contraindications: "Obstrucción intestinal aguda, post-cirugía abdominal reciente (<6 semanas).",
-    AnimComponent: AnimMesentericRelease,
+    youtubeSearch: "mesenteric release osteopathy visceral manipulation technique",
   },
   {
     id: "kidney-mobilization",
@@ -79,15 +68,16 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     musclesWorked: ["Fascia renal (Gerota)", "Cápsula renal", "Pedículo renal"],
     keyPoint: "El riñón se mueve 3–5 cm en respiración normal — eso es lo que buscamos liberar.",
     steps: [
-      "Paciente en decúbito lateral, riñón a tratar hacia arriba.",
-      "Mano posterior bajo el flanco, mano anterior en la zona lumbar anterior.",
-      "Pinza bimanual suave: acerca ambas manos sin presión excesiva.",
-      "Sigue el movimiento renal en la respiración: baja con la inspiración.",
-      "En la expiración, guía ligeramente el riñón en la dirección restringida.",
+      "POSICIÓN PACIENTE: Decúbito lateral (riñón a tratar hacia arriba), pierna superior flexionada.",
+      "POSICIÓN TERAPEUTA: De frente al paciente, a la altura del flanco.",
+      "CONTACTO POSTERIOR: Mano caudal bajo el flanco, dedos apuntando hacia la columna.",
+      "CONTACTO ANTERIOR: Mano craneal en la zona lumbar anterior, dedos hacia el riñón.",
+      "TÉCNICA — PINZA BIMANUAL: Acercar ambas manos suavemente hasta contactar el polo inferior renal. Seguir el movimiento renal con la respiración (desciende con la inspiración).",
+      "MOVILIZACIÓN: En la espiración, guiar el riñón en la dirección restringida. Mantener 3–5 ciclos respiratorios.",
     ],
     tip: "La palpación renal directa requiere práctica. Si no encuentras el riñón, busca la tensión perirrenal.",
     contraindications: "Litiasis renal aguda, pielonefritis activa, trauma renal reciente.",
-    AnimComponent: AnimKidneyMobilization,
+    youtubeSearch: "kidney mobilization osteopathy visceral technique",
   },
   {
     id: "colon-release",
@@ -98,17 +88,18 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     category: "visceral",
     mechanism: "Restaura la movilidad del marco cólico y mejora el tránsito intestinal.",
     musclesWorked: ["Fascia parietal del colon", "Haustras del colon", "Bandas de Toldt"],
-    keyPoint: "Sigue el marco cólico: derecha → transverso → izquierda.",
+    keyPoint: "Sigue el marco cólico: ascendente → transverso → descendente.",
     steps: [
-      "Paciente en supino, piernas relajadas.",
-      "Inicia en el colon ascendente (fosa ilíaca derecha): presión suave hacia la izquierda.",
-      "Desliza ambas manos siguiendo el colon transverso de derecha a izquierda.",
-      "Termina en el colon descendente, guiando hacia la fosa ilíaca izquierda.",
-      "Cada segmento: 15–30 segundos con presión suave y continua.",
+      "POSICIÓN PACIENTE: Supino, piernas relajadas, abdomen descubierto.",
+      "POSICIÓN TERAPEUTA: De pie a la derecha del paciente.",
+      "SEGMENTO 1 — COLON ASCENDENTE: Yemas de los dedos en la fosa ilíaca derecha. Presión suave hacia la izquierda y cefálicamente. 15–30 seg.",
+      "SEGMENTO 2 — COLON TRANSVERSO: Ambas manos bajo el reborde costal, deslizar de derecha a izquierda siguiendo el colon transverso. 15–30 seg.",
+      "SEGMENTO 3 — COLON DESCENDENTE: Dedos en hipocondrio izquierdo, guiar hacia la fosa ilíaca izquierda. 15–30 seg.",
+      "RETEST: Palpar cada segmento y evaluar cambio en la tensión y movilidad.",
     ],
-    tip: "Si hay resistencia, NO fuerces. Espera a que el tejido ceda (puede tardar 20–30 segundos).",
+    tip: "Si hay resistencia, NO fuerces. Espera a que el tejido ceda — puede tardar 20–30 segundos.",
     contraindications: "Cólico agudo activo, sospecha de vólvulo, colitis ulcerosa en brote.",
-    AnimComponent: AnimColonRelease,
+    youtubeSearch: "colon release osteopathy visceral manipulation large intestine",
   },
   // ── CRANEAL ───────────────────────────────────────────────────────────────
   {
@@ -122,15 +113,16 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     musclesWorked: ["Occipital", "Líquido cefalorraquídeo", "Dura madre craneal"],
     keyPoint: "El still point (pausa del MRP) es el momento terapéutico — no interrumpas.",
     steps: [
-      "Paciente en supino, cabeza del terapeuta a sus pies o a su cabecera.",
-      "Coloca los tenar de ambas manos bajo el occipital (protuberancias occipitales laterales).",
-      "NO apliques fuerza — solo mantén el contacto y siente el ritmo craneal.",
-      "En la fase de flexión del MRP, añade una resistencia mínima para no dejar que se expanda.",
-      "Espera el still point (2–10 segundos de pausa). Mantén hasta sentir la reanudación ampliada.",
+      "POSICIÓN PACIENTE: Supino, sin almohada, cabeza centrada.",
+      "POSICIÓN TERAPEUTA: Sentado a la cabecera del paciente, codos apoyados en la camilla.",
+      "CONTACTO: Coloca los tenar de ambas manos bajo el occipital, contactando las protuberancias occipitales laterales (squama occipital, lateral a la protuberancia occipital externa).",
+      "ESCUCHA: Siente el MRP (Mecanismo Respiratorio Primario) sin aplicar fuerza. Frecuencia normal: 8–12 ciclos/min.",
+      "TÉCNICA: En la fase de FLEXIÓN del MRP (occipital se ensancha), añade una resistencia mínima — como si no dejaras que las escamas occipitales se separen. Presión: 5–10 gramos.",
+      "STILL POINT: Mantén hasta que el MRP se detenga (still point, 2–30 segundos). Espera hasta que el ritmo se reanude con mayor amplitud y suavidad.",
     ],
-    tip: "Tus manos reciben información más que aplican fuerza. La presión debe ser de 5–10 gramos.",
+    tip: "Tus manos reciben información más que aplican fuerza. Si no sientes el MRP, relaja más tus manos.",
     contraindications: "Hipertensión intracraneal, trauma craneal agudo, hemorragia subaracnoidea.",
-    AnimComponent: AnimCV4,
+    youtubeSearch: "CV4 compression fourth ventricle osteopathy cranial technique",
   },
   {
     id: "sbs",
@@ -141,17 +133,18 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     category: "craneal",
     mechanism: "Evalúa y corrige las tensiones del mecanismo respiratorio primario en la SBS.",
     musclesWorked: ["Esfenoides", "Occipital", "Huesos temporales", "Sacro (por reciprocidad)"],
-    keyPoint: "Las 6 patrones de la SBS (flexión, extensión, torsión, inclinación lateral, compresión, rotación) tienen tratamientos distintos.",
+    keyPoint: "6 patrones de la SBS: flexión/extensión, torsión D/I, inclinación lateral, compresión.",
     steps: [
-      "Paciente en supino, terapeuta sentado a la cabecera.",
-      "Mano derecha sobre el esfenoides (alas mayores), mano izquierda sobre el occipital.",
-      "Siente el MRP: la fase de flexión eleva el esfenoides y el occipital se aplana.",
-      "Identifica el patrón de disfunción (dirección restringida).",
-      "Sigue la dirección de facilidad hasta el still point. Espera la corrección.",
+      "POSICIÓN PACIENTE: Supino sin almohada. Cabeza centrada y relajada.",
+      "POSICIÓN TERAPEUTA: Sentado a la cabecera, codos apoyados cómodamente.",
+      "CONTACTO ESFENOIDES (mano craneal): Pulgares sobre las alas mayores del esfenoides (lateral a las órbitas, en las sienes). Dedos 2–5 envolviendo el cráneo.",
+      "CONTACTO OCCIPITAL (mano caudal): Tenar bajo las escamas occipitales.",
+      "ESCUCHA MRP: Siente la flexión (esfenoides sube, occipital se aplana) y extensión (esfenoides baja, occipital se eleva). Identifica el patrón de disfunción.",
+      "CORRECCIÓN: Sigue la dirección de facilidad (donde el tejido va más fácil) hasta el still point. Espera la corrección espontánea.",
     ],
     tip: "Este es el examen más sutil de la osteopatía craneal. Requiere 200+ horas de práctica para ser fiable.",
     contraindications: "Trauma craneal agudo, fractura de base de cráneo, tumor craneal.",
-    AnimComponent: AnimSBS,
+    youtubeSearch: "sphenobasilar synchondrosis SBS osteopathy cranial sacral technique",
   },
   {
     id: "frontal-lift",
@@ -164,14 +157,15 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     musclesWorked: ["Hueso frontal", "Sutura coronal", "Seno frontal", "Fascia epicraneal"],
     keyPoint: "Muy efectivo en migraña frontal y sinusitis crónica.",
     steps: [
-      "Paciente en supino, terapeuta sentado a la cabecera.",
-      "Coloca los pulgares sobre el hueso frontal, paralelos a la línea de pelo.",
-      "Siente el movimiento del frontal en el MRP: avanza en flexión, retrocede en extensión.",
-      "En la fase de extensión, aplica un leve lift anterior (0.5–1 mm).",
-      "Mantén hasta el still point y la posterior ampliación del movimiento.",
+      "POSICIÓN PACIENTE: Supino sin almohada, completamente relajado.",
+      "POSICIÓN TERAPEUTA: Sentado a la cabecera, codos apoyados en la camilla.",
+      "CONTACTO: Pulgares sobre el hueso frontal paralelos a la línea de pelo (a 1–2 cm del nacimiento del cabello). Dedos envuelven suavemente la parte superior del cráneo.",
+      "ESCUCHA: Siente el movimiento del frontal en el MRP — avanza (flexión craneal) y retrocede (extensión craneal).",
+      "TÉCNICA: En la fase de EXTENSIÓN, aplica un leve lift anterior de 0.5–1 mm. Es mínimo — la fuerza es de gramos, no kilos.",
+      "MANTENER: Espera el still point y la posterior ampliación del movimiento frontal. El seno frontal puede drenar (el paciente puede sentir presión que se libera).",
     ],
-    tip: "Si el paciente tiene dolor de cabeza, este contacto puede ser muy sensible. Comienza con presión mínima.",
-    AnimComponent: AnimFrontalLift,
+    tip: "Si el paciente tiene cefalea, este contacto puede ser muy sensible. Comienza con presión mínima y aumenta gradualmente.",
+    youtubeSearch: "frontal lift craniosacral osteopathy frontal bone technique",
   },
   // ── ESTRUCTURAL ───────────────────────────────────────────────────────────
   {
@@ -183,17 +177,18 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     category: "structural",
     mechanism: "Thrust de alta velocidad y baja amplitud para restaurar la movilidad articular lumbar.",
     musclesWorked: ["Articulaciones facetarias lumbares", "Ligamentos iliolumbares", "Multífidos"],
-    keyPoint: "La barrera se alcanza SIN fuerza — el thrust es pequeño y rápido sobre la barrera.",
+    keyPoint: "La barrera se alcanza SIN fuerza — el thrust es pequeño y rápido SOBRE la barrera.",
     steps: [
-      "Paciente en decúbito lateral, segmento a tratar hacia arriba.",
-      "Flexiona la cadera superior y la rodilla a 90°. Estabiliza el hombro superior.",
-      "Localiza el segmento a tratar palpando los procesos espinosos.",
-      "Crea la tensión de palanca: rodilla hacia abajo, hombro hacia atrás.",
-      "Thrust corto y rápido sobre la pelvis en el momento de máxima tensión.",
+      "POSICIÓN PACIENTE: Decúbito lateral, segmento a tratar (faceta restringida) hacia arriba. Almohada bajo la cabeza.",
+      "POSICIÓN TERAPEUTA: De frente al paciente, a la altura de la cintura.",
+      "SETUP INFERIOR: Flexiona la cadera inferior ~30° y la rodilla ~90°. La pierna inferior actúa como base.",
+      "SETUP SUPERIOR: Flexiona la cadera superior hasta que el movimiento llegue al segmento a tratar (se siente como tensión en los procesos espinosos). Rodilla superior cae hacia la camilla.",
+      "PALANCA: Rota el tronco superior hacia atrás (hombro hacia la camilla) hasta sentir tensión en el segmento. Ahora tienes la palanca dual: cadera abajo, hombro atrás.",
+      "THRUST: Cuando la tensión está en su máximo, aplica un impulso corto, rápido y controlado sobre la pelvis (ASIS) hacia abajo. La amplitud es de 1–2 cm.",
     ],
-    tip: "Si escuchas cavitación (clic), es normal pero no necesario. La técnica es efectiva sin sonido.",
+    tip: "Si escuchas cavitación (clic/pop), es normal pero no necesario. La técnica es efectiva sin sonido.",
     contraindications: "Osteoporosis grave, hernia discal con neurológico activo, fractura vertebral.",
-    AnimComponent: AnimHVLALumbarRoll,
+    youtubeSearch: "HVLA lumbar roll manipulation osteopathy technique",
   },
   {
     id: "met-sacrum",
@@ -204,16 +199,17 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     category: "structural",
     mechanism: "Usa contracciones isométricas del paciente para corregir la torsión sacra.",
     musclesWorked: ["Piriforme", "Glúteo mayor", "Ligamentos sacroilíacos", "Isquiotibiales"],
-    keyPoint: "Contracción del 20% de la fuerza máxima — suficiente para activar el mecanismo muscular.",
+    keyPoint: "Contracción del 20% — suficiente para activar el mecanismo reflejo muscular.",
     steps: [
-      "Paciente en decúbito prono, terapeuta al lado del sacro a tratar.",
-      "Flexiona la rodilla ipsilateral a 90°. Palpa el sacro con la mano homolateral.",
-      "Lleva el pie hacia el exterior (rotación interna de cadera) hasta la barrera.",
-      "Pide al paciente: 'Lleva el pie hacia dentro contra mi resistencia, 5 segundos'.",
-      "Tras la contracción, avanza la palanca al nuevo rango. Repite 3 veces.",
+      "POSICIÓN PACIENTE: Decúbito prono, cara hacia abajo (o girada), brazos relajados.",
+      "POSICIÓN TERAPEUTA: De pie al lado del sacro a tratar, a la altura de la pelvis.",
+      "EVALUACIÓN: Palpa los surcos sacros para identificar el sacro posterior (el lado que está caído).",
+      "SETUP: Flexiona la rodilla ipsilateral al sacro posterior a 90°. Mano caudal sobre el sacro para monitorear. Mano craneal estabiliza la pelvis (ASIS contralateral).",
+      "PALANCA: Lleva el pie hacia el exterior (rotación interna de cadera) hasta alcanzar la barrera sacra. Mantén ahí.",
+      "MET: Pide al paciente: 'Lleva el pie hacia dentro contra mi mano, 20% de fuerza, 5 segundos'. Resiste sin ceder. Tras la contracción: 'Relaja'. Avanza al nuevo rango. Repite 3–5 veces.",
     ],
-    tip: "Tras las 3 contracciones, el rango de movimiento debe haber aumentado notablemente.",
-    AnimComponent: AnimMuscleEnergySacrum,
+    tip: "Tras las 3 contracciones el rango debe aumentar notablemente. Si no, revisa la identificación del sacro posterior.",
+    youtubeSearch: "muscle energy technique sacrum osteopathy MET sacroiliac",
   },
   {
     id: "thoracic-thrust",
@@ -224,17 +220,18 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     category: "structural",
     mechanism: "Thrust anterior sobre la columna torácica para restaurar la movilidad segmentaria.",
     musclesWorked: ["Articulaciones costovertebales", "Facetas torácicas", "Ligamentos longitudinales"],
-    keyPoint: "La posición del paciente (brazos cruzados) determina el nivel de palanca.",
+    keyPoint: "La posición de los brazos del paciente (cruzados) sube o baja el nivel de palanca.",
     steps: [
-      "Paciente en supino, brazos cruzados sobre el pecho.",
-      "Terapeuta de pie, inclínate sobre el paciente para localizar el segmento.",
-      "Coloca tu mano hipotenar directamente sobre el proceso espinoso a tratar.",
-      "El pecho del terapeuta contacta los brazos del paciente.",
-      "Thrust rápido hacia abajo en la espiración del paciente.",
+      "POSICIÓN PACIENTE: Supino, brazos cruzados sobre el pecho (manos en hombros opuestos). Cabeza en posición neutra.",
+      "POSICIÓN TERAPEUTA: De pie al lado del paciente, a la altura del tórax a tratar.",
+      "CONTACTO POSTERIOR: Coloca tu mano dominante (en puño suave o borde hipotenar) directamente sobre el proceso espinoso del segmento a tratar.",
+      "AJUSTE DE NIVEL: Pide al paciente que suba los codos — esto sube el nivel de palanca. Baje los codos — baja el nivel. Ajusta hasta sentir la tensión en el segmento.",
+      "CONTACTO ANTERIOR: Tu pecho o antebrazo contacta los brazos del paciente. Tu peso corporal es la fuerza.",
+      "THRUST: Pide: 'Exhala completamente'. En el momento de máxima espiración, aplica el thrust hacia abajo con tu peso corporal. Rápido, corto (1–2 cm).",
     ],
-    tip: "Pide al paciente que exhale antes del thrust — relaja los músculos paravertebrales.",
+    tip: "Pide al paciente que exhale antes del thrust — relaja los paravertebrales y maximiza la seguridad.",
     contraindications: "Osteoporosis, fracturas vertebrales, mielopatía torácica.",
-    AnimComponent: AnimThoracicThrust,
+    youtubeSearch: "thoracic thrust manipulation osteopathy HVLA thoracic spine",
   },
   {
     id: "counterstrain",
@@ -247,14 +244,15 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     musclesWorked: ["Husos musculares", "Receptores propioceptivos", "Tejido conectivo"],
     keyPoint: "La posición de confort es la que reduce el dolor del tender point en un 70%.",
     steps: [
-      "Localiza el tender point: punto doloroso a la palpación (VAS ≥7/10).",
-      "Califica el dolor del 0 al 10 mientras lo palpas.",
-      "Mueve al paciente hasta que el dolor baje a ≤3/10 o desaparezca.",
-      "Mantén esa posición 90 segundos SIN moverte ni hablar.",
-      "Retorna lentamente a posición neutra (3–5 segundos). Reclasifica el tender point.",
+      "EVALUACIÓN: Localiza el tender point con palpación — punto hipersensible (VAS ≥7/10). Marca mentalmente su ubicación.",
+      "BASELINE: Con el pulgar sobre el tender point, cuantifica el dolor del 0 al 10. Mantén el contacto durante toda la técnica.",
+      "POSICIÓN DE CONFORT: Mueve lentamente al paciente hacia la posición de menor dolor. Regla: el dolor debe bajar al menos 70% (de 7/10 a ≤2/10).",
+      "MANTENIMIENTO: Mantén esa posición exacta durante 90 segundos COMPLETOS. No hables. No te muevas. El silencio es parte de la técnica.",
+      "RETORNO: Regresa MUY lentamente a posición neutra (3–5 segundos). Un retorno brusco puede reactivar el tender point.",
+      "RETEST: Vuelve a palpar el tender point. El dolor debe haber disminuido significativamente o desaparecido.",
     ],
-    tip: "Si el dolor no baja al 70%, la posición no es correcta. Ajusta 1–2 mm y reevalúa.",
-    AnimComponent: AnimCounterstrain,
+    tip: "Si el dolor no baja al 70%, la posición no es la correcta. Ajusta 1–2 mm y reevalúa.",
+    youtubeSearch: "counterstrain osteopathy positional release technique tender point",
   },
   {
     id: "met-cervical",
@@ -267,15 +265,16 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string; con
     musclesWorked: ["Esternocleidomastoideo", "Escalenos", "Suboccipitales", "Músculos profundos cervicales"],
     keyPoint: "Localiza la barrera antes de pedir la contracción — la MET actúa EN la barrera.",
     steps: [
-      "Paciente sentado o supino, terapeuta detrás o al lado.",
-      "Lleva la cabeza hasta la barrera de movimiento (donde empieza la resistencia).",
-      "Pide: 'Gira la cabeza hacia mi mano (contracción del 20%), 5 segundos'.",
-      "Mantén la resistencia sin moverte. Tras 5 segundos: 'Relaja'.",
-      "Avanza a la nueva barrera. Repite 3–5 veces.",
+      "POSICIÓN PACIENTE: Supino sin almohada (o sentado si es C1–C3). Cuello en posición neutra.",
+      "POSICIÓN TERAPEUTA: A la cabecera (supino) o detrás del paciente (sentado). Manos envolviendo suavemente el occipital/cervical.",
+      "EVALUACIÓN: Evalúa la rotación, flexión lateral y flexión/extensión. Identifica la dirección restringida y la barrera (donde empieza la resistencia, NO el dolor).",
+      "PALANCA: Lleva la cabeza hasta la barrera de movimiento. Mantén ahí — no pases la barrera.",
+      "MET: Instrucción clara: 'Gira suavemente la cabeza hacia mi mano (o hacia la derecha/izquierda), 20% de fuerza, 5 segundos'. Resiste isométricamente — sin movimiento.",
+      "CICLO: Tras 5 seg: 'Relaja'. Espera 2–3 seg. Avanza a la nueva barrera (mayor rango). Repite 3–5 veces.",
     ],
-    tip: "Tras cada ciclo el rango debe aumentar. Si no, revisa la localización de la barrera.",
+    tip: "Tras cada ciclo el rango debe aumentar. Si no, revisa la localización de la barrera o el diagnóstico.",
     contraindications: "Insuficiencia vertebrobasilar, fractura cervical, mielopatía cervical.",
-    AnimComponent: AnimMETCervical,
+    youtubeSearch: "muscle energy technique cervical spine osteopathy MET neck",
   },
 ];
 
@@ -302,6 +301,18 @@ const CATEGORY_COLORS: Record<string, string> = {
   structural: "bg-blue-500/10 text-blue-700 border border-blue-500/20",
 };
 
+const CATEGORY_GRADIENT: Record<string, string> = {
+  visceral:   "from-rose-900 via-rose-800 to-pink-900",
+  craneal:    "from-purple-900 via-violet-800 to-indigo-900",
+  structural: "from-blue-900 via-sky-800 to-cyan-900",
+};
+
+const CATEGORY_EMOJI: Record<string, string> = {
+  visceral:   "🫀",
+  craneal:    "🧠",
+  structural: "🦴",
+};
+
 // ─── Tarjeta de técnica ───────────────────────────────────────────────────────
 function TechniqueCard({
   technique,
@@ -310,39 +321,46 @@ function TechniqueCard({
   technique: typeof ALL_TECHNIQUES[0];
   onPlay: () => void;
 }) {
-  const AnimComp = technique.AnimComponent;
+  const hasVideo = !!(technique.youtubeId || technique.youtubeSearch);
   return (
     <Card className="group overflow-hidden hover:shadow-card-md transition-all duration-200 hover:-translate-y-0.5 border border-surface-200 bg-white cursor-pointer" onClick={onPlay}>
-      {/* Animación */}
-      <div className="relative overflow-hidden bg-surface-900" style={{ aspectRatio: "16/10" }}>
-        {AnimComp ? (
-          <div className="w-full h-full p-3 flex items-center justify-center pointer-events-none">
-            <AnimComp />
-          </div>
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-surface-800 to-surface-900">
-            <span className="text-4xl opacity-40">🩺</span>
-          </div>
-        )}
+      {/* Thumbnail con gradiente */}
+      <div className={cn("relative overflow-hidden bg-gradient-to-br", CATEGORY_GRADIENT[technique.category])} style={{ aspectRatio: "16/10" }}>
+        {/* Emoji de fondo */}
+        <span className="absolute inset-0 flex items-center justify-center text-7xl opacity-[0.15] select-none pointer-events-none">
+          {CATEGORY_EMOJI[technique.category]}
+        </span>
 
         {/* Overlay hover */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center">
-          <div className="opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-xl">
-            <span className="text-brand-600 text-xl font-bold">▶</span>
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-200 flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-90 group-hover:scale-100 bg-white/20 backdrop-blur-sm border border-white/60 rounded-full w-12 h-12 flex items-center justify-center shadow-xl">
+            <Play className="h-5 w-5 text-white fill-white ms-0.5" />
           </div>
         </div>
 
-        {/* Badges */}
+        {/* Badge categoría */}
         <div className="absolute top-2 start-2 z-10">
           <span className={cn("text-[10px] font-semibold px-2 py-0.5 rounded-full border", CATEGORY_COLORS[technique.category])}>
             {technique.category.charAt(0).toUpperCase() + technique.category.slice(1)}
           </span>
         </div>
+
+        {/* Badge dificultad */}
         <div className="absolute top-2 end-2 z-10">
           <span className={cn("text-[10px] font-semibold px-2 py-0.5 rounded-full border", DIFFICULTY_COLORS[technique.difficulty])}>
             {DIFFICULTY_LABEL[technique.difficulty]}
           </span>
         </div>
+
+        {/* Badge video */}
+        {hasVideo && (
+          <div className="absolute bottom-2 end-2 z-10">
+            <span className="flex items-center gap-1 text-[10px] font-medium text-white bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-full">
+              <Play className="h-2.5 w-2.5 fill-white" />
+              Video
+            </span>
+          </div>
+        )}
       </div>
 
       <CardContent className="p-3.5">
