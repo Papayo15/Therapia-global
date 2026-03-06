@@ -5,7 +5,7 @@ export default createMiddleware(routing);
 
 export const config = {
   matcher: [
-    // Match all pathnames except static files and api routes
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    // Match all pathnames except static files, api routes and Netlify internals
+    "/((?!api|_next|_vercel|_netlify|.*\\..*).*)",
   ],
 };

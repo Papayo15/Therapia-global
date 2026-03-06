@@ -33,6 +33,7 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
     ],
     tip: "Si el paciente restringe la respiración, pídele que exhale profundo. La respiración amplifica el efecto.",
     contraindications: "Hepatitis aguda, cirrosis avanzada, carcinoma hepático activo.",
+    youtubeId: "zEVDGKJkBR4",
     youtubeSearch: "hepatic pump osteopathy visceral technique",
   },
   {
@@ -55,6 +56,7 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
     ],
     tip: "Rodillas flexionadas relajan los psoas y facilitan el acceso al mesenterio. Fundamental.",
     contraindications: "Obstrucción intestinal aguda, post-cirugía abdominal reciente (<6 semanas).",
+    youtubeId: "R7iFIHH2hMs",
     youtubeSearch: "mesenteric release osteopathy visceral manipulation technique",
   },
   {
@@ -77,6 +79,7 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
     ],
     tip: "La palpación renal directa requiere práctica. Si no encuentras el riñón, busca la tensión perirrenal.",
     contraindications: "Litiasis renal aguda, pielonefritis activa, trauma renal reciente.",
+    youtubeId: "5jV_eLxMkWU",
     youtubeSearch: "kidney mobilization osteopathy visceral technique",
   },
   {
@@ -99,6 +102,7 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
     ],
     tip: "Si hay resistencia, NO fuerces. Espera a que el tejido ceda — puede tardar 20–30 segundos.",
     contraindications: "Cólico agudo activo, sospecha de vólvulo, colitis ulcerosa en brote.",
+    youtubeId: "XcQFwJ68Y2Q",
     youtubeSearch: "colon release osteopathy visceral manipulation large intestine",
   },
   // ── CRANEAL ───────────────────────────────────────────────────────────────
@@ -122,6 +126,7 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
     ],
     tip: "Tus manos reciben información más que aplican fuerza. Si no sientes el MRP, relaja más tus manos.",
     contraindications: "Hipertensión intracraneal, trauma craneal agudo, hemorragia subaracnoidea.",
+    youtubeId: "7iL01d4n4Gg",
     youtubeSearch: "CV4 compression fourth ventricle osteopathy cranial technique",
   },
   {
@@ -144,6 +149,7 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
     ],
     tip: "Este es el examen más sutil de la osteopatía craneal. Requiere 200+ horas de práctica para ser fiable.",
     contraindications: "Trauma craneal agudo, fractura de base de cráneo, tumor craneal.",
+    youtubeId: "bHpLWBHPjqA",
     youtubeSearch: "sphenobasilar synchondrosis SBS osteopathy cranial sacral technique",
   },
   {
@@ -165,31 +171,10 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
       "MANTENER: Espera el still point y la posterior ampliación del movimiento frontal. El seno frontal puede drenar (el paciente puede sentir presión que se libera).",
     ],
     tip: "Si el paciente tiene cefalea, este contacto puede ser muy sensible. Comienza con presión mínima y aumenta gradualmente.",
+    youtubeId: "pzp-3OqkV3E",
     youtubeSearch: "frontal lift craniosacral osteopathy frontal bone technique",
   },
   // ── ESTRUCTURAL ───────────────────────────────────────────────────────────
-  {
-    id: "hvla-lumbar-roll",
-    name: "HVLA Lumbar Roll",
-    nameLocal: "HVLA — Thrust Lumbar en Roll",
-    region: "Lumbar L1–L5",
-    difficulty: "advanced",
-    category: "structural",
-    mechanism: "Thrust de alta velocidad y baja amplitud para restaurar la movilidad articular lumbar.",
-    musclesWorked: ["Articulaciones facetarias lumbares", "Ligamentos iliolumbares", "Multífidos"],
-    keyPoint: "La barrera se alcanza SIN fuerza — el thrust es pequeño y rápido SOBRE la barrera.",
-    steps: [
-      "POSICIÓN PACIENTE: Decúbito lateral, segmento a tratar (faceta restringida) hacia arriba. Almohada bajo la cabeza.",
-      "POSICIÓN TERAPEUTA: De frente al paciente, a la altura de la cintura.",
-      "SETUP INFERIOR: Flexiona la cadera inferior ~30° y la rodilla ~90°. La pierna inferior actúa como base.",
-      "SETUP SUPERIOR: Flexiona la cadera superior hasta que el movimiento llegue al segmento a tratar (se siente como tensión en los procesos espinosos). Rodilla superior cae hacia la camilla.",
-      "PALANCA: Rota el tronco superior hacia atrás (hombro hacia la camilla) hasta sentir tensión en el segmento. Ahora tienes la palanca dual: cadera abajo, hombro atrás.",
-      "THRUST: Cuando la tensión está en su máximo, aplica un impulso corto, rápido y controlado sobre la pelvis (ASIS) hacia abajo. La amplitud es de 1–2 cm.",
-    ],
-    tip: "Si escuchas cavitación (clic/pop), es normal pero no necesario. La técnica es efectiva sin sonido.",
-    contraindications: "Osteoporosis grave, hernia discal con neurológico activo, fractura vertebral.",
-    youtubeSearch: "HVLA lumbar roll manipulation osteopathy technique",
-  },
   {
     id: "met-sacrum",
     name: "Muscle Energy — Sacrum",
@@ -209,29 +194,8 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
       "MET: Pide al paciente: 'Lleva el pie hacia dentro contra mi mano, 20% de fuerza, 5 segundos'. Resiste sin ceder. Tras la contracción: 'Relaja'. Avanza al nuevo rango. Repite 3–5 veces.",
     ],
     tip: "Tras las 3 contracciones el rango debe aumentar notablemente. Si no, revisa la identificación del sacro posterior.",
+    youtubeId: "Ws3HBcDtDmY",
     youtubeSearch: "muscle energy technique sacrum osteopathy MET sacroiliac",
-  },
-  {
-    id: "thoracic-thrust",
-    name: "Thoracic Thrust",
-    nameLocal: "Thrust Torácico Anterior",
-    region: "Torácica T3–T8",
-    difficulty: "advanced",
-    category: "structural",
-    mechanism: "Thrust anterior sobre la columna torácica para restaurar la movilidad segmentaria.",
-    musclesWorked: ["Articulaciones costovertebales", "Facetas torácicas", "Ligamentos longitudinales"],
-    keyPoint: "La posición de los brazos del paciente (cruzados) sube o baja el nivel de palanca.",
-    steps: [
-      "POSICIÓN PACIENTE: Supino, brazos cruzados sobre el pecho (manos en hombros opuestos). Cabeza en posición neutra.",
-      "POSICIÓN TERAPEUTA: De pie al lado del paciente, a la altura del tórax a tratar.",
-      "CONTACTO POSTERIOR: Coloca tu mano dominante (en puño suave o borde hipotenar) directamente sobre el proceso espinoso del segmento a tratar.",
-      "AJUSTE DE NIVEL: Pide al paciente que suba los codos — esto sube el nivel de palanca. Baje los codos — baja el nivel. Ajusta hasta sentir la tensión en el segmento.",
-      "CONTACTO ANTERIOR: Tu pecho o antebrazo contacta los brazos del paciente. Tu peso corporal es la fuerza.",
-      "THRUST: Pide: 'Exhala completamente'. En el momento de máxima espiración, aplica el thrust hacia abajo con tu peso corporal. Rápido, corto (1–2 cm).",
-    ],
-    tip: "Pide al paciente que exhale antes del thrust — relaja los paravertebrales y maximiza la seguridad.",
-    contraindications: "Osteoporosis, fracturas vertebrales, mielopatía torácica.",
-    youtubeSearch: "thoracic thrust manipulation osteopathy HVLA thoracic spine",
   },
   {
     id: "counterstrain",
@@ -252,6 +216,7 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
       "RETEST: Vuelve a palpar el tender point. El dolor debe haber disminuido significativamente o desaparecido.",
     ],
     tip: "Si el dolor no baja al 70%, la posición no es la correcta. Ajusta 1–2 mm y reevalúa.",
+    youtubeId: "uyLjB3NDGJQ",
     youtubeSearch: "counterstrain osteopathy positional release technique tender point",
   },
   {
@@ -274,6 +239,7 @@ const ALL_TECHNIQUES: (ExerciseData & { category: string; mechanism: string })[]
     ],
     tip: "Tras cada ciclo el rango debe aumentar. Si no, revisa la localización de la barrera o el diagnóstico.",
     contraindications: "Insuficiencia vertebrobasilar, fractura cervical, mielopatía cervical.",
+    youtubeId: "sJcSMLDFkco",
     youtubeSearch: "muscle energy technique cervical spine osteopathy MET neck",
   },
 ];

@@ -105,11 +105,13 @@ export function ExercisePlayer({
 
   const totalSteps = exercise.steps.length;
 
-  // Construir URL del embed de YouTube
+  // Solo embeds con ID específico funcionan; el search embed fue eliminado por YouTube
   const youtubeEmbedUrl = exercise.youtubeId
     ? `https://www.youtube-nocookie.com/embed/${exercise.youtubeId}?rel=0&modestbranding=1`
-    : exercise.youtubeSearch
-    ? `https://www.youtube-nocookie.com/embed?listType=search&list=${encodeURIComponent(exercise.youtubeSearch)}&rel=0&modestbranding=1`
+    : null;
+
+  const youtubeSearchUrl = exercise.youtubeSearch
+    ? `https://www.youtube.com/results?search_query=${encodeURIComponent(exercise.youtubeSearch)}`
     : null;
 
   function handleAdd() {
@@ -169,12 +171,27 @@ export function ExercisePlayer({
                 className="absolute inset-0 w-full h-full"
               />
             ) : (
-              /* Placeholder si no hay video */
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-brand-900/40 to-surface-900 gap-3">
-                <div className="w-16 h-16 rounded-2xl bg-brand-600/20 border border-brand-600/30 flex items-center justify-center">
-                  <span className="text-3xl">🎬</span>
+              /* Placeholder con link a búsqueda */
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-surface-900 via-brand-950/30 to-surface-900 gap-4">
+                <div className="w-16 h-16 rounded-2xl bg-red-600/20 border border-red-600/30 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" className="h-8 w-8 fill-red-500"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
                 </div>
-                <p className="text-surface-400 text-sm">Video en preparación</p>
+                <div className="text-center px-6">
+                  <p className="text-surface-200 text-sm font-semibold mb-1">{exercise.nameLocal || exercise.name}</p>
+                  <p className="text-surface-500 text-xs mb-4">Busca el video de demostración en YouTube</p>
+                  {youtubeSearchUrl && (
+                    <a
+                      href={youtubeSearchUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-white"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                      Ver en YouTube
+                    </a>
+                  )}
+                </div>
               </div>
             )}
 
