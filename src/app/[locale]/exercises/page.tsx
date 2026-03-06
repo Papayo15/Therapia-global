@@ -29,7 +29,6 @@ const ALL_EXERCISES: ExerciseData[] = [
     ],
     tip: "Si sientes tensión en el trapecio, baja el hombro antes de cada repetición.",
     contraindications: "Evitar en fase aguda post-operatoria sin autorización médica.",
-    youtubeId: "VmRf-biyM3I",
     youtubeSearch: "shoulder external rotation exercise physical therapy",
   },
   {
@@ -49,7 +48,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Regresa con control y cambia de lado. Alterna.",
     ],
     tip: "Imagina que tienes un vaso de agua en la espalda — no lo derames.",
-    youtubeId: "wiFNA3sqjCA",
     youtubeSearch: "bird dog exercise physical therapy tutorial",
   },
   {
@@ -69,7 +67,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Para intensificar: eleva el brazo del mismo lado hacia arriba.",
     ],
     tip: "Sin retroversión pélvica, el estiramiento es superficial. Ese es el error más común.",
-    youtubeId: "YQmpO7Kz6KA",
     youtubeSearch: "hip flexor stretch physical therapy tutorial",
   },
   {
@@ -89,7 +86,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Extiende lentamente hasta posición inicial (3 segundos).",
     ],
     tip: "Si los hombros suben hacia las orejas, reduce el peso. El trapecio superior no debe dominar.",
-    youtubeId: "xQNkMaXGBVg",
     youtubeSearch: "resistance band row exercise tutorial",
   },
   {
@@ -109,7 +105,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "No uses el impulso del cuerpo — movimiento puro del deltoides.",
     ],
     tip: "Si no puedes controlar el descenso, el peso es demasiado alto. Prioriza la excéntrica.",
-    youtubeId: "3VcKaXpzqRo",
     youtubeSearch: "dumbbell lateral raise exercise tutorial",
   },
   {
@@ -129,7 +124,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja lentamente vértebra a vértebra. No te desplomes.",
     ],
     tip: "Si sientes la lumbar, empuja más con los talones y aprieta más los glúteos.",
-    youtubeId: "OUgsJ8-Vi0E",
     youtubeSearch: "glute bridge exercise physical therapy",
   },
   {
@@ -150,7 +144,6 @@ const ALL_EXERCISES: ExerciseData[] = [
     ],
     tip: "Exhala profundo antes de mover las extremidades. El diafragma es parte del core.",
     contraindications: "Evitar en hernias discales agudas o dolor lumbar irradiado activo.",
-    youtubeId: "4XLEnwUr1d8",
     youtubeSearch: "dead bug exercise physical therapy core",
   },
   {
@@ -170,7 +163,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Si la forma cae, termina la serie. Calidad > cantidad.",
     ],
     tip: "Aprieta los puños y empuja contra el suelo — activa más el core.",
-    youtubeId: "B296mZDhrP4",
     youtubeSearch: "plank exercise proper form tutorial",
   },
   {
@@ -190,7 +182,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Repite 10 veces. Con ojos en un punto fijo al frente.",
     ],
     tip: "Si tienes dolor de cabeza al hacerlo, el rango es demasiado amplio. Reduce.",
-    youtubeId: "wQylqaCl8Zo",
     youtubeSearch: "cervical retraction chin tuck exercise physical therapy",
   },
   {
@@ -210,7 +201,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "20 repeticiones por tobillo, dos veces al día si es post-quirúrgico.",
     ],
     tip: "Fundamental en las primeras 24–48h post-cirugía para prevenir TVP.",
-    youtubeId: "UjfyEBjFOkA",
     youtubeSearch: "ankle pumps exercise physical therapy post surgery",
   },
   {
@@ -230,7 +220,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Mantén cada posición 1–2 respiraciones. Fluye sin forzar.",
     ],
     tip: "Más lento = más efectivo. No rebotes. Siente cada vértebra moverse.",
-    youtubeId: "kqnua4rHVVA",
     youtubeSearch: "cat cow stretch exercise tutorial",
   },
   {
@@ -251,7 +240,6 @@ const ALL_EXERCISES: ExerciseData[] = [
     ],
     tip: "No lo hagas en fase aguda de hernia discal con neurológico activo.",
     contraindications: "Hernia discal en fase aguda con irradiación severa.",
-    youtubeId: "INKKkyDqTzk",
     youtubeSearch: "sciatic nerve flossing exercise tutorial",
   },
   {
@@ -271,7 +259,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Relaja. La columna debe moverse solo unos centímetros.",
     ],
     tip: "Este es el primer ejercicio que debe dominar cualquier paciente con lumbalgia.",
-    youtubeId: "r4IKyjkJzfI",
     youtubeSearch: "pelvic tilt exercise physical therapy",
   },
   {
@@ -291,7 +278,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Regresa al centro y cambia de lado.",
     ],
     tip: "Si las rodillas no llegan al suelo, coloca un cojín debajo. No fuerces.",
-    youtubeId: "wPZIH_OoMKs",
     youtubeSearch: "lumbar rotation stretch exercise tutorial",
   },
   {
@@ -312,7 +298,6 @@ const ALL_EXERCISES: ExerciseData[] = [
     ],
     tip: "La centralización del dolor (de pierna a lumbar) es el objetivo terapéutico.",
     contraindications: "Contraindicado en estenosis de canal, espondilolistesis inestable.",
-    youtubeId: "HxKGBqX0YiM",
     youtubeSearch: "McKenzie press up extension exercise physical therapy",
   },
   {
@@ -332,7 +317,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Cambia de lado. Luego puedes hacer las dos rodillas juntas.",
     ],
     tip: "No levantes la cabeza. Mantén el cuello relajado.",
-    youtubeId: "yAq-bLFRQzU",
     youtubeSearch: "knee to chest stretch exercise tutorial",
   },
   {
@@ -352,7 +336,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Vuelve empujando el suelo con los pies y apretando los glúteos.",
     ],
     tip: "Las mancuernas deben rozar las piernas en todo momento — si se separan, la técnica falla.",
-    youtubeId: "7sVzZQvYfMY",
     youtubeSearch: "romanian deadlift proper form tutorial",
   },
   {
@@ -372,7 +355,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Empuja con el talón delantero para volver. Alterna lados.",
     ],
     tip: "Si la rodilla colapsa hacia dentro, trabaja primero la fuerza de glúteo.",
-    youtubeId: "QOVaHwm-Q6U",
     youtubeSearch: "lunge exercise proper form tutorial",
   },
   {
@@ -392,7 +374,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "O: tumbado de lado, eleva la pierna superior 45°.",
     ],
     tip: "El glúteo medio es el estabilizador principal de la rodilla.",
-    youtubeId: "ZWdpPHXkFNw",
     youtubeSearch: "band hip abduction exercise glute med",
   },
   {
@@ -412,7 +393,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Progresión: haz el puente con una sola pierna.",
     ],
     tip: "Si la pelota rueda, reduce el rango hasta controlar la estabilidad.",
-    youtubeId: "I9pAeaJiV9E",
     youtubeSearch: "exercise ball bridge hamstring curl tutorial",
   },
   {
@@ -432,7 +412,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "30 segundos. Si no llegas, empieza en 15s e incrementa 5s por sesión.",
     ],
     tip: "Rodillas en línea con los pies. Si duelen, sube un poco (ángulo menor de 90°).",
-    youtubeId: "y-wV4Venusw",
     youtubeSearch: "wall sit exercise physical therapy quadriceps",
   },
   {
@@ -452,7 +431,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Trabaja de T6 a T12. Evita la zona lumbar y cervical.",
     ],
     tip: "Si cruje — es normal y suele ser alivio. Si duele — cambia el ángulo.",
-    youtubeId: "mcGVT4xFqt0",
     youtubeSearch: "thoracic extension foam roller exercise tutorial",
   },
   {
@@ -472,7 +450,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja en 3 segundos con control total. No dejes caer.",
     ],
     tip: "La velocidad del descenso (excéntrica lenta) es más importante que subir.",
-    youtubeId: "c34O5_zqOVA",
     youtubeSearch: "seated knee extension exercise physical therapy",
   },
   {
@@ -492,7 +469,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja en 3 segundos con control. Evita el balanceo de tronco.",
     ],
     tip: "Si el tronco se balancea, el peso es demasiado alto.",
-    youtubeId: "ykJmrZ5v0Oo",
     youtubeSearch: "dumbbell bicep curl proper form tutorial",
   },
   {
@@ -512,7 +488,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja con control. Cambia de lado.",
     ],
     tip: "Si la lumbar se arquea, la pierna sube demasiado o el glúteo no está activado.",
-    youtubeId: "MQ2TpALfnNo",
     youtubeSearch: "prone hip extension exercise glute activation",
   },
   {
@@ -532,7 +507,6 @@ const ALL_EXERCISES: ExerciseData[] = [
       "Baja lentamente en 3 segundos. No dejes caer.",
     ],
     tip: "Si arqueas la lumbar para terminar la repetición, el peso es demasiado alto.",
-    youtubeId: "qEwKCR5JCog",
     youtubeSearch: "dumbbell shoulder press proper form tutorial",
   },
 ];

@@ -32,6 +32,7 @@ export interface ExerciseEntry {
   defaultSets: number;
   defaultReps?: number;
   defaultSeconds?: number;
+  youtubeSearch?: string;
   muscles: string[];
   pathologies: string[];
   /** Translations per locale */
