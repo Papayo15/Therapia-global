@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
+import { ExerciseGif } from "@/components/exercises/ExerciseGif";
 
 // Animaciones disponibles
 import {
@@ -570,24 +571,20 @@ function ExerciseCard({
   onAdd: () => void;
   added: boolean;
 }) {
-  const AnimComp = exercise.AnimComponent;
   return (
     <Card className="group overflow-hidden hover:shadow-card-md transition-all duration-200 hover:-translate-y-0.5 border border-surface-200 bg-white">
-      {/* Thumbnail — animación SVG */}
+      {/* Thumbnail — GIF animado (fallback: SVG) */}
       <button
         onClick={onPlay}
-        className="relative block w-full overflow-hidden bg-surface-900"
+        className="relative block w-full overflow-hidden bg-white"
         style={{ aspectRatio: "16/10" }}
       >
-        {AnimComp ? (
-          <div className="w-full h-full p-3 flex items-center justify-center pointer-events-none">
-            <AnimComp />
-          </div>
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-900/20 to-surface-800">
-            <span className="text-4xl opacity-60">🎯</span>
-          </div>
-        )}
+        <ExerciseGif
+          exerciseName={exercise.name}
+          fallback={exercise.AnimComponent}
+          compact
+          className="pointer-events-none"
+        />
 
         {/* Overlay hover */}
         <div className="absolute inset-0 bg-brand-900/0 group-hover:bg-brand-900/50 transition-all duration-200 flex items-center justify-center">

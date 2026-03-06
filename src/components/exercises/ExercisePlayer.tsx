@@ -13,6 +13,7 @@ import { useState, useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight, CheckCircle2, Star, AlertCircle, Clock, Repeat2, Target, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ExerciseGif } from "./ExerciseGif";
 
 // ─── Tipos públicos ───────────────────────────────────────────────────────────
 export interface ExerciseData {
@@ -149,23 +150,13 @@ export function ExercisePlayer({
 
         {/* ── Scrollable body ────────────────────────────────────────────── */}
         <div className="overflow-y-auto flex-1">
-          {/* Animación SVG */}
-          <div className="relative bg-surface-800" style={{ aspectRatio: "16/9" }}>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-surface-900/40 z-10 pointer-events-none" />
-            {AnimComponent ? (
-              <div className="w-full h-full p-6 flex items-center justify-center">
-                <AnimComponent />
-              </div>
-            ) : (
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-900/30 to-surface-800">
-                <div className="text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-brand-600/20 border border-brand-600/30 flex items-center justify-center mx-auto mb-3">
-                    <Target className="h-8 w-8 text-brand-400" />
-                  </div>
-                  <p className="text-surface-400 text-sm">Animación en preparación</p>
-                </div>
-              </div>
-            )}
+          {/* GIF animado / SVG fallback */}
+          <div className="relative bg-white" style={{ aspectRatio: "16/9" }}>
+            <ExerciseGif
+              exerciseName={exercise.name}
+              fallback={AnimComponent ?? undefined}
+              className="absolute inset-0"
+            />
 
             {/* Badge de duración sobre la animación */}
             <div className="absolute bottom-3 end-3 z-20 flex items-center gap-3">
