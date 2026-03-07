@@ -8,117 +8,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
-import {
-  AnimShoulderExternalRotation, AnimShoulderAbduction, AnimShoulderFlexion,
-  AnimElbowFlexion, AnimWristExtension, AnimHipFlexion, AnimHipAbduction,
-  AnimKneeFlexion, AnimAnkleDorsiflexion, AnimLumbarFlexion, AnimLumbarExtension,
-  AnimLumbarRotation as AnimLumbarRotation1, AnimNeckFlexion, AnimNeckRotation,
-  AnimBridging, AnimBirdDog, AnimHipFlexorStretch, AnimResistanceBandRow,
-  AnimDumbbellLateralRaise, AnimCervicalRetraction, AnimAnklePumps,
-  AnimFoamRollerThoracic, AnimSeatedKneeExtension, AnimShoulderPress,
-} from "@/components/exercises/ExerciseAnimations";
-import {
-  AnimBallBridge, AnimBallHamstringCurl, AnimBallLumbarExtension, AnimBallLateralFlex,
-  AnimBandHipAbduction, AnimBandPullApart, AnimBandGluteKickback, AnimBandShoulderRotation,
-  AnimBandCalfRaise, AnimDumbbellBicepCurl, AnimDumbbellBentRow, AnimRomanianDeadlift,
-  AnimTricepExtension, AnimGobletSquat, AnimPlank, AnimLunge, AnimGluteBridge,
-  AnimDeadBug, AnimWallSit, AnimBosuBalance, AnimBosuSquat, AnimBosuPlank,
-  AnimBosuHipHinge,
-} from "@/components/exercises/ExerciseAnimationsPart2";
-import {
-  AnimCatCow, AnimNerveFlossingSciatica, AnimPelvicTilt, AnimChildsPose,
-  AnimLumbarRotation, AnimMcKenziePress, AnimKneeToChest, AnimProneHipExtension,
-} from "@/components/exercises/ExerciseAnimationsPart3";
-
-// ─── Mapa de animaciones por ID de ejercicio ──────────────────────────────────
-const ANIMATION_MAP: Record<string, React.FC> = {
-  "shoulder-external-rotation": AnimShoulderExternalRotation,
-  "shoulder-abduction":         AnimShoulderAbduction,
-  "shoulder-flexion":           AnimShoulderFlexion,
-  "shoulder-press":             AnimShoulderPress,
-  "dumbbell-lateral-raise":     AnimDumbbellLateralRaise,
-  "resistance-band-row":        AnimResistanceBandRow,
-  "band-shoulder-rotation":     AnimBandShoulderRotation,
-  "band-pull-apart":            AnimBandPullApart,
-  "elbow-flexion":              AnimElbowFlexion,
-  "bicep-curl":                 AnimDumbbellBicepCurl,
-  "band-elbow-flexion-curl":    AnimElbowFlexion,
-  "wrist-flexion-extension":    AnimWristExtension,
-  "tricep-extension":           AnimTricepExtension,
-  "bent-row":                   AnimDumbbellBentRow,
-  "hip-flexor-stretch":         AnimHipFlexorStretch,
-  "hip-flexion":                AnimHipFlexion,
-  "hip-abduction":              AnimHipAbduction,
-  "band-hip-abduction":         AnimBandHipAbduction,
-  "band-hip-abd":               AnimBandHipAbduction,
-  "band-glute-kick":            AnimBandGluteKickback,
-  "clamshell":                  AnimHipAbduction,
-  "piriformis-met":             AnimHipFlexion,
-  "glute-bridge":               AnimGluteBridge,
-  "ball-bridge":                AnimBallBridge,
-  "bird-dog":                   AnimBirdDog,
-  "dead-bug":                   AnimDeadBug,
-  "plank":                      AnimPlank,
-  "lunge":                      AnimLunge,
-  "goblet-squat":               AnimGobletSquat,
-  "rdl":                        AnimRomanianDeadlift,
-  "single-leg-deadlift":        AnimRomanianDeadlift,
-  "hip-thrust-dumbbell":        AnimGluteBridge,
-  "knee-flexion":               AnimKneeFlexion,
-  "terminal-knee-extension":    AnimKneeFlexion,
-  "step-down-eccentric":        AnimKneeFlexion,
-  "bosu-squat":                 AnimBosuSquat,
-  "bosu-balance":               AnimBosuBalance,
-  "bosu-plank":                 AnimBosuPlank,
-  "bosu-hiphinge":              AnimBosuHipHinge,
-  "wall-sit":                   AnimWallSit,
-  "seated-knee-extension":      AnimSeatedKneeExtension,
-  "knee-to-chest":              AnimKneeToChest,
-  "ball-hamstring-curl":        AnimBallHamstringCurl,
-  "ball-rollout":               AnimBallLumbarExtension,
-  "ball-wall-squat":            AnimGobletSquat,
-  "ankle-pumps":                AnimAnklePumps,
-  "ankle-dorsiflexion":         AnimAnkleDorsiflexion,
-  "band-calf-raise":            AnimBandCalfRaise,
-  "band-calf":                  AnimBandCalfRaise,
-  "lumbar-rotation":            AnimLumbarRotation,
-  "lumbar-flexion":             AnimLumbarFlexion,
-  "lumbar-extension":           AnimLumbarExtension,
-  "cat-cow":                    AnimCatCow,
-  "pelvic-tilt":                AnimPelvicTilt,
-  "childs-pose":                AnimChildsPose,
-  "mckenzie-press":             AnimMcKenziePress,
-  "nerve-flossing":             AnimNerveFlossingSciatica,
-  "prone-hip-extension":        AnimProneHipExtension,
-  "prone-hip-ext":              AnimProneHipExtension,
-  "ball-lumbar-extension":      AnimBallLumbarExtension,
-  "ball-lateral-flex":          AnimBallLateralFlex,
-  "cervical-retraction":        AnimCervicalRetraction,
-  "cervical-ret":               AnimCervicalRetraction,
-  "neck-flexion":               AnimNeckFlexion,
-  "neck-rotation":              AnimNeckRotation,
-  "deep-neck-flexor":           AnimNeckFlexion,
-  "cervical-rotation-active":   AnimNeckRotation,
-  "thoracic-extension":         AnimFoamRollerThoracic,
-  "foam-thoracic":              AnimFoamRollerThoracic,
-  "open-book-stretch":          AnimLumbarRotation1,
-  "thoracic-rotation-seated":   AnimLumbarRotation1,
-  "bridging":                   AnimBridging,
-  "side-plank":                 AnimPlank,
-  "superman":                   AnimProneHipExtension,
-  "fire-hydrant":               AnimHipAbduction,
-  "lateral-band-walk":          AnimBandHipAbduction,
-  "sumo-squat-dumbbell":        AnimGobletSquat,
-  "monster-walk":               AnimBandHipAbduction,
-  "pallof-press-band":          AnimBandPullApart,
-  "reverse-crunch":             AnimKneeToChest,
-  "band-deadbug":               AnimDeadBug,
-  "suitcase-carry":             AnimGobletSquat,
-  "hammer-curl":                AnimDumbbellBicepCurl,
-  "pronation-supination-dumbbell": AnimElbowFlexion,
-  "eccentric-wrist-extension":  AnimWristExtension,
-  "tricep-extension-band":      AnimTricepExtension,
-};
+import { ENGINE_MAP } from "@/components/exercises/ExerciseAnimationEngine";
+import { REGION_TO_ANATOMY_KEY, REGION_CONTENT, ANATOMY_LAYERS } from "@/lib/anatomyData";
 
 // ─── Base de datos de ejercicios con instrucciones completas ─────────────────
 const ALL_EXERCISES: ExerciseData[] = [
@@ -1790,6 +1681,57 @@ function ExerciseCard({
   );
 }
 
+// ─── Panel de Anatomía Aplicada ───────────────────────────────────────────────
+function AnatomyPanel({ region }: { region: string }) {
+  const [activeLayer, setActiveLayer] = useState<string>("anatomy");
+  const key = REGION_TO_ANATOMY_KEY[region];
+  const content = REGION_CONTENT[key];
+  if (!content) return null;
+  const layer = ANATOMY_LAYERS.find((l) => l.key === activeLayer);
+  const items = content[activeLayer as keyof typeof content];
+
+  return (
+    <div className="rounded-2xl border border-blue-100 bg-blue-50/40 p-5 space-y-4">
+      {/* Header */}
+      <div className="flex items-center gap-2">
+        <span className="text-lg">🔬</span>
+        <div>
+          <h3 className="font-semibold text-blue-900 text-sm">Anatomía aplicada — {region}</h3>
+          <p className="text-xs text-blue-600">Contexto clínico para los ejercicios de esta región</p>
+        </div>
+      </div>
+      {/* Layer tabs */}
+      <div className="flex flex-wrap gap-2">
+        {ANATOMY_LAYERS.map((l) => (
+          <button
+            key={l.key}
+            onClick={() => setActiveLayer(l.key)}
+            className={cn(
+              "px-3 py-1 rounded-full text-xs font-medium border transition-all",
+              activeLayer === l.key
+                ? "bg-blue-600 text-white border-blue-600"
+                : "bg-white text-blue-700 border-blue-200 hover:border-blue-400"
+            )}
+          >
+            {l.icon} {l.label}
+          </button>
+        ))}
+      </div>
+      {/* Content */}
+      <div className={cn("rounded-xl border p-4 space-y-2", layer?.color ?? "bg-white border-blue-100")}>
+        <ul className="space-y-1.5">
+          {(items as string[]).map((item, i) => (
+            <li key={i} className="flex gap-2 text-xs leading-relaxed">
+              <span className="mt-0.5 shrink-0 w-4 h-4 rounded-full bg-current opacity-20 flex items-center justify-center text-[10px] font-bold">{i + 1}</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 // ─── Página principal ─────────────────────────────────────────────────────────
 export default function ExercisesPage() {
   const [search, setSearch] = useState("");
@@ -1813,7 +1755,7 @@ export default function ExercisesPage() {
   function openPlayer(index: number) {
     setPlayerIndex(index);
     const ex = filtered[index];
-    setPlayerExercise({ ...ex, AnimComponent: ANIMATION_MAP[ex.id] ?? ex.AnimComponent });
+    setPlayerExercise({ ...ex, AnimComponent: ENGINE_MAP[ex.id] ?? ex.AnimComponent });
   }
 
   function handleAdd(exercise: ExerciseData) {
@@ -1872,6 +1814,11 @@ export default function ExercisesPage() {
             <p className="text-sm text-surface-500">
               <span className="font-semibold text-surface-900">{filtered.length}</span> ejercicios encontrados
             </p>
+
+            {/* Panel de anatomía aplicada — visible cuando hay un filtro de región activo */}
+            {regionFilter !== "Todos" && REGION_TO_ANATOMY_KEY[regionFilter] && (
+              <AnatomyPanel region={regionFilter} />
+            )}
 
             {/* Grid */}
             {filtered.length > 0 ? (

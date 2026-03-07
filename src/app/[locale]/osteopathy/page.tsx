@@ -9,6 +9,66 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
 import { Play } from "lucide-react";
+import { REGION_CONTENT, ANATOMY_LAYERS } from "@/lib/anatomyData";
+
+// Maps osteopathy body region keys → anatomy content keys
+const OSTEO_REGION_TO_ANATOMY: Record<string, string> = {
+  cervical: "cervical",
+  toracica: "thoracic",
+  lumbar:   "lumbar",
+  cadera:   "hip",
+  hombro:   "shoulder",
+  rodilla:  "knee",
+  tobillo:  "ankle",
+  codo:     "elbow",
+  munieca:  "wrist",
+};
+
+function OsteoAnatomyPanel({ bodyRegion }: { bodyRegion: string }) {
+  const [activeLayer, setActiveLayer] = useState<string>("anatomy");
+  const key = OSTEO_REGION_TO_ANATOMY[bodyRegion];
+  const content = REGION_CONTENT[key];
+  if (!content) return null;
+  const layer = ANATOMY_LAYERS.find((l) => l.key === activeLayer);
+  const items = content[activeLayer as keyof typeof content];
+  return (
+    <div className="rounded-2xl border border-blue-100 bg-blue-50/40 p-5 mb-6 space-y-4">
+      <div className="flex items-center gap-2">
+        <span className="text-lg">🔬</span>
+        <div>
+          <h3 className="font-semibold text-blue-900 text-sm">Anatomía aplicada</h3>
+          <p className="text-xs text-blue-600">Contexto clínico para las técnicas de esta región</p>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {ANATOMY_LAYERS.map((l) => (
+          <button
+            key={l.key}
+            onClick={() => setActiveLayer(l.key)}
+            className={cn(
+              "px-3 py-1 rounded-full text-xs font-medium border transition-all",
+              activeLayer === l.key
+                ? "bg-blue-600 text-white border-blue-600"
+                : "bg-white text-blue-700 border-blue-200 hover:border-blue-400"
+            )}
+          >
+            {l.icon} {l.label}
+          </button>
+        ))}
+      </div>
+      <div className={cn("rounded-xl border p-4 space-y-2", layer?.color ?? "bg-white border-blue-100")}>
+        <ul className="space-y-1.5">
+          {(items as string[]).map((item: string, i: number) => (
+            <li key={i} className="flex gap-2 text-xs leading-relaxed">
+              <span className="mt-0.5 shrink-0 text-blue-400 font-bold">{i + 1}.</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 type TechniqueEntry = ExerciseData & {
   category: string;
@@ -315,6 +375,11 @@ export default function OsteopathyPage() {
             <p className="text-sm text-surface-500 mb-4">
               <span className="font-semibold text-surface-900">{filtered.length}</span> técnicas encontradas
             </p>
+
+            {/* Panel de anatomía aplicada — visible cuando hay filtro de región estructural */}
+            {activeBodyRegion !== "all" && OSTEO_REGION_TO_ANATOMY[activeBodyRegion] && (
+              <OsteoAnatomyPanel bodyRegion={activeBodyRegion} />
+            )}
             {filtered.length > 0 ? (
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {filtered.map((t, i) => (

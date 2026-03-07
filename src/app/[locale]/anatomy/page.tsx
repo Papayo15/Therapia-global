@@ -457,7 +457,7 @@ export default function AnatomyPage() {
                 </CardContent>
               </Card>
 
-              {/* Ejercicios relacionados */}
+              {/* Ejercicios relacionados + acceso directo */}
               <Card>
                 <CardContent className="p-5">
                   <div className="flex items-center gap-2 mb-3">
@@ -471,9 +471,25 @@ export default function AnatomyPage() {
                       </span>
                     ))}
                   </div>
+                  <div className="mt-4 flex flex-col sm:flex-row gap-2">
+                    <a
+                      href="../exercises"
+                      className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 transition-colors"
+                    >
+                      <Dumbbell className="h-3 w-3" />
+                      Ir a Ejercicios · {region?.label}
+                    </a>
+                    <a
+                      href="../osteopathy"
+                      className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+                    >
+                      <BookOpen className="h-3 w-3" />
+                      Ver técnicas de Osteopatía
+                    </a>
+                  </div>
                   <a
                     href="../exercises"
-                    className="mt-4 flex items-center gap-1.5 text-xs text-brand-600 font-medium hover:underline"
+                    className="mt-3 flex items-center gap-1.5 text-xs text-brand-600 font-medium hover:underline"
                   >
                     <BookOpen className="h-3 w-3" />
                     Ver todos los ejercicios en la biblioteca
@@ -487,6 +503,27 @@ export default function AnatomyPage() {
 
             /* ── Grilla de regiones ─────────────────────────────────────────── */
             <div className="p-6 max-w-6xl mx-auto space-y-6">
+
+              {/* Banner de integración */}
+              <div className="rounded-2xl bg-gradient-to-r from-brand-600 to-purple-600 p-5 text-white">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="flex-1">
+                    <h2 className="font-bold text-lg">Anatomía integrada en toda la plataforma</h2>
+                    <p className="text-white/80 text-sm mt-1">
+                      La información anatómica de cada región está integrada en la Biblioteca de Ejercicios y en Osteopatía.
+                      Selecciona una región aquí para explorar el contexto clínico completo.
+                    </p>
+                  </div>
+                  <div className="flex gap-2 shrink-0">
+                    <a href="../exercises" className="px-3 py-1.5 rounded-lg bg-white/20 text-xs font-semibold hover:bg-white/30 transition-colors flex items-center gap-1.5">
+                      <Dumbbell className="h-3 w-3" /> Ejercicios
+                    </a>
+                    <a href="../osteopathy" className="px-3 py-1.5 rounded-lg bg-white/20 text-xs font-semibold hover:bg-white/30 transition-colors flex items-center gap-1.5">
+                      <BookOpen className="h-3 w-3" /> Osteopatía
+                    </a>
+                  </div>
+                </div>
+              </div>
 
               {/* Leyenda capas */}
               <Card>

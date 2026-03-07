@@ -130,6 +130,94 @@
     "new_badge": "New",
     "pro_badge": "Pro"
   },
+  "osteopathy": {
+    "title": "Osteopathy Techniques",
+    "search_placeholder": "Search techniques, regions, mechanisms...",
+    "categories": {
+      "all": "All",
+      "visceral": "Visceral",
+      "craneal": "Cranial",
+      "structural": "Structural"
+    },
+    "view_technique": "View technique",
+    "mechanism": "Mechanism",
+    "contraindications": "Contraindications",
+    "anatomy_panel": "Applied Anatomy",
+    "anatomy_subtitle": "Clinical anatomy for this region"
+  },
+  "anatomy": {
+    "title": "Applied Anatomy",
+    "layers": {
+      "anatomy": "Anatomy",
+      "physiology": "Physiology",
+      "dysfunctions": "Dysfunctions",
+      "effects": "Technique Effects",
+      "connections": "Clinical Connections"
+    },
+    "region_anatomy": "Regional Anatomy",
+    "anatomy_context": "Anatomy context for",
+    "no_region": "Select a body region to see anatomy details"
+  },
+  "routines": {
+    "title": "Routines",
+    "new_routine": "New routine",
+    "search_placeholder": "Search routines...",
+    "send_to_patient": "Send to patient",
+    "exercises_count": "{count} exercises",
+    "created": "Created",
+    "draft": "Draft",
+    "sent": "Sent",
+    "builder_title": "Routine Builder",
+    "add_exercise": "Add exercise",
+    "drag_hint": "Drag exercises here"
+  },
+  "community": {
+    "title": "Community",
+    "new_post": "New post",
+    "search_placeholder": "Search posts, techniques...",
+    "like": "Like",
+    "comment": "Comment",
+    "share": "Share",
+    "follow": "Follow",
+    "members": "members",
+    "online": "online",
+    "categories": {
+      "all": "All",
+      "cases": "Clinical Cases",
+      "research": "Research",
+      "techniques": "Techniques",
+      "questions": "Questions"
+    }
+  },
+  "ai": {
+    "title": "Clinical AI Engine",
+    "subtitle": "Describe a clinical case and receive an evidence-based rehabilitation program",
+    "placeholder": "Example: ACL rehab week 3, patient 28 y/o, no complications...",
+    "generate": "Generate program",
+    "generating": "Analyzing clinical case...",
+    "program_title": "Rehabilitation Program",
+    "phase": "Phase",
+    "exercises": "Exercises",
+    "progression": "Progression",
+    "red_flags": "Red flags",
+    "evidence": "Evidence level"
+  },
+  "settings": {
+    "title": "Settings",
+    "tabs": {
+      "profile": "Profile",
+      "notifications": "Notifications",
+      "security": "Security",
+      "billing": "Billing",
+      "appearance": "Appearance"
+    },
+    "save_changes": "Save changes",
+    "language": "Language",
+    "theme": "Theme",
+    "theme_light": "Light",
+    "theme_dark": "Dark",
+    "theme_system": "System"
+  },
   "patient_view": {
     "routine_from": "Your routine from",
     "exercises_count": "{count} exercises",

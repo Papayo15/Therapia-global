@@ -130,6 +130,44 @@
     "new_badge": "नया",
     "pro_badge": "प्रो"
   },
+  "osteopathy": {
+    "title": "ऑस्टियोपैथी तकनीकें",
+    "search_placeholder": "तकनीक, क्षेत्र, तंत्र खोजें...",
+    "categories": { "all": "सभी", "visceral": "आंत", "craneal": "कपाल", "structural": "संरचनात्मक" },
+    "view_technique": "तकनीक देखें", "mechanism": "तंत्र", "contraindications": "मतभेद",
+    "anatomy_panel": "व्यावहारिक शरीर रचना", "anatomy_subtitle": "इस क्षेत्र की नैदानिक शरीर रचना"
+  },
+  "anatomy": {
+    "title": "व्यावहारिक शरीर रचना",
+    "layers": { "anatomy": "शरीर रचना", "physiology": "शरीर क्रिया", "dysfunctions": "विकार", "effects": "तकनीक प्रभाव", "connections": "नैदानिक संबंध" },
+    "region_anatomy": "क्षेत्रीय शरीर रचना", "anatomy_context": "शारीरिक संदर्भ:",
+    "no_region": "शारीरिक विवरण देखने के लिए कोई क्षेत्र चुनें"
+  },
+  "routines": {
+    "title": "व्यायाम कार्यक्रम", "new_routine": "नया कार्यक्रम", "search_placeholder": "कार्यक्रम खोजें...",
+    "send_to_patient": "रोगी को भेजें", "exercises_count": "{count} व्यायाम",
+    "created": "बनाया गया", "draft": "मसौदा", "sent": "भेजा गया",
+    "builder_title": "कार्यक्रम निर्माता", "add_exercise": "व्यायाम जोड़ें", "drag_hint": "व्यायाम यहाँ खींचें"
+  },
+  "community": {
+    "title": "समुदाय", "new_post": "नई पोस्ट", "search_placeholder": "खोजें...",
+    "like": "पसंद", "comment": "टिप्पणी", "share": "साझा करें", "follow": "अनुसरण करें",
+    "members": "सदस्य", "online": "ऑनलाइन",
+    "categories": { "all": "सभी", "cases": "नैदानिक मामले", "research": "अनुसंधान", "techniques": "तकनीकें", "questions": "प्रश्न" }
+  },
+  "ai": {
+    "title": "नैदानिक AI इंजन", "subtitle": "एक नैदानिक मामला बताएं और साक्ष्य-आधारित पुनर्वास कार्यक्रम प्राप्त करें",
+    "placeholder": "उदाहरण: ACL पुनर्वास सप्ताह 3...", "generate": "कार्यक्रम बनाएं",
+    "generating": "नैदानिक मामले का विश्लेषण...", "program_title": "पुनर्वास कार्यक्रम",
+    "phase": "चरण", "exercises": "व्यायाम", "progression": "प्रगति",
+    "red_flags": "चेतावनी संकेत", "evidence": "साक्ष्य स्तर"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "tabs": { "profile": "प्रोफ़ाइल", "notifications": "सूचनाएं", "security": "सुरक्षा", "billing": "बिलिंग", "appearance": "रूप" },
+    "save_changes": "परिवर्तन सहेजें", "language": "भाषा", "theme": "थीम",
+    "theme_light": "हल्का", "theme_dark": "गहरा", "theme_system": "सिस्टम"
+  },
   "patient_view": {
     "routine_from": "आपकी दिनचर्या",
     "exercises_count": "{count} व्यायाम",

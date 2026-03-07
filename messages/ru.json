@@ -130,6 +130,44 @@
     "new_badge": "Новое",
     "pro_badge": "Про"
   },
+  "osteopathy": {
+    "title": "Остеопатические техники",
+    "search_placeholder": "Поиск техник, регионов, механизмов...",
+    "categories": { "all": "Все", "visceral": "Висцеральная", "craneal": "Краниальная", "structural": "Структуральная" },
+    "view_technique": "Смотреть технику", "mechanism": "Механизм", "contraindications": "Противопоказания",
+    "anatomy_panel": "Прикладная анатомия", "anatomy_subtitle": "Клиническая анатомия этой области"
+  },
+  "anatomy": {
+    "title": "Прикладная анатомия",
+    "layers": { "anatomy": "Анатомия", "physiology": "Физиология", "dysfunctions": "Дисфункции", "effects": "Эффекты техник", "connections": "Клинические связи" },
+    "region_anatomy": "Региональная анатомия", "anatomy_context": "Анатомический контекст:",
+    "no_region": "Выберите область тела для просмотра анатомических деталей"
+  },
+  "routines": {
+    "title": "Программы", "new_routine": "Новая программа", "search_placeholder": "Поиск программ...",
+    "send_to_patient": "Отправить пациенту", "exercises_count": "{count} упражнений",
+    "created": "Создана", "draft": "Черновик", "sent": "Отправлена",
+    "builder_title": "Конструктор программ", "add_exercise": "Добавить упражнение", "drag_hint": "Перетащите упражнения сюда"
+  },
+  "community": {
+    "title": "Сообщество", "new_post": "Новая публикация", "search_placeholder": "Поиск...",
+    "like": "Нравится", "comment": "Комментировать", "share": "Поделиться", "follow": "Подписаться",
+    "members": "участников", "online": "онлайн",
+    "categories": { "all": "Все", "cases": "Клинические случаи", "research": "Исследования", "techniques": "Техники", "questions": "Вопросы" }
+  },
+  "ai": {
+    "title": "Клинический ИИ-движок", "subtitle": "Опишите случай и получите программу реабилитации на основе доказательств",
+    "placeholder": "Пример: Реабилитация после ПКС 3 неделя...", "generate": "Создать программу",
+    "generating": "Анализирую клинический случай...", "program_title": "Программа реабилитации",
+    "phase": "Фаза", "exercises": "Упражнения", "progression": "Прогрессия",
+    "red_flags": "Тревожные сигналы", "evidence": "Уровень доказательности"
+  },
+  "settings": {
+    "title": "Настройки",
+    "tabs": { "profile": "Профиль", "notifications": "Уведомления", "security": "Безопасность", "billing": "Оплата", "appearance": "Внешний вид" },
+    "save_changes": "Сохранить изменения", "language": "Язык", "theme": "Тема",
+    "theme_light": "Светлая", "theme_dark": "Тёмная", "theme_system": "Системная"
+  },
   "patient_view": {
     "routine_from": "Ваша программа от",
     "exercises_count": "{count} упражнений",

@@ -130,6 +130,44 @@
     "new_badge": "جديد",
     "pro_badge": "احترافي"
   },
+  "osteopathy": {
+    "title": "تقنيات الهشاشة العظمية",
+    "search_placeholder": "ابحث عن تقنيات، مناطق، آليات...",
+    "categories": { "all": "الكل", "visceral": "الأحشاء", "craneal": "القحف", "structural": "هيكلي" },
+    "view_technique": "عرض التقنية", "mechanism": "الآلية", "contraindications": "موانع الاستخدام",
+    "anatomy_panel": "التشريح التطبيقي", "anatomy_subtitle": "التشريح السريري لهذه المنطقة"
+  },
+  "anatomy": {
+    "title": "التشريح التطبيقي",
+    "layers": { "anatomy": "التشريح", "physiology": "الفسيولوجيا", "dysfunctions": "الاختلالات", "effects": "آثار التقنيات", "connections": "الروابط السريرية" },
+    "region_anatomy": "تشريح المنطقة", "anatomy_context": "السياق التشريحي لـ",
+    "no_region": "اختر منطقة جسم لرؤية التفاصيل التشريحية"
+  },
+  "routines": {
+    "title": "البرامج", "new_routine": "برنامج جديد", "search_placeholder": "البحث في البرامج...",
+    "send_to_patient": "إرسال للمريض", "exercises_count": "{count} تمارين",
+    "created": "تم الإنشاء", "draft": "مسودة", "sent": "مُرسل",
+    "builder_title": "منشئ البرامج", "add_exercise": "إضافة تمرين", "drag_hint": "اسحب التمارين هنا"
+  },
+  "community": {
+    "title": "المجتمع", "new_post": "منشور جديد", "search_placeholder": "بحث...",
+    "like": "إعجاب", "comment": "تعليق", "share": "مشاركة", "follow": "متابعة",
+    "members": "أعضاء", "online": "متصل",
+    "categories": { "all": "الكل", "cases": "حالات سريرية", "research": "أبحاث", "techniques": "تقنيات", "questions": "أسئلة" }
+  },
+  "ai": {
+    "title": "محرك الذكاء الاصطناعي السريري", "subtitle": "صِف حالة سريرية واحصل على برنامج تأهيل قائم على الأدلة",
+    "placeholder": "مثال: إعادة تأهيل LCA الأسبوع 3...", "generate": "توليد البرنامج",
+    "generating": "تحليل الحالة السريرية...", "program_title": "برنامج إعادة التأهيل",
+    "phase": "المرحلة", "exercises": "التمارين", "progression": "التقدم",
+    "red_flags": "العلامات التحذيرية", "evidence": "مستوى الدليل"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "tabs": { "profile": "الملف الشخصي", "notifications": "الإشعارات", "security": "الأمان", "billing": "الفوترة", "appearance": "المظهر" },
+    "save_changes": "حفظ التغييرات", "language": "اللغة", "theme": "المظهر",
+    "theme_light": "فاتح", "theme_dark": "داكن", "theme_system": "النظام"
+  },
   "patient_view": {
     "routine_from": "برنامجك من",
     "exercises_count": "{count} تمارين",

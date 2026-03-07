@@ -130,6 +130,94 @@
     "new_badge": "Nuevo",
     "pro_badge": "Pro"
   },
+  "osteopathy": {
+    "title": "Técnicas de Osteopatía",
+    "search_placeholder": "Buscar técnicas, regiones, mecanismos...",
+    "categories": {
+      "all": "Todas",
+      "visceral": "Visceral",
+      "craneal": "Craneal",
+      "structural": "Estructural"
+    },
+    "view_technique": "Ver técnica",
+    "mechanism": "Mecanismo",
+    "contraindications": "Contraindicaciones",
+    "anatomy_panel": "Anatomía Aplicada",
+    "anatomy_subtitle": "Anatomía clínica de esta región"
+  },
+  "anatomy": {
+    "title": "Anatomía Aplicada",
+    "layers": {
+      "anatomy": "Anatomía",
+      "physiology": "Fisiología",
+      "dysfunctions": "Disfunciones",
+      "effects": "Efectos de técnicas",
+      "connections": "Conexiones clínicas"
+    },
+    "region_anatomy": "Anatomía regional",
+    "anatomy_context": "Contexto anatómico de",
+    "no_region": "Selecciona una región para ver los detalles anatómicos"
+  },
+  "routines": {
+    "title": "Rutinas",
+    "new_routine": "Nueva rutina",
+    "search_placeholder": "Buscar rutinas...",
+    "send_to_patient": "Enviar al paciente",
+    "exercises_count": "{count} ejercicios",
+    "created": "Creada",
+    "draft": "Borrador",
+    "sent": "Enviada",
+    "builder_title": "Constructor de rutinas",
+    "add_exercise": "Agregar ejercicio",
+    "drag_hint": "Arrastra ejercicios aquí"
+  },
+  "community": {
+    "title": "Comunidad",
+    "new_post": "Nueva publicación",
+    "search_placeholder": "Buscar publicaciones, técnicas...",
+    "like": "Me gusta",
+    "comment": "Comentar",
+    "share": "Compartir",
+    "follow": "Seguir",
+    "members": "miembros",
+    "online": "en línea",
+    "categories": {
+      "all": "Todos",
+      "cases": "Casos clínicos",
+      "research": "Investigación",
+      "techniques": "Técnicas",
+      "questions": "Preguntas"
+    }
+  },
+  "ai": {
+    "title": "Motor de IA Clínica",
+    "subtitle": "Describe un caso clínico y recibe un programa de rehabilitación basado en evidencia",
+    "placeholder": "Ejemplo: Rehabilitación LCA semana 3, paciente 28 años, sin complicaciones...",
+    "generate": "Generar programa",
+    "generating": "Analizando caso clínico...",
+    "program_title": "Programa de rehabilitación",
+    "phase": "Fase",
+    "exercises": "Ejercicios",
+    "progression": "Progresión",
+    "red_flags": "Señales de alarma",
+    "evidence": "Nivel de evidencia"
+  },
+  "settings": {
+    "title": "Configuración",
+    "tabs": {
+      "profile": "Perfil",
+      "notifications": "Notificaciones",
+      "security": "Seguridad",
+      "billing": "Facturación",
+      "appearance": "Apariencia"
+    },
+    "save_changes": "Guardar cambios",
+    "language": "Idioma",
+    "theme": "Tema",
+    "theme_light": "Claro",
+    "theme_dark": "Oscuro",
+    "theme_system": "Sistema"
+  },
   "patient_view": {
     "routine_from": "Tu rutina de",
     "exercises_count": "{count} ejercicios",

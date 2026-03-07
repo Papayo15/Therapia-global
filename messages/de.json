@@ -130,6 +130,44 @@
     "new_badge": "Neu",
     "pro_badge": "Pro"
   },
+  "osteopathy": {
+    "title": "Osteopathische Techniken",
+    "search_placeholder": "Techniken, Regionen, Mechanismen suchen...",
+    "categories": { "all": "Alle", "visceral": "Viszeral", "craneal": "Kranial", "structural": "Strukturell" },
+    "view_technique": "Technik ansehen", "mechanism": "Mechanismus", "contraindications": "Kontraindikationen",
+    "anatomy_panel": "Angewandte Anatomie", "anatomy_subtitle": "Klinische Anatomie dieser Region"
+  },
+  "anatomy": {
+    "title": "Angewandte Anatomie",
+    "layers": { "anatomy": "Anatomie", "physiology": "Physiologie", "dysfunctions": "Dysfunktionen", "effects": "Technikeneffekte", "connections": "Klinische Verbindungen" },
+    "region_anatomy": "Regionale Anatomie", "anatomy_context": "Anatomischer Kontext von",
+    "no_region": "Wählen Sie eine Region für anatomische Details"
+  },
+  "routines": {
+    "title": "Übungsprogramme", "new_routine": "Neues Programm", "search_placeholder": "Programme suchen...",
+    "send_to_patient": "An Patient senden", "exercises_count": "{count} Übungen",
+    "created": "Erstellt", "draft": "Entwurf", "sent": "Gesendet",
+    "builder_title": "Programmersteller", "add_exercise": "Übung hinzufügen", "drag_hint": "Übungen hierher ziehen"
+  },
+  "community": {
+    "title": "Gemeinschaft", "new_post": "Neuer Beitrag", "search_placeholder": "Suchen...",
+    "like": "Gefällt mir", "comment": "Kommentieren", "share": "Teilen", "follow": "Folgen",
+    "members": "Mitglieder", "online": "online",
+    "categories": { "all": "Alle", "cases": "Klinische Fälle", "research": "Forschung", "techniques": "Techniken", "questions": "Fragen" }
+  },
+  "ai": {
+    "title": "Klinische KI-Engine", "subtitle": "Beschreiben Sie einen Fall und erhalten Sie ein evidenzbasiertes Programm",
+    "placeholder": "Beispiel: VKB-Reha Woche 3...", "generate": "Programm generieren",
+    "generating": "Klinischen Fall analysieren...", "program_title": "Rehabilitationsprogramm",
+    "phase": "Phase", "exercises": "Übungen", "progression": "Progression",
+    "red_flags": "Warnsignale", "evidence": "Evidenzgrad"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "tabs": { "profile": "Profil", "notifications": "Benachrichtigungen", "security": "Sicherheit", "billing": "Abrechnung", "appearance": "Darstellung" },
+    "save_changes": "Änderungen speichern", "language": "Sprache", "theme": "Design",
+    "theme_light": "Hell", "theme_dark": "Dunkel", "theme_system": "System"
+  },
   "patient_view": {
     "routine_from": "Ihre Routine von",
     "exercises_count": "{count} Übungen",
