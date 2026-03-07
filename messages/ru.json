@@ -96,7 +96,11 @@
     "reps": "Повторения",
     "duration": "Длительность",
     "indications": "Показания",
-    "contraindications": "Противопоказания"
+    "contraindications": "Противопоказания",
+    "videoPending": "3D-анимация в разработке",
+    "videoUnavailable": "Видео пока недоступно",
+    "play": "Воспроизвести",
+    "loop": "LOOP"
   },
   "patients": {
     "title": "Пациенты",
@@ -135,7 +139,8 @@
     "search_placeholder": "Поиск техник, регионов, механизмов...",
     "categories": { "all": "Все", "visceral": "Висцеральная", "craneal": "Краниальная", "structural": "Структуральная" },
     "view_technique": "Смотреть технику", "mechanism": "Механизм", "contraindications": "Противопоказания",
-    "anatomy_panel": "Прикладная анатомия", "anatomy_subtitle": "Клиническая анатомия этой области"
+    "anatomy_panel": "Прикладная анатомия", "anatomy_subtitle": "Клиническая анатомия этой области",
+    "chiropracticNote": "Техника, производная от хиропрактики"
   },
   "anatomy": {
     "title": "Прикладная анатомия",

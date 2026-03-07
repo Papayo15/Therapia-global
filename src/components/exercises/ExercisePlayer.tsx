@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ExerciseAnimationPlayer } from "@/components/exercises/ExerciseAnimationPlayer";
 
 // ─── Tipos públicos ───────────────────────────────────────────────────────────
 export interface ExerciseData {
@@ -26,6 +27,11 @@ export interface ExerciseData {
   contraindications?: string;
   youtubeId?: string;
   youtubeSearch?: string;
+  /** Path to Lottie JSON, e.g. /exercise-animations/bird-dog.json */
+  animationSrc?: string;
+  /** Path to MP4 video, e.g. /exercise-videos/bird-dog.mp4 */
+  videoSrc?: string;
+  /** Legacy SVG animation component — kept for backwards compatibility */
   AnimComponent?: React.FC;
 }
 
@@ -93,45 +99,43 @@ function YouTubePanel({ exercise }: { exercise: ExerciseData }) {
   );
 }
 
-// ─── Panel de animación (estilo Wibbi) ────────────────────────────────────────
+// ─── Panel de animación — Video 3D (reemplaza SVG) ────────────────────────────
 function AnimationPanel({ exercise, searchUrl }: { exercise: ExerciseData; searchUrl: string | null }) {
   const regionColor = REGION_COLOR[exercise.region.split(" / ")[0]] ?? "#3b82f6";
-  const Anim = exercise.AnimComponent;
 
   return (
     <div className="absolute inset-0 flex flex-col bg-white">
-      {/* Zona de animación — fondo blanco puro estilo Wibbi */}
-      <div className="flex-1 relative flex items-center justify-center overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%)" }}>
-        {/* Decoración sutil de región */}
-        <div className="absolute top-3 start-3 flex items-center gap-1.5 z-10">
+      <div className="flex-1 relative overflow-hidden">
+        {/* Region badge */}
+        <div className="absolute top-3 start-3 flex items-center gap-1.5 z-20 pointer-events-none">
           <span className="w-2 h-2 rounded-full" style={{ background: regionColor }} />
-          <span className="text-[11px] font-semibold text-slate-500">{exercise.region}</span>
+          <span className="text-[11px] font-semibold text-slate-500 bg-white/80 backdrop-blur-sm px-1.5 py-0.5 rounded-md">
+            {exercise.region}
+          </span>
         </div>
 
-        {Anim ? (
-          <div className="w-full h-full flex items-center justify-center p-2">
-            <Anim />
-          </div>
-        ) : (
-          /* Fallback ilustración cuando no hay animación */
-          <div className="flex flex-col items-center gap-3 text-slate-300">
-            <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-5xl border-2 border-dashed border-slate-200">
-              🏃
-            </div>
-            <p className="text-sm text-slate-400 font-medium">{exercise.nameLocal || exercise.name}</p>
-          </div>
-        )}
+        {/* 3D Animation Player — Lottie (primary) → MP4/WebM (secondary) → placeholder */}
+        <ExerciseAnimationPlayer
+          animation={exercise.animationSrc}
+          video={exercise.videoSrc}
+          exerciseName={exercise.nameLocal || exercise.name}
+          accentColor={regionColor}
+          className="absolute inset-0"
+        />
 
-        {/* Botón YouTube secundario */}
+        {/* YouTube fallback button */}
         {searchUrl && (
-          <a href={searchUrl} target="_blank" rel="noopener noreferrer"
-            className="absolute bottom-3 end-3 flex items-center gap-1.5 bg-white/90 backdrop-blur border border-slate-200 hover:bg-red-50 hover:border-red-200 text-slate-600 hover:text-red-600 text-[11px] font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm"
-            onClick={(e) => e.stopPropagation()}>
+          <a
+            href={searchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-3 end-3 z-20 flex items-center gap-1.5 bg-white/90 backdrop-blur border border-slate-200 hover:bg-red-50 hover:border-red-200 text-slate-600 hover:text-red-600 text-[11px] font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm"
+            onClick={(e) => e.stopPropagation()}
+          >
             <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-red-500">
-              <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+              <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.010-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
             </svg>
-            Ver video
+            YouTube
           </a>
         )}
       </div>
@@ -155,7 +159,7 @@ export function ExercisePlayer({
   const [mediaTab, setMediaTab] = useState<"demo" | "youtube">("demo");
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  const hasAnimation = !!exercise.AnimComponent;
+  const hasVideo = !!(exercise.animationSrc || exercise.videoSrc || exercise.AnimComponent);
   const youtubeSearchUrl = exercise.youtubeSearch
     ? `https://www.youtube.com/results?search_query=${encodeURIComponent(exercise.youtubeSearch)}`
     : null;
@@ -164,8 +168,8 @@ export function ExercisePlayer({
   useEffect(() => {
     setActiveStep(0);
     setAdded(false);
-    setMediaTab(hasAnimation ? "demo" : "youtube");
-  }, [exercise.id, hasAnimation]);
+    setMediaTab("demo");
+  }, [exercise.id]);
 
   useEffect(() => {
     if (!isOpen) return;

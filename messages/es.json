@@ -96,7 +96,11 @@
     "reps": "Repeticiones",
     "duration": "Duración",
     "indications": "Indicaciones",
-    "contraindications": "Contraindicaciones"
+    "contraindications": "Contraindicaciones",
+    "videoPending": "Animación 3D en preparación",
+    "videoUnavailable": "Video no disponible aún",
+    "play": "Reproducir",
+    "loop": "LOOP"
   },
   "patients": {
     "title": "Pacientes",
@@ -143,7 +147,8 @@
     "mechanism": "Mecanismo",
     "contraindications": "Contraindicaciones",
     "anatomy_panel": "Anatomía Aplicada",
-    "anatomy_subtitle": "Anatomía clínica de esta región"
+    "anatomy_subtitle": "Anatomía clínica de esta región",
+    "chiropracticNote": "Técnica derivada de la quiropráctica"
   },
   "anatomy": {
     "title": "Anatomía Aplicada",

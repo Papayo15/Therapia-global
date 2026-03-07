@@ -96,7 +96,11 @@
     "reps": "تكرارات",
     "duration": "المدة",
     "indications": "المؤشرات",
-    "contraindications": "موانع الاستعمال"
+    "contraindications": "موانع الاستعمال",
+    "videoPending": "الرسوم المتحركة ثلاثية الأبعاد قيد الإعداد",
+    "videoUnavailable": "الفيديو غير متاح بعد",
+    "play": "تشغيل",
+    "loop": "LOOP"
   },
   "patients": {
     "title": "المرضى",
@@ -135,7 +139,8 @@
     "search_placeholder": "ابحث عن تقنيات، مناطق، آليات...",
     "categories": { "all": "الكل", "visceral": "الأحشاء", "craneal": "القحف", "structural": "هيكلي" },
     "view_technique": "عرض التقنية", "mechanism": "الآلية", "contraindications": "موانع الاستخدام",
-    "anatomy_panel": "التشريح التطبيقي", "anatomy_subtitle": "التشريح السريري لهذه المنطقة"
+    "anatomy_panel": "التشريح التطبيقي", "anatomy_subtitle": "التشريح السريري لهذه المنطقة",
+    "chiropracticNote": "تقنية مشتقة من العلاج التحريري"
   },
   "anatomy": {
     "title": "التشريح التطبيقي",

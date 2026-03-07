@@ -96,7 +96,11 @@
     "reps": "Répétitions",
     "duration": "Durée",
     "indications": "Indications",
-    "contraindications": "Contre-indications"
+    "contraindications": "Contre-indications",
+    "videoPending": "Animation 3D en préparation",
+    "videoUnavailable": "Vidéo non disponible",
+    "play": "Lire",
+    "loop": "LOOP"
   },
   "patients": {
     "title": "Patients",
@@ -135,7 +139,8 @@
     "search_placeholder": "Rechercher techniques, régions, mécanismes...",
     "categories": { "all": "Toutes", "visceral": "Viscérale", "craneal": "Crânienne", "structural": "Structurelle" },
     "view_technique": "Voir la technique", "mechanism": "Mécanisme", "contraindications": "Contre-indications",
-    "anatomy_panel": "Anatomie appliquée", "anatomy_subtitle": "Anatomie clinique de cette région"
+    "anatomy_panel": "Anatomie appliquée", "anatomy_subtitle": "Anatomie clinique de cette région",
+    "chiropracticNote": "Technique dérivée de la chiropractie"
   },
   "anatomy": {
     "title": "Anatomie appliquée",

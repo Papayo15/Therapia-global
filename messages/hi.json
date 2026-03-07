@@ -96,7 +96,11 @@
     "reps": "दोहराव",
     "duration": "अवधि",
     "indications": "संकेत",
-    "contraindications": "विपरीत संकेत"
+    "contraindications": "विपरीत संकेत",
+    "videoPending": "3D एनिमेशन तैयार हो रहा है",
+    "videoUnavailable": "वीडियो अभी उपलब्ध नहीं",
+    "play": "चलाएं",
+    "loop": "LOOP"
   },
   "patients": {
     "title": "मरीज़",
@@ -135,7 +139,8 @@
     "search_placeholder": "तकनीक, क्षेत्र, तंत्र खोजें...",
     "categories": { "all": "सभी", "visceral": "आंत", "craneal": "कपाल", "structural": "संरचनात्मक" },
     "view_technique": "तकनीक देखें", "mechanism": "तंत्र", "contraindications": "मतभेद",
-    "anatomy_panel": "व्यावहारिक शरीर रचना", "anatomy_subtitle": "इस क्षेत्र की नैदानिक शरीर रचना"
+    "anatomy_panel": "व्यावहारिक शरीर रचना", "anatomy_subtitle": "इस क्षेत्र की नैदानिक शरीर रचना",
+    "chiropracticNote": "काइरोप्रैक्टिक से प्राप्त तकनीक"
   },
   "anatomy": {
     "title": "व्यावहारिक शरीर रचना",

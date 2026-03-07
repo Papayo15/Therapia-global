@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
 import { Play } from "lucide-react";
 import { REGION_CONTENT, ANATOMY_LAYERS } from "@/lib/anatomyData";
+import { OSTEOPATHY_REGISTRY } from "@/lib/osteopathyRegistry";
+import { useTranslations } from "next-intl";
 
 // Maps osteopathy body region keys → anatomy content keys
 const OSTEO_REGION_TO_ANATOMY: Record<string, string> = {
@@ -74,9 +76,10 @@ type TechniqueEntry = ExerciseData & {
   category: string;
   mechanism: string;
   bodyRegion?: string;
+  isChiropracticDerived?: boolean;
 };
 
-const ALL_TECHNIQUES: TechniqueEntry[] = [
+const BASE_TECHNIQUES: TechniqueEntry[] = [
   // ── VISCERAL ──────────────────────────────────────────────────────────────
   { id: "hepatic-pump", name: "Hepatic Pump", nameLocal: "Bomba Hepática", region: "Hígado · Hipocondrio derecho", difficulty: "intermediate", category: "visceral", mechanism: "Mejora el drenaje linfático y la circulación hepática mediante compresión rítmica.", musclesWorked: ["Cápsula de Glisson","Ligamentos hepatoduodenales","Sistema porta"], keyPoint: "El ritmo es la clave: 2 Hz. Demasiado rápido pierde efectividad linfática.", steps: ["POSICIÓN PACIENTE: Decúbito supino, brazos relajados a los lados.","POSICIÓN TERAPEUTA: De pie a la derecha del paciente, a la altura del tórax.","CONTACTO: Ambas manos superpuestas sobre el hipocondrio derecho, talón de mano sobre el reborde costal.","TÉCNICA: Aplicar compresión rítmica suave hacia el diafragma a 2 Hz (2 compresiones/segundo).","DURACIÓN: Mantener 30–60 segundos. Buscar el punto de quietud y mantener hasta sentir la relajación tisular.","RETEST: Palpar el hipocondrio y evaluar cambio en la tensión hepática."], tip: "Si el paciente restringe la respiración, pídele que exhale profundo. La respiración amplifica el efecto.", contraindications: "Hepatitis aguda, cirrosis avanzada, carcinoma hepático activo.", youtubeSearch: "hepatic pump osteopathy visceral technique" },
   { id: "mesenteric-release", name: "Mesenteric Release", nameLocal: "Liberación Mesentérica", region: "Intestino delgado · Raíz del mesenterio", difficulty: "intermediate", category: "visceral", mechanism: "Reduce adherencias viscerales y mejora la motilidad intestinal por liberación fascial.", musclesWorked: ["Raíz del mesenterio","Fascia peritoneal","Arteria mesentérica superior"], keyPoint: "El mesenterio va de L2 a la fosa ilíaca derecha — sigue ese vector.", steps: ["POSICIÓN PACIENTE: Supino con rodillas flexionadas a 45° para relajar los psoas.","POSICIÓN TERAPEUTA: De pie a la derecha, a la altura del abdomen.","CONTACTO: Yemas de los dedos de ambas manos en la zona umbilical, profundizando hacia la raíz del mesenterio.","EVALUACIÓN: Palpa la dirección de mayor restricción tisular.","TÉCNICA: Eleva suavemente los tejidos hacia el esternón, siguiendo la dirección de menor resistencia.","MANTENER: 30–90 segundos hasta sentir la liberación."], tip: "Rodillas flexionadas relajan los psoas y facilitan el acceso al mesenterio.", contraindications: "Obstrucción intestinal aguda, post-cirugía abdominal reciente (<6 semanas).", youtubeSearch: "mesenteric release osteopathy visceral manipulation technique" },
@@ -148,6 +151,39 @@ const ALL_TECHNIQUES: TechniqueEntry[] = [
   { id: "radiocarpal-mobilization", name: "Radiocarpal Mobilization", nameLocal: "Movilización Radiocarpiana", region: "Muñeca · Articulación radiocarpiana", difficulty: "intermediate", category: "structural", bodyRegion: "munieca", mechanism: "Restaura los deslizamientos carpianos para mejorar la flexión/extensión de muñeca.", musclesWorked: ["Articulación radiocarpiana","Ligamentos radiocarpianos","Semilunar","Escafoides"], keyPoint: "Para ganar flexión: deslizamiento dorsal del carpo. Para ganar extensión: deslizamiento volar.", steps: ["POSICIÓN PACIENTE: Sentado, antebrazo apoyado en la camilla.","CONTACTO: Una mano estabiliza el radio distal, la otra envuelve la fila proximal del carpo.","EVALUACIÓN: Desliza el carpo dorsalmente, volarmente y en distracción. Identifica restricciones.","TÉCNICA — DISTRACCIÓN: Tracción axial de la muñeca 30 seg × 3.","TÉCNICA — DESLIZAMIENTO: Aplica el deslizamiento en la dirección restringida × 10.","RETEST: Mide el ROM en grados antes y después."], tip: "Indicado en síndrome del túnel carpiano, quiste ganglionar y post-fractura de Colles.", youtubeSearch: "radiocarpal mobilization osteopathy wrist carpal bones technique" },
   { id: "carpal-tunnel-release", name: "Carpal Tunnel Release", nameLocal: "Liberación del Túnel Carpiano", region: "Túnel carpiano · Muñeca", difficulty: "intermediate", category: "structural", bodyRegion: "munieca", mechanism: "Aumenta el espacio del túnel carpiano y moviliza el nervio mediano para reducir la compresión.", musclesWorked: ["Ligamento transverso del carpo","Nervio mediano","Tendones flexores","Huesos del carpo"], keyPoint: "El nervio mediano necesita 14 mm de espacio — cualquier restricción carpiana lo reduce.", steps: ["TÉCNICA 1 — EXTENSIÓN CARPIANA: Con ambos pulgares en cara palmar y dedos en dorsal, aplica distracción + extensión de muñeca. 30 seg × 3.","TÉCNICA 2 — SPREADING CARPAL: Pulgares en el centro del carpo (pisiforme y trapezoide). Aplica un spread bilateral lento. 30 seg.","TÉCNICA 3 — NEURAL MOBILIZATION: Extensión de muñeca + extensión de codo + inclinación contralateral de cuello. Movimiento oscilatorio suave.","TÉCNICA 4 — THENAR MOBILIZATION: Moviliza la eminencia tenar en todos los planos. 30 seg.","TÉCNICA 5 — PISIFORME MOBILIZATION: El pisiforme es el hueso más móvil del carpo — movilízalo en todos los planos.","RETEST: Los síntomas nocturnos deben disminuir en los días siguientes."], tip: "La movilización neural del mediano es tan efectiva como la cirugía en STC leve-moderado.", contraindications: "STC severo con atrofia tenar (requiere cirugía), fractura de carpo aguda.", youtubeSearch: "carpal tunnel osteopathy neural mobilization wrist median nerve" },
 ];
+
+// Technique type → category mapping for OSTEOPATHY_REGISTRY merge
+const _typeToCategory: Record<string, string> = {
+  "joint-mobilization": "structural",
+  "hvla": "structural",
+  "muscle-energy": "structural",
+  "myofascial-release": "structural",
+  "visceral": "visceral",
+  "cranial": "craneal",
+};
+
+// Merge registry entries not already covered by BASE_TECHNIQUES
+const _registryTechniques: TechniqueEntry[] = OSTEOPATHY_REGISTRY
+  .filter(t => !BASE_TECHNIQUES.find(b => b.id === t.id))
+  .map(t => ({
+    id: t.id,
+    name: t.isChiropracticDerived ? `${t.name} ★` : t.name,
+    nameLocal: t.name,
+    region: t.region,
+    difficulty: "intermediate" as const,
+    musclesWorked: [],
+    keyPoint: t.description,
+    steps: [`Paciente: ${t.patientPosition}`, `Terapeuta: ${t.therapistPosition}`, t.description],
+    tip: t.tip,
+    isChiropracticDerived: t.isChiropracticDerived ?? false,
+    videoSrc: t.videoSrc,
+    category: _typeToCategory[t.techniqueType] ?? "structural",
+    mechanism: t.description,
+    bodyRegion: t.region.toLowerCase(),
+    youtubeSearch: `${t.name} osteopathy technique`,
+  }));
+
+const ALL_TECHNIQUES: TechniqueEntry[] = [...BASE_TECHNIQUES, ..._registryTechniques];
 
 const CATEGORIES = [
   { key: "all",        label: "Todas",       count: ALL_TECHNIQUES.length },
@@ -227,6 +263,7 @@ function TechniqueCard({
   technique: TechniqueEntry;
   onPlay: () => void;
 }) {
+  const tOsteo = useTranslations("osteopathy");
   const hasVideo = !!(technique.youtubeId || technique.youtubeSearch);
   const gradient = technique.bodyRegion
     ? BODY_REGION_GRADIENT[technique.bodyRegion] ?? CATEGORY_GRADIENT[technique.category]
@@ -269,6 +306,11 @@ function TechniqueCard({
         <h3 className="text-sm font-semibold text-surface-900 leading-tight mb-0.5 group-hover:text-brand-600 transition-colors">
           {technique.nameLocal || technique.name}
         </h3>
+        {technique.isChiropracticDerived && (
+          <span className="inline-block text-[10px] font-medium text-amber-700 bg-amber-50 border border-amber-200 rounded-full px-2 py-0.5 mb-1">
+            {tOsteo("chiropracticNote")}
+          </span>
+        )}
         <p className="text-[11px] text-surface-400 mb-2">{technique.region}</p>
         <p className="text-[11px] text-surface-500 leading-snug line-clamp-2 mb-3">
           {technique.mechanism}

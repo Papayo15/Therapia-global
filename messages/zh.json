@@ -96,7 +96,11 @@
     "reps": "次数",
     "duration": "时长",
     "indications": "适应症",
-    "contraindications": "禁忌症"
+    "contraindications": "禁忌症",
+    "videoPending": "3D动画制作中",
+    "videoUnavailable": "视频暂不可用",
+    "play": "播放",
+    "loop": "LOOP"
   },
   "patients": {
     "title": "患者",
@@ -135,7 +139,8 @@
     "search_placeholder": "搜索技术、区域、机制...",
     "categories": { "all": "全部", "visceral": "脏器", "craneal": "颅骨", "structural": "结构" },
     "view_technique": "查看技术", "mechanism": "机制", "contraindications": "禁忌症",
-    "anatomy_panel": "应用解剖学", "anatomy_subtitle": "该区域的临床解剖学"
+    "anatomy_panel": "应用解剖学", "anatomy_subtitle": "该区域的临床解剖学",
+    "chiropracticNote": "源自脊骨神经医学的技术"
   },
   "anatomy": {
     "title": "应用解剖学",

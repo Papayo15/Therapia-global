@@ -10,9 +10,10 @@ import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
 import { ENGINE_MAP } from "@/components/exercises/ExerciseAnimationEngine";
 import { REGION_TO_ANATOMY_KEY, REGION_CONTENT, ANATOMY_LAYERS } from "@/lib/anatomyData";
+import { EXERCISE_REGISTRY } from "@/lib/exerciseRegistry";
 
 // ─── Base de datos de ejercicios con instrucciones completas ─────────────────
-const ALL_EXERCISES: ExerciseData[] = [
+const BASE_EXERCISES: ExerciseData[] = [
   {
     id: "shoulder-external-rotation",
     name: "Shoulder External Rotation",
@@ -1520,6 +1521,12 @@ const ALL_EXERCISES: ExerciseData[] = [
     youtubeSearch: "resistance band bicep curl exercise tutorial proper form",
   },
 ];
+
+// Merge base exercises with the full 300-exercise registry (de-duplicated by id)
+const _registryMapped: ExerciseData[] = EXERCISE_REGISTRY
+  .filter(ex => !BASE_EXERCISES.find(b => b.id === ex.id))
+  .map(ex => ({ ...ex, AnimComponent: ENGINE_MAP[ex.id] }));
+const ALL_EXERCISES: ExerciseData[] = [...BASE_EXERCISES, ..._registryMapped];
 
 const REGIONS = ["Todos", "Hombro", "Cervical", "Torácica", "Lumbar", "Cadera", "Rodilla", "Tobillo", "Codo", "Muñeca/Mano", "Core", "Glúteo", "Espalda media"];
 const DIFFICULTIES = ["Todos", "beginner", "intermediate", "advanced"];

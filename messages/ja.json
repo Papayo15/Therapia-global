@@ -96,7 +96,11 @@
     "reps": "回",
     "duration": "時間",
     "indications": "適応症",
-    "contraindications": "禁忌"
+    "contraindications": "禁忌",
+    "videoPending": "3Dアニメーション準備中",
+    "videoUnavailable": "動画は現在ありません",
+    "play": "再生",
+    "loop": "LOOP"
   },
   "patients": {
     "title": "患者",
@@ -135,7 +139,8 @@
     "search_placeholder": "技法、部位、メカニズムを検索...",
     "categories": { "all": "すべて", "visceral": "内臓", "craneal": "頭蓋", "structural": "構造" },
     "view_technique": "技法を見る", "mechanism": "メカニズム", "contraindications": "禁忌",
-    "anatomy_panel": "応用解剖学", "anatomy_subtitle": "この部位の臨床解剖学"
+    "anatomy_panel": "応用解剖学", "anatomy_subtitle": "この部位の臨床解剖学",
+    "chiropracticNote": "カイロプラクティック由来の技術"
   },
   "anatomy": {
     "title": "応用解剖学",
