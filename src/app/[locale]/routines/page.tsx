@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Plus, Trash2, GripVertical, Send, Copy, Search, X, CheckCircle2, Mail, MessageCircle, QrCode, Share2, Eye, ChevronDown, ChevronUp } from "lucide-react";
+import { Plus, Trash2, GripVertical, Send, Copy, Search, X, CheckCircle2, Mail, MessageCircle, QrCode, Share2, Eye, ChevronDown, ChevronUp, FileDown, Clock, Repeat2 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Button } from "@/components/ui/button";
@@ -88,7 +88,7 @@ const EXERCISE_LIBRARY = [
   { id:"prone-hip-ext-wt",nameLocal:"Extensión Cadera Prono w/Peso",name:"Prone Hip Extension w/Weight",region:"Glúteo",equipment:"Peso tobillo",difficulty:"beginner",sets:3, reps:12, restSeconds:25 },
 ];
 
-const REGIONS = ["Todos", "Hombro", "Codo", "Cervical", "Torácica", "Lumbar", "Core", "Cadera", "Glúteo", "Rodilla", "Tobillo", "Nervio"];
+const REGIONS = ["Todos", "Hombro", "Cervical", "Torácica", "Lumbar", "Core", "Cadera", "Glúteo", "Rodilla", "Tobillo", "Codo", "Muñeca/Mano", "Nervio"];
 const EQUIPMENTS = ["Todos", "Peso corporal", "Mancuernas", "Ligas / Bandas", "Pelota", "Foam Roller", "BOSU", "Kettlebell", "Peso tobillo"];
 
 const DIFFICULTY_COLOR: Record<string, string> = {
@@ -183,74 +183,190 @@ function RoutineItem({
   );
 }
 
-// ─── Modal de envío ───────────────────────────────────────────────────────────
-function SendModal({ isOpen, onClose, routineName, exerciseCount }: {
+// ─── Modal de envío mejorado ───────────────────────────────────────────────────
+function SendModal({ isOpen, onClose, routineName, exerciseCount, exercises }: {
   isOpen: boolean; onClose: () => void; routineName: string; exerciseCount: number;
+  exercises: RoutineExercise[];
 }) {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<"send" | "preview">("send");
   const link = "https://therapia.global/es/patient/demo-abc123";
 
   if (!isOpen) return null;
 
   function doSend(method: string) {
     setSent(method);
-    setTimeout(() => { setSent(null); onClose(); }, 1800);
+    setTimeout(() => { setSent(null); }, 1800);
+  }
+
+  function downloadPDF() {
+    // Genera una ventana de impresión con el contenido de la rutina
+    const content = `
+      <html><head><title>${routineName}</title>
+      <style>
+        body { font-family: Arial, sans-serif; padding: 32px; color: #1e293b; max-width: 700px; margin: 0 auto; }
+        h1 { font-size: 24px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+        .subtitle { color: #64748b; font-size: 13px; margin-bottom: 24px; }
+        .exercise { border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+        .ex-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+        .ex-num { width: 28px; height: 28px; border-radius: 50%; background: #3b82f6; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+        .ex-name { font-size: 15px; font-weight: 700; color: #0f172a; }
+        .ex-region { font-size: 11px; color: #64748b; }
+        .stats { display: flex; gap: 16px; margin: 8px 0; }
+        .stat { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 12px; }
+        .stat strong { display: block; font-size: 15px; font-weight: 700; }
+        .notes { margin-top: 8px; padding: 10px; background: #fefce8; border: 1px solid #fef08a; border-radius: 8px; font-size: 12px; color: #713f12; }
+        .footer { margin-top: 32px; text-align: center; color: #94a3b8; font-size: 11px; }
+        @media print { body { padding: 16px; } }
+      </style></head><body>
+      <h1>${routineName}</h1>
+      <p class="subtitle">${exerciseCount} ejercicios · Generado por Therapia Global · ${new Date().toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}</p>
+      ${exercises.map((ex, i) => `
+        <div class="exercise">
+          <div class="ex-header">
+            <div class="ex-num">${i + 1}</div>
+            <div>
+              <div class="ex-name">${ex.nameLocal}</div>
+              <div class="ex-region">${ex.region} · ${ex.equipment}</div>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>${ex.sets}</strong>Series</div>
+            <div class="stat"><strong>${ex.reps || "—"}</strong>Repeticiones</div>
+            <div class="stat"><strong>${ex.restSeconds}s</strong>Descanso</div>
+          </div>
+          ${ex.notes ? `<div class="notes">📝 ${ex.notes}</div>` : ""}
+        </div>
+      `).join("")}
+      <div class="footer">Therapia Global · therapia.global · ${link}</div>
+      </body></html>
+    `;
+    const w = window.open("", "_blank");
+    if (w) { w.document.write(content); w.document.close(); w.print(); }
   }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
+        {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-surface-100">
           <div>
-            <h2 className="text-base font-bold text-surface-900">Enviar rutina</h2>
+            <h2 className="text-base font-bold text-surface-900">Enviar rutina al paciente</h2>
             <p className="text-xs text-surface-400">{routineName} · {exerciseCount} ejercicios</p>
           </div>
           <button onClick={onClose} className="p-1.5 rounded-lg text-surface-400 hover:bg-surface-100">
             <X className="h-4 w-4" />
           </button>
         </div>
-        <div className="p-5 space-y-4">
-          {/* Link */}
-          <div>
-            <label className="text-xs font-semibold text-surface-600 block mb-1.5">Link del paciente</label>
-            <div className="flex items-center gap-2">
-              <div className="flex-1 bg-surface-50 border border-surface-200 rounded-lg px-3 py-2">
-                <p className="text-xs text-surface-500 truncate">{link}</p>
-              </div>
-              <button onClick={() => navigator.clipboard?.writeText(link)}
-                className="shrink-0 p-2 border border-surface-200 rounded-lg text-surface-500 hover:bg-surface-50">
-                <Copy className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-          {/* Email */}
-          <div className="flex gap-2">
-            <Input value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder="email@paciente.com" type="email" className="flex-1" />
-            <button onClick={() => doSend("email")}
-              className={cn("shrink-0 px-4 h-10 rounded-lg text-sm font-semibold transition-all",
-                sent === "email" ? "bg-clinical-500 text-white" : "bg-brand-600 text-white hover:bg-brand-500")}>
-              {sent === "email" ? <CheckCircle2 className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
-            </button>
-          </div>
-          {/* WhatsApp */}
+
+        {/* Tabs */}
+        <div className="flex border-b border-surface-100">
           {[
-            { id: "whatsapp", icon: <MessageCircle className="h-5 w-5" />, label: "WhatsApp", desc: "Abre WhatsApp con el link listo", color: "hover:border-green-300 hover:bg-green-50 hover:text-green-700" },
-            { id: "qr",       icon: <QrCode className="h-5 w-5" />,       label: "Código QR", desc: "Imprime o muestra en consulta",  color: "hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700" },
-          ].map(({ id, icon, label, desc, color }) => (
-            <button key={id} onClick={() => doSend(id)}
-              className={cn("w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-surface-200 transition-all text-surface-700", color,
-                sent === id && "border-clinical-500 bg-clinical-50 text-clinical-700")}>
-              {icon}
-              <div className="text-start flex-1">
-                <p className="text-sm font-semibold">{sent === id ? "¡Enviado!" : `Enviar por ${label}`}</p>
-                <p className="text-xs text-surface-400">{desc}</p>
-              </div>
-              {sent === id && <CheckCircle2 className="h-4 w-4 text-clinical-500" />}
+            { id: "send" as const, label: "Enviar" },
+            { id: "preview" as const, label: "Vista previa PDF" },
+          ].map((t) => (
+            <button key={t.id} onClick={() => setActiveTab(t.id)}
+              className={cn("flex-1 py-2.5 text-xs font-semibold transition-colors",
+                activeTab === t.id ? "text-brand-600 border-b-2 border-brand-600" : "text-surface-400 hover:text-surface-600")}>
+              {t.label}
             </button>
           ))}
         </div>
+
+        {activeTab === "send" ? (
+          <div className="p-5 space-y-3">
+            {/* PDF Download */}
+            <button onClick={downloadPDF}
+              className="w-full flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 border-brand-200 bg-brand-50 hover:bg-brand-100 transition-all text-brand-700">
+              <FileDown className="h-5 w-5 text-brand-600" />
+              <div className="text-start flex-1">
+                <p className="text-sm font-bold">Descargar PDF</p>
+                <p className="text-xs text-brand-500">Incluye ejercicios, series, reps y observaciones</p>
+              </div>
+            </button>
+
+            {/* Link */}
+            <div>
+              <label className="text-xs font-semibold text-surface-600 block mb-1.5">Link del paciente</label>
+              <div className="flex items-center gap-2">
+                <div className="flex-1 bg-surface-50 border border-surface-200 rounded-lg px-3 py-2">
+                  <p className="text-xs text-surface-500 truncate">{link}</p>
+                </div>
+                <button onClick={() => navigator.clipboard?.writeText(link)}
+                  className="shrink-0 p-2 border border-surface-200 rounded-lg text-surface-500 hover:bg-surface-50">
+                  <Copy className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex gap-2">
+              <Input value={email} onChange={(e) => setEmail(e.target.value)}
+                placeholder="email@paciente.com" type="email" className="flex-1" />
+              <button onClick={() => doSend("email")}
+                className={cn("shrink-0 px-4 h-10 rounded-lg text-sm font-semibold transition-all",
+                  sent === "email" ? "bg-clinical-500 text-white" : "bg-brand-600 text-white hover:bg-brand-500")}>
+                {sent === "email" ? <CheckCircle2 className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
+              </button>
+            </div>
+
+            {/* WhatsApp / QR */}
+            {[
+              { id: "whatsapp", icon: <MessageCircle className="h-5 w-5" />, label: "WhatsApp", desc: "Abre WhatsApp con el link listo", color: "hover:border-green-300 hover:bg-green-50 hover:text-green-700" },
+              { id: "qr",       icon: <QrCode className="h-5 w-5" />,       label: "Código QR", desc: "Imprime o muestra en consulta",  color: "hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700" },
+            ].map(({ id, icon, label, desc, color }) => (
+              <button key={id} onClick={() => doSend(id)}
+                className={cn("w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-surface-200 transition-all text-surface-700", color,
+                  sent === id && "border-clinical-500 bg-clinical-50 text-clinical-700")}>
+                {icon}
+                <div className="text-start flex-1">
+                  <p className="text-sm font-semibold">{sent === id ? "¡Enviado!" : `Enviar por ${label}`}</p>
+                  <p className="text-xs text-surface-400">{desc}</p>
+                </div>
+                {sent === id && <CheckCircle2 className="h-4 w-4 text-clinical-500" />}
+              </button>
+            ))}
+          </div>
+        ) : (
+          /* Vista previa PDF */
+          <div className="p-5 max-h-80 overflow-y-auto space-y-3">
+            <div className="text-center mb-4">
+              <h3 className="text-base font-bold text-surface-900">{routineName}</h3>
+              <p className="text-xs text-surface-400">{exerciseCount} ejercicios · Therapia Global</p>
+            </div>
+            {exercises.map((ex, i) => (
+              <div key={ex.uid} className="border border-surface-200 rounded-xl p-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-6 h-6 rounded-full bg-brand-600 text-white text-[10px] font-bold flex items-center justify-center shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-surface-900">{ex.nameLocal}</p>
+                    <p className="text-[10px] text-surface-400">{ex.region} · {ex.equipment}</p>
+                  </div>
+                </div>
+                <div className="flex gap-2 ms-8">
+                  <span className="text-[10px] bg-surface-100 px-2 py-0.5 rounded-lg font-medium">
+                    {ex.sets} series
+                  </span>
+                  {ex.reps > 0 && <span className="text-[10px] bg-surface-100 px-2 py-0.5 rounded-lg font-medium">{ex.reps} reps</span>}
+                  <span className="text-[10px] bg-surface-100 px-2 py-0.5 rounded-lg font-medium">{ex.restSeconds}s descanso</span>
+                </div>
+                {ex.notes && (
+                  <p className="ms-8 mt-1.5 text-[10px] text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-2 py-1">
+                    {ex.notes}
+                  </p>
+                )}
+              </div>
+            ))}
+            <button onClick={downloadPDF}
+              className="w-full h-10 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-colors">
+              <FileDown className="h-4 w-4" />
+              Descargar este PDF
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -464,7 +580,7 @@ export default function RoutinesPage() {
       </div>
 
       <SendModal isOpen={sendOpen} onClose={() => setSendOpen(false)}
-        routineName={routineName} exerciseCount={exercises.length} />
+        routineName={routineName} exerciseCount={exercises.length} exercises={exercises} />
     </div>
   );
 }

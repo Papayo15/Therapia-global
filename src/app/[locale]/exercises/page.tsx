@@ -8,6 +8,117 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
+import {
+  AnimShoulderExternalRotation, AnimShoulderAbduction, AnimShoulderFlexion,
+  AnimElbowFlexion, AnimWristExtension, AnimHipFlexion, AnimHipAbduction,
+  AnimKneeFlexion, AnimAnkleDorsiflexion, AnimLumbarFlexion, AnimLumbarExtension,
+  AnimLumbarRotation as AnimLumbarRotation1, AnimNeckFlexion, AnimNeckRotation,
+  AnimBridging, AnimBirdDog, AnimHipFlexorStretch, AnimResistanceBandRow,
+  AnimDumbbellLateralRaise, AnimCervicalRetraction, AnimAnklePumps,
+  AnimFoamRollerThoracic, AnimSeatedKneeExtension, AnimShoulderPress,
+} from "@/components/exercises/ExerciseAnimations";
+import {
+  AnimBallBridge, AnimBallHamstringCurl, AnimBallLumbarExtension, AnimBallLateralFlex,
+  AnimBandHipAbduction, AnimBandPullApart, AnimBandGluteKickback, AnimBandShoulderRotation,
+  AnimBandCalfRaise, AnimDumbbellBicepCurl, AnimDumbbellBentRow, AnimRomanianDeadlift,
+  AnimTricepExtension, AnimGobletSquat, AnimPlank, AnimLunge, AnimGluteBridge,
+  AnimDeadBug, AnimWallSit, AnimBosuBalance, AnimBosuSquat, AnimBosuPlank,
+  AnimBosuHipHinge,
+} from "@/components/exercises/ExerciseAnimationsPart2";
+import {
+  AnimCatCow, AnimNerveFlossingSciatica, AnimPelvicTilt, AnimChildsPose,
+  AnimLumbarRotation, AnimMcKenziePress, AnimKneeToChest, AnimProneHipExtension,
+} from "@/components/exercises/ExerciseAnimationsPart3";
+
+// ─── Mapa de animaciones por ID de ejercicio ──────────────────────────────────
+const ANIMATION_MAP: Record<string, React.FC> = {
+  "shoulder-external-rotation": AnimShoulderExternalRotation,
+  "shoulder-abduction":         AnimShoulderAbduction,
+  "shoulder-flexion":           AnimShoulderFlexion,
+  "shoulder-press":             AnimShoulderPress,
+  "dumbbell-lateral-raise":     AnimDumbbellLateralRaise,
+  "resistance-band-row":        AnimResistanceBandRow,
+  "band-shoulder-rotation":     AnimBandShoulderRotation,
+  "band-pull-apart":            AnimBandPullApart,
+  "elbow-flexion":              AnimElbowFlexion,
+  "bicep-curl":                 AnimDumbbellBicepCurl,
+  "band-elbow-flexion-curl":    AnimElbowFlexion,
+  "wrist-flexion-extension":    AnimWristExtension,
+  "tricep-extension":           AnimTricepExtension,
+  "bent-row":                   AnimDumbbellBentRow,
+  "hip-flexor-stretch":         AnimHipFlexorStretch,
+  "hip-flexion":                AnimHipFlexion,
+  "hip-abduction":              AnimHipAbduction,
+  "band-hip-abduction":         AnimBandHipAbduction,
+  "band-hip-abd":               AnimBandHipAbduction,
+  "band-glute-kick":            AnimBandGluteKickback,
+  "clamshell":                  AnimHipAbduction,
+  "piriformis-met":             AnimHipFlexion,
+  "glute-bridge":               AnimGluteBridge,
+  "ball-bridge":                AnimBallBridge,
+  "bird-dog":                   AnimBirdDog,
+  "dead-bug":                   AnimDeadBug,
+  "plank":                      AnimPlank,
+  "lunge":                      AnimLunge,
+  "goblet-squat":               AnimGobletSquat,
+  "rdl":                        AnimRomanianDeadlift,
+  "single-leg-deadlift":        AnimRomanianDeadlift,
+  "hip-thrust-dumbbell":        AnimGluteBridge,
+  "knee-flexion":               AnimKneeFlexion,
+  "terminal-knee-extension":    AnimKneeFlexion,
+  "step-down-eccentric":        AnimKneeFlexion,
+  "bosu-squat":                 AnimBosuSquat,
+  "bosu-balance":               AnimBosuBalance,
+  "bosu-plank":                 AnimBosuPlank,
+  "bosu-hiphinge":              AnimBosuHipHinge,
+  "wall-sit":                   AnimWallSit,
+  "seated-knee-extension":      AnimSeatedKneeExtension,
+  "knee-to-chest":              AnimKneeToChest,
+  "ball-hamstring-curl":        AnimBallHamstringCurl,
+  "ball-rollout":               AnimBallLumbarExtension,
+  "ball-wall-squat":            AnimGobletSquat,
+  "ankle-pumps":                AnimAnklePumps,
+  "ankle-dorsiflexion":         AnimAnkleDorsiflexion,
+  "band-calf-raise":            AnimBandCalfRaise,
+  "band-calf":                  AnimBandCalfRaise,
+  "lumbar-rotation":            AnimLumbarRotation,
+  "lumbar-flexion":             AnimLumbarFlexion,
+  "lumbar-extension":           AnimLumbarExtension,
+  "cat-cow":                    AnimCatCow,
+  "pelvic-tilt":                AnimPelvicTilt,
+  "childs-pose":                AnimChildsPose,
+  "mckenzie-press":             AnimMcKenziePress,
+  "nerve-flossing":             AnimNerveFlossingSciatica,
+  "prone-hip-extension":        AnimProneHipExtension,
+  "prone-hip-ext":              AnimProneHipExtension,
+  "ball-lumbar-extension":      AnimBallLumbarExtension,
+  "ball-lateral-flex":          AnimBallLateralFlex,
+  "cervical-retraction":        AnimCervicalRetraction,
+  "cervical-ret":               AnimCervicalRetraction,
+  "neck-flexion":               AnimNeckFlexion,
+  "neck-rotation":              AnimNeckRotation,
+  "deep-neck-flexor":           AnimNeckFlexion,
+  "cervical-rotation-active":   AnimNeckRotation,
+  "thoracic-extension":         AnimFoamRollerThoracic,
+  "foam-thoracic":              AnimFoamRollerThoracic,
+  "open-book-stretch":          AnimLumbarRotation1,
+  "thoracic-rotation-seated":   AnimLumbarRotation1,
+  "bridging":                   AnimBridging,
+  "side-plank":                 AnimPlank,
+  "superman":                   AnimProneHipExtension,
+  "fire-hydrant":               AnimHipAbduction,
+  "lateral-band-walk":          AnimBandHipAbduction,
+  "sumo-squat-dumbbell":        AnimGobletSquat,
+  "monster-walk":               AnimBandHipAbduction,
+  "pallof-press-band":          AnimBandPullApart,
+  "reverse-crunch":             AnimKneeToChest,
+  "band-deadbug":               AnimDeadBug,
+  "suitcase-carry":             AnimGobletSquat,
+  "hammer-curl":                AnimDumbbellBicepCurl,
+  "pronation-supination-dumbbell": AnimElbowFlexion,
+  "eccentric-wrist-extension":  AnimWristExtension,
+  "tricep-extension-band":      AnimTricepExtension,
+};
 
 // ─── Base de datos de ejercicios con instrucciones completas ─────────────────
 const ALL_EXERCISES: ExerciseData[] = [
@@ -1519,7 +1630,7 @@ const ALL_EXERCISES: ExerciseData[] = [
   },
 ];
 
-const REGIONS = ["Todos", "Hombro", "Lumbar", "Cadera", "Cervical", "Rodilla", "Tobillo", "Core", "Espalda media", "Glúteo", "Isquiotibiales", "Torácica"];
+const REGIONS = ["Todos", "Hombro", "Cervical", "Torácica", "Lumbar", "Cadera", "Rodilla", "Tobillo", "Codo", "Muñeca/Mano", "Core", "Glúteo", "Espalda media"];
 const DIFFICULTIES = ["Todos", "beginner", "intermediate", "advanced"];
 const DIFFICULTY_LABEL: Record<string, string> = { beginner: "Básico", intermediate: "Intermedio", advanced: "Avanzado" };
 
@@ -1701,7 +1812,8 @@ export default function ExercisesPage() {
 
   function openPlayer(index: number) {
     setPlayerIndex(index);
-    setPlayerExercise(filtered[index]);
+    const ex = filtered[index];
+    setPlayerExercise({ ...ex, AnimComponent: ANIMATION_MAP[ex.id] ?? ex.AnimComponent });
   }
 
   function handleAdd(exercise: ExerciseData) {
