@@ -137,41 +137,99 @@
   "osteopathy": {
     "title": "骨病疗法技术",
     "search_placeholder": "搜索技术、区域、机制...",
-    "categories": { "all": "全部", "visceral": "脏器", "craneal": "颅骨", "structural": "结构" },
-    "view_technique": "查看技术", "mechanism": "机制", "contraindications": "禁忌症",
-    "anatomy_panel": "应用解剖学", "anatomy_subtitle": "该区域的临床解剖学",
+    "categories": {
+      "all": "全部",
+      "visceral": "脏器",
+      "craneal": "颅骨",
+      "structural": "结构"
+    },
+    "view_technique": "查看技术",
+    "mechanism": "机制",
+    "contraindications": "禁忌症",
+    "anatomy_panel": "应用解剖学",
+    "anatomy_subtitle": "该区域的临床解剖学",
     "chiropracticNote": "源自脊骨神经医学的技术"
   },
   "anatomy": {
     "title": "应用解剖学",
-    "layers": { "anatomy": "解剖学", "physiology": "生理学", "dysfunctions": "功能障碍", "effects": "技术效果", "connections": "临床联系" },
-    "region_anatomy": "区域解剖学", "anatomy_context": "解剖背景：",
+    "layers": {
+      "anatomy": "解剖学",
+      "physiology": "生理学",
+      "dysfunctions": "功能障碍",
+      "effects": "技术效果",
+      "connections": "临床联系"
+    },
+    "region_anatomy": "区域解剖学",
+    "anatomy_context": "解剖背景：",
     "no_region": "选择身体区域以查看解剖细节"
   },
   "routines": {
-    "title": "康复方案", "new_routine": "新方案", "search_placeholder": "搜索方案...",
-    "send_to_patient": "发送给患者", "exercises_count": "{count}个练习",
-    "created": "已创建", "draft": "草稿", "sent": "已发送",
-    "builder_title": "方案构建器", "add_exercise": "添加练习", "drag_hint": "将练习拖到此处"
+    "title": "康复方案",
+    "new_routine": "新方案",
+    "search_placeholder": "搜索方案...",
+    "send_to_patient": "发送给患者",
+    "exercises_count": "{count}个练习",
+    "created": "已创建",
+    "draft": "草稿",
+    "sent": "已发送",
+    "builder_title": "方案构建器",
+    "add_exercise": "添加练习",
+    "drag_hint": "将练习拖到此处"
   },
   "community": {
-    "title": "社区", "new_post": "新帖子", "search_placeholder": "搜索...",
-    "like": "点赞", "comment": "评论", "share": "分享", "follow": "关注",
-    "members": "成员", "online": "在线",
-    "categories": { "all": "全部", "cases": "临床案例", "research": "研究", "techniques": "技术", "questions": "问题" }
+    "title": "社区",
+    "new_post": "新帖子",
+    "search_placeholder": "搜索...",
+    "like": "点赞",
+    "comment": "评论",
+    "share": "分享",
+    "follow": "关注",
+    "members": "成员",
+    "online": "在线",
+    "categories": {
+      "all": "全部",
+      "cases": "临床案例",
+      "research": "研究",
+      "techniques": "技术",
+      "questions": "问题"
+    }
   },
   "ai": {
-    "title": "临床AI引擎", "subtitle": "描述病例，获取循证康复方案",
-    "placeholder": "示例：前交叉韧带术后第3周...", "generate": "生成方案",
-    "generating": "分析临床案例...", "program_title": "康复方案",
-    "phase": "阶段", "exercises": "练习", "progression": "进展",
-    "red_flags": "危险信号", "evidence": "证据等级"
+    "title": "临床AI引擎",
+    "subtitle": "描述病例，获取循证康复方案",
+    "placeholder": "示例：前交叉韧带术后第3周...",
+    "generate": "生成方案",
+    "generating": "分析临床案例...",
+    "program_title": "康复方案",
+    "phase": "阶段",
+    "exercises": "练习",
+    "progression": "进展",
+    "red_flags": "危险信号",
+    "evidence": "证据等级",
+    "sendPlan": "发送计划",
+    "sendByEmail": "通过邮件发送",
+    "sendWhatsapp": "通过WhatsApp发送",
+    "copyLink": "复制文本",
+    "downloadPdf": "下载PDF",
+    "shareTitle": "发送治疗计划",
+    "dbSuggestions": "数据库建议",
+    "physioTechniques": "建议的物理治疗技术"
   },
   "settings": {
     "title": "设置",
-    "tabs": { "profile": "个人资料", "notifications": "通知", "security": "安全", "billing": "计费", "appearance": "外观" },
-    "save_changes": "保存更改", "language": "语言", "theme": "主题",
-    "theme_light": "浅色", "theme_dark": "深色", "theme_system": "系统"
+    "tabs": {
+      "profile": "个人资料",
+      "notifications": "通知",
+      "security": "安全",
+      "billing": "计费",
+      "appearance": "外观"
+    },
+    "save_changes": "保存更改",
+    "language": "语言",
+    "theme": "主题",
+    "theme_light": "浅色",
+    "theme_dark": "深色",
+    "theme_system": "系统"
   },
   "patient_view": {
     "routine_from": "您的训练计划来自",

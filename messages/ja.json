@@ -137,41 +137,99 @@
   "osteopathy": {
     "title": "オステオパシー技法",
     "search_placeholder": "技法、部位、メカニズムを検索...",
-    "categories": { "all": "すべて", "visceral": "内臓", "craneal": "頭蓋", "structural": "構造" },
-    "view_technique": "技法を見る", "mechanism": "メカニズム", "contraindications": "禁忌",
-    "anatomy_panel": "応用解剖学", "anatomy_subtitle": "この部位の臨床解剖学",
+    "categories": {
+      "all": "すべて",
+      "visceral": "内臓",
+      "craneal": "頭蓋",
+      "structural": "構造"
+    },
+    "view_technique": "技法を見る",
+    "mechanism": "メカニズム",
+    "contraindications": "禁忌",
+    "anatomy_panel": "応用解剖学",
+    "anatomy_subtitle": "この部位の臨床解剖学",
     "chiropracticNote": "カイロプラクティック由来の技術"
   },
   "anatomy": {
     "title": "応用解剖学",
-    "layers": { "anatomy": "解剖学", "physiology": "生理学", "dysfunctions": "機能障害", "effects": "技法の効果", "connections": "臨床的つながり" },
-    "region_anatomy": "部位別解剖学", "anatomy_context": "解剖学的背景：",
+    "layers": {
+      "anatomy": "解剖学",
+      "physiology": "生理学",
+      "dysfunctions": "機能障害",
+      "effects": "技法の効果",
+      "connections": "臨床的つながり"
+    },
+    "region_anatomy": "部位別解剖学",
+    "anatomy_context": "解剖学的背景：",
     "no_region": "解剖学的詳細を見るには身体部位を選択してください"
   },
   "routines": {
-    "title": "プログラム", "new_routine": "新プログラム", "search_placeholder": "プログラムを検索...",
-    "send_to_patient": "患者に送信", "exercises_count": "{count}エクササイズ",
-    "created": "作成済み", "draft": "下書き", "sent": "送信済み",
-    "builder_title": "プログラムビルダー", "add_exercise": "エクササイズを追加", "drag_hint": "ここにドラッグ"
+    "title": "プログラム",
+    "new_routine": "新プログラム",
+    "search_placeholder": "プログラムを検索...",
+    "send_to_patient": "患者に送信",
+    "exercises_count": "{count}エクササイズ",
+    "created": "作成済み",
+    "draft": "下書き",
+    "sent": "送信済み",
+    "builder_title": "プログラムビルダー",
+    "add_exercise": "エクササイズを追加",
+    "drag_hint": "ここにドラッグ"
   },
   "community": {
-    "title": "コミュニティ", "new_post": "新しい投稿", "search_placeholder": "検索...",
-    "like": "いいね", "comment": "コメント", "share": "シェア", "follow": "フォロー",
-    "members": "メンバー", "online": "オンライン",
-    "categories": { "all": "すべて", "cases": "臨床例", "research": "研究", "techniques": "技法", "questions": "質問" }
+    "title": "コミュニティ",
+    "new_post": "新しい投稿",
+    "search_placeholder": "検索...",
+    "like": "いいね",
+    "comment": "コメント",
+    "share": "シェア",
+    "follow": "フォロー",
+    "members": "メンバー",
+    "online": "オンライン",
+    "categories": {
+      "all": "すべて",
+      "cases": "臨床例",
+      "research": "研究",
+      "techniques": "技法",
+      "questions": "質問"
+    }
   },
   "ai": {
-    "title": "臨床AIエンジン", "subtitle": "症例を説明し、エビデンスに基づくリハビリプログラムを受け取る",
-    "placeholder": "例：ACL術後3週目...", "generate": "プログラムを生成",
-    "generating": "臨床症例を分析中...", "program_title": "リハビリプログラム",
-    "phase": "フェーズ", "exercises": "エクササイズ", "progression": "進行",
-    "red_flags": "危険信号", "evidence": "エビデンスレベル"
+    "title": "臨床AIエンジン",
+    "subtitle": "症例を説明し、エビデンスに基づくリハビリプログラムを受け取る",
+    "placeholder": "例：ACL術後3週目...",
+    "generate": "プログラムを生成",
+    "generating": "臨床症例を分析中...",
+    "program_title": "リハビリプログラム",
+    "phase": "フェーズ",
+    "exercises": "エクササイズ",
+    "progression": "進行",
+    "red_flags": "危険信号",
+    "evidence": "エビデンスレベル",
+    "sendPlan": "プランを送信",
+    "sendByEmail": "メールで送信",
+    "sendWhatsapp": "WhatsAppで送信",
+    "copyLink": "テキストをコピー",
+    "downloadPdf": "PDFダウンロード",
+    "shareTitle": "治療計画を送信",
+    "dbSuggestions": "データベースからの提案",
+    "physioTechniques": "推奨理学療法テクニック"
   },
   "settings": {
     "title": "設定",
-    "tabs": { "profile": "プロフィール", "notifications": "通知", "security": "セキュリティ", "billing": "請求", "appearance": "外観" },
-    "save_changes": "変更を保存", "language": "言語", "theme": "テーマ",
-    "theme_light": "ライト", "theme_dark": "ダーク", "theme_system": "システム"
+    "tabs": {
+      "profile": "プロフィール",
+      "notifications": "通知",
+      "security": "セキュリティ",
+      "billing": "請求",
+      "appearance": "外観"
+    },
+    "save_changes": "変更を保存",
+    "language": "言語",
+    "theme": "テーマ",
+    "theme_light": "ライト",
+    "theme_dark": "ダーク",
+    "theme_system": "システム"
   },
   "patient_view": {
     "routine_from": "ルーティン（担当：",

@@ -137,41 +137,99 @@
   "osteopathy": {
     "title": "Técnicas de Osteopatia",
     "search_placeholder": "Pesquisar técnicas, regiões, mecanismos...",
-    "categories": { "all": "Todas", "visceral": "Visceral", "craneal": "Craniana", "structural": "Estrutural" },
-    "view_technique": "Ver técnica", "mechanism": "Mecanismo", "contraindications": "Contraindicações",
-    "anatomy_panel": "Anatomia Aplicada", "anatomy_subtitle": "Anatomia clínica desta região",
+    "categories": {
+      "all": "Todas",
+      "visceral": "Visceral",
+      "craneal": "Craniana",
+      "structural": "Estrutural"
+    },
+    "view_technique": "Ver técnica",
+    "mechanism": "Mecanismo",
+    "contraindications": "Contraindicações",
+    "anatomy_panel": "Anatomia Aplicada",
+    "anatomy_subtitle": "Anatomia clínica desta região",
     "chiropracticNote": "Técnica derivada da quiropraxia"
   },
   "anatomy": {
     "title": "Anatomia Aplicada",
-    "layers": { "anatomy": "Anatomia", "physiology": "Fisiologia", "dysfunctions": "Disfunções", "effects": "Efeitos das técnicas", "connections": "Conexões clínicas" },
-    "region_anatomy": "Anatomia regional", "anatomy_context": "Contexto anatômico de",
+    "layers": {
+      "anatomy": "Anatomia",
+      "physiology": "Fisiologia",
+      "dysfunctions": "Disfunções",
+      "effects": "Efeitos das técnicas",
+      "connections": "Conexões clínicas"
+    },
+    "region_anatomy": "Anatomia regional",
+    "anatomy_context": "Contexto anatômico de",
     "no_region": "Selecione uma região para ver os detalhes anatômicos"
   },
   "routines": {
-    "title": "Rotinas", "new_routine": "Nova rotina", "search_placeholder": "Pesquisar rotinas...",
-    "send_to_patient": "Enviar ao paciente", "exercises_count": "{count} exercícios",
-    "created": "Criada", "draft": "Rascunho", "sent": "Enviada",
-    "builder_title": "Construtor de rotinas", "add_exercise": "Adicionar exercício", "drag_hint": "Arraste exercícios aqui"
+    "title": "Rotinas",
+    "new_routine": "Nova rotina",
+    "search_placeholder": "Pesquisar rotinas...",
+    "send_to_patient": "Enviar ao paciente",
+    "exercises_count": "{count} exercícios",
+    "created": "Criada",
+    "draft": "Rascunho",
+    "sent": "Enviada",
+    "builder_title": "Construtor de rotinas",
+    "add_exercise": "Adicionar exercício",
+    "drag_hint": "Arraste exercícios aqui"
   },
   "community": {
-    "title": "Comunidade", "new_post": "Nova publicação", "search_placeholder": "Pesquisar...",
-    "like": "Curtir", "comment": "Comentar", "share": "Compartilhar", "follow": "Seguir",
-    "members": "membros", "online": "online",
-    "categories": { "all": "Todos", "cases": "Casos clínicos", "research": "Pesquisa", "techniques": "Técnicas", "questions": "Dúvidas" }
+    "title": "Comunidade",
+    "new_post": "Nova publicação",
+    "search_placeholder": "Pesquisar...",
+    "like": "Curtir",
+    "comment": "Comentar",
+    "share": "Compartilhar",
+    "follow": "Seguir",
+    "members": "membros",
+    "online": "online",
+    "categories": {
+      "all": "Todos",
+      "cases": "Casos clínicos",
+      "research": "Pesquisa",
+      "techniques": "Técnicas",
+      "questions": "Dúvidas"
+    }
   },
   "ai": {
-    "title": "Motor de IA Clínica", "subtitle": "Descreva um caso e receba um programa baseado em evidências",
-    "placeholder": "Exemplo: Reabilitação LCA semana 3...", "generate": "Gerar programa",
-    "generating": "Analisando caso clínico...", "program_title": "Programa de reabilitação",
-    "phase": "Fase", "exercises": "Exercícios", "progression": "Progressão",
-    "red_flags": "Sinais de alerta", "evidence": "Nível de evidência"
+    "title": "Motor de IA Clínica",
+    "subtitle": "Descreva um caso e receba um programa baseado em evidências",
+    "placeholder": "Exemplo: Reabilitação LCA semana 3...",
+    "generate": "Gerar programa",
+    "generating": "Analisando caso clínico...",
+    "program_title": "Programa de reabilitação",
+    "phase": "Fase",
+    "exercises": "Exercícios",
+    "progression": "Progressão",
+    "red_flags": "Sinais de alerta",
+    "evidence": "Nível de evidência",
+    "sendPlan": "Enviar plano",
+    "sendByEmail": "Enviar por email",
+    "sendWhatsapp": "Enviar por WhatsApp",
+    "copyLink": "Copiar texto",
+    "downloadPdf": "Descarregar PDF",
+    "shareTitle": "Enviar plano de tratamento",
+    "dbSuggestions": "Sugestões da base de dados",
+    "physioTechniques": "Técnicas de fisioterapia sugeridas"
   },
   "settings": {
     "title": "Configurações",
-    "tabs": { "profile": "Perfil", "notifications": "Notificações", "security": "Segurança", "billing": "Faturamento", "appearance": "Aparência" },
-    "save_changes": "Salvar alterações", "language": "Idioma", "theme": "Tema",
-    "theme_light": "Claro", "theme_dark": "Escuro", "theme_system": "Sistema"
+    "tabs": {
+      "profile": "Perfil",
+      "notifications": "Notificações",
+      "security": "Segurança",
+      "billing": "Faturamento",
+      "appearance": "Aparência"
+    },
+    "save_changes": "Salvar alterações",
+    "language": "Idioma",
+    "theme": "Tema",
+    "theme_light": "Claro",
+    "theme_dark": "Escuro",
+    "theme_system": "Sistema"
   },
   "patient_view": {
     "routine_from": "Sua rotina de",

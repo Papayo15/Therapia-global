@@ -205,7 +205,15 @@
     "exercises": "Exercises",
     "progression": "Progression",
     "red_flags": "Red flags",
-    "evidence": "Evidence level"
+    "evidence": "Evidence level",
+    "sendPlan": "Send plan",
+    "sendByEmail": "Send by email",
+    "sendWhatsapp": "Send via WhatsApp",
+    "copyLink": "Copy text",
+    "downloadPdf": "Download PDF",
+    "shareTitle": "Send treatment plan",
+    "dbSuggestions": "Database suggestions",
+    "physioTechniques": "Suggested physiotherapy techniques"
   },
   "settings": {
     "title": "Settings",
