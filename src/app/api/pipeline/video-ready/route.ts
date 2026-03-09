@@ -66,8 +66,8 @@ async function readStatus(): Promise<PipelineStatus> {
 }
 
 async function writeStatus(status: PipelineStatus): Promise<void> {
-  // Guard: don't write to filesystem in Vercel serverless (ephemeral)
-  if (process.env.VERCEL === "1") return;
+  // Guard: don't write to filesystem in serverless environments (ephemeral filesystem)
+  if (process.env.VERCEL === "1" || process.env.NETLIFY === "true") return;
   await fs.mkdir(path.dirname(STATUS_FILE), { recursive: true });
   await fs.writeFile(STATUS_FILE, JSON.stringify(status, null, 2), "utf-8");
 }
