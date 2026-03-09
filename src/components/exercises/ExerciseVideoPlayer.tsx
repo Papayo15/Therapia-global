@@ -11,7 +11,8 @@ import { Play, Loader2, VideoOff } from "lucide-react";
 // ─── ExerciseVideoPlayer ───────────────────────────────────────────────────────
 // Mobile-first video component for 3D exercise demonstrations.
 // Replaces SVG/framer-motion animations throughout the platform.
-// Videos stored in: /public/exercise-videos/{exercise-id}.mp4
+// Videos stored in: /public/videos/exercises/{exercise-id}.mp4 (exercises)
+//                   /public/videos/osteopathy/{exercise-id}.mp4 (osteopathy)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface ExerciseVideoPlayerProps {

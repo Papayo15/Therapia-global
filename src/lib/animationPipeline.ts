@@ -10,9 +10,11 @@
  * Total batches: Math.ceil(290/5) + Math.ceil(122/3) = 58 + 41 = ~58 combined
  *
  * Output paths:
- *   /public/exercise-videos/{slug}.mp4
- *   /public/exercise-animations/{slug}.glb
- *   /public/exercise-animations/{slug}.lottie.json
+ *   /public/videos/exercises/{slug}.mp4
+ *   /public/videos/osteopathy/{slug}.mp4
+ *   /public/videos/modalities/{slug}.mp4
+ *   /public/models/exercises/{slug}.glb
+ *   /public/models/osteopathy/{slug}.glb
  */
 
 import { EXERCISE_REGISTRY, type RegistryExercise } from "./exerciseRegistry";
@@ -20,7 +22,7 @@ import { OSTEOPATHY_REGISTRY, type OsteopathyTechnique } from "./osteopathyRegis
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-export type AnimationType = "exercise" | "osteopathy";
+export type AnimationType = "exercise" | "osteopathy" | "physiotherapy_modality";
 export type DifficultyLevel = "beginner" | "intermediate" | "advanced" | "expert";
 export type CameraPreset =
   | "front-45deg"
@@ -29,7 +31,12 @@ export type CameraPreset =
   | "posterior"
   | "isometric"
   | "close-up-hands"
-  | "close-up-head";
+  | "close-up-head"
+  | "full_body"
+  | "upper_body"
+  | "lower_body"
+  | "therapy_table"
+  | "joint_closeup";
 export type LightingPreset =
   | "medical-studio"       // clean white HDRI, soft shadows
   | "clinical-warm"        // warm white key, fill, rim
@@ -205,6 +212,11 @@ export function generateBlenderScript(spec: {
     "isometric":      "camera.location = (2.5, -2.5, 2.5); camera.rotation_euler = (0.955, 0, 0.785)",
     "close-up-hands": "camera.location = (0.5, -1.2, 0.8); camera.rotation_euler = (1.05, 0, 0.2)",
     "close-up-head":  "camera.location = (0, -1.5, 1.8); camera.rotation_euler = (0.8, 0, 0)",
+    "full_body":      "camera.location = (0, -4.0, 1.6); camera.rotation_euler = (1.22, 0, 0)",
+    "upper_body":     "camera.location = (0, -2.5, 1.8); camera.rotation_euler = (1.05, 0, 0)",
+    "lower_body":     "camera.location = (0, -2.5, 0.8); camera.rotation_euler = (1.35, 0, 0)",
+    "therapy_table":  "camera.location = (2.5, -2.0, 2.0); camera.rotation_euler = (1.0, 0, 0.6)",
+    "joint_closeup":  "camera.location = (0.8, -1.0, 1.0); camera.rotation_euler = (0.9, 0, 0.3)",
   };
 
   const lightingSetup: Record<LightingPreset, string> = {
@@ -306,8 +318,11 @@ therapist.name = "TherapistAvatar"
 
 # ── Output Paths ──────────────────────────────────────────────────────────────
 output_dir = os.path.join(os.getcwd(), "public")
-mp4_path  = os.path.join(output_dir, "exercise-videos", "${spec.slug}.mp4")
-glb_path  = os.path.join(output_dir, "exercise-animations", "${spec.slug}.glb")
+anim_type = "${spec.type}"
+subdir_map = {"exercise": "exercises", "osteopathy": "osteopathy", "physiotherapy_modality": "modalities"}
+anim_subdir = subdir_map.get(anim_type, "exercises")
+mp4_path  = os.path.join(output_dir, "videos", anim_subdir, "${spec.slug}.mp4")
+glb_path  = os.path.join(output_dir, "models", anim_subdir, "${spec.slug}.glb")
 
 os.makedirs(os.path.dirname(mp4_path), exist_ok=True)
 os.makedirs(os.path.dirname(glb_path), exist_ok=True)
@@ -358,17 +373,44 @@ export function parseMotionSequence(prompt: string): {
   return { avatarCount, cameraHint, lightingHint, hasHighlight, loopable };
 }
 
+// ─── Region → Camera Preset Map ───────────────────────────────────────────────
+
+const REGION_CAMERA_MAP: Partial<Record<string, CameraPreset>> = {
+  spine:    "full_body",
+  lumbar:   "full_body",
+  thoracic: "full_body",
+  shoulder: "upper_body",
+  neck:     "upper_body",
+  cervical: "upper_body",
+  elbow:    "upper_body",
+  wrist:    "joint_closeup",
+  hand:     "joint_closeup",
+  hip:      "lower_body",
+  knee:     "lower_body",
+  ankle:    "joint_closeup",
+  foot:     "joint_closeup",
+};
+
+function regionToCamera(region: string, promptCamera: CameraPreset): CameraPreset {
+  const regionLower = region.toLowerCase();
+  for (const [key, cam] of Object.entries(REGION_CAMERA_MAP)) {
+    if (regionLower.includes(key)) return cam as CameraPreset;
+  }
+  return promptCamera;
+}
+
 // ─── Exercise Spec Generator ──────────────────────────────────────────────────
 
 export function generateExerciseSpec(exercise: RegistryExercise): PipelineSpec {
   const slug = exercise.id;
   const motion = parseMotionSequence(exercise.animationPrompt);
+  const camera = regionToCamera(exercise.region, motion.cameraHint);
 
   const animationSpec: AnimationSpec = {
     durationSeconds: 5,
     fps: 30,
     resolution: "1080p",
-    camera: motion.cameraHint,
+    camera,
     lighting: motion.lightingHint,
     loopable: motion.loopable,
     phases: DEFAULT_PHASES,
@@ -376,7 +418,7 @@ export function generateExerciseSpec(exercise: RegistryExercise): PipelineSpec {
     aiVideoPrompt: [
       `Medical 3D animation, ${exercise.name}.`,
       `Patient: gender-neutral humanized avatar, medical studio lighting.`,
-      `Camera: ${motion.cameraHint}, full-body or relevant region framing.`,
+      `Camera: ${camera}, full-body or relevant region framing.`,
       `Movement: ${exercise.movementPattern}.`,
       `Muscles highlighted: ${exercise.primaryMuscles.join(", ")}.`,
       `5-second loopable clip, 1080p, clinical quality equal to Wibbi/Physitrack.`,
@@ -387,7 +429,7 @@ export function generateExerciseSpec(exercise: RegistryExercise): PipelineSpec {
   const blenderScript = generateBlenderScript({
     slug,
     prompt: exercise.animationPrompt,
-    camera: motion.cameraHint,
+    camera,
     lighting: motion.lightingHint,
     durationSeconds: 5,
     fps: 30,
@@ -405,10 +447,10 @@ export function generateExerciseSpec(exercise: RegistryExercise): PipelineSpec {
     animation: animationSpec,
     blenderScript,
     outputPaths: {
-      mp4:       `/exercise-videos/${slug}.mp4`,
-      glb:       `/exercise-animations/${slug}.glb`,
-      lottie:    `/exercise-animations/${slug}.lottie.json`,
-      thumbnail: `/exercise-animations/${slug}.thumb.jpg`,
+      mp4:       `/videos/exercises/${slug}.mp4`,
+      glb:       `/models/exercises/${slug}.glb`,
+      lottie:    `/models/exercises/${slug}.lottie.json`,
+      thumbnail: `/models/exercises/${slug}.thumb.jpg`,
     },
     meta: {
       region: exercise.region,
@@ -476,10 +518,10 @@ export function generateOsteopathySpec(technique: OsteopathyTechnique): Pipeline
     animation: animationSpec,
     blenderScript,
     outputPaths: {
-      mp4:       `/exercise-videos/${slug}.mp4`,
-      glb:       `/exercise-animations/${slug}.glb`,
-      lottie:    `/exercise-animations/${slug}.lottie.json`,
-      thumbnail: `/exercise-animations/${slug}.thumb.jpg`,
+      mp4:       `/videos/osteopathy/${slug}.mp4`,
+      glb:       `/models/osteopathy/${slug}.glb`,
+      lottie:    `/models/osteopathy/${slug}.lottie.json`,
+      thumbnail: `/models/osteopathy/${slug}.thumb.jpg`,
     },
     meta: {
       region: technique.region,

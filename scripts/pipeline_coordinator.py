@@ -47,6 +47,7 @@ import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ─── Logging ──────────────────────────────────────────────────────────────────
 os.makedirs("logs", exist_ok=True)
@@ -88,6 +89,23 @@ BLENDER_SCRIPT  = Path(__file__).parent / "blender_animation_template.py"
 log.info(f"Coordinator starting | Platform: {PLATFORM_URL} | Batch: {BATCH_INDEX}")
 log.info(f"Output dir: {OUTPUT_DIR} | Blender: {BLENDER_PATH}")
 log.info(f"Mode: {'DRY RUN' if DRY_RUN else 'Blender' if USE_BLENDER else 'AI Video'}")
+
+# ─── AI Video Tool Selection ─────────────────────────────────────────────────
+# Set AI_VIDEO_TOOL env var to "runway", "pika", or "kling" to use AI video
+AI_VIDEO_TOOL = os.environ.get("AI_VIDEO_TOOL", "")  # "" means use Blender
+
+def get_anim_subdirs(spec: dict) -> tuple[str, str]:
+    """Returns (video_subdir, model_subdir) based on animation type."""
+    anim_type = spec.get("type", "exercise")
+    subdir_map = {
+        "exercise": "exercises",
+        "osteopathy": "osteopathy",
+        "physiotherapy_modality": "modalities",
+    }
+    sub = subdir_map.get(anim_type, "exercises")
+    return sub, sub
+
+
 
 # ─── HTTP Helpers ─────────────────────────────────────────────────────────────
 def http_get(url: str) -> dict:
@@ -151,8 +169,9 @@ def export_lottie(slug: str) -> tuple[bool, str]:
     Requires: npm install -g @lottiefiles/lottie-cli  (or similar tool)
     Falls back to creating a placeholder JSON if tool not available.
     """
-    glb_path    = OUTPUT_DIR / "exercise-animations" / f"{slug}.glb"
-    lottie_path = OUTPUT_DIR / "exercise-animations" / f"{slug}.lottie.json"
+    anim_sub, _ = get_anim_subdirs({"type": "exercise"})
+    glb_path    = OUTPUT_DIR / "models" / anim_sub / f"{slug}.glb"
+    lottie_path = OUTPUT_DIR / "models" / anim_sub / f"{slug}.lottie.json"
 
     if not glb_path.exists():
         return False, f"GLB not found: {glb_path}"
@@ -203,7 +222,8 @@ def call_ai_video_tool(spec: dict) -> tuple[bool, str]:
 
     slug   = spec["slug"]
     prompt = spec.get("animation", {}).get("aiVideoPrompt", "")
-    mp4_out = OUTPUT_DIR / "exercise-videos" / f"{slug}.mp4"
+    anim_sub, _ = get_anim_subdirs(spec)
+    mp4_out = OUTPUT_DIR / "videos" / anim_sub / f"{slug}.mp4"
 
     if DRY_RUN:
         log.info(f"  [DRY RUN] Would POST to {AI_ENDPOINT} with prompt for {slug}")
@@ -232,10 +252,14 @@ def call_ai_video_tool(spec: dict) -> tuple[bool, str]:
 # ─── File Verification ────────────────────────────────────────────────────────
 def verify_outputs(slug: str, requested_outputs: list[str]) -> tuple[list[str], list[str]]:
     """Returns (found_outputs, missing_outputs)."""
+    # Note: verify_outputs needs spec to determine subdirectory
+    # When called from process_spec, spec_type is passed via the global context
+    # Default to exercises subdir if type unknown
+    sub = "exercises"  # override per-spec in process_spec
     paths = {
-        "mp4":    OUTPUT_DIR / "exercise-videos"     / f"{slug}.mp4",
-        "glb":    OUTPUT_DIR / "exercise-animations"  / f"{slug}.glb",
-        "lottie": OUTPUT_DIR / "exercise-animations"  / f"{slug}.lottie.json",
+        "mp4":    OUTPUT_DIR / "videos" / sub / f"{slug}.mp4",
+        "glb":    OUTPUT_DIR / "models" / sub / f"{slug}.glb",
+        "lottie": OUTPUT_DIR / "models" / sub / f"{slug}.lottie.json",
     }
     found   = [k for k in requested_outputs if k in paths and paths[k].exists()]
     missing = [k for k in requested_outputs if k not in found]
@@ -244,7 +268,11 @@ def verify_outputs(slug: str, requested_outputs: list[str]) -> tuple[list[str], 
 # ─── Webhook ─────────────────────────────────────────────────────────────────
 def fire_webhook(slug: str, outputs: list[str]) -> tuple[bool, str]:
     url = f"{PLATFORM_URL}/api/pipeline/video-ready"
-    payload = {"slug": slug, "outputs": outputs}
+    payload = {
+        "slug": slug,
+        "outputs": outputs,
+        "renderEngine": AI_VIDEO_TOOL if AI_VIDEO_TOOL else "blender",
+    }
     log.info(f"  [{slug}] Firing webhook: {url}")
 
     if DRY_RUN:
@@ -328,9 +356,9 @@ def process_spec(spec: dict) -> dict:
 
     # ── Step 4: Log paths ─────────────────────────────────────────────────────
     result["outputs"]["paths"] = {
-        "mp4":    f"/exercise-videos/{slug}.mp4",
-        "glb":    f"/exercise-animations/{slug}.glb",
-        "lottie": f"/exercise-animations/{slug}.lottie.json",
+        "mp4":    spec.get("outputPaths", {}).get("mp4", f"/videos/exercises/{slug}.mp4"),
+        "glb":    spec.get("outputPaths", {}).get("glb", f"/models/exercises/{slug}.glb"),
+        "lottie": spec.get("outputPaths", {}).get("lottie", f"/models/exercises/{slug}.lottie.json"),
     }
     result["duration_seconds"] = round(time.time() - start_time, 2)
     result["completed_at"]     = datetime.now(timezone.utc).isoformat()
@@ -359,18 +387,40 @@ def process_batch(batch_index: int) -> dict:
         summary["error"] = str(e)
         return summary
 
-    for spec in specs:
-        try:
-            result = process_spec(spec)
-        except Exception as e:
-            log.error(f"Unhandled error for {spec.get('slug', '?')}: {e}")
-            result = {
-                "slug": spec.get("slug", "unknown"),
-                "status": "error",
-                "errors": [str(e)],
-                "completed_at": datetime.now(timezone.utc).isoformat(),
-            }
-        summary["results"].append(result)
+    # Parallel rendering — up to 6 workers (safe for Blender + AI APIs)
+    max_workers = min(6, len(specs)) if specs else 1
+
+    if max_workers > 1 and not DRY_RUN:
+        log.info(f"Processing {len(specs)} specs in parallel ({max_workers} workers)...")
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(process_spec, spec): spec["slug"] for spec in specs}
+            for future in as_completed(futures):
+                slug = futures[future]
+                try:
+                    result = future.result()
+                except Exception as e:
+                    log.error(f"Unhandled error for {slug}: {e}")
+                    result = {
+                        "slug": slug,
+                        "status": "error",
+                        "errors": [str(e)],
+                        "completed_at": datetime.now(timezone.utc).isoformat(),
+                    }
+                summary["results"].append(result)
+    else:
+        # Sequential (dry run or single spec)
+        for spec in specs:
+            try:
+                result = process_spec(spec)
+            except Exception as e:
+                log.error(f"Unhandled error for {spec.get('slug', '?')}: {e}")
+                result = {
+                    "slug": spec.get("slug", "unknown"),
+                    "status": "error",
+                    "errors": [str(e)],
+                    "completed_at": datetime.now(timezone.utc).isoformat(),
+                }
+            summary["results"].append(result)
 
     # ── Build summary stats ────────────────────────────────────────────────────
     total    = len(summary["results"])

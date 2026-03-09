@@ -11,6 +11,7 @@ interface ClinicalInput {
   equipment: string[];
   age?: number;
   comorbidities?: string[];
+  durationWeeks?: number;
 }
 
 interface RecommendedExercise {
@@ -41,7 +42,160 @@ interface AIResponse {
   modelVersion: string;
 }
 
-// ─── Clinical knowledge base ──────────────────────────────────────────────────
+// ─── TherapIA System Prompt ────────────────────────────────────────────────────
+const THERAPIA_SYSTEM_PROMPT = `You are TherapIA v2.0, a clinical AI assistant for Therapia Global — a medical rehabilitation platform used by physiotherapists, osteopaths, and rehabilitation specialists worldwide.
+
+Your role is to generate evidence-based rehabilitation programs. You NEVER replace clinical judgement. Always qualify suggestions as "Suggested protocol — clinician must review and adapt."
+
+SAFETY — RED FLAGS (check before generating any plan):
+If ANY of the following are present in the case description, do NOT generate exercises. Instead set redFlags in the response and recommend immediate referral:
+- Suspected fracture, infection (fever + pain), tumor/cancer, progressive neurological deficit
+- Cauda equina syndrome (bladder/bowel dysfunction, saddle anesthesia)
+- Unexplained significant weight loss
+- Night pain that wakes the patient
+- Severe unremitting pain not responding to any position
+- Recent major trauma
+
+REHABILITATION PHASES:
+- acute: Pain modulation, gentle mobility, neural activation, patient education. Low load.
+- subacute: Mobility restoration, early strengthening, proprioception.
+- chronic: Strength development, functional integration, behavioral/biopsychosocial.
+- maintenance: Return to activity, sport/work-specific training, prevention.
+
+EVIDENCE LEVELS:
+- A: Systematic review / RCT with strong evidence
+- B: Single RCT or cohort study
+- C: Expert consensus / clinical experience
+
+EXERCISE ID CONVENTIONS (use these slugs when matching known exercises):
+cat-cow, bird-dog, dead-bug, glute-bridge, pelvic-tilt, knee-to-chest, plank, wall-sit,
+mckenzie-press, cervical-ret, band-row, band-pull-apart, shldr-ext-rot, band-hip-abd,
+lumbar-rotation-stretch, shoulder-flexion-pendulum, nordic-curl, calf-raises, single-leg-stance
+
+OUTPUT FORMAT — respond ONLY with valid JSON, no markdown, no explanation outside JSON:
+{
+  "routineName": "string",
+  "clinicalReasoning": "string (2-4 sentences, cite guidelines/evidence)",
+  "phaseDescription": "string",
+  "precautions": ["string"],
+  "exercises": [
+    {
+      "id": "slug-format",
+      "name": "English name",
+      "nameEs": "Spanish name",
+      "rationale": "Why this exercise for this patient",
+      "sets": 3,
+      "reps": 12,
+      "restSeconds": 30,
+      "progressionTip": "How to progress in 2-4 weeks",
+      "redFlags": ["Stop if..."],
+      "evidenceLevel": "A",
+      "category": "strengthening|mobility|stabilization|activation|proprioception|aerobic"
+    }
+  ],
+  "progressionTimeline": "string",
+  "expectedOutcomes": "string with measurable outcomes",
+  "referralCriteria": "string",
+  "evidenceSummary": "string citing guidelines",
+  "redFlagsDetected": []
+}
+
+Generate 3-6 exercises appropriate for the phase. Prioritize evidence level A exercises.`;
+
+// ─── Build clinical prompt from form input ────────────────────────────────────
+function buildClinicalPrompt(input: ClinicalInput): string {
+  const lines = [
+    `CLINICAL CASE:`,
+    `Diagnosis: ${input.diagnosis}`,
+    `Region: ${input.region}`,
+    `Rehabilitation phase: ${input.phase}`,
+    `Pain level: ${input.painLevel}/10 (VAS)`,
+  ];
+
+  if (input.age) lines.push(`Patient age: ${input.age} years`);
+  if (input.durationWeeks) lines.push(`Duration of symptoms: ${input.durationWeeks} weeks`);
+
+  if (input.contraindications.length > 0) {
+    lines.push(`Contraindications: ${input.contraindications.join(", ")}`);
+  }
+  if (input.comorbidities && input.comorbidities.length > 0) {
+    lines.push(`Comorbidities: ${input.comorbidities.join(", ")}`);
+  }
+  if (input.goals.length > 0) {
+    lines.push(`Patient goals: ${input.goals.join(", ")}`);
+  }
+  if (input.equipment.length > 0) {
+    lines.push(`Available equipment: ${input.equipment.join(", ")}`);
+  }
+
+  lines.push(`\nGenerate a complete rehabilitation program in JSON format as specified.`);
+  return lines.join("\n");
+}
+
+// ─── Real Claude API call ─────────────────────────────────────────────────────
+async function callClaudeAPI(input: ClinicalInput): Promise<AIResponse> {
+  const Anthropic = (await import("@anthropic-ai/sdk")).default;
+  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  const message = await client.messages.create({
+    model: "claude-opus-4-6",
+    max_tokens: 4096,
+    thinking: { type: "adaptive" },
+    system: THERAPIA_SYSTEM_PROMPT,
+    messages: [
+      { role: "user", content: buildClinicalPrompt(input) },
+    ],
+  });
+
+  // Extract text content from response
+  let jsonText = "";
+  for (const block of message.content) {
+    if (block.type === "text") {
+      jsonText = block.text;
+      break;
+    }
+  }
+
+  if (!jsonText) throw new Error("No text response from Claude");
+
+  // Strip markdown code fences if present
+  jsonText = jsonText.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/i, "").trim();
+
+  const parsed = JSON.parse(jsonText);
+
+  // Validate minimum required fields
+  if (!parsed.exercises || !Array.isArray(parsed.exercises)) {
+    throw new Error("Invalid response structure: missing exercises array");
+  }
+
+  return {
+    routineName: parsed.routineName || `${input.region} — ${input.phase}`,
+    clinicalReasoning: parsed.clinicalReasoning || "",
+    phaseDescription: parsed.phaseDescription || "",
+    precautions: parsed.precautions || [],
+    exercises: parsed.exercises.map((ex: Partial<RecommendedExercise>) => ({
+      id: ex.id || "exercise",
+      name: ex.name || "Exercise",
+      nameEs: ex.nameEs || ex.name || "Ejercicio",
+      rationale: ex.rationale || "",
+      sets: ex.sets ?? 3,
+      reps: ex.reps ?? null,
+      restSeconds: ex.restSeconds ?? 30,
+      progressionTip: ex.progressionTip || "",
+      redFlags: ex.redFlags || [],
+      evidenceLevel: ex.evidenceLevel || "B",
+      category: ex.category || "general",
+    })),
+    progressionTimeline: parsed.progressionTimeline || "",
+    expectedOutcomes: parsed.expectedOutcomes || "",
+    referralCriteria: parsed.referralCriteria || "",
+    evidenceSummary: parsed.evidenceSummary || "",
+    generatedAt: new Date().toISOString(),
+    modelVersion: "TherapIA-v2.0-claude-opus-4-6",
+  };
+}
+
+// ─── Mock fallback (TherapIA v1) ──────────────────────────────────────────────
 const CLINICAL_PROTOCOLS: Record<string, Record<string, Partial<AIResponse>>> = {
   lumbar: {
     acute: {
@@ -86,7 +240,7 @@ const CLINICAL_PROTOCOLS: Record<string, Record<string, Partial<AIResponse>>> = 
       exercises: [
         { id: "band-row", name: "Band Row", nameEs: "Remo con Banda", rationale: "Activa romboides y trapecio medio para retracción escapular. Base del control escápulo-humeral.", sets: 3, reps: 12, restSeconds: 30, progressionTip: "Progresar a cable row en semana 4.", redFlags: [], evidenceLevel: "A", category: "scapular" },
         { id: "shldr-ext-rot", name: "Shoulder Ext. Rotation", nameEs: "Rotación Externa Hombro", rationale: "Infraespinoso + redondo menor. Déficit de RE es el principal factor en impingement. Evidencia nivel A.", sets: 3, reps: 15, restSeconds: 30, progressionTip: "Codo a 90°. Progresar posición neutra → 90° abducción.", redFlags: ["Dolor >6/10"], evidenceLevel: "A", category: "strengthening" },
-        { id: "band-pull-apart", name: "Band Pull Apart", nameEs: "Separación de Banda", rationale: "Activa trapecio inferior y posterior deltoid. Esencial para restablcer ritmo escapular.", sets: 3, reps: 15, restSeconds: 20, progressionTip: "Variar altura de inicio para múltiples ángulos.", redFlags: [], evidenceLevel: "B", category: "scapular" },
+        { id: "band-pull-apart", name: "Band Pull Apart", nameEs: "Separación de Banda", rationale: "Activa trapecio inferior y posterior deltoid. Esencial para restablecer ritmo escapular.", sets: 3, reps: 15, restSeconds: 20, progressionTip: "Variar altura de inicio para múltiples ángulos.", redFlags: [], evidenceLevel: "B", category: "scapular" },
       ],
       progressionTimeline: "Semana 1-2: activación + rango. Semana 3-4: fortalecimiento isotónico. Semana 5-8: funcional.",
       expectedOutcomes: "Retorno al rango completo en 6-8 semanas. Reducción del dolor en 50-70%.",
@@ -129,20 +283,15 @@ const CLINICAL_PROTOCOLS: Record<string, Record<string, Partial<AIResponse>>> = 
   },
 };
 
-// ─── AI recommendation engine ─────────────────────────────────────────────────
-function generateRecommendation(input: ClinicalInput): AIResponse {
+function generateMockRecommendation(input: ClinicalInput): AIResponse {
   const regionData = CLINICAL_PROTOCOLS[input.region];
   const phaseData = regionData?.[input.phase];
 
-  // If we have specific protocol, use it; otherwise generate generic
   if (phaseData && phaseData.exercises) {
     let exercises = [...phaseData.exercises] as RecommendedExercise[];
 
-    // Filter by available equipment
     if (input.equipment.length > 0 && !input.equipment.includes("all")) {
       exercises = exercises.filter((ex) => {
-        // Simple mapping — in production would cross-reference exercise DB
-        const bodyweight = ["bodyweight", "none"].some((e) => input.equipment.includes(e));
         const hasBands = input.equipment.some((e) => e.includes("band") || e.includes("liga"));
         const hasDumbbells = input.equipment.some((e) => e.includes("dumbbel") || e.includes("mancuerna"));
         if (ex.id.startsWith("band") && !hasBands) return false;
@@ -151,7 +300,6 @@ function generateRecommendation(input: ClinicalInput): AIResponse {
       });
     }
 
-    // Adjust for pain level
     if (input.painLevel >= 7) {
       exercises = exercises
         .filter((ex) => ex.evidenceLevel === "A" || ex.category === "mobility")
@@ -169,11 +317,10 @@ function generateRecommendation(input: ClinicalInput): AIResponse {
       referralCriteria: phaseData.referralCriteria || "Sin mejoría en 6 semanas.",
       evidenceSummary: phaseData.evidenceSummary || "Basado en guías clínicas internacionales.",
       generatedAt: new Date().toISOString(),
-      modelVersion: "TherapIA-v1.0",
+      modelVersion: "TherapIA-v1.0-mock",
     };
   }
 
-  // Generic fallback
   return {
     routineName: `Protocolo ${input.region} — ${input.phase}`,
     clinicalReasoning: `Protocolo de rehabilitación para ${input.diagnosis}. Fase ${input.phase}. Enfoque en restauración funcional progresiva.`,
@@ -189,15 +336,14 @@ function generateRecommendation(input: ClinicalInput): AIResponse {
     referralCriteria: "Sin mejoría en 6 semanas, nuevos síntomas neurológicos.",
     evidenceSummary: "Basado en guías NICE, JOSPT y Cochrane Reviews.",
     generatedAt: new Date().toISOString(),
-    modelVersion: "TherapIA-v1.0",
+    modelVersion: "TherapIA-v1.0-mock",
   };
 }
 
 // ─── Route Handler ────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
-  const body = await req.json() as ClinicalInput;
+  const body = (await req.json()) as ClinicalInput;
 
-  // Validate
   if (!body.diagnosis || !body.region || !body.phase) {
     return NextResponse.json(
       { error: "diagnosis, region, and phase are required" },
@@ -205,20 +351,33 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Simulate AI processing delay (would be real API call in production)
-  await new Promise((resolve) => setTimeout(resolve, 800));
+  const apiKey = process.env.ANTHROPIC_API_KEY;
 
-  const recommendation = generateRecommendation(body);
+  // Use real Claude API when key is configured
+  if (apiKey) {
+    try {
+      const recommendation = await callClaudeAPI(body);
+      return NextResponse.json({ data: recommendation });
+    } catch (err) {
+      console.error("[TherapIA] Claude API error, falling back to mock:", err);
+      // Fall through to mock
+    }
+  }
 
+  // Mock fallback — no API key or API failed
+  await new Promise((resolve) => setTimeout(resolve, 600));
+  const recommendation = generateMockRecommendation(body);
   return NextResponse.json({ data: recommendation });
 }
 
 // Health check
 export async function GET() {
+  const hasApiKey = Boolean(process.env.ANTHROPIC_API_KEY);
   return NextResponse.json({
     status: "operational",
-    model: "TherapIA-v1.0",
-    capabilities: ["exercise-prescription", "clinical-reasoning", "protocol-generation"],
+    model: hasApiKey ? "TherapIA-v2.0-claude-opus-4-6" : "TherapIA-v1.0-mock",
+    aiEnabled: hasApiKey,
+    capabilities: ["exercise-prescription", "clinical-reasoning", "protocol-generation", "red-flag-detection"],
     supportedRegions: Object.keys(CLINICAL_PROTOCOLS),
     supportedPhases: ["acute", "subacute", "chronic", "maintenance"],
   });

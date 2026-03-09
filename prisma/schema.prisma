@@ -199,6 +199,10 @@ model Exercise {
   evidenceLevel       EvidenceLevel?
   videoUrl            String?
   thumbnailUrl        String?
+  modelUrl            String?
+  videoReady          Boolean         @default(false)
+  renderEngine        String?         // "blender" | "runway" | "pika" | "kling"
+  renderedAt          DateTime?
 
   isCustom            Boolean         @default(false)
   isActive            Boolean         @default(true)
@@ -326,6 +330,10 @@ model OsteopathyTechnique {
   contraindication String?
   clinicalNotes String?
   videoUrl      String?
+  modelUrl      String?
+  videoReady    Boolean             @default(false)
+  renderEngine  String?
+  renderedAt    DateTime?
   evidenceLevel EvidenceLevel?
   isActive      Boolean             @default(true)
   createdAt     DateTime            @default(now())

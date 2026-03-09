@@ -7,10 +7,11 @@ import { Play, Loader2, VideoOff } from "lucide-react";
 
 // ─── ExerciseAnimationPlayer ───────────────────────────────────────────────────
 // Unified animation player for 3D exercise and osteopathy demonstrations.
-// Rendering priority:
-//   1. Lottie JSON  → /public/exercise-animations/{id}.json
-//   2. MP4/WebM     → /public/exercise-videos/{id}.mp4
-//   3. Placeholder  → shows while assets are being generated
+// Rendering priority (production order — highest quality first):
+//   1. MP4 video    → /public/videos/exercises/{id}.mp4
+//   2. Lottie JSON  → /public/models/exercises/{id}.lottie.json
+//   3. GLB viewer   → /public/models/exercises/{id}.glb  (Three.js, no SSR)
+//   4. Placeholder  → shows while assets are being generated
 //
 // Designed for Wibbi-level quality: accepts pre-rendered 3D humanized avatar
 // videos at any resolution. The player imposes no quality ceiling on MP4.
@@ -22,11 +23,19 @@ const LottiePlayer = dynamic(() => import("lottie-react"), {
   loading: () => null,
 });
 
+// Load GLB viewer only on the client (Three.js is not SSR-safe)
+const GlbViewer = dynamic(
+  () => import("./GlbViewer").then((m) => ({ default: m.GlbViewer })),
+  { ssr: false, loading: () => null }
+);
+
 export interface ExerciseAnimationPlayerProps {
-  /** Path to Lottie JSON, e.g. /exercise-animations/bird-dog.json */
-  animation?: string;
-  /** Path to MP4 video, e.g. /exercise-videos/bird-dog.mp4 */
+  /** Path to MP4 video, e.g. /videos/exercises/bird-dog.mp4 */
   video?: string;
+  /** Path to Lottie JSON, e.g. /models/exercises/bird-dog.lottie.json */
+  animation?: string;
+  /** Path to GLB model, e.g. /models/exercises/bird-dog.glb */
+  model?: string;
   /** Displayed in placeholder / error states */
   exerciseName?: string;
   /** Region accent color for UI elements */
@@ -37,12 +46,13 @@ export interface ExerciseAnimationPlayerProps {
   muted?: boolean;
 }
 
-type MediaMode = "lottie" | "video" | "none";
+type MediaMode = "video" | "lottie" | "glb" | "none";
 type PlayerState = "pending" | "loading" | "ready" | "paused" | "error";
 
 export function ExerciseAnimationPlayer({
-  animation,
   video,
+  animation,
+  model,
   exerciseName,
   accentColor = "#3b82f6",
   className = "",
@@ -53,8 +63,8 @@ export function ExerciseAnimationPlayer({
   const t = useTranslations("exercises");
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Determine which media source to attempt
-  const initialMode: MediaMode = animation ? "lottie" : video ? "video" : "none";
+  // Priority: MP4 → Lottie → GLB → none
+  const initialMode: MediaMode = video ? "video" : animation ? "lottie" : model ? "glb" : "none";
 
   const [mode, setMode] = useState<MediaMode>(initialMode);
   const [state, setState] = useState<PlayerState>(initialMode === "none" ? "pending" : "loading");
@@ -63,14 +73,14 @@ export function ExerciseAnimationPlayer({
 
   // Reset when source props change
   useEffect(() => {
-    const nextMode: MediaMode = animation ? "lottie" : video ? "video" : "none";
+    const nextMode: MediaMode = video ? "video" : animation ? "lottie" : model ? "glb" : "none";
     setMode(nextMode);
     setState(nextMode === "none" ? "pending" : "loading");
     setLottieData(null);
     setIsUserPaused(false);
-  }, [animation, video]);
+  }, [video, animation, model]);
 
-  // Fetch and validate Lottie JSON
+  // Fetch and validate Lottie JSON (only when in lottie mode)
   useEffect(() => {
     if (mode !== "lottie" || !animation) return;
 
@@ -86,18 +96,18 @@ export function ExerciseAnimationPlayer({
         setState("ready");
       })
       .catch((err) => {
-        if (err.name === "AbortError") return; // component unmounted or prop changed
-        // Lottie file not found → fall through to video
-        if (video) {
-          setMode("video");
-          setState("loading");
+        if (err.name === "AbortError") return;
+        // Lottie file not found → fall through to GLB or placeholder
+        if (model) {
+          setMode("glb");
+          setState("ready");
         } else {
           setState("error");
         }
       });
 
     return () => controller.abort();
-  }, [animation, mode, video]);
+  }, [animation, mode, model]);
 
   // ── Video event handlers ──────────────────────────────────────────────────
   function handleCanPlay() {
@@ -106,8 +116,18 @@ export function ExerciseAnimationPlayer({
       videoRef.current?.play().catch(() => setState("error"));
     }
   }
+
   function handleVideoError() {
-    setState("error");
+    // Video failed → cascade to Lottie
+    if (animation) {
+      setMode("lottie");
+      setState("loading");
+    } else if (model) {
+      setMode("glb");
+      setState("ready");
+    } else {
+      setState("error");
+    }
   }
 
   function togglePlayPause() {
@@ -163,6 +183,23 @@ export function ExerciseAnimationPlayer({
     );
   }
 
+  // ── GLB viewer (Three.js, client only) ────────────────────────────────────
+  if (mode === "glb" && model) {
+    return (
+      <div
+        className={`relative w-full h-full overflow-hidden ${className}`}
+        style={{ background: "linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 100%)" }}
+      >
+        <GlbViewer src={model} className="w-full h-full" />
+        <div className="absolute bottom-2 end-2 z-10">
+          <span className="text-[10px] font-bold text-white/80 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full">
+            3D
+          </span>
+        </div>
+      </div>
+    );
+  }
+
   // ── Lottie player ─────────────────────────────────────────────────────────
   if (mode === "lottie") {
     return (
@@ -183,7 +220,6 @@ export function ExerciseAnimationPlayer({
             style={{ width: "100%", height: "100%" }}
           />
         )}
-        {/* Loop badge */}
         {state === "ready" && lottieData && (
           <div className="absolute top-2 end-2 z-10">
             <span className="text-[10px] font-bold text-white/80 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full">
@@ -195,13 +231,12 @@ export function ExerciseAnimationPlayer({
     );
   }
 
-  // ── Video player (MP4/WebM — supports Wibbi-level 3D pre-rendered content) ─
+  // ── Video player (MP4 — Wibbi-level 3D pre-rendered content) ─────────────
   return (
     <div
       className={`relative w-full h-full flex items-center justify-center overflow-hidden ${className}`}
       style={{ background: "linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%)" }}
     >
-      {/* Loading overlay */}
       {state === "loading" && (
         <div className="absolute inset-0 flex items-center justify-center z-10 bg-slate-50">
           <Loader2 className="h-8 w-8 animate-spin" style={{ color: accentColor }} />
@@ -228,7 +263,6 @@ export function ExerciseAnimationPlayer({
         </video>
       )}
 
-      {/* Pause overlay */}
       {state === "paused" && (
         <button
           onClick={togglePlayPause}
@@ -244,7 +278,6 @@ export function ExerciseAnimationPlayer({
         </button>
       )}
 
-      {/* Loop badge */}
       {state === "ready" && (
         <div className="absolute top-2 end-2 z-10">
           <span className="text-[10px] font-bold text-white/80 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full">
