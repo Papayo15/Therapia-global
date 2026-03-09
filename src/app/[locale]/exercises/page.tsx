@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search, Clock, Repeat2, CheckCircle2, Play } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -1747,6 +1747,23 @@ export default function ExercisesPage() {
   const [playerExercise, setPlayerExercise] = useState<ExerciseData | null>(null);
   const [playerIndex, setPlayerIndex] = useState(0);
   const [addedIds, setAddedIds] = useState<Set<string>>(new Set());
+  // videoMap: slug → videoSrc — populated from pipeline-status once videos are generated
+  const [videoMap, setVideoMap] = useState<Record<string, string>>({});
+
+  // Fetch pipeline status on mount — enriches exercises with MP4 videoSrc when ready
+  useEffect(() => {
+    fetch("/api/pipeline/video-ready")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (!data?.entries) return;
+        const map: Record<string, string> = {};
+        for (const [slug, entry] of Object.entries(data.entries as Record<string, { video?: string }>)) {
+          if (entry.video) map[slug] = entry.video;
+        }
+        if (Object.keys(map).length > 0) setVideoMap(map);
+      })
+      .catch(() => {/* pipeline API not yet set up — no-op */});
+  }, []);
 
   const filtered = ALL_EXERCISES.filter((ex) => {
     const matchSearch = !search ||
@@ -1762,7 +1779,12 @@ export default function ExercisesPage() {
   function openPlayer(index: number) {
     setPlayerIndex(index);
     const ex = filtered[index];
-    setPlayerExercise({ ...ex, AnimComponent: ENGINE_MAP[ex.id] ?? ex.AnimComponent });
+    setPlayerExercise({
+      ...ex,
+      AnimComponent: ENGINE_MAP[ex.id] ?? ex.AnimComponent,
+      // Use generated MP4 if available, otherwise SVG animation is the fallback
+      videoSrc: videoMap[ex.id] ?? ex.videoSrc,
+    });
   }
 
   function handleAdd(exercise: ExerciseData) {
