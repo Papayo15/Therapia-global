@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search, BookOpen } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -331,6 +331,23 @@ export default function OsteopathyPage() {
   const [activeBodyRegion, setActiveBodyRegion] = useState("all");
   const [playerTechnique, setPlayerTechnique] = useState<TechniqueEntry | null>(null);
   const [playerIndex, setPlayerIndex] = useState(0);
+  const [videoMap, setVideoMap] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    fetch("/api/pipeline/video-ready")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (!data?.entries) return;
+        const map: Record<string, string> = {};
+        for (const [slug, entry] of Object.entries(
+          data.entries as Record<string, { video?: string }>
+        )) {
+          if (entry.video) map[slug] = entry.video;
+        }
+        if (Object.keys(map).length > 0) setVideoMap(map);
+      })
+      .catch(() => {});
+  }, []);
 
   const filtered = ALL_TECHNIQUES.filter((t) => {
     const matchSearch = !search ||
@@ -345,7 +362,8 @@ export default function OsteopathyPage() {
 
   function openPlayer(index: number) {
     setPlayerIndex(index);
-    setPlayerTechnique(filtered[index]);
+    const t = filtered[index];
+    setPlayerTechnique({ ...t, videoSrc: videoMap[t.id] ?? t.videoSrc });
   }
 
   const showBodyRegions = activeCategory === "structural" || activeCategory === "all";

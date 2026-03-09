@@ -6,3 +6,6 @@ tsconfig.tsbuildinfo
 .env*.local
 *.log
 .DS_Store
+
+# Pexels videos — too large for git, deploy via Netlify CLI
+public/videos/
