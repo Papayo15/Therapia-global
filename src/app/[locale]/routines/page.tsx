@@ -7,6 +7,9 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import exerciseRegistry from "@registry/exercises.json";
+
+const _cdnReg = exerciseRegistry as Record<string, { video?: string }>;
 
 // ─── Tipos ────────────────────────────────────────────────────────────────────
 interface RoutineExercise {
@@ -196,6 +199,24 @@ function SendModal({ isOpen, onClose, routineName, exerciseCount, exercises }: {
   if (!isOpen) return null;
 
   function doSend(method: string) {
+    if (method === "whatsapp") {
+      // Build WhatsApp message with CDN video URLs from registry
+      const lines = [
+        `*${routineName}*`,
+        `Tu programa de ejercicios:`,
+        "",
+        ...exercises.map((ex, i) => {
+          const videoUrl = _cdnReg[ex.id]?.video ?? "";
+          return [
+            `${i + 1}️⃣ ${ex.nameLocal} — ${ex.sets}x${ex.reps}`,
+            videoUrl ? `🎥 ${videoUrl}` : null,
+          ].filter(Boolean).join("\n");
+        }),
+        "",
+        "Generado con Therapia Global",
+      ].join("\n");
+      window.open(`https://wa.me/?text=${encodeURIComponent(lines)}`, "_blank");
+    }
     setSent(method);
     setTimeout(() => { setSent(null); }, 1800);
   }

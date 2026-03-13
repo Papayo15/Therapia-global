@@ -114,26 +114,13 @@ function AnimationPanel({ exercise, searchUrl }: { exercise: ExerciseData; searc
           </span>
         </div>
 
-        {/* 3D Animation Player — MP4 → Lottie → SVG (fallback while videos are generated) */}
-        {exercise.animationSrc || exercise.videoSrc ? (
-          <ExerciseAnimationPlayer
-            animation={exercise.animationSrc}
-            video={exercise.videoSrc}
-            exerciseName={exercise.nameLocal || exercise.name}
-            accentColor={regionColor}
-            className="absolute inset-0"
-          />
-        ) : exercise.AnimComponent ? (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50/30">
-            <exercise.AnimComponent />
-          </div>
-        ) : (
-          <ExerciseAnimationPlayer
-            exerciseName={exercise.nameLocal || exercise.name}
-            accentColor={regionColor}
-            className="absolute inset-0"
-          />
-        )}
+        {/* Video player — local MP4 only, placeholder if not available */}
+        <ExerciseAnimationPlayer
+          video={exercise.videoSrc}
+          exerciseName={exercise.nameLocal || exercise.name}
+          accentColor={regionColor}
+          className="absolute inset-0"
+        />
 
         {/* YouTube fallback button */}
         {searchUrl && (

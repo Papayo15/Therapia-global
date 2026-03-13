@@ -1,0 +1,4404 @@
+{
+  "ab-rollout-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "achilles-eccentric-decline": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "acl-rehab-phase1": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "acl-rehab-phase2-perturbation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "acromioplasty-rehab-protocol": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "agility-ladder-basic": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-alphabet-exercise": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-band-dorsiflexion": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-circles-active": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-dorsiflexion-mobilization": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-eversion-band": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-inversion-band": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-plantar-flexion-active": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-proprioception-single-leg": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-sprain-rehab-phase1": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-sprain-rehab-phase2": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ankle-wobble-board": {
+    "body_region": "ankle",
+    "conditions": [
+      "ankle sprain",
+      "ankle instability",
+      "achilles tendinopathy",
+      "plantar fasciitis"
+    ],
+    "difficulty": "easy"
+  },
+  "anti-rotation-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "back-extension-bench": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar extensor weakness",
+      "low back pain",
+      "posterior chain deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "band-sprint-resisted": {
+    "body_region": "shoulder",
+    "conditions": [
+      "shoulder weakness",
+      "rotator cuff deficit",
+      "upper limb rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "bear-crawl": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "biceps-eccentric-curl": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "bicycle-crunch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "big-toe-extension-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "bird-dog-advanced": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "hard"
+  },
+  "book-opening-stretch": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic rotation deficit",
+      "chest tightness",
+      "hyperkyphosis"
+    ],
+    "difficulty": "easy"
+  },
+  "box-squat": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "bulgarian-split-squat": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "cable-chop-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "cable-lift-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "carpal-tunnel-nerve-gliding": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-axial-rotation-drill": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-band-resistance": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-dns-pattern": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-extension-range": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-flexion-range": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-foam-roller-release": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-isometric-extension": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-isometric-flexion": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-isometric-rotation": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-isometric-side-flex": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-mobility-flow": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-pnf-d1": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-rotation-active": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-side-flexion-stretch": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "childs-pose": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar flexion tightness",
+      "low back pain",
+      "general mobility"
+    ],
+    "difficulty": "easy"
+  },
+  "chin-tuck-against-wall": {
+    "body_region": "cervical",
+    "conditions": [
+      "forward head posture",
+      "cervicalgia",
+      "upper cervical compression"
+    ],
+    "difficulty": "easy"
+  },
+  "chin-tuck-supine": {
+    "body_region": "cervical",
+    "conditions": [
+      "forward head posture",
+      "cervicalgia",
+      "upper cervical compression"
+    ],
+    "difficulty": "easy"
+  },
+  "clamshell-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "cobra-stretch": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar extension deficit",
+      "disc herniation",
+      "prone lying tolerance"
+    ],
+    "difficulty": "easy"
+  },
+  "copenhagen-plank": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "core-breathing-4-point": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "core-stiffness-carry-overhead": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "costal-breathing-3d": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic mobility deficit",
+      "breathing dysfunction",
+      "rib cage stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "couch-stretch-hip-flexor": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "crawl-pattern-dns": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "cross-body-shoulder-stretch": {
+    "body_region": "shoulder",
+    "conditions": [
+      "posterior shoulder tightness",
+      "horizontal adduction deficit",
+      "impingement"
+    ],
+    "difficulty": "easy"
+  },
+  "curtsy-lunge": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "cutting-change-direction": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "de-quervain-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "deadbug-advanced": {
+    "body_region": "core",
+    "conditions": [
+      "core weakness",
+      "lumbar instability",
+      "neuromuscular deficit"
+    ],
+    "difficulty": "hard"
+  },
+  "deceleration-landing": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "diagonal-pattern-d1": {
+    "body_region": "shoulder",
+    "conditions": [
+      "PNF pattern deficit",
+      "shoulder rehabilitation",
+      "neuromuscular control"
+    ],
+    "difficulty": "easy"
+  },
+  "diagonal-pattern-d2": {
+    "body_region": "shoulder",
+    "conditions": [
+      "PNF pattern deficit",
+      "shoulder rehabilitation",
+      "neuromuscular control"
+    ],
+    "difficulty": "easy"
+  },
+  "diaphragmatic-breathing-lateral": {
+    "body_region": "core",
+    "conditions": [
+      "breathing dysfunction",
+      "core weakness",
+      "respiratory dysfunction"
+    ],
+    "difficulty": "easy"
+  },
+  "donkey-kick": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "eccentric-squat-slow": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "eccentric-wrist-extension": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "eccentric-wrist-flexion": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-extension-isometric": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-extension-triceps-band": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-flexion-curls-band": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-flexion-isometric": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-joint-mobilization": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-nerve-flossing-median": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-nerve-flossing-radial": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-nerve-flossing-ulnar": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "elbow-proprioception-catch": {
+    "body_region": "elbow",
+    "conditions": [
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "elbow stiffness",
+      "tennis elbow"
+    ],
+    "difficulty": "easy"
+  },
+  "farmers-carry": {
+    "body_region": "core",
+    "conditions": [
+      "core endurance deficit",
+      "grip strength weakness",
+      "functional rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "finger-intrinsic-exercises": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "finger-tendon-gliding": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "fire-hydrant": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "foam-roller-hamstrings": {
+    "body_region": "thoracic",
+    "conditions": [
+      "myofascial tension",
+      "soft tissue restriction",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "foam-roller-it-band": {
+    "body_region": "thoracic",
+    "conditions": [
+      "myofascial tension",
+      "soft tissue restriction",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "foam-roller-quads": {
+    "body_region": "thoracic",
+    "conditions": [
+      "myofascial tension",
+      "soft tissue restriction",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "forearm-myofascial-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "four-point-breathing-expansion": {
+    "body_region": "core",
+    "conditions": [
+      "core weakness",
+      "breathing pattern dysfunction",
+      "lumbar instability"
+    ],
+    "difficulty": "easy"
+  },
+  "frog-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "full-can-exercise": {
+    "body_region": "shoulder",
+    "conditions": [
+      "supraspinatus weakness",
+      "rotator cuff deficit",
+      "shoulder impingement"
+    ],
+    "difficulty": "easy"
+  },
+  "gluteus-medius-side-plank-hip": {
+    "body_region": "hip",
+    "conditions": [
+      "gluteal weakness",
+      "hip instability",
+      "low back pain",
+      "patellofemoral pain"
+    ],
+    "difficulty": "easy"
+  },
+  "goblet-squat-band": {
+    "body_region": "hip",
+    "conditions": [
+      "hip mobility deficit",
+      "squat pattern dysfunction",
+      "knee pain"
+    ],
+    "difficulty": "easy"
+  },
+  "golfers-elbow-eccentric": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "good-morning-band": {
+    "body_region": "lumbar",
+    "conditions": [
+      "hip hinge deficit",
+      "hamstring tightness",
+      "lumbar extension weakness"
+    ],
+    "difficulty": "easy"
+  },
+  "grip-strengthening-putty": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "half-kneeling-pallof": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "medium"
+  },
+  "hand-opening-closing-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hanging-knee-raise": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hardstyle-plank": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "heel-toe-walking": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "heel-walk-dorsiflexion": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-90-90-stretch": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-abduction-standing-band": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-adduction-band": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-adductor-eccentric": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-capsule-mobilization-band": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-drop-pelvic-control-running": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-er-stretch-seated": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-extension-standing-band": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-flexor-core-sitting-band": {
+    "body_region": "hip",
+    "conditions": [
+      "hip flexor tightness",
+      "psoas syndrome",
+      "low back pain",
+      "anterior pelvic tilt"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-flexor-eccentric": {
+    "body_region": "hip",
+    "conditions": [
+      "hip flexor tightness",
+      "psoas syndrome",
+      "low back pain",
+      "anterior pelvic tilt"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-hinge-pattern": {
+    "body_region": "hip",
+    "conditions": [
+      "movement pattern deficit",
+      "low back pain",
+      "hamstring tightness"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-hinge-single-leg": {
+    "body_region": "hip",
+    "conditions": [
+      "movement pattern deficit",
+      "low back pain",
+      "hamstring tightness"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-ir-stretch-prone": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-pnf-extension-adduction": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-pnf-flexion-abduction": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-posterior-chain-series": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-proprioception-reach": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-stability-single-leg-stand": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-thrust-bodyweight": {
+    "body_region": "hip",
+    "conditions": [
+      "gluteal weakness",
+      "low back pain",
+      "hip extension deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-thrust-single-leg": {
+    "body_region": "hip",
+    "conditions": [
+      "gluteal weakness",
+      "low back pain",
+      "hip extension deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hollow-body-hold": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "iliotibial-band-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "inchworm": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "inferior-capsule-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "intrinsic-foot-muscles-dome": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-flexion-hamstring-curl-band": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-flexion-prone-active": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-joint-mobilization-band": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-nerve-flossing-femoral": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-plyometric-hop": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-pnf-extension-pattern": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-proprioception-wobble": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-stability-lateral-band": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "kyphosis-correction-wall": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "postural dysfunction",
+      "hyperkyphosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lateral-band-walk": {
+    "body_region": "hip",
+    "conditions": [
+      "hip abductor weakness",
+      "IT band syndrome",
+      "knee valgus"
+    ],
+    "difficulty": "easy"
+  },
+  "lateral-epicondyle-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "lateral-lunge": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "lateral-shuffle-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "lateral-step-up-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "levator-scapulae-stretch": {
+    "body_region": "cervical",
+    "conditions": [
+      "levator scapulae tightness",
+      "neck pain",
+      "shoulder tension"
+    ],
+    "difficulty": "easy"
+  },
+  "longus-colli-activation": {
+    "body_region": "cervical",
+    "conditions": [
+      "deep neck flexor weakness",
+      "cervical instability",
+      "forward head posture"
+    ],
+    "difficulty": "easy"
+  },
+  "lower-trap-activation-prone": {
+    "body_region": "thoracic",
+    "conditions": [
+      "lower trapezius weakness",
+      "scapular instability",
+      "shoulder impingement"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-extension-prone-press": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-flexion-stretch-supine": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-mobilization-band": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-multifidus-activation": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-nerve-flossing": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-segmental-mobility": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-traction-self": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "medial-epicondyle-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "meniscus-rehab-loading": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "mid-trap-prone-yw": {
+    "body_region": "thoracic",
+    "conditions": [
+      "mid-trapezius weakness",
+      "postural kyphosis",
+      "scapular dyskinesis"
+    ],
+    "difficulty": "easy"
+  },
+  "mini-squat-progression": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "monster-walk-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "neck-strengthening-prone": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck weakness",
+      "cervical rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "nordic-hamstring-curl": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "oblique-crunch-side": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "overhead-athlete-series": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "overhead-reach-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "pallof-press-rotation": {
+    "body_region": "core",
+    "conditions": [
+      "core weakness",
+      "anti-rotation deficit",
+      "lumbar instability"
+    ],
+    "difficulty": "medium"
+  },
+  "pallof-press": {
+    "body_region": "core",
+    "conditions": [
+      "core weakness",
+      "anti-rotation deficit",
+      "lumbar instability"
+    ],
+    "difficulty": "medium"
+  },
+  "patella-glide-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "pca-rehab-quad-activation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "pec-minor-stretch-doorway": {
+    "body_region": "shoulder",
+    "conditions": [
+      "pectoral tightness",
+      "shoulder forward posture",
+      "chest tightness"
+    ],
+    "difficulty": "easy"
+  },
+  "peroneal-strengthening-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "pes-anserinus-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "pigeon-pose-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "pinch-grip-strengthening": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "piriformis-stretch": {
+    "body_region": "hip",
+    "conditions": [
+      "piriformis syndrome",
+      "sciatica",
+      "hip external rotation tightness"
+    ],
+    "difficulty": "easy"
+  },
+  "plank-hip-dip": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "plank-shoulder-tap": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "plank-to-downdog": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "plantar-fascia-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "pronation-supination-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "prone-hip-extension": {
+    "body_region": "lumbar",
+    "conditions": [
+      "prone hip extension weakness",
+      "gluteal deficit",
+      "lumbar stability"
+    ],
+    "difficulty": "easy"
+  },
+  "prone-horizontal-abduction": {
+    "body_region": "shoulder",
+    "conditions": [
+      "posterior rotator cuff weakness",
+      "shoulder instability",
+      "scapular dyskinesis"
+    ],
+    "difficulty": "easy"
+  },
+  "prone-plank": {
+    "body_region": "core",
+    "conditions": [
+      "core weakness",
+      "lumbar instability",
+      "postural dysfunction"
+    ],
+    "difficulty": "easy"
+  },
+  "prone-yw-exercise": {
+    "body_region": "shoulder",
+    "conditions": [
+      "scapular weakness",
+      "rotator cuff deficit",
+      "postural kyphosis"
+    ],
+    "difficulty": "easy"
+  },
+  "push-up-plus": {
+    "body_region": "shoulder",
+    "conditions": [
+      "shoulder instability",
+      "serratus weakness",
+      "upper limb rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "push-up-progression": {
+    "body_region": "shoulder",
+    "conditions": [
+      "shoulder instability",
+      "serratus weakness",
+      "upper limb rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "quad-sets-isometric": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "quadratus-lumborum-stretch": {
+    "body_region": "lumbar",
+    "conditions": [
+      "quadratus lumborum tightness",
+      "lateral low back pain",
+      "hip hike"
+    ],
+    "difficulty": "easy"
+  },
+  "renegade-row-plank": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "return-to-sport-criteria": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "reverse-crunch": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar extensor weakness",
+      "hip extension deficit",
+      "posterior chain weakness"
+    ],
+    "difficulty": "easy"
+  },
+  "reverse-hyperextension": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar extensor weakness",
+      "hip extension deficit",
+      "posterior chain weakness"
+    ],
+    "difficulty": "easy"
+  },
+  "reverse-lunge-hip": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar extensor weakness",
+      "hip extension deficit",
+      "posterior chain weakness"
+    ],
+    "difficulty": "easy"
+  },
+  "reverse-step-down": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar extensor weakness",
+      "hip extension deficit",
+      "posterior chain weakness"
+    ],
+    "difficulty": "easy"
+  },
+  "rhomboid-row-band": {
+    "body_region": "thoracic",
+    "conditions": [
+      "scapular retraction weakness",
+      "mid-back pain",
+      "postural kyphosis"
+    ],
+    "difficulty": "easy"
+  },
+  "rollup-core": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "rotational-power-med-ball": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "rotator-cuff-eccentric": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff weakness",
+      "shoulder instability",
+      "subacromial impingement"
+    ],
+    "difficulty": "easy"
+  },
+  "rotator-cuff-isometrics-set": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff weakness",
+      "shoulder instability",
+      "subacromial impingement"
+    ],
+    "difficulty": "easy"
+  },
+  "running-gait-retraining": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "russian-twist": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "scalene-stretch": {
+    "body_region": "cervical",
+    "conditions": [
+      "scalene tightness",
+      "thoracic outlet syndrome",
+      "neck pain"
+    ],
+    "difficulty": "easy"
+  },
+  "sciatic-nerve-slider": {
+    "body_region": "lumbar",
+    "conditions": [
+      "sciatica",
+      "neural tension",
+      "lumbar radiculopathy"
+    ],
+    "difficulty": "easy"
+  },
+  "seated-forward-fold": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar flexion tightness",
+      "hamstring tightness",
+      "lumbar mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "serratus-anterior-push-plus": {
+    "body_region": "shoulder",
+    "conditions": [
+      "scapular dyskinesis",
+      "winging scapula",
+      "shoulder dysfunction"
+    ],
+    "difficulty": "easy"
+  },
+  "serratus-wall-slide": {
+    "body_region": "shoulder",
+    "conditions": [
+      "scapular dyskinesis",
+      "winging scapula",
+      "shoulder dysfunction"
+    ],
+    "difficulty": "easy"
+  },
+  "short-arc-quad": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "short-foot-exercise": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-abduction-band": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-band-distraction": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-blade-clock": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-blade-squeeze": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-cam-mobilization": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-flexion-band": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-internal-rotation-band": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-ir-behind-back-stretch": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-isokinetic-arc": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-joint-mobilization-band": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-pnf-d1-extension": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-pnf-d2-flexion": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-posterior-capsule-mob": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-press-standing-band": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-proprioception-ball": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-rotator-cuff-circuit": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-scaption-band": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-stability-plank": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "shoulder-throwing-progression": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff tear",
+      "shoulder impingement",
+      "frozen shoulder",
+      "shoulder instability",
+      "subacromial bursitis"
+    ],
+    "difficulty": "easy"
+  },
+  "side-lying-external-rotation": {
+    "body_region": "shoulder",
+    "conditions": [
+      "rotator cuff weakness",
+      "external rotation deficit",
+      "shoulder rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "side-plank-hip-abduction": {
+    "body_region": "core",
+    "conditions": [
+      "core weakness",
+      "lateral instability",
+      "low back pain"
+    ],
+    "difficulty": "easy"
+  },
+  "side-plank-rotation": {
+    "body_region": "core",
+    "conditions": [
+      "core weakness",
+      "lateral instability",
+      "low back pain"
+    ],
+    "difficulty": "easy"
+  },
+  "side-plank": {
+    "body_region": "core",
+    "conditions": [
+      "core weakness",
+      "lateral instability",
+      "low back pain"
+    ],
+    "difficulty": "easy"
+  },
+  "single-leg-calf-raise-eccentric": {
+    "body_region": "hip",
+    "conditions": [
+      "hip stability deficit",
+      "functional weakness",
+      "balance impairment"
+    ],
+    "difficulty": "easy"
+  },
+  "single-leg-deadlift-bodyweight": {
+    "body_region": "hip",
+    "conditions": [
+      "hip stability deficit",
+      "functional weakness",
+      "balance impairment"
+    ],
+    "difficulty": "easy"
+  },
+  "single-leg-hop-forward": {
+    "body_region": "hip",
+    "conditions": [
+      "hip stability deficit",
+      "functional weakness",
+      "balance impairment"
+    ],
+    "difficulty": "easy"
+  },
+  "single-leg-hop-lateral": {
+    "body_region": "hip",
+    "conditions": [
+      "hip stability deficit",
+      "functional weakness",
+      "balance impairment"
+    ],
+    "difficulty": "easy"
+  },
+  "single-leg-squat": {
+    "body_region": "hip",
+    "conditions": [
+      "hip stability deficit",
+      "functional weakness",
+      "balance impairment"
+    ],
+    "difficulty": "easy"
+  },
+  "sleeper-stretch": {
+    "body_region": "shoulder",
+    "conditions": [
+      "internal rotation deficit",
+      "posterior capsule tightness",
+      "shoulder impingement"
+    ],
+    "difficulty": "easy"
+  },
+  "soleus-calf-raise-bent-knee": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "spinal-flexion-crunch-control": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "split-squat-jump": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "squat-jump-landing-mechanics": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "standing-hamstring-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "standing-hip-er-mobilization": {
+    "body_region": "hip",
+    "conditions": [
+      "hip extension weakness",
+      "gluteal deficit",
+      "functional rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "standing-hip-ir-mobilization": {
+    "body_region": "hip",
+    "conditions": [
+      "hip extension weakness",
+      "gluteal deficit",
+      "functional rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "standing-quad-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "standing-rib-expansion": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic expansion deficit",
+      "breathing dysfunction",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "star-excursion-balance": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "step-down-eccentric": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "sternocleidomastoid-stretch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "straight-leg-raise": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "suboccipital-release": {
+    "body_region": "cervical",
+    "conditions": [
+      "tension headache",
+      "suboccipital pain",
+      "upper cervical dysfunction"
+    ],
+    "difficulty": "easy"
+  },
+  "subscapularis-activation": {
+    "body_region": "shoulder",
+    "conditions": [
+      "subscapularis weakness",
+      "internal rotation deficit",
+      "shoulder instability"
+    ],
+    "difficulty": "easy"
+  },
+  "subtalar-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "suitcase-carry": {
+    "body_region": "core",
+    "conditions": [
+      "lateral core weakness",
+      "functional deficit",
+      "low back pain"
+    ],
+    "difficulty": "easy"
+  },
+  "sumo-squat-wide": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "superman-hold-prone": {
+    "body_region": "lumbar",
+    "conditions": [
+      "back extensor weakness",
+      "lumbar instability",
+      "postural deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "supine-hamstring-stretch-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "supine-twist": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar rotation deficit",
+      "piriformis tightness",
+      "general mobility"
+    ],
+    "difficulty": "easy"
+  },
+  "tall-kneeling-pallof": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "medium"
+  },
+  "tennis-elbow-eccentric": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "terminal-knee-extension-band": {
+    "body_region": "knee",
+    "conditions": [
+      "VMO weakness",
+      "knee extension deficit",
+      "ACL rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-band-pull-apart": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-cat-cow": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-cervical-junction-mob": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-extension-chair": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-extension-foam-roller": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-extension-prone": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-foam-roller-segmental": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-open-book-seated": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-pnf-rotation": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-rotation-quadruped": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-rotation-seated": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-side-flexion": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-windmill": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "hard"
+  },
+  "thread-the-needle": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic rotation deficit",
+      "mid-back tightness",
+      "postural dysfunction"
+    ],
+    "difficulty": "easy"
+  },
+  "throwing-deceleration-drill": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "thumb-opposition-drill": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "toe-curl-towel": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "toe-walk": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "triceps-eccentric-extension": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "trunk-rotation-supine": {
+    "body_region": "lumbar",
+    "conditions": [
+      "lumbar rotation deficit",
+      "core stiffness",
+      "mobility impairment"
+    ],
+    "difficulty": "easy"
+  },
+  "upper-trap-stretch": {
+    "body_region": "cervical",
+    "conditions": [
+      "upper trapezius tension",
+      "neck pain",
+      "shoulder elevation"
+    ],
+    "difficulty": "easy"
+  },
+  "vastus-medialis-activation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "vestibular-gaze-stability": {
+    "body_region": "cervical",
+    "conditions": [
+      "vestibular dysfunction",
+      "dizziness",
+      "gaze instability"
+    ],
+    "difficulty": "easy"
+  },
+  "wall-push-up-serratus": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "wall-squat-isometric": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "wrist-circumduction": {
+    "body_region": "wrist",
+    "conditions": [
+      "carpal tunnel syndrome",
+      "wrist sprain",
+      "De Quervain tenosynovitis"
+    ],
+    "difficulty": "easy"
+  },
+  "wrist-eccentric-extension": {
+    "body_region": "wrist",
+    "conditions": [
+      "carpal tunnel syndrome",
+      "wrist sprain",
+      "De Quervain tenosynovitis"
+    ],
+    "difficulty": "easy"
+  },
+  "wrist-extension-strengthening": {
+    "body_region": "wrist",
+    "conditions": [
+      "carpal tunnel syndrome",
+      "wrist sprain",
+      "De Quervain tenosynovitis"
+    ],
+    "difficulty": "easy"
+  },
+  "wrist-flexion-extension-active": {
+    "body_region": "wrist",
+    "conditions": [
+      "carpal tunnel syndrome",
+      "wrist sprain",
+      "De Quervain tenosynovitis"
+    ],
+    "difficulty": "easy"
+  },
+  "wrist-flexion-strengthening": {
+    "body_region": "wrist",
+    "conditions": [
+      "carpal tunnel syndrome",
+      "wrist sprain",
+      "De Quervain tenosynovitis"
+    ],
+    "difficulty": "easy"
+  },
+  "wrist-radial-ulnar-deviation": {
+    "body_region": "wrist",
+    "conditions": [
+      "carpal tunnel syndrome",
+      "wrist sprain",
+      "De Quervain tenosynovitis"
+    ],
+    "difficulty": "easy"
+  },
+  "ac-joint-blt": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "achilles-counterstrain": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "atlas-rotation-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "bicipital-counterstrain": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "bladder-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "blt-sacroiliac": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "carpal-tunnel-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-articulatory": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "cervical-fpr": {
+    "body_region": "cervical",
+    "conditions": [
+      "cervicalgia",
+      "neck stiffness",
+      "cervical herniation",
+      "upper trapezius tension",
+      "tension headache",
+      "torticollis",
+      "whiplash"
+    ],
+    "difficulty": "easy"
+  },
+  "colon-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "counterstrain-lumbar": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "cv4": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "diaphragm-release": {
+    "body_region": "core",
+    "conditions": [
+      "breathing dysfunction",
+      "core weakness",
+      "respiratory dysfunction"
+    ],
+    "difficulty": "easy"
+  },
+  "fibula-ankle-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "fibular-head-correction": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "first-rib-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "frontal-lift": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "gastric-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hepatic-pump": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-articulatory": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-flexor-inhibition": {
+    "body_region": "hip",
+    "conditions": [
+      "hip flexor tightness",
+      "psoas syndrome",
+      "low back pain",
+      "anterior pelvic tilt"
+    ],
+    "difficulty": "easy"
+  },
+  "ilium-anterior-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "itb-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "kidney-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "knee-blt": {
+    "body_region": "knee",
+    "conditions": [
+      "knee osteoarthritis",
+      "patellofemoral pain",
+      "knee rehabilitation"
+    ],
+    "difficulty": "easy"
+  },
+  "lateral-epicondyle-counterstrain": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-articulatory": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbar-blt": {
+    "body_region": "lumbar",
+    "conditions": [
+      "low back pain",
+      "lumbalgia",
+      "lumbar disc herniation",
+      "sciatica",
+      "spondylosis",
+      "lumbar stenosis"
+    ],
+    "difficulty": "easy"
+  },
+  "lumbosacral-decompression": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "mcl-counterstrain": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "medial-epicondyle-counterstrain": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "mesenteric-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "met-cervical": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "met-sacrum": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "met-thoracic": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "navicular-correction": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "oa-decompression": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-ankle-subtalar-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-ankle-talocrural-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cervical-mob-c0-c1": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cervical-mob-c1-c2": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cervical-mob-c2-c7": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-clavicle-sternoclavicular-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-cv4-compression": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-dural-tube-traction": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-frontal-bone-decompression": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-frontoparietal": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-hyoid-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-mandible-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-parietal-lift": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-sacral-rocking": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-sacrum-respiratory": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-sphenobasilar-extension": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-sphenobasilar-flexion": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-sphenoid-decompression": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-still-point-occipital": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-temporal-bone": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-cranial-vomer-decompression": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-elbow-proximal-radioulnar-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-elbow-radiohumeral-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-first-metatarsophalangeal-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hip-mob-anterior-glide": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hip-mob-lateral-distraction": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hip-mob-posterior-glide": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-ankle-mortise": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-cervical-flexion-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-cervical-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-cuboid-notch": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-elbow-lateral-gap": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-first-rib": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-hip-scouring": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-lower-thoracic": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-lumbar-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-lumbar-sidebending": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-mid-thoracic-sitting": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-mid-thoracic-supine": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-pubic-symphysis": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-rib-pump-supine": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-rib-sitting": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-sacroiliac-anterior": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-sacroiliac-posterior": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-sacrum-shear": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-upper-thoracic": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-hvla-wrist-carpal": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-knee-patellofemoral-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-knee-tibiofemoral-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-lumbar-mob-l1-l5": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-adductors": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-ankle-dorsiflexion": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-ankle-plantarflexion": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-cervical-extension": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-cervical-flexion": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-cervical-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-cervical-sidebend": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-elbow-flexion": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-hamstrings": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-levator-scapulae": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-lumbar-extension": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-lumbar-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-piriformis": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-psoas": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-quadratus-lumborum": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-ribs-exhalation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-ribs-inhalation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-sacroiliac-iliac-anterior": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-sacroiliac-iliac-posterior": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-shoulder-elevation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-shoulder-external-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-shoulder-internal-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-thoracic-extension": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-thoracic-rotation": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-met-upper-trap": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-anterior-shoulder": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-cervical-fascia": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-diaphragm": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-forearm-extensors": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-forearm-flexors": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-iliotibial-band": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-lateral-thigh": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-medial-knee": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-pelvic-floor": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-piriformis-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-plantar-fascia": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-posterior-shoulder": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-psoas-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-quadratus-lumborum": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-rib-intercostals": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-scalenes": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-sternocleidomastoid": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-suboccipital": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-thoracolumbar-fascia": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-mfr-upper-trapezius": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-rib-mob-anterior": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-rib-mob-posterior": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-sacroiliac-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-shoulder-acromioclavicular-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-shoulder-glenohumeral-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-thoracic-mob-t1-t4": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-thoracic-mob-t4-t8": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-thoracic-mob-t8-t12": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-tmj-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-bladder-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-cecum-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-colon-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-diaphragm-dome": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-gallbladder": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-hiatal-hernia": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-ileocecal-valve": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-kidney-ptosis": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-liver-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-portal-liver": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-sigmoid-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-small-intestine-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-spleen": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-stomach-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-visceral-uterine-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "osteo-wrist-radiocarpal-mob": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "parietal-lift": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "patellar-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "piriformis-met": {
+    "body_region": "hip",
+    "conditions": [
+      "piriformis syndrome",
+      "sciatica",
+      "hip external rotation tightness"
+    ],
+    "difficulty": "easy"
+  },
+  "plantar-fascia-release": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "popliteus-counterstrain": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "posterior-capsule-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "psoas-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "pubic-shear-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "radial-head-correction": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "radiocarpal-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "rib-raising": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "sbs": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "scj-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "spencer-shoulder": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "splenic-pump": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "suboccipital-inhibition": {
+    "body_region": "cervical",
+    "conditions": [
+      "tension headache",
+      "suboccipital pain",
+      "upper cervical dysfunction"
+    ],
+    "difficulty": "easy"
+  },
+  "subscapularis-counterstrain": {
+    "body_region": "shoulder",
+    "conditions": [
+      "subscapularis weakness",
+      "internal rotation deficit",
+      "shoulder instability"
+    ],
+    "difficulty": "easy"
+  },
+  "subtalar-blt": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "supinator-met": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "talus-mobilization": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "temporal-rocking": {
+    "body_region": "musculoskeletal",
+    "conditions": [
+      "musculoskeletal dysfunction",
+      "functional rehabilitation",
+      "mobility deficit"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-articulatory": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "thoracic-pump": {
+    "body_region": "thoracic",
+    "conditions": [
+      "thoracic kyphosis",
+      "mid-back pain",
+      "postural dysfunction",
+      "hyperkyphosis",
+      "thoracic stiffness"
+    ],
+    "difficulty": "easy"
+  },
+  "hip-labrum-rehab-clamshell": {
+    "body_region": "hip",
+    "conditions": [
+      "hip pain",
+      "hip osteoarthritis",
+      "hip impingement",
+      "hip mobility deficit"
+    ],
+    "difficulty": "easy"
+  }
+}

@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { EXERCISE_REGISTRY } from "@/lib/exerciseRegistry";
 import { OSTEOPATHY_REGISTRY } from "@/lib/osteopathyRegistry";
+import exerciseRegistry from "@registry/exercises.json";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface ClinicalInput {
@@ -811,13 +812,21 @@ function ShareModal({
   const regionLabel = REGIONS.find((r) => r.value === form.region)?.label ?? form.region;
   const phaseLabel  = PHASES.find((p) => p.value === form.phase)?.label ?? form.phase;
 
+  const cdnReg = exerciseRegistry as Record<string, { video?: string }>;
+
   const planText = [
     `*TherapIA — ${result.routineName}*`,
     `Diagnóstico: ${form.diagnosis}`,
     `Región: ${regionLabel} | Fase: ${phaseLabel} | Dolor: ${form.painLevel}/10`,
     ``,
-    `Ejercicios prescritos:`,
-    ...exercises.map((e, i) => `${i + 1}. ${e.nameEs} — ${e.sets} series × ${e.reps ?? "Hold"} ${e.reps ? "reps" : ""} (${e.restSeconds}s descanso)`),
+    `Tu programa de ejercicios:`,
+    ...exercises.map((e, i) => {
+      const videoUrl = cdnReg[e.id]?.video ?? "";
+      return [
+        `${i + 1}️⃣ ${e.nameEs} — ${e.sets}x${e.reps ?? "Hold"}`,
+        videoUrl ? `🎥 ${videoUrl}` : null,
+      ].filter(Boolean).join("\n");
+    }),
     ``,
     `Progresión: ${result.progressionTimeline}`,
     ``,

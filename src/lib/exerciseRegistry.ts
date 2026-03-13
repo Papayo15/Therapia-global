@@ -30,7 +30,7 @@ export interface RegistryExercise {
   animationSrc?: string;
 }
 
-const V = (id: string) => `/exercise-videos/${id}.mp4`;
+const V = (id: string) => `/videos/exercises/${id}.mp4`;
 
 export const EXERCISE_REGISTRY: RegistryExercise[] = [
 

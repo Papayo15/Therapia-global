@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Search, Clock, Repeat2, CheckCircle2, Play } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -11,6 +11,7 @@ import { ExercisePlayer, type ExerciseData } from "@/components/exercises/Exerci
 import { ENGINE_MAP } from "@/components/exercises/ExerciseAnimationEngine";
 import { REGION_TO_ANATOMY_KEY, REGION_CONTENT, ANATOMY_LAYERS } from "@/lib/anatomyData";
 import { EXERCISE_REGISTRY } from "@/lib/exerciseRegistry";
+import exerciseRegistry from "@registry/exercises.json";
 
 // ─── Base de datos de ejercicios con instrucciones completas ─────────────────
 const BASE_EXERCISES: ExerciseData[] = [
@@ -1747,23 +1748,8 @@ export default function ExercisesPage() {
   const [playerExercise, setPlayerExercise] = useState<ExerciseData | null>(null);
   const [playerIndex, setPlayerIndex] = useState(0);
   const [addedIds, setAddedIds] = useState<Set<string>>(new Set());
-  // videoMap: slug → videoSrc — populated from pipeline-status once videos are generated
-  const [videoMap, setVideoMap] = useState<Record<string, string>>({});
-
-  // Fetch pipeline status on mount — enriches exercises with MP4 videoSrc when ready
-  useEffect(() => {
-    fetch("/api/pipeline/video-ready")
-      .then((r) => r.ok ? r.json() : null)
-      .then((data) => {
-        if (!data?.entries) return;
-        const map: Record<string, string> = {};
-        for (const [slug, entry] of Object.entries(data.entries as Record<string, { video?: string }>)) {
-          if (entry.video) map[slug] = entry.video;
-        }
-        if (Object.keys(map).length > 0) setVideoMap(map);
-      })
-      .catch(() => {/* pipeline API not yet set up — no-op */});
-  }, []);
+  // Static CDN registry — 467 exercises with Pexels video URLs
+  const cdnRegistry = exerciseRegistry as Record<string, { video?: string }>;
 
   const filtered = ALL_EXERCISES.filter((ex) => {
     const matchSearch = !search ||
@@ -1782,8 +1768,8 @@ export default function ExercisesPage() {
     setPlayerExercise({
       ...ex,
       AnimComponent: ENGINE_MAP[ex.id] ?? ex.AnimComponent,
-      // Use generated MP4 if available, otherwise SVG animation is the fallback
-      videoSrc: videoMap[ex.id] ?? ex.videoSrc,
+      // Priority: 1️⃣ CDN registry (Pexels)  2️⃣ local dev fallback  3️⃣ undefined
+      videoSrc: cdnRegistry[ex.id]?.video ?? ex.videoSrc ?? undefined,
     });
   }
 

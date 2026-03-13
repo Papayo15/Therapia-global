@@ -107,6 +107,7 @@ export const NAV_ITEMS = [
   { key: "anatomy",      icon: "Scan",            href: "/anatomy",        alwaysVisible: true },
   { key: "community",    icon: "Globe2",          href: "/community",      alwaysVisible: true },
   { key: "ai",           icon: "Brain",           href: "/ai",             alwaysVisible: true },
+  { key: "clinical",    icon: "Stethoscope",     href: "/clinical/patients", alwaysVisible: true },
   {
     key: "certifications",
     icon: "Award",

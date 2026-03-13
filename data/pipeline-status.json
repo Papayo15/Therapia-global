@@ -1,2804 +1,2798 @@
 {
   "ab-rollout-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ab-rollout-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.465851Z"
   },
   "achilles-eccentric-decline": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/achilles-eccentric-decline.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.467815Z"
   },
   "acl-rehab-phase1": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/acl-rehab-phase1.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.468899Z"
   },
   "acl-rehab-phase2-perturbation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/acl-rehab-phase2-perturbation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.469106Z"
   },
   "acromioplasty-rehab-protocol": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/acromioplasty-rehab-protocol.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.469909Z"
   },
   "agility-ladder-basic": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9943227/9943227-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/agility-ladder-basic.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.471005Z"
   },
   "ankle-alphabet-exercise": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-alphabet-exercise.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.472355Z"
   },
   "ankle-band-dorsiflexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-band-dorsiflexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.472589Z"
   },
   "ankle-circles-active": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-circles-active.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473235Z"
   },
   "ankle-dorsiflexion-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/3735533/3735533-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-dorsiflexion-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473368Z"
   },
   "ankle-eversion-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-eversion-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473442Z"
   },
   "ankle-inversion-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-inversion-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473503Z"
   },
   "ankle-plantar-flexion-active": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-plantar-flexion-active.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473558Z"
   },
   "ankle-proprioception-single-leg": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111035/6111035-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-proprioception-single-leg.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473620Z"
   },
   "ankle-sprain-rehab-phase1": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111025/6111025-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-sprain-rehab-phase1.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473681Z"
   },
   "ankle-sprain-rehab-phase2": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111025/6111025-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-sprain-rehab-phase2.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473735Z"
   },
   "ankle-wobble-board": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6022719/6022719-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/ankle-wobble-board.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473794Z"
   },
   "anti-rotation-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/anti-rotation-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.473849Z"
   },
   "back-extension-bench": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111021/6111021-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/back-extension-bench.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.474882Z"
   },
   "band-sprint-resisted": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/band-sprint-resisted.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.475571Z"
   },
   "bear-crawl": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/bear-crawl.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.476195Z"
   },
   "biceps-eccentric-curl": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9644937/9644937-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/biceps-eccentric-curl.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.477374Z"
   },
   "bicycle-crunch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8233228/8233228-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/bicycle-crunch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.478397Z"
   },
   "big-toe-extension-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9058234/9058234-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/big-toe-extension-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.478522Z"
   },
   "bird-dog-advanced": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/bird-dog-advanced.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.479239Z"
   },
   "book-opening-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4520181/4520181-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/book-opening-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.480004Z"
   },
   "box-squat": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297954/7297954-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/box-squat.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.480234Z"
   },
   "bulgarian-split-squat": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297954/7297954-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/bulgarian-split-squat.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.480821Z"
   },
   "cable-chop-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cable-chop-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.480944Z"
   },
   "cable-lift-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111046/6111046-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cable-lift-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.481015Z"
   },
   "carpal-tunnel-nerve-gliding": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/carpal-tunnel-nerve-gliding.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.481653Z"
   },
   "cervical-axial-rotation-drill": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7477495/7477495-uhd_1440_2560_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-axial-rotation-drill.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.482813Z"
   },
   "cervical-band-resistance": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6892545/6892545-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-band-resistance.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.483824Z"
   },
   "cervical-dns-pattern": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8747088/8747088-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-dns-pattern.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.483950Z"
   },
   "cervical-extension-range": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7940894/7940894-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-extension-range.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.484458Z"
   },
   "cervical-flexion-range": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7690493/7690493-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-flexion-range.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.484667Z"
   },
   "cervical-foam-roller-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7341244/7341244-uhd_1440_2560_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-foam-roller-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.484814Z"
   },
   "cervical-isometric-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4520181/4520181-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-isometric-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.485470Z"
   },
   "cervical-isometric-flexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/3195218/3195218-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-isometric-flexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.485533Z"
   },
   "cervical-isometric-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7005610/7005610-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-isometric-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.485577Z"
   },
   "cervical-isometric-side-flex": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6297106/6297106-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-isometric-side-flex.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.486009Z"
   },
   "cervical-mobility-flow": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/1596860/1596860-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-mobility-flow.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.486141Z"
   },
   "cervical-pnf-d1": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5837628/5837628-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-pnf-d1.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.486215Z"
   },
   "cervical-rotation-active": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5510104/5510104-hd_1080_1920_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-rotation-active.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.486309Z"
   },
   "cervical-side-flexion-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6022756/6022756-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cervical-side-flexion-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.486760Z"
   },
   "childs-pose": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/childs-pose.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.487443Z"
   },
   "chin-tuck-against-wall": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/12803343/12803343-uhd_1440_2560_60fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/chin-tuck-against-wall.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.487894Z"
   },
   "chin-tuck-supine": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5510104/5510104-hd_1080_1920_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/chin-tuck-supine.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.487969Z"
   },
   "clamshell-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/clamshell-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.488856Z"
   },
   "cobra-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6153969/6153969-hd_1366_720_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cobra-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.488997Z"
   },
   "copenhagen-plank": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/31035752/13265218_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/copenhagen-plank.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.489085Z"
   },
   "core-breathing-4-point": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8052605/8052605-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/core-breathing-4-point.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.489880Z"
   },
   "core-stiffness-carry-overhead": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/core-stiffness-carry-overhead.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.489968Z"
   },
   "costal-breathing-3d": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6799579/6799579-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/costal-breathing-3d.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.490426Z"
   },
   "couch-stretch-hip-flexor": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/couch-stretch-hip-flexor.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.490786Z"
   },
   "crawl-pattern-dns": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/crawl-pattern-dns.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.490869Z"
   },
   "cross-body-shoulder-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111091/6111091-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cross-body-shoulder-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.491696Z"
   },
   "curtsy-lunge": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8027215/8027215-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/curtsy-lunge.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.492230Z"
   },
   "cutting-change-direction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/cutting-change-direction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.492314Z"
   },
   "de-quervain-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023248/6023248-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/de-quervain-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.492372Z"
   },
   "deadbug-advanced": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/deadbug-advanced.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.492422Z"
   },
   "deceleration-landing": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/deceleration-landing.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.493022Z"
   },
   "diagonal-pattern-d1": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/diagonal-pattern-d1.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.493145Z"
   },
   "diagonal-pattern-d2": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/diagonal-pattern-d2.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.493213Z"
   },
   "diaphragmatic-breathing-lateral": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4110016/4110016-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/diaphragmatic-breathing-lateral.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.493278Z"
   },
   "donkey-kick": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/10740728/10740728-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/donkey-kick.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.493350Z"
   },
   "eccentric-squat-slow": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8026940/8026940-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/eccentric-squat-slow.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.493898Z"
   },
   "eccentric-wrist-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352913/13010407_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/eccentric-wrist-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494003Z"
   },
   "eccentric-wrist-flexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/eccentric-wrist-flexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494046Z"
   },
   "elbow-extension-isometric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-extension-isometric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494086Z"
   },
   "elbow-extension-triceps-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5726682/5726682-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-extension-triceps-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494120Z"
   },
   "elbow-flexion-curls-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-flexion-curls-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494159Z"
   },
   "elbow-flexion-isometric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-flexion-isometric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494193Z"
   },
   "elbow-joint-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7517385/7517385-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-joint-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494230Z"
   },
   "elbow-nerve-flossing-median": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-nerve-flossing-median.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494265Z"
   },
   "elbow-nerve-flossing-radial": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-nerve-flossing-radial.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494301Z"
   },
   "elbow-nerve-flossing-ulnar": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-nerve-flossing-ulnar.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494336Z"
   },
   "elbow-proprioception-catch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/elbow-proprioception-catch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494369Z"
   },
   "farmers-carry": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/farmers-carry.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494407Z"
   },
   "finger-intrinsic-exercises": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/finger-intrinsic-exercises.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494443Z"
   },
   "finger-tendon-gliding": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/finger-tendon-gliding.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494475Z"
   },
   "fire-hydrant": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5930440/5930440-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/fire-hydrant.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494511Z"
   },
   "foam-roller-hamstrings": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023267/6023267-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/foam-roller-hamstrings.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494548Z"
   },
   "foam-roller-it-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8935472/8935472-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/foam-roller-it-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494584Z"
   },
   "foam-roller-quads": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8935472/8935472-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/foam-roller-quads.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494619Z"
   },
   "forearm-myofascial-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5894295/5894295-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/forearm-myofascial-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494654Z"
   },
   "four-point-breathing-expansion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8795160/8795160-uhd_1440_2732_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/four-point-breathing-expansion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494696Z"
   },
   "frog-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111095/6111095-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/frog-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494732Z"
   },
   "full-can-exercise": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/full-can-exercise.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494768Z"
   },
   "gluteus-medius-side-plank-hip": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5837628/5837628-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/gluteus-medius-side-plank-hip.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494805Z"
   },
   "goblet-squat-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4838220/4838220-uhd_1440_2560_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/goblet-squat-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494837Z"
   },
   "golfers-elbow-eccentric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/golfers-elbow-eccentric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494869Z"
   },
   "good-morning-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/good-morning-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494904Z"
   },
   "grip-strengthening-putty": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/grip-strengthening-putty.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494939Z"
   },
   "half-kneeling-pallof": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/half-kneeling-pallof.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.494975Z"
   },
   "hand-opening-closing-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hand-opening-closing-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.495009Z"
   },
   "hanging-knee-raise": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hanging-knee-raise.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.495600Z"
   },
   "hardstyle-plank": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/31035752/13265218_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hardstyle-plank.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.495736Z"
   },
   "heel-toe-walking": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8933632/8933632-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/heel-toe-walking.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.495808Z"
   },
   "heel-walk-dorsiflexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/heel-walk-dorsiflexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.495870Z"
   },
   "hip-90-90-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-90-90-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.495928Z"
   },
   "hip-abduction-standing-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-abduction-standing-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.495985Z"
   },
   "hip-adduction-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-adduction-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496078Z"
   },
   "hip-adductor-eccentric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-adductor-eccentric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496163Z"
   },
   "hip-capsule-mobilization-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-capsule-mobilization-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496239Z"
   },
   "hip-drop-pelvic-control-running": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5510104/5510104-hd_1080_1920_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-drop-pelvic-control-running.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496303Z"
   },
   "hip-er-stretch-seated": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-er-stretch-seated.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496363Z"
   },
   "hip-extension-standing-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-extension-standing-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496426Z"
   },
   "hip-flexor-core-sitting-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-flexor-core-sitting-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496483Z"
   },
   "hip-flexor-eccentric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-flexor-eccentric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496530Z"
   },
   "hip-hinge-pattern": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-hinge-pattern.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496572Z"
   },
   "hip-hinge-single-leg": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111029/6111029-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-hinge-single-leg.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496608Z"
   },
   "hip-ir-stretch-prone": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-ir-stretch-prone.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496641Z"
   },
   "hip-pnf-extension-adduction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-pnf-extension-adduction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496678Z"
   },
   "hip-pnf-flexion-abduction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-pnf-flexion-abduction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496714Z"
   },
   "hip-posterior-chain-series": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-posterior-chain-series.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.496760Z"
   },
   "hip-proprioception-reach": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111035/6111035-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-proprioception-reach.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.497378Z"
   },
   "hip-stability-single-leg-stand": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-stability-single-leg-stand.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.497500Z"
   },
   "hip-thrust-bodyweight": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-thrust-bodyweight.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.497561Z"
   },
   "hip-thrust-single-leg": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111029/6111029-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hip-thrust-single-leg.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.497633Z"
   },
   "hollow-body-hold": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/hollow-body-hold.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.497692Z"
   },
   "iliotibial-band-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111028/6111028-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/iliotibial-band-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.497748Z"
   },
   "inchworm": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/inchworm.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.497802Z"
   },
   "inferior-capsule-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023248/6023248-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/inferior-capsule-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.498415Z"
   },
   "intrinsic-foot-muscles-dome": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7675451/7675451-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/intrinsic-foot-muscles-dome.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.498537Z"
   },
   "knee-flexion-hamstring-curl-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8837122/8837122-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/knee-flexion-hamstring-curl-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.498604Z"
   },
   "knee-flexion-prone-active": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/knee-flexion-prone-active.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.498704Z"
   },
   "knee-joint-mobilization-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095385/6095385-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/knee-joint-mobilization-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.498844Z"
   },
   "knee-nerve-flossing-femoral": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/knee-nerve-flossing-femoral.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.498972Z"
   },
   "knee-plyometric-hop": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/knee-plyometric-hop.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.499050Z"
   },
   "knee-pnf-extension-pattern": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/knee-pnf-extension-pattern.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.499146Z"
   },
   "knee-proprioception-wobble": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111035/6111035-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/knee-proprioception-wobble.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.499208Z"
   },
   "knee-stability-lateral-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/knee-stability-lateral-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.499260Z"
   },
   "kyphosis-correction-wall": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/kyphosis-correction-wall.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.499868Z"
   },
   "lateral-band-walk": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lateral-band-walk.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.499991Z"
   },
   "lateral-epicondyle-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023248/6023248-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lateral-epicondyle-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.500066Z"
   },
   "lateral-lunge": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4110016/4110016-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lateral-lunge.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.500127Z"
   },
   "lateral-shuffle-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lateral-shuffle-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.500185Z"
   },
   "lateral-step-up-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lateral-step-up-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.500241Z"
   },
   "levator-scapulae-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8867532/8867532-hd_1080_1920_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/levator-scapulae-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.500302Z"
   },
   "longus-colli-activation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5743088/5743088-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/longus-colli-activation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.500924Z"
   },
   "lower-trap-activation-prone": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297852/7297852-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lower-trap-activation-prone.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501050Z"
   },
   "lumbar-extension-prone-press": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111082/6111082-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lumbar-extension-prone-press.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501125Z"
   },
   "lumbar-flexion-stretch-supine": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111095/6111095-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lumbar-flexion-stretch-supine.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501185Z"
   },
   "lumbar-mobilization-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lumbar-mobilization-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501248Z"
   },
   "lumbar-multifidus-activation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lumbar-multifidus-activation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501308Z"
   },
   "lumbar-nerve-flossing": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lumbar-nerve-flossing.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501381Z"
   },
   "lumbar-segmental-mobility": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111025/6111025-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lumbar-segmental-mobility.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501467Z"
   },
   "lumbar-traction-self": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111016/6111016-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/lumbar-traction-self.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501548Z"
   },
   "medial-epicondyle-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023248/6023248-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/medial-epicondyle-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501623Z"
   },
   "meniscus-rehab-loading": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/meniscus-rehab-loading.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.501686Z"
   },
   "mid-trap-prone-yw": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/mid-trap-prone-yw.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502240Z"
   },
   "mini-squat-progression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297954/7297954-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/mini-squat-progression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502365Z"
   },
   "monster-walk-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/monster-walk-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502436Z"
   },
   "neck-strengthening-prone": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5155181/5155181-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/neck-strengthening-prone.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502500Z"
   },
   "nordic-hamstring-curl": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023267/6023267-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/nordic-hamstring-curl.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502557Z"
   },
   "oblique-crunch-side": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4754028/4754028-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/oblique-crunch-side.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502611Z"
   },
   "overhead-athlete-series": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/overhead-athlete-series.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502681Z"
   },
   "overhead-reach-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9058234/9058234-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/overhead-reach-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502742Z"
   },
   "pallof-press-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/pallof-press-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502797Z"
   },
   "pallof-press": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/pallof-press.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502849Z"
   },
   "patella-glide-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111017/6111017-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/patella-glide-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502916Z"
   },
   "pca-rehab-quad-activation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/pca-rehab-quad-activation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.502994Z"
   },
   "pec-minor-stretch-doorway": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5320001/5320001-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/pec-minor-stretch-doorway.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503068Z"
   },
   "peroneal-strengthening-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111099/6111099-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/peroneal-strengthening-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503150Z"
   },
   "pes-anserinus-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111095/6111095-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/pes-anserinus-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503211Z"
   },
   "pigeon-pose-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8955373/8955373-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/pigeon-pose-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503259Z"
   },
   "pinch-grip-strengthening": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/pinch-grip-strengthening.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503306Z"
   },
   "piriformis-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023248/6023248-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/piriformis-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503352Z"
   },
   "plank-hip-dip": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/plank-hip-dip.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503396Z"
   },
   "plank-shoulder-tap": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/plank-shoulder-tap.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503443Z"
   },
   "plank-to-downdog": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6297122/6297122-uhd_1440_2560_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/plank-to-downdog.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503516Z"
   },
   "plantar-fascia-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8480636/8480636-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/plantar-fascia-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503564Z"
   },
   "pronation-supination-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/pronation-supination-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503609Z"
   },
   "prone-hip-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/prone-hip-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503652Z"
   },
   "prone-horizontal-abduction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/prone-horizontal-abduction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503699Z"
   },
   "prone-plank": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/31035752/13265218_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/prone-plank.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503745Z"
   },
   "prone-yw-exercise": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/prone-yw-exercise.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503791Z"
   },
   "push-up-plus": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6022762/6022762-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/push-up-plus.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503832Z"
   },
   "push-up-progression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6022762/6022762-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/push-up-progression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503877Z"
   },
   "quad-sets-isometric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111035/6111035-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/quad-sets-isometric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503923Z"
   },
   "quadratus-lumborum-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111095/6111095-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/quadratus-lumborum-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.503969Z"
   },
   "renegade-row-plank": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/31035752/13265218_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/renegade-row-plank.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504176Z"
   },
   "return-to-sport-criteria": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111056/6111056-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/return-to-sport-criteria.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504244Z"
   },
   "reverse-crunch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4754028/4754028-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/reverse-crunch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504304Z"
   },
   "reverse-hyperextension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8401319/8401319-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/reverse-hyperextension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504405Z"
   },
   "reverse-lunge-hip": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/reverse-lunge-hip.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504461Z"
   },
   "reverse-step-down": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111103/6111103-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/reverse-step-down.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504510Z"
   },
   "rhomboid-row-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/rhomboid-row-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504566Z"
   },
   "rollup-core": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/rollup-core.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504618Z"
   },
   "rotational-power-med-ball": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4866849/4866849-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/rotational-power-med-ball.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504668Z"
   },
   "rotator-cuff-eccentric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/rotator-cuff-eccentric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504711Z"
   },
   "rotator-cuff-isometrics-set": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7699866/7699866-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/rotator-cuff-isometrics-set.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504760Z"
   },
   "running-gait-retraining": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111035/6111035-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/running-gait-retraining.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504806Z"
   },
   "russian-twist": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4745728/4745728-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/russian-twist.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.504849Z"
   },
   "scalene-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4819192/4819192-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/scalene-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.505864Z"
   },
   "sciatic-nerve-slider": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/sciatic-nerve-slider.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.505990Z"
   },
   "seated-forward-fold": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/seated-forward-fold.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506056Z"
   },
   "serratus-anterior-push-plus": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6022762/6022762-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/serratus-anterior-push-plus.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506123Z"
   },
   "serratus-wall-slide": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/serratus-wall-slide.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506183Z"
   },
   "short-arc-quad": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8837122/8837122-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/short-arc-quad.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506242Z"
   },
   "short-foot-exercise": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8933632/8933632-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/short-foot-exercise.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506302Z"
   },
   "shoulder-abduction-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-abduction-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506356Z"
   },
   "shoulder-band-distraction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-band-distraction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506416Z"
   },
   "shoulder-blade-clock": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-blade-clock.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506471Z"
   },
   "shoulder-blade-squeeze": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-blade-squeeze.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506541Z"
   },
   "shoulder-cam-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-cam-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506602Z"
   },
   "shoulder-flexion-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-flexion-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506668Z"
   },
   "shoulder-internal-rotation-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-internal-rotation-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506762Z"
   },
   "shoulder-ir-behind-back-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-ir-behind-back-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506834Z"
   },
   "shoulder-isokinetic-arc": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-isokinetic-arc.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506873Z"
   },
   "shoulder-joint-mobilization-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111091/6111091-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-joint-mobilization-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506907Z"
   },
   "shoulder-pnf-d1-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-pnf-d1-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506949Z"
   },
   "shoulder-pnf-d2-flexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-pnf-d2-flexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.506985Z"
   },
   "shoulder-posterior-capsule-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-posterior-capsule-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507022Z"
   },
   "shoulder-press-standing-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-press-standing-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507057Z"
   },
   "shoulder-proprioception-ball": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-proprioception-ball.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507094Z"
   },
   "shoulder-rotator-cuff-circuit": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-rotator-cuff-circuit.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507131Z"
   },
   "shoulder-scaption-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-scaption-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507168Z"
   },
   "shoulder-stability-plank": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5837628/5837628-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-stability-plank.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507207Z"
   },
   "shoulder-throwing-progression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/shoulder-throwing-progression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507244Z"
   },
   "side-lying-external-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111032/6111032-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/side-lying-external-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507279Z"
   },
   "side-plank-hip-abduction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5837628/5837628-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/side-plank-hip-abduction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507316Z"
   },
   "side-plank-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5837628/5837628-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/side-plank-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507352Z"
   },
   "side-plank": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5837628/5837628-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/side-plank.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507391Z"
   },
   "single-leg-calf-raise-eccentric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297852/7297852-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/single-leg-calf-raise-eccentric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507427Z"
   },
   "single-leg-deadlift-bodyweight": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4110015/4110015-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/single-leg-deadlift-bodyweight.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507462Z"
   },
   "single-leg-hop-forward": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111029/6111029-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/single-leg-hop-forward.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507498Z"
   },
   "single-leg-hop-lateral": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111029/6111029-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/single-leg-hop-lateral.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507531Z"
   },
   "single-leg-squat": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8026940/8026940-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/single-leg-squat.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507567Z"
   },
   "sleeper-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111095/6111095-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/sleeper-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507602Z"
   },
   "soleus-calf-raise-bent-knee": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/soleus-calf-raise-bent-knee.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507638Z"
   },
   "spinal-flexion-crunch-control": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111091/6111091-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/spinal-flexion-crunch-control.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507679Z"
   },
   "split-squat-jump": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4260553/4260553-uhd_1440_2560_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/split-squat-jump.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507714Z"
   },
   "squat-jump-landing-mechanics": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297954/7297954-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/squat-jump-landing-mechanics.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507750Z"
   },
   "standing-hamstring-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023267/6023267-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/standing-hamstring-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507789Z"
   },
   "standing-hip-er-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/standing-hip-er-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507826Z"
   },
   "standing-hip-ir-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/standing-hip-ir-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507863Z"
   },
   "standing-quad-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111034/6111034-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/standing-quad-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507898Z"
   },
   "standing-rib-expansion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111034/6111034-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/standing-rib-expansion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507934Z"
   },
   "star-excursion-balance": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023248/6023248-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/star-excursion-balance.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.507968Z"
   },
   "step-down-eccentric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111103/6111103-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/step-down-eccentric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508002Z"
   },
   "sternocleidomastoid-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8462503/8462503-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/sternocleidomastoid-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508040Z"
   },
   "straight-leg-raise": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111029/6111029-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/straight-leg-raise.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508074Z"
   },
   "suboccipital-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/12453909/12453909-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/suboccipital-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508110Z"
   },
   "subscapularis-activation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/subscapularis-activation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508149Z"
   },
   "subtalar-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111102/6111102-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/subtalar-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508186Z"
   },
   "suitcase-carry": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/suitcase-carry.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508222Z"
   },
   "sumo-squat-wide": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297954/7297954-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/sumo-squat-wide.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508259Z"
   },
   "superman-hold-prone": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/superman-hold-prone.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508765Z"
   },
   "supine-hamstring-stretch-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8837122/8837122-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/supine-hamstring-stretch-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508869Z"
   },
   "supine-twist": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9003587/9003587-uhd_1440_2560_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/supine-twist.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508933Z"
   },
   "tall-kneeling-pallof": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/tall-kneeling-pallof.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.508989Z"
   },
   "tennis-elbow-eccentric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4806561/4806561-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/tennis-elbow-eccentric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509051Z"
   },
   "terminal-knee-extension-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/terminal-knee-extension-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509122Z"
   },
   "thoracic-band-pull-apart": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-band-pull-apart.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509175Z"
   },
   "thoracic-cat-cow": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-cat-cow.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509225Z"
   },
   "thoracic-cervical-junction-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6296281/6296281-hd_1080_1920_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-cervical-junction-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509274Z"
   },
   "thoracic-extension-chair": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297957/7297957-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-extension-chair.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509343Z"
   },
   "thoracic-extension-foam-roller": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8935472/8935472-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-extension-foam-roller.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509477Z"
   },
   "thoracic-extension-prone": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-extension-prone.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509593Z"
   },
   "thoracic-foam-roller-segmental": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/35854640/15204675_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-foam-roller-segmental.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509662Z"
   },
   "thoracic-open-book-seated": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-open-book-seated.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509728Z"
   },
   "thoracic-pnf-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-pnf-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509788Z"
   },
   "thoracic-rotation-quadruped": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9141837/9141837-uhd_1440_2560_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-rotation-quadruped.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509825Z"
   },
   "thoracic-rotation-seated": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5378613/5378613-hd_1366_720_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-rotation-seated.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509861Z"
   },
   "thoracic-side-flexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-side-flexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509897Z"
   },
   "thoracic-windmill": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thoracic-windmill.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509932Z"
   },
   "thread-the-needle": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5575612/5575612-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thread-the-needle.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.509971Z"
   },
   "throwing-deceleration-drill": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111052/6111052-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/throwing-deceleration-drill.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510009Z"
   },
   "thumb-opposition-drill": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/thumb-opposition-drill.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510046Z"
   },
   "toe-curl-towel": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8933632/8933632-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/toe-curl-towel.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510082Z"
   },
   "toe-walk": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8933632/8933632-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/toe-walk.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510116Z"
   },
   "triceps-eccentric-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6296281/6296281-hd_1080_1920_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/triceps-eccentric-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510152Z"
   },
   "trunk-rotation-supine": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/trunk-rotation-supine.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510187Z"
   },
   "upper-trap-stretch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/34935656/14798706_1440_2560_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/upper-trap-stretch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510224Z"
   },
   "vastus-medialis-activation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/vastus-medialis-activation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510260Z"
   },
   "vestibular-gaze-stability": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4920812/4920812-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/vestibular-gaze-stability.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510297Z"
   },
   "wall-push-up-serratus": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4859220/4859220-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/wall-push-up-serratus.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510331Z"
   },
   "wall-squat-isometric": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5034571/5034571-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/wall-squat-isometric.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510366Z"
   },
   "wrist-circumduction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352913/13010407_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/wrist-circumduction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510400Z"
   },
   "wrist-eccentric-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352913/13010407_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/wrist-eccentric-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510448Z"
   },
   "wrist-extension-strengthening": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/wrist-extension-strengthening.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510486Z"
   },
   "wrist-flexion-extension-active": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/wrist-flexion-extension-active.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510521Z"
   },
   "wrist-flexion-strengthening": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111029/6111029-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/wrist-flexion-strengthening.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510559Z"
   },
   "wrist-radial-ulnar-deviation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352913/13010407_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/exercises/wrist-radial-ulnar-deviation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.510596Z"
   },
   "ac-joint-blt": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/ac-joint-blt.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.514108Z"
   },
   "achilles-counterstrain": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/15014000/15014000-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/achilles-counterstrain.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.515113Z"
   },
   "atlas-rotation-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/atlas-rotation-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.516288Z"
   },
   "bicipital-counterstrain": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297968/7297968-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/bicipital-counterstrain.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.516414Z"
   },
   "bladder-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9063793/9063793-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/bladder-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.516990Z"
   },
   "blt-sacroiliac": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/blt-sacroiliac.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.517587Z"
   },
   "carpal-tunnel-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/29184317/12601884_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/carpal-tunnel-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.518256Z"
   },
   "cervical-articulatory": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/3981869/3981869-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/cervical-articulatory.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.518371Z"
   },
   "cervical-fpr": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6933220/6933220-hd_1080_1920_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/cervical-fpr.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.518442Z"
   },
   "colon-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9063793/9063793-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/colon-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519011Z"
   },
   "counterstrain-lumbar": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6739383/6739383-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/counterstrain-lumbar.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519146Z"
   },
   "cv4": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/3981775/3981775-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/cv4.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519218Z"
   },
   "diaphragm-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9063793/9063793-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/diaphragm-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519300Z"
   },
   "fibula-ankle-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5310936/5310936-uhd_1440_2560_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/fibula-ankle-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519365Z"
   },
   "fibular-head-correction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8191038/8191038-hd_1366_720_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/fibular-head-correction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519426Z"
   },
   "first-rib-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/1431409/1431409-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/first-rib-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519486Z"
   },
   "frontal-lift": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5724102/5724102-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/frontal-lift.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519541Z"
   },
   "gastric-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8410467/8410467-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/gastric-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519599Z"
   },
   "hepatic-pump": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/hepatic-pump.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519656Z"
   },
   "hip-articulatory": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/hip-articulatory.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519712Z"
   },
   "hip-flexor-inhibition": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/hip-flexor-inhibition.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519765Z"
   },
   "ilium-anterior-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/ilium-anterior-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519823Z"
   },
   "itb-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8893532/8893532-uhd_1440_2732_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/itb-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519876Z"
   },
   "kidney-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/kidney-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.519931Z"
   },
   "knee-blt": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/knee-blt.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520063Z"
   },
   "lateral-epicondyle-counterstrain": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5741118/5741118-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/lateral-epicondyle-counterstrain.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520157Z"
   },
   "lumbar-articulatory": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30348368/13008425_1440_2560_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/lumbar-articulatory.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520215Z"
   },
   "lumbar-blt": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/lumbar-blt.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520271Z"
   },
   "lumbosacral-decompression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/lumbosacral-decompression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520313Z"
   },
   "mcl-counterstrain": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8191176/8191176-hd_1366_720_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/mcl-counterstrain.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520350Z"
   },
   "medial-epicondyle-counterstrain": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6541449/6541449-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/medial-epicondyle-counterstrain.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520406Z"
   },
   "mesenteric-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9063793/9063793-uhd_1440_2732_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/mesenteric-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520453Z"
   },
   "met-cervical": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6739383/6739383-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/met-cervical.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520500Z"
   },
   "met-sacrum": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/met-sacrum.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520541Z"
   },
   "met-thoracic": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6739383/6739383-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/met-thoracic.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520586Z"
   },
   "navicular-correction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6177478/6177478-uhd_1440_2732_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/navicular-correction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520629Z"
   },
   "oa-decompression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/20573774/20573774-uhd_1440_2560_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/oa-decompression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.520671Z"
   },
   "osteo-ankle-subtalar-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-ankle-subtalar-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.521352Z"
   },
   "osteo-ankle-talocrural-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-ankle-talocrural-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.521481Z"
   },
   "osteo-cervical-mob-c0-c1": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cervical-mob-c0-c1.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.521549Z"
   },
   "osteo-cervical-mob-c1-c2": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cervical-mob-c1-c2.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.521601Z"
   },
   "osteo-cervical-mob-c2-c7": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cervical-mob-c2-c7.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.521650Z"
   },
   "osteo-clavicle-sternoclavicular-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-clavicle-sternoclavicular-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.522067Z"
   },
   "osteo-cranial-cv4-compression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/25950159/11923144_1920_1080_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-cv4-compression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.522777Z"
   },
   "osteo-cranial-dural-tube-traction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-dural-tube-traction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.522838Z"
   },
   "osteo-cranial-frontal-bone-decompression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-frontal-bone-decompression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.522883Z"
   },
   "osteo-cranial-frontoparietal": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-frontoparietal.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.522922Z"
   },
   "osteo-cranial-hyoid-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5894295/5894295-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-hyoid-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.522960Z"
   },
   "osteo-cranial-mandible-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5894295/5894295-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-mandible-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.522995Z"
   },
   "osteo-cranial-parietal-lift": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111046/6111046-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-parietal-lift.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523028Z"
   },
   "osteo-cranial-sacral-rocking": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-sacral-rocking.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523065Z"
   },
   "osteo-cranial-sacrum-respiratory": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-sacrum-respiratory.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523098Z"
   },
   "osteo-cranial-sphenobasilar-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-sphenobasilar-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523134Z"
   },
   "osteo-cranial-sphenobasilar-flexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-sphenobasilar-flexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523171Z"
   },
   "osteo-cranial-sphenoid-decompression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-sphenoid-decompression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523207Z"
   },
   "osteo-cranial-still-point-occipital": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-still-point-occipital.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523243Z"
   },
   "osteo-cranial-temporal-bone": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-temporal-bone.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523295Z"
   },
   "osteo-cranial-vomer-decompression": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-cranial-vomer-decompression.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523331Z"
   },
   "osteo-elbow-proximal-radioulnar-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-elbow-proximal-radioulnar-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.523915Z"
   },
   "osteo-elbow-radiohumeral-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-elbow-radiohumeral-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.524578Z"
   },
   "osteo-first-metatarsophalangeal-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-first-metatarsophalangeal-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.524708Z"
   },
   "osteo-hip-mob-anterior-glide": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hip-mob-anterior-glide.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.524782Z"
   },
   "osteo-hip-mob-lateral-distraction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hip-mob-lateral-distraction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.524844Z"
   },
   "osteo-hip-mob-posterior-glide": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hip-mob-posterior-glide.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.524897Z"
   },
   "osteo-hvla-ankle-mortise": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-ankle-mortise.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.525931Z"
   },
   "osteo-hvla-cervical-flexion-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-cervical-flexion-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.526058Z"
   },
   "osteo-hvla-cervical-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-cervical-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.526128Z"
   },
   "osteo-hvla-cuboid-notch": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-cuboid-notch.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.526188Z"
   },
   "osteo-hvla-elbow-lateral-gap": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4110016/4110016-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-elbow-lateral-gap.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.526818Z"
   },
   "osteo-hvla-first-rib": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-first-rib.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.526941Z"
   },
   "osteo-hvla-hip-scouring": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-hip-scouring.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.527014Z"
   },
   "osteo-hvla-lower-thoracic": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297852/7297852-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-lower-thoracic.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.527582Z"
   },
   "osteo-hvla-lumbar-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-lumbar-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.527710Z"
   },
   "osteo-hvla-lumbar-sidebending": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-lumbar-sidebending.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.527784Z"
   },
   "osteo-hvla-mid-thoracic-sitting": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-mid-thoracic-sitting.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.527849Z"
   },
   "osteo-hvla-mid-thoracic-supine": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-mid-thoracic-supine.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.527904Z"
   },
   "osteo-hvla-pubic-symphysis": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-pubic-symphysis.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.527963Z"
   },
   "osteo-hvla-rib-pump-supine": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/9003587/9003587-uhd_1440_2560_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-rib-pump-supine.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528040Z"
   },
   "osteo-hvla-rib-sitting": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-rib-sitting.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528194Z"
   },
   "osteo-hvla-sacroiliac-anterior": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-sacroiliac-anterior.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528323Z"
   },
   "osteo-hvla-sacroiliac-posterior": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-sacroiliac-posterior.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528403Z"
   },
   "osteo-hvla-sacrum-shear": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-sacrum-shear.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528474Z"
   },
   "osteo-hvla-upper-thoracic": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111055/6111055-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-upper-thoracic.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528546Z"
   },
   "osteo-hvla-wrist-carpal": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352913/13010407_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-hvla-wrist-carpal.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528586Z"
   },
   "osteo-knee-patellofemoral-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-knee-patellofemoral-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528623Z"
   },
   "osteo-knee-tibiofemoral-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-knee-tibiofemoral-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528657Z"
   },
   "osteo-lumbar-mob-l1-l5": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-lumbar-mob-l1-l5.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528697Z"
   },
   "osteo-met-adductors": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-adductors.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.528734Z"
   },
   "osteo-met-ankle-dorsiflexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-ankle-dorsiflexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.529755Z"
   },
   "osteo-met-ankle-plantarflexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-ankle-plantarflexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.529857Z"
   },
   "osteo-met-cervical-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-cervical-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.529918Z"
   },
   "osteo-met-cervical-flexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-cervical-flexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.529969Z"
   },
   "osteo-met-cervical-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-cervical-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.530018Z"
   },
   "osteo-met-cervical-sidebend": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-cervical-sidebend.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.530064Z"
   },
   "osteo-met-elbow-flexion": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-elbow-flexion.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.530111Z"
   },
   "osteo-met-hamstrings": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6023267/6023267-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-hamstrings.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.530153Z"
   },
   "osteo-met-levator-scapulae": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-levator-scapulae.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.530792Z"
   },
   "osteo-met-lumbar-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-lumbar-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.530940Z"
   },
   "osteo-met-lumbar-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-lumbar-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531034Z"
   },
   "osteo-met-piriformis": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-piriformis.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531112Z"
   },
   "osteo-met-psoas": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-psoas.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531161Z"
   },
   "osteo-met-quadratus-lumborum": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-quadratus-lumborum.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531209Z"
   },
   "osteo-met-ribs-exhalation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111056/6111056-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-ribs-exhalation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531263Z"
   },
   "osteo-met-ribs-inhalation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6799579/6799579-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-ribs-inhalation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531309Z"
   },
   "osteo-met-sacroiliac-iliac-anterior": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-sacroiliac-iliac-anterior.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531358Z"
   },
   "osteo-met-sacroiliac-iliac-posterior": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-sacroiliac-iliac-posterior.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531405Z"
   },
   "osteo-met-shoulder-elevation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-shoulder-elevation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531452Z"
   },
   "osteo-met-shoulder-external-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-shoulder-external-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531501Z"
   },
   "osteo-met-shoulder-internal-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-shoulder-internal-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531551Z"
   },
   "osteo-met-thoracic-extension": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-thoracic-extension.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531610Z"
   },
   "osteo-met-thoracic-rotation": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-thoracic-rotation.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531657Z"
   },
   "osteo-met-upper-trap": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111055/6111055-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-met-upper-trap.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.531696Z"
   },
   "osteo-mfr-anterior-shoulder": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-anterior-shoulder.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.532319Z"
   },
   "osteo-mfr-cervical-fascia": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-cervical-fascia.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.532436Z"
   },
   "osteo-mfr-diaphragm": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-diaphragm.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.532510Z"
   },
   "osteo-mfr-forearm-extensors": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-forearm-extensors.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.533535Z"
   },
   "osteo-mfr-forearm-flexors": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-forearm-flexors.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.533665Z"
   },
   "osteo-mfr-iliotibial-band": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-iliotibial-band.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.533754Z"
   },
   "osteo-mfr-lateral-thigh": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4110016/4110016-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-lateral-thigh.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.533826Z"
   },
   "osteo-mfr-medial-knee": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-medial-knee.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.533878Z"
   },
   "osteo-mfr-pelvic-floor": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111078/6111078-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-pelvic-floor.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.533946Z"
   },
   "osteo-mfr-piriformis-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5894295/5894295-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-piriformis-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.533999Z"
   },
   "osteo-mfr-plantar-fascia": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352917/13010402_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-plantar-fascia.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534057Z"
   },
   "osteo-mfr-posterior-shoulder": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-posterior-shoulder.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534105Z"
   },
   "osteo-mfr-psoas-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5894295/5894295-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-psoas-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534153Z"
   },
   "osteo-mfr-quadratus-lumborum": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-quadratus-lumborum.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534201Z"
   },
   "osteo-mfr-rib-intercostals": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-rib-intercostals.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534273Z"
   },
   "osteo-mfr-scalenes": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-scalenes.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534396Z"
   },
   "osteo-mfr-sternocleidomastoid": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-sternocleidomastoid.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534584Z"
   },
   "osteo-mfr-suboccipital": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-suboccipital.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534683Z"
   },
   "osteo-mfr-thoracolumbar-fascia": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-thoracolumbar-fascia.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534767Z"
   },
   "osteo-mfr-upper-trapezius": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111055/6111055-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-mfr-upper-trapezius.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534847Z"
   },
   "osteo-rib-mob-anterior": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-rib-mob-anterior.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.534923Z"
   },
   "osteo-rib-mob-posterior": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-rib-mob-posterior.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535003Z"
   },
   "osteo-sacroiliac-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-sacroiliac-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535077Z"
   },
   "osteo-shoulder-acromioclavicular-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-shoulder-acromioclavicular-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535153Z"
   },
   "osteo-shoulder-glenohumeral-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095382/6095382-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-shoulder-glenohumeral-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535250Z"
   },
   "osteo-thoracic-mob-t1-t4": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-thoracic-mob-t1-t4.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535327Z"
   },
   "osteo-thoracic-mob-t4-t8": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-thoracic-mob-t4-t8.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535398Z"
   },
   "osteo-thoracic-mob-t8-t12": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-thoracic-mob-t8-t12.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535474Z"
   },
   "osteo-tmj-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-tmj-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535546Z"
   },
   "osteo-visceral-bladder-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-bladder-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.535997Z"
   },
   "osteo-visceral-cecum-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-cecum-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536104Z"
   },
   "osteo-visceral-colon-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-colon-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536168Z"
   },
   "osteo-visceral-diaphragm-dome": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-diaphragm-dome.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536222Z"
   },
   "osteo-visceral-gallbladder": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-gallbladder.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536271Z"
   },
   "osteo-visceral-hiatal-hernia": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-hiatal-hernia.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536340Z"
   },
   "osteo-visceral-ileocecal-valve": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-ileocecal-valve.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536403Z"
   },
   "osteo-visceral-kidney-ptosis": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-kidney-ptosis.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536480Z"
   },
   "osteo-visceral-liver-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-liver-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536548Z"
   },
   "osteo-visceral-portal-liver": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-portal-liver.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536616Z"
   },
   "osteo-visceral-sigmoid-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-sigmoid-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536684Z"
   },
   "osteo-visceral-small-intestine-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-small-intestine-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536748Z"
   },
   "osteo-visceral-spleen": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-spleen.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536815Z"
   },
   "osteo-visceral-stomach-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297872/7297872-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-stomach-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536883Z"
   },
   "osteo-visceral-uterine-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-visceral-uterine-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.536949Z"
   },
   "osteo-wrist-radiocarpal-mob": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352913/13010407_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/osteo-wrist-radiocarpal-mob.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537021Z"
   },
   "parietal-lift": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5762181/5762181-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/parietal-lift.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537082Z"
   },
   "patellar-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6095393/6095393-hd_1080_1920_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/patellar-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537151Z"
   },
   "piriformis-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5575612/5575612-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/piriformis-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537218Z"
   },
   "plantar-fascia-release": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/29714134/12776580_1920_1080_60fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/plantar-fascia-release.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537287Z"
   },
   "popliteus-counterstrain": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/8191176/8191176-hd_1366_720_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/popliteus-counterstrain.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537349Z"
   },
   "posterior-capsule-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/4488007/4488007-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/posterior-capsule-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537416Z"
   },
   "psoas-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6111033/6111033-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/psoas-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537482Z"
   },
   "pubic-shear-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793301/5793301-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/pubic-shear-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537548Z"
   },
   "radial-head-correction": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793294/5793294-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/radial-head-correction.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537629Z"
   },
   "radiocarpal-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5724102/5724102-hd_1366_720_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/radiocarpal-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537704Z"
   },
   "rib-raising": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/2941109/2941109-hd_1366_720_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/rib-raising.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537772Z"
   },
   "sbs": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/sbs.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537835Z"
   },
   "scj-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352916/13010426_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/scj-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537901Z"
   },
   "spencer-shoulder": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/spencer-shoulder.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.537968Z"
   },
   "splenic-pump": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/splenic-pump.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538033Z"
   },
   "suboccipital-inhibition": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/suboccipital-inhibition.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538095Z"
   },
   "subscapularis-counterstrain": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5510091/5510091-hd_1080_1920_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/subscapularis-counterstrain.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538158Z"
   },
   "subtalar-blt": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/subtalar-blt.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538219Z"
   },
   "supinator-met": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/27444586/12146348_1440_2560_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/supinator-met.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538279Z"
   },
   "talus-mobilization": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/7297841/7297841-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/talus-mobilization.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538342Z"
   },
   "temporal-rocking": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5762181/5762181-hd_1920_1080_30fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/temporal-rocking.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538425Z"
   },
   "thoracic-articulatory": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/6739383/6739383-hd_1920_1080_24fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/thoracic-articulatory.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538495Z"
   },
   "thoracic-pump": {
     "status": "ready",
-    "video": "https://videos.pexels.com/video-files/5793444/5793444-hd_1920_1080_25fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
-  },
-  "hip-labrum-rehab-clamshell": {
-    "status": "ready",
-    "video": "https://videos.pexels.com/video-files/30352919/13010430_1080_1920_50fps.mp4",
-    "renderEngine": "pexels-cdn",
-    "updated": "2026-03-09T11:49:14.379311Z"
+    "video": "/videos/osteopathy/thoracic-pump.mp4",
+    "renderEngine": "pexels",
+    "updated": "2026-03-09T12:58:36.538566Z"
   }
 }

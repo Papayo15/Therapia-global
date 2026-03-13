@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from "next-intl";
 import {
   LayoutDashboard, Dumbbell, ClipboardList, Users,
   Bone, Scan, Globe2, Award, Settings, LogOut,
-  ChevronLeft, ChevronRight, Brain,
+  ChevronLeft, ChevronRight, Brain, Stethoscope,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS, FEATURES } from "@/lib/constants";
@@ -15,7 +15,7 @@ import { useState } from "react";
 
 const ICON_MAP = {
   LayoutDashboard, Dumbbell, ClipboardList, Users,
-  Bone, Scan, Globe2, Award, Brain,
+  Bone, Scan, Globe2, Award, Brain, Stethoscope,
 };
 
 interface SidebarProps {

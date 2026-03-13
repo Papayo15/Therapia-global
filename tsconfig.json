@@ -24,6 +24,9 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@registry/*": [
+        "./registry/*"
       ]
     },
     "target": "ES2017"

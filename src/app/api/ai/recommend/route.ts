@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import exerciseRegistry from "@registry/exercises.json";
+
+// Valid slugs from CDN registry — used to filter AI output
+const VALID_SLUGS = new Set(Object.keys(exerciseRegistry));
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface ClinicalInput {
@@ -340,16 +344,55 @@ function generateMockRecommendation(input: ClinicalInput): AIResponse {
   };
 }
 
+// ─── Helper: filter exercise list to valid registry slugs ─────────────────────
+function filterToValidSlugs(exercises: RecommendedExercise[]): RecommendedExercise[] {
+  return exercises.filter((ex) => {
+    // Accept if exact slug match in registry
+    if (VALID_SLUGS.has(ex.id)) return true;
+    // Also accept if any registry slug starts with the exercise id (prefix match)
+    for (const slug of VALID_SLUGS) {
+      if (slug.startsWith(ex.id) || ex.id.startsWith(slug.split("-")[0])) return true;
+    }
+    return false;
+  });
+}
+
 // ─── Route Handler ────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
-  const body = (await req.json()) as ClinicalInput;
+  const rawBody = await req.json();
 
-  if (!body.diagnosis || !body.region || !body.phase) {
+  // Accept simplified SOAP format from AITreatmentGenerator:
+  // { diagnosis, subjective, objective, assessment }
+  // Map it to full ClinicalInput format
+  let body: ClinicalInput;
+  if (rawBody.subjective !== undefined || rawBody.objective !== undefined) {
+    const soapBody = rawBody as {
+      diagnosis?: string; subjective?: string;
+      objective?: string; assessment?: string;
+    };
+    body = {
+      diagnosis: soapBody.diagnosis || "Evaluación fisioterapéutica general",
+      region: inferRegionFromDiagnosis(soapBody.diagnosis || ""),
+      phase: "subacute",
+      painLevel: 5,
+      contraindications: [],
+      goals: ["Reducir dolor", "Restaurar movilidad", "Fortalecer musculatura"],
+      equipment: ["bodyweight", "band"],
+    };
+  } else {
+    body = rawBody as ClinicalInput;
+  }
+
+  if (!body.diagnosis) {
     return NextResponse.json(
-      { error: "diagnosis, region, and phase are required" },
+      { error: "diagnosis is required" },
       { status: 400 }
     );
   }
+
+  // Auto-fill region if missing
+  if (!body.region) body.region = inferRegionFromDiagnosis(body.diagnosis);
+  if (!body.phase) body.phase = "subacute";
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
@@ -357,6 +400,8 @@ export async function POST(req: NextRequest) {
   if (apiKey) {
     try {
       const recommendation = await callClaudeAPI(body);
+      // Filter exercises to valid registry slugs
+      recommendation.exercises = filterToValidSlugs(recommendation.exercises);
       return NextResponse.json({ data: recommendation });
     } catch (err) {
       console.error("[TherapIA] Claude API error, falling back to mock:", err);
@@ -367,7 +412,22 @@ export async function POST(req: NextRequest) {
   // Mock fallback — no API key or API failed
   await new Promise((resolve) => setTimeout(resolve, 600));
   const recommendation = generateMockRecommendation(body);
+  recommendation.exercises = filterToValidSlugs(recommendation.exercises);
   return NextResponse.json({ data: recommendation });
+}
+
+// ─── Helper: infer region from diagnosis text ──────────────────────────────
+function inferRegionFromDiagnosis(diagnosis: string): string {
+  const d = diagnosis.toLowerCase();
+  if (d.includes("cervical") || d.includes("neck") || d.includes("cuello")) return "cervical";
+  if (d.includes("lumbar") || d.includes("lumbal") || d.includes("espalda")) return "lumbar";
+  if (d.includes("hombro") || d.includes("shoulder")) return "shoulder";
+  if (d.includes("rodilla") || d.includes("knee")) return "knee";
+  if (d.includes("cadera") || d.includes("hip")) return "hip";
+  if (d.includes("tobillo") || d.includes("ankle")) return "ankle";
+  if (d.includes("torácic") || d.includes("thoracic")) return "thoracic";
+  if (d.includes("codo") || d.includes("elbow")) return "elbow";
+  return "lumbar"; // default
 }
 
 // Health check

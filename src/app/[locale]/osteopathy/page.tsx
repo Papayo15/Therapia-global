@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Search, BookOpen } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -12,6 +12,7 @@ import { Play } from "lucide-react";
 import { REGION_CONTENT, ANATOMY_LAYERS } from "@/lib/anatomyData";
 import { OSTEOPATHY_REGISTRY } from "@/lib/osteopathyRegistry";
 import { useTranslations } from "next-intl";
+import exerciseRegistry from "@registry/exercises.json";
 
 // Maps osteopathy body region keys → anatomy content keys
 const OSTEO_REGION_TO_ANATOMY: Record<string, string> = {
@@ -331,23 +332,8 @@ export default function OsteopathyPage() {
   const [activeBodyRegion, setActiveBodyRegion] = useState("all");
   const [playerTechnique, setPlayerTechnique] = useState<TechniqueEntry | null>(null);
   const [playerIndex, setPlayerIndex] = useState(0);
-  const [videoMap, setVideoMap] = useState<Record<string, string>>({});
-
-  useEffect(() => {
-    fetch("/api/pipeline/video-ready")
-      .then((r) => r.ok ? r.json() : null)
-      .then((data) => {
-        if (!data?.entries) return;
-        const map: Record<string, string> = {};
-        for (const [slug, entry] of Object.entries(
-          data.entries as Record<string, { video?: string }>
-        )) {
-          if (entry.video) map[slug] = entry.video;
-        }
-        if (Object.keys(map).length > 0) setVideoMap(map);
-      })
-      .catch(() => {});
-  }, []);
+  // Static CDN registry — 467 exercises + osteopathy with Pexels video URLs
+  const cdnRegistry = exerciseRegistry as Record<string, { video?: string }>;
 
   const filtered = ALL_TECHNIQUES.filter((t) => {
     const matchSearch = !search ||
@@ -363,7 +349,8 @@ export default function OsteopathyPage() {
   function openPlayer(index: number) {
     setPlayerIndex(index);
     const t = filtered[index];
-    setPlayerTechnique({ ...t, videoSrc: videoMap[t.id] ?? t.videoSrc });
+    // Priority: 1️⃣ CDN registry (Pexels)  2️⃣ local dev fallback  3️⃣ undefined
+    setPlayerTechnique({ ...t, videoSrc: cdnRegistry[t.id]?.video ?? t.videoSrc ?? undefined });
   }
 
   const showBodyRegions = activeCategory === "structural" || activeCategory === "all";
