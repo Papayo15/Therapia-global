@@ -37,8 +37,8 @@ export function ExerciseAnimationPlayer({
   const t = useTranslations("exercises");
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // STRICT VALIDATION: only accept local paths — reject CDN/remote URLs
-  const safeVideo = video && video.startsWith("/videos/") ? video : undefined;
+  // Accept local paths (/videos/...) and CDN HTTPS URLs
+  const safeVideo = video && (video.startsWith("/videos/") || video.startsWith("https://")) ? video : undefined;
 
   const [state, setState] = useState<PlayerState>("loading");
   const [isUserPaused, setIsUserPaused] = useState(false);
