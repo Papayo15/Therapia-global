@@ -29,7 +29,8 @@ ENV_PATH       = Path(__file__).parent / ".env"
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 load_dotenv(ENV_PATH)
-LUMA_API_KEY  = os.getenv("LUMA_API_KEY", "")
+# Accept both RAY_API_KEY (Ray Flash 2) and LUMA_API_KEY (legacy Dream Machine)
+LUMA_API_KEY  = os.getenv("RAY_API_KEY") or os.getenv("LUMA_API_KEY", "")
 LUMA_BASE_URL = "https://api.lumalabs.ai/dream-machine/v1/generations"
 SLEEP_BETWEEN = 2  # seconds between status checks
 
@@ -70,12 +71,12 @@ def download_file(url: str, dest: Path):
 # ─── Main ─────────────────────────────────────────────────────────────────────
 def main():
     if not LUMA_API_KEY:
-        print("ERROR: LUMA_API_KEY not set in pipeline/.env")
+        print("ERROR: RAY_API_KEY (or LUMA_API_KEY) not set in pipeline/.env")
         sys.exit(1)
 
     status = load_json(STATUS_PATH, {})
     if not status:
-        print("ERROR: pipeline/generation_status.json is empty. Run batch_generator_luma.py first.")
+        print("ERROR: pipeline/generation_status.json is empty. Run batch_generator_ray.py first.")
         sys.exit(1)
 
     VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
@@ -83,7 +84,8 @@ def main():
     total      = len(status)
     downloaded = sum(1 for v in status.values() if v.get("downloaded"))
     failed_ids = [k for k, v in status.items() if v.get("status") == "failed"]
-    pending    = [k for k, v in status.items() if not v.get("downloaded") and v.get("luma_id") and v.get("status") != "failed"]
+    # Support ray_id (Ray Flash 2) and luma_id (legacy Dream Machine)
+    pending    = [k for k, v in status.items() if not v.get("downloaded") and (v.get("ray_id") or v.get("luma_id")) and v.get("status") != "failed"]
 
     print(f"Therapia Global — Video Downloader")
     print(f"Total: {total} | Already downloaded: {downloaded} | Pending: {len(pending)} | Failed: {len(failed_ids)}")
@@ -94,9 +96,9 @@ def main():
     errors = 0
 
     for registry_id in pending:
-        entry  = status[registry_id]
-        luma_id = entry.get("luma_id", "")
-        dest   = VIDEOS_DIR / f"{registry_id}.mp4"
+        entry   = status[registry_id]
+        luma_id = entry.get("ray_id") or entry.get("luma_id", "")  # ray_id takes priority
+        dest    = VIDEOS_DIR / f"{registry_id}.mp4"
 
         # Double-check file exists on disk (in case status got out of sync)
         if dest.exists() and dest.stat().st_size > 0:
