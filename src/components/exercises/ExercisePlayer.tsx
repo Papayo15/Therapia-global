@@ -27,12 +27,16 @@ export interface ExerciseData {
   contraindications?: string;
   youtubeId?: string;
   youtubeSearch?: string;
-  /** Path to Lottie JSON, e.g. /exercise-animations/bird-dog.json */
   animationSrc?: string;
-  /** Path to MP4 video, e.g. /exercise-videos/bird-dog.mp4 */
   videoSrc?: string;
-  /** Legacy SVG animation component — kept for backwards compatibility */
   AnimComponent?: React.FC;
+  // ── Dual content fields (master-registry) ──────────────────────────────
+  canal?: "A" | "B";
+  grupo_articular?: string;
+  equipo?: string[];
+  ejecucion_tecnica?: string;
+  fisiologia_basica?: string;
+  pasos?: string[];
 }
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -95,6 +99,97 @@ function YouTubePanel({ exercise }: { exercise: ExerciseData }) {
           </a>
         )}
       </div>
+    </div>
+  );
+}
+
+// ─── Panel dual técnico/coloquial ─────────────────────────────────────────────
+function DualContentPanel({ exercise, accentColor }: { exercise: ExerciseData; accentColor: string }) {
+  const [tab, setTab] = useState<"terapeuta" | "paciente">("paciente");
+  const pasos = exercise.pasos?.length ? exercise.pasos : exercise.steps.slice(0, 3);
+
+  return (
+    <div className="rounded-xl border border-slate-100 overflow-hidden">
+      {/* Tab switcher */}
+      <div className="flex border-b border-slate-100">
+        <button
+          onClick={() => setTab("paciente")}
+          className={cn(
+            "flex-1 py-2.5 text-xs font-semibold transition-colors",
+            tab === "paciente"
+              ? "bg-blue-50 text-blue-700 border-b-2 border-blue-500"
+              : "text-slate-400 hover:text-slate-600 bg-white"
+          )}
+        >
+          Para el Paciente
+        </button>
+        <button
+          onClick={() => setTab("terapeuta")}
+          className={cn(
+            "flex-1 py-2.5 text-xs font-semibold transition-colors",
+            tab === "terapeuta"
+              ? "bg-slate-50 text-slate-700 border-b-2 border-slate-500"
+              : "text-slate-400 hover:text-slate-600 bg-white"
+          )}
+        >
+          Para el Terapeuta
+        </button>
+      </div>
+
+      {/* Paciente tab */}
+      {tab === "paciente" && (
+        <div className="p-4 bg-blue-50 space-y-3">
+          {exercise.fisiologia_basica && exercise.fisiologia_basica !== "Pendiente" && (
+            <p className="text-sm text-blue-900 font-medium leading-relaxed">
+              &ldquo;{exercise.fisiologia_basica}&rdquo;
+            </p>
+          )}
+          {pasos.length > 0 && (
+            <ol className="space-y-1.5">
+              {pasos.map((paso, i) => (
+                <li key={i} className="flex gap-2 text-sm text-blue-800">
+                  <span className="font-bold shrink-0 w-5 h-5 rounded-full bg-blue-200 flex items-center justify-center text-[11px]">
+                    {i + 1}
+                  </span>
+                  <span>{paso}</span>
+                </li>
+              ))}
+            </ol>
+          )}
+          {exercise.equipo && exercise.equipo.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              {exercise.equipo.map((eq) => (
+                <span key={eq} className="text-[11px] bg-white border border-blue-200 text-blue-700 px-2 py-0.5 rounded-full">
+                  {eq}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Terapeuta tab */}
+      {tab === "terapeuta" && (
+        <div className="p-4 bg-slate-50">
+          {exercise.ejecucion_tecnica && exercise.ejecucion_tecnica !== "PENDIENTE: Descripción técnica clínica (lenguaje de terapeuta)." ? (
+            <p className="text-sm text-slate-700 italic leading-relaxed">
+              {exercise.ejecucion_tecnica}
+            </p>
+          ) : (
+            <p className="text-xs text-slate-400 italic">Contenido clínico en preparación.</p>
+          )}
+          {exercise.canal === "B" && (
+            <div className="mt-3 flex items-center gap-2">
+              <span className="text-[10px] font-bold uppercase text-slate-400">Osteopatía</span>
+              {exercise.grupo_articular && (
+                <span className="text-[11px] bg-white border border-slate-200 text-slate-600 px-2 py-0.5 rounded-full">
+                  {exercise.grupo_articular}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -308,6 +403,11 @@ export function ExercisePlayer({
                 <p className="text-sm text-slate-400 mt-0.5">{exercise.name}</p>
               )}
             </div>
+
+            {/* ── Dual content: Terapeuta / Paciente ───────────────────── */}
+            {(exercise.ejecucion_tecnica || exercise.fisiologia_basica) && (
+              <DualContentPanel exercise={exercise} accentColor={regionColor} />
+            )}
 
             {/* Key Point */}
             {exercise.keyPoint && (

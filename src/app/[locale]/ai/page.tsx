@@ -12,9 +12,10 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { EXERCISE_REGISTRY } from "@/lib/exerciseRegistry";
-import { OSTEOPATHY_REGISTRY } from "@/lib/osteopathyRegistry";
-import exerciseRegistry from "@registry/exercises.json";
+import masterRegistry from "@data/master-registry.json";
+
+type MasterEntry = { video_url?: string; cloudflare_id?: string; canal?: string; grupo_articular?: string; nombre_es?: string; };
+const _masterReg = masterRegistry as Record<string, MasterEntry>;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface ClinicalInput {
@@ -666,13 +667,16 @@ function DatabaseSuggestionsPanel({
 
   const regionKeys = REGION_MAP[region] ?? [region];
 
-  const exerciseSuggestions = EXERCISE_REGISTRY
-    .filter((e) => regionKeys.some((k) => e.region.toLowerCase() === k.toLowerCase()))
-    .slice(0, 8);
+  const allEntries = Object.values(_masterReg);
+  const exerciseSuggestions = allEntries
+    .filter((e) => e.canal === "A" && regionKeys.some((k) => (e.grupo_articular ?? "").toLowerCase().includes(k.toLowerCase())))
+    .slice(0, 8)
+    .map((e, i) => ({ id: Object.keys(_masterReg)[allEntries.indexOf(e)], name: e.nombre_es ?? "", region, category: "exercises" }));
 
-  const osteopathySuggestions = OSTEOPATHY_REGISTRY
-    .filter((t) => regionKeys.some((k) => t.region.toLowerCase() === k.toLowerCase()))
-    .slice(0, 4);
+  const osteopathySuggestions = allEntries
+    .filter((e) => e.canal === "B" && regionKeys.some((k) => (e.grupo_articular ?? "").toLowerCase().includes(k.toLowerCase())))
+    .slice(0, 4)
+    .map((e, i) => ({ id: Object.keys(_masterReg)[allEntries.indexOf(e)], name: e.nombre_es ?? "", region, category: "osteopathy" }));
 
   const totalSuggestions = exerciseSuggestions.length + osteopathySuggestions.length;
 
@@ -728,12 +732,10 @@ function DatabaseSuggestionsPanel({
                     <div key={ex.id} className="flex items-center gap-3 px-3 py-2.5 bg-white border border-surface-200 rounded-xl hover:border-brand-200 transition-all">
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-semibold text-surface-900 truncate">{ex.name}</p>
-                        <p className="text-[10px] text-surface-400">
-                          {ex.difficulty} · {ex.primaryMuscles.slice(0, 2).join(", ")}
-                        </p>
+                        <p className="text-[10px] text-surface-400">Canal A · {ex.category}</p>
                       </div>
                       <button
-                        onClick={() => !added && handleAdd(ex.id, ex.name, ex.category ?? "mobility")}
+                        onClick={() => !added && handleAdd(ex.id, ex.name, ex.category ?? "exercises")}
                         className={cn(
                           "shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all",
                           added
@@ -762,16 +764,11 @@ function DatabaseSuggestionsPanel({
                   return (
                     <div key={tech.id} className="flex items-center gap-3 px-3 py-2.5 bg-white border border-surface-200 rounded-xl hover:border-clinical-200 transition-all">
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1.5 mb-0.5">
-                          <p className="text-xs font-semibold text-surface-900 truncate">{tech.name}</p>
-                          {tech.isChiropracticDerived && (
-                            <span className="text-[9px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-semibold shrink-0">HVLA</span>
-                          )}
-                        </div>
-                        <p className="text-[10px] text-surface-400">{tech.techniqueType} · {tech.region}</p>
+                        <p className="text-xs font-semibold text-surface-900 truncate">{tech.name}</p>
+                        <p className="text-[10px] text-surface-400">Canal B · {tech.region}</p>
                       </div>
                       <button
-                        onClick={() => !added && handleAdd(tech.id, tech.name, tech.techniqueType)}
+                        onClick={() => !added && handleAdd(tech.id, tech.name, tech.category)}
                         className={cn(
                           "shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all",
                           added
@@ -812,8 +809,6 @@ function ShareModal({
   const regionLabel = REGIONS.find((r) => r.value === form.region)?.label ?? form.region;
   const phaseLabel  = PHASES.find((p) => p.value === form.phase)?.label ?? form.phase;
 
-  const cdnReg = exerciseRegistry as Record<string, { video?: string }>;
-
   const planText = [
     `*TherapIA — ${result.routineName}*`,
     `Diagnóstico: ${form.diagnosis}`,
@@ -821,7 +816,10 @@ function ShareModal({
     ``,
     `Tu programa de ejercicios:`,
     ...exercises.map((e, i) => {
-      const videoUrl = cdnReg[e.id]?.video ?? "";
+      const entry = _masterReg[e.id];
+      const videoUrl = entry?.cloudflare_id
+        ? `https://watch.videodelivery.net/${entry.cloudflare_id}`
+        : entry?.video_url ?? "";
       return [
         `${i + 1}️⃣ ${e.nameEs} — ${e.sets}x${e.reps ?? "Hold"}`,
         videoUrl ? `🎥 ${videoUrl}` : null,

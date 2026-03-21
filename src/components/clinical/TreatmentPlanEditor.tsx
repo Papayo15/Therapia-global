@@ -5,10 +5,10 @@ import { Save, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TreatmentExerciseCard } from "./TreatmentExerciseCard";
 import { supabase, type TreatmentPlan } from "@/lib/supabase";
-import exerciseRegistry from "@registry/exercises.json";
+import masterRegistry from "@data/master-registry.json";
 import type { AITreatmentResult } from "./AITreatmentGenerator";
 
-const reg = exerciseRegistry as Record<string, { video?: string }>;
+const reg = masterRegistry as Record<string, { video_url?: string; cloudflare_id?: string }>;
 
 interface TreatmentPlanEditorProps {
   patientId: string;
@@ -53,7 +53,10 @@ export function TreatmentPlanEditor({
 
   function buildWhatsApp() {
     const text = exercises.map((ex, i) => {
-      const videoUrl = reg[ex.slug]?.video ?? "";
+      const entry = reg[ex.slug];
+      const videoUrl = entry?.cloudflare_id
+        ? `https://watch.videodelivery.net/${entry.cloudflare_id}`
+        : entry?.video_url ?? "";
       const name = ex.name || ex.slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
       return `${i + 1}️⃣ ${name} ${ex.sets}x${ex.reps}${videoUrl ? `\n🎥 ${videoUrl}` : ""}`;
     }).join("\n\n");

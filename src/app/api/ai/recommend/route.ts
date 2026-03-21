@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import exerciseRegistry from "@registry/exercises.json";
+import masterRegistry from "@data/master-registry.json";
 
-// Valid slugs from CDN registry — used to filter AI output
-const VALID_SLUGS = new Set(Object.keys(exerciseRegistry));
+// Valid IDs from master registry — used to filter AI output
+const VALID_SLUGS = new Set(Object.keys(masterRegistry));
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface ClinicalInput {

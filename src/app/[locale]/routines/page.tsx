@@ -7,9 +7,9 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import exerciseRegistry from "@registry/exercises.json";
+import masterRegistry from "@data/master-registry.json";
 
-const _cdnReg = exerciseRegistry as Record<string, { video?: string }>;
+const _cdnReg = masterRegistry as Record<string, { video_url?: string; cloudflare_id?: string }>;
 
 // ─── Tipos ────────────────────────────────────────────────────────────────────
 interface RoutineExercise {
@@ -206,7 +206,10 @@ function SendModal({ isOpen, onClose, routineName, exerciseCount, exercises }: {
         `Tu programa de ejercicios:`,
         "",
         ...exercises.map((ex, i) => {
-          const videoUrl = _cdnReg[ex.id]?.video ?? "";
+          const entry = _cdnReg[ex.id];
+          const videoUrl = entry?.cloudflare_id
+            ? `https://watch.videodelivery.net/${entry.cloudflare_id}`
+            : entry?.video_url ?? "";
           return [
             `${i + 1}️⃣ ${ex.nameLocal} — ${ex.sets}x${ex.reps}`,
             videoUrl ? `🎥 ${videoUrl}` : null,

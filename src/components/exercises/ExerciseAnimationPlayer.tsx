@@ -6,8 +6,8 @@ import { Play, Loader2, VideoOff } from "lucide-react";
 
 // ─── ExerciseAnimationPlayer ───────────────────────────────────────────────────
 // Video player for exercise and osteopathy demonstrations.
-// Accepts ONLY local MP4 paths starting with /videos/.
-// If no valid local video is provided, shows a placeholder.
+// Accepts: local /videos/ paths, Pexels HTTPS, Cloudflare Stream URLs.
+// Shows placeholder if no valid video is available.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface ExerciseAnimationPlayerProps {
@@ -37,7 +37,8 @@ export function ExerciseAnimationPlayer({
   const t = useTranslations("exercises");
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Accept local paths (/videos/...) and CDN HTTPS URLs
+  // Accept local paths, Pexels HTTPS, Cloudflare Stream
+  const isCloudflare = video ? (video.includes("cloudflarestream.com") || video.includes("watch.videodelivery.net")) : false;
   const safeVideo = video && (video.startsWith("/videos/") || video.startsWith("https://")) ? video : undefined;
 
   const [state, setState] = useState<PlayerState>("loading");
@@ -94,7 +95,22 @@ export function ExerciseAnimationPlayer({
     );
   }
 
-  // Local MP4 video
+  // Cloudflare Stream — iframe embed
+  if (isCloudflare && safeVideo) {
+    return (
+      <div className={`relative w-full h-full overflow-hidden ${className}`}>
+        <iframe
+          src={`${safeVideo}?autoplay=1&loop=1&muted=1&controls=0`}
+          className="w-full h-full border-0"
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          title={exerciseName}
+        />
+      </div>
+    );
+  }
+
+  // Direct MP4 (local or Pexels CDN)
   return (
     <div
       className={`relative w-full h-full flex items-center justify-center overflow-hidden ${className}`}

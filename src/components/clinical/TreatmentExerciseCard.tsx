@@ -2,9 +2,9 @@
 
 import { Play, Minus, Plus, Trash2 } from "lucide-react";
 import { ExerciseAnimationPlayer } from "@/components/exercises/ExerciseAnimationPlayer";
-import exerciseRegistry from "@registry/exercises.json";
+import masterRegistry from "@data/master-registry.json";
 
-const reg = exerciseRegistry as Record<string, { video?: string; category?: string }>;
+const reg = masterRegistry as Record<string, { video_url?: string; cloudflare_id?: string; canal?: string }>;
 
 interface TreatmentExerciseCardProps {
   slug: string;
@@ -24,7 +24,10 @@ export function TreatmentExerciseCard({
   onChangeSets, onChangeReps, onChangeNotes, onRemove,
   editable = true,
 }: TreatmentExerciseCardProps) {
-  const videoUrl = reg[slug]?.video;
+  const entry = reg[slug];
+  const videoUrl = entry?.cloudflare_id
+    ? `https://watch.videodelivery.net/${entry.cloudflare_id}`
+    : entry?.video_url || undefined;
   const displayName = name || slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
 
   return (

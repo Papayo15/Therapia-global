@@ -4,18 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { CheckCircle2, ChevronLeft, ChevronRight, Star, Clock, Repeat2, AlertCircle, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { AnimBirdDog } from "@/components/exercises/ExerciseAnimations";
-import { AnimGluteBridge, AnimDeadBug } from "@/components/exercises/ExerciseAnimationsPart2";
-import { AnimCatCow, AnimNerveFlossingSciatica } from "@/components/exercises/ExerciseAnimationsPart3";
-
-// ─── Mapa de animaciones por ejercicio ───────────────────────────────────────
-const EXERCISE_ANIM_MAP: Record<string, React.FC> = {
-  "e1": AnimCatCow,
-  "e2": AnimDeadBug,
-  "e3": AnimBirdDog,
-  "e4": AnimGluteBridge,
-  "e5": AnimNerveFlossingSciatica,
-};
+// Animations are delivered via Cloudflare Stream video (master-registry.json)
+// SVG animation components removed — video player in ExerciseAnimationPlayer handles rendering
 
 // ─── Mock data (se reemplazará con API real en Parte 4) ─────────────────────
 const MOCK_ROUTINE = {
@@ -390,7 +380,7 @@ export default function PatientView() {
           canNext={activeIndex < totalExercises - 1}
           getDifficultyColor={getDifficultyColor}
           getDifficultyLabel={getDifficultyLabel}
-          AnimComponent={EXERCISE_ANIM_MAP[activeExercise.id]}
+          AnimComponent={undefined}
         />
       </main>
     </div>

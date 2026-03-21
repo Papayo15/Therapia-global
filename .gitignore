@@ -7,3 +7,9 @@ tsconfig.tsbuildinfo
 *.log
 .DS_Store
 
+# Videos are served from CDN — never commit binary files to git
+public/videos/
+
+# Pipeline intermediate files (local processing only)
+pipeline/compressed/
+pipeline/thumbnails/
