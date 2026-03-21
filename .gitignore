@@ -13,3 +13,5 @@ public/videos/
 # Pipeline intermediate files (local processing only)
 pipeline/compressed/
 pipeline/thumbnails/
+pipeline/.env
+pipeline/generation_status.json

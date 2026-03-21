@@ -1,25 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { createClient } from "@supabase/supabase-js";
 
 // ─── Cloudflare Stream Upload Webhook ────────────────────────────────────────
-// Receives notification when a video finishes processing in Cloudflare Stream.
-// Updates data/master-registry.json with the cloudflare_id.
-// Triggers ISR revalidation for all 15 locales.
+// Fires when a video finishes processing in Cloudflare Stream.
+// Writes cloudflare_id + video_url to Supabase `video_registry` table.
+// This works on Netlify serverless (no filesystem writes).
 //
-// Payload from Cloudflare Stream:
+// Cloudflare Stream webhook payload:
 // { uid: "abc123", meta: { registry_id: "A_CER_001" }, status: { state: "ready" } }
+//
+// Supabase SQL (run once):
+// create table video_registry (
+//   registry_id text primary key,
+//   cloudflare_id text,
+//   video_url text,
+//   updated_at timestamptz default now()
+// );
 
-const REGISTRY_PATH = path.join(process.cwd(), "data", "master-registry.json");
-
-const LOCALES = ["en","es","fr","pt","de","zh","ja","ru","ar","hi","it","ko","tr","nl","pl"];
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 export async function POST(req: NextRequest) {
-  // Guard: serverless filesystems (Netlify) — skip file writes
-  if (process.env.NETLIFY === "true") {
-    return NextResponse.json({ ok: true, note: "Serverless: registry updates handled via CDN" });
-  }
-
   try {
     const body = await req.json();
     const { uid, meta, status } = body;
@@ -32,33 +35,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true, note: `Skipped — state: ${status?.state}` });
     }
 
-    const registryId: string = meta.registry_id;
+    const registry_id: string = meta.registry_id;
+    const video_url = `https://watch.videodelivery.net/${uid}`;
 
-    // Read and update registry
-    const raw = fs.readFileSync(REGISTRY_PATH, "utf8");
-    const registry = JSON.parse(raw) as Record<string, { cloudflare_id?: string; video_url?: string }>;
+    const { error } = await supabase.from("video_registry").upsert({
+      registry_id,
+      cloudflare_id: uid,
+      video_url,
+      updated_at: new Date().toISOString(),
+    });
 
-    if (!registry[registryId]) {
-      return NextResponse.json({ error: `Unknown registry_id: ${registryId}` }, { status: 404 });
+    if (error) {
+      console.error("[cloudflare/webhook] Supabase error:", error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    registry[registryId].cloudflare_id = uid;
-    registry[registryId].video_url = `https://watch.videodelivery.net/${uid}`;
-
-    fs.writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 2), "utf8");
-
-    // Trigger ISR revalidation for all locales
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? req.nextUrl.origin;
-    const revalidations = LOCALES.map((locale) =>
-      fetch(`${baseUrl}/api/revalidate`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ path: `/${locale}/exercises` }),
-      }).catch(() => null)
-    );
-    await Promise.allSettled(revalidations);
-
-    return NextResponse.json({ ok: true, registry_id: registryId, cloudflare_id: uid });
+    return NextResponse.json({ ok: true, registry_id, cloudflare_id: uid, video_url });
   } catch (err) {
     console.error("[cloudflare/webhook]", err);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
