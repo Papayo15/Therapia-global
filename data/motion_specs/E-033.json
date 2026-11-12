@@ -1,0 +1,115 @@
+{
+  "id": "E-033",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 85,
+      "hombro_abd_h.R": 25,
+      "antebrazo_prono.R": 80
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.R"
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.2,
+      -1,
+      0.4
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "toracica_rot": 0,
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "toracica_rot": 0,
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "toracica_rot": 30,
+        "cervical_rot": 20
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "toracica_rot": 30,
+        "cervical_rot": 20
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "toracica_rot": 0,
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "toracica_rot": 0,
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "biceps_brachii",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "pared_manos",
+      "lateral": "R",
+      "sep": 0.05
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Contracción-relajación (FNP)"
+}

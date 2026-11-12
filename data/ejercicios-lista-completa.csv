@@ -1,0 +1,801 @@
+ID,Canal,Region,Nombre ES,Nombre EN,Dificultad
+A_CER_001,Activo,CER,"Retracción Cervical Isométrica","Cervical Isometric Retraction",beginner
+A_CER_002,Activo,CER,"Flexión Cervical con Resistencia Manual","Manual Resistance Cervical Flexion",beginner
+A_CER_003,Activo,CER,"Extensión Cervical Isométrica","Isometric Cervical Extension",beginner
+A_CER_004,Activo,CER,"Inclinación Lateral Cervical Isométrica","Isometric Cervical Lateral Flexion",beginner
+A_CER_005,Activo,CER,"Rotación Cervical Activa Asistida","Active-Assisted Cervical Rotation",beginner
+A_CER_006,Activo,CER,"Estabilización Cervical en Cuadrupedia","Quadruped Cervical Stabilization",intermediate
+A_CER_007,Activo,CER,"Fortalecimiento Escapular con Control Cervical","Scapular Strengthening with Cervical Control",beginner
+A_CER_008,Activo,CER,"Chin Tuck con Banda Cervical","Chin Tuck with Cervical Band",beginner
+A_CER_009,Activo,CER,"Extensión Cervical en Supino","Supine Cervical Extension",beginner
+A_CER_010,Activo,CER,"Propiocepción Cervical con Láser","Cervical Proprioception with Laser Pointer",intermediate
+A_CER_011,Activo,CER,"Flexión Cervical con Polea Alta","Flexión Cervical con Polea Alta",beginner
+A_CER_012,Activo,CER,"Fortalecimiento del Esplenio de la Cabeza","Fortalecimiento del Esplenio de la Cabeza",beginner
+A_CER_013,Activo,CER,"Activación del Longus Colli en Supino","Activación del Longus Colli en Supino",beginner
+A_CER_014,Activo,CER,"Rotación Cervical Isométrica Bilateral","Rotación Cervical Isométrica Bilateral",beginner
+A_CER_015,Activo,CER,"Chin Tuck en Cuadrupedia","Chin Tuck en Cuadrupedia",intermediate
+A_CER_016,Activo,CER,"Flexión Cervical Resistida con Banda","Flexión Cervical Resistida con Banda",intermediate
+A_CER_017,Activo,CER,"Extensión Cervical Resistida con Banda","Extensión Cervical Resistida con Banda",intermediate
+A_CER_018,Activo,CER,"Elevación de Cabeza en Prono","Elevación de Cabeza en Prono",intermediate
+A_CER_019,Activo,CER,"Inclinación Lateral Dinámica con Banda","Inclinación Lateral Dinámica con Banda",intermediate
+A_CER_020,Activo,CER,"Estabilización Cervical con Fitball","Estabilización Cervical con Fitball",intermediate
+A_CER_021,Activo,CER,"Activación Profunda Cervical en Supino","Activación Profunda Cervical en Supino",intermediate
+A_CER_022,Activo,CER,"Ejercicio Oculomotor con Control Cervical","Ejercicio Oculomotor con Control Cervical",intermediate
+A_CER_023,Activo,CER,"Nod Cervical con Retroalimentación","Nod Cervical con Retroalimentación",intermediate
+A_CER_024,Activo,CER,"Rotación con Banda en Decúbito Lateral","Rotación con Banda en Decúbito Lateral",intermediate
+A_CER_025,Activo,CER,"Isométrico Multidireccional de Cuello","Isométrico Multidireccional de Cuello",advanced
+A_CER_026,Activo,CER,"Fortalecimiento Cervical Bípedo con Banda","Fortalecimiento Cervical Bípedo con Banda",advanced
+A_CER_027,Activo,CER,"Control Motor Cervical Avanzado","Control Motor Cervical Avanzado",advanced
+A_CER_028,Activo,CER,"Chin Tuck con Extensión de Brazos","Chin Tuck con Extensión de Brazos",advanced
+A_CER_029,Activo,CER,"Flexión Lateral Dinámica Cervical","Flexión Lateral Dinámica Cervical",advanced
+A_CER_030,Activo,CER,"Activación Cervical en Sedestación Inestable","Activación Cervical en Sedestación Inestable",advanced
+A_CER_031,Activo,CER,"Fortalecimiento Cervical con Casco de Resistencia","Fortalecimiento Cervical con Casco de Resistencia",advanced
+A_CER_032,Activo,CER,"Extensión Cervical en Cuadrupedia","Extensión Cervical en Cuadrupedia",advanced
+A_CER_033,Activo,CER,"Rotación Cervical con Ojos Cerrados","Rotación Cervical con Ojos Cerrados",advanced
+A_CER_034,Activo,CER,"Control Cefálico en Supino con Apoyo","Control Cefálico en Supino con Apoyo",advanced
+A_CER_035,Activo,CER,"Estabilización Cervical Multiplanar con Banda","Estabilización Cervical Multiplanar con Banda",advanced
+A_TOR_001,Activo,TOR,"Extensión Torácica sobre Foam Roller","Extensión Torácica sobre Foam Roller",beginner
+A_TOR_002,Activo,TOR,"Rotación Torácica en Sedestación","Rotación Torácica en Sedestación",beginner
+A_TOR_003,Activo,TOR,"Apertura Pectoral con Fitball","Apertura Pectoral con Fitball",beginner
+A_TOR_004,Activo,TOR,"Extensión Torácica con Fitball","Extensión Torácica con Fitball",beginner
+A_TOR_005,Activo,TOR,"Book Opening en Cuadrupedia","Book Opening en Cuadrupedia",beginner
+A_TOR_006,Activo,TOR,"Press de Pecho en Polea Alta","Press de Pecho en Polea Alta",beginner
+A_TOR_007,Activo,TOR,"Remo con Polea Baja","Remo con Polea Baja",beginner
+A_TOR_008,Activo,TOR,"Jalón al Pecho con Polea","Jalón al Pecho con Polea",beginner
+A_TOR_009,Activo,TOR,"Extensión Torácica con Banda","Extensión Torácica con Banda",beginner
+A_TOR_010,Activo,TOR,"Rotación Torácica con Bastón","Rotación Torácica con Bastón",beginner
+A_TOR_011,Activo,TOR,"Expansión Costal con Banda","Expansión Costal con Banda",beginner
+A_TOR_012,Activo,TOR,"Remo en Polea con Control Torácico","Remo en Polea con Control Torácico",beginner
+A_TOR_013,Activo,TOR,"Retracción Escapular con Banda","Retracción Escapular con Banda",intermediate
+A_TOR_014,Activo,TOR,"Elevación de Brazos con Control Torácico","Elevación de Brazos con Control Torácico",intermediate
+A_TOR_015,Activo,TOR,"Superman Torácico con Extensión de Brazos","Superman Torácico con Extensión de Brazos",intermediate
+A_TOR_016,Activo,TOR,"Remo Unilateral en Polea","Remo Unilateral en Polea",intermediate
+A_TOR_017,Activo,TOR,"Extensión de Cadena Posterior Torácica","Extensión de Cadena Posterior Torácica",intermediate
+A_TOR_018,Activo,TOR,"Rotación con Peso Libre","Rotación con Peso Libre",intermediate
+A_TOR_019,Activo,TOR,"Movilización Torácica con Bastón","Movilización Torácica con Bastón",intermediate
+A_TOR_020,Activo,TOR,"Flexión Lateral Torácica con Fitball","Flexión Lateral Torácica con Fitball",intermediate
+A_TOR_021,Activo,TOR,"Control Escapular en Plancha","Control Escapular en Plancha",intermediate
+A_TOR_022,Activo,TOR,"Apertura en Decúbito Lateral (Open Book)","Apertura en Decúbito Lateral (Open Book)",advanced
+A_TOR_023,Activo,TOR,"Extensión Torácica con Mancuerna en Banco","Extensión Torácica con Mancuerna en Banco",advanced
+A_TOR_024,Activo,TOR,"Tracción Vertical con Banda","Tracción Vertical con Banda",advanced
+A_TOR_025,Activo,TOR,"Activación Intercostal con Respiración Dirigida","Activación Intercostal con Respiración Dirigida",advanced
+A_TOR_026,Activo,TOR,"Estiramiento Activo de Cadena Anterior","Estiramiento Activo de Cadena Anterior",advanced
+A_TOR_027,Activo,TOR,"Rotación Torácica con Pelota Medicinal","Rotación Torácica con Pelota Medicinal",advanced
+A_TOR_028,Activo,TOR,"Control Postural en Sedestación Inestable","Control Postural en Sedestación Inestable",advanced
+A_TOR_029,Activo,TOR,"Fortalecimiento del Serrato Anterior","Fortalecimiento del Serrato Anterior",advanced
+A_TOR_030,Activo,TOR,"Integración Toracolumbar con Banda","Integración Toracolumbar con Banda",advanced
+A_LUM_001,Activo,LUM,"Puente de Glúteos","Glute Bridge",beginner
+A_LUM_002,Activo,LUM,"Pájaro-Perro (Bird Dog)","Bird Dog",beginner
+A_LUM_003,Activo,LUM,"Bicho Muerto (Dead Bug)","Dead Bug",intermediate
+A_LUM_004,Activo,LUM,"Plancha Abdominal","Plank",beginner
+A_LUM_005,Activo,LUM,"Retroversión Pélvica (Pelvic Tilt)","Pelvic Tilt",beginner
+A_LUM_006,Activo,LUM,"Extensión Lumbar en Prono (McKenzie Press-Up)","McKenzie Press-Up",beginner
+A_LUM_007,Activo,LUM,"Sentadilla con Pared (Wall Squat)","Wall Squat",beginner
+A_LUM_008,Activo,LUM,"Curl Abdominal Corto","Short Crunch",beginner
+A_LUM_009,Activo,LUM,"Puente de Glúteos Unilateral","Single-Leg Glute Bridge",intermediate
+A_LUM_010,Activo,LUM,"Superman Prono","Prone Superman",beginner
+A_LUM_011,Activo,LUM,"Peso Muerto Rumano con Mancuernas","Peso Muerto Rumano con Mancuernas",beginner
+A_LUM_012,Activo,LUM,"Good Morning con Barra","Good Morning con Barra",beginner
+A_LUM_013,Activo,LUM,"Hip Thrust con Fitball","Hip Thrust con Fitball",beginner
+A_LUM_014,Activo,LUM,"Curl de Isquiotibiales en Fitball","Curl de Isquiotibiales en Fitball",beginner
+A_LUM_015,Activo,LUM,"Extensión de Cadera en Cuadrupedia con Peso","Extensión de Cadera en Cuadrupedia con Peso",beginner
+A_LUM_016,Activo,LUM,"Curl Abdominal Inverso","Curl Abdominal Inverso",beginner
+A_LUM_017,Activo,LUM,"Plancha Lateral","Plancha Lateral",beginner
+A_LUM_018,Activo,LUM,"Plancha con Rotación de Tronco","Plancha con Rotación de Tronco",beginner
+A_LUM_019,Activo,LUM,"Zancada con Control Lumbar","Zancada con Control Lumbar",intermediate
+A_LUM_020,Activo,LUM,"Sentadilla Goblet para Lumbar","Sentadilla Goblet para Lumbar",intermediate
+A_LUM_021,Activo,LUM,"Kettlebell Swing para Lumbar","Kettlebell Swing para Lumbar",intermediate
+A_LUM_022,Activo,LUM,"Elevación de Piernas en Prono","Elevación de Piernas en Prono",intermediate
+A_LUM_023,Activo,LUM,"Rotación de Tronco con Banda","Rotación de Tronco con Banda",intermediate
+A_LUM_024,Activo,LUM,"Curl Abdominal Funcional","Curl Abdominal Funcional",intermediate
+A_LUM_025,Activo,LUM,"Extensión de Tronco en Banco Romano","Extensión de Tronco en Banco Romano",intermediate
+A_LUM_026,Activo,LUM,"Plancha con Elevación de Brazo","Plancha con Elevación de Brazo",intermediate
+A_LUM_027,Activo,LUM,"Plancha con Elevación de Pierna","Plancha con Elevación de Pierna",intermediate
+A_LUM_028,Activo,LUM,"Remo con Mancuerna en Apoyo","Remo con Mancuerna en Apoyo",intermediate
+A_LUM_029,Activo,LUM,"Hip Hinge con Kettlebell","Hip Hinge con Kettlebell",intermediate
+A_LUM_030,Activo,LUM,"Sentadilla Búlgara con Control Lumbar","Sentadilla Búlgara con Control Lumbar",intermediate
+A_LUM_031,Activo,LUM,"Extensión de Cadera Unilateral en Fitball","Extensión de Cadera Unilateral en Fitball",intermediate
+A_LUM_032,Activo,LUM,"Tracción Antirotacional con Banda (Pallof Press)","Tracción Antirotacional con Banda (Pallof Press)",advanced
+A_LUM_033,Activo,LUM,"Core Antirotacional con Pallof Press","Core Antirotacional con Pallof Press",advanced
+A_LUM_034,Activo,LUM,"Rollout Abdominal con Rueda","Rollout Abdominal con Rueda",advanced
+A_LUM_035,Activo,LUM,"Activación de Multífido con Biofeedback","Activación de Multífido con Biofeedback",advanced
+A_LUM_036,Activo,LUM,"Core en Inestabilidad con BOSU","Core en Inestabilidad con BOSU",advanced
+A_LUM_037,Activo,LUM,"Estabilización Dinámica Lumbar con Pelota","Estabilización Dinámica Lumbar con Pelota",advanced
+A_LUM_038,Activo,LUM,"Peso Muerto con Hex Bar","Peso Muerto con Hex Bar",advanced
+A_LUM_039,Activo,LUM,"Hip Hinge con Resistencia de Banda","Hip Hinge con Resistencia de Banda",advanced
+A_LUM_040,Activo,LUM,"Sentadilla Frontal con Control Espinal","Sentadilla Frontal con Control Espinal",advanced
+A_LUM_041,Activo,LUM,"Extensión de Cadena Posterior en TRX","Extensión de Cadena Posterior en TRX",advanced
+A_LUM_042,Activo,LUM,"Isométrico Lumbar en Bipedestación","Isométrico Lumbar en Bipedestación",advanced
+A_LUM_043,Activo,LUM,"Extensión de Cadera con Polea Baja","Extensión de Cadera con Polea Baja",advanced
+A_LUM_044,Activo,LUM,"Curl-Up Abdominal Progresivo","Curl-Up Abdominal Progresivo",advanced
+A_LUM_045,Activo,LUM,"Integración Lumbo-Pélvica con Balón","Integración Lumbo-Pélvica con Balón",advanced
+A_SAC_001,Activo,SAC,"Estabilización Sacroilíaca con Banda","Estabilización Sacroilíaca con Banda",beginner
+A_SAC_002,Activo,SAC,"Marcha en Supino con Control Pélvico","Marcha en Supino con Control Pélvico",beginner
+A_SAC_003,Activo,SAC,"Clamshell para Glúteo Medio","Clamshell para Glúteo Medio",beginner
+A_SAC_004,Activo,SAC,"Abducción de Cadera con Banda","Abducción de Cadera con Banda",beginner
+A_SAC_005,Activo,SAC,"Rotación Externa de Cadera con Banda","Rotación Externa de Cadera con Banda",beginner
+A_SAC_006,Activo,SAC,"Puente de Glúteos con Banda Sacroilíaca","Puente de Glúteos con Banda Sacroilíaca",beginner
+A_SAC_007,Activo,SAC,"Sentadilla Monopodal para Estabilización SI","Sentadilla Monopodal para Estabilización SI",beginner
+A_SAC_008,Activo,SAC,"Zancada con Estabilización Pélvica","Zancada con Estabilización Pélvica",beginner
+A_SAC_009,Activo,SAC,"Step-Up con Control Sacroilíaco","Step-Up con Control Sacroilíaco",beginner
+A_SAC_010,Activo,SAC,"Abducción en Bipedestación con Banda","Abducción en Bipedestación con Banda",beginner
+A_SAC_011,Activo,SAC,"Patada de Glúteo con Banda","Patada de Glúteo con Banda",intermediate
+A_SAC_012,Activo,SAC,"Extensión de Cadera en Cuadrupedia","Extensión de Cadera en Cuadrupedia",intermediate
+A_SAC_013,Activo,SAC,"Rotación Pélvica Activa","Rotación Pélvica Activa",intermediate
+A_SAC_014,Activo,SAC,"Dead Bug con Énfasis Sacroilíaco","Dead Bug con Énfasis Sacroilíaco",intermediate
+A_SAC_015,Activo,SAC,"Fortalecimiento del Iliopsoas Controlado","Fortalecimiento del Iliopsoas Controlado",intermediate
+A_SAC_016,Activo,SAC,"Curl de Isquiotibiales con Banda para SI","Curl de Isquiotibiales con Banda para SI",intermediate
+A_SAC_017,Activo,SAC,"Estiramiento Activo del Piriforme","Estiramiento Activo del Piriforme",intermediate
+A_SAC_018,Activo,SAC,"Compresión Isométrica Sacroilíaca","Compresión Isométrica Sacroilíaca",advanced
+A_SAC_019,Activo,SAC,"Marcha con Cinta Elástica","Marcha con Cinta Elástica",advanced
+A_SAC_020,Activo,SAC,"Coordinación Lumbo-Pélvica en Estático","Coordinación Lumbo-Pélvica en Estático",advanced
+A_SAC_021,Activo,SAC,"Equilibrio Unipodal con Control SI","Equilibrio Unipodal con Control SI",advanced
+A_SAC_022,Activo,SAC,"Fortalecimiento Pelvi-Troncal Integrado","Fortalecimiento Pelvi-Troncal Integrado",advanced
+A_SAC_023,Activo,SAC,"Step-Down con Control Pélvico","Step-Down con Control Pélvico",advanced
+A_SAC_024,Activo,SAC,"Sentadilla en Caja con Control Sacroilíaco","Sentadilla en Caja con Control Sacroilíaco",advanced
+A_SAC_025,Activo,SAC,"Integración Sacroilíaca con Movimiento Global","Integración Sacroilíaca con Movimiento Global",advanced
+A_ATM_001,Activo,ATM,"Apertura Mandibular Controlada","Apertura Mandibular Controlada",beginner
+A_ATM_002,Activo,ATM,"Protrusión Mandibular Asistida","Protrusión Mandibular Asistida",beginner
+A_ATM_003,Activo,ATM,"Lateralidad Mandibular Simétrica","Lateralidad Mandibular Simétrica",beginner
+A_ATM_004,Activo,ATM,"Activación del Masetero con Resistencia","Activación del Masetero con Resistencia",beginner
+A_ATM_005,Activo,ATM,"Ejercicio de Posición Lingual (Mewing)","Ejercicio de Posición Lingual (Mewing)",intermediate
+A_ATM_006,Activo,ATM,"Control Mandibular con Espejo","Control Mandibular con Espejo",intermediate
+A_ATM_007,Activo,ATM,"Apertura Excéntrica con Resistencia Manual","Apertura Excéntrica con Resistencia Manual",intermediate
+A_ATM_008,Activo,ATM,"Activación del Pterigoideo Lateral","Activación del Pterigoideo Lateral",advanced
+A_ATM_009,Activo,ATM,"Estabilización de ATM con Barra Mordida","Estabilización de ATM con Barra Mordida",advanced
+A_ATM_010,Activo,ATM,"Coordinación Cóndilo-Disco con Biofeedback","Coordinación Cóndilo-Disco con Biofeedback",advanced
+A_HOM_001,Activo,HOM,"Rotación Externa de Hombro con Liga","Shoulder External Rotation with Band",beginner
+A_HOM_002,Activo,HOM,"Rotación Interna de Hombro con Liga","Shoulder Internal Rotation with Band",beginner
+A_HOM_003,Activo,HOM,"Elevación Frontal de Hombro","Shoulder Front Raise",beginner
+A_HOM_004,Activo,HOM,"Elevación Lateral de Hombro","Lateral Raise",beginner
+A_HOM_005,Activo,HOM,"Remo con Banda (Retracción Escapular)","Band Row with Scapular Retraction",beginner
+A_HOM_006,Activo,HOM,"Press de Hombro con Mancuernas","Dumbbell Shoulder Press",intermediate
+A_HOM_007,Activo,HOM,"Y-T-W de Escápula en Prono","Prone Y-T-W Exercise",intermediate
+A_HOM_008,Activo,HOM,"Estabilización de Hombro en Pared (Isométrico)","Wall Shoulder Isometric",beginner
+A_HOM_009,Activo,HOM,"Diagonal PNF de Hombro con Liga","PNF D2 Shoulder Pattern",intermediate
+A_HOM_010,Activo,HOM,"Pull-Apart con Liga (Apertura Pectoral)","Band Pull-Apart",beginner
+A_HOM_011,Activo,HOM,"Curl de Bíceps con Mancuerna","Curl de Bíceps con Mancuerna",beginner
+A_HOM_012,Activo,HOM,"Press Arnold con Mancuernas","Press Arnold con Mancuernas",beginner
+A_HOM_013,Activo,HOM,"Fly con Mancuerna (Pájaro)","Fly con Mancuerna (Pájaro)",beginner
+A_HOM_014,Activo,HOM,"Face Pull con Polea","Face Pull con Polea",beginner
+A_HOM_015,Activo,HOM,"Remo al Mentón con Banda","Remo al Mentón con Banda",beginner
+A_HOM_016,Activo,HOM,"Press Frontal con Barra","Press Frontal con Barra",beginner
+A_HOM_017,Activo,HOM,"Dominadas Asistidas","Dominadas Asistidas",beginner
+A_HOM_018,Activo,HOM,"Press de Pecho con Mancuernas","Press de Pecho con Mancuernas",beginner
+A_HOM_019,Activo,HOM,"Encogimiento de Hombros (Shrug)","Encogimiento de Hombros (Shrug)",intermediate
+A_HOM_020,Activo,HOM,"Rotación en 90° de Abducción","Rotación en 90° de Abducción",intermediate
+A_HOM_021,Activo,HOM,"Scaption con Mancuerna","Scaption con Mancuerna",intermediate
+A_HOM_022,Activo,HOM,"Wall Angels (Ángeles en Pared)","Wall Angels (Ángeles en Pared)",intermediate
+A_HOM_023,Activo,HOM,"Prone Row con Mancuerna","Prone Row con Mancuerna",intermediate
+A_HOM_024,Activo,HOM,"Extensión de Tríceps con Banda","Extensión de Tríceps con Banda",intermediate
+A_HOM_025,Activo,HOM,"Remo Vertical con Banda","Remo Vertical con Banda",intermediate
+A_HOM_026,Activo,HOM,"Apertura con Mancuerna en Banco","Apertura con Mancuerna en Banco",intermediate
+A_HOM_027,Activo,HOM,"Press Unilateral en Cable","Press Unilateral en Cable",intermediate
+A_HOM_028,Activo,HOM,"Rotación en Decúbito Lateral (L-Fly)","Rotación en Decúbito Lateral (L-Fly)",intermediate
+A_HOM_029,Activo,HOM,"Estabilización del Manguito con TRX","Estabilización del Manguito con TRX",intermediate
+A_HOM_030,Activo,HOM,"Pullover con Mancuerna","Pullover con Mancuerna",intermediate
+A_HOM_031,Activo,HOM,"Cuban Press","Cuban Press",intermediate
+A_HOM_032,Activo,HOM,"Fortalecimiento del Serrato con Press-Up Plus","Fortalecimiento del Serrato con Press-Up Plus",advanced
+A_HOM_033,Activo,HOM,"Cable Crossover para Aductores de Hombro","Cable Crossover para Aductores de Hombro",advanced
+A_HOM_034,Activo,HOM,"Fortalecimiento de Trapecio Inferior en Prono","Fortalecimiento de Trapecio Inferior en Prono",advanced
+A_HOM_035,Activo,HOM,"Movilización Activa de Hombro con Bastón","Movilización Activa de Hombro con Bastón",advanced
+A_HOM_036,Activo,HOM,"Press Pallof de Hombro","Press Pallof de Hombro",advanced
+A_HOM_037,Activo,HOM,"Rotación Externa en Decúbito Lateral con Mancuerna","Rotación Externa en Decúbito Lateral con Mancuerna",advanced
+A_HOM_038,Activo,HOM,"Isométrico de Hombro en Diferentes Planos","Isométrico de Hombro en Diferentes Planos",advanced
+A_HOM_039,Activo,HOM,"Fortalecimiento Funcional con Pelota Medicinal","Fortalecimiento Funcional con Pelota Medicinal",advanced
+A_HOM_040,Activo,HOM,"Estabilización Escapular con TRX","Estabilización Escapular con TRX",advanced
+A_HOM_041,Activo,HOM,"Integración Hombro-Core con Banda Diagonal","Integración Hombro-Core con Banda Diagonal",advanced
+A_HOM_042,Activo,HOM,"Theraband Flexion para Hombro","Theraband Flexion para Hombro",advanced
+A_HOM_043,Activo,HOM,"Activación del Manguito en Posición Funcional","Activación del Manguito en Posición Funcional",advanced
+A_HOM_044,Activo,HOM,"Press Inclinado con Mancuernas","Press Inclinado con Mancuernas",advanced
+A_HOM_045,Activo,HOM,"Fortalecimiento Global del Complejo del Hombro","Fortalecimiento Global del Complejo del Hombro",advanced
+A_COD_001,Activo,COD,"Curl de Bíceps con Mancuerna","Curl de Bíceps con Mancuerna",beginner
+A_COD_002,Activo,COD,"Curl Martillo con Mancuerna","Curl Martillo con Mancuerna",beginner
+A_COD_003,Activo,COD,"Curl de Bíceps en Banco Inclinado","Curl de Bíceps en Banco Inclinado",beginner
+A_COD_004,Activo,COD,"Extensión de Tríceps en Polea Alta","Extensión de Tríceps en Polea Alta",beginner
+A_COD_005,Activo,COD,"Skull Crusher con Barra","Skull Crusher con Barra",beginner
+A_COD_006,Activo,COD,"Curl de Bíceps con Banda","Curl de Bíceps con Banda",beginner
+A_COD_007,Activo,COD,"Extensión de Tríceps con Mancuerna","Extensión de Tríceps con Mancuerna",beginner
+A_COD_008,Activo,COD,"Curl Inverso (Pronación de Antebrazo)","Curl Inverso (Pronación de Antebrazo)",beginner
+A_COD_009,Activo,COD,"Pronación de Antebrazo con Pesa","Pronación de Antebrazo con Pesa",intermediate
+A_COD_010,Activo,COD,"Supinación de Antebrazo con Pesa","Supinación de Antebrazo con Pesa",intermediate
+A_COD_011,Activo,COD,"Flexión de Codo Isométrica","Flexión de Codo Isométrica",intermediate
+A_COD_012,Activo,COD,"Extensión de Codo Isométrica","Extensión de Codo Isométrica",intermediate
+A_COD_013,Activo,COD,"Curl de Muñeca en Pronación","Curl de Muñeca en Pronación",intermediate
+A_COD_014,Activo,COD,"Curl de Muñeca en Supinación","Curl de Muñeca en Supinación",intermediate
+A_COD_015,Activo,COD,"Extensión de Muñeca para Epicóndilo Lateral","Extensión de Muñeca para Epicóndilo Lateral",advanced
+A_COD_016,Activo,COD,"Fortalecimiento de Flexores del Codo con Banda","Fortalecimiento de Flexores del Codo con Banda",advanced
+A_COD_017,Activo,COD,"Tyler Twist para Epicondilitis","Tyler Twist para Epicondilitis",advanced
+A_COD_018,Activo,COD,"Therabar Pronación-Supinación","Therabar Pronación-Supinación",advanced
+A_COD_019,Activo,COD,"Curl de Bíceps Concentrado","Curl de Bíceps Concentrado",advanced
+A_COD_020,Activo,COD,"Extensión de Tríceps en Decúbito","Extensión de Tríceps en Decúbito",advanced
+A_MUN_001,Activo,MUN,"Curl de Muñeca en Supinación","Curl de Muñeca en Supinación",beginner
+A_MUN_002,Activo,MUN,"Curl de Muñeca en Pronación","Curl de Muñeca en Pronación",beginner
+A_MUN_003,Activo,MUN,"Desviación Radial con Pesa","Desviación Radial con Pesa",beginner
+A_MUN_004,Activo,MUN,"Desviación Cubital con Pesa","Desviación Cubital con Pesa",beginner
+A_MUN_005,Activo,MUN,"Pinza Lateral (Key Pinch)","Pinza Lateral (Key Pinch)",beginner
+A_MUN_006,Activo,MUN,"Agarre de Pelota de Estrés","Agarre de Pelota de Estrés",beginner
+A_MUN_007,Activo,MUN,"Extensión de Muñeca con Therabar","Extensión de Muñeca con Therabar",intermediate
+A_MUN_008,Activo,MUN,"Pronación-Supinación con Bastón","Pronación-Supinación con Bastón",intermediate
+A_MUN_009,Activo,MUN,"Abducción del Pulgar con Banda","Abducción del Pulgar con Banda",intermediate
+A_MUN_010,Activo,MUN,"Oposición del Pulgar con Resistencia","Oposición del Pulgar con Resistencia",intermediate
+A_MUN_011,Activo,MUN,"Fortalecimiento de Extensores de Dedos","Fortalecimiento de Extensores de Dedos",advanced
+A_MUN_012,Activo,MUN,"Activación del Interóseo Dorsal","Activación del Interóseo Dorsal",advanced
+A_MUN_013,Activo,MUN,"Curl de Muñeca Excéntrico","Curl de Muñeca Excéntrico",advanced
+A_MUN_014,Activo,MUN,"Ejercicio de Pinza de Precisión","Ejercicio de Pinza de Precisión",advanced
+A_MUN_015,Activo,MUN,"Integración de Muñeca en Cadena Cinética","Integración de Muñeca en Cadena Cinética",advanced
+A_CAD_001,Activo,CAD,"Clamshell con Banda","Clamshell con Banda",beginner
+A_CAD_002,Activo,CAD,"Abducción de Cadera en Bipedestación","Abducción de Cadera en Bipedestación",beginner
+A_CAD_003,Activo,CAD,"Abducción de Cadera en Decúbito Lateral","Abducción de Cadera en Decúbito Lateral",beginner
+A_CAD_004,Activo,CAD,"Extensión de Cadera con Polea Baja","Extensión de Cadera con Polea Baja",beginner
+A_CAD_005,Activo,CAD,"Hip Thrust con Barra","Hip Thrust con Barra",beginner
+A_CAD_006,Activo,CAD,"Sentadilla Sumo","Sentadilla Sumo",beginner
+A_CAD_007,Activo,CAD,"Zancada Lateral","Zancada Lateral",beginner
+A_CAD_008,Activo,CAD,"Sentadilla con Banda en Rodillas","Sentadilla con Banda en Rodillas",beginner
+A_CAD_009,Activo,CAD,"Rotación Interna de Cadera con Banda","Rotación Interna de Cadera con Banda",beginner
+A_CAD_010,Activo,CAD,"Rotación Externa de Cadera con Banda","Rotación Externa de Cadera con Banda",beginner
+A_CAD_011,Activo,CAD,"Patada de Glúteo con Banda","Patada de Glúteo con Banda",beginner
+A_CAD_012,Activo,CAD,"Puente de Glúteos con Fitball","Puente de Glúteos con Fitball",beginner
+A_CAD_013,Activo,CAD,"Step-Up Lateral","Step-Up Lateral",beginner
+A_CAD_014,Activo,CAD,"Fire Hydrant (Fuego Hidráulico)","Fire Hydrant (Fuego Hidráulico)",beginner
+A_CAD_015,Activo,CAD,"Sentadilla Búlgara para Cadera","Sentadilla Búlgara para Cadera",beginner
+A_CAD_016,Activo,CAD,"Hip Hinge con Kettlebell para Cadera","Hip Hinge con Kettlebell para Cadera",beginner
+A_CAD_017,Activo,CAD,"Curl de Isquiotibiales de Pie con Banda","Curl de Isquiotibiales de Pie con Banda",beginner
+A_CAD_018,Activo,CAD,"Flexión de Cadera con Banda","Flexión de Cadera con Banda",beginner
+A_CAD_019,Activo,CAD,"Sentadilla en Caja (Box Squat)","Sentadilla en Caja (Box Squat)",intermediate
+A_CAD_020,Activo,CAD,"Patada Trasera con Mancuerna","Patada Trasera con Mancuerna",intermediate
+A_CAD_021,Activo,CAD,"Abducción en Cuadrupedia con Banda","Abducción en Cuadrupedia con Banda",intermediate
+A_CAD_022,Activo,CAD,"Flexión de Cadera en Sedestación con Banda","Flexión de Cadera en Sedestación con Banda",intermediate
+A_CAD_023,Activo,CAD,"Peso Muerto Unilateral","Peso Muerto Unilateral",intermediate
+A_CAD_024,Activo,CAD,"Elevación de Cadera en Decúbito Lateral","Elevación de Cadera en Decúbito Lateral",intermediate
+A_CAD_025,Activo,CAD,"Rotación de Cadera en Sedestación","Rotación de Cadera en Sedestación",intermediate
+A_CAD_026,Activo,CAD,"Step-Down con Control de Cadera","Step-Down con Control de Cadera",intermediate
+A_CAD_027,Activo,CAD,"Sentadilla Goblet para Cadera","Sentadilla Goblet para Cadera",intermediate
+A_CAD_028,Activo,CAD,"Isquiotibiales Nórdicos","Isquiotibiales Nórdicos",intermediate
+A_CAD_029,Activo,CAD,"Curl de Isquiotibiales en Fitball","Curl de Isquiotibiales en Fitball",intermediate
+A_CAD_030,Activo,CAD,"Activación de Glúteo Menor en Bipedestación","Activación de Glúteo Menor en Bipedestación",intermediate
+A_CAD_031,Activo,CAD,"Extensión de Cadera en Cuadrupedia con Peso","Extensión de Cadera en Cuadrupedia con Peso",intermediate
+A_CAD_032,Activo,CAD,"Sentadilla en TRX para Cadera","Sentadilla en TRX para Cadera",advanced
+A_CAD_033,Activo,CAD,"Zancada Reverse con Control de Cadera","Zancada Reverse con Control de Cadera",advanced
+A_CAD_034,Activo,CAD,"Activación de Glúteo con Biofeedback","Activación de Glúteo con Biofeedback",advanced
+A_CAD_035,Activo,CAD,"Elevación de Pierna Lateral con Banda","Elevación de Pierna Lateral con Banda",advanced
+A_CAD_036,Activo,CAD,"Fortalecimiento del Iliopsoas","Fortalecimiento del Iliopsoas",advanced
+A_CAD_037,Activo,CAD,"Sentadilla Lateral","Sentadilla Lateral",advanced
+A_CAD_038,Activo,CAD,"Hip Circle con Banda","Hip Circle con Banda",advanced
+A_CAD_039,Activo,CAD,"Curl de Isquiotibiales con Polea","Curl de Isquiotibiales con Polea",advanced
+A_CAD_040,Activo,CAD,"Extensión de Cadera con BOSU","Extensión de Cadera con BOSU",advanced
+A_CAD_041,Activo,CAD,"Equilibrio Unipodal con Activación de Cadera","Equilibrio Unipodal con Activación de Cadera",advanced
+A_CAD_042,Activo,CAD,"Activación Multiplanar de Cadera con Banda","Activación Multiplanar de Cadera con Banda",advanced
+A_CAD_043,Activo,CAD,"Peso Muerto Rumano Unilateral","Peso Muerto Rumano Unilateral",advanced
+A_CAD_044,Activo,CAD,"Sentadilla Frontal para Cadera","Sentadilla Frontal para Cadera",advanced
+A_CAD_045,Activo,CAD,"Integración de Cadera en Movimiento Global","Integración de Cadera en Movimiento Global",advanced
+A_ROD_001,Activo,ROD,"Extensión de Rodilla en Sedestación","Extensión de Rodilla en Sedestación",beginner
+A_ROD_002,Activo,ROD,"Curl de Isquiotibiales en Decúbito Prono","Curl de Isquiotibiales en Decúbito Prono",beginner
+A_ROD_003,Activo,ROD,"Sentadilla con Control de Rodilla","Sentadilla con Control de Rodilla",beginner
+A_ROD_004,Activo,ROD,"Zancada con Énfasis en Rodilla","Zancada con Énfasis en Rodilla",beginner
+A_ROD_005,Activo,ROD,"Step-Up Frontal","Step-Up Frontal",beginner
+A_ROD_006,Activo,ROD,"Step-Down Excéntrico","Step-Down Excéntrico",beginner
+A_ROD_007,Activo,ROD,"Prensa de Pierna (Leg Press)","Prensa de Pierna (Leg Press)",beginner
+A_ROD_008,Activo,ROD,"Sentadilla Isométrica a 30°","Sentadilla Isométrica a 30°",beginner
+A_ROD_009,Activo,ROD,"Sentadilla Isométrica a 60°","Sentadilla Isométrica a 60°",beginner
+A_ROD_010,Activo,ROD,"Sentadilla Isométrica a 90°","Sentadilla Isométrica a 90°",beginner
+A_ROD_011,Activo,ROD,"Terminal Knee Extension con Banda","Terminal Knee Extension con Banda",beginner
+A_ROD_012,Activo,ROD,"VMO Squat (Ángulo Estrecho)","VMO Squat (Ángulo Estrecho)",beginner
+A_ROD_013,Activo,ROD,"Sentadilla en Caja Baja","Sentadilla en Caja Baja",beginner
+A_ROD_014,Activo,ROD,"Curl de Isquiotibiales con Banda","Curl de Isquiotibiales con Banda",beginner
+A_ROD_015,Activo,ROD,"Extensión de Rodilla con Peso de Tobillo","Extensión de Rodilla con Peso de Tobillo",beginner
+A_ROD_016,Activo,ROD,"BOSU Squat","BOSU Squat",beginner
+A_ROD_017,Activo,ROD,"Equilibrio Unipodal con Énfasis en Rodilla","Equilibrio Unipodal con Énfasis en Rodilla",beginner
+A_ROD_018,Activo,ROD,"Salto en Caja Controlado (Box Jump)","Salto en Caja Controlado (Box Jump)",beginner
+A_ROD_019,Activo,ROD,"Sentadilla en Pared con Pelota","Sentadilla en Pared con Pelota",intermediate
+A_ROD_020,Activo,ROD,"Corrección de Tracking Rotuliano","Corrección de Tracking Rotuliano",intermediate
+A_ROD_021,Activo,ROD,"Curl Nórdico de Isquiotibiales","Curl Nórdico de Isquiotibiales",intermediate
+A_ROD_022,Activo,ROD,"Extensión de Rodilla con Theraband","Extensión de Rodilla con Theraband",intermediate
+A_ROD_023,Activo,ROD,"Knee Drive con Banda","Knee Drive con Banda",intermediate
+A_ROD_024,Activo,ROD,"Sentadilla con TRX","Sentadilla con TRX",intermediate
+A_ROD_025,Activo,ROD,"Fortalecimiento de VMO con Biofeedback","Fortalecimiento de VMO con Biofeedback",intermediate
+A_ROD_026,Activo,ROD,"Curl de Isquiotibiales en Fitball","Curl de Isquiotibiales en Fitball",intermediate
+A_ROD_027,Activo,ROD,"Swing de Kettlebell para Rodilla","Swing de Kettlebell para Rodilla",intermediate
+A_ROD_028,Activo,ROD,"Sentadilla Búlgara con Énfasis Rodilla","Sentadilla Búlgara con Énfasis Rodilla",intermediate
+A_ROD_029,Activo,ROD,"Prensa Unilateral","Prensa Unilateral",intermediate
+A_ROD_030,Activo,ROD,"Peso Muerto Rumano para Rodilla","Peso Muerto Rumano para Rodilla",intermediate
+A_ROD_031,Activo,ROD,"Levantarse de Silla (STS Funcional)","Levantarse de Silla (STS Funcional)",intermediate
+A_ROD_032,Activo,ROD,"Sentadilla con Banda de Resistencia","Sentadilla con Banda de Resistencia",advanced
+A_ROD_033,Activo,ROD,"Extensión Excéntrica de Rodilla","Extensión Excéntrica de Rodilla",advanced
+A_ROD_034,Activo,ROD,"Curl Excéntrico de Isquiotibiales","Curl Excéntrico de Isquiotibiales",advanced
+A_ROD_035,Activo,ROD,"Sentadilla en Pared con Pelota Medicinal","Sentadilla en Pared con Pelota Medicinal",advanced
+A_ROD_036,Activo,ROD,"Fortalecimiento de Glúteo para Rodilla","Fortalecimiento de Glúteo para Rodilla",advanced
+A_ROD_037,Activo,ROD,"Estabilización Dinámica de Rodilla","Estabilización Dinámica de Rodilla",advanced
+A_ROD_038,Activo,ROD,"Cadena Cinética Abierta de Rodilla","Cadena Cinética Abierta de Rodilla",advanced
+A_ROD_039,Activo,ROD,"Zancada Multiplanar para Rodilla","Zancada Multiplanar para Rodilla",advanced
+A_ROD_040,Activo,ROD,"Equilibrio en Superficie Inestable","Equilibrio en Superficie Inestable",advanced
+A_ROD_041,Activo,ROD,"Sentadilla con Kettlebell","Sentadilla con Kettlebell",advanced
+A_ROD_042,Activo,ROD,"Puente de Glúteos con Control de Rodilla","Puente de Glúteos con Control de Rodilla",advanced
+A_ROD_043,Activo,ROD,"VMO Isométrico Lateral","VMO Isométrico Lateral",advanced
+A_ROD_044,Activo,ROD,"Entrenamiento Propioceptivo de Rodilla","Entrenamiento Propioceptivo de Rodilla",advanced
+A_ROD_045,Activo,ROD,"Integración Rodilla-Cadera en Movimiento Funcional","Integración Rodilla-Cadera en Movimiento Funcional",advanced
+A_TOB_001,Activo,TOB,"Elevación de Talones Bilateral","Elevación de Talones Bilateral",beginner
+A_TOB_002,Activo,TOB,"Elevación de Talones Unilateral","Elevación de Talones Unilateral",beginner
+A_TOB_003,Activo,TOB,"Dorsiflexión de Tobillo con Banda","Dorsiflexión de Tobillo con Banda",beginner
+A_TOB_004,Activo,TOB,"Inversión de Tobillo con Banda","Inversión de Tobillo con Banda",beginner
+A_TOB_005,Activo,TOB,"Eversión de Tobillo con Banda","Eversión de Tobillo con Banda",beginner
+A_TOB_006,Activo,TOB,"Círculos de Tobillo","Círculos de Tobillo",beginner
+A_TOB_007,Activo,TOB,"Alfabeto con el Pie","Alfabeto con el Pie",beginner
+A_TOB_008,Activo,TOB,"Caminar en Puntas","Caminar en Puntas",beginner
+A_TOB_009,Activo,TOB,"Caminar en Talones","Caminar en Talones",beginner
+A_TOB_010,Activo,TOB,"Equilibrio Unipodal en Superficie Plana","Equilibrio Unipodal en Superficie Plana",beginner
+A_TOB_011,Activo,TOB,"Equilibrio Unipodal en BOSU","Equilibrio Unipodal en BOSU",beginner
+A_TOB_012,Activo,TOB,"Saltos con Control de Tobillo","Saltos con Control de Tobillo",beginner
+A_TOB_013,Activo,TOB,"Calf Raise en Escalón","Calf Raise en Escalón",beginner
+A_TOB_014,Activo,TOB,"Dorsiflexión con Kettlebell","Dorsiflexión con Kettlebell",beginner
+A_TOB_015,Activo,TOB,"Tabla de Equilibrio (Rocker Board)","Tabla de Equilibrio (Rocker Board)",beginner
+A_TOB_016,Activo,TOB,"Perturbaciones de Balance en Superficie Inestable","Perturbaciones de Balance en Superficie Inestable",beginner
+A_TOB_017,Activo,TOB,"Hop and Stick Unilateral","Hop and Stick Unilateral",beginner
+A_TOB_018,Activo,TOB,"Curl de Dedos con Toalla","Curl de Dedos con Toalla",beginner
+A_TOB_019,Activo,TOB,"Flexión Plantar con Theraband","Flexión Plantar con Theraband",intermediate
+A_TOB_020,Activo,TOB,"Plantar Flexion con Peso","Plantar Flexion con Peso",intermediate
+A_TOB_021,Activo,TOB,"Elevación del Dedo Gordo","Elevación del Dedo Gordo",intermediate
+A_TOB_022,Activo,TOB,"Activación del Tibial Anterior con Banda","Activación del Tibial Anterior con Banda",intermediate
+A_TOB_023,Activo,TOB,"Isométrico de Eversores","Isométrico de Eversores",intermediate
+A_TOB_024,Activo,TOB,"Salto Lateral con Control de Tobillo","Salto Lateral con Control de Tobillo",intermediate
+A_TOB_025,Activo,TOB,"Y-Balance Training de Tobillo","Y-Balance Training de Tobillo",intermediate
+A_TOB_026,Activo,TOB,"Rebote Controlado con Tobillo","Rebote Controlado con Tobillo",intermediate
+A_TOB_027,Activo,TOB,"Walking Lunges con Control de Tobillo","Walking Lunges con Control de Tobillo",intermediate
+A_TOB_028,Activo,TOB,"Stork Stand con Perturbación","Stork Stand con Perturbación",intermediate
+A_TOB_029,Activo,TOB,"Entrenamiento con Tabla de Wobble","Entrenamiento con Tabla de Wobble",intermediate
+A_TOB_030,Activo,TOB,"Calf Raise con Rodilla Flexionada (Sóleo)","Calf Raise con Rodilla Flexionada (Sóleo)",intermediate
+A_TOB_031,Activo,TOB,"Heel Drop Excéntrico en Escalón","Heel Drop Excéntrico en Escalón",intermediate
+A_TOB_032,Activo,TOB,"Tibial Posterior con Banda","Tibial Posterior con Banda",advanced
+A_TOB_033,Activo,TOB,"Peroneo Lateral con Banda","Peroneo Lateral con Banda",advanced
+A_TOB_034,Activo,TOB,"Tres Planos de Tobillo con Banda","Tres Planos de Tobillo con Banda",advanced
+A_TOB_035,Activo,TOB,"Triple Hop for Distance","Triple Hop for Distance",advanced
+A_TOB_036,Activo,TOB,"Landing Mechanics de Tobillo","Landing Mechanics de Tobillo",advanced
+A_TOB_037,Activo,TOB,"Box Jump con Control de Tobillo","Box Jump con Control de Tobillo",advanced
+A_TOB_038,Activo,TOB,"Entrenamiento Propioceptivo Avanzado de Tobillo","Entrenamiento Propioceptivo Avanzado de Tobillo",advanced
+A_TOB_039,Activo,TOB,"Zancada con Control de Tobillo","Zancada con Control de Tobillo",advanced
+A_TOB_040,Activo,TOB,"Sentadilla Unilateral con Énfasis en Tobillo","Sentadilla Unilateral con Énfasis en Tobillo",advanced
+A_TOB_041,Activo,TOB,"Balance en Punta de Pies","Balance en Punta de Pies",advanced
+A_TOB_042,Activo,TOB,"Calf Raise en Ángulo","Calf Raise en Ángulo",advanced
+A_TOB_043,Activo,TOB,"Escalera de Coordinación para Tobillo","Escalera de Coordinación para Tobillo",advanced
+A_TOB_044,Activo,TOB,"Entrenamiento Funcional de Tobillo","Entrenamiento Funcional de Tobillo",advanced
+A_TOB_045,Activo,TOB,"Integración de Tobillo en Movimiento Funcional","Integración de Tobillo en Movimiento Funcional",advanced
+A_PIE_001,Activo,PIE,"Arco Corto del Pie (Short Foot)","Arco Corto del Pie (Short Foot)",beginner
+A_PIE_002,Activo,PIE,"Extensión del Dedo Gordo","Extensión del Dedo Gordo",beginner
+A_PIE_003,Activo,PIE,"Flexión Plantar de Dedos","Flexión Plantar de Dedos",beginner
+A_PIE_004,Activo,PIE,"Separación de Dedos","Separación de Dedos",beginner
+A_PIE_005,Activo,PIE,"Curl de Toalla con los Dedos","Curl de Toalla con los Dedos",beginner
+A_PIE_006,Activo,PIE,"Canicas con los Dedos","Canicas con los Dedos",beginner
+A_PIE_007,Activo,PIE,"Fortalecimiento del Abductor del Dedo Gordo","Fortalecimiento del Abductor del Dedo Gordo",beginner
+A_PIE_008,Activo,PIE,"Elevación del Arco con Banda","Elevación del Arco con Banda",beginner
+A_PIE_009,Activo,PIE,"Caminar Descalzo en Superficie Variable","Caminar Descalzo en Superficie Variable",beginner
+A_PIE_010,Activo,PIE,"Ejercicio de Fascia Plantar con Pelota","Ejercicio de Fascia Plantar con Pelota",beginner
+A_PIE_011,Activo,PIE,"Dorsiflexión del Dedo Gordo con Resistencia","Dorsiflexión del Dedo Gordo con Resistencia",beginner
+A_PIE_012,Activo,PIE,"Eversión con Theraband para Peroneo","Eversión con Theraband para Peroneo",beginner
+A_PIE_013,Activo,PIE,"Windlass Mechanism Training","Windlass Mechanism Training",beginner
+A_PIE_014,Activo,PIE,"Equilibrio Unipodal Descalzo","Equilibrio Unipodal Descalzo",beginner
+A_PIE_015,Activo,PIE,"Salto con Control Plantar","Salto con Control Plantar",beginner
+A_PIE_016,Activo,PIE,"Fortalecimiento de Flexores de Dedos","Fortalecimiento de Flexores de Dedos",beginner
+A_PIE_017,Activo,PIE,"Resistencia con Goma para Dedo Gordo","Resistencia con Goma para Dedo Gordo",intermediate
+A_PIE_018,Activo,PIE,"Activación del Intrínseco Plantar","Activación del Intrínseco Plantar",intermediate
+A_PIE_019,Activo,PIE,"Short Foot con Perturbación","Short Foot con Perturbación",intermediate
+A_PIE_020,Activo,PIE,"Ejercicio de Hallux Valgus con Separadores","Ejercicio de Hallux Valgus con Separadores",intermediate
+A_PIE_021,Activo,PIE,"Calf Raise Descalzo","Calf Raise Descalzo",intermediate
+A_PIE_022,Activo,PIE,"Estiramiento Activo de Fascia Plantar","Estiramiento Activo de Fascia Plantar",intermediate
+A_PIE_023,Activo,PIE,"Entrenamiento Plantar en BOSU","Entrenamiento Plantar en BOSU",intermediate
+A_PIE_024,Activo,PIE,"Abducción del Quinto Dedo","Abducción del Quinto Dedo",intermediate
+A_PIE_025,Activo,PIE,"Fortalecimiento del Tendón de Aquiles para Pie","Fortalecimiento del Tendón de Aquiles para Pie",intermediate
+A_PIE_026,Activo,PIE,"Gait Retraining para Pie","Gait Retraining para Pie",intermediate
+A_PIE_027,Activo,PIE,"Escalera de Agilidad para Pie","Escalera de Agilidad para Pie",intermediate
+A_PIE_028,Activo,PIE,"Fortalecimiento de Arco en Superficie Inestable","Fortalecimiento de Arco en Superficie Inestable",intermediate
+A_PIE_029,Activo,PIE,"Heel-Toe Walking","Heel-Toe Walking",advanced
+A_PIE_030,Activo,PIE,"Masaje Activo con Pelota Prickly","Masaje Activo con Pelota Prickly",advanced
+A_PIE_031,Activo,PIE,"Activación del Cuadrado Plantar","Activación del Cuadrado Plantar",advanced
+A_PIE_032,Activo,PIE,"Flexi-Bar para Pie","Flexi-Bar para Pie",advanced
+A_PIE_033,Activo,PIE,"Balance Monopodal con Desafío Visual","Balance Monopodal con Desafío Visual",advanced
+A_PIE_034,Activo,PIE,"Elevación del Arco en Sedestación","Elevación del Arco en Sedestación",advanced
+A_PIE_035,Activo,PIE,"Entrenamiento Propioceptivo del Pie","Entrenamiento Propioceptivo del Pie",advanced
+A_PIE_036,Activo,PIE,"Corrección Biomecánica del Pie Plano","Corrección Biomecánica del Pie Plano",advanced
+A_PIE_037,Activo,PIE,"Activación de Lumbricales del Pie","Activación de Lumbricales del Pie",advanced
+A_PIE_038,Activo,PIE,"Control del Pie en Zancada","Control del Pie en Zancada",advanced
+A_PIE_039,Activo,PIE,"Integración del Pie en Cadena Cinética","Integración del Pie en Cadena Cinética",advanced
+A_PIE_040,Activo,PIE,"Movimiento Funcional Global del Pie","Movimiento Funcional Global del Pie",advanced
+B_CER_001,Osteopatía,CER,"HVLA Cervical en Rotación","HVLA Cervical en Rotación",beginner
+B_CER_002,Osteopatía,CER,"Energía Muscular Cervical en Rotación","Energía Muscular Cervical en Rotación",beginner
+B_CER_003,Osteopatía,CER,"Energía Muscular en Inclinación Cervical","Energía Muscular en Inclinación Cervical",beginner
+B_CER_004,Osteopatía,CER,"Inhibición de Suboccipitales","Inhibición de Suboccipitales",beginner
+B_CER_005,Osteopatía,CER,"Tracción Cervical en Decúbito","Tracción Cervical en Decúbito",beginner
+B_CER_006,Osteopatía,CER,"Counterstrain C1-C2 (Técnica de Jones)","Counterstrain C1-C2 (Técnica de Jones)",beginner
+B_CER_007,Osteopatía,CER,"Movilización Articulatoria Cervical en Deslizamiento","Movilización Articulatoria Cervical en Deslizamiento",beginner
+B_CER_008,Osteopatía,CER,"Movilización C0-C1 en Decúbito Supino","Movilización C0-C1 en Decúbito Supino",beginner
+B_CER_009,Osteopatía,CER,"Técnica Miofascial Cervical","Técnica Miofascial Cervical",intermediate
+B_CER_010,Osteopatía,CER,"Compresión-Descompresión Cervical","Compresión-Descompresión Cervical",intermediate
+B_CER_011,Osteopatía,CER,"HVLA C3-C4 en Decúbito Lateral","HVLA C3-C4 en Decúbito Lateral",intermediate
+B_CER_012,Osteopatía,CER,"Energía Muscular para Occipucio-Atlas","Energía Muscular para Occipucio-Atlas",intermediate
+B_CER_013,Osteopatía,CER,"Liberación Suboccipital Bilateral","Liberación Suboccipital Bilateral",intermediate
+B_CER_014,Osteopatía,CER,"Movilización Cervical en Flexión-Distracción","Movilización Cervical en Flexión-Distracción",intermediate
+B_CER_015,Osteopatía,CER,"Técnica Craneosacral para Cervical Alta","Técnica Craneosacral para Cervical Alta",advanced
+B_CER_016,Osteopatía,CER,"Inhibición de Escalenos","Inhibición de Escalenos",advanced
+B_CER_017,Osteopatía,CER,"Neurodinámica Periférica Cervical","Neurodinámica Periférica Cervical",advanced
+B_CER_018,Osteopatía,CER,"HVLA Cervicodorsal C7-T1","HVLA Cervicodorsal C7-T1",advanced
+B_CER_019,Osteopatía,CER,"Técnica Articulatoria Cervical Global","Técnica Articulatoria Cervical Global",advanced
+B_CER_020,Osteopatía,CER,"Movilización Cervical en Rotación Asistida","Movilización Cervical en Rotación Asistida",advanced
+B_TOR_001,Osteopatía,TOR,"HVLA Torácico en Extensión (Pistoletazo)","HVLA Torácico en Extensión (Pistoletazo)",beginner
+B_TOR_002,Osteopatía,TOR,"Energía Muscular Torácica en Rotación","Energía Muscular Torácica en Rotación",beginner
+B_TOR_003,Osteopatía,TOR,"Técnica de Resorte Vertebral Torácico","Técnica de Resorte Vertebral Torácico",beginner
+B_TOR_004,Osteopatía,TOR,"HVLA Torácico Bilateral en Supino","HVLA Torácico Bilateral en Supino",beginner
+B_TOR_005,Osteopatía,TOR,"HVLA Torácico con Palanca Larga","HVLA Torácico con Palanca Larga",beginner
+B_TOR_006,Osteopatía,TOR,"Energía Muscular para Costillas","Energía Muscular para Costillas",beginner
+B_TOR_007,Osteopatía,TOR,"Movilización de Articulación Costovertebral","Movilización de Articulación Costovertebral",beginner
+B_TOR_008,Osteopatía,TOR,"Técnica Articulatoria Torácica Global","Técnica Articulatoria Torácica Global",beginner
+B_TOR_009,Osteopatía,TOR,"Counterstrain Torácico Posterior","Counterstrain Torácico Posterior",intermediate
+B_TOR_010,Osteopatía,TOR,"Liberación Miofascial de Cadena Anterior","Liberación Miofascial de Cadena Anterior",intermediate
+B_TOR_011,Osteopatía,TOR,"Deslizamiento Facetario Torácico","Deslizamiento Facetario Torácico",intermediate
+B_TOR_012,Osteopatía,TOR,"HVLA T4-T8 con Palanca Corta","HVLA T4-T8 con Palanca Corta",intermediate
+B_TOR_013,Osteopatía,TOR,"Técnica Funcional para Columna Torácica","Técnica Funcional para Columna Torácica",intermediate
+B_TOR_014,Osteopatía,TOR,"Inhibición del Paraespinal Torácico","Inhibición del Paraespinal Torácico",intermediate
+B_TOR_015,Osteopatía,TOR,"Técnica de Bomba Respiratoria Costal","Técnica de Bomba Respiratoria Costal",advanced
+B_TOR_016,Osteopatía,TOR,"Movilización Costocondral","Movilización Costocondral",advanced
+B_TOR_017,Osteopatía,TOR,"Técnica de Elevación de la Primera Costilla","Técnica de Elevación de la Primera Costilla",advanced
+B_TOR_018,Osteopatía,TOR,"HVLA C7-T1 en Bipedestación","HVLA C7-T1 en Bipedestación",advanced
+B_TOR_019,Osteopatía,TOR,"Integración Toracolumbar Articulatoria","Integración Toracolumbar Articulatoria",advanced
+B_TOR_020,Osteopatía,TOR,"Movilización Torácica con Bastón Asistido","Movilización Torácica con Bastón Asistido",advanced
+B_LUM_001,Osteopatía,LUM,"HVLA Lumbar en Decúbito Lateral (Kirksville Crunch)","HVLA Lumbar en Decúbito Lateral (Kirksville Crunch)",beginner
+B_LUM_002,Osteopatía,LUM,"Energía Muscular Lumbar en Flexión","Energía Muscular Lumbar en Flexión",beginner
+B_LUM_003,Osteopatía,LUM,"Energía Muscular Lumbar en Rotación","Energía Muscular Lumbar en Rotación",beginner
+B_LUM_004,Osteopatía,LUM,"Energía Muscular para Psoas","Energía Muscular para Psoas",beginner
+B_LUM_005,Osteopatía,LUM,"Movilización Lumbar en Flexión-Distracción","Movilización Lumbar en Flexión-Distracción",beginner
+B_LUM_006,Osteopatía,LUM,"Técnica de Torsión Lumbar en Supino","Técnica de Torsión Lumbar en Supino",beginner
+B_LUM_007,Osteopatía,LUM,"HVLA Lumbosacro en Decúbito Lateral","HVLA Lumbosacro en Decúbito Lateral",beginner
+B_LUM_008,Osteopatía,LUM,"Counterstrain del Cuadrado Lumbar","Counterstrain del Cuadrado Lumbar",beginner
+B_LUM_009,Osteopatía,LUM,"Compresión-Distracción Lumbar","Compresión-Distracción Lumbar",beginner
+B_LUM_010,Osteopatía,LUM,"Inhibición del Multífido Lumbar","Inhibición del Multífido Lumbar",beginner
+B_LUM_011,Osteopatía,LUM,"Liberación Miofascial de Fascia Toracolumbar","Liberación Miofascial de Fascia Toracolumbar",intermediate
+B_LUM_012,Osteopatía,LUM,"Técnica de Resorte L4-L5","Técnica de Resorte L4-L5",intermediate
+B_LUM_013,Osteopatía,LUM,"Técnica Funcional para Lumbar","Técnica Funcional para Lumbar",intermediate
+B_LUM_014,Osteopatía,LUM,"Técnica de Splay Sacral","Técnica de Splay Sacral",intermediate
+B_LUM_015,Osteopatía,LUM,"Movilización Lumbar en Extensión","Movilización Lumbar en Extensión",intermediate
+B_LUM_016,Osteopatía,LUM,"HVLA L5-S1 en Posición de Rotación","HVLA L5-S1 en Posición de Rotación",intermediate
+B_LUM_017,Osteopatía,LUM,"Counterstrain para Lumbar (Jones)","Counterstrain para Lumbar (Jones)",intermediate
+B_LUM_018,Osteopatía,LUM,"Liberación Miofascial del Psoas en Supino","Liberación Miofascial del Psoas en Supino",advanced
+B_LUM_019,Osteopatía,LUM,"Técnica Craneosacral para Lumbar","Técnica Craneosacral para Lumbar",advanced
+B_LUM_020,Osteopatía,LUM,"Neurodinámica del Nervio Ciático","Neurodinámica del Nervio Ciático",advanced
+B_LUM_021,Osteopatía,LUM,"Tracción Manual Lumbar","Tracción Manual Lumbar",advanced
+B_LUM_022,Osteopatía,LUM,"HVLA Lumbar en Prono","HVLA Lumbar en Prono",advanced
+B_LUM_023,Osteopatía,LUM,"Energía Muscular para Cuadrado Lumbar","Energía Muscular para Cuadrado Lumbar",advanced
+B_LUM_024,Osteopatía,LUM,"Movilización Lumbar en Decúbito Lateral","Movilización Lumbar en Decúbito Lateral",advanced
+B_LUM_025,Osteopatía,LUM,"Integración Lumbo-Pélvica Osteopática","Integración Lumbo-Pélvica Osteopática",advanced
+B_SAC_001,Osteopatía,SAC,"HVLA Sacroilíaco (Técnica de Springing)","HVLA Sacroilíaco (Técnica de Springing)",beginner
+B_SAC_002,Osteopatía,SAC,"Energía Muscular para Ilíaco Anterior","Energía Muscular para Ilíaco Anterior",beginner
+B_SAC_003,Osteopatía,SAC,"Energía Muscular para Ilíaco Posterior","Energía Muscular para Ilíaco Posterior",beginner
+B_SAC_004,Osteopatía,SAC,"Energía Muscular para Sacro Anterior","Energía Muscular para Sacro Anterior",beginner
+B_SAC_005,Osteopatía,SAC,"Energía Muscular para Sacro Posterior","Energía Muscular para Sacro Posterior",beginner
+B_SAC_006,Osteopatía,SAC,"HVLA Sacroilíaco en Decúbito Lateral","HVLA Sacroilíaco en Decúbito Lateral",beginner
+B_SAC_007,Osteopatía,SAC,"Counterstrain del Piriforme","Counterstrain del Piriforme",beginner
+B_SAC_008,Osteopatía,SAC,"Liberación Sacral en Decúbito Supino","Liberación Sacral en Decúbito Supino",beginner
+B_SAC_009,Osteopatía,SAC,"Técnica Funcional para Articulación Sacroilíaca","Técnica Funcional para Articulación Sacroilíaca",intermediate
+B_SAC_010,Osteopatía,SAC,"Inhibición del Piriforme","Inhibición del Piriforme",intermediate
+B_SAC_011,Osteopatía,SAC,"Movilización Sacral con Oscilación","Movilización Sacral con Oscilación",intermediate
+B_SAC_012,Osteopatía,SAC,"Técnica de Resorte del Sacro","Técnica de Resorte del Sacro",intermediate
+B_SAC_013,Osteopatía,SAC,"HVLA del Pubis","HVLA del Pubis",intermediate
+B_SAC_014,Osteopatía,SAC,"Energía Muscular para Sínfisis Púbica","Energía Muscular para Sínfisis Púbica",intermediate
+B_SAC_015,Osteopatía,SAC,"Liberación del Cóccix","Liberación del Cóccix",advanced
+B_SAC_016,Osteopatía,SAC,"Técnica de Bombeo Sacral","Técnica de Bombeo Sacral",advanced
+B_SAC_017,Osteopatía,SAC,"Movilización del Ilíaco en Flexión-Extensión","Movilización del Ilíaco en Flexión-Extensión",advanced
+B_SAC_018,Osteopatía,SAC,"Inhibición de Gemelos de Cadera","Inhibición de Gemelos de Cadera",advanced
+B_SAC_019,Osteopatía,SAC,"Liberación Miofascial del Ligamento Sacroilíaco","Liberación Miofascial del Ligamento Sacroilíaco",advanced
+B_SAC_020,Osteopatía,SAC,"Integración Sacropélvica Osteopática","Integración Sacropélvica Osteopática",advanced
+B_ATM_001,Osteopatía,ATM,"Distracción de ATM en Supino","Distracción de ATM en Supino",beginner
+B_ATM_002,Osteopatía,ATM,"Movilización del Cóndilo Mandibular","Movilización del Cóndilo Mandibular",beginner
+B_ATM_003,Osteopatía,ATM,"Energía Muscular para Masetero","Energía Muscular para Masetero",beginner
+B_ATM_004,Osteopatía,ATM,"Energía Muscular para Pterigoideos","Energía Muscular para Pterigoideos",beginner
+B_ATM_005,Osteopatía,ATM,"Movilización Intraoral de ATM","Movilización Intraoral de ATM",beginner
+B_ATM_006,Osteopatía,ATM,"Inhibición del Masetero","Inhibición del Masetero",beginner
+B_ATM_007,Osteopatía,ATM,"Inhibición del Temporal","Inhibición del Temporal",intermediate
+B_ATM_008,Osteopatía,ATM,"Tracción Mandibular","Tracción Mandibular",intermediate
+B_ATM_009,Osteopatía,ATM,"Liberación Miofascial de Región ATM","Liberación Miofascial de Región ATM",intermediate
+B_ATM_010,Osteopatía,ATM,"Movilización del Hueso Hioides","Movilización del Hueso Hioides",intermediate
+B_ATM_011,Osteopatía,ATM,"Compresión-Descompresión de ATM","Compresión-Descompresión de ATM",advanced
+B_ATM_012,Osteopatía,ATM,"Counterstrain para ATM (Jones)","Counterstrain para ATM (Jones)",advanced
+B_ATM_013,Osteopatía,ATM,"Movilización en Lateralidad de Mandíbula","Movilización en Lateralidad de Mandíbula",advanced
+B_ATM_014,Osteopatía,ATM,"Energía Muscular para Occipito-Atlanto","Energía Muscular para Occipito-Atlanto",advanced
+B_ATM_015,Osteopatía,ATM,"Integración Craneomandibular Osteopática","Integración Craneomandibular Osteopática",advanced
+B_HOM_001,Osteopatía,HOM,"HVLA Glenohumeral en Posición de Elevación","HVLA Glenohumeral en Posición de Elevación",beginner
+B_HOM_002,Osteopatía,HOM,"Energía Muscular para Manguito Rotador","Energía Muscular para Manguito Rotador",beginner
+B_HOM_003,Osteopatía,HOM,"Movilización en Balanceo Glenohumeral","Movilización en Balanceo Glenohumeral",beginner
+B_HOM_004,Osteopatía,HOM,"Técnica de Mulligan para Hombro (MWM)","Técnica de Mulligan para Hombro (MWM)",beginner
+B_HOM_005,Osteopatía,HOM,"Distracción Glenohumeral","Distracción Glenohumeral",beginner
+B_HOM_006,Osteopatía,HOM,"Liberación Miofascial del Pectoral Menor","Liberación Miofascial del Pectoral Menor",beginner
+B_HOM_007,Osteopatía,HOM,"Deslizamiento Posterior de Cabeza Humeral","Deslizamiento Posterior de Cabeza Humeral",beginner
+B_HOM_008,Osteopatía,HOM,"Energía Muscular para Subescapular","Energía Muscular para Subescapular",beginner
+B_HOM_009,Osteopatía,HOM,"Counterstrain para Hombro","Counterstrain para Hombro",intermediate
+B_HOM_010,Osteopatía,HOM,"Movilización Acromioclavicular","Movilización Acromioclavicular",intermediate
+B_HOM_011,Osteopatía,HOM,"Energía Muscular para Trapecio","Energía Muscular para Trapecio",intermediate
+B_HOM_012,Osteopatía,HOM,"Movilización Esternoclavicular","Movilización Esternoclavicular",intermediate
+B_HOM_013,Osteopatía,HOM,"Liberación del Tendón del Supraespinoso","Liberación del Tendón del Supraespinoso",intermediate
+B_HOM_014,Osteopatía,HOM,"Compresión-Tracción Glenohumeral","Compresión-Tracción Glenohumeral",intermediate
+B_HOM_015,Osteopatía,HOM,"Neurodinámica del Plexo Braquial","Neurodinámica del Plexo Braquial",advanced
+B_HOM_016,Osteopatía,HOM,"Inhibición del Infraespinoso","Inhibición del Infraespinoso",advanced
+B_HOM_017,Osteopatía,HOM,"Técnica de Spencer para Hombro (6 posiciones)","Técnica de Spencer para Hombro (6 posiciones)",advanced
+B_HOM_018,Osteopatía,HOM,"Movilización Glenohumeral en Decúbito Lateral","Movilización Glenohumeral en Decúbito Lateral",advanced
+B_HOM_019,Osteopatía,HOM,"Energía Muscular para Elevadores de Escápula","Energía Muscular para Elevadores de Escápula",advanced
+B_HOM_020,Osteopatía,HOM,"Integración Escapulo-Torácica Osteopática","Integración Escapulo-Torácica Osteopática",advanced
+B_COD_001,Osteopatía,COD,"HVLA del Codo en Extensión","HVLA del Codo en Extensión",beginner
+B_COD_002,Osteopatía,COD,"Energía Muscular para Epicóndilo Lateral","Energía Muscular para Epicóndilo Lateral",beginner
+B_COD_003,Osteopatía,COD,"Técnica de Mills para Epicondilitis","Técnica de Mills para Epicondilitis",beginner
+B_COD_004,Osteopatía,COD,"Movilización Radiocubital Proximal","Movilización Radiocubital Proximal",beginner
+B_COD_005,Osteopatía,COD,"Movilización Radiocubital Distal","Movilización Radiocubital Distal",intermediate
+B_COD_006,Osteopatía,COD,"Neurodinámica del Nervio Radial","Neurodinámica del Nervio Radial",intermediate
+B_COD_007,Osteopatía,COD,"Neurodinámica del Nervio Cubital","Neurodinámica del Nervio Cubital",intermediate
+B_COD_008,Osteopatía,COD,"Liberación Miofascial del Compartimento Anterior del Codo","Liberación Miofascial del Compartimento Anterior del Codo",advanced
+B_COD_009,Osteopatía,COD,"Counterstrain para Codo","Counterstrain para Codo",advanced
+B_COD_010,Osteopatía,COD,"Integración Codo-Muñeca Osteopática","Integración Codo-Muñeca Osteopática",advanced
+B_MUN_001,Osteopatía,MUN,"Movilización Radiocarpal en Deslizamiento","Movilización Radiocarpal en Deslizamiento",beginner
+B_MUN_002,Osteopatía,MUN,"Distracción de Muñeca","Distracción de Muñeca",beginner
+B_MUN_003,Osteopatía,MUN,"Movilización del Escafoides","Movilización del Escafoides",beginner
+B_MUN_004,Osteopatía,MUN,"Movilización del Semilunar","Movilización del Semilunar",beginner
+B_MUN_005,Osteopatía,MUN,"Energía Muscular para Flexores de Muñeca","Energía Muscular para Flexores de Muñeca",intermediate
+B_MUN_006,Osteopatía,MUN,"Liberación del Túnel Carpiano (Movilización Neural)","Liberación del Túnel Carpiano (Movilización Neural)",intermediate
+B_MUN_007,Osteopatía,MUN,"Neurodinámica del Nervio Mediano","Neurodinámica del Nervio Mediano",intermediate
+B_MUN_008,Osteopatía,MUN,"Movilización de Articulaciones Intercarpianas","Movilización de Articulaciones Intercarpianas",advanced
+B_MUN_009,Osteopatía,MUN,"Counterstrain para Muñeca","Counterstrain para Muñeca",advanced
+B_MUN_010,Osteopatía,MUN,"Integración Muñeca-Codo Osteopática","Integración Muñeca-Codo Osteopática",advanced
+B_CAD_001,Osteopatía,CAD,"HVLA de Cadera en Extensión","HVLA de Cadera en Extensión",beginner
+B_CAD_002,Osteopatía,CAD,"Energía Muscular para Psoas","Energía Muscular para Psoas",beginner
+B_CAD_003,Osteopatía,CAD,"Energía Muscular para Piriforme","Energía Muscular para Piriforme",beginner
+B_CAD_004,Osteopatía,CAD,"Distracción de Cadera en Supino","Distracción de Cadera en Supino",beginner
+B_CAD_005,Osteopatía,CAD,"Movilización Coxofemoral en Abducción","Movilización Coxofemoral en Abducción",beginner
+B_CAD_006,Osteopatía,CAD,"Energía Muscular para Glúteo Mayor","Energía Muscular para Glúteo Mayor",beginner
+B_CAD_007,Osteopatía,CAD,"Tracción-Circunducción de Cadera","Tracción-Circunducción de Cadera",beginner
+B_CAD_008,Osteopatía,CAD,"Técnica de Spencer para Cadera","Técnica de Spencer para Cadera",beginner
+B_CAD_009,Osteopatía,CAD,"Liberación Miofascial del Tracto Iliotibial","Liberación Miofascial del Tracto Iliotibial",beginner
+B_CAD_010,Osteopatía,CAD,"Counterstrain para Cadera","Counterstrain para Cadera",beginner
+B_CAD_011,Osteopatía,CAD,"Energía Muscular para Tensor Fascia Lata","Energía Muscular para Tensor Fascia Lata",intermediate
+B_CAD_012,Osteopatía,CAD,"Liberación Miofascial del Psoas en Supino","Liberación Miofascial del Psoas en Supino",intermediate
+B_CAD_013,Osteopatía,CAD,"Movilización Femoral en Decúbito Lateral","Movilización Femoral en Decúbito Lateral",intermediate
+B_CAD_014,Osteopatía,CAD,"HVLA Coxofemoral en Abducción-Rotación","HVLA Coxofemoral en Abducción-Rotación",intermediate
+B_CAD_015,Osteopatía,CAD,"Energía Muscular para Rotadores Externos de Cadera","Energía Muscular para Rotadores Externos de Cadera",intermediate
+B_CAD_016,Osteopatía,CAD,"Inhibición del Piriforme en Decúbito Prono","Inhibición del Piriforme en Decúbito Prono",intermediate
+B_CAD_017,Osteopatía,CAD,"Neurodinámica del Nervio Ciático","Neurodinámica del Nervio Ciático",intermediate
+B_CAD_018,Osteopatía,CAD,"Técnica de Bomba Rítmica de Cadera","Técnica de Bomba Rítmica de Cadera",advanced
+B_CAD_019,Osteopatía,CAD,"Movilización Posterior de Cabeza Femoral","Movilización Posterior de Cabeza Femoral",advanced
+B_CAD_020,Osteopatía,CAD,"Energía Muscular para Aductores","Energía Muscular para Aductores",advanced
+B_CAD_021,Osteopatía,CAD,"Deslizamiento Inferior de Cadera","Deslizamiento Inferior de Cadera",advanced
+B_CAD_022,Osteopatía,CAD,"Liberación del Ligamento Inguinal","Liberación del Ligamento Inguinal",advanced
+B_CAD_023,Osteopatía,CAD,"Técnica Funcional para Cadera","Técnica Funcional para Cadera",advanced
+B_CAD_024,Osteopatía,CAD,"Movilización Pelvitrocantérica","Movilización Pelvitrocantérica",advanced
+B_CAD_025,Osteopatía,CAD,"Integración Coxo-Lumbo-Pélvica Osteopática","Integración Coxo-Lumbo-Pélvica Osteopática",advanced
+B_ROD_001,Osteopatía,ROD,"HVLA Tibiofemoral en Extensión","HVLA Tibiofemoral en Extensión",beginner
+B_ROD_002,Osteopatía,ROD,"Energía Muscular para Isquiotibiales","Energía Muscular para Isquiotibiales",beginner
+B_ROD_003,Osteopatía,ROD,"Energía Muscular para Cuádriceps","Energía Muscular para Cuádriceps",beginner
+B_ROD_004,Osteopatía,ROD,"Movilización Rotuliana (Patellar Mobilization)","Movilización Rotuliana (Patellar Mobilization)",beginner
+B_ROD_005,Osteopatía,ROD,"Técnica de Mulligan para Rodilla (MWM)","Técnica de Mulligan para Rodilla (MWM)",beginner
+B_ROD_006,Osteopatía,ROD,"Movilización del Ligamento Lateral Interno","Movilización del Ligamento Lateral Interno",beginner
+B_ROD_007,Osteopatía,ROD,"Movilización del Ligamento Lateral Externo","Movilización del Ligamento Lateral Externo",beginner
+B_ROD_008,Osteopatía,ROD,"Deslizamiento Tibial Anterior","Deslizamiento Tibial Anterior",beginner
+B_ROD_009,Osteopatía,ROD,"Deslizamiento Tibial Posterior","Deslizamiento Tibial Posterior",intermediate
+B_ROD_010,Osteopatía,ROD,"Liberación Miofascial del Tracto IT en Rodilla","Liberación Miofascial del Tracto IT en Rodilla",intermediate
+B_ROD_011,Osteopatía,ROD,"Counterstrain para Rodilla","Counterstrain para Rodilla",intermediate
+B_ROD_012,Osteopatía,ROD,"Inhibición del Poplíteo","Inhibición del Poplíteo",intermediate
+B_ROD_013,Osteopatía,ROD,"Movilización de la Articulación Tibioperonea Proximal","Movilización de la Articulación Tibioperonea Proximal",intermediate
+B_ROD_014,Osteopatía,ROD,"Neurodinámica para Nervio Ciático en Rodilla","Neurodinámica para Nervio Ciático en Rodilla",intermediate
+B_ROD_015,Osteopatía,ROD,"Liberación del Pliegue Sinovial","Liberación del Pliegue Sinovial",advanced
+B_ROD_016,Osteopatía,ROD,"Energía Muscular para Poplíteo","Energía Muscular para Poplíteo",advanced
+B_ROD_017,Osteopatía,ROD,"Movilización Rotatoria Tibial","Movilización Rotatoria Tibial",advanced
+B_ROD_018,Osteopatía,ROD,"Inhibición del TFL para Rodilla","Inhibición del TFL para Rodilla",advanced
+B_ROD_019,Osteopatía,ROD,"Técnica de Liberación de Menisco","Técnica de Liberación de Menisco",advanced
+B_ROD_020,Osteopatía,ROD,"Integración Rodilla-Cadera-Tobillo Osteopática","Integración Rodilla-Cadera-Tobillo Osteopática",advanced
+B_TOB_001,Osteopatía,TOB,"HVLA Tibioastragalino en Deslizamiento Anterior","HVLA Tibioastragalino en Deslizamiento Anterior",beginner
+B_TOB_002,Osteopatía,TOB,"Energía Muscular para Peroneos","Energía Muscular para Peroneos",beginner
+B_TOB_003,Osteopatía,TOB,"Energía Muscular para Tibial Anterior","Energía Muscular para Tibial Anterior",beginner
+B_TOB_004,Osteopatía,TOB,"Movilización Tibioperonea Distal","Movilización Tibioperonea Distal",beginner
+B_TOB_005,Osteopatía,TOB,"Técnica de Mulligan para Tobillo (MWM)","Técnica de Mulligan para Tobillo (MWM)",beginner
+B_TOB_006,Osteopatía,TOB,"Movilización del Astrágalo Anteroposterior","Movilización del Astrágalo Anteroposterior",beginner
+B_TOB_007,Osteopatía,TOB,"Energía Muscular para Tríceps Sural","Energía Muscular para Tríceps Sural",beginner
+B_TOB_008,Osteopatía,TOB,"Liberación Miofascial del Tendón de Aquiles","Liberación Miofascial del Tendón de Aquiles",beginner
+B_TOB_009,Osteopatía,TOB,"Distracción del Tobillo","Distracción del Tobillo",intermediate
+B_TOB_010,Osteopatía,TOB,"Counterstrain para Tobillo","Counterstrain para Tobillo",intermediate
+B_TOB_011,Osteopatía,TOB,"Movilización del Peroné Distal","Movilización del Peroné Distal",intermediate
+B_TOB_012,Osteopatía,TOB,"Energía Muscular para Inversores","Energía Muscular para Inversores",intermediate
+B_TOB_013,Osteopatía,TOB,"Energía Muscular para Eversores","Energía Muscular para Eversores",intermediate
+B_TOB_014,Osteopatía,TOB,"Inhibición del Tríceps Sural","Inhibición del Tríceps Sural",intermediate
+B_TOB_015,Osteopatía,TOB,"Neurodinámica del Nervio Tibial","Neurodinámica del Nervio Tibial",advanced
+B_TOB_016,Osteopatía,TOB,"Liberación del Retináculo Extensor","Liberación del Retináculo Extensor",advanced
+B_TOB_017,Osteopatía,TOB,"Movilización Subastragalina","Movilización Subastragalina",advanced
+B_TOB_018,Osteopatía,TOB,"Compresión-Descompresión del Tobillo","Compresión-Descompresión del Tobillo",advanced
+B_TOB_019,Osteopatía,TOB,"Liberación del Síndrome del Túnel Tarsiano","Liberación del Síndrome del Túnel Tarsiano",advanced
+B_TOB_020,Osteopatía,TOB,"Integración Tobillo-Rodilla Osteopática","Integración Tobillo-Rodilla Osteopática",advanced
+B_PIE_001,Osteopatía,PIE,"Movilización de Articulaciones de Lisfranc","Movilización de Articulaciones de Lisfranc",beginner
+B_PIE_002,Osteopatía,PIE,"Energía Muscular para Intrínsecos Plantares","Energía Muscular para Intrínsecos Plantares",beginner
+B_PIE_003,Osteopatía,PIE,"Liberación Miofascial de la Fascia Plantar","Liberación Miofascial de la Fascia Plantar",beginner
+B_PIE_004,Osteopatía,PIE,"Movilización del Primer Metatarsiano","Movilización del Primer Metatarsiano",beginner
+B_PIE_005,Osteopatía,PIE,"HVLA para Cuboides (Síndrome Peroneal)","HVLA para Cuboides (Síndrome Peroneal)",beginner
+B_PIE_006,Osteopatía,PIE,"Movilización de las Cuñas del Tarso","Movilización de las Cuñas del Tarso",beginner
+B_PIE_007,Osteopatía,PIE,"Energía Muscular para Flexores de Dedos","Energía Muscular para Flexores de Dedos",intermediate
+B_PIE_008,Osteopatía,PIE,"Counterstrain para Hallux Valgus","Counterstrain para Hallux Valgus",intermediate
+B_PIE_009,Osteopatía,PIE,"Inhibición del Flexor Corto del Dedo Gordo","Inhibición del Flexor Corto del Dedo Gordo",intermediate
+B_PIE_010,Osteopatía,PIE,"Movilización de Articulaciones Metatarsofalángicas","Movilización de Articulaciones Metatarsofalángicas",intermediate
+B_PIE_011,Osteopatía,PIE,"Neurodinámica del Nervio Plantar Medial","Neurodinámica del Nervio Plantar Medial",advanced
+B_PIE_012,Osteopatía,PIE,"Neurodinámica del Nervio Plantar Lateral","Neurodinámica del Nervio Plantar Lateral",advanced
+B_PIE_013,Osteopatía,PIE,"Liberación del Síndrome del Túnel del Tarso","Liberación del Síndrome del Túnel del Tarso",advanced
+B_PIE_014,Osteopatía,PIE,"Amasamiento Plantar Profundo (Effleurage)","Amasamiento Plantar Profundo (Effleurage)",advanced
+B_PIE_015,Osteopatía,PIE,"Integración del Pie en Cadena Cinética Completa","Integración del Pie en Cadena Cinética Completa",advanced
+C_CER_001,Estiramiento,CER,"Estiramiento de Trapecio Superior","Upper Trapezius Stretch",beginner
+C_CER_002,Estiramiento,CER,"Estiramiento del Esternocleidomastoideo","SCM Stretch",beginner
+C_CER_003,Estiramiento,CER,"Estiramiento de Escalenos","Scalene Stretch",beginner
+C_CER_004,Estiramiento,CER,"Estiramiento del Elevador de la Escápula","Levator Scapulae Stretch",beginner
+C_CER_005,Estiramiento,CER,"Flexión Cervical Libre (Chin-to-Chest)","Cervical Flexion Stretch",beginner
+C_CER_006,Estiramiento,CER,"Estiramiento Suboccipital","Suboccipital Release",beginner
+C_CER_007,Estiramiento,CER,"Rotación Cervical con Asistencia de Toalla","Towel-Assisted Cervical Rotation",beginner
+C_CER_008,Estiramiento,CER,"Estiramiento Angular de Trapecio Superior con Pared","Wall-Assisted Upper Trapezius Stretch",beginner
+C_CER_009,Estiramiento,CER,"Movilización Cervical en Decúbito Lateral","Side-Lying Cervical Mobilization",beginner
+C_CER_010,Estiramiento,CER,"Estiramiento Angular Complejo Cervical","Complex Cervical Angular Stretch",intermediate
+C_CER_011,Estiramiento,CER,"Estiramiento del Trapecio Medio","Estiramiento del Trapecio Medio",advanced
+C_CER_012,Estiramiento,CER,"Estiramiento Post-Isométrico Cervical Bilateral","Estiramiento Post-Isométrico Cervical Bilateral",advanced
+C_CER_013,Estiramiento,CER,"Estiramiento de la Cadena Posterior Cervical","Estiramiento de la Cadena Posterior Cervical",advanced
+C_CER_014,Estiramiento,CER,"Liberación Cervical con Punto de Presión","Liberación Cervical con Punto de Presión",advanced
+C_CER_015,Estiramiento,CER,"Estiramiento Cervical Global en Decúbito","Estiramiento Cervical Global en Decúbito",advanced
+C_TOR_001,Estiramiento,TOR,"Apertura Pectoral con Foam Roller","Apertura Pectoral con Foam Roller",beginner
+C_TOR_002,Estiramiento,TOR,"Estiramiento de Pectorales en Marco de Puerta","Estiramiento de Pectorales en Marco de Puerta",beginner
+C_TOR_003,Estiramiento,TOR,"Extensión Torácica con Foam Roller","Extensión Torácica con Foam Roller",beginner
+C_TOR_004,Estiramiento,TOR,"Book Opening en Decúbito Lateral","Book Opening en Decúbito Lateral",beginner
+C_TOR_005,Estiramiento,TOR,"Estiramiento de Romboides en Sedestación","Estiramiento de Romboides en Sedestación",beginner
+C_TOR_006,Estiramiento,TOR,"Estiramiento del Trapecio Medio","Estiramiento del Trapecio Medio",beginner
+C_TOR_007,Estiramiento,TOR,"Estiramiento de Dorsales con Poste","Estiramiento de Dorsales con Poste",intermediate
+C_TOR_008,Estiramiento,TOR,"Estiramiento Intercostal con Brazos","Estiramiento Intercostal con Brazos",intermediate
+C_TOR_009,Estiramiento,TOR,"Torsión Torácica en Sedestación","Torsión Torácica en Sedestación",intermediate
+C_TOR_010,Estiramiento,TOR,"Estiramiento de Cadena Anterior en Supino","Estiramiento de Cadena Anterior en Supino",intermediate
+C_TOR_011,Estiramiento,TOR,"Apertura de Cadena Anterior con Fitball","Apertura de Cadena Anterior con Fitball",advanced
+C_TOR_012,Estiramiento,TOR,"Estiramiento del Dorsal Ancho con Arco","Estiramiento del Dorsal Ancho con Arco",advanced
+C_TOR_013,Estiramiento,TOR,"Rotación Torácica con Asistencia","Rotación Torácica con Asistencia",advanced
+C_TOR_014,Estiramiento,TOR,"Estiramiento del Erector Espinal Torácico","Estiramiento del Erector Espinal Torácico",advanced
+C_TOR_015,Estiramiento,TOR,"Estiramiento Torácico Global con Bastón","Estiramiento Torácico Global con Bastón",advanced
+C_LUM_001,Estiramiento,LUM,"Rodilla al Pecho","Knee to Chest",beginner
+C_LUM_002,Estiramiento,LUM,"Rotación Lumbar en Supino","Supine Lumbar Rotation",beginner
+C_LUM_003,Estiramiento,LUM,"Postura del Niño (Child's Pose)","Child's Pose",beginner
+C_LUM_004,Estiramiento,LUM,"Estiramiento del Piriforme (figura 4)","Piriformis Figure-4 Stretch",beginner
+C_LUM_005,Estiramiento,LUM,"Estiramiento del Cuadrado Lumbar de Pie","Standing QL Stretch",beginner
+C_LUM_006,Estiramiento,LUM,"Cat-Cow (Gato-Vaca)","Cat-Cow",beginner
+C_LUM_007,Estiramiento,LUM,"Estiramiento del Psoas de Rodillas","Kneeling Hip Flexor Stretch",beginner
+C_LUM_008,Estiramiento,LUM,"Estiramiento de Isquiotibiales en Supino","Supine Hamstring Stretch",beginner
+C_LUM_009,Estiramiento,LUM,"Torsión Espinal Sentado","Seated Spinal Twist",beginner
+C_LUM_010,Estiramiento,LUM,"Estiramiento Lumbar en Supino con Pelota","Supine Lower Back Release",beginner
+C_LUM_011,Estiramiento,LUM,"Estiramiento del Glúteo Mayor en Supino","Estiramiento del Glúteo Mayor en Supino",advanced
+C_LUM_012,Estiramiento,LUM,"Liberación del Tendón de Aquiles para Lumbar","Liberación del Tendón de Aquiles para Lumbar",advanced
+C_LUM_013,Estiramiento,LUM,"Estiramiento en Pirámide (Downward Dog)","Estiramiento en Pirámide (Downward Dog)",advanced
+C_LUM_014,Estiramiento,LUM,"Posición Fetal con Apertura","Posición Fetal con Apertura",advanced
+C_LUM_015,Estiramiento,LUM,"Estiramiento Lumbar Global en Bipedestación","Estiramiento Lumbar Global en Bipedestación",advanced
+C_SAC_001,Estiramiento,SAC,"Estiramiento del Piriforme en Supino (Figura 4)","Estiramiento del Piriforme en Supino (Figura 4)",beginner
+C_SAC_002,Estiramiento,SAC,"Estiramiento del Glúteo Medio en Decúbito","Estiramiento del Glúteo Medio en Decúbito",beginner
+C_SAC_003,Estiramiento,SAC,"Estiramiento de la Banda IT en Bipedestación","Estiramiento de la Banda IT en Bipedestación",beginner
+C_SAC_004,Estiramiento,SAC,"Estiramiento del Glúteo Menor con Cruce","Estiramiento del Glúteo Menor con Cruce",beginner
+C_SAC_005,Estiramiento,SAC,"Estiramiento de Aductores en Bipedestación","Estiramiento de Aductores en Bipedestación",beginner
+C_SAC_006,Estiramiento,SAC,"Estiramiento Sacroilíaco con Rotación","Estiramiento Sacroilíaco con Rotación",beginner
+C_SAC_007,Estiramiento,SAC,"Liberación de Sacroilíaco con Pelota","Liberación de Sacroilíaco con Pelota",intermediate
+C_SAC_008,Estiramiento,SAC,"Estiramiento del Ligamento Sacroespinoso","Estiramiento del Ligamento Sacroespinoso",intermediate
+C_SAC_009,Estiramiento,SAC,"Rotación Sacroilíaca en Decúbito Lateral","Rotación Sacroilíaca en Decúbito Lateral",intermediate
+C_SAC_010,Estiramiento,SAC,"Estiramiento del Cuadrado Lumbar para SI","Estiramiento del Cuadrado Lumbar para SI",intermediate
+C_SAC_011,Estiramiento,SAC,"Estiramiento Activo del Piriforme en Cuadrupedia","Estiramiento Activo del Piriforme en Cuadrupedia",advanced
+C_SAC_012,Estiramiento,SAC,"Estiramiento del Isquiotibial Proximal para SI","Estiramiento del Isquiotibial Proximal para SI",advanced
+C_SAC_013,Estiramiento,SAC,"Postura de la Paloma para Sacroilíaca","Postura de la Paloma para Sacroilíaca",advanced
+C_SAC_014,Estiramiento,SAC,"Estiramiento Sacroilíaco Global","Estiramiento Sacroilíaco Global",advanced
+C_SAC_015,Estiramiento,SAC,"Integración Sacropélvica en Estiramiento","Integración Sacropélvica en Estiramiento",advanced
+C_ATM_001,Estiramiento,ATM,"Estiramiento del Masetero en Supino","Estiramiento del Masetero en Supino",beginner
+C_ATM_002,Estiramiento,ATM,"Estiramiento del Temporal con Compresión","Estiramiento del Temporal con Compresión",beginner
+C_ATM_003,Estiramiento,ATM,"Apertura Mandibular Asistida con Dedos","Apertura Mandibular Asistida con Dedos",beginner
+C_ATM_004,Estiramiento,ATM,"Estiramiento del Pterigoideo con Abrebocas","Estiramiento del Pterigoideo con Abrebocas",beginner
+C_ATM_005,Estiramiento,ATM,"Estiramiento del ECOM para ATM","Estiramiento del ECOM para ATM",beginner
+C_ATM_006,Estiramiento,ATM,"Estiramiento del Digástrico","Estiramiento del Digástrico",beginner
+C_ATM_007,Estiramiento,ATM,"Relajación de la Lengua y Suelo de Boca","Relajación de la Lengua y Suelo de Boca",intermediate
+C_ATM_008,Estiramiento,ATM,"Estiramiento del Occipital para ATM","Estiramiento del Occipital para ATM",intermediate
+C_ATM_009,Estiramiento,ATM,"Estiramiento Cervico-Mandibular","Estiramiento Cervico-Mandibular",intermediate
+C_ATM_010,Estiramiento,ATM,"Automasaje del Masetero","Automasaje del Masetero",intermediate
+C_ATM_011,Estiramiento,ATM,"Estiramiento del Músculo Buccinador","Estiramiento del Músculo Buccinador",advanced
+C_ATM_012,Estiramiento,ATM,"Relajación del Pterigoideo Interno con Presión","Relajación del Pterigoideo Interno con Presión",advanced
+C_ATM_013,Estiramiento,ATM,"Estiramiento de la Cadena Cráneo-Cervical para ATM","Estiramiento de la Cadena Cráneo-Cervical para ATM",advanced
+C_ATM_014,Estiramiento,ATM,"Estiramiento de la Articulación Atlantoaxoidea","Estiramiento de la Articulación Atlantoaxoidea",advanced
+C_ATM_015,Estiramiento,ATM,"Estiramiento Global Craneomandibular","Estiramiento Global Craneomandibular",advanced
+C_HOM_001,Estiramiento,HOM,"Estiramiento del Pectoral Mayor con Pared","Estiramiento del Pectoral Mayor con Pared",beginner
+C_HOM_002,Estiramiento,HOM,"Estiramiento Cruzado del Hombro (Cross-Body)","Estiramiento Cruzado del Hombro (Cross-Body)",beginner
+C_HOM_003,Estiramiento,HOM,"Estiramiento del Infraespinoso en Decúbito","Estiramiento del Infraespinoso en Decúbito",beginner
+C_HOM_004,Estiramiento,HOM,"Estiramiento del Subescapular con Rotación","Estiramiento del Subescapular con Rotación",beginner
+C_HOM_005,Estiramiento,HOM,"Estiramiento de la Cápsula Posterior Glenohumeral","Estiramiento de la Cápsula Posterior Glenohumeral",beginner
+C_HOM_006,Estiramiento,HOM,"Estiramiento del Trapecio Superior para Hombro","Estiramiento del Trapecio Superior para Hombro",beginner
+C_HOM_007,Estiramiento,HOM,"Estiramiento del Deltoides Posterior","Estiramiento del Deltoides Posterior",intermediate
+C_HOM_008,Estiramiento,HOM,"Estiramiento del Bíceps con Rotación Externa","Estiramiento del Bíceps con Rotación Externa",intermediate
+C_HOM_009,Estiramiento,HOM,"Estiramiento del Dorsal Ancho con Brazos","Estiramiento del Dorsal Ancho con Brazos",intermediate
+C_HOM_010,Estiramiento,HOM,"Estiramiento del Serrato Anterior","Estiramiento del Serrato Anterior",intermediate
+C_HOM_011,Estiramiento,HOM,"Estiramiento del Pectoral Menor en Pared","Estiramiento del Pectoral Menor en Pared",advanced
+C_HOM_012,Estiramiento,HOM,"Estiramiento del Redondo Mayor","Estiramiento del Redondo Mayor",advanced
+C_HOM_013,Estiramiento,HOM,"Estiramiento Global del Manguito Rotador","Estiramiento Global del Manguito Rotador",advanced
+C_HOM_014,Estiramiento,HOM,"Apertura de Hombros con Bastón","Apertura de Hombros con Bastón",advanced
+C_HOM_015,Estiramiento,HOM,"Estiramiento Hombro-Cuello Global","Estiramiento Hombro-Cuello Global",advanced
+C_COD_001,Estiramiento,COD,"Estiramiento de Flexores del Codo con Brazo Extendido","Estiramiento de Flexores del Codo con Brazo Extendido",beginner
+C_COD_002,Estiramiento,COD,"Estiramiento del Bíceps en Pronación","Estiramiento del Bíceps en Pronación",beginner
+C_COD_003,Estiramiento,COD,"Estiramiento de Extensores del Codo","Estiramiento de Extensores del Codo",beginner
+C_COD_004,Estiramiento,COD,"Estiramiento del Tríceps sobre la Cabeza","Estiramiento del Tríceps sobre la Cabeza",beginner
+C_COD_005,Estiramiento,COD,"Estiramiento del Pronador Redondo","Estiramiento del Pronador Redondo",beginner
+C_COD_006,Estiramiento,COD,"Estiramiento del Supinador","Estiramiento del Supinador",beginner
+C_COD_007,Estiramiento,COD,"Estiramiento de la Banda Epicondílea Lateral","Estiramiento de la Banda Epicondílea Lateral",intermediate
+C_COD_008,Estiramiento,COD,"Estiramiento de Flexores con Muñeca en Extensión","Estiramiento de Flexores con Muñeca en Extensión",intermediate
+C_COD_009,Estiramiento,COD,"Estiramiento de Extensores con Muñeca Flexionada","Estiramiento de Extensores con Muñeca Flexionada",intermediate
+C_COD_010,Estiramiento,COD,"Estiramiento del Compartimento Anterior del Codo","Estiramiento del Compartimento Anterior del Codo",intermediate
+C_COD_011,Estiramiento,COD,"Estiramiento del Compartimento Posterior del Codo","Estiramiento del Compartimento Posterior del Codo",advanced
+C_COD_012,Estiramiento,COD,"Estiramiento del Braquirradial","Estiramiento del Braquirradial",advanced
+C_COD_013,Estiramiento,COD,"Estiramiento Post-Isométrico de Flexores","Estiramiento Post-Isométrico de Flexores",advanced
+C_COD_014,Estiramiento,COD,"Relajación del Epicóndilo con Presión Sostenida","Relajación del Epicóndilo con Presión Sostenida",advanced
+C_COD_015,Estiramiento,COD,"Estiramiento Global Codo-Muñeca","Estiramiento Global Codo-Muñeca",advanced
+C_MUN_001,Estiramiento,MUN,"Estiramiento de Extensores de Muñeca (Prayer Stretch)","Estiramiento de Extensores de Muñeca (Prayer Stretch)",beginner
+C_MUN_002,Estiramiento,MUN,"Estiramiento de Flexores de Muñeca","Estiramiento de Flexores de Muñeca",beginner
+C_MUN_003,Estiramiento,MUN,"Estiramiento de la Fascia Palmar","Estiramiento de la Fascia Palmar",beginner
+C_MUN_004,Estiramiento,MUN,"Estiramiento del Pulgar con Desviación Cubital","Estiramiento del Pulgar con Desviación Cubital",beginner
+C_MUN_005,Estiramiento,MUN,"Estiramiento del Canal Carpiano","Estiramiento del Canal Carpiano",beginner
+C_MUN_006,Estiramiento,MUN,"Separación Activa de Dedos","Separación Activa de Dedos",beginner
+C_MUN_007,Estiramiento,MUN,"Estiramiento del Extensor del Dedo Gordo","Estiramiento del Extensor del Dedo Gordo",intermediate
+C_MUN_008,Estiramiento,MUN,"Estiramiento del Ligamento Anular con Tracción","Estiramiento del Ligamento Anular con Tracción",intermediate
+C_MUN_009,Estiramiento,MUN,"Movilización Activa de los Dedos","Movilización Activa de los Dedos",intermediate
+C_MUN_010,Estiramiento,MUN,"Estiramiento Interóseo con Apertura de Mano","Estiramiento Interóseo con Apertura de Mano",intermediate
+C_MUN_011,Estiramiento,MUN,"Estiramiento del Nervio Mediano (Slider)","Estiramiento del Nervio Mediano (Slider)",advanced
+C_MUN_012,Estiramiento,MUN,"Estiramiento de los Lumbricales","Estiramiento de los Lumbricales",advanced
+C_MUN_013,Estiramiento,MUN,"Estiramiento Post-Isométrico de Flexores de Dedos","Estiramiento Post-Isométrico de Flexores de Dedos",advanced
+C_MUN_014,Estiramiento,MUN,"Relajación de Mano con Calor","Relajación de Mano con Calor",advanced
+C_MUN_015,Estiramiento,MUN,"Estiramiento Global Muñeca-Mano","Estiramiento Global Muñeca-Mano",advanced
+C_CAD_001,Estiramiento,CAD,"Estiramiento del Psoas en Caballero","Estiramiento del Psoas en Caballero",beginner
+C_CAD_002,Estiramiento,CAD,"Estiramiento del Piriforme en Supino","Estiramiento del Piriforme en Supino",beginner
+C_CAD_003,Estiramiento,CAD,"Estiramiento de Aductores en Bipedestación","Estiramiento de Aductores en Bipedestación",beginner
+C_CAD_004,Estiramiento,CAD,"Estiramiento del Glúteo en Cruce (Figura 4)","Estiramiento del Glúteo en Cruce (Figura 4)",beginner
+C_CAD_005,Estiramiento,CAD,"Estiramiento de la Banda IT con Pared","Estiramiento de la Banda IT con Pared",beginner
+C_CAD_006,Estiramiento,CAD,"Estiramiento del Tensor Fascia Lata","Estiramiento del Tensor Fascia Lata",beginner
+C_CAD_007,Estiramiento,CAD,"Estiramiento del Isquiotibial con Toalla","Estiramiento del Isquiotibial con Toalla",intermediate
+C_CAD_008,Estiramiento,CAD,"Estiramiento del Cuádriceps de Pie","Estiramiento del Cuádriceps de Pie",intermediate
+C_CAD_009,Estiramiento,CAD,"Apertura de Cadera en Mariposa","Apertura de Cadera en Mariposa",intermediate
+C_CAD_010,Estiramiento,CAD,"Estiramiento del Glúteo Mayor en Supino","Estiramiento del Glúteo Mayor en Supino",intermediate
+C_CAD_011,Estiramiento,CAD,"Estiramiento del Isquiotibial Proximal","Estiramiento del Isquiotibial Proximal",advanced
+C_CAD_012,Estiramiento,CAD,"Estiramiento de Rotadores Externos de Cadera","Estiramiento de Rotadores Externos de Cadera",advanced
+C_CAD_013,Estiramiento,CAD,"Postura de la Paloma para Cadera","Postura de la Paloma para Cadera",advanced
+C_CAD_014,Estiramiento,CAD,"Estiramiento de la Cadena Posterior de Cadera","Estiramiento de la Cadena Posterior de Cadera",advanced
+C_CAD_015,Estiramiento,CAD,"Estiramiento Global de Cadera en Movimiento","Estiramiento Global de Cadera en Movimiento",advanced
+C_ROD_001,Estiramiento,ROD,"Estiramiento del Cuádriceps de Pie","Estiramiento del Cuádriceps de Pie",beginner
+C_ROD_002,Estiramiento,ROD,"Estiramiento de Isquiotibiales en Supino","Estiramiento de Isquiotibiales en Supino",beginner
+C_ROD_003,Estiramiento,ROD,"Estiramiento del Tríceps Sural para Rodilla","Estiramiento del Tríceps Sural para Rodilla",beginner
+C_ROD_004,Estiramiento,ROD,"Estiramiento de la Banda IT en Decúbito","Estiramiento de la Banda IT en Decúbito",beginner
+C_ROD_005,Estiramiento,ROD,"Estiramiento del Poplíteo","Estiramiento del Poplíteo",beginner
+C_ROD_006,Estiramiento,ROD,"Estiramiento de la Cápsula Posterior de Rodilla","Estiramiento de la Cápsula Posterior de Rodilla",beginner
+C_ROD_007,Estiramiento,ROD,"Estiramiento del Recto Femoral con Inclinación Pélvica","Estiramiento del Recto Femoral con Inclinación Pélvica",intermediate
+C_ROD_008,Estiramiento,ROD,"Estiramiento del Vasto Lateral","Estiramiento del Vasto Lateral",intermediate
+C_ROD_009,Estiramiento,ROD,"Estiramiento del Bíceps Femoral","Estiramiento del Bíceps Femoral",intermediate
+C_ROD_010,Estiramiento,ROD,"Estiramiento de Gemelo para Rodilla","Estiramiento de Gemelo para Rodilla",intermediate
+C_ROD_011,Estiramiento,ROD,"Movilización Activa de la Rótula","Movilización Activa de la Rótula",advanced
+C_ROD_012,Estiramiento,ROD,"Estiramiento de Ligamento Lateral en Valgo","Estiramiento de Ligamento Lateral en Valgo",advanced
+C_ROD_013,Estiramiento,ROD,"Estiramiento del Fondo de Saco Suprarrotuliano","Estiramiento del Fondo de Saco Suprarrotuliano",advanced
+C_ROD_014,Estiramiento,ROD,"Estiramiento Global de Rodilla en Supino","Estiramiento Global de Rodilla en Supino",advanced
+C_ROD_015,Estiramiento,ROD,"Estiramiento Rodilla-Cadera Integrado","Estiramiento Rodilla-Cadera Integrado",advanced
+C_TOB_001,Estiramiento,TOB,"Estiramiento del Tríceps Sural con Pared","Estiramiento del Tríceps Sural con Pared",beginner
+C_TOB_002,Estiramiento,TOB,"Estiramiento del Sóleo con Rodilla Flexionada","Estiramiento del Sóleo con Rodilla Flexionada",beginner
+C_TOB_003,Estiramiento,TOB,"Estiramiento del Tendón de Aquiles en Escalón","Estiramiento del Tendón de Aquiles en Escalón",beginner
+C_TOB_004,Estiramiento,TOB,"Estiramiento de los Peroneos en Inversión","Estiramiento de los Peroneos en Inversión",beginner
+C_TOB_005,Estiramiento,TOB,"Estiramiento del Tibial Anterior","Estiramiento del Tibial Anterior",beginner
+C_TOB_006,Estiramiento,TOB,"Estiramiento de la Cápsula Anterior del Tobillo","Estiramiento de la Cápsula Anterior del Tobillo",beginner
+C_TOB_007,Estiramiento,TOB,"Estiramiento del Retináculo del Tibial Posterior","Estiramiento del Retináculo del Tibial Posterior",intermediate
+C_TOB_008,Estiramiento,TOB,"Estiramiento del Tendón de Aquiles en Lunge","Estiramiento del Tendón de Aquiles en Lunge",intermediate
+C_TOB_009,Estiramiento,TOB,"Movilización Activa de Tobillo en Dorsiflexión","Movilización Activa de Tobillo en Dorsiflexión",intermediate
+C_TOB_010,Estiramiento,TOB,"Estiramiento de Plantiflexores en Supino","Estiramiento de Plantiflexores en Supino",intermediate
+C_TOB_011,Estiramiento,TOB,"Estiramiento del Tobillo en Inversión con Apoyo","Estiramiento del Tobillo en Inversión con Apoyo",advanced
+C_TOB_012,Estiramiento,TOB,"Estiramiento del Tobillo en Eversión con Apoyo","Estiramiento del Tobillo en Eversión con Apoyo",advanced
+C_TOB_013,Estiramiento,TOB,"Estiramiento de la Fascia Plantar para Tobillo","Estiramiento de la Fascia Plantar para Tobillo",advanced
+C_TOB_014,Estiramiento,TOB,"Post-Isométrico de Tríceps Sural","Post-Isométrico de Tríceps Sural",advanced
+C_TOB_015,Estiramiento,TOB,"Estiramiento Global Tobillo-Pie","Estiramiento Global Tobillo-Pie",advanced
+C_PIE_001,Estiramiento,PIE,"Estiramiento de la Fascia Plantar con Rodilla en Suelo","Estiramiento de la Fascia Plantar con Rodilla en Suelo",beginner
+C_PIE_002,Estiramiento,PIE,"Estiramiento del Dedo Gordo en Dorsiflexión","Estiramiento del Dedo Gordo en Dorsiflexión",beginner
+C_PIE_003,Estiramiento,PIE,"Estiramiento del Plantar Corto","Estiramiento del Plantar Corto",beginner
+C_PIE_004,Estiramiento,PIE,"Estiramiento de los Flexores de Dedos","Estiramiento de los Flexores de Dedos",beginner
+C_PIE_005,Estiramiento,PIE,"Estiramiento del Abductor del Dedo Gordo","Estiramiento del Abductor del Dedo Gordo",beginner
+C_PIE_006,Estiramiento,PIE,"Estiramiento del Flexor Largo del Dedo Gordo","Estiramiento del Flexor Largo del Dedo Gordo",beginner
+C_PIE_007,Estiramiento,PIE,"Estiramiento del Interóseo Plantar","Estiramiento del Interóseo Plantar",intermediate
+C_PIE_008,Estiramiento,PIE,"Masaje-Estiramiento de Fascia Plantar con Pelota","Masaje-Estiramiento de Fascia Plantar con Pelota",intermediate
+C_PIE_009,Estiramiento,PIE,"Estiramiento del Tendón de Aquiles Distal para Pie","Estiramiento del Tendón de Aquiles Distal para Pie",intermediate
+C_PIE_010,Estiramiento,PIE,"Estiramiento de los Extensores de Dedos","Estiramiento de los Extensores de Dedos",intermediate
+C_PIE_011,Estiramiento,PIE,"Separación Activa de Dedos del Pie","Separación Activa de Dedos del Pie",advanced
+C_PIE_012,Estiramiento,PIE,"Estiramiento del Plantar Largo","Estiramiento del Plantar Largo",advanced
+C_PIE_013,Estiramiento,PIE,"Estiramiento de la Articulación Subastragalina","Estiramiento de la Articulación Subastragalina",advanced
+C_PIE_014,Estiramiento,PIE,"Estiramiento del Metatarso en Flexión","Estiramiento del Metatarso en Flexión",advanced
+C_PIE_015,Estiramiento,PIE,"Estiramiento Global Plantar-Dorsal del Pie","Estiramiento Global Plantar-Dorsal del Pie",advanced

@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "glb": "nike3d-regions.glb",
+  "descripcion": "Mapeo de segmento clínico → regiones del modelo GLB",
+  "segmentos": {
+    "Hombro":   ["SHOULDER_R", "SHOULDER_L", "ARM_R", "ARM_L"],
+    "Pecho":    ["THORAX_ANT"],
+    "Espalda":  ["THORAX_POST", "LUMBAR_CORE"],
+    "Core":     ["LUMBAR_CORE", "THORAX_ANT"],
+    "Columna":  ["LUMBAR_CORE", "THORAX_POST", "CERVICAL"],
+    "Cadera":   ["PELVIS_HIP"],
+    "Rodilla":  ["KNEE", "THIGH"],
+    "Tobillo":  ["LOWER_LEG", "ANKLE_FOOT"],
+    "Cervical": ["CERVICAL", "SKULL"],
+    "Codo":     ["ARM_R", "ARM_L", "FOREARM_R", "FOREARM_L"],
+    "Muñeca":   ["FOREARM_R", "FOREARM_L"],
+    "Pierna":   ["THIGH", "KNEE"]
+  },
+  "regiones_glb": {
+    "SKULL":       { "meshes": 3,  "desc": "Cráneo" },
+    "CERVICAL":    { "meshes": 2,  "desc": "Columna cervical" },
+    "SHOULDER_R":  { "meshes": 1,  "desc": "Hombro derecho" },
+    "ARM_L":       { "meshes": 2,  "desc": "Brazo izquierdo (húmero)" },
+    "ARM_R":       { "meshes": 1,  "desc": "Brazo derecho (húmero)" },
+    "FOREARM_L":   { "meshes": 2,  "desc": "Antebrazo izquierdo" },
+    "THORAX_ANT":  { "meshes": 5,  "desc": "Tórax anterior (pecho)" },
+    "THORAX_POST": { "meshes": 6,  "desc": "Tórax posterior (espalda alta)" },
+    "LUMBAR_CORE": { "meshes": 7,  "desc": "Zona lumbar y core" },
+    "PELVIS_HIP":  { "meshes": 6,  "desc": "Pelvis y cadera" },
+    "THIGH":       { "meshes": 93, "desc": "Muslo" },
+    "KNEE":        { "meshes": 100,"desc": "Rodilla" },
+    "LOWER_LEG":   { "meshes": 5,  "desc": "Pierna baja (tibial)" },
+    "ANKLE_FOOT":  { "meshes": 0,  "desc": "Tobillo y pie" }
+  }
+}

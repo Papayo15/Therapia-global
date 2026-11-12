@@ -1,0 +1,140 @@
+{
+  "id": "F-ESC-020",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": false,
+    "angulos": {
+      "cadera_abd.L": 3,
+      "cadera_abd.R": 3,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80,
+      "hombro_flex.L": 90,
+      "hombro_flex.R": 90,
+      "@pitch": 28,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    },
+    "asentar": [],
+    "suelo": [
+      "foot.L",
+      "foot.R"
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L"
+    },
+    {
+      "cadena": "brazo.R"
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L",
+      "tol_cm": 2.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "pivote": {
+    "hueso": "foot.L"
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 1.7,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "pivote_x": -16
+    },
+    {
+      "t": 2.5,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "pivote_x": -16
+    },
+    {
+      "t": 4.2,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 5.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      },
+      {
+        "id": "trapezius_middle"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "serratus_anterior"
+      },
+      {
+        "id": "pectoralis_minor"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "clavicle.L"
+    },
+    {
+      "hueso": "clavicle.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "barra",
+      "uso": "barra_manos",
+      "soportes": true
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "En casa: borde de una mesa firme (mismo video).",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Remo invertido (TRX o barra)"
+}

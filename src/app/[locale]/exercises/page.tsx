@@ -7,10 +7,19 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
+import { type AnimData } from "@/components/exercises/Nike3DAnimatedViewer";
 import masterRegistry from "../../../../data/master-registry.json";
+import canalAAnims from "../../../../data/canal-a-animations.json";
+import canalCAnims from "../../../../data/canal-c-animations.json";
+
+// ─── Animation lookup: exerciseId → AnimData ───────────────────────────────────
+const ANIM_LOOKUP = new Map<string, AnimData>();
+for (const entry of [...canalAAnims.animations, ...canalCAnims.animations]) {
+  ANIM_LOOKUP.set(entry.id, entry.anim as unknown as AnimData);
+}
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
-type Canal = "A" | "B" | "all";
+type Canal = "A" | "B" | "C" | "all";
 
 interface RegistryEntry {
   id: string;
@@ -21,14 +30,23 @@ interface RegistryEntry {
   grupo_label: string;
   nombre_es: string;
   nombre_en: string;
+  titulo: string;
   equipo: string[];
   difficulty: string;
+  setup_paciente: string;
+  setup_terapeuta: string;
+  contacto_manos: string;
   ejecucion_tecnica: string;
   fisiologia_basica: string;
   pasos: string[];
-  visual_pixar: string;
+  visual_pixar_prompt: string;
   video_url: string;
   cloudflare_id: string;
+  // ── Campos 3D (Canal A y C) ─────────────────────────────────────────────
+  mesh_id_nike3d?:   string | string[] | null;
+  glb_region?:       string | string[] | null;
+  bilateral?:        boolean;
+  patologias_clave?: string[];
 }
 
 const ALL_ENTRIES = Object.values(masterRegistry) as RegistryEntry[];
@@ -85,6 +103,13 @@ function toExerciseData(entry: RegistryEntry): ExerciseData {
     ejecucion_tecnica: entry.ejecucion_tecnica,
     fisiologia_basica: entry.fisiologia_basica,
     pasos: entry.pasos,
+    titulo: entry.titulo,
+    setup_paciente: entry.setup_paciente,
+    setup_terapeuta: entry.setup_terapeuta,
+    contacto_manos: entry.contacto_manos,
+    glb_region: entry.glb_region ?? undefined,
+    bilateral: entry.bilateral,
+    anim: ANIM_LOOKUP.get(entry.id),
   };
 }
 
@@ -119,7 +144,7 @@ function ExerciseCard({ entry, onClick }: { entry: RegistryEntry; onClick: () =>
           className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded-full text-white"
           style={{ background: color }}
         >
-          {entry.canal === "A" ? "Activo" : entry.tipo_osteopatia ?? "Osteopatía"}
+          {entry.canal === "A" ? "Activo" : entry.canal === "C" ? "Estiramiento" : entry.tipo_osteopatia ?? "Osteopatía"}
         </span>
 
         {/* Difficulty badge */}
@@ -183,6 +208,7 @@ export default function ExercisesPage() {
 
   const countA = ALL_ENTRIES.filter((e) => e.canal === "A").length;
   const countB = ALL_ENTRIES.filter((e) => e.canal === "B").length;
+  const countC = ALL_ENTRIES.filter((e) => e.canal === "C").length;
 
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden">
@@ -196,7 +222,7 @@ export default function ExercisesPage() {
             <div>
               <h1 className="text-2xl font-bold text-slate-900">Biblioteca de Técnicas</h1>
               <p className="text-slate-500 mt-1">
-                {ALL_ENTRIES.length} técnicas · {countA} ejercicios activos · {countB} osteopatía
+                {countA} ejercicios · {countC} estiramientos · {countB} osteopatía
               </p>
             </div>
 
@@ -204,7 +230,8 @@ export default function ExercisesPage() {
             <div className="flex gap-1 p-1 bg-white border border-slate-200 rounded-xl w-fit">
               {[
                 { key: "all", label: "Todos" },
-                { key: "A",   label: `Canal A — Activo (${countA})` },
+                { key: "A",   label: `Canal A — Ejercicios (${countA})` },
+                { key: "C",   label: `Canal C — Estiramientos (${countC})` },
                 { key: "B",   label: `Canal B — Osteopatía (${countB})` },
               ].map(({ key, label }) => (
                 <button

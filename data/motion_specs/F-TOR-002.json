@@ -1,0 +1,137 @@
+{
+  "id": "F-TOR-002",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 85,
+      "hombro_flex.R": 85,
+      "codo_flex.L": 125,
+      "codo_flex.R": 125,
+      "hombro_abd_h.L": -40,
+      "hombro_abd_h.R": -40
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.2,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "toracica_flex": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "toracica_flex": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "toracica_flex": 30,
+        "cervical_flex": 15
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "toracica_flex": 30,
+        "cervical_flex": 15
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.3,
+      "art": {
+        "toracica_flex": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "toracica_flex": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "rectus_abdominis"
+      },
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "internal_oblique"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "erector_spinae_thoracic"
+      },
+      {
+        "id": "trapezius_middle"
+      },
+      {
+        "id": "trapezius_lower"
+      },
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Flexión torácica en sedente con brazos cruzados"
+}

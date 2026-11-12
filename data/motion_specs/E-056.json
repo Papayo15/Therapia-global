@@ -1,0 +1,130 @@
+{
+  "id": "E-056",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 110,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 100,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "a_hueso": {
+        "hueso": "lowerleg01.R",
+        "dir": "anterior",
+        "t": 0.1,
+        "sep": 0.03,
+        "lado": "L"
+      }
+    },
+    {
+      "cadena": "brazo.R",
+      "a_hueso": {
+        "hueso": "lowerleg01.R",
+        "dir": "anterior",
+        "t": 0.1,
+        "sep": 0.03,
+        "lado": "R"
+      }
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_abd.R": 0,
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_abd.R": 0,
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "cadera_abd.R": -20,
+        "toracica_rot": 20
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "cadera_abd.R": -20,
+        "toracica_rot": 20
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "cadera_abd.R": 0,
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "cadera_abd.R": 0,
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "gluteus_maximus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Sedente cruzando la pierna"
+}

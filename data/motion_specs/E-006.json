@@ -1,0 +1,143 @@
+{
+  "id": "E-006",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 70,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 110,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "a_hueso": {
+        "hueso": "head",
+        "dir": "posterior+lateral",
+        "t": 0.6,
+        "sep": 0.03,
+        "lado": "R"
+      }
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.35,
+    "grupos": [
+      "head",
+      "neck01",
+      "neck02",
+      "neck03",
+      "jaw",
+      "spine01",
+      "spine02",
+      "clavicle.L",
+      "clavicle.R",
+      "shoulder01.L",
+      "shoulder01.R"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cervical_flex": 0,
+        "cervical_rot": 0,
+        "cervical_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cervical_flex": 0,
+        "cervical_rot": 0,
+        "cervical_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "cervical_flex": 30,
+        "cervical_rot": 40,
+        "cervical_incl": 15
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "cervical_flex": 30,
+        "cervical_rot": 40,
+        "cervical_incl": 15
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "cervical_flex": 0,
+        "cervical_rot": 0,
+        "cervical_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "cervical_flex": 0,
+        "cervical_rot": 0,
+        "cervical_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "levator_scapulae",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "neck02"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Contracción-relajación (FNP)"
+}

@@ -1,0 +1,155 @@
+{
+  "id": "F-CER-011",
+  "duracion_s": 5.6,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 60,
+      "codo_flex.L": 50,
+      "codo_flex.R": 110
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.R",
+      "a_hueso": {
+        "hueso": "head",
+        "dir": "lateral",
+        "t": 0.5,
+        "sep": 0.03,
+        "lado": "R"
+      }
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.2,
+      -1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.35,
+    "grupos": [
+      "head",
+      "neck01",
+      "neck02",
+      "neck03",
+      "jaw",
+      "spine01",
+      "spine02",
+      "clavicle.L",
+      "clavicle.R",
+      "shoulder01.L",
+      "shoulder01.R"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 0.6,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.8,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 5.6,
+      "p": 0,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "scalene_anterior",
+        "lado": "R"
+      },
+      {
+        "id": "scalene_middle",
+        "lado": "R"
+      },
+      {
+        "id": "scalene_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "sternocleidomastoid",
+        "lado": "R"
+      },
+      {
+        "id": "trapezius_upper",
+        "lado": "R"
+      },
+      {
+        "id": "levator_scapulae",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "scalene_anterior",
+        "lado": "R"
+      },
+      {
+        "id": "scalene_middle",
+        "lado": "R"
+      },
+      {
+        "id": "scalene_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "trapezius_upper",
+        "lado": "R"
+      },
+      {
+        "id": "levator_scapulae",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "neck02"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Isométrico de inclinación lateral con mano"
+}

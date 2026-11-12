@@ -1,0 +1,16 @@
+{
+  "nota": "Fichas generadas que NO pasan la validación física (no se renderizan). Requieren rehacer la pose, no un ajuste. 2026-11-12.",
+  "fichas": {
+    "E-022": "Postura del niño: bajar la raíz con piernas por IK levanta las espinillas (9 cm) y los antebrazos atraviesan el suelo. Rehacer: aumentar flexión de rodilla/cadera con reapoyo sobre espinillas, manos deslizando.",
+    "E-023": "Igual que E-022 (con inclinación lateral).",
+    "E-041": "Igual que E-022.",
+    "E-042": "Gato-camello: la mano izquierda pierde el suelo 10 cm en el pico (flexión torácica sube los hombros). Necesita IK de brazos con al_suelo.",
+    "E-043": "Decúbito lateral sobre rollo: los dedos de la mano de abajo atraviesan el suelo 13 cm en el pico.",
+    "E-046": "Esfinge: antebrazos se despegan 5 cm al extender la lumbar. Necesita reapoyo sobre antebrazos.",
+    "E-071": "Gemelo en pared (rodilla extendida): el pie trasero no llega al suelo (9 cm) con la pierna recta; revisar @pitch y distancia.",
+    "E-074": "Igual que E-071 con rodilla flexionada (12 cm).",
+    "E-077": "De rodillas sobre los empeines: bajar la raíz con IK de piernas invierte las rodillas (espinillas 20 cm arriba, glúteos bajo el suelo). Rehacer con flexión de rodilla animada + reapoyo.",
+    "F-HOM-017": "Aducción en supino: la mano no se mantiene sobre la colchoneta durante el arco (sube 7 cm / se hunde 4 cm). Necesita objetivo IK que recorra el arco sobre el suelo.",
+    "F-TOR-012": "Thread the needle: la mano de apoyo se despega 6,5 cm y la mano que gira roza el suelo al iniciar. Necesita IK de apoyo más fuerte y key intermedia que eleve la mano."
+  }
+}

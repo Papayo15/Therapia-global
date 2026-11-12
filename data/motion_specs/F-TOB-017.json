@@ -1,0 +1,274 @@
+{
+  "id": "F-TOB-017",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente_suelo",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 85,
+      "cadera_flex.R": 85,
+      "lumbar_flex": 8,
+      "tobillo_dorsi.L": -10,
+      "tobillo_dorsi.R": -10,
+      "hombro_flex.L": -30,
+      "hombro_flex.R": -30,
+      "hombro_abd.L": 10,
+      "hombro_abd.R": 10,
+      "antebrazo_prono.L": 60,
+      "antebrazo_prono.R": 60
+    },
+    "asentar": [
+      {
+        "art": "cadera_flex.R",
+        "grupo": "lowerleg02.R",
+        "z": 0.10600000000000001,
+        "rango": [
+          -20,
+          40
+        ]
+      },
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          60,
+          110
+        ],
+        "abs": true
+      },
+      {
+        "art": "hombro_flex.L",
+        "grupo": [
+          "lowerarm02.L",
+          "wrist.L",
+          "finger1-1.L",
+          "finger1-2.L",
+          "finger1-3.L",
+          "finger2-1.L",
+          "finger2-2.L",
+          "finger2-3.L",
+          "finger3-1.L",
+          "finger3-2.L",
+          "finger3-3.L",
+          "finger4-1.L",
+          "finger4-2.L",
+          "finger4-3.L",
+          "finger5-1.L",
+          "finger5-2.L",
+          "finger5-3.L",
+          "metacarpal1.L",
+          "metacarpal2.L",
+          "metacarpal3.L",
+          "metacarpal4.L"
+        ],
+        "rango": [
+          -40,
+          35
+        ]
+      },
+      {
+        "art": "hombro_flex.R",
+        "grupo": [
+          "lowerarm02.R",
+          "wrist.R",
+          "finger1-1.R",
+          "finger1-2.R",
+          "finger1-3.R",
+          "finger2-1.R",
+          "finger2-2.R",
+          "finger2-3.R",
+          "finger3-1.R",
+          "finger3-2.R",
+          "finger3-3.R",
+          "finger4-1.R",
+          "finger4-2.R",
+          "finger4-3.R",
+          "finger5-1.R",
+          "finger5-2.R",
+          "finger5-3.R",
+          "metacarpal1.R",
+          "metacarpal2.R",
+          "metacarpal3.R",
+          "metacarpal4.R"
+        ],
+        "rango": [
+          -40,
+          35
+        ]
+      }
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "pelvis.R",
+        "upperleg01.L",
+        "upperleg01.R",
+        "upperleg02.L",
+        "upperleg02.R"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerarm02.L",
+        "wrist.L",
+        "finger1-1.L",
+        "finger1-2.L",
+        "finger1-3.L",
+        "finger2-1.L",
+        "finger2-2.L",
+        "finger2-3.L",
+        "finger3-1.L",
+        "finger3-2.L",
+        "finger3-3.L",
+        "finger4-1.L",
+        "finger4-2.L",
+        "finger4-3.L",
+        "finger5-1.L",
+        "finger5-2.L",
+        "finger5-3.L",
+        "metacarpal1.L",
+        "metacarpal2.L",
+        "metacarpal3.L",
+        "metacarpal4.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerarm02.R",
+        "wrist.R",
+        "finger1-1.R",
+        "finger1-2.R",
+        "finger1-3.R",
+        "finger2-1.R",
+        "finger2-2.R",
+        "finger2-3.R",
+        "finger3-1.R",
+        "finger3-2.R",
+        "finger3-3.R",
+        "finger4-1.R",
+        "finger4-2.R",
+        "finger4-3.R",
+        "finger5-1.R",
+        "finger5-2.R",
+        "finger5-3.R",
+        "metacarpal1.R",
+        "metacarpal2.R",
+        "metacarpal3.R",
+        "metacarpal4.R"
+      ]
+    },
+    {
+      "grupo": "lowerleg02.R",
+      "z": 0.10600000000000001,
+      "tol_cm": 2
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.5,
+      -1,
+      0.6
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "props": [
+    {
+      "tipo": "rodillo",
+      "uso": "rollo_bajo_hueso",
+      "hueso": "lowerleg02.R",
+      "t": 0.55,
+      "r": 0.05
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "tobillo_inv.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_inv.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "tobillo_inv.R": -15
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "tobillo_inv.R": -15
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "tobillo_inv.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "tobillo_inv.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "fibularis_longus",
+        "lado": "R"
+      },
+      {
+        "id": "fibularis_brevis",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "tibialis_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "tibialis_anterior",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Eversión activa"
+}

@@ -1,0 +1,172 @@
+[
+  {
+    "id": "A_CER_001",
+    "nombre_es": "Retracción Cervical Isométrica",
+    "nombre_en": "Cervical Isometric Retraction",
+    "titulo": "Retracción Cervical",
+    "difficulty": "beginner",
+    "youtube_id": "KuDX2fKzPjg",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Activación isométrica de los flexores profundos cervicales (longus colli, longus capitis). Retracción de la cabeza en el plano sagital manteniendo la lordosis cervical fisiológica. ROM: 1–2 cm posterior sin inclinación ni rotación.",
+    "fisiologia_basica": "Fortalece los estabilizadores profundos del cuello y reduce la hiperactividad del esternocleidomastoideo. Descomprime las facetas articulares C3-C7 y corrige el patrón de cabeza adelantada (forward head posture).",
+    "instructions_eli5": [
+      "Siéntate derecho mirando al frente — como si fueras a tomarte una foto",
+      "Empuja la cabeza hacia atrás como si quisieras hacer doble papada — sin bajarla ni subirla",
+      "Aguanta 5 segundos, suelta despacio y repite — siente cómo el cuello se alarga"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_CER_002",
+    "nombre_es": "Flexión Cervical con Resistencia Manual",
+    "nombre_en": "Manual Resistance Cervical Flexion",
+    "titulo": "Flexión Cervical con Resistencia",
+    "difficulty": "beginner",
+    "youtube_id": "dqA3FKMcZq8",
+    "youtube_start_seconds": 15,
+    "ejecucion_tecnica": "Contracción isométrica de los flexores cervicales profundos contra resistencia manual aplicada en la frente. Fuerza aplicada: 30–40% del máximo. Cuello en posición neutra, sin protracción mandibular.",
+    "fisiologia_basica": "Activa selectivamente el longus colli e inhibe el esternocleidomastoideo superficial. Indicado en cervicalgia mecánica, whiplash Grado I–II y síndrome de cabeza adelantada.",
+    "instructions_eli5": [
+      "Pon tu mano en la frente y empuja suavemente hacia atrás",
+      "Con el cuello, empuja tu frente contra tu mano — como si tu cabeza quisiera ganar un pulso",
+      "Aguanta 5 segundos sin mover nada, respira y repite"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_CER_003",
+    "nombre_es": "Extensión Cervical Isométrica",
+    "nombre_en": "Isometric Cervical Extension",
+    "titulo": "Extensión Cervical Isométrica",
+    "difficulty": "beginner",
+    "youtube_id": "HUNHuuPoU6M",
+    "youtube_start_seconds": 10,
+    "ejecucion_tecnica": "Activación isométrica de extensores cervicales (semispinalis capitis, splenius capitis) contra resistencia manual aplicada en occipucio. Posición neutra sin hiperextensión. Fuerza: 30–50% del máximo voluntario.",
+    "fisiologia_basica": "Fortalece los extensores cervicales para equilibrar la musculatura anterior-posterior. Reduce el dolor muscular por debilidad de trapecios y elevadores de la escápula. Previene la cifosis cervical.",
+    "instructions_eli5": [
+      "Pon tus manos entrelazadas detrás de la cabeza",
+      "Empuja la cabeza hacia atrás contra tus manos — como si quisieras ganarle el pulso a tus propias manos",
+      "Aguanta 5 segundos sin que nada se mueva, suelta y respira"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_CER_004",
+    "nombre_es": "Inclinación Lateral Cervical Isométrica",
+    "nombre_en": "Isometric Cervical Lateral Flexion",
+    "titulo": "Inclinación Lateral del Cuello",
+    "difficulty": "beginner",
+    "youtube_id": "0pkjSBFkA0g",
+    "youtube_start_seconds": 5,
+    "ejecucion_tecnica": "Contracción isométrica del escaleno medio y esternocleidomastoideo ipsilateral contra resistencia manual lateral. Alternar ambos lados. Cuello en neutro, hombros nivelados sin elevación de hombro ipsilateral.",
+    "fisiologia_basica": "Equilibra la musculatura lateral del cuello. Útil en torticolis postural, disfonía cervicogénica y asimetrías por trabajo unilateral prolongado.",
+    "instructions_eli5": [
+      "Pon la mano derecha a un lado de la cabeza, sobre la oreja",
+      "Intenta inclinar la cabeza hacia tu mano — pero tu mano no la deja moverse",
+      "Aguanta 5 segundos, respira y cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_CER_005",
+    "nombre_es": "Rotación Cervical Activa Asistida",
+    "nombre_en": "Active-Assisted Cervical Rotation",
+    "titulo": "Rotación Cervical con Guía",
+    "difficulty": "beginner",
+    "youtube_id": "PIjEeHyFDCg",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Rotación cervical activa con asistencia manual al final del rango para ganar amplitud. ROM normal: 80° bilateral. Velocidad lenta (3 segundos por dirección). Sin compensación torácica.",
+    "fisiologia_basica": "Mejora la movilidad articular cervical C1-C7, estira el esternocleidomastoideo contralateral y activa los rotadores profundos homolaterales. Indicado en rigidez postural y post-whiplash.",
+    "instructions_eli5": [
+      "Siéntate derecho y mira al frente",
+      "Gira la cabeza lentamente hacia un hombro — como si quisieras ver algo atrás pero con calma",
+      "Cuando llegues al límite, aguanta 2 segundos y regresa — repite al otro lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_CER_006",
+    "nombre_es": "Estabilización Cervical en Cuadrupedia",
+    "nombre_en": "Quadruped Cervical Stabilization",
+    "titulo": "Cuadrupedia con Control Cervical",
+    "difficulty": "intermediate",
+    "youtube_id": "wiFNA3sqjCA",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "En cuadrupedia, mantener el cuello en posición neutra (no mirar al suelo ni al techo) mientras se realizan movimientos de extremidades. Activación simultánea de flexores profundos cervicales y core.",
+    "fisiologia_basica": "Integra el control neuromuscular cervical con la estabilidad de la columna. Activa los músculos multífidos cervicales y el longus colli bajo carga funcional. Excelente para reeducación post-whiplash.",
+    "instructions_eli5": [
+      "Ponte en cuatro patas como un perro — manos abajo, rodillas en el suelo",
+      "Mantén la cabeza alineada con la espalda — ni arriba ni abajo, como si tuvieras un libro encima",
+      "Aguanta esa posición 10 segundos sin que el cuello se mueva — respira normal"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_CER_007",
+    "nombre_es": "Fortalecimiento Escapular con Control Cervical",
+    "nombre_en": "Scapular Strengthening with Cervical Control",
+    "titulo": "Retracción Escapular para el Cuello",
+    "difficulty": "beginner",
+    "youtube_id": "lqI-T4UFZJE",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Retracción y depresión escapular bilateral en posición sedente o bípeda. Contracción de trapecio medio e inferior. Evitar elevación de hombros. 10 reps × 3 series. Esencial para descargar el trapecio superior.",
+    "fisiologia_basica": "La debilidad del trapecio inferior genera sobrecarga crónica del trapecio superior, que traccionan C3-C4. Este ejercicio rompe el ciclo. Reduce el dolor de cuello referido al hombro.",
+    "instructions_eli5": [
+      "Siéntate derecho y sube un poco el pecho — como si quisieras que te llegue el sol ahí",
+      "Junta los hombros hacia atrás y hacia abajo — como si quisieras aplastar una nuez entre tus omóplatos",
+      "Aguanta 3 segundos, suelta y repite — no subas los hombros hacia las orejas"
+    ],
+    "equipo_alternativa": ["peso corporal", "ligas / bandas"]
+  },
+  {
+    "id": "A_CER_008",
+    "nombre_es": "Chin Tuck con Banda Cervical",
+    "nombre_en": "Chin Tuck with Cervical Band",
+    "titulo": "Chin Tuck con Resistencia",
+    "difficulty": "beginner",
+    "youtube_id": "8I0PatTDFtg",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Retracción cervical (chin tuck) con banda elástica pasada por la parte posterior del cuello. La banda añade resistencia propioceptiva. Posición: sedente o bípedo. Evitar flexión de cuello.",
+    "fisiologia_basica": "Versión progresada del chin tuck básico. El feedback propioceptivo de la banda mejora la precisión del movimiento. Corrección efectiva del síndrome de cabeza adelantada.",
+    "instructions_eli5": [
+      "Pasa una liga por detrás del cuello y agarra los extremos con las manos",
+      "Empuja la cabeza hacia atrás contra la liga — como si hicieras doble papada",
+      "La liga te ayuda a saber si estás moviéndote bien — aguanta 5 segundos y repite"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_CER_009",
+    "nombre_es": "Extensión Cervical en Supino",
+    "nombre_en": "Supine Cervical Extension",
+    "titulo": "Extensión de Cuello Acostado",
+    "difficulty": "beginner",
+    "youtube_id": "jQ5objYi_IA",
+    "youtube_start_seconds": 5,
+    "ejecucion_tecnica": "En decúbito supino con la cabeza al borde de la camilla. Extensión cervical controlada de 0° a 30°. Retorno lento a la posición neutral. Contraindicado en inestabilidad ligamentaria cervical.",
+    "fisiologia_basica": "Fortalece los extensores cervicales en cadena cinética abierta con descarga de peso. Aumenta la resistencia muscular de semispinalis y splenius. Útil en rehabilitación temprana post-quirúrgica.",
+    "instructions_eli5": [
+      "Acuéstate de espaldas con la cabeza asomando al borde de la cama",
+      "Baja la cabeza despacio hacia el suelo — como si quisieras ver el techo de cabeza",
+      "Sube la cabeza despacio de regreso — como si subieras una olla pesada — y repite"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_CER_010",
+    "nombre_es": "Propiocepción Cervical con Láser",
+    "nombre_en": "Cervical Proprioception with Laser Pointer",
+    "titulo": "Control Motor Cervical",
+    "difficulty": "intermediate",
+    "youtube_id": "PV7gSEE2ZnE",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Paciente con puntero láser en la frente (o usando app de linterna). Ojos cerrados, mover el cuello a diferentes posiciones y regresar al centro. Evalúa y reeducá el sentido de posición cervical (Joint Position Sense).",
+    "fisiologia_basica": "El dolor cervical altera los mecanorreceptores musculares y articulares de C1-C3, deteriorando el sentido de posición. Este ejercicio recalibra el sistema propioceptivo y reduce el riesgo de lesiones recurrentes.",
+    "instructions_eli5": [
+      "Cierra los ojos y pon el dedo en la punta de la nariz — luego bájalo",
+      "Ahora mueve la cabeza hacia un lado y vuelve a donde crees que es 'el centro'",
+      "Abre los ojos y ve qué tan cerca estás — sin trampa, el cuello aprende solo"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  }
+]

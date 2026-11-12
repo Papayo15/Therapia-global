@@ -1,0 +1,138 @@
+{
+  "id": "F-MUN-016",
+  "duracion_s": 5.6,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 20,
+      "codo_flex.L": 50,
+      "codo_flex.R": 75,
+      "antebrazo_prono.R": 0
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.7,
+      -1,
+      0.6
+    ],
+    "lente": 50,
+    "margen": 1.5,
+    "grupos": [
+      "lowerarm02.R",
+      "wrist.R",
+      "finger1-1.R",
+      "finger1-2.R",
+      "finger1-3.R",
+      "finger2-1.R",
+      "finger2-2.R",
+      "finger2-3.R",
+      "finger3-1.R",
+      "finger3-2.R",
+      "finger3-3.R",
+      "finger4-1.R",
+      "finger4-2.R",
+      "finger4-3.R",
+      "finger5-1.R",
+      "finger5-2.R",
+      "finger5-3.R",
+      "metacarpal1.R",
+      "metacarpal2.R",
+      "metacarpal3.R",
+      "metacarpal4.R",
+      "lowerarm01.R"
+    ]
+  },
+  "props": [
+    {
+      "tipo": "mesa",
+      "uso": "mesa_antebrazo",
+      "lado": "R"
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 0.6,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.8,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 5.6,
+      "p": 0,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "flexor_carpi_ulnaris",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_carpi_ulnaris",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "flexor_carpi_radialis",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_carpi_radialis_longus",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_carpi_radialis_brevis",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "wrist.R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Isométrico de desviación cubital"
+}

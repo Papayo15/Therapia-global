@@ -1,0 +1,139 @@
+{
+  "id": "F-ESC-004",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.6,
+      1,
+      0.35
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.4,
+      "art": {
+        "escapula_elev.L": 22,
+        "escapula_elev.R": 22
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "escapula_elev.L": 22,
+        "escapula_elev.R": 22
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.0,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "trapezius_upper"
+      },
+      {
+        "id": "levator_scapulae"
+      },
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "trapezius_lower"
+      },
+      {
+        "id": "pectoralis_minor"
+      },
+      {
+        "id": "latissimus_dorsi"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "clavicle.L"
+    },
+    {
+      "hueso": "clavicle.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "mancuerna",
+      "uso": "en_mano",
+      "manos": [
+        "L",
+        "R"
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Encogimiento con barra / carga progresiva"
+}

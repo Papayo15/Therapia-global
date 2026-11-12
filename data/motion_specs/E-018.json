@@ -1,0 +1,135 @@
+{
+  "id": "E-018",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 90,
+      "hombro_abd.R": 90,
+      "codo_flex.L": 90,
+      "codo_flex.R": 90,
+      "hombro_re.L": 85,
+      "hombro_re.R": 85
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.3,
+      -1,
+      0.4
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_abd_h.L": 0,
+        "hombro_abd_h.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_abd_h.L": 0,
+        "hombro_abd_h.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "hombro_abd_h.L": 20,
+        "hombro_abd_h.R": 20
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.08,
+        0
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "hombro_abd_h.L": 20,
+        "hombro_abd_h.R": 20
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.08,
+        0
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "hombro_abd_h.L": 0,
+        "hombro_abd_h.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "hombro_abd_h.L": 0,
+        "hombro_abd_h.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "pectoralis_major"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "En esquina con FNP"
+}

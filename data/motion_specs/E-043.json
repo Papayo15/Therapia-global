@@ -1,0 +1,154 @@
+{
+  "id": "E-043",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "decubito_lateral_L",
+    "colchoneta": true,
+    "almohada": true,
+    "angulos": {
+      "cadera_flex.L": 40,
+      "rodilla_flex.L": 70,
+      "hombro_flex.L": 90,
+      "codo_flex.L": 70,
+      "hombro_abd.R": 135,
+      "mano_cerrar.R": 15,
+      "cadera_flex.R": 30,
+      "rodilla_flex.R": 60
+    },
+    "asentar": [
+      {
+        "art": "@roll",
+        "grupo": [
+          "shoulder01.L",
+          "upperarm01.L",
+          "clavicle.L"
+        ],
+        "rango": [
+          -15,
+          15
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "cadera_abd.L",
+        "grupo": [
+          "lowerleg01.L",
+          "foot.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "upperleg01.L",
+      "upperleg02.L",
+      "spine03",
+      "spine02",
+      "shoulder01.L"
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "upperleg01.L",
+        "upperleg02.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "foot.L"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.1,
+      -1,
+      0.4
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "lumbar_incl": 12,
+        "toracica_incl": 8
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "lumbar_incl": 12,
+        "toracica_incl": 8
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "quadratus_lumborum",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Decúbito lateral sobre rollo"
+}

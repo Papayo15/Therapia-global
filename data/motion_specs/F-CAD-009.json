@@ -1,0 +1,169 @@
+{
+  "id": "F-CAD-009",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": false,
+    "angulos": {
+      "cadera_abd.L": 3,
+      "cadera_abd.R": 3,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80,
+      "cadera_flex.L": 50,
+      "rodilla_flex.L": 95,
+      "cadera_flex.R": 50,
+      "rodilla_flex.R": 95,
+      "mano_cerrar.L": 70,
+      "mano_cerrar.R": 70,
+      "cervical_flex": 32,
+      "lumbar_flex": 10
+    },
+    "asentar": [],
+    "suelo": [
+      "spine01",
+      "shoulder01.L",
+      "shoulder01.R"
+    ],
+    "superficie_banco": 0.42
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ],
+      "z_suelo": 0.0
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ],
+      "z_suelo": 0.0
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.15,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "pivote": {
+    "hueso": "spine01",
+    "contrarrotar": "spine01"
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 32
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 32
+    },
+    {
+      "t": 1.7,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 2.7,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 4.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 32
+    },
+    {
+      "t": 5.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 32
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gluteus_maximus"
+      },
+      {
+        "id": "biceps_femoris"
+      },
+      {
+        "id": "semitendinosus"
+      },
+      {
+        "id": "semimembranosus"
+      },
+      {
+        "id": "adductor_magnus"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "iliopsoas"
+      },
+      {
+        "id": "rectus_femoris"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.L"
+    },
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "barra",
+      "uso": "carga_cadera",
+      "casa": "mochila",
+      "agarre": true
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Hip thrust con carga"
+}

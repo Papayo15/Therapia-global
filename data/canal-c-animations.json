@@ -1,0 +1,1735 @@
+{
+  "version": "1.0",
+  "canal": "C",
+  "total": 72,
+  "animations": [
+    {
+      "id": "C_CER_001",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_002",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_003",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_004",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_005",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_006",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_007",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_008",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_009",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_010",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_011",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CER_012",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -30,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_013",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_014",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_015",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_016",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_017",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_018",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_019",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_020",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_021",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_022",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_023",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_HOM_024",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -35,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_025",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_026",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_027",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_028",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_029",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_030",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_031",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_032",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_033",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_034",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_035",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_COL_036",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 45,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.006
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_037",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_038",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_039",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_040",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_041",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_042",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_043",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_044",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_045",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_046",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_047",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_CAD_048",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_049",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_050",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_051",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_052",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_053",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_054",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_055",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_056",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_057",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_058",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_059",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_PIE_060",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "entry": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.005
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_061",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_062",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_063",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_064",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_065",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_066",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_067",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_068",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_069",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_070",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_071",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    },
+    {
+      "id": "C_MAN_072",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "entry": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": -40,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 25,
+            "idle_amplitude": 0.004
+          }
+        },
+        "highlight_on_phase": "hold"
+      }
+    }
+  ]
+}

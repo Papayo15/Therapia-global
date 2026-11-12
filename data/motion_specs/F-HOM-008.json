@@ -1,0 +1,153 @@
+{
+  "id": "F-HOM-008",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "hombro_flex.L": 80,
+      "hombro_flex.R": 80,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "hombro_flex.L": -95,
+        "hombro_flex.R": -95
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "hombro_flex.L": -95,
+        "hombro_flex.R": -95
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.1,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "latissimus_dorsi"
+      },
+      {
+        "id": "teres_major"
+      },
+      {
+        "id": "deltoid_posterior"
+      },
+      {
+        "id": "triceps_brachii_long_head"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "deltoid_anterior"
+      },
+      {
+        "id": "pectoralis_major"
+      },
+      {
+        "id": "biceps_brachii"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.L"
+    },
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.L",
+      "anclaje_rel": [
+        0,
+        -0.9,
+        0.5
+      ]
+    },
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.R",
+      "anclaje_rel": [
+        0,
+        -0.9,
+        0.5
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión con banda de pie (brazos rectos)"
+}

@@ -1,0 +1,160 @@
+{
+  "id": "F-ANT-008",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 20,
+      "codo_flex.L": 50,
+      "codo_flex.R": 75,
+      "antebrazo_prono.R": 0,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.7,
+      -1,
+      0.6
+    ],
+    "lente": 50,
+    "margen": 1.5,
+    "grupos": [
+      "lowerarm02.R",
+      "wrist.R",
+      "finger1-1.R",
+      "finger1-2.R",
+      "finger1-3.R",
+      "finger2-1.R",
+      "finger2-2.R",
+      "finger2-3.R",
+      "finger3-1.R",
+      "finger3-2.R",
+      "finger3-3.R",
+      "finger4-1.R",
+      "finger4-2.R",
+      "finger4-3.R",
+      "finger5-1.R",
+      "finger5-2.R",
+      "finger5-3.R",
+      "metacarpal1.R",
+      "metacarpal2.R",
+      "metacarpal3.R",
+      "metacarpal4.R",
+      "lowerarm01.R"
+    ]
+  },
+  "props": [
+    {
+      "tipo": "mesa",
+      "uso": "mesa_antebrazo",
+      "lado": "R"
+    },
+    {
+      "tipo": "martillo",
+      "uso": "en_mano",
+      "manos": [
+        "R"
+      ]
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "antebrazo_prono.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "antebrazo_prono.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "antebrazo_prono.R": -75
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "antebrazo_prono.R": -75
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.0,
+      "art": {
+        "antebrazo_prono.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "antebrazo_prono.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "supinator",
+        "lado": "R"
+      },
+      {
+        "id": "biceps_brachii",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "pronator_teres",
+        "lado": "R"
+      },
+      {
+        "id": "pronator_quadratus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerarm02.R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Supinación con martillo (palanca corta)"
+}

@@ -1,0 +1,167 @@
+{
+  "id": "F-ESC-013",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "hombro_flex.L": 88,
+      "hombro_flex.R": 88,
+      "@pitch": 8
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L"
+    },
+    {
+      "cadena": "brazo.R"
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        0
+      ]
+    },
+    {
+      "t": 1.4,
+      "art": {
+        "escapula_prot.L": 12,
+        "escapula_prot.R": 12
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        0.035,
+        0
+      ]
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "escapula_prot.L": 12,
+        "escapula_prot.R": 12
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0.035,
+        0
+      ]
+    },
+    {
+      "t": 3.8,
+      "art": {
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        0
+      ]
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        0
+      ]
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "serratus_anterior"
+      },
+      {
+        "id": "pectoralis_minor"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      },
+      {
+        "id": "trapezius_middle"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "clavicle.L"
+    },
+    {
+      "hueso": "clavicle.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "pared_manos"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Push-up plus en pared"
+}

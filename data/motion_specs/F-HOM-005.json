@@ -1,0 +1,158 @@
+{
+  "id": "F-HOM-005",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 40,
+      "hombro_abd.R": 40,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 110,
+      "codo_flex.R": 110,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.6,
+      -1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.8,
+      "art": {
+        "hombro_flex.L": 140,
+        "hombro_flex.R": 140,
+        "codo_flex.L": -105,
+        "codo_flex.R": -105
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "hombro_flex.L": 140,
+        "hombro_flex.R": 140,
+        "codo_flex.L": -105,
+        "codo_flex.R": -105
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.4,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "deltoid_anterior"
+      },
+      {
+        "id": "pectoralis_major_clavicular"
+      },
+      {
+        "id": "coracobrachialis"
+      },
+      {
+        "id": "biceps_brachii"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "latissimus_dorsi"
+      },
+      {
+        "id": "teres_major"
+      },
+      {
+        "id": "deltoid_posterior"
+      },
+      {
+        "id": "triceps_brachii_long_head"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.L"
+    },
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "mancuerna",
+      "uso": "en_mano",
+      "manos": [
+        "L",
+        "R"
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Press por encima de la cabeza (overhead press)"
+}

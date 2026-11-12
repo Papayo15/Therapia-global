@@ -1,0 +1,160 @@
+{
+  "id": "E-073",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "sedente_suelo",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 85,
+      "cadera_flex.R": 85,
+      "lumbar_flex": 14,
+      "tobillo_dorsi.L": -10,
+      "tobillo_dorsi.R": -10,
+      "rodilla_flex.R": 30,
+      "mano_cerrar.L": 70,
+      "mano_cerrar.R": 70
+    },
+    "asentar": [
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          60,
+          110
+        ],
+        "abs": true
+      },
+      {
+        "art": "cadera_flex.R",
+        "grupo": "foot.R",
+        "rango": [
+          30,
+          120
+        ],
+        "abs": true
+      }
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "polo_manual": true,
+      "polo": [
+        0.5,
+        0.2,
+        -0.5
+      ]
+    },
+    {
+      "cadena": "brazo.R",
+      "polo_manual": true,
+      "polo": [
+        -0.5,
+        0.2,
+        -0.5
+      ]
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "pelvis.R",
+        "upperleg01.L",
+        "upperleg01.R",
+        "upperleg02.L",
+        "upperleg02.R"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.25,
+      0.35
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "tobillo_dorsi.R": 15
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "tobillo_dorsi.R": 15
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "soleus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "toalla",
+      "uso": "correa_pie_manos",
+      "pie": "R",
+      "fraccion": 0.5
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Sedente con toalla, rodilla flexionada"
+}

@@ -15,3 +15,9 @@ pipeline/compressed/
 pipeline/thumbnails/
 pipeline/.env
 pipeline/generation_status.json
+
+# Fábrica de video: renders y binarios pesados (se regeneran con scripts/factory)
+renders/
+renders_*.log
+*.blend1
+assets/rigs/avatar_f40.blend

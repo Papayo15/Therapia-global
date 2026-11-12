@@ -1,0 +1,26 @@
+{
+  "CANAL_A_EJERCICIO": {
+    "description": "Fortalecimiento y Cardio. Estilo Ghost + Sombreado Ámbar.",
+    "model": "ray-flash-2",
+    "resolution": "1080p",
+    "duration": "9s",
+    "loop": true,
+    "prompt_template": "Ultra-realistic anatomical fitness animation. Single anatomical human model performing a full burpee on a BOSU balance trainer holding dumbbells. Clean studio background, soft neutral lighting, medical visualization style. Phase 1 (0-2s): standing upright on BOSU, core engaged, subtle leg and core activation. Phase 2 (2-4s): squat down placing dumbbells toward floor on BOSU, quadriceps and glutes activate strongly. Phase 3 (4-6s): jump feet back to plank, chest shoulders triceps and core activate, subtle pulsing glow on active muscles synchronized with exertion. Phase 4 (6-7.5s): jump feet forward, strong calves glutes and stabilizer activation, micro-trembling in ankles and knees showing BOSU instability, slight torso breathing motion visible. Phase 5 (7.5-9s): stand and overhead press, full body activation peaks. Muscles glow red/orange when active, semi-transparent when inactive. Skeleton partially visible underneath muscles at all times. Fixed 3/4 front camera, full body always visible, no cropping. 1080p, 9s seamless loop. {action_technique}"
+  },
+  "CANAL_C_ESTIRAMIENTO": {
+    "description": "Flexibilidad y Relajación. Estilo Ghost + Sombreado Cian.",
+    "model": "ray-flash-2",
+    "resolution": "1080p",
+    "duration": "9s",
+    "loop": true,
+    "prompt_template": "Scientific medical animation, Single abstract anatomical human model (NO FACES, neutro). [ANATOMY]: Complete skeletal visibility; upper and lower extremity bones must be clearly visible and opaque beneath 90% semi-transparent muscle. [BIOFEEDBACK]: Symmetrical heatmap: apply a soft internal CYAN/COOL BLUE GLOW specifically to the muscle groups undergoing stretch and tension. [ACTION]: {action_technique}. [PHYSICS]: Natural body alignment, no self-penetration. [ENVIRONMENT]: Isolated on PURE WHITE (#FFFFFF), no shadows. 1080p, 9s seamless loop."
+  },
+  "CANAL_B_OSTEOPATIA": {
+    "description": "Terapia Manual. Modelo Híbrido: Paciente Transparente / Terapeuta Sólido Neutro.",
+    "model": "ray-flash-2",
+    "resolution": "1080p",
+    "duration": "9s",
+    "loop": true,
+    "prompt_template": "Scientific medical visualization, Clinical Studio setting. [MODELS]: Two interacting abstract anatomical models (NO FACES, neutro). MODEL 1 (Patient): 90% transparent ghost-muscle tissue revealing the entire opaque skeletal system. MODEL 2 (Therapist): Solid, matte grey (#808080) anatomical model showing exact hand placement and movement. [VISUAL FOCUS]: Clear visualization of the Therapist's hands firmly placed on the Patient's body (implied contact) to perform the technique. Apply a warm, soft RED GLOW to the Patient's fascia/skin surface specifically at the hand contact points to indicate pressure. [ACTION]: {action_technique}, clearly showing hand placement and the displacement of the hands throughout the procedure. [PHYSICS]: Realistic hand movement with ZERO INTERPENETRATION into the patient's body volume. High-detail professional clinical lighting, sharp focus on the contact area. [ENVIRONMENT]: Isolated on PURE WHITE (#FFFFFF), no shadows. 1080p, seamless 9s loop."
+  }
+}

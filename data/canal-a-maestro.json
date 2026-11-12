@@ -1,0 +1,3540 @@
+{
+  "version": "1.0",
+  "total": 180,
+  "bloques": {
+    "EMPUJE": [
+      {
+        "id": "A_EMP_001",
+        "nombre": "Push-up de Pared",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_clavicular_L",
+          "m_pectoralis_major_clavicular_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Párate frente a la pared, pon las manos a la altura del pecho y empuja como si quisieras moverla — sin que los pies se muevan.",
+        "nota_clinica": "Cadena cerrada con carga ~15-20% del peso corporal. Activa manguito rotador como estabilizador dinámico. Ideal en fase aguda post-quirúrgica glenohumeral.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_002",
+        "nombre": "Push-up en Rodillas",
+        "segmento": "Pecho",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_sternal_L",
+          "m_pectoralis_major_sternal_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Apóyate en las rodillas y baja el pecho hacia el suelo como si quisieras olerlo — luego sube despacio.",
+        "nota_clinica": "Reduce carga axial al 54% del peso corporal. Permite progresión segura del manguito rotador sin sobrecargar la articulación glenohumeral.",
+        "bilateral": true,
+        "glb_region": "THORAX_ANT"
+      },
+      {
+        "id": "A_EMP_003",
+        "nombre": "Push-up Estándar",
+        "segmento": "Pecho",
+        "patologias_clave": [
+          "Inestabilidad Glenohumeral",
+          "Desgarro Pectoral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_sternal_L",
+          "m_pectoralis_major_sternal_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Baja el pecho hasta casi tocar el suelo como una tabla de madera — recto de cabeza a talones — y empuja fuerte para subir.",
+        "nota_clinica": "Activa pectoral esternal + clavicular + deltoides anterior + tríceps. Carga ~64% del peso corporal. Indicado en fase de retorno deportivo.",
+        "bilateral": true,
+        "glb_region": "THORAX_ANT"
+      },
+      {
+        "id": "A_EMP_004",
+        "nombre": "Push-up Diamante",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Tendinitis Tricipital"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_medial_head_L",
+          "m_triceps_brachii_medial_head_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Junta los pulgares e índices formando un diamante bajo el pecho y haz el push-up — vas a sentir la parte de atrás del brazo trabajar fuerte.",
+        "nota_clinica": "Maximiza activación tríceps medial y lateral. Aumenta estrés articular en codo. Contraindicado en epicondilitis aguda.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_005",
+        "nombre": "Push-up Arquera (Archer)",
+        "segmento": "Pecho",
+        "patologias_clave": [
+          "Inestabilidad Glenohumeral",
+          "Desgarro Pectoral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_sternal_L",
+          "m_pectoralis_major_sternal_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Extiende un brazo a un lado mientras bajas con el otro, como si apuntaras un arco — alterna los lados.",
+        "nota_clinica": "Reclutamiento unilateral del pectoral y serratus anterior. Desafía la estabilidad escapular. Progresión hacia push-up a una mano.",
+        "bilateral": true,
+        "glb_region": "THORAX_ANT"
+      },
+      {
+        "id": "A_EMP_006",
+        "nombre": "Push-up Explosiva (Clap)",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_clavicular_L",
+          "m_pectoralis_major_clavicular_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Empuja tan fuerte que las manos se despeguen del suelo — si puedes, aplaude en el aire antes de caer.",
+        "nota_clinica": "Recluta fibras tipo IIb en fase concéntrica explosiva. Power training para retorno deportivo. Contraindicado en inestabilidad glenohumeral activa.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_007",
+        "nombre": "Pike Push-up en Suelo",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_supraspinatus_L",
+          "m_supraspinatus_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Forma una V invertida con el cuerpo — trasero arriba — y baja la cabeza hacia el suelo doblando los codos, como un pájaro bebiendo agua.",
+        "nota_clinica": "Activa deltoides anterior + supraspinatus en mayor rango que push-up estándar. Simula patrón de press militar. Carga ~75% en hombro.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_008",
+        "nombre": "Pike Push-up Elevado (Pies en Silla)",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_supraspinatus_L",
+          "m_supraspinatus_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Pon los pies en una silla, forma la V y baja la cabeza buscando el suelo — va a costar más que el normal.",
+        "nota_clinica": "Eleva pies aumenta carga en hombros a ~85% del peso. Progresión hacia handstand push-up. Exige mayor estabilización escapular y serratus.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_009",
+        "nombre": "Pike Push-up en Bosu",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Bosu",
+        "mesh_id_nike3d": [
+          "m_supraspinatus_L",
+          "m_supraspinatus_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Igual que el pike push-up normal pero con las manos en el lado plano del Bosu — el temblor que sientes es exactamente lo que buscamos.",
+        "nota_clinica": "Superficie inestable aumenta activación del manguito rotador (supraspinatus + infraspinatus) como estabilizadores dinámicos. Fase propioceptiva de hombro.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_010",
+        "nombre": "Press Militar con Mancuerna",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_supraspinatus_L",
+          "m_supraspinatus_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Siéntate derecho y sube las mancuernas por encima de la cabeza como levantando cajas a un estante alto — sin arquear la espalda.",
+        "nota_clinica": "Activa deltoides anterior + supraspinatus + tríceps. La mancuerna exige mayor estabilización del manguito vs. barra. Mantener neutro lumbar.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_011",
+        "nombre": "Press Militar con Liga",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_supraspinatus_L",
+          "m_supraspinatus_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Pisa la liga con los pies, agarra los extremos y empuja hacia arriba como saludando al techo con ambas manos.",
+        "nota_clinica": "Resistencia elástica aumenta progresivamente con extensión de codo, descargando arco doloroso (60-120°) donde el manguito sufre mayor impingement.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_012",
+        "nombre": "Press Militar Alterno con Mancuerna",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_supraspinatus_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Sube una mancuerna mientras la otra descansa en el hombro, como si marcaras el ritmo de un metrónomo con los brazos.",
+        "nota_clinica": "La alternancia exige mayor activación de core y oblicuos para contra-rotar. Aumenta reclutamiento del deltoides lateral. Detecta asimetrías.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "A_EMP_013",
+        "nombre": "Fondos en Silla (Bench Dips)",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Tendinitis Tricipital"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_lateral_head_L",
+          "m_triceps_brachii_lateral_head_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Siéntate al borde de la silla, apoya las manos y baja el trasero hacia el suelo doblando los codos — luego sube.",
+        "nota_clinica": "Carga controlada sobre tríceps en cadena cerrada (~30% del peso). Contraindicado en síndrome de impingement anterior de hombro activo.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_014",
+        "nombre": "Fondos en Paralelas",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_sternal_L",
+          "m_pectoralis_major_sternal_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Agárrate a las barras paralelas, baja el cuerpo hasta que los codos lleguen a 90° y empuja fuerte para subir.",
+        "nota_clinica": "Activa pectoral inferior + tríceps + deltoides anterior. Carga ~75-100% peso corporal. Requiere estabilidad escapular completa.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_015",
+        "nombre": "Fondos en Paralelas con Lastre",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Inestabilidad Glenohumeral",
+          "Desgarro Pectoral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_long_head_L",
+          "m_triceps_brachii_long_head_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Igual que los fondos normales pero con un peso colgado de la cintura — solo para los más avanzados.",
+        "nota_clinica": "Supera peso corporal como carga. Máxima activación del tríceps largo (biarticular: extensión codo + extensión hombro). Solo para retorno deportivo pleno.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_016",
+        "nombre": "Extensión de Tríceps con Liga",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_lateral_head_L",
+          "m_triceps_brachii_lateral_head_R"
+        ],
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Fija la liga en un punto alto, agárrala y empuja hacia abajo extendiendo el brazo completamente — como presionar un botón invisible.",
+        "nota_clinica": "Resistencia elástica en pushdown aísla tríceps lateral/medial. Bajo estrés articular. Primera progresión para epicondilitis lateral.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_017",
+        "nombre": "Extensión de Tríceps con Mancuerna (Tumbado)",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Tendinitis Tricipital"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_medial_head_L",
+          "m_triceps_brachii_medial_head_R"
+        ],
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Tumbado boca arriba, sube la mancuerna con los brazos extendidos y dóblala hacia la frente — luego vuelve a subir.",
+        "nota_clinica": "Skull crusher con mancuerna. Activa tres vientres del tríceps. Mayor activación del medial en rango final de extensión. Controlar velocidad excéntrica.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_018",
+        "nombre": "Extensión de Tríceps Copa (Overhead)",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Tendinitis Tricipital"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_long_head_L",
+          "m_triceps_brachii_long_head_R"
+        ],
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Sostén la mancuerna sobre la cabeza con ambas manos como una copa y dóblala hacia atrás — luego sube.",
+        "nota_clinica": "Posición overhead estira cabeza larga del tríceps (biarticular). Mayor reclutamiento del tríceps largo vs. extensiones neutras. Exige movilidad glenohumeral completa.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_019",
+        "nombre": "Press Francés con Mancuerna",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Tendinitis Tricipital"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_long_head_L",
+          "m_triceps_brachii_long_head_R"
+        ],
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Acostado, sube los brazos y baja las mancuernas hacia las orejas doblando solo los codos — como si tuvieras bisagras.",
+        "nota_clinica": "Mayor tensión mecánica sobre tríceps largo que skull crusher estándar. Recluta las tres cabezas con predominio del largo. Alta demanda en tendón tricipital.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_020",
+        "nombre": "Punching con Polainas",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Polaina",
+        "mesh_id_nike3d": "m_deltoid_anterior_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Con pesos en las muñecas, haz movimientos de boxeo lentos y controlados frente al espejo — sin prisa, con control.",
+        "nota_clinica": "Polainas añaden carga inercial a extensión de codo y rotación glenohumeral. Activa deltoides anterior + tríceps + serratus anterior.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "A_EMP_021",
+        "nombre": "Plancha Alta con Toque de Hombro",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_serratus_anterior_L",
+          "m_serratus_anterior_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "En posición de push-up arriba, toca el hombro contrario con una mano — sin que la cadera se mueva un centímetro.",
+        "nota_clinica": "Estabilización dinámica unilateral del serratus anterior y manguito. Activa glúteo y oblicuos para anti-rotación pélvica.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_EMP_022",
+        "nombre": "Push-up con Rotación T (T-Rotation)",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Inestabilidad Glenohumeral",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_serratus_anterior",
+        "skeleton_focus": "b_vertebra_T5",
+        "instruccion_abuela": "Al terminar el push-up, abre el cuerpo en T levantando un brazo hacia el techo — como abriendo una puerta giratoria.",
+        "nota_clinica": "Integra rotación torácica a cadena de empuje. Activa serratus anterior + oblicuos + rotadores torácicos. Mejora movilidad torácica y estabilidad escapular.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "A_EMP_023",
+        "nombre": "Push-up Estrecho (Close Grip)",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Tendinitis Tricipital"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_lateral_head_L",
+          "m_triceps_brachii_lateral_head_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Haz el push-up con las manos muy juntas bajo el pecho — vas a sentir fuerte la parte de atrás del brazo.",
+        "nota_clinica": "Agarre estrecho reduce activación pectoral y maximiza tríceps lateral. Mayor estrés articular en codo: contraindicado en epicondilitis aguda.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_024",
+        "nombre": "Push-up con Liga de Resistencia",
+        "segmento": "Pecho",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_sternal_L",
+          "m_pectoralis_major_sternal_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Pasa la liga por la espalda y agárrala con las manos al hacer el push-up — en la subida vas a sentir más resistencia.",
+        "nota_clinica": "Resistencia elástica aumenta demanda concéntrica. Permite cuantificar progresión objetiva. Efectivo con bandas de 15-20 kg.",
+        "bilateral": true,
+        "glb_region": "THORAX_ANT"
+      },
+      {
+        "id": "A_EMP_025",
+        "nombre": "Press Inclinado con Mancuerna",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_pectoralis_major_clavicular_R",
+        "skeleton_focus": "b_clavicle_R",
+        "instruccion_abuela": "Recostado con la cabeza en alto (banco inclinado), empuja las mancuernas hacia el techo en diagonal.",
+        "nota_clinica": "Ángulo 30-45° recluta porción clavicular del pectoral mayor + deltoides anterior. Menor estrés en manguito vs. press horizontal.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "A_EMP_026",
+        "nombre": "Press Declinado con Mancuerna",
+        "segmento": "Pecho",
+        "patologias_clave": [
+          "Desgarro Pectoral",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_pectoralis_major_sternal_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Con la cabeza más baja que los pies (banco declinado), empuja las mancuernas hacia arriba.",
+        "nota_clinica": "Recluta porción esternal inferior del pectoral. Menor activación del deltoides anterior. Control en descenso para evitar hiperextensión de hombros.",
+        "bilateral": false,
+        "glb_region": "THORAX_ANT"
+      },
+      {
+        "id": "A_EMP_027",
+        "nombre": "Press de Banca Alterno con Mancuerna",
+        "segmento": "Pecho",
+        "patologias_clave": [
+          "Inestabilidad Glenohumeral",
+          "Desgarro Pectoral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_sternal_L",
+          "m_pectoralis_major_sternal_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Sube una mancuerna mientras bajas la otra, como si los brazos fueran los pistones de un motor.",
+        "nota_clinica": "Alternancia exige anti-rotación de tronco y mayor activación del manguito estabilizador contralateral. Detecta asimetrías de fuerza.",
+        "bilateral": true,
+        "glb_region": "THORAX_ANT"
+      },
+      {
+        "id": "A_EMP_028",
+        "nombre": "Extensión de Tríceps Isométrica en Pared",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_long_head_L",
+          "m_triceps_brachii_long_head_R"
+        ],
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Pon el dorso de la mano contra la pared con el codo doblado y empuja sin mover el brazo — como si quisieras empujar la pared hacia atrás.",
+        "nota_clinica": "Contracción isométrica del tríceps a 90° de flexión. Sin movimiento articular = sin dolor en epicondilitis aguda. Primer paso en protocolo excéntrico.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_029",
+        "nombre": "Fondos de Tríceps en Suelo",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Tendinitis Tricipital"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_medial_head_L",
+          "m_triceps_brachii_medial_head_R"
+        ],
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Siéntate en el suelo con las manos detrás, dobla los codos bajando el trasero un poco y vuelve a subir.",
+        "nota_clinica": "Versión de bajo impacto de fondos en silla. Carga parcial ~30% peso corporal. Activa tríceps medial sin estrés glenohumeral.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_EMP_030",
+        "nombre": "Push-up a Una Mano Asistida",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Inestabilidad Glenohumeral"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_pectoralis_major_sternal_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Apoya un brazo en una pelota o escalón y haz el push-up con el otro brazo haciendo el trabajo duro.",
+        "nota_clinica": "Recluta 70-80% peso corporal en el lado de trabajo. Máxima activación unilateral de pectoral + manguito + serratus anterior. Test de retorno deportivo.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      }
+    ],
+    "TRACCION": [
+      {
+        "id": "A_TRA_031",
+        "nombre": "Remo Invertido en Mesa",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rhomboid_major_L",
+          "m_rhomboid_major_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Acuéstate bajo una mesa firme, agárrala con las manos y sube el pecho hacia ella como si quisieras besarla.",
+        "nota_clinica": "Patrón de tracción horizontal en cadena cerrada. Bajo estrés espinal. Activa romboides + trapecio medio + bíceps. Ideal inicio de protocolo de espalda.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_032",
+        "nombre": "Remo Invertido con Barra",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_latissimus_dorsi_L",
+          "m_latissimus_dorsi_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Agárrate a la barra con el cuerpo inclinado debajo y sube el pecho hacia ella como tabla rígida.",
+        "nota_clinica": "Mayor rango de movimiento vs. mesa. Activa dorsal ancho + romboides + bíceps. Carga ajustable según ángulo corporal (más vertical = más fácil).",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_033",
+        "nombre": "Remo Invertido Bajo (Supino)",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_trapezius_middle_L",
+          "m_trapezius_middle_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Con el cuerpo casi horizontal bajo la barra, sube el pecho — cuanto más horizontal, más difícil.",
+        "nota_clinica": "Alta demanda en trapecio medio y serratus. Simula remo con barra pero en cadena cerrada. Progresión hacia dominada.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_034",
+        "nombre": "Dominada Asistida con Liga",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_latissimus_dorsi_L",
+          "m_latissimus_dorsi_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Pon un pie en la liga colgada de la barra — la liga te ayuda a subir. Agárrate y jala hasta que la barbilla supere la barra.",
+        "nota_clinica": "La liga reduce la carga efectiva permitiendo completar el ROM completo. Activa dorsal ancho + bíceps + romboides. Progresión hacia dominada sin asistencia.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_035",
+        "nombre": "Dominada Prona",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_latissimus_dorsi_L",
+          "m_latissimus_dorsi_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Agárrate a la barra con las palmas mirando al frente y sube hasta que la barbilla pase la barra — sin balancearte.",
+        "nota_clinica": "Activa dorsal ancho como motor principal + trapecio inferior + bíceps braquial. Mayor activación del dorsal vs. agarre supino. Requiere fuerza escapular completa.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_036",
+        "nombre": "Dominada Supina (Chin-up)",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_biceps_brachii_long_head_L",
+          "m_biceps_brachii_long_head_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Agárrate a la barra con las palmas mirando hacia ti y sube hasta que la barbilla supere la barra.",
+        "nota_clinica": "Mayor activación del bíceps vs. dominada prona. Activa bíceps + dorsal ancho + pectoral menor. Biomecánicamente más favorable para el codo.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_037",
+        "nombre": "Dominada Escapular",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_trapezius_lower_L",
+          "m_trapezius_lower_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Cuelga de la barra con los brazos rectos y sin doblarlos, baja los hombros alejándolos de las orejas — luego vuelve a subir.",
+        "nota_clinica": "Activa exclusivamente trapecio inferior y serratus anterior. Sin flexión de codo. Primer paso en protocolo de fortalecimiento escapular. Controla postura cifótica.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_038",
+        "nombre": "Dominada Negativa (Excéntrica)",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_latissimus_dorsi_L",
+          "m_latissimus_dorsi_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Sube a la posición de dominada completa (con ayuda si necesitas) y baja lo más lento posible — cuenta hasta 5.",
+        "nota_clinica": "Fase excéntrica genera mayor tensión mecánica que la concéntrica. Estimula hipertrofia del dorsal ancho. Protocolo de transición hacia dominada plena.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_039",
+        "nombre": "Dominada Comando (Commando Pull-up)",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_latissimus_dorsi_L",
+          "m_latissimus_dorsi_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Agarra la barra con las palmas enfrentadas y sube alternando la cabeza a cada lado de la barra — izquierda, derecha, izquierda.",
+        "nota_clinica": "Agarre neutro reduce estrés en muñeca y codo. Activa dorsal + bíceps + oblicuos para la rotación. Alta demanda de coordinación y fuerza global.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_040",
+        "nombre": "Remo con Mancuerna (Bent Over)",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_latissimus_dorsi_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Inclínate hacia adelante sosteniendo la mancuerna y jálala hacia la cadera como sacando agua de un pozo.",
+        "nota_clinica": "Activa dorsal ancho + romboides + bíceps. Mayor rango vs. barra. Requiere estabilización isométrica de la columna lumbar. Contraindicado en hernia activa.",
+        "bilateral": false,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_041",
+        "nombre": "Remo con Liga",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_rhomboid_major_L",
+          "m_rhomboid_major_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Siéntate en el suelo, pasa la liga en los pies y jala ambos extremos hacia la cintura como si remases.",
+        "nota_clinica": "Resistencia elástica con bajo estrés compresivo lumbar en posición sentada. Activa romboides + trapecio medio. Ideal en fase subaguda de lumbalgia.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_042",
+        "nombre": "Remo Serrucho (Single Arm)",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_latissimus_dorsi_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Apoya una mano y rodilla en el banco y con la otra mano jala la mancuerna hacia la cadera como serruchando.",
+        "nota_clinica": "Mayor ROM y activación del dorsal ancho unilateral vs. remo bilateral. El apoyo en banco descarga la columna. Permite mayor carga vs. remo inclinado.",
+        "bilateral": false,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_043",
+        "nombre": "Face Pull con Banda",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_infraspinatus_L",
+          "m_infraspinatus_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Fija la banda a altura de cara, agárrala con ambas manos y jálala hacia la frente abriendo los codos hacia afuera.",
+        "nota_clinica": "Activa infraspinatus + teres minor + deltoides posterior. Corrige desequilibrios en rotadores externos. Clave en protocolo de hombro doloroso.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_TRA_044",
+        "nombre": "Vuelos Posteriores con Mancuerna",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_infraspinatus_L",
+          "m_infraspinatus_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Inclínado hacia adelante con las mancuernas colgando, levántalas hacia los lados como abriendo las alas.",
+        "nota_clinica": "Activa deltoides posterior + infraspinatus + romboides. Corrección postural para síndrome cruzado superior. Carga ligera (5-8 kg máx.).",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_TRA_045",
+        "nombre": "Vuelos Posteriores con Liga",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_infraspinatus_L",
+          "m_infraspinatus_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "De pie con la liga fijada al frente, abre los brazos hacia atrás como abriendo una chaqueta.",
+        "nota_clinica": "Resistencia elástica permite mayor control en el rango de rotación externa. Menor estrés glenohumeral vs. mancuerna. Ideal para fase propioceptiva.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_TRA_046",
+        "nombre": "Curl Bíceps con Mancuerna",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_biceps_brachii_long_head_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "De pie con las mancuernas a los lados, dobla los codos subiendo las pesas hacia los hombros — como si saludaras con los brazos.",
+        "nota_clinica": "Activa bíceps largo + brachialis + brachioradialis. Supinación activa la cabeza larga. Controlar descenso excéntrico para mayor efecto.",
+        "bilateral": false,
+        "glb_region": "ARM_R"
+      },
+      {
+        "id": "A_TRA_047",
+        "nombre": "Curl Bíceps con Liga",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_biceps_brachii_short_head_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Pisa la liga y sube los extremos doblando los codos hacia el pecho — la resistencia aumenta conforme subes.",
+        "nota_clinica": "Resistencia variable beneficia la cabeza corta del bíceps en el arco final. Bajo estrés articular en codo. Seguro en fases subagudas de epicondilitis.",
+        "bilateral": false,
+        "glb_region": "ARM_R"
+      },
+      {
+        "id": "A_TRA_048",
+        "nombre": "Curl Zottman",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_brachioradialis_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Sube la mancuerna con la palma hacia arriba y al bajar gira la muñeca para que la palma mire hacia abajo — como un tornillo.",
+        "nota_clinica": "Combina curl supino (sube) + curl prono (baja). Activa brachioradialis + supinador en la bajada. Excelente para epicondilitis lateral en protocolo excéntrico.",
+        "bilateral": false,
+        "glb_region": "ARM_R"
+      },
+      {
+        "id": "A_TRA_049",
+        "nombre": "Remo al Mentón con Mancuerna",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_supraspinatus_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Con las mancuernas frente a ti, súbelas hacia la barbilla levantando los codos al techo.",
+        "nota_clinica": "Activa deltoides lateral + trapecio superior + bíceps. Puede provocar impingement subacromial si se eleva por encima de los hombros. Limitar a 90° de abducción.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "A_TRA_050",
+        "nombre": "Pull-over con Mancuerna",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_latissimus_dorsi_L",
+          "m_latissimus_dorsi_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Acostado con la mancuerna sobre el pecho, bájala hacia atrás sobre la cabeza manteniéndola con ambas manos.",
+        "nota_clinica": "Activa dorsal ancho + pectoral mayor + tríceps largo. Estira la caja torácica. Exige movilidad glenohumeral. Contraindicado en inestabilidad de hombro.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_051",
+        "nombre": "Curl Concentrado",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_biceps_brachii_long_head_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Sentado, apoya el codo en el interior del muslo y dobla el brazo subiendo la mancuerna — enfoca en el bíceps.",
+        "nota_clinica": "Maximiza activación de la cabeza larga del bíceps al reducir el reclutamiento de músculos sinergistas. Aislamiento máximo para corrección de asimetrías.",
+        "bilateral": false,
+        "glb_region": "ARM_R"
+      },
+      {
+        "id": "A_TRA_052",
+        "nombre": "Curl Martillo (Hammer Curl)",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_brachioradialis_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Sube la mancuerna con el pulgar apuntando al techo — como sosteniendo un martillo — sin girar la muñeca.",
+        "nota_clinica": "Agarre neutro activa preferentemente brachioradialis + brachialis. Menor estrés en codo que el curl supino. Seguro en epicondilitis lateral moderada.",
+        "bilateral": false,
+        "glb_region": "ARM_R"
+      },
+      {
+        "id": "A_TRA_053",
+        "nombre": "Curl Predicador con Liga",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_biceps_brachii_short_head_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Apoya el brazo en un cojín o banco inclinado y dobla el codo subiendo la liga — el apoyo evita que el hombro te ayude.",
+        "nota_clinica": "Fija el origen del bíceps, aislando la cabeza corta. Resistencia elástica reduce estrés articular. Excelente en protocolo de epicondilitis.",
+        "bilateral": false,
+        "glb_region": "ARM_R"
+      },
+      {
+        "id": "A_TRA_054",
+        "nombre": "Pulldown con Liga (Lat Pulldown)",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_latissimus_dorsi_L",
+          "m_latissimus_dorsi_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Fija la liga en alto, siéntate y jala hacia abajo hacia el pecho abriendo los codos hacia afuera.",
+        "nota_clinica": "Simula el lat pulldown en máquina. Activa dorsal ancho + bíceps. La resistencia elástica es mayor en el punto final (descarga el inicio). Bajo estrés espinal.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_055",
+        "nombre": "Remo al Mentón con Liga",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_deltoid_lateral_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Pisa la liga y jala hacia arriba con ambas manos hasta la altura del mentón, levantando los codos al techo.",
+        "nota_clinica": "Liga ofrece curva de fuerza progresiva. Activa deltoides lateral + trapecio. Limitar elevación a 90° para evitar impingement subacromial.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "A_TRA_056",
+        "nombre": "Dominada Isométrica Hold",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_latissimus_dorsi_L",
+          "m_latissimus_dorsi_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Sube a la posición de dominada completa y mantente ahí — quédate quieto con la barbilla sobre la barra todo lo que puedas.",
+        "nota_clinica": "Contracción isométrica del dorsal ancho, bíceps y romboides. Desarrolla fuerza de agarre y resistencia muscular. Sin estrés articular dinámico.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_057",
+        "nombre": "Remo Horizontal con Liga",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_trapezius_middle_L",
+          "m_trapezius_middle_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "De pie con la liga fijada al frente, jala con ambas manos hacia la barriga como abriendo una puerta pesada.",
+        "nota_clinica": "Activa trapecio medio + romboides en patrón de retracción escapular. Corrección postural en síndrome cruzado superior. Bajo impacto espinal.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_TRA_058",
+        "nombre": "Curl 21s con Mancuerna",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_biceps_brachii_long_head_L",
+          "m_biceps_brachii_long_head_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Haz 7 repeticiones en la mitad baja, 7 en la mitad alta y 7 completas — en total 21 movimientos.",
+        "nota_clinica": "Divide el rango de movimiento para maximizar tensión muscular en cada segmento del arco. Mayor tiempo bajo tensión. Solo para fase 3 de retorno.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_TRA_059",
+        "nombre": "Curl Bíceps Isométrico con Liga",
+        "segmento": "Codo",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Codo de Tenista"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_biceps_brachii_long_head_L",
+          "m_biceps_brachii_long_head_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Pisa la liga, agárrala y dobla el codo a 90° — mantén esa posición sin moverte durante 10 segundos.",
+        "nota_clinica": "Contracción isométrica del bíceps a 90°. Sin movimiento articular. Primer paso en protocolo de epicondilitis lateral aguda. 3 series de 10 seg.",
+        "bilateral": true,
+        "glb_region": [
+          "ARM_L",
+          "ARM_R"
+        ]
+      },
+      {
+        "id": "A_TRA_060",
+        "nombre": "Vuelo Posterior Isométrico en Pared",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_teres_minor_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "De pie frente a la pared, apoya el dorso de la mano y empuja hacia atrás sin mover el brazo — como si quisieras abrir las alas.",
+        "nota_clinica": "Activa teres minor + infraspinatus en contracción isométrica. Sin movimiento = sin dolor en fase aguda. Inicio del protocolo de rotadores externos.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      }
+    ],
+    "CADERA_GLUTEO": [
+      {
+        "id": "A_CAD_061",
+        "nombre": "Puente de Glúteo en Suelo",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_gluteus_maximus_L",
+          "m_gluteus_maximus_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Acuéstate boca arriba, dobla las rodillas y empuja la cadera hacia el techo como si quisieras hacer un puente.",
+        "nota_clinica": "Activa glúteo mayor con mínimo estrés lumbar. Primer ejercicio en protocolo de rehabilitación de cadera y lumbopélvica.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_062",
+        "nombre": "Puente de Glúteo Isométrico",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_gluteus_maximus_L",
+          "m_gluteus_maximus_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Sube la cadera y mantenla arriba contando hasta 10 — sin dejarla caer.",
+        "nota_clinica": "Contracción isométrica del glúteo mayor. Sin carga dinámica articular. Activa también el core como estabilizador. Ideal en fase aguda.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_063",
+        "nombre": "Puente de Glúteo a Una Pierna",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_gluteus_maximus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Igual que el puente normal pero con una pierna estirada — empuja con la otra y mantén la cadera nivelada.",
+        "nota_clinica": "Aumenta la demanda unilateral del glúteo mayor. Detecta asimetrías. Activa abductores de cadera como estabilizadores frontales.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_064",
+        "nombre": "Puente de Glúteo con Banda",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_gluteus_medius_L",
+          "m_gluteus_medius_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Pon la banda sobre las rodillas antes de hacer el puente y abre un poco las rodillas al subir — sin dejarlas caer hacia adentro.",
+        "nota_clinica": "La banda activa el glúteo medio como abductor durante el puente. Corrige valgus de rodilla. Protocolo clave para síndrome de cadera y ACL.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_065",
+        "nombre": "Puente de Glúteo con Mancuerna",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_gluteus_maximus_L",
+          "m_gluteus_maximus_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Pon la mancuerna sobre la cadera y haz el puente — más peso, más trabajo para el glúteo.",
+        "nota_clinica": "La mancuerna añade carga progresiva al glúteo mayor. Paso previo al Hip Thrust en banco. Controlar la neutro lumbar durante toda la ejecución.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_066",
+        "nombre": "Puente de Glúteo en Bosu",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Bosu",
+        "mesh_id_nike3d": [
+          "m_gluteus_maximus_L",
+          "m_gluteus_maximus_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Apoya los pies en el lado plano del Bosu y sube la cadera — el equilibrio inestable va a hacer trabajar más.",
+        "nota_clinica": "La superficie inestable aumenta la activación de abductores y rotadores de cadera. Fase propioceptiva lumbopélvica.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_067",
+        "nombre": "Clamshell con Banda",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_gluteus_medius_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado de lado con las rodillas dobladas, abre la rodilla de arriba como una almeja — sin mover la cadera.",
+        "nota_clinica": "Activa glúteo medio de forma aislada. Corrección del síndrome de abductores débiles. Ejercicio fundamental en protocolo de cadera y rodilla.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_068",
+        "nombre": "Clamshell Invertido",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_gluteus_minimus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado de lado con la banda sobre las rodillas, mantén las rodillas juntas y abre el pie de arriba — al revés del clamshell normal.",
+        "nota_clinica": "Activa rotadores internos + glúteo menor. Complementa el clamshell estándar para equilibrar los rotadores de cadera.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_069",
+        "nombre": "Monster Walk con Banda",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_gluteus_medius_L",
+          "m_gluteus_medius_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con la banda sobre los tobillos, camina de lado como un monstruo — pasos largos manteniendo la tensión en la banda.",
+        "nota_clinica": "Activa glúteo medio + tensor fasciae latae en patrón funcional de marcha. Mejora estabilidad lateral de cadera. Clave en prevención de lesiones de rodilla.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_070",
+        "nombre": "Marcha de Glúteo con Banda",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_gluteus_medius_L",
+          "m_gluteus_medius_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Con la banda sobre los tobillos, marcha hacia adelante exagerando el movimiento de cadera.",
+        "nota_clinica": "Activa glúteo medio en patrón de marcha funcional. Mejora control neuromuscular de la cadera. Protocolo de retorno a la marcha post-lesión.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_071",
+        "nombre": "Abducción de Cadera en Suelo",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_gluteus_medius_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado de lado con la pierna recta, súbela hacia el techo como si quisieras tocar la pared — despacio.",
+        "nota_clinica": "Activación aislada del glúteo medio sin carga articular. Primero en protocolo de abductores débiles y bursitis trocantérica.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_072",
+        "nombre": "Abducción de Cadera de Pie con Polaina",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Polaina",
+        "mesh_id_nike3d": "m_gluteus_medius_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "De pie, abre la pierna hacia el lado como un compás — con el peso en el tobillo trabaja más el glúteo del medio.",
+        "nota_clinica": "Polaina añade carga al glúteo medio en posición funcional de pie. Mayor demanda de equilibrio unilateral que versión en suelo.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_073",
+        "nombre": "Abducción de Cadera con Liga de Pie",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_tensor_fasciae_latae_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Fija la liga al tobillo y abre la pierna hacia el lado — controla el regreso.",
+        "nota_clinica": "Activa tensor fasciae latae + glúteo medio. Resistencia elástica es progresiva. Controlar valgus de rodilla de apoyo durante el movimiento.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_074",
+        "nombre": "Abducción Isométrica en Pared",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_gluteus_medius_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "De pie, apoya el costado del pie contra la pared y empuja hacia afuera sin mover la pierna — mantén 10 segundos.",
+        "nota_clinica": "Isométrico del glúteo medio. Sin dolor articular. Ideal para inicio de rehabilitación tras bursitis trocantérica aguda.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_075",
+        "nombre": "Hip Thrust con Mancuerna",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_gluteus_maximus_L",
+          "m_gluteus_maximus_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Con la espalda en el banco y la mancuerna en la cadera, empuja la cadera hacia arriba hasta quedar horizontal.",
+        "nota_clinica": "Ejerce máximo torque en glúteo mayor a 0° de flexión de cadera. Mayor activación del glúteo vs. sentadilla. Protocolo de hipertrofia de glúteo.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_076",
+        "nombre": "Hip Thrust con Banda",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_gluteus_maximus_L",
+          "m_gluteus_maximus_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Con la banda sobre las caderas fijada en ambos lados, haz el hip thrust — la banda añade resistencia horizontal.",
+        "nota_clinica": "La resistencia elástica horizontal activa el glúteo mayor y medio simultáneamente. Menor carga compresiva que la mancuerna.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_077",
+        "nombre": "Peso Muerto Rumano Bilateral",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_biceps_femoris_long_head_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "De pie con las mancuernas, dobla el cuerpo hacia adelante como cerrando una puerta con la espalda — sin doblar las rodillas.",
+        "nota_clinica": "Activa isquiotibiales + glúteo mayor en patrón de bisagra de cadera. Requiere control de neutro lumbar. Progresión segura post-lumbalgia.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_078",
+        "nombre": "Peso Muerto Rumano Unilateral",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_semimembranosus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "En una sola pierna, baja la mancuerna hacia el suelo inclinando el cuerpo como un avión — mantén el equilibrio.",
+        "nota_clinica": "Activa isquiotibiales mediales + glúteo mayor unilateral. Exige estabilización activa de la cadera y el core. Detecta asimetrías isquiotibiales.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_079",
+        "nombre": "Peso Muerto Sumo con Mancuerna",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_gluteus_maximus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con los pies muy abiertos y la mancuerna entre las piernas, bájala hacia el suelo y sube empujando la cadera al frente.",
+        "nota_clinica": "Postura sumo reduce estrés lumbar y aumenta activación de aductores + glúteo mayor. Menor carga en la columna vs. peso muerto convencional.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_080",
+        "nombre": "Patada de Glúteo Cuadrúpedo con Polaina",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Polaina",
+        "mesh_id_nike3d": "m_gluteus_maximus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "En cuatro patas, patea una pierna hacia atrás y arriba como si quisieras tocar el techo con el talón.",
+        "nota_clinica": "Activa glúteo mayor en extensión de cadera con rodilla doblada. Polaina aumenta carga distal. Controlar lordosis lumbar durante la ejecución.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_081",
+        "nombre": "Patada de Glúteo en 4 Apoyos Sin Peso",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_gluteus_maximus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "En cuatro patas, sube una pierna hacia atrás y arriba — despacio y controlado.",
+        "nota_clinica": "Versión sin carga de la patada de glúteo. Activa glúteo mayor con mínimo estrés articular. Ideal para inicio de protocolo post-cirugía de cadera.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_082",
+        "nombre": "Patada de Glúteo de Pie con Liga",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_gluteus_maximus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con la liga en el tobillo, de pie, patea hacia atrás y arriba manteniendo el tronco estable.",
+        "nota_clinica": "Activa glúteo mayor en posición funcional de pie. Liga añade resistencia progresiva. Mayor demanda de equilibrio y core vs. versión en suelo.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_083",
+        "nombre": "Buenos Días con Liga",
+        "segmento": "Espalda",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Pisa la liga, pásala por los hombros y dobla el tronco hacia adelante despacio como haciendo una reverencia — mantén la espalda recta.",
+        "nota_clinica": "Activa erector espinal + glúteo mayor + isquiotibiales. La liga proporciona resistencia progresiva. Rehabilitación lumbar en fase subaguda.",
+        "bilateral": true,
+        "glb_region": "THORAX_POST"
+      },
+      {
+        "id": "A_CAD_084",
+        "nombre": "Hip Hinge Isométrico",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_gluteus_maximus_L",
+          "m_gluteus_maximus_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "De pie, dobla el tronco hacia adelante como cerrando una puerta con la espalda y mantén esa posición 10 segundos — sin doblar las rodillas.",
+        "nota_clinica": "Enseña el patrón motor de bisagra de cadera con control isométrico. Activa glúteo y erector espinal. Fundamental antes de cualquier carga dinámica.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_085",
+        "nombre": "Hip Hinge con Banda",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Hernia Discal",
+          "Lumbago"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_biceps_femoris_long_head_L",
+          "m_biceps_femoris_long_head_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Con la banda alrededor de la cintura fijada atrás, empuja las caderas hacia adelante resistiendo la banda.",
+        "nota_clinica": "La banda crea resistencia horizontal en la extensión de cadera. Activa glúteo mayor + isquiotibiales. Variante dinámica del hip hinge isométrico.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_086",
+        "nombre": "Sentadilla Sumo con Mancuerna",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_adductor_magnus_L",
+          "m_adductor_magnus_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con los pies muy separados y la mancuerna colgando entre las piernas, baja el trasero como si te fueras a sentar en un cubo.",
+        "nota_clinica": "Postura sumo activa aductores + glúteo mayor. Reduce estrés lumbar. Ideal para pacientes con movilidad de cadera limitada.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_087",
+        "nombre": "Zancada Lateral",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_adductor_longus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Da un paso grande hacia el lado, dobla esa rodilla y baja el trasero — la otra pierna queda estirada.",
+        "nota_clinica": "Activa aductores + glúteo mayor en plano frontal. Mejora movilidad de cadera y estabilidad lateral. Prevención de lesiones en deportes de cambio de dirección.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_088",
+        "nombre": "Fire Hydrant con Banda",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_gluteus_medius_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "En cuatro patas con la banda sobre las rodillas, levanta una rodilla hacia el lado como si fueras un perro en un hidrante.",
+        "nota_clinica": "Activa glúteo medio en abducción + rotación externa. La banda añade resistencia. Complementa el clamshell para el protocolo de glúteo medio.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_089",
+        "nombre": "Sentadilla Lateral (Cossack Squat)",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_adductor_longus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con los pies muy abiertos, desplaza el peso a un lado bajando esa rodilla — la otra pierna queda estirada en el suelo.",
+        "nota_clinica": "Alta demanda de movilidad de cadera en plano frontal. Activa aductores + glúteo mayor + cuádriceps unilateral. Mejora rango de movimiento de cadera.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_CAD_090",
+        "nombre": "Peso Muerto Pierna Extendida con Mancuerna",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérica",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_semitendinosus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "De pie con las rodillas casi rectas, baja las mancuernas hacia el suelo inclinando el tronco hasta sentir el tirón en la parte posterior de la pierna.",
+        "nota_clinica": "Activa semitendinoso + semimembranoso en estiramiento bajo carga. Mayor rango de movimiento en isquiotibiales que el rumano estándar.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      }
+    ],
+    "PIERNA_RODILLA": [
+      {
+        "id": "A_ROD_091",
+        "nombre": "Sentadilla Air Squat",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_femoris_L",
+          "m_rectus_femoris_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Párate con los pies a ancho de hombros y baja el trasero como si te fueras a sentar en una silla baja — luego sube.",
+        "nota_clinica": "Activa cuádriceps + glúteo mayor + soleo. Bajo impacto articular sin carga externa. Primer ejercicio en protocolo de rodilla post-menisco.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_092",
+        "nombre": "Wall Sit (Sentadilla Isométrica)",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_vastus_medialis_L",
+          "m_vastus_medialis_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Apoya la espalda en la pared y baja hasta que las rodillas queden a 90° — mantén esa posición todo lo que puedas.",
+        "nota_clinica": "Contracción isométrica del cuádriceps a 90° de flexión. Sin movimiento articular. Activa vastus medialis oblique (VMO) crítico en protocolo post-ACL.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_093",
+        "nombre": "Sentadilla Copa (Goblet Squat)",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_vastus_medialis_L",
+          "m_vastus_medialis_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Sostén la mancuerna vertical frente al pecho como una copa y haz la sentadilla — te ayudará a mantener la espalda recta.",
+        "nota_clinica": "El contrapeso anterior facilita la postura erguida y mayor profundidad. Activa VMO + glúteo mayor. Progresión segura tras lesión de menisco.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_094",
+        "nombre": "Sentadilla Búlgara",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_rectus_femoris_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con el pie de atrás en una silla, baja con el pie de adelante doblando la rodilla — es como una zancada pero más profunda.",
+        "nota_clinica": "Alta activación unilateral del cuádriceps y glúteo. Detecta y corrige asimetrías. Exige movilidad de cadera y estabilidad de tobillo.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_095",
+        "nombre": "Sentadilla con Salto (Jump Squat)",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Ruptura ACL",
+          "Lesión de Menisco"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_femoris_L",
+          "m_rectus_femoris_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Haz la sentadilla y al subir explota hacia arriba saltando — aterriza suavemente doblando las rodillas.",
+        "nota_clinica": "Entrena potencia del tren inferior. Fase excéntrica al aterrizaje activa mecanismos de protección del ACL. Solo para retorno deportivo avanzado.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_096",
+        "nombre": "Sentadilla en Bosu",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Bosu",
+        "mesh_id_nike3d": [
+          "m_vastus_medialis_L",
+          "m_vastus_medialis_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Párate sobre el lado plano del Bosu y haz la sentadilla — el equilibrio inestable trabaja más los músculos.",
+        "nota_clinica": "Superficie inestable aumenta la co-contracción de estabilizadores de rodilla. Activa VMO + peroneales + soleo. Fase propioceptiva post-ACL.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_097",
+        "nombre": "Sentadilla con Mancuerna",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_rectus_femoris_L",
+          "m_rectus_femoris_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con las mancuernas a los lados, haz la sentadilla normal — el peso extra va a requerir más fuerza.",
+        "nota_clinica": "Carga axial adicional aumenta el reclutamiento del cuádriceps y glúteo. Progresión tras dominar la sentadilla sin carga. Controlar rodillas en valgo.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_098",
+        "nombre": "Zancada Frontal",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_rectus_femoris_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Da un paso largo hacia adelante y baja la rodilla de atrás hacia el suelo — luego vuelve al inicio.",
+        "nota_clinica": "Activa cuádriceps + glúteo mayor en patrón unilateral. Mayor estrés en rodilla adelantada. Controlar que la rodilla no supere la punta del pie.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_099",
+        "nombre": "Zancada Atrás",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_gluteus_maximus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Da un paso largo hacia atrás y baja la rodilla trasera hacia el suelo — más fácil que la zancada frontal para la rodilla.",
+        "nota_clinica": "Menor estrés patelofemoral vs. zancada frontal. Mayor activación del glúteo. Progresión más segura post-menisco por menor cizallamiento.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_100",
+        "nombre": "Zancada Caminando",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_rectus_femoris_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Camina hacia adelante haciendo zancadas continuas — como si fueras de paseo pero con más esfuerzo.",
+        "nota_clinica": "Patrón funcional de marcha con carga unilateral. Activa cuádriceps + glúteo + pantorrilla en secuencia. Retorno deportivo funcional.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_101",
+        "nombre": "Zancada con Mancuerna",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_rectus_femoris_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con las mancuernas a los lados, da la zancada — el peso extra exige más control y fuerza.",
+        "nota_clinica": "Carga adicional aumenta demanda del cuádriceps y glúteo. Detecta asimetrías de fuerza bilateral. Progresión hacia deporte.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_102",
+        "nombre": "Step-up en Cajón",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_vastus_medialis_R",
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Sube al cajón con un pie y lleva el otro pie para arriba — luego baja controlado.",
+        "nota_clinica": "Activa VMO en cadena cerrada unilateral. Altura del cajón regula la intensidad. Protocolo fundamental post-menisco y ACL.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_103",
+        "nombre": "Step-up con Polaina",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Polaina",
+        "mesh_id_nike3d": "m_vastus_medialis_R",
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Igual que el step-up normal pero con peso en los tobillos — más carga para el cuádriceps.",
+        "nota_clinica": "La polaina añade carga distal aumentando el torque sobre el cuádriceps. Progresión objetiva y segura para el step-up.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_104",
+        "nombre": "Step Down Excéntrico",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_vastus_medialis_R",
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Parado en el cajón con un pie, baja el otro hacia el suelo despacio, contando hasta 5 — luego vuelve a subir.",
+        "nota_clinica": "La fase excéntrica controlada del cuádriceps es clave en rehabilitación patelofemoral. Activa VMO bajo carga elongada. Protocolo post-ACL.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_105",
+        "nombre": "Sissy Squat",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_rectus_femoris_R",
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "De rodillas, inclina el cuerpo hacia atrás controladamente como si cayeras — luego vuelve a subir.",
+        "nota_clinica": "Máxima activación del recto femoral bajo tensión elongada. Alto estrés patelofemoral. Solo para atletas en fase final de retorno deportivo.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_106",
+        "nombre": "Extensión de Cuádriceps con Liga",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_vastus_medialis_L",
+          "m_vastus_medialis_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Sentado con la liga en el tobillo, estira la pierna hacia adelante — la resistencia te la da la liga.",
+        "nota_clinica": "Activa VMO en cadena abierta. Resistencia elástica. Menor estrés articular vs. máquina. Útil en atrofia cuadricipital post-inmovilización.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_107",
+        "nombre": "Extensión de Cuádriceps Isométrica",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_vastus_medialis_L",
+          "m_vastus_medialis_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Sentado, empuja el talón hacia el suelo tensando el muslo sin moverlo — mantén 10 segundos.",
+        "nota_clinica": "Contracción isométrica cuadricipital (quad set). Sin movimiento articular. Primer ejercicio para prevenir atrofia post-cirugía de rodilla.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_108",
+        "nombre": "Terminal Knee Extension con Liga (TKE)",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_vastus_medialis_L",
+          "m_vastus_medialis_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Con la liga fija atrás, dobla la rodilla un poco y luego extiéndela completamente — la liga te resiste en los últimos grados.",
+        "nota_clinica": "Fortalece VMO en los últimos 30° de extensión, donde mayor activación ocurre. Clave en protocolo post-ACL. Activa poplíteo.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_109",
+        "nombre": "Curl Isquiotibial con Liga",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_semitendinosus_L",
+          "m_semitendinosus_R"
+        ],
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Boca abajo con la liga en el tobillo, dobla la pierna hacia el trasero resistiendo la liga.",
+        "nota_clinica": "Activa bíceps femoral + semimembranoso en cadena abierta. Resistencia elástica progresiva. Rehabilitación de isquiotibiales en fases 1-2.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_110",
+        "nombre": "Curl Isquiotibial por Deslizamiento",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_semimembranosus_L",
+          "m_semimembranosus_R"
+        ],
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Acostado boca arriba con los talones en el suelo liso (o calcetines), empuja la cadera y desliza los talones hacia el trasero.",
+        "nota_clinica": "Activa isquiotibiales en cadena cerrada. La excéntrica al extender es altamente terapéutica. No requiere equipo. Alta demanda en isquiotibiales mediales.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_111",
+        "nombre": "Curl Nórdico (Nordic Hamstring)",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Ruptura ACL",
+          "Lesión de Menisco"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_biceps_femoris_long_head_L",
+          "m_biceps_femoris_long_head_R"
+        ],
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Arrodíllate con los pies fijos y cae hacia adelante controladamente con el cuerpo rígido — frena la caída con los isquiotibiales.",
+        "nota_clinica": "El ejercicio excéntrico más efectivo para isquiotibiales. Reduce incidencia de lesión ACL hasta un 50%. Solo para fase avanzada.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_112",
+        "nombre": "Elevación de Talón en Suelo",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Fascitis Plantar"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_gastrocnemius_medial_L",
+          "m_gastrocnemius_medial_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "De pie, sube en puntillas lo más alto que puedas y baja despacio — como queriendo ser más alto.",
+        "nota_clinica": "Activa gastrocnemio medial + sóleo en cadena cerrada. Fase inicial de rehabilitación de tendón de Aquiles y fascitis plantar.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_ROD_113",
+        "nombre": "Elevación de Talón en Escalón",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Fascitis Plantar"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_soleus_L",
+          "m_soleus_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "Párate en el borde de un escalón con los talones colgando y baja hasta sentir el tirón en la pantorrilla — luego sube en puntillas.",
+        "nota_clinica": "Mayor rango de movimiento en flexión plantar. El descenso bajo el nivel del escalón estira el sóleo bajo carga excéntrica. Protocolo Alfredson para Aquiles.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_ROD_114",
+        "nombre": "Elevación de Talón con Polaina",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Fascitis Plantar"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Polaina",
+        "mesh_id_nike3d": [
+          "m_gastrocnemius_lateral_L",
+          "m_gastrocnemius_lateral_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "Con pesos en los tobillos, sube en puntillas — el extra de peso hace trabajar más las pantorrillas.",
+        "nota_clinica": "La polaina añade carga al gastrocnemio lateral. Progresión del calf raise estándar. Controlar la pronación durante el movimiento.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_ROD_115",
+        "nombre": "Calf Raise en Bosu",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Fascitis Plantar"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Bosu",
+        "mesh_id_nike3d": [
+          "m_soleus_L",
+          "m_soleus_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "Párate sobre el Bosu con el lado plano arriba y sube en puntillas — el equilibrio inestable trabaja más el tobillo.",
+        "nota_clinica": "Superficie inestable aumenta la activación propioceptiva del tobillo y peroneales. Fase propioceptiva post-esguince de tobillo.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_ROD_116",
+        "nombre": "Tibial Anterior con Liga",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Fascitis Plantar"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_tibialis_anterior_L",
+          "m_tibialis_anterior_R"
+        ],
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Siéntate, fija la liga en el pie y sube la punta del pie hacia ti resistiendo la liga — como si quisieras tocar la espinilla.",
+        "nota_clinica": "Activa tibial anterior en cadena abierta. Resistencia elástica. Rehabilitación de shin splints y desequilibrio pantorrilla-tibial.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_ROD_117",
+        "nombre": "Wall Press Pierna Isométrico",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_vastus_medialis_L",
+          "m_vastus_medialis_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Acostado con el pie apoyado en la pared y la rodilla doblada a 90°, empuja el talón contra la pared sin mover la pierna.",
+        "nota_clinica": "Contracción isométrica submáxima del cuádriceps y glúteo. Sin movimiento articular. Primer ejercicio tras cirugía de rodilla.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_118",
+        "nombre": "Salto a Cajón (Box Jump)",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Ruptura ACL",
+          "Lesión de Menisco"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_femoris_L",
+          "m_rectus_femoris_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Salta al cajón con ambos pies y aterriza suavemente doblando las rodillas — no aterrices rígido.",
+        "nota_clinica": "Entrenamiento pliométrico. El aterrizaje correcto (flexión de rodilla y cadera) reduce el estrés ACL. Solo en retorno deportivo certificado.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_119",
+        "nombre": "Marcha de Rodillas",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_femoris_L",
+          "m_rectus_femoris_R"
+        ],
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "Arrodíllado en el suelo, avanza alternando las rodillas como si caminaras pero arrodillado.",
+        "nota_clinica": "Movilización activa de la rodilla en cadena cerrada con mínima carga. Activa cuádriceps y glúteo en patrón alternante. Post-menisco fase 1.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_ROD_120",
+        "nombre": "Sentadilla Lateral (Cossack Squat)",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lesión de Menisco",
+          "Ruptura ACL"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_adductor_longus_L",
+          "m_adductor_longus_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con los pies muy abiertos, desplaza el peso a un lado bajando esa rodilla — la otra pierna queda estirada en el suelo.",
+        "nota_clinica": "Alta movilidad de cadera en plano frontal. Activa aductores + cuádriceps unilateral. Complementa el plano sagital de la sentadilla estándar.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      }
+    ],
+    "CORE_COLUMNA": [
+      {
+        "id": "A_COR_121",
+        "nombre": "Plancha Frontal",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Apóyate en los codos y puntas de los pies como si fueras una tabla de madera — mantén el cuerpo recto sin hundir la barriga.",
+        "nota_clinica": "Activa transverso abdominal y multífidos en isométrico. Presión intraabdominal moderada. Pilar de la estabilización lumbopélvica.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_122",
+        "nombre": "Plancha Lateral",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_oblique_external_L",
+          "m_oblique_external_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Apóyate en un codo y el borde del pie — levanta la cadera formando una línea diagonal como una rampa.",
+        "nota_clinica": "Activa oblicuo externo e interno en isométrico lateral. Involucra cuadrado lumbar y glúteo medio. Rehabilitación de lumbalgia mecánica.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_123",
+        "nombre": "Plancha en Bosu",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Bosu",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Haz la plancha con los codos sobre el lado curvo del Bosu — el movimiento extra hace trabajar más el abdomen.",
+        "nota_clinica": "La superficie inestable aumenta la activación del TrA y multífidos. Mayor demanda propioceptiva. Progresión natural de la plancha estándar.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_124",
+        "nombre": "Plancha con Movimiento de Hombros",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_serratus_anterior_L",
+          "m_serratus_anterior_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "En posición de plancha alta, desliza un hombro hacia adelante y luego hacia atrás, alternando lados — sin mover la cadera.",
+        "nota_clinica": "Activa serrato anterior y TrA bajo demanda de anti-rotación. Promueve disociación cingular-lumbar. Útil en patología de hombro + lumbar.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_125",
+        "nombre": "Plancha RKC",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "En plancha en codos, aprieta los puños, empuja el suelo con los codos y aprieta los glúteos al máximo — todo a la vez.",
+        "nota_clinica": "Russian Kettlebell Challenge plank. Mayor activación EMG del TrA vs. plancha estándar. Recluta glúteos y dorsales simultáneamente. Alta rigidez espinal.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_126",
+        "nombre": "Plancha Lateral con Rotación",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_oblique_external_L",
+          "m_oblique_external_R"
+        ],
+        "skeleton_focus": "b_vertebra_T10",
+        "instruccion_abuela": "En plancha lateral, lleva el brazo libre por debajo del cuerpo como si quisieras tocar el suelo del otro lado.",
+        "nota_clinica": "Patrón de anti-rotación con carga excéntrica en oblicuos. Activa serrato anterior y cuadrado lumbar. Rehabilitación de columna con componente rotacional.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_127",
+        "nombre": "Hollow Body Isométrico",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_abdominis_L",
+          "m_rectus_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Acostado, levanta la cabeza y los talones unos centímetros del suelo y mantén — como una banana hueca.",
+        "nota_clinica": "Retroversión pélvica mantenida + activación de recto abdominal. Base del entrenamiento de gymnastics strength. Protege la columna lumbar.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_128",
+        "nombre": "Hollow Rock",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_abdominis_L",
+          "m_rectus_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "En posición banana, balancea adelante y atrás manteniendo la forma — sin perder la tensión del abdomen.",
+        "nota_clinica": "Progresión dinámica del hollow body. Alta activación de recto abdominal y psoas. Requiere control motor fino de la columna lumbar.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_129",
+        "nombre": "Bird-Dog Estándar",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_multifidus_L",
+          "m_multifidus_R"
+        ],
+        "skeleton_focus": "b_vertebra_L4",
+        "instruccion_abuela": "A cuatro patas, extiende un brazo y la pierna contraria al mismo tiempo — como si señalaras en dos direcciones a la vez.",
+        "nota_clinica": "Activa multífidos y TrA en patrón diagonal. Mínima carga compresiva lumbar (Stuart McGill). Ejercicio de elección en lumbalgia crónica.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_130",
+        "nombre": "Bird-Dog con Polaina",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Polaina",
+        "mesh_id_nike3d": [
+          "m_multifidus_L",
+          "m_multifidus_R"
+        ],
+        "skeleton_focus": "b_vertebra_L4",
+        "instruccion_abuela": "Igual que el bird-dog pero con pesos en los tobillos — el peso extra hace trabajar más la espalda y el abdomen.",
+        "nota_clinica": "La polaina añade carga a los extensores lumbares y glúteos. Mayor demanda propioceptiva. Progresión del bird-dog estándar en fases 2-3.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_131",
+        "nombre": "Dead Bug Estándar",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Acostado boca arriba, levanta brazos y piernas y bájales alternativamente — como un bicho muerto patas arriba que se mueve.",
+        "nota_clinica": "Activa TrA con mantenimiento de lordosis neutra. Patrón contralateral sin carga compresiva. Ejercicio McGill de primera elección en hernia.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_132",
+        "nombre": "Dead Bug con Liga",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Como el bicho muerto, pero con una liga que une el brazo y la pierna contraria — tira con ambos mientras bajas los otros.",
+        "nota_clinica": "La liga añade resistencia isométrica al patrón diagonal. Alta activación del TrA. Requiere co-contracción profunda de la columna.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_133",
+        "nombre": "Cat-Cow (Gato-Vaca)",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_multifidus_L",
+          "m_multifidus_R"
+        ],
+        "skeleton_focus": "b_vertebra_T8",
+        "instruccion_abuela": "A cuatro patas, arquea la espalda hacia arriba como un gato asustado y luego hacia abajo como una vaca pastando — repite suave.",
+        "nota_clinica": "Movilización segmentaria de toda la columna. Reduce la presión intradiscal alternadamente. Base de la rehabilitación lumbar y torácica.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_134",
+        "nombre": "Rotaciones Torácicas en Cuadrúpedo",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_T6",
+        "instruccion_abuela": "A cuatro patas, lleva una mano detrás de la cabeza y gira el codo hacia el techo — como si quisieras ver el cielo.",
+        "nota_clinica": "Movilización de rotación torácica con estabilización lumbar. Mejora la movilidad T4-T8. Reduce la compensación lumbar en patrones de rotación.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_135",
+        "nombre": "Superman",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Cifosis"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_L2",
+        "instruccion_abuela": "Boca abajo, levanta los brazos y las piernas del suelo al mismo tiempo — como si volaras como Superman.",
+        "nota_clinica": "Activa erector espinal, glúteos y rotadores del manguito posterior. Contraindicado en estenosis severa. Refuerza extensores en hiperlordosis.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_136",
+        "nombre": "W-Hold",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Cifosis"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_trapezius_lower_L",
+          "m_trapezius_lower_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Boca abajo, dobla los codos formando una W con los brazos y levántalos del suelo — aprieta los omóplatos.",
+        "nota_clinica": "Activa trapecio inferior y romboides. Clave en síndrome de cruce superior. Rehabilitación postural en cifosis torácica.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_137",
+        "nombre": "Y-Hold",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Cifosis"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_trapezius_lower_L",
+          "m_trapezius_lower_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Boca abajo, extiende los brazos en Y (diagonal hacia arriba) y levántalos del suelo — como si volaras en pendiente.",
+        "nota_clinica": "Activa trapecio inferior y serrato anterior. Mayor palanca que el W-hold. Rehabilitación de discinesia escapular y síndrome de impingement.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_138",
+        "nombre": "Toque de Talones",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_oblique_external_L",
+          "m_oblique_external_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Acostado con rodillas dobladas, inclínate a un lado para tocar el talón con la mano y luego al otro — sin levantar la espalda.",
+        "nota_clinica": "Activa oblicuo externo en flexión lateral. Mínima carga discal. Ejercicio de iniciación para activar oblicuos en lumbalgia aguda.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_139",
+        "nombre": "Russian Twist con Mancuerna",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_oblique_external_L",
+          "m_oblique_external_R"
+        ],
+        "skeleton_focus": "b_vertebra_T12",
+        "instruccion_abuela": "Sentado con los pies elevados, gira el tronco de lado a lado sosteniendo la mancuerna — como un reloj haciendo tic-tac.",
+        "nota_clinica": "Alta activación de oblicuos en rotación bajo carga. Contraindicado en hernia activa. Solo en fase de mantenimiento o atlética.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_140",
+        "nombre": "Press Pallof con Liga",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_transverse_abdominis",
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "De pie o sentado, extiende los brazos hacia adelante contra la liga fija al lado — el truco es no girar el cuerpo aunque la liga jale.",
+        "nota_clinica": "Anti-rotación isométrica. Alta activación del TrA y oblicuos. Patrón funcional clave en rehabilitación de atletas con lumbalgia.",
+        "bilateral": false,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_141",
+        "nombre": "Elevación de Piernas con Polaina",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Polaina",
+        "mesh_id_nike3d": [
+          "m_rectus_abdominis_L",
+          "m_rectus_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Acostado con pesos en los tobillos, levanta las piernas estiradas hasta 90° y bájalas lentamente — sin despegar la espalda.",
+        "nota_clinica": "Alta carga excéntrica en recto abdominal + psoas iliaco. Contraindicado en hernia L4-L5 activa. Fase avanzada de core training.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_142",
+        "nombre": "Crunch Abdominal",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_abdominis_L",
+          "m_rectus_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Acostado, levanta los hombros del suelo mirando al techo — no tirones del cuello con las manos.",
+        "nota_clinica": "Activa recto abdominal en acortamiento. Menor carga discal que el sit-up clásico. Útil como ejercicio de iniciación en atrofia abdominal.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_143",
+        "nombre": "Crunch Bicicleta",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_oblique_external_L",
+          "m_oblique_external_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Acostado, lleva el codo derecho a la rodilla izquierda mientras extiendes la otra pierna — pedalea suave.",
+        "nota_clinica": "Activa oblicuos en rotación dinámica + recto abdominal. Alta activación EMG de oblicuo externo. Requiere control motor de columna cervical.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_144",
+        "nombre": "McGill Curl-up",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_abdominis_L",
+          "m_rectus_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Acostado con una rodilla doblada y la espalda en neutro, levanta ligeramente la cabeza y los hombros — muy poquito.",
+        "nota_clinica": "Protocolo McGill. Mantiene lordosis natural. Mínima carga discal. Ejercicio de elección en hernia de disco con inestabilidad segmentaria.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_145",
+        "nombre": "Rollout con Pelota",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Arrodíllado, apoya las manos en la pelota y ruédala hacia adelante estirando el cuerpo — luego vuelve sin caer.",
+        "nota_clinica": "Alta activación de TrA y recto abdominal en anti-extensión. Mayor palanca que el ab wheel. Solo en fases avanzadas sin dolor lumbar.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_146",
+        "nombre": "Suitcase Carry con Mancuerna",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_quadratus_lumborum",
+        "skeleton_focus": "b_vertebra_L4",
+        "instruccion_abuela": "Carga una mancuerna en una mano y camina recto sin inclinarte al lado del peso — como llevar una maleta pesada sin joroba.",
+        "nota_clinica": "Activa cuadrado lumbar y oblicuos contralaterales en anti-inclinación lateral. Patrón funcional de transporte. Rehabilitación de columna lateral.",
+        "bilateral": false,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_147",
+        "nombre": "Farmer Carry con Mancuerna",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Carga mancuernas en ambas manos y camina recto con el abdomen firme — como el agricultor llevando cubos de agua.",
+        "nota_clinica": "Activa TrA, trapecio y flexores de cadera en patrón de marcha con carga. Alta transferencia funcional. Integración de core en movimiento real.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_148",
+        "nombre": "Windmill con Mancuerna",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_oblique_external",
+        "skeleton_focus": "b_vertebra_T12",
+        "instruccion_abuela": "Con la mancuerna arriba, inclínate hacia el lado contrario mirando la pesa — como un molino de viento.",
+        "nota_clinica": "Activa oblicuos en inclinación lateral bajo carga. Alta exigencia de estabilidad escapular y columna. Solo en fase atlética sin hernia activa.",
+        "bilateral": false,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_149",
+        "nombre": "Elevación de Piernas Colgado",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 3,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_rectus_abdominis_L",
+          "m_rectus_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Colgado de una barra, levanta las piernas estiradas hasta la horizontal — sin balancearte.",
+        "nota_clinica": "La posición suspendida elimina la carga compresiva lumbar. Alta activación de recto abdominal y psoas iliaco. Solo fases avanzadas.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_COR_150",
+        "nombre": "Caminata del Oso (Bear Crawl)",
+        "segmento": "Core",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "A cuatro patas, levanta las rodillas del suelo unos centímetros y avanza moviendo brazo y pierna contraria — lento y controlado.",
+        "nota_clinica": "Alta activación de TrA en patrón locomotor. Involucra cadenas contralaterales completas. Excelente para rehabilitación de core + coordinación.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      }
+    ],
+    "EXTREMIDADES_MOVILIDAD": [
+      {
+        "id": "A_MOV_151",
+        "nombre": "Isométrico Cervical Flexión",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome Cervical Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_longus_colli_L",
+          "m_longus_colli_R"
+        ],
+        "skeleton_focus": "b_vertebra_C4",
+        "instruccion_abuela": "Pon la mano en la frente e intenta bajar la cabeza hacia el pecho mientras la mano resiste — sin mover la cabeza.",
+        "nota_clinica": "Activación isométrica de flexores profundos cervicales (longus colli + capitis). Primer ejercicio en protocolo de rehabilitación cervical post-traumática.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "A_MOV_152",
+        "nombre": "Isométrico Cervical Extensión",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome Cervical Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_splenius_capitis_L",
+          "m_splenius_capitis_R"
+        ],
+        "skeleton_focus": "b_vertebra_C4",
+        "instruccion_abuela": "Pon la mano en la nuca e intenta llevar la cabeza atrás mientras la mano resiste — sin mover la cabeza.",
+        "nota_clinica": "Activa esplenio de la cabeza y semiespinal. Rehabilitación de extensores cervicales en latigazo cervical y cervicalgia crónica.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "A_MOV_153",
+        "nombre": "Isométrico Cervical Lateral",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome Cervical Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_sternocleidomastoid_L",
+          "m_sternocleidomastoid_R"
+        ],
+        "skeleton_focus": "b_vertebra_C4",
+        "instruccion_abuela": "Pon la mano en la sien y empuja la cabeza hacia la mano mientras la mano resiste — sin moverla.",
+        "nota_clinica": "Activa esternocleidomastoideo y escalenos ipsilaterales en isométrico. Rehabilita desequilibrios musculares cervicales laterales.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "A_MOV_154",
+        "nombre": "Retracción de Cuello (Chin Tuck)",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome Cervical Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_longus_colli_L",
+          "m_longus_colli_R"
+        ],
+        "skeleton_focus": "b_vertebra_C5",
+        "instruccion_abuela": "Siéntate derecho y mete la barbilla hacia dentro como si quisieras crear doble papada — mantén 5 segundos.",
+        "nota_clinica": "Activa longus colli e inhibe SCM hipertónico. El ejercicio más prescrito para corrección postural de cabeza adelantada y cervicalgia.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "A_MOV_155",
+        "nombre": "Rotación Cervical Activa",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome Cervical Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_sternocleidomastoid_L",
+          "m_sternocleidomastoid_R"
+        ],
+        "skeleton_focus": "b_vertebra_C3",
+        "instruccion_abuela": "Gira la cabeza lentamente hacia un lado hasta donde llegues y vuelve — como mirando si viene el coche.",
+        "nota_clinica": "Movilización activa de la columna cervical C1-C7. Evalúa y trata restricciones de rotación. Sin overpressure. Fase 1 cervical.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "A_MOV_156",
+        "nombre": "Curl de Muñeca con Mancuerna",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Epicondilitis",
+          "Síndrome del Túnel Carpiano"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_flexor_carpi_radialis_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Sentado con el antebrazo en el muslo y la muñeca fuera, sube y baja la mano sosteniendo la mancuerna.",
+        "nota_clinica": "Fortalece flexores de muñeca (FCR, FCU). Protocolo estándar de epicondilitis medial. Controlar la extensión completa al bajar (componente excéntrico).",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "A_MOV_157",
+        "nombre": "Extensión de Muñeca con Mancuerna",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Epicondilitis",
+          "Síndrome del Túnel Carpiano"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_extensor_carpi_radialis_longus_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Con el antebrazo apoyado y la palma hacia abajo, sube y baja la mano con la mancuerna.",
+        "nota_clinica": "Fortalece ECR largo y corto. Protocolo Tyler para epicondilitis lateral. La fase excéntrica es la más terapéutica para codo de tenista.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "A_MOV_158",
+        "nombre": "Prono-Supinación con Mancuerna",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Epicondilitis",
+          "Síndrome del Túnel Carpiano"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Mancuerna",
+        "mesh_id_nike3d": "m_pronator_teres_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Con el codo pegado al cuerpo, gira la mano con la mancuerna como si abrieras y cerraras una llave de agua.",
+        "nota_clinica": "Activa pronador redondo y supinador. Fundamental en epicondilitis bilateral. Control del radio sobre el cúbito. Fase temprana de rehabilitación.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "A_MOV_159",
+        "nombre": "Desviación Ulnar con Liga",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Epicondilitis",
+          "Síndrome del Túnel Carpiano"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_flexor_carpi_ulnaris_R",
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Con la liga en la mano, inclina la muñeca hacia el lado del meñique resistiendo la liga.",
+        "nota_clinica": "Activa FCU y ECU en desviación cubital. Rehabilitación del complejo triangular fibrocartilaginoso (TFCC) y inestabilidad cubital.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "A_MOV_160",
+        "nombre": "Agarre de Pelota Antiestrés",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Epicondilitis",
+          "Síndrome del Túnel Carpiano"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": "m_flexor_carpi_radialis_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Aprieta la pelotita con fuerza durante 3 segundos y suelta — como si la exprimes pero no la aplastas.",
+        "nota_clinica": "Activa flexores extrínsecos e intrínsecos de la mano. Rehabilitación de fuerza de agarre post-fractura de radio, cirugía de túnel carpiano.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "A_MOV_161",
+        "nombre": "Movilidad de Tobillo — Círculos",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Rigidez Post-Fractura"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_peroneus_longus_L",
+          "m_peroneus_longus_R"
+        ],
+        "skeleton_focus": "b_talus_R",
+        "instruccion_abuela": "Sentado, levanta el pie y dibuja círculos grandes en el aire con la punta del pie — en un sentido y en el otro.",
+        "nota_clinica": "Movilización activa en todos los planos del tobillo. Activa peroneales y tibiales. Primera fase post-esguince para recuperar rango articular.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_MOV_162",
+        "nombre": "Movilidad de Tobillo con Banda",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Rigidez Post-Fractura"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": [
+          "m_tibialis_anterior_L",
+          "m_tibialis_anterior_R"
+        ],
+        "skeleton_focus": "b_talus_R",
+        "instruccion_abuela": "Siéntate con la liga en el tobillo, sube la punta del pie, bájala y llévala a los lados — suave.",
+        "nota_clinica": "Movilización resistida en los 4 planos. La resistencia elástica mejora la propiocepción del tobillo. Protocolo post-esguince fase 1.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_MOV_163",
+        "nombre": "Flexión Dorsal de Tobillo contra Pared",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Rigidez Post-Fractura"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_soleus_L",
+          "m_soleus_R"
+        ],
+        "skeleton_focus": "b_talus_R",
+        "instruccion_abuela": "De pie frente a la pared, doblega la rodilla hacia ella sin levantar el talón — mide cuántos dedos avanzan.",
+        "nota_clinica": "Mide y mejora la dorsiflexión de tobillo. Límite < 10 cm predice lesión en corredor. Activa sóleo excéntricamente. Clave en tendinopatía aquílea.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_MOV_164",
+        "nombre": "Estiramiento de Pantorrilla en Escalón",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Fascitis Plantar",
+          "Esguince Tobillo"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_gastrocnemius_medial_L",
+          "m_gastrocnemius_medial_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "En el borde de un escalón, baja el talón hasta sentir el tirón en la pantorrilla y mantén — como bostezando con el pie.",
+        "nota_clinica": "Estiramiento excéntrico de gastrocnemio medial. Protocolo de Alfredson modificado. Reduce la tensión plantar en fascitis. Mejora dorsiflexión.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "A_MOV_165",
+        "nombre": "World's Greatest Stretch",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Rigidez de Cadera"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_iliopsoas_L",
+          "m_iliopsoas_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "En zancada larga, pon la mano dentro del pie adelantado y rota el codo hacia el techo — como abriendo una caja de sorpresas.",
+        "nota_clinica": "Moviliza simultaneamente cadera, tórax, tobillo y hombro. Activa psoas iliaco y pectíneo. Calentamiento funcional de cuerpo completo.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_MOV_166",
+        "nombre": "Estiramiento Piramidal",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Síndrome Piriforme",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_piriformis_L",
+          "m_piriformis_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado boca arriba, cruza un tobillo sobre la rodilla contraria y jala la pierna hacia ti — siente el tirón en el glúteo.",
+        "nota_clinica": "Estira piriforme y rotadores externos de cadera. Alivia el nervio ciático en síndrome piriforme. Sin sobrecargar la articulación sacroilíaca.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_MOV_167",
+        "nombre": "Movilidad de Cadera 90/90",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Rigidez de Cadera",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_piriformis_L",
+          "m_piriformis_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Siéntate en el suelo con ambas piernas en ángulo de 90°, erguido — luego inclínate hacia la pierna de delante.",
+        "nota_clinica": "Estira rotadores externos e internos de cadera según dirección del tronco. Alta transferencia a movimientos atléticos. Base del entrenamiento de movilidad.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_MOV_168",
+        "nombre": "Rotación de Cadera en Suelo",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Rigidez de Cadera",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_piriformis_L",
+          "m_piriformis_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado boca arriba con las rodillas dobladas, deja caer ambas rodillas a un lado y luego al otro — como limpiaparabrisas.",
+        "nota_clinica": "Movilización rotatoria pasiva de la cadera y columna lumbar. Activa rotadores internos y externos alternadamente. Fase inicial de lumbalgia.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_MOV_169",
+        "nombre": "Estiramiento de Piriforme",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Síndrome Piriforme",
+          "Ciática"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_piriformis_L",
+          "m_piriformis_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado, dobla una rodilla y llévala hacia el hombro contrario — siente el tirón profundo en el glúteo.",
+        "nota_clinica": "Estiramiento directo del piriforme. Alivia compresión del nervio ciático bajo el piriforme. Precaución en casos con bursitis isquiática.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_MOV_170",
+        "nombre": "Deep Squat Hold",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Rigidez de Cadera",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_iliopsoas_L",
+          "m_iliopsoas_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Baja en cuclillas con los pies algo abiertos y mantén la posición apoyándote en un mueble si necesitas — como cuando ibas al baño en el campo.",
+        "nota_clinica": "Movilización completa de cadera (135°), tobillo y columna torácica. Posición ancestral humana. Test y terapia simultáneos de movilidad global.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_MOV_171",
+        "nombre": "Aperturas de Pecho con Brazos",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Síndrome de Impingement",
+          "Manguito Rotador"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_sternal_L",
+          "m_pectoralis_major_sternal_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "De pie, abre los brazos como si fueras a abrazar a alguien y llévalos atrás — siente como se abre el pecho.",
+        "nota_clinica": "Estira pectorales y subescapular. Movilización glenohumeral en rotación externa. Primer ejercicio en síndrome de impingement anterior.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_MOV_172",
+        "nombre": "Estiramiento Pectoral en Marco de Puerta",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Síndrome de Impingement",
+          "Manguito Rotador"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_clavicular_L",
+          "m_pectoralis_major_clavicular_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Apoya el brazo en el marco de la puerta y gira el cuerpo para alejarte — siente el tirón en el pecho.",
+        "nota_clinica": "Estira pectoral mayor clavicular y subescapular. Reduce tensión anterior en síndrome de cruce superior. Correctivo postural de hombros caídos.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "A_MOV_173",
+        "nombre": "Movilidad Torácica con Rodillo",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Cifosis",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_T6",
+        "instruccion_abuela": "Siéntate frente al rodillo de espuma en el suelo, apóyate en él y arquéate suavemente hacia atrás sobre él — como una silla que se dobla.",
+        "nota_clinica": "Movilización pasiva de la columna torácica T4-T8. Reduce la cifosis funcional. Libera los erectores espinales. Precaución en osteoporosis.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_MOV_174",
+        "nombre": "Rotación Torácica en Cuadrúpedo",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Cifosis",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_T6",
+        "instruccion_abuela": "A cuatro patas, lleva una mano a la nuca y gira ese codo hacia el techo mirándolo — abre el pecho de un lado.",
+        "nota_clinica": "Movilización activa de rotación torácica unilateral. Reduce compensación lumbar. Mejora movilidad T4-T8 necesaria para patrones de lanzamiento.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_MOV_175",
+        "nombre": "Escorpiones",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Rigidez de Cadera"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Boca abajo con los brazos en cruz, lleva un pie hacia la mano contraria — como un escorpión que enrolla la cola.",
+        "nota_clinica": "Movilización combinada de rotación torácica + extensión de cadera. Alta demanda de flexibilidad. Contraindicado en hernia activa o estenosis severa.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_MOV_176",
+        "nombre": "Estiramiento de Isquiotibiales en Suelo",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Rigidez de Isquiotibiales"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_semimembranosus_L",
+          "m_semimembranosus_R"
+        ],
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Acostado, jala una pierna estirada hacia ti con las manos o una toalla — siente el tirón en la parte trasera del muslo.",
+        "nota_clinica": "Estira semimembranoso e isquiotibiales mediales. La tirantez de isquiotibiales es causa frecuente de lumbalgia. Precaución en ciática activa.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "A_MOV_177",
+        "nombre": "Estiramiento de Psoas en Zancada Baja",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Rigidez de Cadera"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_iliopsoas_L",
+          "m_iliopsoas_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "En zancada con la rodilla de atrás en el suelo, empuja la cadera hacia adelante y abajo — siente el tirón en la parte frontal del muslo.",
+        "nota_clinica": "Estira psoas iliaco en su posición de mayor longitud. Contracción previa del glúteo aumenta el estiramiento. Clave en anteversión pélvica excesiva.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_MOV_178",
+        "nombre": "Estiramiento Lateral de Columna",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Escoliosis Funcional"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_quadratus_lumborum_L",
+          "m_quadratus_lumborum_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "De pie, levanta un brazo y dóblate hacia el lado contrario como un arco — siente el tirón en el costado.",
+        "nota_clinica": "Estira cuadrado lumbar y oblicuos. Fundamental en escoliosis funcional y desequilibrios laterales. Sin rotación ni hiperextensión lumbar.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "A_MOV_179",
+        "nombre": "Mariposa (Butterfly Stretch)",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Rigidez de Cadera",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Calistenia",
+        "mesh_id_nike3d": [
+          "m_adductor_longus_L",
+          "m_adductor_longus_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Sentado, junta las plantas de los pies y empuja las rodillas suavemente hacia el suelo — como una mariposa abriendo las alas.",
+        "nota_clinica": "Estira aductores (longus, brevis, pectíneo) y grácil. Mejora la abducción de cadera. Complementario en rehabilitación de ingle y cadera.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "A_MOV_180",
+        "nombre": "Movilidad de Hombro con Liga — Rot Int/Ext",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Manguito Rotador",
+          "Síndrome de Impingement"
+        ],
+        "fase_evolucion": 2,
+        "herramienta": "Liga",
+        "mesh_id_nike3d": "m_infraspinatus_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Con el codo pegado al cuerpo, gira la mano hacia afuera resistiendo la liga — luego hacia adentro. Como si fuera el volante de un coche.",
+        "nota_clinica": "Activa infraespinoso (rot ext) y subescapular (rot int) en cadena abierta con resistencia. Protocolo Thrower's Ten para manguito rotador.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      }
+    ]
+  }
+}

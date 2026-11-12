@@ -1,0 +1,156 @@
+{
+  "id": "E-074",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "hombro_flex.L": 85,
+      "hombro_flex.R": 85,
+      "@pitch": 10,
+      "rodilla_flex.L": 25,
+      "rodilla_flex.R": 25
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "objetivo_rel": [
+        0,
+        -0.25,
+        0
+      ]
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "objetivo_rel": [
+        0,
+        0.24,
+        0
+      ]
+    },
+    {
+      "cadena": "brazo.L"
+    },
+    {
+      "cadena": "brazo.R"
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "pared_manos"
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.04,
+        -0.03
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.04,
+        -0.03
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "soleus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "En pared, rodilla flexionada"
+}

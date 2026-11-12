@@ -1,0 +1,187 @@
+{
+  "id": "F-ROD-009",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 0,
+      "hombro_abd.R": 0,
+      "cadera_abd.L": 6,
+      "cadera_abd.R": 6
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "@pitch": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "@pitch": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "@pitch": 30,
+        "hombro_flex.L": 85,
+        "hombro_flex.R": 85,
+        "cervical_flex": -15
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        0.52,
+        -0.3
+      ]
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "@pitch": 30,
+        "hombro_flex.L": 85,
+        "hombro_flex.R": 85,
+        "cervical_flex": -15
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0.52,
+        -0.3
+      ]
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "@pitch": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "@pitch": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "rectus_femoris"
+      },
+      {
+        "id": "vastus_medialis"
+      },
+      {
+        "id": "vastus_lateralis"
+      },
+      {
+        "id": "vastus_intermedius"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "biceps_femoris"
+      },
+      {
+        "id": "semitendinosus"
+      },
+      {
+        "id": "semimembranosus"
+      },
+      {
+        "id": "gastrocnemius"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerleg01.L"
+    },
+    {
+      "hueso": "lowerleg01.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Sentadilla / prensa de piernas"
+}

@@ -41,14 +41,24 @@ MAX_RETRIES  = 3
 # Ray Flash 2 parameters
 MODEL        = "ray-flash-2"
 RESOLUTION   = "1080p"
-DURATION     = "10s"   # Max per clip. 3 clips = 30s loop.
+DURATION     = "9s"    # 9s seamless loop per clip.
 ASPECT_RATIO = "16:9"
 
-# Prompt suffix added to every order for consistent style
-STYLE_SUFFIX = (
-    "1080p Full HD, cinematic 3D medical animation, Pixar-style rendering, "
-    "Visible Body anatomy transparency layers, warm pastel clinical palette, "
-    "seamless loop, no text overlays, no subtitles."
+# Visible Body style template — {grupo_articular} is substituted per entry
+STYLE_SUFFIX_TEMPLATE = (
+    "Scientific medical visualization, Visible Body style, "
+    "semi-transparent skin revealing {grupo_articular} anatomy, "
+    "hyper-realistic muscle fibers and bone textures, "
+    "cinematic surgical studio lighting, 8K render, "
+    "isolated on solid white background, "
+    "seamless 9s loop, no human faces, "
+    "focus only on the musculoskeletal action."
+)
+
+# Extra suffix for Canal B (osteopathy) entries
+CANAL_B_SUFFIX = (
+    "Show therapist hand placement, patient positioning, "
+    "and corrective impulse in one fluid 9-second seamless loop."
 )
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -62,8 +72,12 @@ def save_json(path: Path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-def build_prompt(base_prompt: str) -> str:
-    return f"{base_prompt} {STYLE_SUFFIX}"
+def build_prompt(base_prompt: str, grupo_articular: str = "", canal: str = "A") -> str:
+    style = STYLE_SUFFIX_TEMPLATE.format(grupo_articular=grupo_articular or "musculoskeletal")
+    prompt = f"{base_prompt}. {style}"
+    if canal == "B":
+        prompt = f"{prompt} {CANAL_B_SUFFIX}"
+    return prompt
 
 def submit_to_ray(prompt: str) -> dict:
     """Submit a Ray Flash 2 generation. Returns API response dict."""
@@ -118,8 +132,10 @@ def main():
             skipped += 1
             continue
 
-        enhanced_prompt = build_prompt(raw_prompt)
-        print(f"[{i}/{total}] {registry_id} ({order.get('grupo_articular', '')} / {order.get('canal', '')})")
+        grupo_articular = order.get("grupo_articular", "")
+        canal_order     = order.get("canal", "A")
+        enhanced_prompt = build_prompt(raw_prompt, grupo_articular, canal_order)
+        print(f"[{i}/{total}] {registry_id} ({grupo_articular} / canal {canal_order})")
 
         # ── Submit with retry logic ────────────────────────────────────────
         ray_id = None

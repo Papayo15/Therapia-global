@@ -1,0 +1,142 @@
+{
+  "id": "F-HOM-033",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "prono",
+    "colchoneta": false,
+    "angulos": {
+      "cervical_rot": 0,
+      "antebrazo_prono.L": -80,
+      "antebrazo_prono.R": -80,
+      "tobillo_dorsi.L": -30,
+      "tobillo_dorsi.R": -30,
+      "hombro_flex.L": 90,
+      "hombro_flex.R": 90
+    },
+    "asentar": [],
+    "superficie_banco": 0.72,
+    "banco_largo": true,
+    "suelo": [
+      "spine02",
+      "spine03",
+      "pelvis.L",
+      "pelvis.R"
+    ]
+  },
+  "ik": [],
+  "contactos": [],
+  "camara": {
+    "dir": [
+      0.3,
+      -1,
+      0.9
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "hombro_re.L": 85,
+        "hombro_re.R": 85
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "hombro_re.L": 85,
+        "hombro_re.R": 85
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.1,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "deltoid_posterior"
+      },
+      {
+        "id": "infraspinatus"
+      },
+      {
+        "id": "trapezius_middle"
+      },
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "pectoralis_major"
+      },
+      {
+        "id": "pectoralis_minor"
+      },
+      {
+        "id": "deltoid_anterior"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.L"
+    },
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "T en prono sin peso"
+}

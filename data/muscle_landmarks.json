@@ -1,0 +1,2646 @@
+{
+  "version": "0.4-cuerpo-completo",
+  "descripcion": "Cápsulas musculares para la capa de color. Cada músculo = 1+ cápsulas entre dos puntos A→B anclados a huesos del rig MPFB 'default'. Punto = hueso ({s}=lado), t (0=cabeza,1=cola del hueso), dir anatómica (lateral|medial|anterior|posterior|superior|inferior, combinables con +) y prof = fracción hueso→piel medida por raycast. r = [radio_A, radio_B] en metros. Definidas para el lado L; el motor espeja para R.",
+  "musculos": {
+    "gluteus_maximus": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.35,
+          "dir": "posterior",
+          "prof": 0.8
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.18,
+          "dir": "posterior",
+          "prof": 0.8
+        },
+        "r": [
+          0.06,
+          0.04
+        ]
+      },
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.75,
+          "dir": "posterior+superior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.1,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.045,
+          0.035
+        ]
+      }
+    ],
+    "biceps_femoris": [
+      {
+        "a": {
+          "hueso": "upperleg01.{s}",
+          "t": 0.9,
+          "dir": "posterior",
+          "prof": 0.65
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.95,
+          "dir": "posterior+lateral",
+          "prof": 0.65
+        },
+        "r": [
+          0.03,
+          0.022
+        ]
+      }
+    ],
+    "semitendinosus": [
+      {
+        "a": {
+          "hueso": "upperleg01.{s}",
+          "t": 0.9,
+          "dir": "posterior+medial",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.95,
+          "dir": "posterior+medial",
+          "prof": 0.65
+        },
+        "r": [
+          0.026,
+          0.018
+        ]
+      }
+    ],
+    "semimembranosus": [
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.15,
+          "dir": "posterior+medial",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.9,
+          "dir": "posterior+medial",
+          "prof": 0.5
+        },
+        "r": [
+          0.028,
+          0.02
+        ]
+      }
+    ],
+    "adductor_magnus": [
+      {
+        "a": {
+          "hueso": "upperleg01.{s}",
+          "t": 0.8,
+          "dir": "medial+posterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.8,
+          "dir": "medial",
+          "prof": 0.55
+        },
+        "r": [
+          0.035,
+          0.022
+        ]
+      }
+    ],
+    "iliopsoas": [
+      {
+        "a": {
+          "hueso": "spine04",
+          "t": 0.5,
+          "dir": "lateral+anterior",
+          "prof": 0.35
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.12,
+          "dir": "medial+anterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.03,
+          0.024
+        ]
+      }
+    ],
+    "rectus_femoris": [
+      {
+        "a": {
+          "hueso": "upperleg01.{s}",
+          "t": 0.2,
+          "dir": "anterior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.95,
+          "dir": "anterior",
+          "prof": 0.7
+        },
+        "r": [
+          0.03,
+          0.022
+        ]
+      }
+    ],
+    "infraspinatus": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.65,
+          "dir": "posterior+lateral",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "upperarm01.{s}",
+          "t": 0.15,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.04,
+          0.022
+        ]
+      }
+    ],
+    "teres_minor": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.45,
+          "dir": "lateral+lateral+posterior",
+          "prof": 0.9
+        },
+        "b": {
+          "hueso": "upperarm01.{s}",
+          "t": 0.2,
+          "dir": "posterior+inferior",
+          "prof": 0.55
+        },
+        "r": [
+          0.02,
+          0.016
+        ]
+      }
+    ],
+    "deltoid_posterior": [
+      {
+        "a": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.85,
+          "dir": "posterior+superior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.35,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.03,
+          0.02
+        ]
+      }
+    ],
+    "subscapularis": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.6,
+          "dir": "posterior+lateral",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "upperarm01.{s}",
+          "t": 0.3,
+          "dir": "anterior+medial",
+          "prof": 0.45
+        },
+        "r": [
+          0.035,
+          0.02
+        ]
+      }
+    ],
+    "pectoralis_major": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.8,
+          "dir": "anterior+lateral",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.15,
+          "dir": "anterior",
+          "prof": 0.65
+        },
+        "r": [
+          0.05,
+          0.022
+        ]
+      },
+      {
+        "a": {
+          "hueso": "clavicle.{s}",
+          "t": 0.4,
+          "dir": "anterior+inferior",
+          "prof": 0.8
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.1,
+          "dir": "anterior",
+          "prof": 0.65
+        },
+        "r": [
+          0.03,
+          0.02
+        ]
+      }
+    ],
+    "glenohumeral_capsule_anterior": [
+      {
+        "a": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.95,
+          "dir": "anterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "upperarm01.{s}",
+          "t": 0.25,
+          "dir": "anterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.02,
+          0.018
+        ]
+      }
+    ],
+    "gluteus_medius": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.7,
+          "dir": "superior+lateral",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.03,
+          "dir": "lateral",
+          "prof": 0.65
+        },
+        "r": [
+          0.048,
+          0.03
+        ]
+      }
+    ],
+    "gluteus_minimus": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.8,
+          "dir": "superior+lateral",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.03,
+          "dir": "lateral",
+          "prof": 0.45
+        },
+        "r": [
+          0.036,
+          0.024
+        ]
+      }
+    ],
+    "tensor_fasciae_latae": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.95,
+          "dir": "anterior+lateral",
+          "prof": 0.8
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.3,
+          "dir": "lateral+anterior",
+          "prof": 0.75
+        },
+        "r": [
+          0.028,
+          0.02
+        ]
+      }
+    ],
+    "adductor_longus": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.15,
+          "dir": "anterior+inferior",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.55,
+          "dir": "medial",
+          "prof": 0.6
+        },
+        "r": [
+          0.03,
+          0.02
+        ]
+      }
+    ],
+    "adductor_brevis": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.22,
+          "dir": "inferior",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.35,
+          "dir": "medial",
+          "prof": 0.5
+        },
+        "r": [
+          0.026,
+          0.02
+        ]
+      }
+    ],
+    "pectineus": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.4,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.12,
+          "dir": "medial+anterior",
+          "prof": 0.5
+        },
+        "r": [
+          0.022,
+          0.018
+        ]
+      }
+    ],
+    "gracilis": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.15,
+          "dir": "inferior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.08,
+          "dir": "medial",
+          "prof": 0.8
+        },
+        "r": [
+          0.016,
+          0.012
+        ]
+      }
+    ],
+    "sartorius": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.95,
+          "dir": "anterior",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.5,
+          "dir": "anterior+medial",
+          "prof": 0.85
+        },
+        "r": [
+          0.016,
+          0.015
+        ]
+      },
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.5,
+          "dir": "anterior+medial",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.08,
+          "dir": "medial",
+          "prof": 0.85
+        },
+        "r": [
+          0.015,
+          0.013
+        ]
+      }
+    ],
+    "piriformis": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.15,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.02,
+          "dir": "posterior+lateral",
+          "prof": 0.5
+        },
+        "r": [
+          0.02,
+          0.015
+        ]
+      }
+    ],
+    "gemellus_superior": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.35,
+          "dir": "posterior+inferior",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.03,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.011,
+          0.01
+        ]
+      }
+    ],
+    "gemellus_inferior": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.4,
+          "dir": "posterior+inferior",
+          "prof": 0.52
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.05,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.011,
+          0.01
+        ]
+      }
+    ],
+    "obturator_internus": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.38,
+          "dir": "posterior+inferior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.04,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.013,
+          0.011
+        ]
+      }
+    ],
+    "obturator_externus": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.4,
+          "dir": "inferior+anterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.05,
+          "dir": "posterior",
+          "prof": 0.4
+        },
+        "r": [
+          0.014,
+          0.011
+        ]
+      }
+    ],
+    "quadratus_femoris": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.5,
+          "dir": "posterior+inferior",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.1,
+          "dir": "posterior",
+          "prof": 0.5
+        },
+        "r": [
+          0.016,
+          0.014
+        ]
+      }
+    ],
+    "vastus_lateralis": [
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.15,
+          "dir": "lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.95,
+          "dir": "lateral+anterior",
+          "prof": 0.7
+        },
+        "r": [
+          0.04,
+          0.03
+        ]
+      }
+    ],
+    "vastus_medialis": [
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.45,
+          "dir": "medial+anterior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.97,
+          "dir": "medial",
+          "prof": 0.75
+        },
+        "r": [
+          0.028,
+          0.038
+        ]
+      }
+    ],
+    "vastus_intermedius": [
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.15,
+          "dir": "anterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.9,
+          "dir": "anterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.03,
+          0.025
+        ]
+      }
+    ],
+    "gastrocnemius": [
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.97,
+          "dir": "posterior+medial",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.7
+        },
+        "r": [
+          0.034,
+          0.02
+        ]
+      },
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.97,
+          "dir": "posterior+lateral",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.7
+        },
+        "r": [
+          0.03,
+          0.02
+        ]
+      }
+    ],
+    "soleus": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.7,
+          "dir": "posterior",
+          "prof": 0.6
+        },
+        "r": [
+          0.034,
+          0.022
+        ]
+      }
+    ],
+    "popliteus": [
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.95,
+          "dir": "posterior+lateral",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.25,
+          "dir": "posterior+medial",
+          "prof": 0.4
+        },
+        "r": [
+          0.015,
+          0.015
+        ]
+      }
+    ],
+    "tibialis_anterior": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.15,
+          "dir": "anterior+lateral",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.9,
+          "dir": "anterior+medial",
+          "prof": 0.6
+        },
+        "r": [
+          0.022,
+          0.012
+        ]
+      }
+    ],
+    "tibialis_posterior": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.3
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.9,
+          "dir": "medial+posterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.018,
+          0.012
+        ]
+      }
+    ],
+    "extensor_digitorum_longus": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.2,
+          "dir": "anterior+lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "foot.{s}",
+          "t": 0.9,
+          "dir": "superior",
+          "prof": 0.6
+        },
+        "r": [
+          0.016,
+          0.01
+        ]
+      }
+    ],
+    "extensor_hallucis_longus": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.6,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "foot.{s}",
+          "t": 0.9,
+          "dir": "superior+medial",
+          "prof": 0.6
+        },
+        "r": [
+          0.012,
+          0.009
+        ]
+      }
+    ],
+    "extensor_digitorum_brevis": [
+      {
+        "a": {
+          "hueso": "foot.{s}",
+          "t": 0.1,
+          "dir": "superior+lateral",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "foot.{s}",
+          "t": 0.9,
+          "dir": "superior",
+          "prof": 0.6
+        },
+        "r": [
+          0.014,
+          0.01
+        ]
+      }
+    ],
+    "fibularis_longus": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.1,
+          "dir": "lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.95,
+          "dir": "lateral+posterior",
+          "prof": 0.7
+        },
+        "r": [
+          0.02,
+          0.012
+        ]
+      }
+    ],
+    "fibularis_brevis": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.6,
+          "dir": "lateral",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.95,
+          "dir": "lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.016,
+          0.01
+        ]
+      }
+    ],
+    "fibularis_tertius": [
+      {
+        "a": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.5,
+          "dir": "anterior+lateral",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "foot.{s}",
+          "t": 0.6,
+          "dir": "superior+lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.01,
+          0.009
+        ]
+      }
+    ],
+    "flexor_digitorum_longus": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.4,
+          "dir": "posterior+medial",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.95,
+          "dir": "medial",
+          "prof": 0.6
+        },
+        "r": [
+          0.016,
+          0.01
+        ]
+      }
+    ],
+    "flexor_hallucis_longus": [
+      {
+        "a": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.5,
+          "dir": "posterior+lateral",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "lowerleg02.{s}",
+          "t": 0.95,
+          "dir": "posterior+medial",
+          "prof": 0.55
+        },
+        "r": [
+          0.017,
+          0.011
+        ]
+      }
+    ],
+    "flexor_digitorum_brevis": [
+      {
+        "a": {
+          "hueso": "foot.{s}",
+          "t": 0.0,
+          "dir": "inferior+posterior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "toe3-1.{s}",
+          "t": 0.0,
+          "dir": "inferior",
+          "prof": 0.6
+        },
+        "r": [
+          0.015,
+          0.012
+        ]
+      }
+    ],
+    "lumbricals_foot": [
+      {
+        "a": {
+          "hueso": "foot.{s}",
+          "t": 1.0,
+          "dir": "inferior",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "toe3-1.{s}",
+          "t": 0.5,
+          "dir": "inferior",
+          "prof": 0.5
+        },
+        "r": [
+          0.01,
+          0.008
+        ]
+      }
+    ],
+    "sternocleidomastoid": [
+      {
+        "a": {
+          "hueso": "clavicle.{s}",
+          "t": 0.1,
+          "dir": "anterior+superior",
+          "prof": 0.8
+        },
+        "b": {
+          "hueso": "head",
+          "t": 0.1,
+          "dir": "lateral+posterior",
+          "prof": 0.8
+        },
+        "r": [
+          0.016,
+          0.014
+        ]
+      }
+    ],
+    "longus_colli": [
+      {
+        "a": {
+          "hueso": "spine01",
+          "t": 0.6,
+          "dir": "anterior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "neck03",
+          "t": 0.6,
+          "dir": "anterior",
+          "prof": 0.4
+        },
+        "r": [
+          0.01,
+          0.009
+        ]
+      }
+    ],
+    "longus_capitis": [
+      {
+        "a": {
+          "hueso": "neck01",
+          "t": 0.3,
+          "dir": "anterior+lateral",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "head",
+          "t": 0.1,
+          "dir": "anterior",
+          "prof": 0.35
+        },
+        "r": [
+          0.009,
+          0.009
+        ]
+      }
+    ],
+    "scalene_anterior": [
+      {
+        "a": {
+          "hueso": "neck01",
+          "t": 0.5,
+          "dir": "lateral+anterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "clavicle.{s}",
+          "t": 0.15,
+          "dir": "superior",
+          "prof": 0.6
+        },
+        "r": [
+          0.01,
+          0.01
+        ]
+      }
+    ],
+    "scalene_middle": [
+      {
+        "a": {
+          "hueso": "neck02",
+          "t": 0.5,
+          "dir": "lateral",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "clavicle.{s}",
+          "t": 0.3,
+          "dir": "superior+posterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.01,
+          0.01
+        ]
+      }
+    ],
+    "scalene_posterior": [
+      {
+        "a": {
+          "hueso": "neck01",
+          "t": 0.6,
+          "dir": "lateral+posterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "spine01",
+          "t": 0.9,
+          "dir": "lateral+posterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.009,
+          0.009
+        ]
+      }
+    ],
+    "splenius_capitis": [
+      {
+        "a": {
+          "hueso": "spine01",
+          "t": 0.4,
+          "dir": "posterior",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "head",
+          "t": 0.15,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.016,
+          0.012
+        ]
+      }
+    ],
+    "splenius_cervicis": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.8,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "neck02",
+          "t": 0.5,
+          "dir": "posterior+lateral",
+          "prof": 0.55
+        },
+        "r": [
+          0.012,
+          0.01
+        ]
+      }
+    ],
+    "semispinalis_capitis": [
+      {
+        "a": {
+          "hueso": "spine01",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "head",
+          "t": 0.1,
+          "dir": "posterior",
+          "prof": 0.6
+        },
+        "r": [
+          0.014,
+          0.012
+        ]
+      }
+    ],
+    "semispinalis_cervicis": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.7,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "neck02",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.011,
+          0.01
+        ]
+      }
+    ],
+    "erector_spinae_cervical": [
+      {
+        "a": {
+          "hueso": "spine01",
+          "t": 0.3,
+          "dir": "posterior+lateral",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "neck02",
+          "t": 0.5,
+          "dir": "posterior+lateral",
+          "prof": 0.45
+        },
+        "r": [
+          0.01,
+          0.009
+        ]
+      }
+    ],
+    "rectus_capitis_posterior_major": [
+      {
+        "a": {
+          "hueso": "neck03",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "head",
+          "t": 0.05,
+          "dir": "posterior",
+          "prof": 0.5
+        },
+        "r": [
+          0.008,
+          0.008
+        ]
+      }
+    ],
+    "rectus_capitis_posterior_minor": [
+      {
+        "a": {
+          "hueso": "neck03",
+          "t": 0.5,
+          "dir": "posterior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "head",
+          "t": 0.03,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.007,
+          0.007
+        ]
+      }
+    ],
+    "obliquus_capitis_superior": [
+      {
+        "a": {
+          "hueso": "neck03",
+          "t": 0.4,
+          "dir": "posterior+lateral",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "head",
+          "t": 0.05,
+          "dir": "posterior+lateral",
+          "prof": 0.5
+        },
+        "r": [
+          0.007,
+          0.007
+        ]
+      }
+    ],
+    "obliquus_capitis_inferior": [
+      {
+        "a": {
+          "hueso": "neck03",
+          "t": 0.1,
+          "dir": "posterior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "neck03",
+          "t": 0.6,
+          "dir": "lateral+posterior",
+          "prof": 0.5
+        },
+        "r": [
+          0.008,
+          0.008
+        ]
+      }
+    ],
+    "masseter": [
+      {
+        "a": {
+          "hueso": "head",
+          "t": 0.35,
+          "dir": "lateral+anterior",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "jaw",
+          "t": 0.35,
+          "dir": "lateral",
+          "prof": 0.85
+        },
+        "r": [
+          0.016,
+          0.014
+        ]
+      }
+    ],
+    "temporalis": [
+      {
+        "a": {
+          "hueso": "head",
+          "t": 0.75,
+          "dir": "lateral",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "jaw",
+          "t": 0.15,
+          "dir": "lateral+superior",
+          "prof": 0.7
+        },
+        "r": [
+          0.022,
+          0.012
+        ]
+      }
+    ],
+    "lateral_pterygoid": [
+      {
+        "a": {
+          "hueso": "head",
+          "t": 0.3,
+          "dir": "lateral+anterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "jaw",
+          "t": 0.05,
+          "dir": "lateral",
+          "prof": 0.55
+        },
+        "r": [
+          0.008,
+          0.008
+        ]
+      }
+    ],
+    "medial_pterygoid": [
+      {
+        "a": {
+          "hueso": "head",
+          "t": 0.25,
+          "dir": "lateral+anterior+inferior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "jaw",
+          "t": 0.4,
+          "dir": "lateral+inferior",
+          "prof": 0.55
+        },
+        "r": [
+          0.009,
+          0.008
+        ]
+      }
+    ],
+    "digastric": [
+      {
+        "a": {
+          "hueso": "head",
+          "t": 0.15,
+          "dir": "lateral+posterior+inferior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "jaw",
+          "t": 0.8,
+          "dir": "inferior",
+          "prof": 0.7
+        },
+        "r": [
+          0.007,
+          0.007
+        ]
+      }
+    ],
+    "digastric_posterior_belly": [
+      {
+        "a": {
+          "hueso": "head",
+          "t": 0.15,
+          "dir": "lateral+posterior+inferior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "jaw",
+          "t": 0.35,
+          "dir": "inferior",
+          "prof": 0.65
+        },
+        "r": [
+          0.007,
+          0.007
+        ]
+      }
+    ],
+    "suprahyoids": [
+      {
+        "a": {
+          "hueso": "neck02",
+          "t": 0.8,
+          "dir": "anterior",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "jaw",
+          "t": 0.7,
+          "dir": "inferior",
+          "prof": 0.65
+        },
+        "r": [
+          0.012,
+          0.01
+        ]
+      }
+    ],
+    "trapezius_upper": [
+      {
+        "a": {
+          "hueso": "head",
+          "t": 0.05,
+          "dir": "posterior",
+          "prof": 0.8
+        },
+        "b": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.6,
+          "dir": "superior",
+          "prof": 0.8
+        },
+        "r": [
+          0.02,
+          0.02
+        ]
+      }
+    ],
+    "trapezius_middle": [
+      {
+        "a": {
+          "hueso": "spine01",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.7,
+          "dir": "posterior+superior",
+          "prof": 0.85
+        },
+        "r": [
+          0.025,
+          0.02
+        ]
+      }
+    ],
+    "trapezius_lower": [
+      {
+        "a": {
+          "hueso": "spine03",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.85
+        },
+        "r": [
+          0.022,
+          0.018
+        ]
+      }
+    ],
+    "levator_scapulae": [
+      {
+        "a": {
+          "hueso": "neck01",
+          "t": 0.6,
+          "dir": "lateral+posterior",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.15,
+          "dir": "superior+posterior",
+          "prof": 0.7
+        },
+        "r": [
+          0.012,
+          0.012
+        ]
+      }
+    ],
+    "rhomboid_major": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "spine02",
+          "t": 0.5,
+          "dir": "posterior+lateral+lateral",
+          "prof": 0.8
+        },
+        "r": [
+          0.02,
+          0.02
+        ]
+      }
+    ],
+    "rhomboid_minor": [
+      {
+        "a": {
+          "hueso": "spine01",
+          "t": 0.6,
+          "dir": "posterior",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "spine02",
+          "t": 0.85,
+          "dir": "posterior+lateral+lateral",
+          "prof": 0.8
+        },
+        "r": [
+          0.014,
+          0.014
+        ]
+      }
+    ],
+    "serratus_anterior": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.35,
+          "dir": "lateral+anterior",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "spine02",
+          "t": 0.75,
+          "dir": "lateral+posterior",
+          "prof": 0.75
+        },
+        "r": [
+          0.03,
+          0.022
+        ]
+      }
+    ],
+    "pectoralis_minor": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.65,
+          "dir": "anterior+lateral",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.6,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.02,
+          0.012
+        ]
+      }
+    ],
+    "latissimus_dorsi": [
+      {
+        "a": {
+          "hueso": "spine04",
+          "t": 0.5,
+          "dir": "posterior+lateral",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.15,
+          "dir": "medial+posterior",
+          "prof": 0.6
+        },
+        "r": [
+          0.045,
+          0.018
+        ]
+      },
+      {
+        "a": {
+          "hueso": "spine03",
+          "t": 0.6,
+          "dir": "lateral+posterior",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "spine02",
+          "t": 0.4,
+          "dir": "lateral+posterior",
+          "prof": 0.85
+        },
+        "r": [
+          0.04,
+          0.035
+        ]
+      }
+    ],
+    "teres_major": [
+      {
+        "a": {
+          "hueso": "spine02",
+          "t": 0.35,
+          "dir": "lateral+lateral+posterior",
+          "prof": 0.9
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.15,
+          "dir": "medial",
+          "prof": 0.55
+        },
+        "r": [
+          0.02,
+          0.015
+        ]
+      }
+    ],
+    "supraspinatus": [
+      {
+        "a": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.3,
+          "dir": "posterior+superior",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "upperarm01.{s}",
+          "t": 0.1,
+          "dir": "superior+lateral",
+          "prof": 0.5
+        },
+        "r": [
+          0.016,
+          0.012
+        ]
+      }
+    ],
+    "deltoid_anterior": [
+      {
+        "a": {
+          "hueso": "clavicle.{s}",
+          "t": 0.8,
+          "dir": "anterior+superior",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.35,
+          "dir": "anterior+lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.028,
+          0.018
+        ]
+      }
+    ],
+    "deltoid_middle": [
+      {
+        "a": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.95,
+          "dir": "superior+lateral",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.35,
+          "dir": "lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.03,
+          0.018
+        ]
+      }
+    ],
+    "coracobrachialis": [
+      {
+        "a": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.6,
+          "dir": "anterior",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.45,
+          "dir": "medial",
+          "prof": 0.55
+        },
+        "r": [
+          0.012,
+          0.01
+        ]
+      }
+    ],
+    "pectoralis_major_clavicular": [
+      {
+        "a": {
+          "hueso": "clavicle.{s}",
+          "t": 0.4,
+          "dir": "anterior+inferior",
+          "prof": 0.8
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.1,
+          "dir": "anterior",
+          "prof": 0.65
+        },
+        "r": [
+          0.03,
+          0.02
+        ]
+      }
+    ],
+    "biceps_brachii": [
+      {
+        "a": {
+          "hueso": "upperarm01.{s}",
+          "t": 0.2,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.1,
+          "dir": "anterior",
+          "prof": 0.65
+        },
+        "r": [
+          0.02,
+          0.014
+        ]
+      },
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.3,
+          "dir": "anterior",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.85,
+          "dir": "anterior",
+          "prof": 0.75
+        },
+        "r": [
+          0.028,
+          0.022
+        ]
+      }
+    ],
+    "triceps_brachii": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.1,
+          "dir": "posterior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.02,
+          "dir": "posterior",
+          "prof": 0.75
+        },
+        "r": [
+          0.032,
+          0.02
+        ]
+      }
+    ],
+    "triceps_brachii_long_head": [
+      {
+        "a": {
+          "hueso": "shoulder01.{s}",
+          "t": 0.4,
+          "dir": "posterior+inferior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.75,
+          "dir": "posterior+medial",
+          "prof": 0.7
+        },
+        "r": [
+          0.022,
+          0.018
+        ]
+      }
+    ],
+    "brachialis": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.55,
+          "dir": "anterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.15,
+          "dir": "anterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.022,
+          0.016
+        ]
+      }
+    ],
+    "brachioradialis": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.75,
+          "dir": "lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "lowerarm02.{s}",
+          "t": 0.9,
+          "dir": "lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.018,
+          0.01
+        ]
+      }
+    ],
+    "anconeus": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.98,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.65
+        },
+        "r": [
+          0.01,
+          0.01
+        ]
+      }
+    ],
+    "pronator_teres": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.95,
+          "dir": "medial+anterior",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.55,
+          "dir": "lateral+anterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.014,
+          0.011
+        ]
+      }
+    ],
+    "pronator_quadratus": [
+      {
+        "a": {
+          "hueso": "lowerarm02.{s}",
+          "t": 0.8,
+          "dir": "anterior+medial",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "lowerarm02.{s}",
+          "t": 0.8,
+          "dir": "anterior+lateral",
+          "prof": 0.45
+        },
+        "r": [
+          0.01,
+          0.01
+        ]
+      }
+    ],
+    "supinator": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.98,
+          "dir": "lateral",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.3,
+          "dir": "anterior+lateral",
+          "prof": 0.5
+        },
+        "r": [
+          0.012,
+          0.01
+        ]
+      }
+    ],
+    "flexor_carpi_radialis": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.95,
+          "dir": "medial+anterior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "wrist.{s}",
+          "t": 0.1,
+          "dir": "anterior+lateral",
+          "prof": 0.6
+        },
+        "r": [
+          0.012,
+          0.008
+        ]
+      }
+    ],
+    "flexor_carpi_ulnaris": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.95,
+          "dir": "medial",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "wrist.{s}",
+          "t": 0.1,
+          "dir": "anterior+medial",
+          "prof": 0.6
+        },
+        "r": [
+          0.012,
+          0.008
+        ]
+      }
+    ],
+    "palmaris_longus": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.95,
+          "dir": "medial+anterior",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "wrist.{s}",
+          "t": 0.15,
+          "dir": "anterior",
+          "prof": 0.7
+        },
+        "r": [
+          0.009,
+          0.007
+        ]
+      }
+    ],
+    "flexor_digitorum_superficialis": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.95,
+          "dir": "medial+anterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "wrist.{s}",
+          "t": 0.2,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.016,
+          0.01
+        ]
+      }
+    ],
+    "flexor_digitorum_profundus": [
+      {
+        "a": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.2,
+          "dir": "anterior+medial",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "wrist.{s}",
+          "t": 0.3,
+          "dir": "anterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.016,
+          0.01
+        ]
+      }
+    ],
+    "flexor_pollicis_longus": [
+      {
+        "a": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.4,
+          "dir": "anterior+lateral",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "finger1-1.{s}",
+          "t": 0.5,
+          "dir": "anterior",
+          "prof": 0.4
+        },
+        "r": [
+          0.01,
+          0.007
+        ]
+      }
+    ],
+    "extensor_carpi_radialis_longus": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.85,
+          "dir": "lateral+posterior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "metacarpal2.{s}",
+          "t": 0.1,
+          "dir": "posterior",
+          "prof": 0.6
+        },
+        "r": [
+          0.012,
+          0.008
+        ]
+      }
+    ],
+    "extensor_carpi_radialis_brevis": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.98,
+          "dir": "lateral+posterior",
+          "prof": 0.65
+        },
+        "b": {
+          "hueso": "metacarpal3.{s}",
+          "t": 0.1,
+          "dir": "posterior",
+          "prof": 0.6
+        },
+        "r": [
+          0.011,
+          0.008
+        ]
+      }
+    ],
+    "extensor_carpi_ulnaris": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.98,
+          "dir": "posterior+lateral",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "wrist.{s}",
+          "t": 0.15,
+          "dir": "posterior+medial",
+          "prof": 0.6
+        },
+        "r": [
+          0.01,
+          0.008
+        ]
+      }
+    ],
+    "extensor_digitorum": [
+      {
+        "a": {
+          "hueso": "upperarm02.{s}",
+          "t": 0.98,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "metacarpal3.{s}",
+          "t": 0.6,
+          "dir": "posterior",
+          "prof": 0.6
+        },
+        "r": [
+          0.014,
+          0.008
+        ]
+      }
+    ],
+    "extensor_indicis": [
+      {
+        "a": {
+          "hueso": "lowerarm02.{s}",
+          "t": 0.4,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "metacarpal2.{s}",
+          "t": 0.7,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.008,
+          0.006
+        ]
+      }
+    ],
+    "extensor_digiti_minimi": [
+      {
+        "a": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.3,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "metacarpal4.{s}",
+          "t": 0.7,
+          "dir": "posterior+medial",
+          "prof": 0.55
+        },
+        "r": [
+          0.008,
+          0.006
+        ]
+      }
+    ],
+    "abductor_pollicis_longus": [
+      {
+        "a": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.5,
+          "dir": "posterior+lateral",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "finger1-1.{s}",
+          "t": 0.1,
+          "dir": "lateral",
+          "prof": 0.55
+        },
+        "r": [
+          0.009,
+          0.007
+        ]
+      }
+    ],
+    "extensor_pollicis_longus": [
+      {
+        "a": {
+          "hueso": "lowerarm01.{s}",
+          "t": 0.6,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "finger1-2.{s}",
+          "t": 0.5,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.008,
+          0.006
+        ]
+      }
+    ],
+    "dorsal_interossei_hand": [
+      {
+        "a": {
+          "hueso": "metacarpal2.{s}",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "finger2-1.{s}",
+          "t": 0.2,
+          "dir": "posterior+lateral",
+          "prof": 0.45
+        },
+        "r": [
+          0.008,
+          0.006
+        ]
+      },
+      {
+        "a": {
+          "hueso": "metacarpal3.{s}",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "finger3-1.{s}",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.008,
+          0.006
+        ]
+      },
+      {
+        "a": {
+          "hueso": "metacarpal4.{s}",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "finger4-1.{s}",
+          "t": 0.2,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.008,
+          0.006
+        ]
+      }
+    ],
+    "palmar_interossei": [
+      {
+        "a": {
+          "hueso": "metacarpal2.{s}",
+          "t": 0.3,
+          "dir": "anterior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "finger2-1.{s}",
+          "t": 0.2,
+          "dir": "anterior",
+          "prof": 0.4
+        },
+        "r": [
+          0.007,
+          0.006
+        ]
+      },
+      {
+        "a": {
+          "hueso": "metacarpal4.{s}",
+          "t": 0.3,
+          "dir": "anterior",
+          "prof": 0.4
+        },
+        "b": {
+          "hueso": "finger4-1.{s}",
+          "t": 0.2,
+          "dir": "anterior",
+          "prof": 0.4
+        },
+        "r": [
+          0.007,
+          0.006
+        ]
+      }
+    ],
+    "lumbricals_hand": [
+      {
+        "a": {
+          "hueso": "metacarpal3.{s}",
+          "t": 0.4,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "finger3-1.{s}",
+          "t": 0.3,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.008,
+          0.006
+        ]
+      },
+      {
+        "a": {
+          "hueso": "metacarpal4.{s}",
+          "t": 0.4,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "finger4-1.{s}",
+          "t": 0.3,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.007,
+          0.006
+        ]
+      }
+    ],
+    "opponens_pollicis": [
+      {
+        "a": {
+          "hueso": "wrist.{s}",
+          "t": 0.7,
+          "dir": "anterior+lateral",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "finger1-1.{s}",
+          "t": 0.6,
+          "dir": "anterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.01,
+          0.008
+        ]
+      }
+    ],
+    "abductor_pollicis_brevis": [
+      {
+        "a": {
+          "hueso": "wrist.{s}",
+          "t": 0.7,
+          "dir": "anterior+lateral",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "finger1-2.{s}",
+          "t": 0.2,
+          "dir": "lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.009,
+          0.007
+        ]
+      }
+    ],
+    "flexor_pollicis_brevis": [
+      {
+        "a": {
+          "hueso": "wrist.{s}",
+          "t": 0.8,
+          "dir": "anterior",
+          "prof": 0.6
+        },
+        "b": {
+          "hueso": "finger1-2.{s}",
+          "t": 0.2,
+          "dir": "anterior",
+          "prof": 0.6
+        },
+        "r": [
+          0.009,
+          0.007
+        ]
+      }
+    ],
+    "adductor_pollicis": [
+      {
+        "a": {
+          "hueso": "metacarpal3.{s}",
+          "t": 0.5,
+          "dir": "anterior",
+          "prof": 0.5
+        },
+        "b": {
+          "hueso": "finger1-2.{s}",
+          "t": 0.1,
+          "dir": "anterior+medial",
+          "prof": 0.55
+        },
+        "r": [
+          0.01,
+          0.008
+        ]
+      }
+    ],
+    "abductor_digiti_minimi_hand": [
+      {
+        "a": {
+          "hueso": "wrist.{s}",
+          "t": 0.8,
+          "dir": "medial+anterior",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "finger5-1.{s}",
+          "t": 0.4,
+          "dir": "medial",
+          "prof": 0.65
+        },
+        "r": [
+          0.008,
+          0.007
+        ]
+      }
+    ],
+    "rectus_abdominis": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.05,
+          "dir": "anterior+superior",
+          "prof": 0.85
+        },
+        "b": {
+          "hueso": "spine02",
+          "t": 0.55,
+          "dir": "anterior",
+          "prof": 0.9
+        },
+        "r": [
+          0.022,
+          0.024
+        ]
+      }
+    ],
+    "external_oblique": [
+      {
+        "a": {
+          "hueso": "spine03",
+          "t": 0.5,
+          "dir": "lateral+anterior",
+          "prof": 0.88
+        },
+        "b": {
+          "hueso": "pelvis.{s}",
+          "t": 0.55,
+          "dir": "anterior+superior",
+          "prof": 0.88
+        },
+        "r": [
+          0.03,
+          0.025
+        ]
+      }
+    ],
+    "internal_oblique": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.6,
+          "dir": "superior+lateral",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "spine03",
+          "t": 0.8,
+          "dir": "anterior+lateral",
+          "prof": 0.75
+        },
+        "r": [
+          0.028,
+          0.024
+        ]
+      }
+    ],
+    "transversus_abdominis": [
+      {
+        "a": {
+          "hueso": "spine04",
+          "t": 0.5,
+          "dir": "lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "spine04",
+          "t": 0.5,
+          "dir": "anterior+lateral",
+          "prof": 0.8
+        },
+        "r": [
+          0.035,
+          0.03
+        ]
+      }
+    ],
+    "multifidus": [
+      {
+        "a": {
+          "hueso": "spine05",
+          "t": 0.1,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "spine02",
+          "t": 0.5,
+          "dir": "posterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.013,
+          0.01
+        ]
+      }
+    ],
+    "rotatores": [
+      {
+        "a": {
+          "hueso": "spine03",
+          "t": 0.1,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "b": {
+          "hueso": "spine01",
+          "t": 0.5,
+          "dir": "posterior",
+          "prof": 0.45
+        },
+        "r": [
+          0.009,
+          0.008
+        ]
+      }
+    ],
+    "erector_spinae": [
+      {
+        "a": {
+          "hueso": "spine05",
+          "t": 0.1,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "spine01",
+          "t": 0.5,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.022,
+          0.016
+        ]
+      }
+    ],
+    "erector_spinae_lumbar": [
+      {
+        "a": {
+          "hueso": "spine05",
+          "t": 0.1,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "b": {
+          "hueso": "spine03",
+          "t": 0.7,
+          "dir": "posterior+lateral",
+          "prof": 0.7
+        },
+        "r": [
+          0.024,
+          0.02
+        ]
+      }
+    ],
+    "erector_spinae_thoracic": [
+      {
+        "a": {
+          "hueso": "spine03",
+          "t": 0.5,
+          "dir": "posterior+lateral",
+          "prof": 0.75
+        },
+        "b": {
+          "hueso": "spine01",
+          "t": 0.6,
+          "dir": "posterior+lateral",
+          "prof": 0.75
+        },
+        "r": [
+          0.02,
+          0.016
+        ]
+      }
+    ],
+    "quadratus_lumborum": [
+      {
+        "a": {
+          "hueso": "pelvis.{s}",
+          "t": 0.6,
+          "dir": "posterior+superior",
+          "prof": 0.55
+        },
+        "b": {
+          "hueso": "spine03",
+          "t": 0.4,
+          "dir": "lateral+posterior",
+          "prof": 0.55
+        },
+        "r": [
+          0.02,
+          0.018
+        ]
+      }
+    ]
+  }
+}

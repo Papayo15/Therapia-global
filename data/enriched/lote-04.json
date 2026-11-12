@@ -1,0 +1,172 @@
+[
+  {
+    "id": "C_LUM_001",
+    "nombre_es": "Rodilla al Pecho",
+    "nombre_en": "Knee to Chest",
+    "titulo": "Rodilla al Pecho",
+    "difficulty": "beginner",
+    "youtube_id": "lvot9L_Fepw",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Decúbito supino. Flexión de cadera y rodilla hacia el pecho con ambas manos detrás del muslo. Mantener la otra pierna extendida o semiflexionada. 30–45 s por lado. Alternando o bilateral.",
+    "fisiologia_basica": "Estira el cuadrado lumbar, el piriforme y los extensores lumbares. Reduce la compresión intradiscal L4-L5 y L5-S1. Primera intervención en lumbalgia aguda.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba y abraza una rodilla con ambas manos jalándola suavemente hacia el pecho",
+      "Siente cómo la espalda baja se estira — como si estuvieras en posición fetal",
+      "Aguanta 30 segundos respirando, suelta y cambia de pierna"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_LUM_002",
+    "nombre_es": "Rotación Lumbar en Supino",
+    "nombre_en": "Supine Lumbar Rotation",
+    "titulo": "Rotación Lumbar",
+    "difficulty": "beginner",
+    "youtube_id": "4XLEnwUr1d8",
+    "youtube_start_seconds": 50,
+    "ejecucion_tecnica": "Decúbito supino, caderas y rodillas a 90°. Rotación pélvica bilateral dejando caer las rodillas hacia un lado mientras los hombros se mantienen en contacto con la camilla. 10 reps lentas × 2 series.",
+    "fisiologia_basica": "Moviliza las articulaciones facetarias lumbares y estira la cápsula articular. Libera los rotadores lumbares (multífidos, cuadrado lumbar). Muy efectivo en rigidez matutina.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba con las rodillas dobladas y juntas",
+      "Deja caer las rodillas hacia la derecha mientras los hombros se quedan pegados al suelo",
+      "Aguanta 20 segundos, sube las rodillas y cáelas al otro lado — como un limpiaparabrisas"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_LUM_003",
+    "nombre_es": "Postura del Niño (Child's Pose)",
+    "nombre_en": "Child's Pose",
+    "titulo": "Postura del Niño",
+    "difficulty": "beginner",
+    "youtube_id": "pSHjTRCQxIw",
+    "youtube_start_seconds": 15,
+    "ejecucion_tecnica": "Posición arrodillada, cadera hacia los talones, brazos extendidos al frente. Cabeza entre los brazos. Relajación activa de la columna lumbar. Mantener 60–90 s con respiración abdominal profunda.",
+    "fisiologia_basica": "Estira los extensores lumbares, el cuadrado lumbar y el psoas. La flexión de cadera descomprime los discos lumbares. Promueve la relajación del sistema nervioso autónomo.",
+    "instructions_eli5": [
+      "Arrodíllate y siéntate sobre tus talones, luego estira los brazos al frente en el suelo",
+      "Deja que la frente descanse en el suelo o en tus manos — como si estuvieras descansando profundamente",
+      "Respira lento y profundo durante 60 segundos — siente cómo la espalda se suelta sola"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_LUM_004",
+    "nombre_es": "Estiramiento del Piriforme (figura 4)",
+    "nombre_en": "Piriformis Figure-4 Stretch",
+    "titulo": "Estiramiento del Piriforme",
+    "difficulty": "beginner",
+    "youtube_id": "KuDX2fKzPjg",
+    "youtube_start_seconds": 80,
+    "ejecucion_tecnica": "Decúbito supino, tobillo derecho sobre rodilla izquierda (figura 4). Flexión de cadera izquierda jalando el muslo hacia el pecho. El codo derecho empuja la rodilla derecha en rotación externa. 30–45 s × 2 por lado.",
+    "fisiologia_basica": "Estira el piriforme, obturador interno y gemelos de la cadera. El piriforme comprimido irrita el nervio ciático (síndrome del piriforme). Segunda causa más común de dolor lumbo-glúteo irradiado.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba, cruza el tobillo derecho sobre la rodilla izquierda — como la postura de cuando cruzas las piernas sentado",
+      "Agarra el muslo izquierdo con las dos manos y jalalo hacia tu pecho",
+      "Aguanta 30 segundos — sientes el estiramiento en la nalga derecha — cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_LUM_005",
+    "nombre_es": "Estiramiento del Cuadrado Lumbar de Pie",
+    "nombre_en": "Standing QL Stretch",
+    "titulo": "Cuadrado Lumbar de Pie",
+    "difficulty": "beginner",
+    "youtube_id": "dqA3FKMcZq8",
+    "youtube_start_seconds": 55,
+    "ejecucion_tecnica": "Bípedo, brazos sobre la cabeza. Inclinación lateral máxima con el brazo ipsilateral extendido. Pie contralateral cruzado adelante para aumentar la tracción del cuadrado lumbar. 30 s × 2 por lado.",
+    "fisiologia_basica": "El cuadrado lumbar es el principal músculo generador de lumbalgia unilateral, espasmos y escoliosis funcional. Se estira exclusivamente con inclinación lateral + extensión de brazo.",
+    "instructions_eli5": [
+      "Párate con los pies juntos y estira los brazos sobre la cabeza",
+      "Inclínate hacia la derecha como si fueras una palmera en el viento — agarra tu muñeca derecha con la mano izquierda para ayudar",
+      "Aguanta 30 segundos — sientes el estiramiento en el costado de la espalda — cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_LUM_006",
+    "nombre_es": "Cat-Cow (Gato-Vaca)",
+    "nombre_en": "Cat-Cow",
+    "titulo": "Gato-Vaca",
+    "difficulty": "beginner",
+    "youtube_id": "wiFNA3sqjCA",
+    "youtube_start_seconds": 10,
+    "ejecucion_tecnica": "Cuadrupedia. Alternar entre flexión lumbar máxima (cat: espalda arqueada arriba, cabeza abajo) y extensión lumbar (cow: espalda cóncava, cabeza arriba). Ritmo: 4 s por fase, coordinado con respiración.",
+    "fisiologia_basica": "Moviliza los 5 segmentos lumbares en flexión-extensión con carga mínima. Promueve la circulación del líquido sinovial articular y la nutrición del disco intervertebral. Ejercicio de primera elección en rigidez matutina.",
+    "instructions_eli5": [
+      "Ponte en cuatro patas — manos y rodillas en el suelo",
+      "Redondea la espalda hacia arriba como un gato asustado — mira tu ombligo",
+      "Luego hunde la espalda hacia abajo como una vaca feliz — mira al frente — repite 10 veces fluidamente"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_LUM_007",
+    "nombre_es": "Estiramiento del Psoas de Rodillas",
+    "nombre_en": "Kneeling Hip Flexor Stretch",
+    "titulo": "Estiramiento del Psoas",
+    "difficulty": "beginner",
+    "youtube_id": "PIjEeHyFDCg",
+    "youtube_start_seconds": 30,
+    "ejecucion_tecnica": "Posición de caballero (una rodilla en el suelo, otra a 90°). Avanzar la pelvis hacia adelante manteniendo la espalda recta. No inclinar el tronco hacia adelante. Activar el glúteo de la pierna trasera. 30–45 s × 2 por lado.",
+    "fisiologia_basica": "El psoas acortado es la causa más subestimada de lumbalgia crónica. Traccionando las apófisis transversas de L1-L5, produce hiperlordosis y dolor lumbar anterior. El estiramiento en caballero es el más efectivo para el psoas ilíaco.",
+    "instructions_eli5": [
+      "Arrodíllate con la rodilla derecha en el suelo y el pie izquierdo al frente — como si fueras a proponer matrimonio",
+      "Empuja la cadera hacia adelante lentamente hasta sentir el estiramiento en la parte frontal del muslo trasero",
+      "Aguanta 30 segundos sin inclinar el tronco — aprieta la nalga derecha para mayor estiramiento — cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_LUM_008",
+    "nombre_es": "Estiramiento de Isquiotibiales en Supino",
+    "nombre_en": "Supine Hamstring Stretch",
+    "titulo": "Isquiotibiales en Supino",
+    "difficulty": "beginner",
+    "youtube_id": "jQ5objYi_IA",
+    "youtube_start_seconds": 35,
+    "ejecucion_tecnica": "Decúbito supino. Elevar la pierna extendida con la toalla o manos detrás del muslo. ROM: hasta sentir tensión en la parte posterior del muslo (no detrás de la rodilla). Mantener 30 s × 2 por lado. Rodilla levemente flexionada si hay dolor.",
+    "fisiologia_basica": "Los isquiotibiales acortados aumentan la retroversión pélvica y la presión intradiscal. Son el segundo factor modificable más importante en lumbalgia mecánica, después del glúteo débil.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba, levanta la pierna derecha lo más posible manteniéndola recta",
+      "Agarra el muslo con las manos (o una toalla) — no jales con fuerza, solo sostén",
+      "Aguanta 30 segundos sintiendo el estiramiento en la parte trasera del muslo — cambia de pierna"
+    ],
+    "equipo_alternativa": ["peso corporal", "toalla"]
+  },
+  {
+    "id": "C_LUM_009",
+    "nombre_es": "Torsión Espinal Sentado",
+    "nombre_en": "Seated Spinal Twist",
+    "titulo": "Torsión Espinal",
+    "difficulty": "beginner",
+    "youtube_id": "HUNHuuPoU6M",
+    "youtube_start_seconds": 50,
+    "ejecucion_tecnica": "Sedente en el suelo, pierna derecha extendida, pie izquierdo cruzado sobre la rodilla derecha. Rotación del tronco hacia la izquierda con el codo derecho apoyado en la rodilla izquierda. 30 s × 2 por lado.",
+    "fisiologia_basica": "Moviliza las articulaciones facetarias lumbares y torácicas en rotación. Estira el cuadrado lumbar, el piriforme y los rotadores del tronco. Posición de yoga terapéutico con alta evidencia para lumbalgia.",
+    "instructions_eli5": [
+      "Siéntate en el suelo y cruza el pie izquierdo sobre la rodilla derecha extendida",
+      "Gira el cuerpo hacia la izquierda y apoya el codo derecho en la rodilla izquierda — como si miraras atrás",
+      "Aguanta 30 segundos — sientes la rotación en la espalda — cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_LUM_010",
+    "nombre_es": "Estiramiento Lumbar en Supino con Pelota",
+    "nombre_en": "Supine Lower Back Release",
+    "titulo": "Liberación Lumbar en Supino",
+    "difficulty": "beginner",
+    "youtube_id": "lvot9L_Fepw",
+    "youtube_start_seconds": 50,
+    "ejecucion_tecnica": "Decúbito supino, ambas rodillas al pecho abrazadas. Pequeños movimientos de balanceo lateral lento (5 cm derecha e izquierda). Compresión-descompresión alternante de las articulaciones lumbo-sacras.",
+    "fisiologia_basica": "El balanceo lateral en supino produce una movilización articular autoadministrada L4-S1. La alternancia compresión-descompresión estimula la liberación de endorfinas locales y reduce el espasmo muscular reflejo.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba y abraza ambas rodillas al pecho",
+      "Balancea suavemente de lado a lado — como si fueras una hamaca — muy poco movimiento",
+      "Hazlo por 60 segundos respirando lento — vas a sentir que la espalda se va soltando"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  }
+]

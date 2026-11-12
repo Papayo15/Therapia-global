@@ -1,0 +1,150 @@
+{
+  "id": "E-063",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "cadera_abd.L": 22,
+      "cadera_abd.R": 22,
+      "hombro_flex.L": 40,
+      "hombro_flex.R": 40
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        -0.0,
+        0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        -0.0,
+        0,
+        -0.0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "lumbar_flex": 10
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        -0.22,
+        0,
+        -0.14
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "lumbar_flex": 10
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        -0.22,
+        0,
+        -0.14
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        -0.0,
+        0,
+        -0.0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        -0.0,
+        0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "adductor_longus",
+        "lado": "L"
+      },
+      {
+        "id": "adductor_brevis",
+        "lado": "L"
+      },
+      {
+        "id": "adductor_magnus",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Rana en cuadrupedia / estocada lateral dinámica"
+}

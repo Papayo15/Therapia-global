@@ -1,0 +1,110 @@
+{
+  "id": "F-ESC-006",
+  "duracion_s": 5.6,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": -5,
+      "hombro_flex.R": -5,
+      "codo_flex.L": 0,
+      "codo_flex.R": 0,
+      "hombro_abd.L": 12,
+      "hombro_abd.R": 12
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.6,
+      1,
+      0.35
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 0.6,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.8,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 5.6,
+      "p": 0,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "trapezius_lower"
+      },
+      {
+        "id": "pectoralis_minor"
+      },
+      {
+        "id": "latissimus_dorsi"
+      },
+      {
+        "id": "serratus_anterior"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "trapezius_upper"
+      },
+      {
+        "id": "levator_scapulae"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "clavicle.L"
+    },
+    {
+      "hueso": "clavicle.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Depresión isométrica (manos empujando la camilla, sedente)"
+}

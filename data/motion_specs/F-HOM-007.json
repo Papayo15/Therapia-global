@@ -1,0 +1,137 @@
+{
+  "id": "F-HOM-007",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "prono",
+    "colchoneta": false,
+    "angulos": {
+      "cervical_rot": 0,
+      "antebrazo_prono.L": -80,
+      "antebrazo_prono.R": -80,
+      "tobillo_dorsi.L": -30,
+      "tobillo_dorsi.R": -30,
+      "hombro_flex.R": 90,
+      "mano_cerrar.R": 75
+    },
+    "asentar": [],
+    "superficie_banco": 0.72,
+    "banco_largo": true,
+    "suelo": [
+      "spine02",
+      "spine03",
+      "pelvis.L",
+      "pelvis.R"
+    ]
+  },
+  "ik": [],
+  "contactos": [],
+  "camara": {
+    "dir": [
+      1,
+      -0.2,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "hombro_flex.R": -105
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "hombro_flex.R": -105
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.1,
+      "art": {
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "latissimus_dorsi",
+        "lado": "R"
+      },
+      {
+        "id": "teres_major",
+        "lado": "R"
+      },
+      {
+        "id": "deltoid_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "triceps_brachii_long_head",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "deltoid_anterior",
+        "lado": "R"
+      },
+      {
+        "id": "pectoralis_major",
+        "lado": "R"
+      },
+      {
+        "id": "biceps_brachii",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión activa en prono (brazo colgando)"
+}

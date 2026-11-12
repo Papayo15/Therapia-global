@@ -5,7 +5,7 @@ export const FEATURES = {
   CERTIFICATIONS_ENABLED: false,   // ← Activar cuando sea el momento (Parte futura)
   AI_RECOMMENDATIONS_ENABLED: true,
   COMMUNITY_ENABLED: true,
-  ANATOMY_3D_ENABLED: false,       // ← Requiere Three.js — fase posterior
+  ANATOMY_3D_ENABLED: true,        // ← Three.js R3F procedural viewer — activo
   WHATSAPP_ENABLED: true,
   EMAIL_ENABLED: true,
 } as const;

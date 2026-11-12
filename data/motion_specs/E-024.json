@@ -1,0 +1,108 @@
+{
+  "id": "E-024",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 12,
+      "hombro_abd.R": 12,
+      "hombro_flex.L": 172,
+      "hombro_flex.R": 172,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    },
+    "elevar": 0.25
+  },
+  "ik": [],
+  "contactos": [],
+  "camara": {
+    "dir": [
+      -0.6,
+      1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "escapula_elev.L": 8,
+        "escapula_elev.R": 8
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "escapula_elev.L": 8,
+        "escapula_elev.R": 8
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "latissimus_dorsi"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [
+    {
+      "tipo": "barra",
+      "uso": "barra_manos",
+      "soportes": true
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "En casa: barra de puerta segura (mismo video).",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Colgado de barra / FNP en pared"
+}

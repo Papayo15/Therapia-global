@@ -1,0 +1,156 @@
+{
+  "id": "E-062",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "sedente_suelo",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 85,
+      "cadera_flex.R": 85,
+      "lumbar_flex": 8,
+      "tobillo_dorsi.L": -10,
+      "tobillo_dorsi.R": -10,
+      "cadera_abd.L": 35,
+      "cadera_abd.R": 35,
+      "cadera_re.L": 45,
+      "cadera_re.R": 45,
+      "rodilla_flex.L": 115,
+      "rodilla_flex.R": 115,
+      "hombro_flex.L": 30,
+      "hombro_flex.R": 30
+    },
+    "asentar": [],
+    "suelo": [
+      "pelvis.L",
+      "pelvis.R",
+      "foot.L",
+      "foot.R",
+      "foot.L",
+      "toenails",
+      "toe1-1.L",
+      "toe1-2.L",
+      "toe1-3.L",
+      "toe2-1.L",
+      "toe2-2.L",
+      "toe2-3.L",
+      "toe3-1.L",
+      "toe3-2.L",
+      "toe3-3.L",
+      "toe4-1.L",
+      "toe4-2.L",
+      "toe4-3.L",
+      "toe5-1.L",
+      "toe5-2.L",
+      "toe5-3.L",
+      "foot.R",
+      "toenails",
+      "toe1-1.R",
+      "toe1-2.R",
+      "toe1-3.R",
+      "toe2-1.R",
+      "toe2-2.R",
+      "toe2-3.R",
+      "toe3-1.R",
+      "toe3-2.R",
+      "toe3-3.R",
+      "toe4-1.R",
+      "toe4-2.R",
+      "toe4-3.R",
+      "toe5-1.R",
+      "toe5-2.R",
+      "toe5-3.R"
+    ]
+  },
+  "ik": [],
+  "contactos": [],
+  "camara": {
+    "dir": [
+      -0.4,
+      -1,
+      0.4
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "lumbar_flex": 15,
+        "toracica_flex": 8
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "lumbar_flex": 15,
+        "toracica_flex": 8
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "adductor_longus"
+      },
+      {
+        "id": "adductor_brevis"
+      },
+      {
+        "id": "adductor_magnus"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Mariposa en sedente"
+}

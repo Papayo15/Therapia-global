@@ -1,0 +1,172 @@
+[
+  {
+    "id": "A_HOM_001",
+    "nombre_es": "Rotación Externa de Hombro con Liga",
+    "nombre_en": "Shoulder External Rotation with Band",
+    "titulo": "Rotación Externa de Hombro",
+    "difficulty": "beginner",
+    "youtube_id": "K-Qb7BbELYg",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Bípedo lateral a la pared o puerta. Codo a 90°, pegado al costado con toalla enrollada. Rotación externa de hombro contra liga a 30–50% del máximo. Control excéntrico en el retorno. 3 s concéntrico, 3 s excéntrico.",
+    "fisiologia_basica": "Fortalece el infraespinoso y el redondo menor (dos de los cuatro manguitos rotadores). La debilidad de estos músculos es la causa principal del síndrome de impingement. Primera línea en rehabilitación de hombro.",
+    "instructions_eli5": [
+      "Párate con una liga anclada al lado. Agarra el extremo con el codo pegado al costado y doblado 90°",
+      "Gira el brazo hacia afuera — como si abrieras una puerta de refrigerador — despacio",
+      "Regresa despacio sin que el codo se separe del costado — ese es el secreto del ejercicio"
+    ],
+    "equipo_alternativa": ["peso corporal", "ligas / bandas"]
+  },
+  {
+    "id": "A_HOM_002",
+    "nombre_es": "Rotación Interna de Hombro con Liga",
+    "nombre_en": "Shoulder Internal Rotation with Band",
+    "titulo": "Rotación Interna de Hombro",
+    "difficulty": "beginner",
+    "youtube_id": "lqI-T4UFZJE",
+    "youtube_start_seconds": 15,
+    "ejecucion_tecnica": "Misma posición que la rotación externa pero la liga está del lado opuesto. Rotación interna de hombro (llevar el antebrazo hacia el abdomen). Codo pegado al costado. Control excéntrico en el retorno.",
+    "fisiologia_basica": "Activa el subescapular, el rotador interno más potente del manguito. El desequilibrio rotación interna/externa causa hombro doloroso. Equilibrar ambas fuerzas es fundamental.",
+    "instructions_eli5": [
+      "Párate con la liga al lado contrario al brazo que ejercitas",
+      "Gira el brazo hacia tu abdomen — como si cerraras una puerta — codo pegado al costado",
+      "Regresa despacio y repite — sientes el trabajo en la parte delantera del hombro"
+    ],
+    "equipo_alternativa": ["peso corporal", "ligas / bandas"]
+  },
+  {
+    "id": "A_HOM_003",
+    "nombre_es": "Elevación Frontal de Hombro",
+    "nombre_en": "Shoulder Front Raise",
+    "titulo": "Elevación Frontal",
+    "difficulty": "beginner",
+    "youtube_id": "8I0PatTDFtg",
+    "youtube_start_seconds": 20,
+    "ejecucion_tecnica": "Bípedo, mancuerna o liga bajo el pie. Flexión de hombro en el plano sagital de 0° a 90° (no superar los 90° en impingement activo). Codo extendido o levemente flexionado. Control excéntrico en el descenso.",
+    "fisiologia_basica": "Activa el deltoides anterior y el coracobraquial. En el plano de la escápula (30° adelante del plano frontal) se reduce el pinzamiento subacromial. Evitar la compensación trapecio superior.",
+    "instructions_eli5": [
+      "Párate sobre la liga o con una mancuerna ligera en la mano",
+      "Levanta el brazo hacia adelante hasta la altura del hombro — como señalando a alguien enfrente",
+      "Baja despacio contando hasta 3 — la bajada es tan importante como la subida"
+    ],
+    "equipo_alternativa": ["peso corporal", "ligas / bandas"]
+  },
+  {
+    "id": "A_HOM_004",
+    "nombre_es": "Elevación Lateral de Hombro",
+    "nombre_en": "Lateral Raise",
+    "titulo": "Elevación Lateral",
+    "difficulty": "beginner",
+    "youtube_id": "PIjEeHyFDCg",
+    "youtube_start_seconds": 45,
+    "ejecucion_tecnica": "Elevación en el plano escapular (30–45° anterior al plano frontal). Pulgar ligeramente hacia arriba (supinación). Hasta 90°. Evitar la elevación de hombros al subir. Carga inicial: 1–2 kg o liga ligera.",
+    "fisiologia_basica": "Activa el deltoides medio y el supraespinoso en su porción inicial (0–30°). El plano de la escápula reduce la tensión sobre el tendón del supraespinoso comparado con la abducción pura.",
+    "instructions_eli5": [
+      "Párate con una mancuerna ligera en cada mano — brazos a los lados",
+      "Sube los brazos hacia los lados hasta la altura de los hombros — como si fueras a volar",
+      "Baja despacio — sin encoger los hombros hacia arriba, eso es trampa"
+    ],
+    "equipo_alternativa": ["peso corporal", "ligas / bandas"]
+  },
+  {
+    "id": "A_HOM_005",
+    "nombre_es": "Remo con Banda (Retracción Escapular)",
+    "nombre_en": "Band Row with Scapular Retraction",
+    "titulo": "Remo con Banda",
+    "difficulty": "beginner",
+    "youtube_id": "HUNHuuPoU6M",
+    "youtube_start_seconds": 15,
+    "ejecucion_tecnica": "Liga anclada a la altura del pecho. Tracción bilateral con retracción escapular final. Codos pegados al tronco. Foco: juntar los omóplatos antes de doblar los codos. ROM: 30–40 cm de recorrido.",
+    "fisiologia_basica": "Activa trapecio medio, romboides y dorsal ancho. La retracción escapular previa al remo activa el serrato anterior y optimiza el control de la escápula. Esencial para la salud del hombro.",
+    "instructions_eli5": [
+      "Amarra la liga a una puerta a la altura del pecho y agarra los extremos",
+      "Jala hacia tu pecho — primero junta los omóplatos y luego dobla los codos",
+      "Aguanta 2 segundos al final — sientes cómo los hombros van hacia atrás — regresa despacio"
+    ],
+    "equipo_alternativa": ["ligas / bandas"]
+  },
+  {
+    "id": "A_HOM_006",
+    "nombre_es": "Press de Hombro con Mancuernas",
+    "nombre_en": "Dumbbell Shoulder Press",
+    "titulo": "Press de Hombro",
+    "difficulty": "intermediate",
+    "youtube_id": "wiFNA3sqjCA",
+    "youtube_start_seconds": 60,
+    "ejecucion_tecnica": "Sedente con respaldo o bípedo. Mancuernas a la altura del hombro, codos a 90°. Extensión de codos en el plano frontal hasta codos casi extendidos. Sin hiperextensión lumbar. ROM: 0–170° de flexión de hombro.",
+    "fisiologia_basica": "Activa deltoides anterior, medio y supraespinoso en toda su amplitud. El press sedente con respaldo elimina la compensación lumbar y maximiza la activación del deltoides.",
+    "instructions_eli5": [
+      "Siéntate derecho con una mancuerna en cada mano a la altura de los hombros",
+      "Empuja hacia arriba hasta que los brazos estén casi rectos — sin encorvar la espalda",
+      "Baja despacio hasta la altura de las orejas y repite — respira al subir"
+    ],
+    "equipo_alternativa": ["ligas / bandas"]
+  },
+  {
+    "id": "A_HOM_007",
+    "nombre_es": "Y-T-W de Escápula en Prono",
+    "nombre_en": "Prone Y-T-W Exercise",
+    "titulo": "Y-T-W Escapular",
+    "difficulty": "intermediate",
+    "youtube_id": "4XLEnwUr1d8",
+    "youtube_start_seconds": 15,
+    "ejecucion_tecnica": "Decúbito prono en el borde de la camilla o banco. Ejecutar tres posiciones con brazos: Y (120°), T (90°), W (elbows a 90° / retracción). Carga: 0.5–1 kg. Control escapular en todas las posiciones.",
+    "fisiologia_basica": "Las tres posiciones activan secuencialmente trapecio inferior (Y), trapecio medio (T) y romboides (W). El trapecio inferior es el músculo más débil en dolor de hombro crónico.",
+    "instructions_eli5": [
+      "Acuéstate boca abajo con los brazos colgando al borde de la cama",
+      "Levanta los brazos en tres formas: en Y (como victory), en T (como avión), en W (codos doblados)",
+      "Aguanta 2 segundos en cada posición — sientes los omóplatos trabajar en la espalda"
+    ],
+    "equipo_alternativa": ["peso corporal", "mancuernas"]
+  },
+  {
+    "id": "A_HOM_008",
+    "nombre_es": "Estabilización de Hombro en Pared (Isométrico)",
+    "nombre_en": "Wall Shoulder Isometric",
+    "titulo": "Isométrico de Hombro en Pared",
+    "difficulty": "beginner",
+    "youtube_id": "KuDX2fKzPjg",
+    "youtube_start_seconds": 25,
+    "ejecucion_tecnica": "Bípedo frente a la pared, antebrazo apoyado. Empujar la pared en diferentes posiciones: 0° (flexión), 90° (abducción), 135° (diagonal). 5–10 s isométrico, 3 series por posición. Progresión con rotaciones.",
+    "fisiologia_basica": "Los isométricos son el punto de partida en rehabilitación post-quirúrgica de hombro. Activan el manguito rotador sin movimiento articular, reduciendo el dolor por impingement.",
+    "instructions_eli5": [
+      "Párate frente a la pared y apoya el antebrazo a la altura del hombro",
+      "Empuja la pared con fuerza como si quisieras moverla — sin que el brazo se mueva",
+      "Aguanta 10 segundos, suelta y repite en diferentes posiciones"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_HOM_009",
+    "nombre_es": "Diagonal PNF de Hombro con Liga",
+    "nombre_en": "PNF D2 Shoulder Pattern",
+    "titulo": "Diagonal PNF de Hombro",
+    "difficulty": "intermediate",
+    "youtube_id": "PV7gSEE2ZnE",
+    "youtube_start_seconds": 10,
+    "ejecucion_tecnica": "Diagonal D2 de la Facilitación Neuromuscular Propioceptiva. Movimiento compuesto: flexión + abducción + rotación externa (subir) → extensión + aducción + rotación interna (bajar). Con liga o mancuerna.",
+    "fisiologia_basica": "El patrón diagonal D2 replica los movimientos funcionales del hombro (lanzar, nadar, raqueta). Activa el deltoides, manguito rotador y serrato anterior en coordinación. Mayor carryover funcional que ejercicios uniaxiales.",
+    "instructions_eli5": [
+      "Con la liga anclada abajo, agarra el extremo con la mano del lado contrario",
+      "Sube el brazo diagonalmente hacia arriba y afuera — como si sacaras una espada en diagonal",
+      "Baja de regreso despacio y repite — sientes todo el hombro trabajar en conjunto"
+    ],
+    "equipo_alternativa": ["ligas / bandas", "mancuernas"]
+  },
+  {
+    "id": "A_HOM_010",
+    "nombre_es": "Pull-Apart con Liga (Apertura Pectoral)",
+    "nombre_en": "Band Pull-Apart",
+    "titulo": "Pull-Apart con Liga",
+    "difficulty": "beginner",
+    "youtube_id": "dqA3FKMcZq8",
+    "youtube_start_seconds": 70,
+    "ejecucion_tecnica": "Liga sostenida con ambas manos, brazos extendidos al frente a 90°. Separar las manos lateralmente hasta que la liga toca el pecho. Control excéntrico en el retorno. Foco: retracción escapular bilateral en la posición final.",
+    "fisiologia_basica": "Activa el trapecio medio, los romboides y el deltoides posterior. Corrige la postura de hombros redondeados (protracción escapular). Contrarresta las 8+ horas diarias en posición de escritorio.",
+    "instructions_eli5": [
+      "Agarra una liga con ambas manos al frente, brazos rectos a la altura del pecho",
+      "Separa las manos hacia los lados estirando la liga hasta que toque tu pecho",
+      "Aguanta 2 segundos juntando los omóplatos — regresa despacio y repite"
+    ],
+    "equipo_alternativa": ["ligas / bandas", "toalla"]
+  }
+]

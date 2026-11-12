@@ -1,0 +1,319 @@
+{
+  "id": "F-ESC-015",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "prono",
+    "colchoneta": true,
+    "angulos": {
+      "hombro_flex.L": 90,
+      "hombro_flex.R": 90,
+      "codo_flex.L": 90,
+      "codo_flex.R": 90,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80,
+      "tobillo_dorsi.L": 25,
+      "tobillo_dorsi.R": 25,
+      "cervical_rot": 0
+    },
+    "suelo": [
+      "lowerarm01.L",
+      "lowerarm01.R",
+      "lowerarm02.L",
+      "lowerarm02.R",
+      "lowerarm02.L",
+      "wrist.L",
+      "finger1-1.L",
+      "finger1-2.L",
+      "finger1-3.L",
+      "finger2-1.L",
+      "finger2-2.L",
+      "finger2-3.L",
+      "finger3-1.L",
+      "finger3-2.L",
+      "finger3-3.L",
+      "finger4-1.L",
+      "finger4-2.L",
+      "finger4-3.L",
+      "finger5-1.L",
+      "finger5-2.L",
+      "finger5-3.L",
+      "metacarpal1.L",
+      "metacarpal2.L",
+      "metacarpal3.L",
+      "metacarpal4.L",
+      "lowerarm02.R",
+      "wrist.R",
+      "finger1-1.R",
+      "finger1-2.R",
+      "finger1-3.R",
+      "finger2-1.R",
+      "finger2-2.R",
+      "finger2-3.R",
+      "finger3-1.R",
+      "finger3-2.R",
+      "finger3-3.R",
+      "finger4-1.R",
+      "finger4-2.R",
+      "finger4-3.R",
+      "finger5-1.R",
+      "finger5-2.R",
+      "finger5-3.R",
+      "metacarpal1.R",
+      "metacarpal2.R",
+      "metacarpal3.R",
+      "metacarpal4.R"
+    ],
+    "asentar": [
+      {
+        "art": "@pitch",
+        "grupo": [
+          "foot.L",
+          "toenails",
+          "toe1-1.L",
+          "toe1-2.L",
+          "toe1-3.L",
+          "toe2-1.L",
+          "toe2-2.L",
+          "toe2-3.L",
+          "toe3-1.L",
+          "toe3-2.L",
+          "toe3-3.L",
+          "toe4-1.L",
+          "toe4-2.L",
+          "toe4-3.L",
+          "toe5-1.L",
+          "toe5-2.L",
+          "toe5-3.L",
+          "foot.R",
+          "toenails",
+          "toe1-1.R",
+          "toe1-2.R",
+          "toe1-3.R",
+          "toe2-1.R",
+          "toe2-2.R",
+          "toe2-3.R",
+          "toe3-1.R",
+          "toe3-2.R",
+          "toe3-3.R",
+          "toe4-1.R",
+          "toe4-2.R",
+          "toe4-3.R",
+          "toe5-1.R",
+          "toe5-2.R",
+          "toe5-3.R"
+        ],
+        "rango": [
+          -25,
+          25
+        ],
+        "reapoyar": true
+      }
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "al_suelo": 0.03
+    },
+    {
+      "cadena": "brazo.R",
+      "al_suelo": 0.03
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "lowerarm01.L",
+        "lowerarm01.R",
+        "lowerarm02.L",
+        "lowerarm02.R",
+        "lowerarm02.L",
+        "wrist.L",
+        "finger1-1.L",
+        "finger1-2.L",
+        "finger1-3.L",
+        "finger2-1.L",
+        "finger2-2.L",
+        "finger2-3.L",
+        "finger3-1.L",
+        "finger3-2.L",
+        "finger3-3.L",
+        "finger4-1.L",
+        "finger4-2.L",
+        "finger4-3.L",
+        "finger5-1.L",
+        "finger5-2.L",
+        "finger5-3.L",
+        "metacarpal1.L",
+        "metacarpal2.L",
+        "metacarpal3.L",
+        "metacarpal4.L",
+        "lowerarm02.R",
+        "wrist.R",
+        "finger1-1.R",
+        "finger1-2.R",
+        "finger1-3.R",
+        "finger2-1.R",
+        "finger2-2.R",
+        "finger2-3.R",
+        "finger3-1.R",
+        "finger3-2.R",
+        "finger3-3.R",
+        "finger4-1.R",
+        "finger4-2.R",
+        "finger4-3.R",
+        "finger5-1.R",
+        "finger5-2.R",
+        "finger5-3.R",
+        "metacarpal1.R",
+        "metacarpal2.R",
+        "metacarpal3.R",
+        "metacarpal4.R"
+      ]
+    },
+    {
+      "grupo": [
+        "foot.L",
+        "toenails",
+        "toe1-1.L",
+        "toe1-2.L",
+        "toe1-3.L",
+        "toe2-1.L",
+        "toe2-2.L",
+        "toe2-3.L",
+        "toe3-1.L",
+        "toe3-2.L",
+        "toe3-3.L",
+        "toe4-1.L",
+        "toe4-2.L",
+        "toe4-3.L",
+        "toe5-1.L",
+        "toe5-2.L",
+        "toe5-3.L",
+        "foot.R",
+        "toenails",
+        "toe1-1.R",
+        "toe1-2.R",
+        "toe1-3.R",
+        "toe2-1.R",
+        "toe2-2.R",
+        "toe2-3.R",
+        "toe3-1.R",
+        "toe3-2.R",
+        "toe3-3.R",
+        "toe4-1.R",
+        "toe4-2.R",
+        "toe4-3.R",
+        "toe5-1.R",
+        "toe5-2.R",
+        "toe5-3.R"
+      ],
+      "tol_cm": 2
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      0.1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.4,
+      "art": {
+        "escapula_prot.L": 12,
+        "escapula_prot.R": 12
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "escapula_prot.L": 12,
+        "escapula_prot.R": 12
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.8,
+      "art": {
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "serratus_anterior"
+      },
+      {
+        "id": "pectoralis_minor"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      },
+      {
+        "id": "trapezius_middle"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "clavicle.L"
+    },
+    {
+      "hueso": "clavicle.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Push-up plus completo / plancha con protracción"
+}

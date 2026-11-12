@@ -1,0 +1,188 @@
+{
+  "id": "F-TOR-011",
+  "duracion_s": 5.4,
+  "base": {
+    "orientacion": "decubito_lateral_L",
+    "colchoneta": true,
+    "almohada": true,
+    "angulos": {
+      "cadera_flex.L": 40,
+      "rodilla_flex.L": 70,
+      "hombro_flex.L": 90,
+      "codo_flex.L": 0,
+      "hombro_abd.R": -6,
+      "mano_cerrar.R": 15,
+      "cadera_flex.R": 70,
+      "rodilla_flex.R": 90,
+      "hombro_flex.R": 90,
+      "codo_flex.R": 0
+    },
+    "asentar": [
+      {
+        "art": "@roll",
+        "grupo": [
+          "shoulder01.L",
+          "upperarm01.L",
+          "clavicle.L"
+        ],
+        "rango": [
+          -15,
+          15
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "cadera_abd.L",
+        "grupo": [
+          "lowerleg01.L",
+          "foot.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "upperleg01.L",
+      "upperleg02.L",
+      "spine03",
+      "spine02",
+      "shoulder01.L"
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "upperleg01.L",
+        "upperleg02.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "foot.L"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.1,
+      -0.6,
+      1
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "toracica_rot": 0,
+        "hombro_abd_h.R": 0,
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "toracica_rot": 0,
+        "hombro_abd_h.R": 0,
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.2,
+      "art": {
+        "toracica_rot": -40,
+        "hombro_abd_h.R": 95,
+        "cervical_rot": -40
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 3.2,
+      "art": {
+        "toracica_rot": -40,
+        "hombro_abd_h.R": 95,
+        "cervical_rot": -40
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "toracica_rot": 0,
+        "hombro_abd_h.R": 0,
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.4,
+      "art": {
+        "toracica_rot": 0,
+        "hombro_abd_h.R": 0,
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "internal_oblique"
+      },
+      {
+        "id": "multifidus"
+      },
+      {
+        "id": "rotatores"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "internal_oblique"
+      },
+      {
+        "id": "multifidus"
+      },
+      {
+        "id": "rotatores"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Libro abierto (open book) en decúbito lateral"
+}

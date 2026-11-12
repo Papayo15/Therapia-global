@@ -1,0 +1,240 @@
+{
+  "id": "F-CAD-028",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "decubito_lateral_L",
+    "colchoneta": true,
+    "almohada": true,
+    "angulos": {
+      "cadera_flex.L": 45,
+      "rodilla_flex.L": 90,
+      "hombro_flex.L": 90,
+      "codo_flex.L": 70,
+      "hombro_abd.R": -6,
+      "mano_cerrar.R": 15,
+      "cadera_flex.R": 45,
+      "rodilla_flex.R": 90
+    },
+    "asentar": [
+      {
+        "art": "@roll",
+        "grupo": [
+          "shoulder01.L",
+          "upperarm01.L",
+          "clavicle.L"
+        ],
+        "rango": [
+          -15,
+          15
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "cadera_abd.L",
+        "grupo": [
+          "lowerleg01.L",
+          "foot.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "upperleg01.L",
+      "upperleg02.L",
+      "spine03",
+      "spine02",
+      "shoulder01.L"
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "pierna.R",
+      "fijar_a": "L",
+      "offset": [
+        0,
+        0,
+        0.09
+      ],
+      "polo": [
+        0,
+        -0.6,
+        0
+      ]
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "upperleg01.L",
+        "upperleg02.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "foot.L"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.15,
+      -1,
+      0.55
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.R": [
+          0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.R": [
+          0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 1.7,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "polo": {
+        "pierna.R": [
+          0,
+          0.3,
+          0.8
+        ]
+      }
+    },
+    {
+      "t": 2.7,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "polo": {
+        "pierna.R": [
+          0,
+          0.3,
+          0.8
+        ]
+      }
+    },
+    {
+      "t": 4.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.R": [
+          0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 5.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.R": [
+          0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "piriformis",
+        "lado": "R"
+      },
+      {
+        "id": "obturator_internus",
+        "lado": "R"
+      },
+      {
+        "id": "obturator_externus",
+        "lado": "R"
+      },
+      {
+        "id": "gemellus_superior",
+        "lado": "R"
+      },
+      {
+        "id": "gemellus_inferior",
+        "lado": "R"
+      },
+      {
+        "id": "quadratus_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "gluteus_maximus",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "gluteus_medius",
+        "lado": "R"
+      },
+      {
+        "id": "gluteus_minimus",
+        "lado": "R"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "lazo_rodillas"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Almeja con banda"
+}

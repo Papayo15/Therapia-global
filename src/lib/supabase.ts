@@ -47,3 +47,41 @@ export interface TreatmentExercise {
   reps?: number;
   notes?: string;
 }
+
+// ── Prescription Builder — Routine Plans ─────────────────────────────────────
+
+export interface PlanExercise {
+  exercise_id: string;
+  nombre_display: string;
+  youtube_id: string;
+  youtube_start_seconds: number;
+  sets: number;
+  reps: number;
+  rest_seconds: number;
+  frequency_per_week: number;
+  equipment_used: string;
+  equipment_alternative: string;
+  note_from_therapist: string;
+  instructions_eli5: string[];
+  order: number;
+}
+
+export interface RoutinePlan {
+  id: string;
+  therapist_id: string;
+  patient_id?: string;
+  patient_name: string;
+  patient_phone: string;
+  diagnosis: string;
+  plan_json: {
+    meta: {
+      diagnosis: string;
+      phase: string;
+      frequency_per_week: number;
+      duration_weeks: number;
+    };
+    exercises: PlanExercise[];
+  };
+  created_at: string;
+  expires_at: string;
+}

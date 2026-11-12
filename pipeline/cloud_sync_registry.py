@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-pipeline/cloud_sync.py
+pipeline/cloud_sync_registry.py
 Uploads downloaded MP4s to Cloudflare Stream, then patches data/master-registry.json.
 Combines upload_to_cloudflare.py + update_registry.py into one idempotent script.
 DOES NOT push to GitHub — prints git commands at the end for manual review.
 
 Usage:
-  python3 pipeline/cloud_sync.py
+  python3 pipeline/cloud_sync_registry.py
 
 Requires in pipeline/.env:
   CF_ACCOUNT_ID=your_cloudflare_account_id

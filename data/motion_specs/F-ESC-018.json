@@ -1,0 +1,171 @@
+{
+  "id": "F-ESC-018",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "hombro_flex.L": 75,
+      "hombro_flex.R": 75,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.2,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0,
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0,
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "hombro_flex.L": -85,
+        "hombro_flex.R": -85,
+        "codo_flex.L": 95,
+        "codo_flex.R": 95,
+        "escapula_prot.L": -12,
+        "escapula_prot.R": -12
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "hombro_flex.L": -85,
+        "hombro_flex.R": -85,
+        "codo_flex.L": 95,
+        "codo_flex.R": 95,
+        "escapula_prot.L": -12,
+        "escapula_prot.R": -12
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.1,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0,
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0,
+        "escapula_prot.L": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      },
+      {
+        "id": "trapezius_middle"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "serratus_anterior"
+      },
+      {
+        "id": "pectoralis_minor"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "clavicle.L"
+    },
+    {
+      "hueso": "clavicle.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.L",
+      "anclaje_rel": [
+        0,
+        -0.8,
+        0
+      ]
+    },
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.R",
+      "anclaje_rel": [
+        0,
+        -0.8,
+        0
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Remo con banda elástica"
+}

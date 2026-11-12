@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Plus, Trash2, GripVertical, Send, Copy, Search, X, CheckCircle2, Mail, MessageCircle, QrCode, Share2, Eye, ChevronDown, ChevronUp, FileDown, Clock, Repeat2 } from "lucide-react";
+import { Plus, Trash2, GripVertical, Send, Copy, Search, X, CheckCircle2, MessageCircle, Share2, Eye, ChevronDown, ChevronUp, FileDown } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { generateRoutinePDF } from "@/lib/generatePDF";
 import masterRegistry from "@data/master-registry.json";
 
 const _cdnReg = masterRegistry as Record<string, { video_url?: string; cloudflare_id?: string }>;
@@ -19,10 +20,12 @@ interface RoutineExercise {
   nameLocal: string;
   region: string;
   equipment: string;
+  equipmentOverride?: string; // therapist can switch to alternative
   difficulty: string;
   sets: number;
   reps: number;
   restSeconds: number;
+  frequencyPerWeek: number;
   notes: string;
 }
 
@@ -158,25 +161,44 @@ function RoutineItem({
 
       {expanded && (
         <div className="border-t border-surface-100 px-3 py-3 bg-surface-50 space-y-2.5">
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-4 gap-2">
             {[
               { label: "Series", field: "sets" as const, value: exercise.sets },
               { label: "Reps", field: "reps" as const, value: exercise.reps },
-              { label: "Descanso (s)", field: "restSeconds" as const, value: exercise.restSeconds },
+              { label: "Descanso(s)", field: "restSeconds" as const, value: exercise.restSeconds },
+              { label: "Días/sem", field: "frequencyPerWeek" as const, value: exercise.frequencyPerWeek },
             ].map(({ label, field, value }) => (
               <div key={field}>
                 <label className="text-[10px] text-surface-400 font-medium block mb-1">{label}</label>
-                <input type="number" min="0" value={value}
+                <input type="number" min="0" max={field === "frequencyPerWeek" ? 7 : 100} value={value}
                   onChange={(e) => onUpdate(field, parseInt(e.target.value) || 0)}
                   className="w-full text-center text-sm font-bold border border-surface-200 rounded-lg py-1.5 bg-white" />
               </div>
             ))}
           </div>
           <div>
-            <label className="text-[10px] text-surface-400 font-medium block mb-1">Nota para el paciente</label>
+            <label className="text-[10px] text-surface-400 font-medium block mb-1">
+              Implemento — <span className="text-brand-500">{exercise.equipmentOverride ?? exercise.equipment}</span>
+            </label>
+            <div className="flex gap-2">
+              {["Peso corporal", "Ligas / Bandas", "Mancuernas", "Foam Roller", "BOSU", "Pelota", "Kettlebell"].map((eq) => (
+                <button key={eq} onClick={() => onUpdate("equipmentOverride", eq)}
+                  className={cn(
+                    "text-[9px] px-2 py-0.5 rounded-full border transition-colors whitespace-nowrap",
+                    (exercise.equipmentOverride ?? exercise.equipment) === eq
+                      ? "border-brand-400 bg-brand-50 text-brand-700 font-semibold"
+                      : "border-surface-200 text-surface-400 hover:border-surface-300"
+                  )}>
+                  {eq}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <label className="text-[10px] text-surface-400 font-medium block mb-1">Nota personal del Dr.</label>
             <textarea value={exercise.notes}
               onChange={(e) => onUpdate("notes", e.target.value)}
-              placeholder="Ej: Realiza lento y controlado..."
+              placeholder="Ej: Juan, recuerda mantener la espalda recta en este..."
               rows={2}
               className="w-full text-xs border border-surface-200 rounded-lg p-2 bg-white resize-none focus:outline-none focus:ring-1 focus:ring-brand-500" />
           </div>
@@ -191,83 +213,103 @@ function SendModal({ isOpen, onClose, routineName, exerciseCount, exercises }: {
   isOpen: boolean; onClose: () => void; routineName: string; exerciseCount: number;
   exercises: RoutineExercise[];
 }) {
-  const [email, setEmail] = useState("");
-  const [sent, setSent] = useState<string | null>(null);
+  const [patientName, setPatientName] = useState("");
+  const [patientPhone, setPatientPhone] = useState("");
+  const [diagnosis, setDiagnosis] = useState("");
+  const [planLink, setPlanLink] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
   const [activeTab, setActiveTab] = useState<"send" | "preview">("send");
-  const link = "https://therapia.global/es/patient/demo-abc123";
 
   if (!isOpen) return null;
 
-  function doSend(method: string) {
-    if (method === "whatsapp") {
-      // Build WhatsApp message with CDN video URLs from registry
-      const lines = [
-        `*${routineName}*`,
-        `Tu programa de ejercicios:`,
-        "",
-        ...exercises.map((ex, i) => {
-          const entry = _cdnReg[ex.id];
-          const videoUrl = entry?.cloudflare_id
-            ? `https://watch.videodelivery.net/${entry.cloudflare_id}`
-            : entry?.video_url ?? "";
-          return [
-            `${i + 1}️⃣ ${ex.nameLocal} — ${ex.sets}x${ex.reps}`,
-            videoUrl ? `🎥 ${videoUrl}` : null,
-          ].filter(Boolean).join("\n");
-        }),
-        "",
-        "Generado con Therapia Global",
-      ].join("\n");
-      window.open(`https://wa.me/?text=${encodeURIComponent(lines)}`, "_blank");
+  async function generatePlanLink() {
+    setSending(true);
+    try {
+      const payload = {
+        therapist_id: "demo-therapist",
+        patient: { name: patientName || "Paciente", phone: patientPhone },
+        meta: {
+          diagnosis: diagnosis || routineName,
+          phase: "Fase 1",
+          frequency_per_week: 3,
+          duration_weeks: 4,
+        },
+        exercises: exercises.map((ex, i) => ({
+          exercise_id: ex.id,
+          nombre_display: ex.nameLocal,
+          youtube_id: (_cdnReg[ex.id] as Record<string, unknown>)?.youtube_id as string ?? "",
+          youtube_start_seconds: (_cdnReg[ex.id] as Record<string, unknown>)?.youtube_start_seconds as number ?? 0,
+          sets: ex.sets,
+          reps: ex.reps,
+          rest_seconds: ex.restSeconds,
+          frequency_per_week: ex.frequencyPerWeek ?? 3,
+          equipment_used: ex.equipmentOverride ?? ex.equipment,
+          equipment_alternative: "peso corporal",
+          note_from_therapist: ex.notes,
+          instructions_eli5: ((_cdnReg[ex.id] as Record<string, unknown>)?.instructions_eli5 as string[]) ?? [
+            "Posición inicial cómoda",
+            "Realiza el movimiento lentamente",
+            "Vuelve al inicio y respira"
+          ],
+          order: i + 1,
+        })),
+      };
+      const res = await fetch("/api/routines/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      setPlanLink(data.share_url);
+    } catch {
+      setPlanLink(`${window.location.origin}/es/p/demo-${Date.now()}`);
     }
-    setSent(method);
-    setTimeout(() => { setSent(null); }, 1800);
+    setSending(false);
   }
 
-  function downloadPDF() {
-    // Genera una ventana de impresión con el contenido de la rutina
-    const content = `
-      <html><head><title>${routineName}</title>
-      <style>
-        body { font-family: Arial, sans-serif; padding: 32px; color: #1e293b; max-width: 700px; margin: 0 auto; }
-        h1 { font-size: 24px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
-        .subtitle { color: #64748b; font-size: 13px; margin-bottom: 24px; }
-        .exercise { border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
-        .ex-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-        .ex-num { width: 28px; height: 28px; border-radius: 50%; background: #3b82f6; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
-        .ex-name { font-size: 15px; font-weight: 700; color: #0f172a; }
-        .ex-region { font-size: 11px; color: #64748b; }
-        .stats { display: flex; gap: 16px; margin: 8px 0; }
-        .stat { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 12px; }
-        .stat strong { display: block; font-size: 15px; font-weight: 700; }
-        .notes { margin-top: 8px; padding: 10px; background: #fefce8; border: 1px solid #fef08a; border-radius: 8px; font-size: 12px; color: #713f12; }
-        .footer { margin-top: 32px; text-align: center; color: #94a3b8; font-size: 11px; }
-        @media print { body { padding: 16px; } }
-      </style></head><body>
-      <h1>${routineName}</h1>
-      <p class="subtitle">${exerciseCount} ejercicios · Generado por Therapia Global · ${new Date().toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}</p>
-      ${exercises.map((ex, i) => `
-        <div class="exercise">
-          <div class="ex-header">
-            <div class="ex-num">${i + 1}</div>
-            <div>
-              <div class="ex-name">${ex.nameLocal}</div>
-              <div class="ex-region">${ex.region} · ${ex.equipment}</div>
-            </div>
-          </div>
-          <div class="stats">
-            <div class="stat"><strong>${ex.sets}</strong>Series</div>
-            <div class="stat"><strong>${ex.reps || "—"}</strong>Repeticiones</div>
-            <div class="stat"><strong>${ex.restSeconds}s</strong>Descanso</div>
-          </div>
-          ${ex.notes ? `<div class="notes">📝 ${ex.notes}</div>` : ""}
-        </div>
-      `).join("")}
-      <div class="footer">Therapia Global · therapia.global · ${link}</div>
-      </body></html>
-    `;
-    const w = window.open("", "_blank");
-    if (w) { w.document.write(content); w.document.close(); w.print(); }
+  function sendWhatsApp() {
+    if (!planLink) return;
+    const msg = [
+      `*${routineName}*`,
+      patientName ? `Hola ${patientName}! 👋` : "Hola!",
+      `Tu programa de ejercicios está listo. Ábrelo aquí:`,
+      planLink,
+      ``,
+      `_Therapia Global — therapia.global_`,
+    ].join("\n");
+    const phone = patientPhone.replace(/\D/g, "");
+    const waUrl = phone
+      ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
+      : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+    window.open(waUrl, "_blank");
+  }
+
+  async function downloadPDF() {
+    await generateRoutinePDF(
+      {
+        patient_name: patientName || "Paciente",
+        diagnosis: diagnosis || routineName,
+        plan_id: planLink ? planLink.split("/").pop() : undefined,
+        phase: "Fase 1",
+        frequency_per_week: 3,
+        duration_weeks: 4,
+      },
+      exercises.map((ex, i) => ({
+        order: i + 1,
+        nombre_display: ex.nameLocal,
+        sets: ex.sets,
+        reps: ex.reps,
+        rest_seconds: ex.restSeconds,
+        frequency_per_week: ex.frequencyPerWeek ?? 3,
+        equipment_used: ex.equipmentOverride ?? ex.equipment,
+        note_from_therapist: ex.notes,
+        instructions_eli5: ((_cdnReg[ex.id] as Record<string, unknown>)?.instructions_eli5 as string[]) ?? [
+          "Adopta la posición inicial cómoda",
+          "Realiza el movimiento lento y controlado",
+          "Vuelve al inicio y respira profundo",
+        ],
+      }))
+    );
   }
 
   return (
@@ -300,57 +342,70 @@ function SendModal({ isOpen, onClose, routineName, exerciseCount, exercises }: {
 
         {activeTab === "send" ? (
           <div className="p-5 space-y-3">
+            {/* Patient info */}
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <label className="text-[10px] text-surface-500 font-semibold block mb-1">Nombre del paciente</label>
+                <Input value={patientName} onChange={(e) => setPatientName(e.target.value)}
+                  placeholder="Ej: Juan García" className="text-sm" />
+              </div>
+              <div>
+                <label className="text-[10px] text-surface-500 font-semibold block mb-1">WhatsApp (con código)</label>
+                <Input value={patientPhone} onChange={(e) => setPatientPhone(e.target.value)}
+                  placeholder="+52 55 1234 5678" className="text-sm" />
+              </div>
+            </div>
+            <div>
+              <label className="text-[10px] text-surface-500 font-semibold block mb-1">Diagnóstico / Motivo</label>
+              <Input value={diagnosis} onChange={(e) => setDiagnosis(e.target.value)}
+                placeholder="Ej: Síndrome de hombro doloroso" className="text-sm" />
+            </div>
+
+            {/* Generate link */}
+            {!planLink ? (
+              <button onClick={generatePlanLink} disabled={sending}
+                className="w-full h-11 bg-brand-600 hover:bg-brand-500 disabled:opacity-60 text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-colors">
+                {sending ? (
+                  <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Generando link...</>
+                ) : (
+                  <><Share2 className="h-4 w-4" /> Generar link del paciente</>
+                )}
+              </button>
+            ) : (
+              <>
+                {/* Link box */}
+                <div className="bg-clinical-50 border border-clinical-200 rounded-xl p-3">
+                  <p className="text-[10px] text-clinical-600 font-semibold mb-1">✅ Link generado</p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-xs text-clinical-700 truncate flex-1">{planLink}</p>
+                    <button onClick={() => navigator.clipboard?.writeText(planLink)}
+                      className="shrink-0 p-1.5 border border-clinical-200 rounded-lg text-clinical-600 hover:bg-clinical-100">
+                      <Copy className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* WhatsApp send */}
+                <button onClick={sendWhatsApp}
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border-2 border-green-200 bg-green-50 hover:bg-green-100 transition-all text-green-700">
+                  <MessageCircle className="h-5 w-5" />
+                  <div className="text-start flex-1">
+                    <p className="text-sm font-bold">Enviar por WhatsApp</p>
+                    <p className="text-xs text-green-600">Abre WhatsApp con el link listo para enviar</p>
+                  </div>
+                </button>
+              </>
+            )}
+
             {/* PDF Download */}
             <button onClick={downloadPDF}
-              className="w-full flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 border-brand-200 bg-brand-50 hover:bg-brand-100 transition-all text-brand-700">
-              <FileDown className="h-5 w-5 text-brand-600" />
+              className="w-full flex items-center gap-3 px-4 py-3.5 rounded-xl border border-surface-200 bg-surface-50 hover:bg-surface-100 transition-all text-surface-700">
+              <FileDown className="h-5 w-5 text-surface-500" />
               <div className="text-start flex-1">
                 <p className="text-sm font-bold">Descargar PDF</p>
-                <p className="text-xs text-brand-500">Incluye ejercicios, series, reps y observaciones</p>
+                <p className="text-xs text-surface-400">Incluye ejercicios, series, reps y observaciones</p>
               </div>
             </button>
-
-            {/* Link */}
-            <div>
-              <label className="text-xs font-semibold text-surface-600 block mb-1.5">Link del paciente</label>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 bg-surface-50 border border-surface-200 rounded-lg px-3 py-2">
-                  <p className="text-xs text-surface-500 truncate">{link}</p>
-                </div>
-                <button onClick={() => navigator.clipboard?.writeText(link)}
-                  className="shrink-0 p-2 border border-surface-200 rounded-lg text-surface-500 hover:bg-surface-50">
-                  <Copy className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="flex gap-2">
-              <Input value={email} onChange={(e) => setEmail(e.target.value)}
-                placeholder="email@paciente.com" type="email" className="flex-1" />
-              <button onClick={() => doSend("email")}
-                className={cn("shrink-0 px-4 h-10 rounded-lg text-sm font-semibold transition-all",
-                  sent === "email" ? "bg-clinical-500 text-white" : "bg-brand-600 text-white hover:bg-brand-500")}>
-                {sent === "email" ? <CheckCircle2 className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
-              </button>
-            </div>
-
-            {/* WhatsApp / QR */}
-            {[
-              { id: "whatsapp", icon: <MessageCircle className="h-5 w-5" />, label: "WhatsApp", desc: "Abre WhatsApp con el link listo", color: "hover:border-green-300 hover:bg-green-50 hover:text-green-700" },
-              { id: "qr",       icon: <QrCode className="h-5 w-5" />,       label: "Código QR", desc: "Imprime o muestra en consulta",  color: "hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700" },
-            ].map(({ id, icon, label, desc, color }) => (
-              <button key={id} onClick={() => doSend(id)}
-                className={cn("w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-surface-200 transition-all text-surface-700", color,
-                  sent === id && "border-clinical-500 bg-clinical-50 text-clinical-700")}>
-                {icon}
-                <div className="text-start flex-1">
-                  <p className="text-sm font-semibold">{sent === id ? "¡Enviado!" : `Enviar por ${label}`}</p>
-                  <p className="text-xs text-surface-400">{desc}</p>
-                </div>
-                {sent === id && <CheckCircle2 className="h-4 w-4 text-clinical-500" />}
-              </button>
-            ))}
           </div>
         ) : (
           /* Vista previa PDF */
@@ -422,7 +477,7 @@ export default function RoutinesPage() {
   });
 
   function addEx(ex: typeof EXERCISE_LIBRARY[0]) {
-    setExercises((prev) => [...prev, { ...ex, uid: `${ex.id}-${Date.now()}`, notes: "" }]);
+    setExercises((prev) => [...prev, { ...ex, uid: `${ex.id}-${Date.now()}`, notes: "", frequencyPerWeek: 3 }]);
   }
 
   function removeEx(uid: string) {

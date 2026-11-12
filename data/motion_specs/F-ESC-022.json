@@ -1,0 +1,202 @@
+{
+  "id": "F-ESC-022",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 30,
+      "hombro_abd.R": 30,
+      "hombro_flex.L": 90,
+      "hombro_flex.R": 90,
+      "codo_flex.L": 90,
+      "codo_flex.R": 90
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L"
+    },
+    {
+      "cadena": "brazo.R"
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "ik": {
+        "brazo.L": [
+          0,
+          0,
+          0.0
+        ],
+        "brazo.R": [
+          0,
+          0,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "ik": {
+        "brazo.L": [
+          0,
+          0,
+          0.0
+        ],
+        "brazo.R": [
+          0,
+          0,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 2.0,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "ik": {
+        "brazo.L": [
+          0,
+          0,
+          0.32
+        ],
+        "brazo.R": [
+          0,
+          0,
+          0.32
+        ]
+      }
+    },
+    {
+      "t": 2.6,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "ik": {
+        "brazo.L": [
+          0,
+          0,
+          0.32
+        ],
+        "brazo.R": [
+          0,
+          0,
+          0.32
+        ]
+      }
+    },
+    {
+      "t": 4.2,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "ik": {
+        "brazo.L": [
+          0,
+          0,
+          0.0
+        ],
+        "brazo.R": [
+          0,
+          0,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 5.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "ik": {
+        "brazo.L": [
+          0,
+          0,
+          0.0
+        ],
+        "brazo.R": [
+          0,
+          0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "serratus_anterior"
+      },
+      {
+        "id": "trapezius_upper"
+      },
+      {
+        "id": "trapezius_lower"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      },
+      {
+        "id": "levator_scapulae"
+      },
+      {
+        "id": "pectoralis_minor"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "clavicle.L"
+    },
+    {
+      "hueso": "clavicle.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "pared_manos"
+    },
+    {
+      "tipo": "foam_roller",
+      "uso": "baston_manos"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Wall slide con foam roller"
+}

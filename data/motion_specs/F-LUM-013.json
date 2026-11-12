@@ -1,0 +1,187 @@
+{
+  "id": "F-LUM-013",
+  "duracion_s": 6.1,
+  "base": {
+    "orientacion": "decubito_lateral_L",
+    "colchoneta": true,
+    "angulos": {
+      "hombro_abd.L": 90,
+      "codo_flex.L": 90,
+      "antebrazo_prono.L": 60,
+      "hombro_abd.R": 0
+    },
+    "suelo": [
+      "lowerarm01.L",
+      "lowerarm02.L",
+      "lowerarm02.L",
+      "wrist.L",
+      "finger1-1.L",
+      "finger1-2.L",
+      "finger1-3.L",
+      "finger2-1.L",
+      "finger2-2.L",
+      "finger2-3.L",
+      "finger3-1.L",
+      "finger3-2.L",
+      "finger3-3.L",
+      "finger4-1.L",
+      "finger4-2.L",
+      "finger4-3.L",
+      "finger5-1.L",
+      "finger5-2.L",
+      "finger5-3.L",
+      "metacarpal1.L",
+      "metacarpal2.L",
+      "metacarpal3.L",
+      "metacarpal4.L"
+    ],
+    "asentar": [
+      {
+        "art": "@roll",
+        "grupo": [
+          "foot.L",
+          "lowerleg02.L",
+          "toe1-1.L",
+          "toe2-1.L",
+          "toe3-1.L",
+          "toe4-1.L",
+          "toe5-1.L"
+        ],
+        "rango": [
+          -35,
+          35
+        ],
+        "reapoyar": true
+      }
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "lowerarm01.L",
+        "lowerarm02.L",
+        "lowerarm02.L",
+        "wrist.L",
+        "finger1-1.L",
+        "finger1-2.L",
+        "finger1-3.L",
+        "finger2-1.L",
+        "finger2-2.L",
+        "finger2-3.L",
+        "finger3-1.L",
+        "finger3-2.L",
+        "finger3-3.L",
+        "finger4-1.L",
+        "finger4-2.L",
+        "finger4-3.L",
+        "finger5-1.L",
+        "finger5-2.L",
+        "finger5-3.L",
+        "metacarpal1.L",
+        "metacarpal2.L",
+        "metacarpal3.L",
+        "metacarpal4.L"
+      ]
+    },
+    {
+      "grupo": [
+        "foot.L",
+        "lowerleg02.L",
+        "toe1-1.L",
+        "toe2-1.L",
+        "toe3-1.L",
+        "toe4-1.L",
+        "toe5-1.L"
+      ],
+      "tol_cm": 2
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.1,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 0.6,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.7,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 5.3,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 6.1,
+      "p": 0,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "quadratus_lumborum",
+        "lado": "L"
+      },
+      {
+        "id": "external_oblique",
+        "lado": "L"
+      },
+      {
+        "id": "internal_oblique",
+        "lado": "L"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "quadratus_lumborum",
+        "lado": "L"
+      },
+      {
+        "id": "external_oblique",
+        "lado": "L"
+      },
+      {
+        "id": "internal_oblique",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Plancha lateral completa"
+}

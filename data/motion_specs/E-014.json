@@ -1,0 +1,143 @@
+{
+  "id": "E-014",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 70,
+      "codo_flex.L": 50,
+      "codo_flex.R": 110
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.R",
+      "a_hueso": {
+        "hueso": "jaw",
+        "dir": "anterior",
+        "t": 0.9,
+        "sep": 0.02,
+        "lado": "R"
+      }
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.35,
+    "grupos": [
+      "head",
+      "neck01",
+      "neck02",
+      "neck03",
+      "jaw",
+      "spine01",
+      "spine02",
+      "clavicle.L",
+      "clavicle.R",
+      "shoulder01.L",
+      "shoulder01.R"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "cervical_flex": 20
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "cervical_flex": 20
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "rectus_capitis_posterior_major",
+        "lado": "R"
+      },
+      {
+        "id": "rectus_capitis_posterior_minor",
+        "lado": "R"
+      },
+      {
+        "id": "obliquus_capitis_superior",
+        "lado": "R"
+      },
+      {
+        "id": "obliquus_capitis_inferior",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "neck02"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Flexión cráneo-cervical asistida en sedente"
+}

@@ -1,0 +1,135 @@
+{
+  "id": "F-TOB-015",
+  "duracion_s": 6.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 25,
+      "hombro_abd.R": 25,
+      "rodilla_flex.R": 70,
+      "cadera_flex.R": 15
+    },
+    "elevar": 0.07
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L",
+      "z": 0.07
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.6,
+      -1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "@roll": 0,
+        "tobillo_inv.L": 0
+      },
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.5,
+      "art": {
+        "@roll": 3,
+        "tobillo_inv.L": 4
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 3.0,
+      "art": {
+        "@roll": 0,
+        "tobillo_inv.L": 0
+      },
+      "p": 0.4,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.5,
+      "art": {
+        "@roll": -3,
+        "tobillo_inv.L": -4
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 6.0,
+      "art": {
+        "@roll": 0,
+        "tobillo_inv.L": 0
+      },
+      "p": 0,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "tibialis_posterior",
+        "lado": "L"
+      },
+      {
+        "id": "tibialis_anterior",
+        "lado": "L"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "fibularis_longus",
+        "lado": "L"
+      },
+      {
+        "id": "fibularis_brevis",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.L"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "cojin_inestable",
+      "uso": "caja",
+      "tam": [
+        0.4,
+        0.33,
+        0.07
+      ],
+      "pos": [
+        0.1,
+        -0.04,
+        0.035
+      ],
+      "color": [
+        0.3,
+        0.45,
+        0.6
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Equilibrio unipodal en superficie inestable"
+}

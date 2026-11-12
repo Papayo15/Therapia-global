@@ -1,0 +1,199 @@
+#!/usr/bin/env python3
+"""Genera las fichas de movimiento de la región CADERA (F-CAD-001..030).
+
+  python3 scripts/factory/specs/gen_cadera.py
+
+Convención: el lado que trabaja es el derecho (R). Los ángulos de 'peak' son deltas
+sobre la posición base. Ejercicios marcados PENDIENTE requieren locomoción o
+posiciones de suelo complejas y se documentan en vez de generarse.
+"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from common import FOOT, bipedo, cuadrupedia, iso, lateral, musculos, prono, rep, sedente, supino, write  # noqa: E402
+
+PENDIENTES = {
+    "F-CAD-014": "Monster walk: locomoción lateral con banda (requiere ciclo de pasos con doble apoyo).",
+    "F-CAD-019": "Plancha Copenhagen corta: plancha lateral con rodilla sobre banco (posición de suelo compleja).",
+    "F-CAD-020": "Plancha Copenhagen larga: ídem con pie sobre banco.",
+    "F-CAD-024": "Rotación interna activa en 90/90: sedestación en suelo 90/90.",
+    "F-CAD-025": "Transiciones 90/90 sin manos: cambio de lado continuo.",
+    "F-CAD-030": "Avión de cadera: equilibrio unipodal con rotación pélvica completa.",
+}
+
+
+def spec(id_, plantilla, keys_dur, props=None, lado="R", lado_elongan=None, resaltar=("upperleg01.R",),
+         variantes=None, contactos_extra=None, camara=None, **extra):
+    dur, keys = keys_dur
+    s = {"id": id_, "duracion_s": dur, **plantilla, "keys": keys,
+         "musculos": musculos(id_, lado, lado_elongan),
+         "articulacion_resaltada": [{"hueso": b} for b in resaltar]}
+    if props:
+        s["props"] = props
+    s["variantes"] = variantes or (["gym", "casa"] if props else ["gym"])
+    if not props:
+        s["nota_variantes"] = "Sin material: un solo video sirve para gym y casa."
+    if contactos_extra:
+        s["contactos"] = s["contactos"] + contactos_extra
+    if camara:
+        s["camara"] = {**s["camara"], "dir": camara}
+    s.update(extra)
+    return write(s)
+
+
+def pie_libre(sp, lado="R"):
+    """Quita el contacto permanente del pie que se mueve."""
+    sp["contactos"] = [c for c in sp["contactos"] if c["grupo"] != f"foot.{lado}"]
+    return sp
+
+
+hecho = []
+
+# 001 Heel slide: el talón desliza por la colchoneta (IK con objetivo móvil).
+b = supino()
+b["ik"] = [{"cadena": "pierna.R", "polo": [0, 0, 0.6]}]
+hecho.append(spec("F-CAD-001", b, rep({}, up=1.6, hold=0.6, down=1.6, campos={"ik": {"pierna.R": [0, 0.32, 0.03]}})))
+
+# 002 Marcha sentada.
+b = pie_libre(sedente())
+hecho.append(spec("F-CAD-002", b, rep({"cadera_flex.R": 28}, up=0.9, hold=0.5, down=1.0, pre=0.8, post=0.8),
+                  contactos_extra=[{"grupo": "foot.R", "desde": 0, "hasta": 0.8}], camara=[-1, -0.25, 0.2]))
+
+# 003 SLR: pierna izquierda en gancho, derecha recta sube a 45°.
+b = pie_libre(supino(gancho=("L",)))
+hecho.append(spec("F-CAD-003", b, rep({"cadera_flex.R": 45}, up=1.6, hold=1.0, down=1.8),
+                  contactos_extra=[{"grupo": "foot.R", "desde": 0, "hasta": 0.4}]))
+
+# 004 Flexión de cadera de pie con banda anclada detrás.
+b = bipedo(camara=(-1, -0.2, 0.2))
+hecho.append(spec("F-CAD-004", b, rep({"cadera_flex.R": 55, "rodilla_flex.R": 10}, up=1.3, hold=0.8, down=1.6),
+                  props=[{"tipo": "banda_elastica", "uso": "banda_anclada_hueso", "hueso": "lowerleg02.R",
+                          "anclaje_rel": [0, 0.7, 0.02]}],
+                  contactos_extra=[{"grupo": "foot.R", "desde": 0, "hasta": 0.4}]))
+
+# 005 Marcha alta (rodilla al pecho, brazos alternos).
+b = bipedo(camara=(-1, -0.2, 0.2))
+hecho.append(spec("F-CAD-005", b, rep({"cadera_flex.R": 85, "rodilla_flex.R": 95, "tobillo_dorsi.R": 10,
+                                       "hombro_flex.L": 35, "codo_flex.L": 80, "hombro_flex.R": -20, "codo_flex.R": 60},
+                                      up=0.9, hold=0.8, down=1.0, pre=1.0, post=1.3),
+                  contactos_extra=[{"grupo": "foot.R", "desde": 0, "hasta": 1.0}]))
+
+# 006 Isométrico de glúteos en supino.
+hecho.append(spec("F-CAD-006", supino(), iso(3.0), lado=None, resaltar=("upperleg01.L", "upperleg01.R")))
+
+# 008 Extensión de cadera en cuadrupedia (pierna atrás a la horizontal).
+b = cuadrupedia()
+b["contactos"] = b["contactos"] + [{"grupo": "lowerleg01.R", "desde": 0, "hasta": 0.4, "tol_cm": 2.5}]
+hecho.append(spec("F-CAD-008", b, rep({"cadera_flex.R": -88, "rodilla_flex.R": -80}, up=1.5, hold=1.0, down=1.7)))
+
+# 009 Hip thrust: espalda alta sobre banco (gym) / sofá (casa), carga en la cadera.
+b = supino(rectas=False, gancho=("L", "R"))
+b["base"]["colchoneta"] = False
+b["base"]["suelo"] = ["spine01", "shoulder01.L", "shoulder01.R"]
+b["base"]["asentar"] = [a for a in b["base"]["asentar"] if a["art"] != "cervical_flex"]
+for i in b["ik"]:
+    i["z_suelo"] = 0.0
+b["pivote"] = {"hueso": "spine01", "contrarrotar": "spine01"}
+b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R"}]
+b["base"]["superficie_banco"] = 0.42
+b["base"]["angulos"].update({"mano_cerrar.L": 70, "mano_cerrar.R": 70, "cervical_flex": 32, "lumbar_flex": 10})   # mentón recogido + retroversión (costillas abajo)
+b["base"]["asentar"] = []
+sp = spec("F-CAD-009", b, rep({}, up=1.3, hold=1.0, down=1.7), lado=None,
+          resaltar=("upperleg01.L", "upperleg01.R"),
+          props=[{"tipo": "barra", "uso": "carga_cadera", "casa": "mochila", "agarre": True}])
+import json  # noqa: E402
+d = json.loads(sp.read_text())
+for k in d["keys"]:
+    k["pivote_x"] = 32 * (1 - k["p"])          # cadera abajo (32°) → tronco horizontal (0°)
+sp.write_text(json.dumps(d, ensure_ascii=False, indent=2))
+hecho.append(sp)
+
+# 010 Peso muerto rumano unipodal (apoyo izquierdo, pierna derecha atrás).
+b = bipedo(extra={"rodilla_flex.L": 12, "mano_cerrar.L": 70, "mano_cerrar.R": 70}, camara=(1, -0.3, 0.25))
+b["pivote"] = {"hueso": "upperleg01.L", "contrarrotar": "upperleg01.L"}
+sp = spec("F-CAD-010", b, rep({"hombro_flex.L": 60, "hombro_flex.R": 60, "cadera_flex.R": -8},
+                              up=1.8, hold=0.8, down=1.8),
+          lado="L", props=[{"tipo": "mancuerna", "uso": "en_mano", "manos": ["L", "R"]}],
+          resaltar=("upperleg01.L",),
+          contactos_extra=[{"grupo": "foot.R", "desde": 0, "hasta": 0.4, "tol_cm": 2.5}])
+d = json.loads(sp.read_text())
+for k in d["keys"]:
+    k["pivote_x"] = 62 * k["p"]
+sp.write_text(json.dumps(d, ensure_ascii=False, indent=2))
+hecho.append(sp)
+
+# 011 Isométrico de abducción con cinturón en supino (rodillas flexionadas).
+hecho.append(spec("F-CAD-011", supino(gancho=("L", "R")), iso(3.0), lado=None,
+                  props=[{"tipo": "correa", "uso": "lazo_rodillas"}], resaltar=("upperleg01.L", "upperleg01.R")))
+
+# 012 Abducción en decúbito lateral (pierna de arriba recta).
+hecho.append(spec("F-CAD-012", lateral(), rep({"cadera_abd.R": 35}, up=1.4, hold=1.0, down=1.8)))
+
+# 013 Abducción de pie con banda alrededor de los tobillos.
+b = bipedo(camara=(0, -1, 0.2))
+hecho.append(spec("F-CAD-013", b, rep({"cadera_abd.R": 25}, up=1.2, hold=0.8, down=1.6),
+                  props=[{"tipo": "banda_elastica", "uso": "lazo_rodillas", "hueso": "lowerleg02", "t": 0.75}],
+                  contactos_extra=[{"grupo": "foot.R", "desde": 0, "hasta": 0.4}]))
+
+# 015 Step-down lateral: apoyo derecho en escalón, la pierna izquierda baja.
+b = bipedo(camara=(0, -1, 0.15))
+b["ik"] = [{"cadena": "pierna.R", "pie_plano": True, "z_suelo": 0.18, "polo": [0, -0.6, 0]}]
+b["contactos"] = []
+b["base"]["elevar"] = 0.18
+hecho.append(spec("F-CAD-015", b, rep({"cadera_flex.R": 25, "cadera_flex.L": 10, "lumbar_flex": 12,
+                                        "hombro_flex.L": 40, "hombro_flex.R": 40},
+                                       up=1.6, hold=0.6, down=1.6, campos={"raiz": [0, 0.04, -0.10]}),
+                  props=[{"tipo": "escalon", "uso": "caja", "tam": [0.40, 0.35, 0.18], "pos": [-0.10, -0.05, 0.09]}]))
+
+# 016 Isométrico apretando pelota entre las rodillas.
+hecho.append(spec("F-CAD-016", supino(gancho=("L", "R")), iso(3.0), lado=None,
+                  props=[{"tipo": "pelota_pequena", "uso": "pelota_rodillas"}], resaltar=("upperleg01.L", "upperleg01.R")))
+
+# 017 Aducción en decúbito lateral: trabaja la pierna de ABAJO (izquierda).
+b = lateral(top_recta=False)
+b["base"]["angulos"].update({"cadera_flex.L": 0, "rodilla_flex.L": 0})
+b["contactos"] = [{"grupo": FOOT("R"), "tol_cm": 2}, {"grupo": ["lowerleg01.L", "foot.L"], "desde": 0, "hasta": 0.4, "tol_cm": 2}, {"grupo": ["pelvis.L", "upperleg01.L"], "tol_cm": 2.5}]
+hecho.append(spec("F-CAD-017", b, rep({"cadera_abd.L": -22}, up=1.3, hold=1.0, down=1.7), lado="L",
+                  resaltar=("upperleg01.L",)))
+
+# 018 Aducción de pie con banda anclada al lado derecho.
+b = bipedo(extra={"cadera_abd.R": 18}, camara=(0, -1, 0.2))
+hecho.append(spec("F-CAD-018", b, rep({"cadera_abd.R": -18}, up=1.2, hold=0.8, down=1.6),
+                  props=[{"tipo": "banda_elastica", "uso": "banda_anclada_hueso", "hueso": "lowerleg02.R",
+                          "anclaje_rel": [-0.75, 0, 0.02]}]))
+
+# 021/026 Rotación interna/externa activa sentada.
+hecho.append(spec("F-CAD-021", pie_libre(sedente()), rep({"cadera_re.R": -30}, up=1.2, hold=1.0, down=1.5),
+                  camara=[0, -1, 0.3]))
+hecho.append(spec("F-CAD-026", pie_libre(sedente()), rep({"cadera_re.R": 30}, up=1.2, hold=1.0, down=1.5),
+                  camara=[0, -1, 0.3]))
+
+# 022 Rotación interna en prono (rodilla a 90°).
+b = prono(extra={"rodilla_flex.R": 90})
+for a in b["base"]["asentar"]:
+    if a["art"] == "cadera_flex.R":
+        a["grupo"] = ["upperleg02.R", "lowerleg01.R"]
+hecho.append(spec("F-CAD-022", b, rep({"cadera_re.R": -35, "cadera_flex.R": -4}, up=1.3, hold=1.0, down=1.6), camara=[0, -1, 0.6]))
+
+# 023 Rotación interna sentada con banda (anclada al lado izquierdo, por delante).
+hecho.append(spec("F-CAD-023", pie_libre(sedente()), rep({"cadera_re.R": -30}, up=1.2, hold=1.0, down=1.5),
+                  props=[{"tipo": "banda_elastica", "uso": "banda_anclada_hueso", "hueso": "lowerleg02.R",
+                          "anclaje_rel": [0.65, -0.35, 0.0]}], camara=[0, -1, 0.3]))
+
+# 027/028 Almeja (talones juntos: el polo de la rodilla rota sobre el eje cadera-talón).
+hecho.append(spec("F-CAD-027", lateral(almeja=True), rep({}, up=1.3, hold=1.0, down=1.7,
+                                                         campos={"polo": {"pierna.R": [0, 0.3, 0.8]}})))
+hecho.append(spec("F-CAD-028", lateral(almeja=True), rep({}, up=1.3, hold=1.0, down=1.7,
+                                                         campos={"polo": {"pierna.R": [0, 0.3, 0.8]}}),
+                  props=[{"tipo": "banda_elastica", "uso": "lazo_rodillas"}]))
+
+# 029 Fire hydrant en cuadrupedia.
+b = cuadrupedia()
+b["contactos"] = b["contactos"] + [{"grupo": "lowerleg01.R", "desde": 0, "hasta": 0.4, "tol_cm": 2.5}]
+hecho.append(spec("F-CAD-029", b, rep({"cadera_abd.R": 40}, up=1.3, hold=1.0, down=1.6), camara=[0.6, -1, 0.6]))
+
+print(f"Generadas {len(hecho)} fichas de cadera (+ F-CAD-007 ya existente).")
+print("Pendientes documentadas:", ", ".join(PENDIENTES))
+(Path(__file__).resolve().parents[3] / "data/motion_specs/_pendientes_cadera.json").write_text(
+    json.dumps(PENDIENTES, ensure_ascii=False, indent=2))

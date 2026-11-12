@@ -1,0 +1,158 @@
+{
+  "id": "F-HOM-010",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "rodilla_flex.L": 15,
+      "rodilla_flex.R": 15,
+      "hombro_flex.R": 45,
+      "hombro_flex.L": 45,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "pivote": {
+    "hueso": "upperleg01.L",
+    "contrarrotar": [
+      "upperleg01.L",
+      "upperleg01.R"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_flex.R": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 45
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_flex.R": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 45
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "hombro_flex.R": -75,
+        "codo_flex.R": 95
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "pivote_x": 45
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "hombro_flex.R": -75,
+        "codo_flex.R": 95
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "pivote_x": 45
+    },
+    {
+      "t": 4.1,
+      "art": {
+        "hombro_flex.R": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 45
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_flex.R": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 45
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "latissimus_dorsi",
+        "lado": "R"
+      },
+      {
+        "id": "teres_major",
+        "lado": "R"
+      },
+      {
+        "id": "deltoid_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "triceps_brachii_long_head",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "deltoid_anterior",
+        "lado": "R"
+      },
+      {
+        "id": "pectoralis_major",
+        "lado": "R"
+      },
+      {
+        "id": "biceps_brachii",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "mancuerna",
+      "uso": "en_mano",
+      "manos": [
+        "R"
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Remo unilateral con mancuerna"
+}

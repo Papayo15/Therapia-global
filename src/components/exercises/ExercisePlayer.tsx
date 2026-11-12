@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ExerciseAnimationPlayer } from "@/components/exercises/ExerciseAnimationPlayer";
+import { Nike3DAnimatedViewer, type AnimData } from "@/components/exercises/Nike3DAnimatedViewer";
 
 // ─── Tipos públicos ───────────────────────────────────────────────────────────
 export interface ExerciseData {
@@ -37,6 +38,15 @@ export interface ExerciseData {
   ejecucion_tecnica?: string;
   fisiologia_basica?: string;
   pasos?: string[];
+  // ── Clinical Setup fields (Canal B osteopathy) ──────────────────────
+  titulo?: string;
+  setup_paciente?: string;
+  setup_terapeuta?: string;
+  contacto_manos?: string;
+  // ── 3D viewer fields ─────────────────────────────────────────────────
+  glb_region?: string | string[];
+  bilateral?:  boolean;
+  anim?:       AnimData;
 }
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -98,6 +108,54 @@ function YouTubePanel({ exercise }: { exercise: ExerciseData }) {
             Ver en YouTube
           </a>
         )}
+      </div>
+    </div>
+  );
+}
+
+// ─── Clinical Setup Panel (Canal B osteopathy only) ───────────────────────────
+function ClinicalSetupPanel({ exercise }: { exercise: ExerciseData }) {
+  if (exercise.canal !== "B") return null;
+
+  const cards = [
+    {
+      icon: "🛏️",
+      label: "Paciente",
+      value: exercise.setup_paciente,
+    },
+    {
+      icon: "🧑‍⚕️",
+      label: "Terapeuta",
+      value: exercise.setup_terapeuta,
+    },
+    {
+      icon: "🤲",
+      label: "Contacto",
+      value: exercise.contacto_manos,
+    },
+  ].filter((c) => c.value && c.value.trim() !== "");
+
+  if (cards.length === 0) return null;
+
+  return (
+    <div className="rounded-xl border border-amber-200 bg-amber-50 overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-amber-200 bg-amber-100/60">
+        <span className="text-[10px] font-bold uppercase tracking-widest text-amber-700">
+          Clinical Setup — Osteopatía
+        </span>
+      </div>
+      <div className="grid gap-px bg-amber-200" style={{ gridTemplateColumns: `repeat(${cards.length}, 1fr)` }}>
+        {cards.map((card) => (
+          <div key={card.label} className="bg-amber-50 p-3">
+            <div className="flex items-center gap-1.5 mb-1.5">
+              <span className="text-base leading-none">{card.icon}</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600">
+                {card.label}
+              </span>
+            </div>
+            <p className="text-xs text-amber-900 leading-relaxed">{card.value}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -194,9 +252,10 @@ function DualContentPanel({ exercise, accentColor }: { exercise: ExerciseData; a
   );
 }
 
-// ─── Panel de animación — Video 3D (reemplaza SVG) ────────────────────────────
+// ─── Panel de animación — Video si existe, 3D si no ──────────────────────────
 function AnimationPanel({ exercise, searchUrl }: { exercise: ExerciseData; searchUrl: string | null }) {
   const regionColor = REGION_COLOR[exercise.region.split(" / ")[0]] ?? "#3b82f6";
+  const hasVideo = !!(exercise.animationSrc || exercise.videoSrc || exercise.AnimComponent);
 
   return (
     <div className="absolute inset-0 flex flex-col bg-white">
@@ -209,13 +268,25 @@ function AnimationPanel({ exercise, searchUrl }: { exercise: ExerciseData; searc
           </span>
         </div>
 
-        {/* Video player — local MP4 only, placeholder if not available */}
-        <ExerciseAnimationPlayer
-          video={exercise.videoSrc}
-          exerciseName={exercise.nameLocal || exercise.name}
-          accentColor={regionColor}
-          className="absolute inset-0"
-        />
+        {hasVideo ? (
+          /* Video MP4 disponible */
+          <ExerciseAnimationPlayer
+            video={exercise.videoSrc}
+            exerciseName={exercise.nameLocal || exercise.name}
+            accentColor={regionColor}
+            className="absolute inset-0"
+          />
+        ) : (
+          /* Sin video → modelo 3D Nike animado con región destacada */
+          <Nike3DAnimatedViewer
+            glbRegion={exercise.glb_region}
+            segmento={exercise.region.split(" / ")[0]}
+            anim={exercise.anim}
+            accentColor={regionColor}
+            height="100%"
+            className="rounded-none"
+          />
+        )}
 
         {/* YouTube fallback button */}
         {searchUrl && (
@@ -250,7 +321,7 @@ export function ExercisePlayer({
 }) {
   const [activeStep, setActiveStep] = useState(0);
   const [added, setAdded] = useState(false);
-  const [mediaTab, setMediaTab] = useState<"demo" | "youtube">("demo");
+  const [mediaTab, setMediaTab] = useState<"demo" | "youtube" | "3d">("demo");
   const overlayRef = useRef<HTMLDivElement>(null);
 
   const hasVideo = !!(exercise.animationSrc || exercise.videoSrc || exercise.AnimComponent);
@@ -332,21 +403,35 @@ export function ExercisePlayer({
           </div>
         </div>
 
-        {/* ── Tabs Demo / YouTube ─────────────────────────────────────────── */}
-        {hasYoutube && (
-          <div className="flex border-b border-slate-100 bg-white shrink-0">
-            <button
-              onClick={() => setMediaTab("demo")}
-              className={cn(
-                "flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-semibold transition-colors",
-                mediaTab === "demo"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-slate-400 hover:text-slate-600"
-              )}
-            >
-              <Play className="h-3.5 w-3.5" />
-              Demostración
-            </button>
+        {/* ── Tabs Demo / YouTube / 3D ─────────────────────────────────── */}
+        <div className="flex border-b border-slate-100 bg-white shrink-0">
+          <button
+            onClick={() => setMediaTab("demo")}
+            className={cn(
+              "flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-semibold transition-colors",
+              mediaTab === "demo"
+                ? "text-blue-600 border-b-2 border-blue-600"
+                : "text-slate-400 hover:text-slate-600"
+            )}
+          >
+            <Play className="h-3.5 w-3.5" />
+            Demostración
+          </button>
+          <button
+            onClick={() => setMediaTab("3d")}
+            className={cn(
+              "flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-semibold transition-colors",
+              mediaTab === "3d"
+                ? "text-violet-600 border-b-2 border-violet-600"
+                : "text-slate-400 hover:text-slate-600"
+            )}
+          >
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-current" aria-hidden>
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            Anatomía 3D
+          </button>
+          {hasYoutube && (
             <button
               onClick={() => setMediaTab("youtube")}
               className={cn(
@@ -361,17 +446,30 @@ export function ExercisePlayer({
               </svg>
               YouTube
             </button>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* ── Scrollable body ─────────────────────────────────────────────── */}
         <div className="overflow-y-auto flex-1">
 
           {/* ── Media area ─────────────────────────────────────────────────── */}
           <div className="relative" style={{ aspectRatio: "16/9" }}>
-            {mediaTab === "demo" || !hasYoutube ? (
+            {mediaTab === "demo" && (
               <AnimationPanel exercise={exercise} searchUrl={youtubeSearchUrl} />
-            ) : (
+            )}
+            {mediaTab === "3d" && (
+              <div className="absolute inset-0">
+                <Nike3DAnimatedViewer
+                  glbRegion={exercise.glb_region}
+                  segmento={exercise.region.split(" / ")[0]}
+                  anim={exercise.anim}
+                  accentColor={REGION_COLOR[exercise.region.split(" / ")[0]] ?? "#3b82f6"}
+                  height="100%"
+                  className="rounded-none"
+                />
+              </div>
+            )}
+            {mediaTab === "youtube" && (
               <YouTubePanel exercise={exercise} />
             )}
 
@@ -403,6 +501,9 @@ export function ExercisePlayer({
                 <p className="text-sm text-slate-400 mt-0.5">{exercise.name}</p>
               )}
             </div>
+
+            {/* ── Clinical Setup (Canal B osteopathy only) ──────────────── */}
+            <ClinicalSetupPanel exercise={exercise} />
 
             {/* ── Dual content: Terapeuta / Paciente ───────────────────── */}
             {(exercise.ejecucion_tecnica || exercise.fisiologia_basica) && (

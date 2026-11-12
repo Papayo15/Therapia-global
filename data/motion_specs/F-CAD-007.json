@@ -1,0 +1,268 @@
+{
+  "id": "F-CAD-007",
+  "nombre": "Puente glúteo",
+  "duracion_s": 5.5,
+  "fps": 24,
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 50,
+      "cadera_flex.R": 50,
+      "rodilla_flex.L": 95,
+      "rodilla_flex.R": 95,
+      "cadera_abd.L": 4,
+      "cadera_abd.R": 4,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80
+    },
+    "asentar": [
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "rango": [
+          -25,
+          25
+        ]
+      },
+      {
+        "art": "hombro_flex.L",
+        "grupo": [
+          "lowerarm02.L",
+          "wrist.L",
+          "finger1-1.L",
+          "finger1-2.L",
+          "finger1-3.L",
+          "finger2-1.L",
+          "finger2-2.L",
+          "finger2-3.L",
+          "finger3-1.L",
+          "finger3-2.L",
+          "finger3-3.L",
+          "finger4-1.L",
+          "finger4-2.L",
+          "finger4-3.L",
+          "finger5-1.L",
+          "finger5-2.L",
+          "finger5-3.L",
+          "metacarpal1.L",
+          "metacarpal2.L",
+          "metacarpal3.L",
+          "metacarpal4.L"
+        ],
+        "rango": [
+          -35,
+          15
+        ]
+      },
+      {
+        "art": "hombro_flex.R",
+        "grupo": [
+          "lowerarm02.R",
+          "wrist.R",
+          "finger1-1.R",
+          "finger1-2.R",
+          "finger1-3.R",
+          "finger2-1.R",
+          "finger2-2.R",
+          "finger2-3.R",
+          "finger3-1.R",
+          "finger3-2.R",
+          "finger3-3.R",
+          "finger4-1.R",
+          "finger4-2.R",
+          "finger4-3.R",
+          "finger5-1.R",
+          "finger5-2.R",
+          "finger5-3.R",
+          "metacarpal1.R",
+          "metacarpal2.R",
+          "metacarpal3.R",
+          "metacarpal4.R"
+        ],
+        "rango": [
+          -35,
+          15
+        ]
+      }
+    ]
+  },
+  "pivote": {
+    "hueso": "spine01",
+    "contrarrotar": "spine01",
+    "nota": "El tronco rota sobre la línea escapular; cabeza, hombros y brazos quedan en el suelo."
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "head"
+    },
+    {
+      "grupo": "spine01",
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    },
+    {
+      "grupo": [
+        "lowerarm02.L",
+        "wrist.L",
+        "finger1-1.L",
+        "finger1-2.L",
+        "finger1-3.L",
+        "finger2-1.L",
+        "finger2-2.L",
+        "finger2-3.L",
+        "finger3-1.L",
+        "finger3-2.L",
+        "finger3-3.L",
+        "finger4-1.L",
+        "finger4-2.L",
+        "finger4-3.L",
+        "finger5-1.L",
+        "finger5-2.L",
+        "finger5-3.L",
+        "metacarpal1.L",
+        "metacarpal2.L",
+        "metacarpal3.L",
+        "metacarpal4.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerarm02.R",
+        "wrist.R",
+        "finger1-1.R",
+        "finger1-2.R",
+        "finger1-3.R",
+        "finger2-1.R",
+        "finger2-2.R",
+        "finger2-3.R",
+        "finger3-1.R",
+        "finger3-2.R",
+        "finger3-3.R",
+        "finger4-1.R",
+        "finger4-2.R",
+        "finger4-3.R",
+        "finger5-1.R",
+        "finger5-2.R",
+        "finger5-3.R",
+        "metacarpal1.R",
+        "metacarpal2.R",
+        "metacarpal3.R",
+        "metacarpal4.R"
+      ]
+    }
+  ],
+  "keys": [
+    {
+      "t": 0.0,
+      "pivote_x": 0,
+      "p": 0.0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.6,
+      "pivote_x": 0,
+      "p": 0.0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.0,
+      "pivote_x": -26,
+      "p": 1.0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 3.0,
+      "pivote_x": -26,
+      "p": 1.0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.7,
+      "pivote_x": 0,
+      "p": 0.0,
+      "fase": "excentrico"
+    },
+    {
+      "t": 5.5,
+      "pivote_x": 0,
+      "p": 0.0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gluteus_maximus"
+      },
+      {
+        "id": "biceps_femoris"
+      },
+      {
+        "id": "semitendinosus"
+      },
+      {
+        "id": "adductor_magnus"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "iliopsoas"
+      },
+      {
+        "id": "rectus_femoris"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.L"
+    },
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      0.15,
+      0.22
+    ],
+    "lente": 50,
+    "margen": 1.15
+  },
+  "resolucion": [
+    1280,
+    720
+  ],
+  "prompt_estetica": "preset_estudio_mujer40"
+}

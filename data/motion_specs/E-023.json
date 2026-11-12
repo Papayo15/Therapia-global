@@ -1,0 +1,268 @@
+{
+  "id": "E-023",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "cuadrupedia",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "tobillo_dorsi.L": -45,
+      "tobillo_dorsi.R": -45,
+      "hombro_flex.L": 120,
+      "hombro_flex.R": 120,
+      "muneca_ext.L": 75,
+      "muneca_ext.R": 75,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80
+    },
+    "asentar": [
+      {
+        "art": "@pitch",
+        "grupo": [
+          "lowerarm02.L",
+          "wrist.L",
+          "finger1-1.L",
+          "finger1-2.L",
+          "finger1-3.L",
+          "finger2-1.L",
+          "finger2-2.L",
+          "finger2-3.L",
+          "finger3-1.L",
+          "finger3-2.L",
+          "finger3-3.L",
+          "finger4-1.L",
+          "finger4-2.L",
+          "finger4-3.L",
+          "finger5-1.L",
+          "finger5-2.L",
+          "finger5-3.L",
+          "metacarpal1.L",
+          "metacarpal2.L",
+          "metacarpal3.L",
+          "metacarpal4.L",
+          "lowerarm02.R",
+          "wrist.R",
+          "finger1-1.R",
+          "finger1-2.R",
+          "finger1-3.R",
+          "finger2-1.R",
+          "finger2-2.R",
+          "finger2-3.R",
+          "finger3-1.R",
+          "finger3-2.R",
+          "finger3-3.R",
+          "finger4-1.R",
+          "finger4-2.R",
+          "finger4-3.R",
+          "finger5-1.R",
+          "finger5-2.R",
+          "finger5-3.R",
+          "metacarpal1.R",
+          "metacarpal2.R",
+          "metacarpal3.R",
+          "metacarpal4.R"
+        ],
+        "rango": [
+          -25,
+          25
+        ]
+      }
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "al_suelo": 0.03
+    },
+    {
+      "cadena": "brazo.R",
+      "al_suelo": 0.03
+    },
+    {
+      "cadena": "pierna.L"
+    },
+    {
+      "cadena": "pierna.R"
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "lowerleg02.L"
+      ],
+      "tol_cm": 3
+    },
+    {
+      "grupo": [
+        "lowerarm02.L",
+        "wrist.L",
+        "finger1-1.L",
+        "finger1-2.L",
+        "finger1-3.L",
+        "finger2-1.L",
+        "finger2-2.L",
+        "finger2-3.L",
+        "finger3-1.L",
+        "finger3-2.L",
+        "finger3-3.L",
+        "finger4-1.L",
+        "finger4-2.L",
+        "finger4-3.L",
+        "finger5-1.L",
+        "finger5-2.L",
+        "finger5-3.L",
+        "metacarpal1.L",
+        "metacarpal2.L",
+        "metacarpal3.L",
+        "metacarpal4.L",
+        "lowerarm02.R",
+        "wrist.R",
+        "finger1-1.R",
+        "finger1-2.R",
+        "finger1-3.R",
+        "finger2-1.R",
+        "finger2-2.R",
+        "finger2-3.R",
+        "finger3-1.R",
+        "finger3-2.R",
+        "finger3-3.R",
+        "finger4-1.R",
+        "finger4-2.R",
+        "finger4-3.R",
+        "finger5-1.R",
+        "finger5-2.R",
+        "finger5-3.R",
+        "metacarpal1.R",
+        "metacarpal2.R",
+        "metacarpal3.R",
+        "metacarpal4.R"
+      ],
+      "tol_cm": 2.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      0.1,
+      0.35
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_flex": 0,
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_flex": 0,
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "lumbar_flex": 12,
+        "lumbar_incl": 12,
+        "toracica_incl": 10
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        0.22,
+        -0.18
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "lumbar_flex": 12,
+        "lumbar_incl": 12,
+        "toracica_incl": 10
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0.22,
+        -0.18
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "lumbar_flex": 0,
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "lumbar_flex": 0,
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "latissimus_dorsi",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Postura del niño con inclinación lateral"
+}

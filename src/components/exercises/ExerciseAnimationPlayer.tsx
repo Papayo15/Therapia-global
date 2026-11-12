@@ -11,11 +11,8 @@ import { Play, Loader2, VideoOff } from "lucide-react";
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface ExerciseAnimationPlayerProps {
-  /** Path to local MP4 video, must start with /videos/ */
   video?: string;
-  /** Displayed in placeholder / error states */
   exerciseName?: string;
-  /** Region accent color for UI elements */
   accentColor?: string;
   className?: string;
   autoPlay?: boolean;
@@ -37,9 +34,13 @@ export function ExerciseAnimationPlayer({
   const t = useTranslations("exercises");
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Accept local paths, Pexels HTTPS, Cloudflare Stream
-  const isCloudflare = video ? (video.includes("cloudflarestream.com") || video.includes("watch.videodelivery.net")) : false;
-  const safeVideo = video && (video.startsWith("/videos/") || video.startsWith("https://")) ? video : undefined;
+  const isCloudflare = video
+    ? video.includes("cloudflarestream.com") || video.includes("watch.videodelivery.net")
+    : false;
+  const safeVideo =
+    video && (video.startsWith("/videos/") || video.startsWith("https://"))
+      ? video
+      : undefined;
 
   const [state, setState] = useState<PlayerState>("loading");
   const [isUserPaused, setIsUserPaused] = useState(false);
@@ -74,7 +75,6 @@ export function ExerciseAnimationPlayer({
     }
   }
 
-  // No valid local video → placeholder
   if (!safeVideo || state === "error") {
     return (
       <div
@@ -95,7 +95,6 @@ export function ExerciseAnimationPlayer({
     );
   }
 
-  // Cloudflare Stream — iframe embed
   if (isCloudflare && safeVideo) {
     return (
       <div className={`relative w-full h-full overflow-hidden ${className}`}>
@@ -110,7 +109,6 @@ export function ExerciseAnimationPlayer({
     );
   }
 
-  // Direct MP4 (local or Pexels CDN)
   return (
     <div
       className={`relative w-full h-full flex items-center justify-center overflow-hidden ${className}`}

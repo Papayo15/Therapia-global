@@ -1,0 +1,166 @@
+{
+  "id": "F-HOM-020",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 15,
+      "hombro_abd.R": 15,
+      "hombro_flex.L": 172,
+      "hombro_flex.R": 172,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    },
+    "elevar": 0.2
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L"
+    },
+    {
+      "cadena": "brazo.R"
+    }
+  ],
+  "contactos": [],
+  "camara": {
+    "dir": [
+      -0.6,
+      1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "rodilla_flex.L": 0,
+        "rodilla_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "rodilla_flex.L": 0,
+        "rodilla_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "rodilla_flex.L": 60,
+        "rodilla_flex.R": 60
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        0,
+        0.32
+      ]
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "rodilla_flex.L": 60,
+        "rodilla_flex.R": 60
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0,
+        0.32
+      ]
+    },
+    {
+      "t": 4.4,
+      "art": {
+        "rodilla_flex.L": 0,
+        "rodilla_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "rodilla_flex.L": 0,
+        "rodilla_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "pectoralis_major"
+      },
+      {
+        "id": "latissimus_dorsi"
+      },
+      {
+        "id": "teres_major"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "deltoid_middle"
+      },
+      {
+        "id": "supraspinatus"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.L"
+    },
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "barra",
+      "uso": "barra_manos",
+      "soportes": true
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "En casa: barra de puerta (mismo video).",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Dominada asistida"
+}

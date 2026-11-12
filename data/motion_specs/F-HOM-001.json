@@ -1,0 +1,187 @@
+{
+  "id": "F-HOM-001",
+  "duracion_s": 5.2,
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_abd.L": 3,
+      "cadera_abd.R": 3,
+      "antebrazo_prono.L": 0,
+      "antebrazo_prono.R": 0,
+      "hombro_flex.L": 8,
+      "hombro_flex.R": 8,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    },
+    "asentar": [
+      {
+        "art": "lumbar_flex",
+        "grupo": "spine01",
+        "rango": [
+          -15,
+          25
+        ]
+      },
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          -20,
+          15
+        ]
+      },
+      {
+        "art": "cadera_flex.R",
+        "grupo": "foot.R",
+        "rango": [
+          -20,
+          15
+        ]
+      },
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "rango": [
+          -25,
+          25
+        ]
+      }
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "head"
+    },
+    {
+      "grupo": "spine01",
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.15,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.2,
+      "art": {
+        "hombro_flex.L": 145,
+        "hombro_flex.R": 145
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 3.0,
+      "art": {
+        "hombro_flex.L": 145,
+        "hombro_flex.R": 145
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.8,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.2,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "deltoid_anterior"
+      },
+      {
+        "id": "pectoralis_major_clavicular"
+      },
+      {
+        "id": "coracobrachialis"
+      },
+      {
+        "id": "biceps_brachii"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "latissimus_dorsi"
+      },
+      {
+        "id": "teres_major"
+      },
+      {
+        "id": "deltoid_posterior"
+      },
+      {
+        "id": "triceps_brachii_long_head"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.L"
+    },
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "baston",
+      "uso": "baston_manos"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Flexión activa-asistida con bastón en supino"
+}

@@ -1,0 +1,1406 @@
+{
+  "version": "1.0",
+  "canal": "C",
+  "descripcion": "Estiramientos Clínicos Sin Equipamiento — 72 ejercicios en 6 zonas",
+  "total": 72,
+  "zonas": {
+    "CUELLO_CERVICAL": [
+      {
+        "id": "C_CER_001",
+        "nombre": "Flexión Lateral Cervical",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome Cervical Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_trapezius_upper",
+        "skeleton_focus": "b_vertebra_C4",
+        "instruccion_abuela": "Inclina la oreja hacia el hombro como si quisieras escuchar algo muy suave en el suelo — la otra oreja se aleja del hombro. Mantén 20 segundos.",
+        "nota_clinica": "Estira trapecio superior y escalenos ipsilaterales. Ayuda a reducir la tensión cervical lateral por desequilibrio postural o trabajo estático.",
+        "bilateral": false,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_002",
+        "nombre": "Rotación Cervical con Barbilla",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome Cervical Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_sternocleidomastoid",
+        "skeleton_focus": "b_vertebra_C3",
+        "instruccion_abuela": "Gira la cabeza lentamente hacia un hombro como si quisieras ver algo por encima de tu hombro — muy despacio y sin forzar.",
+        "nota_clinica": "Estira esternocleidomastoideo contralateral y escalenos. Evaluación y movilización de la rotación cervical C1-C3. Precaución en vértigo cervicogénico.",
+        "bilateral": false,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_003",
+        "nombre": "Mirada a la Axila",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Tensión Suboccipital"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_levator_scapulae",
+        "skeleton_focus": "b_vertebra_C4",
+        "instruccion_abuela": "Baja la barbilla hacia la axila como si quisieras oler tu camisa — siente el tirón en la parte trasera del cuello.",
+        "nota_clinica": "Estira levator scapulae en su inserción vertebral cervical (C1-C4). El músculo más afectado en síndrome de cuello rígido por postura en pantalla.",
+        "bilateral": false,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_004",
+        "nombre": "Doble Mentón (Chin Tuck)",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Cabeza Adelantada"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_longus_colli_L",
+          "m_longus_colli_R"
+        ],
+        "skeleton_focus": "b_vertebra_C5",
+        "instruccion_abuela": "Siéntate derecho y empuja la barbilla hacia dentro como si quisieras crearte papada — como una gallina que retrocede la cabeza.",
+        "nota_clinica": "Activa longus colli e inhibe SCM hipertónico. El ejercicio más prescrito para corrección de cabeza adelantada. Mejora la lordosis cervical natural.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_005",
+        "nombre": "Extensión Suave Cervical",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Rigidez Cervical Post-Traumática"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_sternocleidomastoid_L",
+          "m_sternocleidomastoid_R"
+        ],
+        "skeleton_focus": "b_vertebra_C4",
+        "instruccion_abuela": "Mirando al frente, lleva la cabeza suavemente hacia atrás mirando al techo — muy despacio y sin dolor.",
+        "nota_clinica": "Movilización de extensión cervical. Estira SCM y esternohioideo. Contraindicado en estenosis de canal cervical severa o inestabilidad atlanto-axoidea.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_006",
+        "nombre": "Ojo de la Cerradura (Escalenos)",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome del Desfiladero Torácico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_splenius_capitis",
+        "skeleton_focus": "b_vertebra_C4",
+        "instruccion_abuela": "Inclina la cabeza al lado, gírala ligeramente y mira hacia el suelo — como si espiaras por el ojo de la cerradura de una puerta.",
+        "nota_clinica": "Combinación de inclinación lateral + rotación para estirar escalenos medios y esplenio. Alivia síndrome del desfiladero torácico neurogénico.",
+        "bilateral": false,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_007",
+        "nombre": "Inclinación con Mano tras Espalda",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome Cervical Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_trapezius_upper_R",
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Pon una mano detrás de la espalda y con la otra mano inclina la cabeza al lado contrario — la mano en la espalda aumenta el estiramiento.",
+        "nota_clinica": "La posición de la mano detrás deprime el hombro, aumentando la tensión en el trapecio superior y elevador de la escápula ipsilateral.",
+        "bilateral": false,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_008",
+        "nombre": "Auto-masaje de Esplenios con Dedos",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Tensión Suboccipital",
+          "Cefalea Cervicogénica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_splenius_capitis_L",
+          "m_splenius_capitis_R"
+        ],
+        "skeleton_focus": "b_vertebra_C2",
+        "instruccion_abuela": "Pon los pulgares en la nuca donde el cuello se une al cráneo y haz pequeños círculos presionando suavemente — relaja la cabeza.",
+        "nota_clinica": "Liberación miofascial del esplenio de la cabeza y semispinal. Reduce la hipertonía suboccipital. Tratamiento de cefalea tensional cervicogénica.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_009",
+        "nombre": "Giro de Hombros hacia Atrás",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Tensión de Trapecio Superior"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_trapezius_upper_L",
+          "m_trapezius_upper_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Sube los hombros hacia las orejas, llévalos hacia atrás y bájalos — como si fueran ruedas girando atrás. Repite 10 veces.",
+        "nota_clinica": "Movilización activa de la cintura escapular. Mejora el drenaje linfático cervical. Activa trapecio inferior e inhibe el superior en su banda de hipertonía.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_010",
+        "nombre": "Tracción Manual Occipital",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cefalea Cervicogénica",
+          "Cervicalgia Crónica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_semispinalis_capitis_L",
+          "m_semispinalis_capitis_R"
+        ],
+        "skeleton_focus": "b_vertebra_C1",
+        "instruccion_abuela": "Entrelaza las manos detrás de la cabeza y deja que el peso de los brazos tire del cuello suavemente hacia abajo — como si la cabeza flotara.",
+        "nota_clinica": "Auto-tracción cervical en decúbito supino. Descomprime las articulaciones C0-C1 y C1-C2. Alivia la presión en raíces nerviosas suboccipitales.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_011",
+        "nombre": "Estiramiento en T (Fascia Anterior)",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Síndrome de Cruce Superior"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_sternocleidomastoid_L",
+          "m_sternocleidomastoid_R"
+        ],
+        "skeleton_focus": "b_vertebra_C4",
+        "instruccion_abuela": "De pie, lleva los brazos hacia atrás como si formaras una T, eleva el mentón mirando al techo — abre el pecho y el cuello al mismo tiempo.",
+        "nota_clinica": "Estira cadena anterior del cuello: SCM, escalenos, fascia platismal. Tratamiento de síndrome de cruce superior con componente cervical anterior.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      },
+      {
+        "id": "C_CER_012",
+        "nombre": "Postura del Búho (Rotación Máxima)",
+        "segmento": "Cervical",
+        "patologias_clave": [
+          "Cervicalgia",
+          "Rigidez Cervical Post-Traumática"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_sternocleidomastoid_L",
+          "m_sternocleidomastoid_R"
+        ],
+        "skeleton_focus": "b_vertebra_C3",
+        "instruccion_abuela": "Siéntate derecho, fija los hombros y gira la cabeza lo máximo posible hacia un lado — como un búho. Mantén 5 segundos y vuelve.",
+        "nota_clinica": "Test y terapia de rotación cervical máxima. Evalúa restricción atlanto-axoidea. Estira SCM y esplenio contralaterales en su arco máximo.",
+        "bilateral": true,
+        "glb_region": "CERVICAL"
+      }
+    ],
+    "HOMBRO_PECHO": [
+      {
+        "id": "C_HOM_013",
+        "nombre": "Marco de Puerta — Pectoral Mayor",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Síndrome de Impingement",
+          "Cifosis Postural"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_pectoralis_major_sternal_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Apoya el brazo en el marco de la puerta en ángulo de 90° y da un paso adelante — siente cómo se abre el pecho.",
+        "nota_clinica": "Estira pectoral mayor (porción esternal) en posición de retropulsión y rotación externa glenohumeral. Protocolo estándar para síndrome de impingement anterior.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "C_HOM_014",
+        "nombre": "Cross-body — Deltoides Posterior",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Síndrome de Impingement",
+          "Capsulitis Adhesiva"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_deltoid_posterior_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Lleva el brazo recto a través del pecho con la otra mano jalando suavemente — siente el tirón en el hombro de atrás.",
+        "nota_clinica": "Estira deltoides posterior e infraespinoso. Reduce la tensión de la cápsula posterior glenohumeral. Clave en GIRD (déficit de rotación interna glenohumeral).",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "C_HOM_015",
+        "nombre": "Brazo en L contra Pared — Pec Menor",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Síndrome de Impingement",
+          "Síndrome del Desfiladero Torácico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_pectoralis_minor_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Apoya el codo en la pared con el brazo en L y gira el cuerpo alejándote — el tirón está bajo la clavícula.",
+        "nota_clinica": "Estira pectoral menor en su inserción en la apófisis coracoides. Reduce la antepulsión escapular. Clave en síndrome del desfiladero torácico por compresión coracoide.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "C_HOM_016",
+        "nombre": "Tríceps tras la Nuca",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Síndrome de Impingement",
+          "Epicondilitis"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_triceps_brachii_long_head_L",
+          "m_triceps_brachii_long_head_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Lleva el codo atrás de la cabeza y con la otra mano empuja el codo hacia abajo — siente el tirón en la parte trasera del brazo.",
+        "nota_clinica": "Estira la cabeza larga del tríceps en su recorrido entre la glenoide y el olécranon. Mejora la movilidad glenohumeral de elevación y rotación.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "C_HOM_017",
+        "nombre": "Manos tras Espalda — Apertura Torácica",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Cifosis Postural",
+          "Síndrome de Cruce Superior"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_pectoralis_major_clavicular_L",
+          "m_pectoralis_major_clavicular_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Entrelaza las manos detrás de la espalda, estira los brazos y eleva el pecho mirando al techo — como un soldado en posición de firmes pero hacia atrás.",
+        "nota_clinica": "Estira pectoral mayor clavicular y subescapular. Retracción escapular bilateral. Correctivo postural para hombros antepulsados y cifosis torácica.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "C_HOM_018",
+        "nombre": "Brazo en Pared — Rotación Externa (Subescapular)",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Capsulitis Adhesiva",
+          "Manguito Rotador"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_subscapularis_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Apoya el brazo en la pared con codo a 90° y gira el cuerpo en sentido contrario al brazo — siente el estiramiento en la parte frontal del hombro.",
+        "nota_clinica": "Estira subescapular (único rotador interno del manguito). Indispensable en capsulitis adhesiva fase 2. Aumenta la rotación externa pasiva glenohumeral.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "C_HOM_019",
+        "nombre": "Sleeper Stretch — Cápsula Posterior",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "GIRD",
+          "Capsulitis Adhesiva"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_infraspinatus_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Acostado de lado sobre el hombro a estirar, dobla el codo a 90° y con la otra mano empuja la mano hacia el suelo suavemente.",
+        "nota_clinica": "Estira la cápsula glenohumeral posterior e infraespinoso. Protocolo de elección para GIRD en lanzadores. Reduce el riesgo de impingement interno.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "C_HOM_020",
+        "nombre": "Manos al Frente — Romboides",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Tensión Interescapular",
+          "Síndrome de Cruce Superior"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_rhomboid_major_L",
+          "m_rhomboid_major_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "Entrelaza las manos frente a ti, empuja los brazos hacia adelante y redondea la espalda — siente la separación entre los omóplatos.",
+        "nota_clinica": "Estira romboides mayor y menor. Alivia la tensión interescapular por hipertonía romboidea. La protracción escapular activa es el movimiento antagonista al espasmo.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "C_HOM_021",
+        "nombre": "Bíceps en Pared",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Tendinitis Bicipital",
+          "Síndrome de Impingement"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_biceps_brachii_long_head_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Pon la palma en la pared con el brazo estirado y gira el cuerpo en sentido contrario — siente el tirón en el bíceps y la parte delantera del hombro.",
+        "nota_clinica": "Estira bíceps braquial (cabeza larga) en su recorrido por el surco intertubercular. Alivia la tensión de la vaina tendinosa bicipital en tendinitis del manguito.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      },
+      {
+        "id": "C_HOM_022",
+        "nombre": "Águila — Brazos Cruzados",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Capsulitis Adhesiva",
+          "GIRD"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_infraspinatus_L",
+          "m_infraspinatus_R"
+        ],
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Cruza los brazos frente a ti como una X y levántalos — siente el estiramiento entre los omóplatos y la parte trasera del hombro.",
+        "nota_clinica": "Estiramiento combinado de infraespinoso, teres minor y cápsula posterior. Variante de yoga eagle pose (Garudasana) adaptada para protocolo ortopédico.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "C_HOM_023",
+        "nombre": "Deslizamiento en Pared — Serratus",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Discinesia Escapular",
+          "Síndrome de Impingement"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_serratus_anterior_L",
+          "m_serratus_anterior_R"
+        ],
+        "skeleton_focus": "b_scapula_R",
+        "instruccion_abuela": "De pie frente a la pared con los antebrazos apoyados, desliza los brazos hacia arriba sin despegar los antebrazos — como si hicieras un ángel de nieve en la pared.",
+        "nota_clinica": "Activa y estira el serrato anterior en su recorrido. Mejora la rotación escapular superior. Protocolo SICK scapula y discinesia escapular tipo III.",
+        "bilateral": true,
+        "glb_region": [
+          "SHOULDER_L",
+          "SHOULDER_R"
+        ]
+      },
+      {
+        "id": "C_HOM_024",
+        "nombre": "Extensión de Hombro Sentado — Deltoides Ant.",
+        "segmento": "Hombro",
+        "patologias_clave": [
+          "Síndrome de Impingement",
+          "Tendinitis Bicipital"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_deltoid_anterior_R",
+        "skeleton_focus": "b_humerus_R",
+        "instruccion_abuela": "Sentado en una silla, agarra el respaldo con ambas manos detrás de ti y deja caer el pecho hacia adelante — siente el tirón en la parte delantera del hombro.",
+        "nota_clinica": "Estira deltoides anterior y pectoral mayor clavicular en retropulsión glenohumeral. Alivia la tensión anterior en síndrome de impingement con componente anterior.",
+        "bilateral": false,
+        "glb_region": "SHOULDER_R"
+      }
+    ],
+    "COLUMNA_CORE": [
+      {
+        "id": "C_COL_025",
+        "nombre": "Posición del Niño (Child's Pose)",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Desde cuatro patas, siéntate sobre los talones y estira los brazos hacia adelante en el suelo — como haciendo una reverencia al suelo.",
+        "nota_clinica": "Flexión lumbar pasiva que abre el espacio interdiscal posterior. Alivia la compresión en hernia posterolateral. Relaja cuadrado lumbar y erector espinal.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_026",
+        "nombre": "Gato-Camello (Cat-Cow)",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Rigidez Torácica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_multifidus_L",
+          "m_multifidus_R"
+        ],
+        "skeleton_focus": "b_vertebra_T8",
+        "instruccion_abuela": "A cuatro patas, arquea la espalda hacia arriba como un gato enojado y luego hacia abajo como una vaca pastando — lento y suave.",
+        "nota_clinica": "Movilización segmentaria rítmica de toda la columna. Reduce la presión intradiscal alternadamente. Lubrica las facetas articulares. Base de la rehabilitación lumbar.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_027",
+        "nombre": "Torsión Espinal en Suelo",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Rigidez Torácica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_oblique_external_L",
+          "m_oblique_external_R"
+        ],
+        "skeleton_focus": "b_vertebra_T12",
+        "instruccion_abuela": "Acostado boca arriba, dobla las rodillas y déjalas caer a un lado mientras los brazos quedan abiertos en cruz — rota suavemente y respira.",
+        "nota_clinica": "Rotación espinal pasiva toracolumbar. Estira oblicuo externo e interno. Libera restricciones de rotación. Contraindicado en estenosis severa con síntomas radiculares.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_028",
+        "nombre": "Cobra Suave",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_rectus_abdominis_L",
+          "m_rectus_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Boca abajo, apoya las manos bajo los hombros y eleva el pecho del suelo suavemente — como una cobra que asoma la cabeza.",
+        "nota_clinica": "Extensión lumbar en cadena posterior. Centraliza la presión discal en hernia posterolateral. Protocolo McKenzie. Contraindicado en espondilolistesis e hiperlordosis.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_029",
+        "nombre": "Inclinación Lateral de Pie",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia Lateral",
+          "Escoliosis Funcional"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_quadratus_lumborum_L",
+          "m_quadratus_lumborum_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "De pie, levanta un brazo y dóblate hacia el otro lado — como un árbol que el viento inclina. Mantén 20 segundos cada lado.",
+        "nota_clinica": "Estira cuadrado lumbar y oblicuos en inclinación lateral. Fundamental en escoliosis funcional y desequilibrios laterales por hipertonía unilateral del QL.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_030",
+        "nombre": "Abrazo de Rodillas al Pecho",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_L4",
+        "instruccion_abuela": "Acostado boca arriba, abraza las rodillas al pecho y rueda suavemente — como si fueras un caracol.",
+        "nota_clinica": "Flexión lumbar máxima pasiva. Descomprime facetas articulares lumbares. Alivia la rigidez matutina. Primer ejercicio de movilización en lumbalgia aguda.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_031",
+        "nombre": "Postura de la Esfinge",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Hernia Discal"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_rectus_abdominis_L",
+          "m_rectus_abdominis_R"
+        ],
+        "skeleton_focus": "b_vertebra_L2",
+        "instruccion_abuela": "Boca abajo, apoya los codos bajo los hombros y levanta el pecho — como la esfinge egipcia mirando al horizonte. Relaja la espalda.",
+        "nota_clinica": "Extensión lumbar pasiva baja en apoyo de codos. Menor arco que la cobra. Protocolo McKenzie de extensión progresiva. Ideal en hernia de disco L4-L5 y L5-S1.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_032",
+        "nombre": "Rotación Torácica en Cuadrúpedo",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Rigidez Torácica",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_T6",
+        "instruccion_abuela": "A cuatro patas, lleva una mano a la nuca y gira ese codo hacia el techo — abre el pecho de ese lado hacia arriba.",
+        "nota_clinica": "Movilización activa de rotación torácica unilateral con estabilización lumbar. Mejora la movilidad T4-T8. Reduce la compensación lumbar en patrones de rotación.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_033",
+        "nombre": "Hilo en la Aguja (Thread the Needle)",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Rigidez Torácica",
+          "Tensión Interescapular"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_rhomboid_major_L",
+          "m_rhomboid_major_R"
+        ],
+        "skeleton_focus": "b_vertebra_T5",
+        "instruccion_abuela": "A cuatro patas, desliza un brazo por debajo del otro hacia el lado contrario hasta que el hombro toque el suelo — como enhebrar una aguja gigante.",
+        "nota_clinica": "Rotación torácica pasiva con apertura de la cadena interescapular. Estira romboides y trapecio medio. Alivia tensión de T3-T7 por postura en escritorio.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_034",
+        "nombre": "Perro Boca Abajo Modificado",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Rigidez Torácica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_erector_spinae_L",
+          "m_erector_spinae_R"
+        ],
+        "skeleton_focus": "b_vertebra_L3",
+        "instruccion_abuela": "Desde cuatro patas, eleva las rodillas del suelo y empuja el trasero hacia el techo — como un perro que se estira al despertar.",
+        "nota_clinica": "Tracción axial de la columna bajo el peso corporal. Estira erector espinal, isquiotibiales y gastrocnemio. Versión modificada (rodillas semiflectadas) para lumbalgia aguda.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_035",
+        "nombre": "Estiramiento del Psoas en Postura del Caballero",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Anteversión Pélvica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_iliopsoas_L",
+          "m_iliopsoas_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Con una rodilla en el suelo y la otra doblada al frente, empuja la cadera hacia adelante y abajo — siente el tirón en la ingle del lado de atrás.",
+        "nota_clinica": "Estira psoas iliaco en su posición de mayor elongación. La contracción previa del glúteo aumenta la eficacia. Clave en anteversión pélvica y lumbalgia por acortamiento del psoas.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      },
+      {
+        "id": "C_COL_036",
+        "nombre": "Inclinación Pélvica (Pelvic Tilt)",
+        "segmento": "Columna",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Inestabilidad Lumbopélvica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_transverse_abdominis_L",
+          "m_transverse_abdominis_R"
+        ],
+        "skeleton_focus": "b_pelvis",
+        "instruccion_abuela": "Acostado con rodillas dobladas, aplana la espalda contra el suelo apretando el abdomen — como si quisieras que no cupiera un papel entre tu espalda y el suelo.",
+        "nota_clinica": "Retroversión pélvica activa. Activa transverso abdominal y multífidos. Primer ejercicio de control motor lumbopélvico. Protocolo de estabilización lumbar fase 1.",
+        "bilateral": true,
+        "glb_region": "LUMBAR_CORE"
+      }
+    ],
+    "CADERA_GLUTEO": [
+      {
+        "id": "C_CAD_037",
+        "nombre": "El '4' Sentado — Piriforme",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Síndrome Piriforme",
+          "Ciática"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_piriformis_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Sentado en una silla, cruza un tobillo sobre la rodilla contraria formando el número 4 — inclínate hacia adelante hasta sentir el tirón en el glúteo.",
+        "nota_clinica": "Estira piriforme y rotadores externos de cadera. Alivia la compresión del nervio ciático a nivel del músculo piriforme. El estiramiento más efectivo para síndrome piriforme.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_038",
+        "nombre": "Mariposa — Aductores",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Rigidez de Cadera",
+          "Lesión de Ingle"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_adductor_longus_L",
+          "m_adductor_longus_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Sentado, junta las plantas de los pies y empuja las rodillas hacia el suelo con los codos — como una mariposa abriendo las alas.",
+        "nota_clinica": "Estira aductores (longus, brevis, pectíneo) y grácil. Mejora la abducción de cadera. Rehabilitación de lesiones de ingle y osteítis de pubis.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_039",
+        "nombre": "Pashimottanasana — Isquiotibiales Proximales",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Rigidez de Isquiotibiales"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_gluteus_maximus_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Sentado con piernas juntas y estiradas, inclínate hacia adelante intentando alcanzar los pies — sin redondear demasiado la espalda.",
+        "nota_clinica": "Estira isquiotibiales en su origen isquiático + glúteo mayor. La tirantez isquiotibial es causa frecuente de lumbalgia. Precaución en ciática activa por tensión neural.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_040",
+        "nombre": "Paloma Simplificada — Glúteo Medio",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Síndrome Piriforme",
+          "Bursitis Trocantérea"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_gluteus_medius_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado, cruza una pierna doblada frente a ti en el suelo y la otra estirada atrás — como un medio splits en el suelo. Relájate 30 segundos.",
+        "nota_clinica": "Estira glúteo medio, piriforme y tensor de la fascia lata en posición de rotación externa + flexión. Versión simplificada de pigeon pose para pacientes con limitación.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_041",
+        "nombre": "Estiramiento de la Banda Iliotibial (TFL)",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Síndrome de la Cintilla Iliotibial",
+          "Bursitis Trocantérea"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_tensor_fasciae_latae_L",
+          "m_tensor_fasciae_latae_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "De pie, cruza las piernas y dóblate hacia el lado de la pierna de atrás — siente el tirón en el costado del muslo.",
+        "nota_clinica": "Estira TFL y la cintilla iliotibial. Reduce la tensión lateral de la rodilla. Protocolo standard para síndrome de la cintilla iliotibial en corredores.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_042",
+        "nombre": "Zancada Profunda — Flexores de Cadera",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Lumbalgia",
+          "Anteversión Pélvica"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_iliopsoas_R",
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "En zancada larga con la rodilla de atrás en el suelo, hunde la cadera hacia el suelo — mantén 30 segundos y siente el tirón en la ingle.",
+        "nota_clinica": "Estira psoas iliaco e ilíaco en posición de extensión máxima. Mayor eficacia que el estiramiento en bipedestación. Clave en anteversión pélvica y patrón de Trendelenburg.",
+        "bilateral": false,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_043",
+        "nombre": "Estiramiento Lateral de Cadera contra Pared",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Bursitis Trocantérea",
+          "Síndrome Piriforme"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_gluteus_minimus_L",
+          "m_gluteus_minimus_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Parado con el lado apoyado en la pared, cruza la pierna de la pared por detrás de la otra y empuja la cadera hacia la pared.",
+        "nota_clinica": "Estira glúteo menor y TFL en abducción. Alivia la compresión bursaria trocantérea. Alternativa al estiramiento en suelo para pacientes que no pueden arrodillarse.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_044",
+        "nombre": "Abrazo de Rodilla Cruzada — Rotadores Externos",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Síndrome Piriforme",
+          "Ciática"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_piriformis_L",
+          "m_piriformis_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado, dobla una rodilla, ábrela hacia afuera y lleva el pie hacia el hombro contrario con la mano — siente el tirón profundo en el glúteo.",
+        "nota_clinica": "Estira piriforme y gemelos de la cadera en posición de flexión + rotación externa + abducción. Directo sobre el músculo que puede comprimir el ciático.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_045",
+        "nombre": "Estiramiento de Rana — Aductor Mayor",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Rigidez de Cadera",
+          "Osteítis de Pubis"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_adductor_magnus_L",
+          "m_adductor_magnus_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "A cuatro patas, abre las rodillas lo máximo posible hacia los lados y baja las caderas al suelo — como una rana que se aplana.",
+        "nota_clinica": "Estira aductor mayor en su porción más profunda y proximal. Alta efectividad en rigidez de cadera severa y restricción de abducción. Protocolo de movilidad atlética.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_046",
+        "nombre": "Círculos de Cadera de Pie",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Rigidez de Cadera",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_iliopsoas_L",
+          "m_iliopsoas_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "De pie con las manos en la cintura, dibuja círculos grandes con la cadera — primero en un sentido, luego en el otro. Como un hula-hoop imaginario.",
+        "nota_clinica": "Movilización activa de la articulación coxofemoral en todos los planos. Lubrica el cartílago articular. Activa psoas, glúteos y rotadores en patrón circular.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_047",
+        "nombre": "Bebé Feliz (Happy Baby)",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Rigidez de Cadera",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_adductor_longus_L",
+          "m_adductor_longus_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado boca arriba, agarra los pies con las manos y jala las rodillas hacia los hombros — como un bebé jugando con sus pies.",
+        "nota_clinica": "Flexión + abducción + rotación externa de cadera en posición supina. Estira aductores, glúteos y sacroilíacas. Relajación del suelo pélvico. Postura yoga Ananda Balasana.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      },
+      {
+        "id": "C_CAD_048",
+        "nombre": "Flexión de Cadera con Pierna Estirada",
+        "segmento": "Cadera",
+        "patologias_clave": [
+          "Isquiotibiales Proximales",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_biceps_femoris_long_head_L",
+          "m_biceps_femoris_long_head_R"
+        ],
+        "skeleton_focus": "b_femur_R",
+        "instruccion_abuela": "Acostado, levanta una pierna estirada hacia el techo jalando con las manos del muslo o pantorrilla — como alzar la pierna rígida al cielo.",
+        "nota_clinica": "Estira isquiotibiales en su porción proximal (inserción isquiática). Alta tensión en bíceps femoral y semimembranoso. Precaución en irritación del nervio ciático.",
+        "bilateral": true,
+        "glb_region": "PELVIS_HIP"
+      }
+    ],
+    "PIERNA_RODILLA_TOBILLO": [
+      {
+        "id": "C_PIE_049",
+        "nombre": "Isquiotibiales en Silla",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Rigidez de Isquiotibiales",
+          "Lumbalgia"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_semitendinosus_L",
+          "m_semitendinosus_R"
+        ],
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Sentado en el borde de la silla, estira una pierna hacia adelante con el talón en el suelo y la punta del pie mirando arriba — inclínate ligeramente.",
+        "nota_clinica": "Estira semitendinoso y semimembranoso en posición sentada. Menor demanda que en suelo. Ideal para pacientes con limitación de movilidad o adultos mayores.",
+        "bilateral": true,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "C_PIE_050",
+        "nombre": "Cuádriceps de Pie",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Rigidez Cuadricipital",
+          "Síndrome Rotuliano"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_rectus_femoris_R",
+        "skeleton_focus": "b_patella_R",
+        "instruccion_abuela": "De pie, agarra el pie por detrás y llévalo hacia el trasero — mantén la rodilla apuntando al suelo y las rodillas juntas.",
+        "nota_clinica": "Estira recto femoral en su componente biarticular (cadera + rodilla). La posición de rodilla junta evita la compensación lumbar. Protocolo de síndrome patelofemoral.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "C_PIE_051",
+        "nombre": "Gemelos contra la Pared",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Fascitis Plantar",
+          "Tendinopatía Aquílea"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_gastrocnemius_medial_L",
+          "m_gastrocnemius_medial_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "De pie frente a la pared con una pierna atrás estirada, empuja el talón trasero al suelo — siente el tirón en la pantorrilla trasera.",
+        "nota_clinica": "Estira gastrocnemio medial con rodilla extendida. Componente biarticular (rodilla + tobillo). Reduce la tensión en la inserción aquílea. Protocolo Alfredson fase pasiva.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "C_PIE_052",
+        "nombre": "Sóleo con Rodilla Flectada",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Tendinopatía Aquílea",
+          "Fascitis Plantar"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_soleus_L",
+          "m_soleus_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "Igual que el estiramiento de pantorrilla pero dobla un poco la rodilla trasera — el tirón se siente más abajo, cerca del talón.",
+        "nota_clinica": "Estira sóleo (monoarticular). Con rodilla flectada se neutraliza el gastrocnemio y se aísla el sóleo. Clave en tendinopatía aquílea crónica y fascitis plantar.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "C_PIE_053",
+        "nombre": "Tibial Anterior — Sentado sobre los Talones",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Shin Splints",
+          "Fascitis Plantar"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_tibialis_anterior_L",
+          "m_tibialis_anterior_R"
+        ],
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Arrodíllate y siéntate sobre los talones — siente el estiramiento en la parte delantera de las piernas (espinillas). Usa una almohada si molesta la rodilla.",
+        "nota_clinica": "Estira tibial anterior en máxima flexión plantar. Alivia el síndrome de shin splints (periostitis tibial). Complementa el trabajo de los flexores plantares.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "C_PIE_054",
+        "nombre": "Bíceps Femoral — Punta del Pie hacia Afuera",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Rigidez de Isquiotibiales Laterales",
+          "Lesión ACL"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_biceps_femoris_long_head_R",
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Acostado, levanta la pierna estirada y gira la punta del pie hacia afuera — siente el tirón en la parte exterior del muslo.",
+        "nota_clinica": "La rotación externa del pie pone en tensión selectiva el bíceps femoral (cabeza larga). Discrimina isquiotibiales laterales de mediales en valoración funcional.",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "C_PIE_055",
+        "nombre": "Dorsiflexión de Tobillo contra Pared",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Rigidez de Tobillo",
+          "Esguince Crónico"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_soleus_L",
+          "m_soleus_R"
+        ],
+        "skeleton_focus": "b_talus_R",
+        "instruccion_abuela": "De pie frente a la pared, pon el pie a 10 cm y dobla la rodilla hacia la pared sin levantar el talón — mide cuánto avanza la rodilla.",
+        "nota_clinica": "Test y mejora de la dorsiflexión de tobillo (Weight Bearing Lunge Test). Déficit < 10 cm predice lesión en atletas. Activa sóleo excéntrico. Clave en esguince crónico.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "C_PIE_056",
+        "nombre": "Fascia Plantar Manual",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Fascitis Plantar",
+          "Espolón Calcáneo"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_gastrocnemius_medial_L",
+          "m_gastrocnemius_medial_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "Sentado, cruza el pie sobre la rodilla y con los dedos de la mano dobla los dedos del pie hacia arriba — siente el tirón en la planta del pie.",
+        "nota_clinica": "Estiramiento específico de la fascia plantar y gastrocnemio distal. El estiramiento matutino antes de dar los primeros pasos reduce el dolor de fascitis plantar hasta un 83%.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "C_PIE_057",
+        "nombre": "Zancada Lateral — Grácil y Aductores",
+        "segmento": "Rodilla",
+        "patologias_clave": [
+          "Rigidez de Aductores",
+          "Osteítis de Pubis"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_gracilis_R",
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Con los pies muy abiertos, lleva el peso a un lado doblando esa rodilla y dejando la otra pierna estirada — siente el tirón en la parte interior del muslo.",
+        "nota_clinica": "Estira grácil, aductor longus y magnus en abducción unilateral. La posición de la rodilla extendida maximiza el estiramiento del grácil (biarticular).",
+        "bilateral": false,
+        "glb_region": "KNEE"
+      },
+      {
+        "id": "C_PIE_058",
+        "nombre": "Estiramiento de Peroneos",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Esguince Tobillo",
+          "Inestabilidad de Tobillo"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_peroneus_longus_L",
+          "m_peroneus_longus_R"
+        ],
+        "skeleton_focus": "b_talus_R",
+        "instruccion_abuela": "Sentado con la pierna cruzada, agarra el pie y gira la planta hacia arriba e invertida — siente el tirón en el lado externo de la pierna.",
+        "nota_clinica": "Estira peroneo largo y corto en inversión + flexión plantar. Reduce la hipertonía peroneal post-esguince de inversión. Complemento de la rehabilitación de tobillo lateral.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "C_PIE_059",
+        "nombre": "Extensión de Dedos del Pie",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Fascitis Plantar",
+          "Dedo en Martillo"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_tibialis_anterior_L",
+          "m_tibialis_anterior_R"
+        ],
+        "skeleton_focus": "b_tibia_R",
+        "instruccion_abuela": "Sentado, agarra los dedos del pie y dóblalos hacia arriba — siente el tirón en la planta y en el empeine del pie.",
+        "nota_clinica": "Estira los flexores plantares de los dedos y la fascia plantar distal. Complementa el estiramiento proximal de la fascia. Útil en dedo en martillo y metatarsalgia.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      },
+      {
+        "id": "C_PIE_060",
+        "nombre": "Sentadilla Profunda Mantenida",
+        "segmento": "Tobillo",
+        "patologias_clave": [
+          "Rigidez de Tobillo",
+          "Rigidez de Cadera"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_gastrocnemius_lateral_L",
+          "m_gastrocnemius_lateral_R"
+        ],
+        "skeleton_focus": "b_calcaneus_R",
+        "instruccion_abuela": "Baja en cuclillas con los pies planos en el suelo y mantén la posición agarrándote a algo si necesitas — como cuando eras niño jugando.",
+        "nota_clinica": "Movilización simultánea de tobillo (dorsiflexión máxima), rodilla y cadera. Test y terapia de movilidad global del tren inferior. Postura ancestral de descanso humano.",
+        "bilateral": true,
+        "glb_region": "LOWER_LEG"
+      }
+    ],
+    "MANO_MUNECA": [
+      {
+        "id": "C_MAN_061",
+        "nombre": "Extensores — Palma hacia Abajo",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Síndrome del Túnel Carpiano"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_extensor_carpi_radialis_longus_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Estira el brazo al frente con la palma mirando abajo y con la otra mano baja los dedos hacia el suelo — siente el tirón en el dorso del antebrazo.",
+        "nota_clinica": "Estira extensor carpi radialis longus y brevis. El estiramiento pasivo con codo extendido es más efectivo que con codo flexionado en epicondilitis lateral (codo de tenista).",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "C_MAN_062",
+        "nombre": "Flexores — Palma hacia Arriba",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Epicondilitis Medial",
+          "Síndrome del Túnel Carpiano"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_flexor_carpi_ulnaris_R",
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Estira el brazo al frente con la palma mirando arriba y con la otra mano lleva los dedos hacia el suelo — siente el tirón en la parte interna del antebrazo.",
+        "nota_clinica": "Estira flexor carpi radialis, ulnaris y palmaris longus. Protocolo estándar para epicondilitis medial (codo de golfista) y síndrome del túnel carpiano.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "C_MAN_063",
+        "nombre": "Estiramiento de Pulgar",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Rizartrosis",
+          "Tenosinovitis de Quervain"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_flexor_carpi_radialis_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Dobla el pulgar dentro del puño y luego inclina la muñeca hacia el lado del meñique — siente el tirón en la base del pulgar.",
+        "nota_clinica": "Estira abductor pollicis longus y extensor pollicis brevis. Test de Finkelstein positivo en tenosinovitis de Quervain. Este estiramiento es el tratamiento conservador principal.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "C_MAN_064",
+        "nombre": "Oración (Prayer Stretch)",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Síndrome del Túnel Carpiano",
+          "Epicondilitis Medial"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_flexor_carpi_radialis_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Junta las palmas frente al pecho como rezando y baja las manos manteniendo las palmas juntas — siente el tirón en las muñecas y antebrazos.",
+        "nota_clinica": "Extensión bilateral de muñeca + aducción de dedos. Estira el canal carpiano desde el exterior. Reducción de síntomas nocturnos del STC en uso prolongado de teclado.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "C_MAN_065",
+        "nombre": "Oración Invertida (Reverse Prayer)",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Epicondilitis Lateral",
+          "Rigidez Dorsal de Muñeca"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_extensor_carpi_radialis_brevis_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Junta el dorso de las manos detrás de la espalda o frente al pecho y sube las manos — siente el tirón en la muñeca y el antebrazo.",
+        "nota_clinica": "Flexión bilateral de muñeca. Estira extensores de muñeca y dedos. Complemento del prayer stretch para epicondilitis lateral. Evalúa la movilidad de flexión de la muñeca.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "C_MAN_066",
+        "nombre": "Estiramiento Individual de Dedos",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Dedo en Gatillo",
+          "Rigidez Post-Fractura"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_flexor_carpi_radialis_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Extiende un dedo con la otra mano y dóblalo suavemente hacia atrás — hazlo con cada dedo. No fuerces si duele.",
+        "nota_clinica": "Estiramiento selectivo de cada flexor digital. Protocolo post-inmovilización de dígito. Reduce la adherencia tendinosa en dedo en gatillo y rigidez post-fractura de falange.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "C_MAN_067",
+        "nombre": "Deslizamiento del Nervio Mediano",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Síndrome del Túnel Carpiano",
+          "Neuropatía Mediana"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_pronator_teres_R",
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Extiende el brazo a un lado con la palma mirando arriba y el pulgar hacia fuera — inclina la cabeza al lado contrario. Como el gesto de 'para' de un policía.",
+        "nota_clinica": "Técnica de movilización neural del nervio mediano (tensioner). Mejora la conducción nerviosa y reduce la adhesión perineural en STC. Realizar con movimientos suaves y lentos.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "C_MAN_068",
+        "nombre": "Deslizamiento del Nervio Cubital",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Síndrome del Túnel Cubital",
+          "Neuropatía Cubital"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": "m_flexor_carpi_ulnaris_R",
+        "skeleton_focus": "b_ulna_R",
+        "instruccion_abuela": "Dobla el codo completamente y acerca el puño a la oreja — como si hablaras por el teléfono. Siente el cosquilleo en el meñique si el nervio está irritado.",
+        "nota_clinica": "Movilización neural del nervio cubital. La posición de máxima flexión de codo estira el nervio en el canal epitrocleoolecraneano. Rehabilitación del síndrome del túnel cubital.",
+        "bilateral": false,
+        "glb_region": "FOREARM_R"
+      },
+      {
+        "id": "C_MAN_069",
+        "nombre": "Cierre de Puño y Extensión de Dedos",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Rigidez de Mano",
+          "Dedo en Gatillo"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_flexor_carpi_radialis_L",
+          "m_flexor_carpi_radialis_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Aprieta el puño fuerte durante 3 segundos y luego abre los dedos lo máximo posible — repite 10 veces como si saludaras.",
+        "nota_clinica": "Activación alternante de flexores y extensores de dígitos. Mejora la circulación sinovial de los tendones. Protocolo de calentamiento y rehabilitación de rigidez articular de mano.",
+        "bilateral": true,
+        "glb_region": [
+          "FOREARM_L",
+          "FOREARM_R"
+        ]
+      },
+      {
+        "id": "C_MAN_070",
+        "nombre": "Rotación de Muñecas Entrelazadas",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Rigidez de Muñeca",
+          "Epicondilitis"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_pronator_teres_L",
+          "m_pronator_teres_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Entrelaza los dedos de ambas manos y gira las muñecas dibujando círculos — lento, suave y en los dos sentidos.",
+        "nota_clinica": "Movilización activa de prono-supinación y circunducción de muñeca. Lubrica las articulaciones radiocubital distal y radiocarpal. Calentamiento funcional de antebrazos.",
+        "bilateral": true,
+        "glb_region": [
+          "FOREARM_L",
+          "FOREARM_R"
+        ]
+      },
+      {
+        "id": "C_MAN_071",
+        "nombre": "Estiramiento de Interóseos",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Rigidez de Mano",
+          "Artritis Reumatoide"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_extensor_carpi_radialis_brevis_L",
+          "m_extensor_carpi_radialis_brevis_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Con la palma hacia abajo, pon el pulgar de la otra mano bajo un dedo y los otros dedos encima — separa el dedo lateralmente. Hazlo con cada uno.",
+        "nota_clinica": "Estira músculos interóseos dorsales y palmares. Rehabilitación de rigidez de mano en artritis reumatoide y post-inmovilización. Mantener la abducción interdígito.",
+        "bilateral": true,
+        "glb_region": [
+          "FOREARM_L",
+          "FOREARM_R"
+        ]
+      },
+      {
+        "id": "C_MAN_072",
+        "nombre": "Oposición de Pulgar (Eminencia Tenar)",
+        "segmento": "Muñeca",
+        "patologias_clave": [
+          "Rizartrosis",
+          "Síndrome del Túnel Carpiano"
+        ],
+        "fase_evolucion": 1,
+        "herramienta": "Sin Equipamiento",
+        "mesh_id_nike3d": [
+          "m_flexor_carpi_radialis_L",
+          "m_flexor_carpi_radialis_R"
+        ],
+        "skeleton_focus": "b_radius_R",
+        "instruccion_abuela": "Toca la punta del pulgar con cada uno de los otros dedos, uno por uno — lento y completo. Como si contaras con los dedos.",
+        "nota_clinica": "Activa y moviliza los músculos de la eminencia tenar (abductor + flexor + oponente del pulgar). Rehabilitación de rizartrosis y recuperación funcional post-STC.",
+        "bilateral": true,
+        "glb_region": [
+          "FOREARM_L",
+          "FOREARM_R"
+        ]
+      }
+    ]
+  }
+}

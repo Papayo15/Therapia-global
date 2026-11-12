@@ -1,0 +1,220 @@
+{
+  "id": "F-LUM-009",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "prono",
+    "colchoneta": true,
+    "angulos": {
+      "cervical_rot": 0,
+      "antebrazo_prono.L": -80,
+      "antebrazo_prono.R": -80,
+      "tobillo_dorsi.L": -30,
+      "tobillo_dorsi.R": -30,
+      "hombro_flex.L": 165,
+      "hombro_flex.R": 165
+    },
+    "asentar": [
+      {
+        "art": "cadera_flex.L",
+        "grupo": [
+          "foot.L",
+          "toenails",
+          "toe1-1.L",
+          "toe1-2.L",
+          "toe1-3.L",
+          "toe2-1.L",
+          "toe2-2.L",
+          "toe2-3.L",
+          "toe3-1.L",
+          "toe3-2.L",
+          "toe3-3.L",
+          "toe4-1.L",
+          "toe4-2.L",
+          "toe4-3.L",
+          "toe5-1.L",
+          "toe5-2.L",
+          "toe5-3.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      },
+      {
+        "art": "cadera_flex.R",
+        "grupo": [
+          "foot.R",
+          "toenails",
+          "toe1-1.R",
+          "toe1-2.R",
+          "toe1-3.R",
+          "toe2-1.R",
+          "toe2-2.R",
+          "toe2-3.R",
+          "toe3-1.R",
+          "toe3-2.R",
+          "toe3-3.R",
+          "toe4-1.R",
+          "toe4-2.R",
+          "toe4-3.R",
+          "toe5-1.R",
+          "toe5-2.R",
+          "toe5-3.R"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      },
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "rango": [
+          -10,
+          35
+        ]
+      }
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "pelvis.R",
+        "spine05",
+        "spine04"
+      ],
+      "tol_cm": 2.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      0.1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "lumbar_flex": -12,
+        "toracica_flex": -8,
+        "hombro_flex.L": 15,
+        "hombro_flex.R": 15,
+        "cadera_flex.L": -14,
+        "cadera_flex.R": -14,
+        "cervical_flex": -6
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.9,
+      "art": {
+        "lumbar_flex": -12,
+        "toracica_flex": -8,
+        "hombro_flex.L": 15,
+        "hombro_flex.R": 15,
+        "cadera_flex.L": -14,
+        "cadera_flex.R": -14,
+        "cervical_flex": -6
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.4,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0,
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "erector_spinae"
+      },
+      {
+        "id": "multifidus"
+      },
+      {
+        "id": "gluteus_maximus"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "rectus_abdominis"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Superman en prono"
+}

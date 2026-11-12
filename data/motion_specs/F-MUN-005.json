@@ -1,0 +1,147 @@
+{
+  "id": "F-MUN-005",
+  "duracion_s": 5.4,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 90,
+      "hombro_flex.R": 90,
+      "codo_flex.L": 5,
+      "codo_flex.R": 5,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.6,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "muneca_flex.L": 0,
+        "muneca_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "muneca_flex.L": 0,
+        "muneca_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.2,
+      "art": {
+        "muneca_flex.L": -45,
+        "muneca_flex.R": 45
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.5,
+      "art": {
+        "muneca_flex.L": -45,
+        "muneca_flex.R": 45
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 2.3,
+      "art": {
+        "muneca_flex.L": 0,
+        "muneca_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.4,
+      "art": {
+        "muneca_flex.L": 0,
+        "muneca_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "flexor_carpi_radialis"
+      },
+      {
+        "id": "flexor_carpi_ulnaris"
+      },
+      {
+        "id": "palmaris_longus"
+      },
+      {
+        "id": "flexor_digitorum_superficialis"
+      },
+      {
+        "id": "flexor_digitorum_profundus"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "extensor_carpi_radialis_longus"
+      },
+      {
+        "id": "extensor_carpi_radialis_brevis"
+      },
+      {
+        "id": "extensor_carpi_ulnaris"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "wrist.L"
+    },
+    {
+      "hueso": "wrist.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "baston",
+      "uso": "baston_manos"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Rodillo de muñeca (wrist roller)"
+}

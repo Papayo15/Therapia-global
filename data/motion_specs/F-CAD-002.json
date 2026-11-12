@@ -1,0 +1,141 @@
+{
+  "id": "F-CAD-002",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R",
+      "desde": 0,
+      "hasta": 0.8
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.25,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.8,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "cadera_flex.R": 28
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.2,
+      "art": {
+        "cadera_flex.R": 28
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.2,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "iliopsoas",
+        "lado": "R"
+      },
+      {
+        "id": "rectus_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "sartorius",
+        "lado": "R"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "gluteus_maximus",
+        "lado": "R"
+      },
+      {
+        "id": "biceps_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "semitendinosus",
+        "lado": "R"
+      },
+      {
+        "id": "semimembranosus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Marcha en sedente"
+}
