@@ -1739,9 +1739,68 @@ cam_data.sensor_fit = "HORIZONTAL"
 th = cam_data.sensor_width / (2 * cam_data.lens)
 tv = th * H / W
 margin = cam_spec.get("margen", 1.18)
-D = max(max((c - center).dot(fwd) + abs((c - center).dot(right)) * margin / th,
-            (c - center).dot(fwd) + abs((c - center).dot(up)) * margin / tv) for c in corners)
-cam.location = center - fwd * D
+def _encuadre(dirv):
+    f = -Vector(dirv).normalized()
+    r = f.cross(Vector((0, 0, 1))).normalized()
+    u = r.cross(f)
+    d = max(max((c - center).dot(f) + abs((c - center).dot(r)) * margin / th,
+                (c - center).dot(f) + abs((c - center).dot(u)) * margin / tv) for c in corners)
+    return center - f * d, f
+
+
+# Ningún objeto (pared, silla, banco, columna…) puede tapar a la paciente: si tapa >8 % del cuerpo se gira la
+# cámara alrededor del eje vertical y se elige el ángulo menos tapado y más cercano al pedido por la ficha.
+_skip_occ = {o for o, _ in MUSCLE_OBJS} | set(JOINT_OBJS) | set(WEAR.values()) | {body}
+_occ_props = [o for o in scene.objects if o.type == "MESH" and o not in _skip_occ
+              and o.name.split(".")[0] not in ("Suelo", "Colchoneta")]
+_occ_samples = []
+if _occ_props and not args.solo_mascara:            # (en solo-máscara el gris ya existe: la cámara no puede cambiar)
+    _rng = np.random.default_rng(1)
+    for fr in (1, FRAME_END // 2):
+        scene.frame_set(fr)
+        _co = eval_coords()[BODY_MASK] - _avance_en(fr)
+        _occ_samples += [Vector(p.tolist()) for p in _co[_rng.choice(len(_co), 150, replace=False)]]
+    _occ_set = set(_occ_props)
+
+    def _ocluido(loc):
+        n = 0
+        dg = deps()
+        for p in _occ_samples:
+            dv = p - loc
+            L = dv.length
+            dv.normalize()
+            o_, h = loc, False
+            for _ in range(8):
+                ok, hit, _n, _i, ob, _m = scene.ray_cast(dg, o_, dv, distance=(p - o_).length - 0.01)
+                if not ok:
+                    break
+                if ob in _occ_set or ob.original in _occ_set:
+                    h = True
+                    break
+                o_ = hit + dv * 0.003
+            n += h
+        return n / len(_occ_samples)
+
+    scene.frame_set(1)
+    _d0 = Vector(cam_spec["dir"])
+    _loc, _f = _encuadre(_d0)
+    _occ0 = _ocluido(_loc)
+    if _occ0 > 0.08:
+        _best = (_occ0, 0, _d0)
+        for ang in (20, -20, 40, -40, 60, -60, 90, -90, 120, -120, 150, -150, 180):
+            dv = Matrix.Rotation(math.radians(ang), 3, "Z") @ _d0
+            oc = _ocluido(_encuadre(dv)[0])
+            if oc + 0.0015 * abs(ang) < _best[0] + 0.0015 * abs(_best[1]):
+                _best = (oc, ang, dv)
+            if oc <= 0.02 and abs(ang) <= 60:
+                break
+        print("CAMARA_OCLUIDA", round(_occ0, 2), "-> giro", _best[1], "ocl", round(_best[0], 2))
+        cam_spec = dict(cam_spec, dir=list(_best[2]))
+        report["camara_giro"] = {"ocl_original": round(_occ0, 2), "giro_deg": _best[1], "ocl": round(_best[0], 2)}
+        json.dump(report, open(os.path.join(args.out, "reporte.json"), "w"), ensure_ascii=False, indent=2)
+cam.location, fwd = _encuadre(cam_spec["dir"])
+right = fwd.cross(Vector((0, 0, 1))).normalized()
+up = right.cross(fwd)
 cam.rotation_euler = fwd.to_track_quat("-Z", "Y").to_euler()
 if SPEC.get("avance"):                             # travelling lineal que acompaña el avance del ciclo
     _c0 = cam.location.copy()
@@ -1874,7 +1933,8 @@ if args.still:
 if not args.solo_mascara:
     render_pass("gris", [body] + props, "STUDIO", False)
 # Los objetos (caja, mesa, banco, barra, puerta…) TAPAN la capa muscular: se pintan negros (= transparentes en la composición).
-mask_props = [o for o in props if o.name.split(".")[0] not in ("Suelo", "Colchoneta")]
+# (la ropa, el pelo y las cejas NO son objetos: si se pintan negros tapan toda la capa bajo la ropa)
+mask_props = [o for o in props if o.name.split(".")[0] not in ("Suelo", "Colchoneta") and o not in wear]
 for o in mask_props:
     o.color = (0, 0, 0, 1)
 render_pass("mascara", sup_muscles + [occluder] + mask_props, "FLAT", True)
