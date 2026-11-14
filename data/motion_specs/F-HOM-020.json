@@ -127,6 +127,9 @@
       },
       {
         "id": "teres_major"
+      },
+      {
+        "id": "biceps_brachii"
       }
     ],
     "elongan": [
@@ -135,6 +138,11 @@
       },
       {
         "id": "supraspinatus"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "rectus_abdominis"
       }
     ]
   },

@@ -103,9 +103,7 @@
       }
     }
   ],
-  "musculos": {
-    "estirados": []
-  },
+  "musculos": {},
   "articulacion_resaltada": [
     {
       "hueso": "foot.R"

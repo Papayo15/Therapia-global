@@ -1,0 +1,522 @@
+{
+  "id": "F-TOB-004",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 8,
+      "hombro_abd.R": 8,
+      "tobillo_dorsi.L": 18,
+      "tobillo_dorsi.R": 18
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": false
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": false
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "foot.L",
+        "toenails",
+        "toe1-1.L",
+        "toe1-2.L",
+        "toe1-3.L",
+        "toe2-1.L",
+        "toe2-2.L",
+        "toe2-3.L",
+        "toe3-1.L",
+        "toe3-2.L",
+        "toe3-3.L",
+        "toe4-1.L",
+        "toe4-2.L",
+        "toe4-3.L",
+        "toe5-1.L",
+        "toe5-2.L",
+        "toe5-3.L",
+        "foot.R",
+        "toenails",
+        "toe1-1.R",
+        "toe1-2.R",
+        "toe1-3.R",
+        "toe2-1.R",
+        "toe2-2.R",
+        "toe2-3.R",
+        "toe3-1.R",
+        "toe3-2.R",
+        "toe3-3.R",
+        "toe4-1.R",
+        "toe4-2.R",
+        "toe4-3.R",
+        "toe5-1.R",
+        "toe5-2.R",
+        "toe5-3.R"
+      ],
+      "tol_cm": 2
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.15
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "raiz": [
+        0,
+        0.12,
+        -0.012
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.0,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          0.24,
+          0.0
+        ]
+      },
+      "art": {
+        "hombro_flex.L": 0.0,
+        "hombro_flex.R": -0.0,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          0.12,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          0.12,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 0.531,
+      "raiz": [
+        0,
+        0.018,
+        0.0107
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.0,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.0,
+          0.05
+        ]
+      },
+      "art": {
+        "hombro_flex.L": 10.0,
+        "hombro_flex.R": -10.0,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          0.018,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          0.018,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 1.062,
+      "raiz": [
+        0,
+        -0.084,
+        -0.0071
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.0,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.24,
+          0.0
+        ]
+      },
+      "art": {
+        "hombro_flex.L": 1.2246467991473533e-15,
+        "hombro_flex.R": -1.2246467991473533e-15,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          -0.084,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.084,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 1.781,
+      "raiz": [
+        0,
+        -0.222,
+        0.0107
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.24,
+          0.05
+        ],
+        "pierna.R": [
+          0,
+          -0.24,
+          0.0
+        ]
+      },
+      "art": {
+        "hombro_flex.L": -10.0,
+        "hombro_flex.R": 10.0,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          -0.222,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.222,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 2.312,
+      "raiz": [
+        0,
+        -0.324,
+        -0.0071
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.48,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.24,
+          0.0
+        ]
+      },
+      "art": {
+        "hombro_flex.L": -1.2246467991473533e-15,
+        "hombro_flex.R": 1.2246467991473533e-15,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          -0.324,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.324,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 3.031,
+      "raiz": [
+        0,
+        -0.462,
+        0.0107
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.48,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.48,
+          0.05
+        ]
+      },
+      "art": {
+        "hombro_flex.L": 10.0,
+        "hombro_flex.R": -10.0,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          -0.462,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.462,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 3.562,
+      "raiz": [
+        0,
+        -0.564,
+        -0.0071
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.48,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.72,
+          0.0
+        ]
+      },
+      "art": {
+        "hombro_flex.L": 1.2246467991473533e-15,
+        "hombro_flex.R": -1.2246467991473533e-15,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          -0.564,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.564,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 4.281,
+      "raiz": [
+        0,
+        -0.702,
+        0.0107
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.72,
+          0.05
+        ],
+        "pierna.R": [
+          0,
+          -0.72,
+          0.0
+        ]
+      },
+      "art": {
+        "hombro_flex.L": -10.0,
+        "hombro_flex.R": 10.0,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          -0.702,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.702,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 4.812,
+      "raiz": [
+        0,
+        -0.804,
+        -0.0071
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.96,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.72,
+          0.0
+        ]
+      },
+      "art": {
+        "hombro_flex.L": -1.2246467991473533e-15,
+        "hombro_flex.R": 1.2246467991473533e-15,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          -0.804,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.804,
+          0.0
+        ]
+      }
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_flex.L": 0.0,
+        "hombro_flex.R": -0.0,
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.84,
+        -0.012
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          -0.96,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.72,
+          0.0
+        ]
+      },
+      "polo": {
+        "pierna.L": [
+          0,
+          -0.84,
+          0.0
+        ],
+        "pierna.R": [
+          0,
+          -0.84,
+          0.0
+        ]
+      }
+    }
+  ],
+  "avance": [
+    0,
+    -0.96,
+    0
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "tibialis_anterior"
+      },
+      {
+        "id": "extensor_digitorum_longus"
+      },
+      {
+        "id": "extensor_digitorum_brevis"
+      },
+      {
+        "id": "fibularis_tertius"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "gastrocnemius"
+      },
+      {
+        "id": "soleus"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.L"
+    },
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Caminata en talones"
+}

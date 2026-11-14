@@ -148,6 +148,9 @@
       },
       {
         "id": "vastus_intermedius"
+      },
+      {
+        "id": "gluteus_maximus"
       }
     ],
     "elongan": [
@@ -162,6 +165,11 @@
       },
       {
         "id": "gastrocnemius"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "erector_spinae_lumbar"
       }
     ]
   },

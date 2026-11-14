@@ -217,6 +217,11 @@
       {
         "id": "rectus_abdominis"
       }
+    ],
+    "estabilizan": [
+      {
+        "id": "external_oblique"
+      }
     ]
   },
   "articulacion_resaltada": [

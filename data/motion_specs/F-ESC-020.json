@@ -38,8 +38,8 @@
   "camara": {
     "dir": [
       -1,
-      0.1,
-      0.25
+      -0.55,
+      0.35
     ],
     "lente": 50,
     "margen": 1.1
@@ -67,14 +67,14 @@
       "art": {},
       "p": 1,
       "fase": "isometrico",
-      "pivote_x": -16
+      "pivote_x": 12
     },
     {
       "t": 2.5,
       "art": {},
       "p": 1,
       "fase": "excentrico",
-      "pivote_x": -16
+      "pivote_x": 12
     },
     {
       "t": 4.2,
@@ -101,6 +101,15 @@
       },
       {
         "id": "trapezius_middle"
+      },
+      {
+        "id": "latissimus_dorsi"
+      },
+      {
+        "id": "biceps_brachii"
+      },
+      {
+        "id": "deltoid_posterior"
       }
     ],
     "elongan": [
@@ -109,6 +118,14 @@
       },
       {
         "id": "pectoralis_minor"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "gluteus_maximus"
+      },
+      {
+        "id": "rectus_abdominis"
       }
     ]
   },

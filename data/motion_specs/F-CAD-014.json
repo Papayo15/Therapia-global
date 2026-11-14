@@ -1,0 +1,487 @@
+{
+  "id": "F-CAD-014",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "cadera_abd.L": 6,
+      "cadera_abd.R": 6,
+      "@pitch": 12,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 70,
+      "codo_flex.R": 70
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "foot.L",
+        "toenails",
+        "toe1-1.L",
+        "toe1-2.L",
+        "toe1-3.L",
+        "toe2-1.L",
+        "toe2-2.L",
+        "toe2-3.L",
+        "toe3-1.L",
+        "toe3-2.L",
+        "toe3-3.L",
+        "toe4-1.L",
+        "toe4-2.L",
+        "toe4-3.L",
+        "toe5-1.L",
+        "toe5-2.L",
+        "toe5-3.L",
+        "foot.R",
+        "toenails",
+        "toe1-1.R",
+        "toe1-2.R",
+        "toe1-3.R",
+        "toe2-1.R",
+        "toe2-2.R",
+        "toe2-3.R",
+        "toe3-1.R",
+        "toe3-2.R",
+        "toe3-3.R",
+        "toe4-1.R",
+        "toe4-2.R",
+        "toe4-3.R",
+        "toe5-1.R",
+        "toe5-2.R",
+        "toe5-3.R"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "raiz": [
+        0.0,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          0.0,
+          0,
+          0.0
+        ],
+        "pierna.R": [
+          0.0,
+          0,
+          0.0
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0.0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0.0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 0.5,
+      "raiz": [
+        -0.055,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          0.0,
+          0,
+          0.0
+        ],
+        "pierna.R": [
+          -0.11,
+          0,
+          0.05
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -0.055,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.055,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.0,
+      "raiz": [
+        -0.11,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          0.0,
+          0,
+          0.0
+        ],
+        "pierna.R": [
+          -0.22,
+          0,
+          0.0
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -0.11,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.11,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.75,
+      "raiz": [
+        -0.165,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          -0.11,
+          0,
+          0.05
+        ],
+        "pierna.R": [
+          -0.22,
+          0,
+          0.0
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -0.165,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.165,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 2.25,
+      "raiz": [
+        -0.22,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          -0.22,
+          0,
+          0.0
+        ],
+        "pierna.R": [
+          -0.22,
+          0,
+          0.0
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -0.22,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.22,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 3.0,
+      "raiz": [
+        -0.275,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          -0.22,
+          0,
+          0.0
+        ],
+        "pierna.R": [
+          -0.33,
+          0,
+          0.05
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -0.275,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.275,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 3.5,
+      "raiz": [
+        -0.33,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          -0.22,
+          0,
+          0.0
+        ],
+        "pierna.R": [
+          -0.44,
+          0,
+          0.0
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -0.33,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.33,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 4.25,
+      "raiz": [
+        -0.385,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          -0.33,
+          0,
+          0.05
+        ],
+        "pierna.R": [
+          -0.44,
+          0,
+          0.0
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -0.385,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.385,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 4.75,
+      "raiz": [
+        -0.44,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          -0.44,
+          0,
+          0.0
+        ],
+        "pierna.R": [
+          -0.44,
+          0,
+          0.0
+        ]
+      },
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -0.44,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.44,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 5.0,
+      "art": {},
+      "p": 0.8,
+      "fase": "concentrico",
+      "raiz": [
+        -0.44,
+        0,
+        -0.07
+      ],
+      "ik": {
+        "pierna.L": [
+          -0.44,
+          0,
+          0.0
+        ],
+        "pierna.R": [
+          -0.44,
+          0,
+          0.0
+        ]
+      },
+      "polo": {
+        "pierna.L": [
+          -0.44,
+          0,
+          0
+        ],
+        "pierna.R": [
+          -0.44,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "avance": [
+    -0.44,
+    0,
+    0
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gluteus_medius",
+        "lado": "R"
+      },
+      {
+        "id": "gluteus_minimus",
+        "lado": "R"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "adductor_longus",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_brevis",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_magnus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "lazo_rodillas",
+      "hueso": "upperleg02",
+      "t": 0.85
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Caminata lateral con banda (monster walk)"
+}

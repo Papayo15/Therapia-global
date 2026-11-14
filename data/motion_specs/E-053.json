@@ -92,6 +92,12 @@
         "id": "rectus_femoris",
         "lado": "R"
       }
+    ],
+    "sostienen": [
+      {
+        "id": "gluteus_medius",
+        "lado": "L"
+      }
     ]
   },
   "articulacion_resaltada": [],

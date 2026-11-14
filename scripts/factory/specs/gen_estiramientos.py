@@ -11,14 +11,25 @@ from common import (FOOT, bipedo, cuadrupedia, hand, keys_custom, lateral, muscu
 
 ROOT = Path(__file__).resolve().parents[3]
 PENDIENTES = {
-    "E-039": "Apoyo dorsal de la mano en cuadrupedia: carga sobre el dorso (geometría de contacto pendiente).",
-    "E-045": "Colgarse lateralmente del marco de la puerta: suspensión lateral.",
-    "E-054": "Couch stretch: rodilla contra la pared con tibia vertical.",
-    "E-057": "Postura de la paloma: posición de suelo compleja.",
-    "E-060": "Paloma con rotación: posición de suelo compleja.",
-    "E-058": "Figura 4 en supino: el pie de apoyo pierde contacto al cargar la otra pierna (pendiente de IK doble).",
+    "E-057": "Postura de la paloma: el asentado por inclinación global no apoya a la vez la tibia delantera y la pierna trasera; requiere solver multi-apoyo de suelo.",
+    "E-060": "Paloma con rotación: ídem E-057.",
+    "E-043": "Decúbito lateral sobre rollo: falta modelar el tronco arqueado SOBRE el rollo (cintura elevada, hombro y pelvis apoyados); con la pose lateral actual la cabeza/mano atraviesan el suelo.",
 }
 NO_SOBREESCRIBIR = {"E-067"}          # ficha piloto escrita a mano
+
+
+# Músculos que trabajan ACTIVAMENTE para sostener/dirigir el estiramiento (rojo suave). En los pasivos puros
+# (postura del niño, marco de puerta…) no se inventa: sólo azul.
+SOSTIENEN = {
+    "E-013": ["longus_colli"], "E-014": ["longus_colli"],                       # flexores profundos (chin tuck)
+    "E-021": [{"id": "trapezius_middle", "lado": "R"}],                          # retracción activa
+    "E-024": ["flexor_digitorum_superficialis"],                                 # agarre colgada de la barra
+    "E-042": ["rectus_abdominis"],                                               # gato: abdominales flexionan
+    "E-047": ["triceps_brachii"],                                                # press-up (cobra)
+    "E-050": [{"id": "gluteus_maximus", "lado": "R"}, "rectus_abdominis"],      # retroversión activa
+    "E-051": [{"id": "gluteus_maximus", "lado": "R"}, "rectus_abdominis"],
+    "E-053": [{"id": "gluteus_medius", "lado": "L"}],                            # pierna de apoyo
+}
 
 
 def est(peak, hold=3.0, campos=None):
@@ -29,7 +40,12 @@ def spec(id_, plantilla, kd, props=None, lado="R", resaltar=None, camara=None, v
     if id_ in NO_SOBREESCRIBIR:
         return None
     dur, keys = kd
-    s = {"id": id_, "duracion_s": round(dur, 2), **plantilla, "keys": keys, "musculos": musculos(id_, lado),
+    usos = {p_["uso"] for p_ in plantilla.get("props", []) + (props or [])}
+    sost = SOSTIENEN.get(id_)
+    if "correa_pie_manos" in usos:     # tira de la correa (bíceps) y mantiene la rodilla extendida (cuádriceps)
+        ls = lado or "R"
+        sost = ["biceps_brachii", {"id": "rectus_femoris", "lado": ls}, {"id": "vastus_lateralis", "lado": ls}]
+    s = {"id": id_, "duracion_s": round(dur, 2), **plantilla, "keys": keys, "musculos": musculos(id_, lado, sostienen=sost),
          "articulacion_resaltada": [{"hueso": b} for b in (resaltar or [])]}
     s["props"] = plantilla.get("props", []) + (props or [])
     s["variantes"] = variantes or (["gym", "casa"] if s["props"] else ["gym"])
@@ -103,11 +119,31 @@ H.append(spec("E-020", door2, est({"hombro_abd_h.R": 20, "toracica_rot": 10}, ca
               props=[{"tipo": "marco_puerta", "uso": "pared_manos", "lateral": "R", "sep": 0.25}]))
 H.append(spec("E-021", json.loads(json.dumps(door)), est({"hombro_abd_h.R": 20, "escapula_prot.R": -12}, campos={"raiz": [0, -0.05, 0]}),
               props=[{"tipo": "marco_puerta", "uso": "pared_manos", "lateral": "R", "sep": 0.25}]))
-child = pinned(cuadrupedia(extra={"hombro_flex.L": 120, "hombro_flex.R": 120}))
-child["ik"] += [{"cadena": f"pierna.{s}"} for s in ("L", "R")]
-child["contactos"] = [{"grupo": ["lowerleg01.L", "lowerleg02.L"], "tol_cm": 3}, {"grupo": hand("L") + hand("R"), "tol_cm": 2.5}]
-H.append(spec("E-022", json.loads(json.dumps(child)), est({"lumbar_flex": 15}, campos={"raiz": [0, 0.22, -0.18]}), lado=None))
-H.append(spec("E-023", json.loads(json.dumps(child)), est({"lumbar_flex": 12, "lumbar_incl": 12, "toracica_incl": 10}, campos={"raiz": [0, 0.22, -0.18]})))
+def nino(rodilla=155, cadera=125):
+    """Postura del niño: sentada sobre los talones, tronco plegado sobre los muslos, brazos al frente en el suelo.
+    Pose FK resuelta por asentado (espinillas y empeines planos, manos y frente al suelo). El estiramiento hunde la
+    pelvis hacia los talones (cadera y rodilla suben lo mismo → las espinillas no cambian de inclinación)."""
+    ang = {"cadera_flex.L": cadera, "cadera_flex.R": cadera, "rodilla_flex.L": rodilla, "rodilla_flex.R": rodilla,
+           "tobillo_dorsi.L": -45, "tobillo_dorsi.R": -45, "hombro_flex.L": 160, "hombro_flex.R": 160,
+           "antebrazo_prono.L": 80, "antebrazo_prono.R": 80, "lumbar_flex": 35, "toracica_flex": 15, "cervical_flex": 10,
+           "cervical_rot": 0}
+    shins = ["lowerleg01.L", "lowerleg02.L", "lowerleg01.R", "lowerleg02.R"]
+    return {"base": {"orientacion": "cuadrupedia", "colchoneta": True, "angulos": ang, "suelo": shins,
+                     "asentar": [{"art": "@pitch", "grupo": FOOT("L") + FOOT("R"), "rango": [-40, 40], "reapoyar": True},
+                                 {"art": "hombro_flex.L", "grupo": hand("L"), "rango": [-60, 25]},
+                                 {"art": "hombro_flex.R", "grupo": hand("R"), "rango": [-60, 25]},
+                                 {"art": "cervical_flex", "grupo": "head", "z": 0.035, "rango": [-60, 20]}]},
+            "ik": [{"cadena": "brazo.L", "al_suelo": True}, {"cadena": "brazo.R", "al_suelo": True}],
+            "reapoyar": {"grupos": shins},
+            "rom_pasivo": {"rodilla_flex+": 165, "cadera_flex+": 135},
+            "contactos": [{"grupo": shins, "tol_cm": 2}, {"grupo": FOOT("L") + FOOT("R"), "tol_cm": 2.5},
+                          {"grupo": hand("L") + hand("R"), "tol_cm": 2}],
+            "camara": {"dir": [1, 0.1, 0.35], "lente": 50, "margen": 1.1}}
+
+
+NINO_PICO = {"cadera_flex.L": 5, "cadera_flex.R": 5, "rodilla_flex.L": 5, "rodilla_flex.R": 5, "cervical_flex": -6}
+H.append(spec("E-022", nino(), est(NINO_PICO), lado=None))
+H.append(spec("E-023", nino(), est({**NINO_PICO, "lumbar_incl": 12, "toracica_incl": 10})))
 b = bipedo(extra={"hombro_flex.L": 172, "hombro_flex.R": 172, "hombro_abd.L": 12, "hombro_abd.R": 12, "mano_cerrar.L": 75, "mano_cerrar.R": 75},
            camara=(-0.6, 1, 0.2))
 b["base"]["elevar"] = 0.25
@@ -145,6 +181,10 @@ for id_, extra, peak in (("E-034", {"hombro_flex.R": 50, "codo_flex.R": 60, "ant
     b["base"]["angulos"].update(extra)
     H.append(spec(id_, b, est(peak), camara=[-0.6, -1, 0.4], resaltar=["wrist.R"], camara_extra=None))
 H.append(spec("E-036", pinned(cuadrupedia()), est({}, campos={"raiz": [0, 0.07, 0]}), lado=None, camara=[1, 0.1, 0.3]))
+# E-039 Apoyo sobre el DORSO de la mano: muñeca flexionada, dedos hacia las rodillas; la carga estira los extensores
+b = cuadrupedia(extra={"muneca_ext.L": 0, "muneca_ext.R": 0, "muneca_flex.L": 75, "muneca_flex.R": 75, "mano_cerrar.L": 20,
+                       "mano_cerrar.R": 20})
+H.append(spec("E-039", pinned(b), est({}, campos={"raiz": [0, 0.035, 0]}), lado=None, camara=[1, 0.1, 0.3], resaltar=["wrist.R"]))
 
 # ─── TRONCO ───────────────────────────────────────────────────────────────────
 b = supino(rectas=False)
@@ -154,21 +194,41 @@ for s in ("L", "R"):
 b["base"]["angulos"].update({"cadera_flex.L": 70, "cadera_flex.R": 70, "rodilla_flex.L": 100, "rodilla_flex.R": 100})
 b["contactos"] = [{"grupo": "head"}, {"grupo": "spine01", "tol_cm": 3}]
 H.append(spec("E-040", b, est({"cadera_flex.L": 45, "cadera_flex.R": 45, "rodilla_flex.L": 25, "rodilla_flex.R": 25}), lado=None))
-H.append(spec("E-041", json.loads(json.dumps(child)), est({"lumbar_flex": 18}, campos={"raiz": [0, 0.22, -0.18]}), lado=None))
-H.append(spec("E-042", pinned(cuadrupedia()), keys_custom(
-    [(0, {"lumbar_flex": 0, "toracica_flex": 0, "cervical_flex": 0}, 0), (1.5, {"lumbar_flex": 18, "toracica_flex": 18, "cervical_flex": 20}, 1),
-     (2.3, {"lumbar_flex": 18, "toracica_flex": 18, "cervical_flex": 20}, 1), (3.9, {"lumbar_flex": -14, "toracica_flex": -8, "cervical_flex": -15}, 0.5),
-     (4.7, {"lumbar_flex": -14, "toracica_flex": -8, "cervical_flex": -15}, 0.5), (6.0, {"lumbar_flex": 0, "toracica_flex": 0, "cervical_flex": 0}, 0)],
+H.append(spec("E-041", nino(), est({**NINO_PICO, "toracica_flex": 6, "cervical_flex": -14}), lado=None))
+gc = cuadrupedia()
+# manos y rodillas fijas: por key se inclina la pelvis (@pitch) y la cadera compensa (los muslos siguen verticales)
+gc["resolver"] = {"art": "@pitch", "a": hand("L") + hand("R"), "b": ["lowerleg01.L", "lowerleg01.R"],
+                  "compensar": {"cadera_flex.L": 1, "cadera_flex.R": 1}, "rango": [-30, 30]}
+H.append(spec("E-042", gc, keys_custom(
+    [(0, {"lumbar_flex": 0, "toracica_flex": 0, "cervical_flex": 0}, 0), (1.5, {"lumbar_flex": 22, "toracica_flex": 22, "cervical_flex": 25}, 1),
+     (2.3, {"lumbar_flex": 22, "toracica_flex": 22, "cervical_flex": 25}, 1), (3.9, {"lumbar_flex": -18, "toracica_flex": -10, "cervical_flex": -20}, 0.5),
+     (4.7, {"lumbar_flex": -18, "toracica_flex": -10, "cervical_flex": -20}, 0.5), (6.0, {"lumbar_flex": 0, "toracica_flex": 0, "cervical_flex": 0}, 0)],
     ["concentrico"] * 6), lado=None, camara=[1, 0.1, 0.3]))
 b = lateral()
 b["base"]["angulos"].update({"hombro_abd.R": 135, "cadera_flex.R": 30, "rodilla_flex.R": 60})
 H.append(spec("E-043", b, est({"lumbar_incl": 12, "toracica_incl": 8}), lado="R", camara=[0.1, -1, 0.4]))
+# E-045 Mano derecha arriba sujeta al marco de la puerta (lado der.); la pelvis se desplaza a la izquierda → el
+# costado derecho (dorsal ancho) queda convexo y se estira. Mano y pies fijos (IK).
+b = bipedo(extra={"hombro_flex.R": 170, "mano_cerrar.R": 65, "hombro_abd.L": 10}, camara=(0, -1, 0.2))
+b["ik"] = [{"cadena": "brazo.R", "orientacion_fija": True, "objetivo_rel": [-0.04, 0, 0]},
+           {"cadena": "pierna.L", "pie_plano": True}, {"cadena": "pierna.R", "pie_plano": True}]
+b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R"}]
+H.append(spec("E-045", b, est({"lumbar_incl": 8, "toracica_incl": 6}, campos={"raiz": [0.10, 0, -0.015]}),
+              props=[{"tipo": "marco_puerta", "uso": "pared_manos", "lateral": "R", "sep": 0.0}], variantes=["gym"],
+              nota="Mismo video para gym y casa (marco de puerta o espaldera)."))
 H.append(spec("E-044", bipedo(extra={"hombro_abd.R": 165}, camara=(0, -1, 0.2)), est({"lumbar_incl": 15, "toracica_incl": 15})))
-sph = prono(extra={"cervical_rot": 0, "hombro_flex.L": 80, "hombro_flex.R": 80, "codo_flex.L": 90, "codo_flex.R": 90})
+sph = prono(extra={"cervical_rot": 0, "hombro_flex.L": 25, "hombro_flex.R": 25, "codo_flex.L": 95, "codo_flex.R": 95,
+                   "hombro_abd.L": 10, "hombro_abd.R": 10})   # brazo vertical bajo el hombro, antebrazo al frente
 sph["base"]["asentar"] = [{"art": "toracica_flex", "grupo": ["lowerarm01.L", "lowerarm02.L"] + hand("L"), "rango": [-55, 10]},
                           {"art": "cervical_flex", "grupo": "head", "z": 0.25, "rango": [-30, 30]}]
 sph["contactos"] = [{"grupo": ["pelvis.L", "pelvis.R", "spine05"], "tol_cm": 2.5}, {"grupo": ["lowerarm01.L", "lowerarm02.L"], "tol_cm": 2.5}]
-H.append(spec("E-046", sph, est({"lumbar_flex": -6}), lado=None, camara=[1, 0.1, 0.3]))
+# pelvis y piernas en el suelo; el tórax se eleva (extensión torácica) hasta que los antebrazos apoyan
+sph["base"]["suelo"] = ["pelvis.L", "pelvis.R", "upperleg01.L", "upperleg01.R", "upperleg02.L", "upperleg02.R"]
+# estiramiento: la lumbar se extiende y la torácica devuelve lo mismo → los hombros (y antebrazos) no se despegan
+sph["resolver"] = {"art": "@pitch", "a": ["lowerarm01.L", "lowerarm02.L", "lowerarm01.R", "lowerarm02.R"],
+                   "b": ["pelvis.L", "pelvis.R", "upperleg02.L", "upperleg02.R"],
+                   "compensar": {"cadera_flex.L": 1, "cadera_flex.R": 1}, "rango": [-12, 12]}
+H.append(spec("E-046", sph, est({"lumbar_flex": -7, "toracica_flex": 4}), lado=None, camara=[1, 0.1, 0.3]))
 b = pinned(prono(extra={"cervical_rot": 0, "hombro_flex.L": 20, "hombro_flex.R": 20, "hombro_abd.L": 55, "hombro_abd.R": 55,
                         "codo_flex.L": 120, "codo_flex.R": 120}))
 b["base"]["asentar"] = [a for a in b["base"]["asentar"] if not a["art"].startswith(("hombro", "cervical"))] + \
@@ -199,6 +259,16 @@ H.append(spec("E-050", json.loads(json.dumps(hk)), est({"lumbar_flex": 6}, campo
 hk2 = json.loads(json.dumps(hk))
 hk2["base"]["angulos"].update({"hombro_abd.R": 165})
 H.append(spec("E-051", hk2, est({"toracica_incl": 15, "lumbar_incl": 8}, campos={"raiz": [0, -0.08, -0.02]})))
+# E-054 Couch stretch: rodilla derecha en el suelo junto a la pared, tibia vertical apoyada en la pared (rodilla ~150°),
+# pie izquierdo delante (IK). El estiramiento lleva la pelvis adelante con retroversión.
+ck = json.loads(json.dumps(hk))
+ck["base"]["angulos"].update({"rodilla_flex.R": 150, "tobillo_dorsi.R": -40})
+ck["base"]["suelo"] = ["lowerleg01.R"]
+ck["rom_pasivo"] = {"rodilla_flex+": 160}
+ck["contactos"] = [{"grupo": ["lowerleg01.R"], "tol_cm": 2.5}, {"grupo": "foot.L"}]
+H.append(spec("E-054", ck, est({"lumbar_flex": 6}, campos={"raiz": [0, -0.05, -0.015]}),
+              props=[{"tipo": "pared", "uso": "pared_manos", "detras": True}], variantes=["gym"],
+              nota="Mismo video para gym y casa (pared o sofá)."))
 H.append(spec("E-052", prono(), est({"rodilla_flex.R": 120}), camara=[1, 0.2, 0.3]))
 b = bipedo(camara=(-1, -0.1, 0.2))
 b["ik"].append({"cadena": "brazo.R", "a_hueso": {"hueso": "lowerleg02.R", "dir": "anterior", "t": 0.9, "sep": 0.02, "lado": "R"}})
@@ -214,6 +284,13 @@ b["ik"] = [{"cadena": f"brazo.{s}", "a_hueso": {"hueso": "lowerleg01.R", "dir": 
 b["base"]["angulos"].update({"cadera_flex.R": 110, "rodilla_flex.R": 100})
 b["contactos"] = [{"grupo": "foot.L"}]
 H.append(spec("E-056", b, est({"cadera_abd.R": -20, "toracica_rot": 20}), camara=[0, -1, 0.3]))
+# E-058 Figura 4 en supino: pie izquierdo apoyado (IK), tobillo derecho cruzado sobre el muslo izquierdo junto a la
+# rodilla (IK al hueso); el estiramiento empuja la rodilla derecha hacia afuera (rotación externa de cadera).
+b = supino(rectas=False, gancho=("L",), extra={"cadera_flex.R": 90, "cadera_abd.R": 35, "cadera_re.R": 50, "rodilla_flex.R": 100})
+b["ik"].append({"cadena": "pierna.R", "a_hueso": {"hueso": "upperleg02.L", "dir": "anterior+lateral", "t": 0.9, "sep": 0.035, "lado": "L"},
+                "polo_manual": True, "polo": [-0.6, 0, 0.3]})
+b["contactos"] = [c for c in b["contactos"] if c["grupo"] != "foot.R"]
+H.append(spec("E-058", b, est({}, campos={"polo": {"pierna.R": [-0.35, 0, -0.15]}}), camara=[0.2, -1, 0.7]))
 b = sedente(extra={"cadera_flex.R": 100, "cadera_abd.R": 35, "cadera_re.R": 55, "rodilla_flex.R": 100})
 b["ik"] = [{"cadena": "pierna.R", "a_hueso": {"hueso": "upperleg02.L", "dir": "superior", "t": 0.92, "sep": 0.03, "lado": "L"},
             "polo_manual": True, "polo": [-0.6, 0, 0.2]}]
@@ -250,7 +327,8 @@ b["base"]["asentar"] = [{"art": "cadera_flex.R", "grupo": "foot.R", "z": 0.42, "
 b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R", "z": 0.42}]
 H.append(spec("E-068", b, est({"lumbar_flex": 20, "toracica_flex": 10}), props=[{"tipo": "escalon", "uso": "apoyo_pie", "lado": "R", "alto": 0.42}]))
 d = json.loads((ROOT / "data/motion_specs/E-067.json").read_text())
-d.update({"id": "E-069", "nombre": "Contracción-relajación (FNP) — isquiotibiales", "musculos": musculos("E-069", "R")})
+d.update({"id": "E-069", "nombre": "Contracción-relajación (FNP) — isquiotibiales",
+          "musculos": musculos("E-069", "R", sostienen=["biceps_brachii", {"id": "rectus_femoris", "lado": "R"}, {"id": "vastus_lateralis", "lado": "R"}])})
 write(d)
 H.append("E-069")
 
@@ -276,13 +354,14 @@ def wall_calf(knee_back, atras=0.35):
     b["ik"] = [{"cadena": "pierna.L", "pie_plano": True, "objetivo_rel": [0, -0.25, 0]},
                {"cadena": "pierna.R", "pie_plano": True, "objetivo_rel": [0, atras, 0]},
                {"cadena": "brazo.L"}, {"cadena": "brazo.R"}]
+    b["base"]["elevar"] = -0.14          # pelvis más baja (rodilla delantera flexionada): el pie trasero llega al suelo
     b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R"}]
     b["props"] = [{"tipo": "pared", "uso": "pared_manos"}]
     return b
 
 
-H.append(spec("E-071", wall_calf(0, 0.24), est({}, campos={"raiz": [0, -0.04, 0]}), resaltar=["foot.R"]))
-H.append(spec("E-074", wall_calf(25, 0.24), est({}, campos={"raiz": [0, -0.04, -0.03]}), resaltar=["foot.R"]))
+H.append(spec("E-071", wall_calf(0, 0.30), est({}, campos={"raiz": [0, -0.03, -0.015]}), resaltar=["foot.R"]))
+H.append(spec("E-074", wall_calf(25, 0.18), est({}, campos={"raiz": [0, -0.02, -0.04]}), resaltar=["foot.R"]))
 for id_, knee in (("E-072", 0), ("E-075", 22)):
     b = bipedo(extra={"rodilla_flex.L": knee, "rodilla_flex.R": knee}, camara=(-1, -0.2, 0.2))
     b["base"]["elevar"] = 0.18
@@ -292,12 +371,19 @@ for id_, knee in (("E-072", 0), ("E-075", 22)):
     H.append(spec(id_, b, est({"tobillo_dorsi.L": 15, "tobillo_dorsi.R": 15}), lado=None, resaltar=["foot.L", "foot.R"],
                   props=[{"tipo": "escalon", "uso": "caja", "tam": [0.5, 0.18, 0.18], "pos": [0, -0.06, 0.09]}]))
 H.append(spec("E-076", sedente(extra={"rodilla_flex.R": 60}), est({"tobillo_dorsi.R": -40}), resaltar=["foot.R"], camara=[-1, -0.3, 0.2]))
-kn = {"base": {"orientacion": "rodillas", "colchoneta": True,
-               "angulos": {"rodilla_flex.L": 90, "rodilla_flex.R": 90, "tobillo_dorsi.L": -45, "tobillo_dorsi.R": -45}},
-      "ik": [], "contactos": [{"grupo": ["lowerleg01.L", "lowerleg02.L"], "tol_cm": 3}],
+# Sentada sobre los talones con empeines en el suelo: muslo ~25° sobre la espinilla (rodilla 155°, cadera 65°).
+_sh = ["lowerleg01.L", "lowerleg02.L", "lowerleg01.R", "lowerleg02.R"]
+kn = {"base": {"orientacion": "rodillas", "colchoneta": True, "suelo": _sh,
+               "angulos": {"rodilla_flex.L": 155, "rodilla_flex.R": 155, "cadera_flex.L": 65, "cadera_flex.R": 65,
+                           "tobillo_dorsi.L": -48, "tobillo_dorsi.R": -48, "hombro_flex.L": -15, "hombro_flex.R": -15,
+                           "hombro_abd.L": 8, "hombro_abd.R": 8},
+               "asentar": [{"art": "@pitch", "grupo": FOOT("L") + FOOT("R"), "rango": [-40, 40], "reapoyar": True}]},
+      "ik": [], "reapoyar": {"grupos": _sh}, "rom_pasivo": {"rodilla_flex+": 165},
+      "contactos": [{"grupo": _sh, "tol_cm": 2}, {"grupo": FOOT("L") + FOOT("R"), "tol_cm": 2.5}],
       "camara": {"dir": [-1, -0.1, 0.25], "lente": 50, "margen": 1.1}}
-kn["ik"] = [{"cadena": f"pierna.{s}"} for s in ("L", "R")]
-H.append(spec("E-077", kn, est({"lumbar_flex": 5}, campos={"raiz": [0, 0.12, -0.24]}), lado=None))
+# estiramiento: se sienta más sobre los talones e inclina el tronco atrás (extensión lumbar)
+H.append(spec("E-077", kn, est({"rodilla_flex.L": 4, "rodilla_flex.R": 4, "cadera_flex.L": 4, "cadera_flex.R": 4,
+                                "lumbar_flex": -10}), lado=None))
 b = bipedo(extra={"cadera_flex.R": -14, "rodilla_flex.R": 40, "tobillo_dorsi.R": -55}, camara=(-1, -0.1, 0.2))
 b["base"]["asentar"] = [{"art": "cadera_flex.R", "grupo": FOOT("R"), "rango": [-25, 15]}]
 b["contactos"] = [{"grupo": "foot.L"}, {"grupo": FOOT("R"), "tol_cm": 2}]

@@ -115,15 +115,15 @@
     "elongan": [
       {
         "id": "sternocleidomastoid",
-        "lado": "R"
+        "lado": "L"
       },
       {
         "id": "splenius_capitis",
-        "lado": "R"
+        "lado": "L"
       },
       {
         "id": "splenius_cervicis",
-        "lado": "R"
+        "lado": "L"
       }
     ]
   },

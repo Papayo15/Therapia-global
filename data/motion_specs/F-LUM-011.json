@@ -97,15 +97,15 @@
     "elongan": [
       {
         "id": "quadratus_lumborum",
-        "lado": "R"
+        "lado": "L"
       },
       {
         "id": "external_oblique",
-        "lado": "R"
+        "lado": "L"
       },
       {
         "id": "internal_oblique",
-        "lado": "R"
+        "lado": "L"
       }
     ]
   },

@@ -2641,6 +2641,26 @@
           0.018
         ]
       }
+    ],
+    "iliotibial_band": [
+      {
+        "a": {
+          "hueso": "upperleg02.{s}",
+          "t": 0.05,
+          "dir": "lateral",
+          "prof": 0.9
+        },
+        "b": {
+          "hueso": "lowerleg01.{s}",
+          "t": 0.05,
+          "dir": "lateral+anterior",
+          "prof": 0.9
+        },
+        "r": [
+          0.022,
+          0.016
+        ]
+      }
     ]
   }
 }

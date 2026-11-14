@@ -136,6 +136,14 @@
         "id": "rectus_femoris",
         "lado": "L"
       }
+    ],
+    "estabilizan": [
+      {
+        "id": "erector_spinae_lumbar"
+      },
+      {
+        "id": "gluteus_medius"
+      }
     ]
   },
   "articulacion_resaltada": [

@@ -85,6 +85,11 @@
       {
         "id": "latissimus_dorsi"
       }
+    ],
+    "sostienen": [
+      {
+        "id": "flexor_digitorum_superficialis"
+      }
     ]
   },
   "articulacion_resaltada": [],

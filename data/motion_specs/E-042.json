@@ -72,16 +72,7 @@
       }
     ]
   },
-  "ik": [
-    {
-      "cadena": "brazo.L",
-      "al_suelo": 0.03
-    },
-    {
-      "cadena": "brazo.R",
-      "al_suelo": 0.03
-    }
-  ],
+  "ik": [],
   "contactos": [
     {
       "grupo": "lowerleg01.L",
@@ -143,6 +134,65 @@
     "lente": 50,
     "margen": 1.1
   },
+  "resolver": {
+    "art": "@pitch",
+    "a": [
+      "lowerarm02.L",
+      "wrist.L",
+      "finger1-1.L",
+      "finger1-2.L",
+      "finger1-3.L",
+      "finger2-1.L",
+      "finger2-2.L",
+      "finger2-3.L",
+      "finger3-1.L",
+      "finger3-2.L",
+      "finger3-3.L",
+      "finger4-1.L",
+      "finger4-2.L",
+      "finger4-3.L",
+      "finger5-1.L",
+      "finger5-2.L",
+      "finger5-3.L",
+      "metacarpal1.L",
+      "metacarpal2.L",
+      "metacarpal3.L",
+      "metacarpal4.L",
+      "lowerarm02.R",
+      "wrist.R",
+      "finger1-1.R",
+      "finger1-2.R",
+      "finger1-3.R",
+      "finger2-1.R",
+      "finger2-2.R",
+      "finger2-3.R",
+      "finger3-1.R",
+      "finger3-2.R",
+      "finger3-3.R",
+      "finger4-1.R",
+      "finger4-2.R",
+      "finger4-3.R",
+      "finger5-1.R",
+      "finger5-2.R",
+      "finger5-3.R",
+      "metacarpal1.R",
+      "metacarpal2.R",
+      "metacarpal3.R",
+      "metacarpal4.R"
+    ],
+    "b": [
+      "lowerleg01.L",
+      "lowerleg01.R"
+    ],
+    "compensar": {
+      "cadera_flex.L": 1,
+      "cadera_flex.R": 1
+    },
+    "rango": [
+      -30,
+      30
+    ]
+  },
   "keys": [
     {
       "t": 0,
@@ -157,9 +207,9 @@
     {
       "t": 1.5,
       "art": {
-        "lumbar_flex": 18,
-        "toracica_flex": 18,
-        "cervical_flex": 20
+        "lumbar_flex": 22,
+        "toracica_flex": 22,
+        "cervical_flex": 25
       },
       "p": 1,
       "fase": "concentrico"
@@ -167,9 +217,9 @@
     {
       "t": 2.3,
       "art": {
-        "lumbar_flex": 18,
-        "toracica_flex": 18,
-        "cervical_flex": 20
+        "lumbar_flex": 22,
+        "toracica_flex": 22,
+        "cervical_flex": 25
       },
       "p": 1,
       "fase": "concentrico"
@@ -177,9 +227,9 @@
     {
       "t": 3.9,
       "art": {
-        "lumbar_flex": -14,
-        "toracica_flex": -8,
-        "cervical_flex": -15
+        "lumbar_flex": -18,
+        "toracica_flex": -10,
+        "cervical_flex": -20
       },
       "p": 0.5,
       "fase": "concentrico"
@@ -187,9 +237,9 @@
     {
       "t": 4.7,
       "art": {
-        "lumbar_flex": -14,
-        "toracica_flex": -8,
-        "cervical_flex": -15
+        "lumbar_flex": -18,
+        "toracica_flex": -10,
+        "cervical_flex": -20
       },
       "p": 0.5,
       "fase": "concentrico"
@@ -209,6 +259,11 @@
     "estirados": [
       {
         "id": "erector_spinae_lumbar"
+      }
+    ],
+    "sostienen": [
+      {
+        "id": "rectus_abdominis"
       }
     ]
   },

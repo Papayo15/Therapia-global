@@ -5,15 +5,12 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import (bipedo, cuadrupedia, hand, iso, keys_custom, lateral, musculos, plancha, plancha_lateral,  # noqa: E402
+from common import (caminar, FOOT, bipedo, cuadrupedia, hand, iso, keys_custom, lateral, musculos, plancha, plancha_lateral,  # noqa: E402
                     prono, rep, sedente, supino, write)
 
 ROOT = Path(__file__).resolve().parents[3]
 PENDIENTES = {
-    "F-TOR-010": "Extensión en banco romano: equipo específico de gimnasio (cadera fija, tronco en voladizo).",
-    "F-LUM-014": "Caminata con carga unilateral: locomoción.",
-    "F-LUM-015": "Inclinación lateral en banco romano a 45°: equipo específico.",
-    "F-LUM-020": "Lanzamiento rotacional con balón medicinal: lanzamiento.",
+    "F-LUM-015": "Inclinación lateral en banco romano a 45°: el pivote lateral con compensación de abducción no mantiene los pies fijos; falta un pivote alrededor del eje antero-posterior de la cadera.",
 }
 SP = ("spine03",)
 
@@ -95,15 +92,74 @@ b["base"]["asentar"] = [a for a in b["base"]["asentar"] if not a["art"].startswi
      {"art": "hombro_re.L", "grupo": hand("L"), "rango": [-80, 80]}, {"art": "hombro_re.R", "grupo": hand("R"), "rango": [-80, 80]}]   # el antebrazo gira hasta apoyar la mano (W)
 b["contactos"] = [{"grupo": ["pelvis.L", "pelvis.R", "spine05"], "tol_cm": 2.5}]
 H.append(spec("F-TOR-009", b, rep({"toracica_flex": -14, "hombro_flex.L": -12, "hombro_flex.R": -12, "escapula_prot.L": -10, "escapula_prot.R": -10},
-                                  up=1.3, hold=1.2, down=1.5), camara=[0.6, -1, 0.7]))
+                                  up=1.3, hold=1.2, down=1.5), camara=[1, 0.45, 0.8]))
+# 010 Extensión en banco romano a 45°: cuerpo inclinado, muslos sobre el cojín, pies fijos; el tronco baja
+# (flexión de cadera sobre el cojín) y sube hasta la línea del cuerpo. Pivote en la cadera: las piernas no se mueven.
+b = bipedo(extra={"@pitch": 45, "hombro_flex.L": 0, "hombro_flex.R": 0, "codo_flex.L": 120, "codo_flex.R": 120,
+                  "hombro_abd.L": 40, "hombro_abd.R": 40}, camara=(-1, -0.2, 0.25))
+b["pivote"] = {"hueso": "upperleg01.L"}
+b["props"] = [{"tipo": "banco_romano", "uso": "banco_bajo_pie", "lado": "R", "grupo": ["upperleg01.L", "upperleg01.R"],
+               "dy": 0.0, "largo": 0.30}]
+b["contactos"] = [{"grupo": "foot.L", "tol_cm": 3.5}, {"grupo": "foot.R", "tol_cm": 3.5}]   # pies bajo el rodillo de sujeción
+sp = spec("F-TOR-010", b, rep({"cadera_flex.L": 0, "cadera_flex.R": 0}, up=1.5, hold=0.8, down=1.6), lado=None, resaltar=SP)
+d = json.loads(sp.read_text())
+for k in d["keys"]:
+    q = 1 - k["p"]                                   # p=1 (pico) = tronco alineado; p=0 = tronco abajo
+    k["pivote_x"] = 45 * q
+    k["art"] = {"cadera_flex.L": 45 * q, "cadera_flex.R": 45 * q}
+sp.write_text(json.dumps(d, ensure_ascii=False, indent=2))
+H.append(sp)
+# 014 Caminata con carga unilateral (maleta): mancuerna en la mano derecha, tronco erguido sin inclinarse.
+b = bipedo(extra={"mano_cerrar.R": 75, "hombro_abd.R": 6, "hombro_abd.L": 4}, camara=(-0.6, -1, 0.2))
+ik_, keys_, adv_ = caminar(brazos=6)
+for k_ in keys_:
+    k_["art"]["hombro_flex.R"] = 0                       # el brazo cargado no balancea
+b["ik"] = ik_
+b["contactos"] = [{"grupo": FOOT("L") + FOOT("R")}]
+s_ = {"id": "F-LUM-014", "duracion_s": keys_[-1]["t"], **b, "keys": keys_, "avance": adv_, "musculos": musculos("F-LUM-014", "L"),
+      "articulacion_resaltada": [{"hueso": "spine03"}], "props": [{"tipo": "mancuerna", "uso": "en_mano", "manos": ["R"]}],
+      "variantes": ["gym", "casa"]}
+H.append(write(s_))
+# 020 Lanzamiento rotacional con balón medicinal contra la pared (a la izquierda): carga a la derecha, rotación
+# explosiva de tronco y cadera, rebote y recepción frenando la rotación.
+b = bipedo(extra={"hombro_flex.L": 45, "hombro_flex.R": 45, "codo_flex.L": 55, "codo_flex.R": 55, "hombro_abd_h.L": 20,
+                  "hombro_abd_h.R": -20, "toracica_rot": -30, "lumbar_rot": -10, "rodilla_flex.L": 15, "rodilla_flex.R": 15,
+                  "cadera_abd.L": 8, "cadera_abd.R": 8}, camara=(0, -1, 0.3))
+b["ik"] = [{"cadena": "pierna.L", "pie_plano": True}, {"cadena": "pierna.R", "pie_plano": True}]
+b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R"}]
+b["reapoyar"] = {"grupos": FOOT("L") + FOOT("R")}
+kd = keys_custom([(0, {"toracica_rot": 0, "lumbar_rot": 0}, 0), (0.4, {"toracica_rot": 0, "lumbar_rot": 0}, 0.3),
+                  (0.9, {"toracica_rot": 60, "lumbar_rot": 18}, 1), (1.3, {"toracica_rot": 60, "lumbar_rot": 18}, 0.6),
+                  (2.1, {"toracica_rot": 0, "lumbar_rot": 0}, 1), (2.6, {"toracica_rot": 0, "lumbar_rot": 0}, 0.3),
+                  (5.0, {"toracica_rot": 0, "lumbar_rot": 0}, 0)],
+                 ["concentrico", "concentrico", "isometrico", "excentrico", "excentrico", "concentrico", "concentrico"])
+dur, keys = kd
+s_ = {"id": "F-LUM-020", "duracion_s": dur, **b, "keys": keys, "musculos": musculos("F-LUM-020", None),
+      "articulacion_resaltada": [{"hueso": "spine03"}], "variantes": ["gym"],
+      "nota_variantes": "Mismo video para gym y casa (balón medicinal o pelota con peso).",
+      "props": [{"tipo": "balon_medicinal", "uso": "balon_vuelo", "manos": ["L", "R"], "r": 0.11,
+                 "vuelo": {"suelta": 0.95, "atrapa": 2.05, "pared": [1.4, -0.2, 0.05]}}]}
+H.append(write(s_))
 b = lateral(almeja=False)
 b["base"]["angulos"].update({"cadera_flex.R": 70, "rodilla_flex.R": 90, "hombro_flex.L": 90, "hombro_flex.R": 90, "codo_flex.L": 0, "codo_flex.R": 0})
 H.append(spec("F-TOR-011", b, rep({"toracica_rot": -40, "hombro_abd_h.R": 95, "cervical_rot": -40}, up=1.8, hold=1.0, down=1.8),
               camara=[0.1, -0.6, 1]))
+# Thread the needle: mano izquierda y rodillas fijas (resolver de inclinación por key); el brazo derecho se despega
+# (key intermedia con el codo flexionado) y pasa por debajo del tronco deslizando sobre la colchoneta.
 b = cuadrupedia()
-b["ik"] = [{"cadena": "brazo.L", "al_suelo": 0.03}]
-H.append(spec("F-TOR-012", b, rep({"toracica_rot": 25, "hombro_abd_h.R": -75, "codo_flex.R": 10, "cervical_rot": 25}, up=1.6, hold=1.0, down=1.6),
-              camara=[0.2, -1, 0.6]))
+b["resolver"] = {"art": "@pitch", "a": hand("L"), "b": ["lowerleg01.L", "lowerleg01.R"],
+                 "compensar": {"cadera_flex.L": 1, "cadera_flex.R": 1}, "rango": [-20, 20]}
+b["contactos"] = [{"grupo": "lowerleg01.L", "tol_cm": 2.5}, {"grupo": hand("L"), "tol_cm": 2}]
+b["asentar_keys"] = [{"art": "codo_flex.R", "grupo": hand("R"), "rango": [0, 70], "solo_bajo": True, "z": 0.022}]
+_P = {"toracica_rot": 25, "hombro_abd_h.R": -75, "codo_flex.R": 10, "cervical_rot": 25}
+_M = {"toracica_rot": 8, "hombro_abd_h.R": -15, "codo_flex.R": 70, "cervical_rot": 8}     # mano en el aire
+_Z = {j: 0 for j in _P}
+_R = {"toracica_rot": 13, "hombro_abd_h.R": -32, "codo_flex.R": 62, "cervical_rot": 13}
+_Q = {"toracica_rot": 18, "hombro_abd_h.R": -50, "codo_flex.R": 40, "cervical_rot": 18}     # transición elevada
+H.append(spec("F-TOR-012", b, keys_custom([(0, _Z, 0), (0.3, _Z, 0), (0.9, _M, 0.4), (1.12, _R, 0.55), (1.35, _Q, 0.7), (1.8, _P, 1), (2.8, _P, 1),
+                                         (3.2, _Q, 0.7), (3.4, _R, 0.55), (3.6, _M, 0.4), (4.3, _Z, 0), (5.0, _Z, 0)],
+                                        ["concentrico", "concentrico", "concentrico", "concentrico", "concentrico", "isometrico",
+                                         "excentrico", "excentrico", "excentrico", "excentrico", "concentrico", "concentrico"]), camara=[0.2, -1, 0.6]))
 b = sedente(extra={"hombro_abd.L": 85, "hombro_abd.R": 85, "codo_flex.L": 100, "codo_flex.R": 100, "hombro_re.L": 60, "hombro_re.R": 60,
                    "mano_cerrar.L": 70, "mano_cerrar.R": 70})
 H.append(spec("F-TOR-013", b, rep({"toracica_rot": -40, "lumbar_rot": -10}, up=1.5, hold=0.8, down=1.6), camara=[0, -1, 0.5],
@@ -116,7 +172,7 @@ for id_, kind in (("F-TOR-014", "banda_elastica"), ("F-TOR-015", "polea")):
 
 # ─── LUMBAR / CORE ────────────────────────────────────────────────────────────
 H.append(spec("F-LUM-001", supino(rectas=False, gancho=("L", "R")), iso(3.0)))
-b = supino(rectas=False, gancho=("L", "R"))
+b = supino(rectas=False, gancho=("L", "R"), extra={"cadera_abd.L": -2, "cadera_abd.R": -2})   # rodillas juntas
 b["pivote"] = {"hueso": "spine03", "contrarrotar": "spine03"}
 sp = spec("F-LUM-002", b, rep({}, up=1.2, hold=1.2, down=1.4))
 d = json.loads(sp.read_text())
@@ -159,14 +215,20 @@ H.append(sp)
 H.append(spec("F-LUM-011", bipedo(camara=(0, -1, 0.2)), rep({"lumbar_incl": -20, "toracica_incl": -15}, up=1.4, hold=0.8, down=1.6), lado="R"))
 H.append(spec("F-LUM-012", plancha_lateral(rodillas=True), iso(3.5), lado="L"))
 H.append(spec("F-LUM-013", plancha_lateral(), iso(3.5), lado="L"))
-b = supino(rectas=False, gancho=("L", "R"))
+# Limpiaparabrisas: pies apoyados (IK) y las dos rodillas caen JUNTAS a un lado (los polos de rodilla se desplazan);
+# la pelvis acompaña rotando y el tórax queda apoyado (contrarrotación).
+b = supino(rectas=False, gancho=("L", "R"), extra={"cadera_abd.L": -6, "cadera_abd.R": -6})
+for ik in b["ik"]:
+    ik["polo_manual"] = True
+    ik["polo"] = [0, -0.2, 0.6]
 b["pivote"] = {"hueso": "spine03", "contrarrotar": "spine03"}
-b["contactos"] = [c if c["grupo"] != "spine01" else {"grupo": "spine01", "tol_cm": 3.5} for c in b["contactos"]]   # la hemipelvis contraria se despega (real)
-sp = spec("F-LUM-016", b, rep({}, up=1.6, hold=0.6, down=1.6), camara=[0, -1, 0.8])
+b["contactos"] = [c if c["grupo"] != "spine01" else {"grupo": "spine01", "tol_cm": 3.5} for c in b["contactos"]]
+sp = spec("F-LUM-016", b, rep({}, up=1.6, hold=0.6, down=1.6, campos={"polo": {"pierna.L": [-0.55, 0, -0.35], "pierna.R": [-0.55, 0, -0.35]}}),
+          camara=[0.1, -1, 0.55])
 d = json.loads(sp.read_text())
 for k in d["keys"]:
-    k["pivote_y"] = 28 * k["p"]
-    k["raiz"] = [0, 0, 0.012 * k["p"]]
+    k["pivote_y"] = 12 * k["p"]
+    k["raiz"] = [0, 0, 0.006 * k["p"]]
 sp.write_text(json.dumps(d, ensure_ascii=False, indent=2))
 H.append(sp)
 b = {"base": {"orientacion": "rodillas", "colchoneta": True,

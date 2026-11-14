@@ -14,7 +14,7 @@
       "codo_flex.L": 50,
       "codo_flex.R": 75,
       "antebrazo_prono.R": 80,
-      "muneca_flex.R": -10
+      "muneca_flex.R": 0
     }
   },
   "ik": [],
@@ -60,7 +60,8 @@
     {
       "tipo": "mesa",
       "uso": "mesa_antebrazo",
-      "lado": "R"
+      "lado": "R",
+      "mano_apoyada": true
     }
   ],
   "keys": [

@@ -75,7 +75,7 @@
         ]
       },
       {
-        "art": "hombro_flex.R",
+        "art": "hombro_abd_h.R",
         "grupo": [
           "lowerarm02.R",
           "wrist.R",
@@ -100,8 +100,8 @@
           "metacarpal4.R"
         ],
         "rango": [
-          -15,
-          10
+          -30,
+          30
         ]
       }
     ]
@@ -170,7 +170,7 @@
         "metacarpal3.R",
         "metacarpal4.R"
       ],
-      "tol_cm": 4
+      "tol_cm": 2
     }
   ],
   "camara": {
@@ -182,12 +182,73 @@
     "lente": 50,
     "margen": 1.1
   },
+  "asentar_keys": [
+    {
+      "art": "hombro_abd_h.R",
+      "grupo": [
+        "lowerarm02.R",
+        "wrist.R",
+        "finger1-1.R",
+        "finger1-2.R",
+        "finger1-3.R",
+        "finger2-1.R",
+        "finger2-2.R",
+        "finger2-3.R",
+        "finger3-1.R",
+        "finger3-2.R",
+        "finger3-3.R",
+        "finger4-1.R",
+        "finger4-2.R",
+        "finger4-3.R",
+        "finger5-1.R",
+        "finger5-2.R",
+        "finger5-3.R",
+        "metacarpal1.R",
+        "metacarpal2.R",
+        "metacarpal3.R",
+        "metacarpal4.R"
+      ],
+      "rango": [
+        -30,
+        30
+      ]
+    },
+    {
+      "art": "hombro_flex.R",
+      "grupo": [
+        "lowerarm02.R",
+        "wrist.R",
+        "finger1-1.R",
+        "finger1-2.R",
+        "finger1-3.R",
+        "finger2-1.R",
+        "finger2-2.R",
+        "finger2-3.R",
+        "finger3-1.R",
+        "finger3-2.R",
+        "finger3-3.R",
+        "finger4-1.R",
+        "finger4-2.R",
+        "finger4-3.R",
+        "finger5-1.R",
+        "finger5-2.R",
+        "finger5-3.R",
+        "metacarpal1.R",
+        "metacarpal2.R",
+        "metacarpal3.R",
+        "metacarpal4.R"
+      ],
+      "rango": [
+        -30,
+        30
+      ]
+    }
+  ],
   "keys": [
     {
       "t": 0,
       "art": {
-        "hombro_abd.R": 0,
-        "hombro_flex.R": 0
+        "hombro_abd.R": 0
       },
       "p": 0,
       "fase": "concentrico"
@@ -195,17 +256,31 @@
     {
       "t": 0.4,
       "art": {
-        "hombro_abd.R": 0,
-        "hombro_flex.R": 0
+        "hombro_abd.R": 0
       },
       "p": 0,
       "fase": "concentrico"
     },
     {
+      "t": 0.85,
+      "art": {
+        "hombro_abd.R": -24
+      },
+      "p": 0.33,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.3,
+      "art": {
+        "hombro_abd.R": -48
+      },
+      "p": 0.66,
+      "fase": "concentrico"
+    },
+    {
       "t": 1.8,
       "art": {
-        "hombro_abd.R": -72,
-        "hombro_flex.R": 9
+        "hombro_abd.R": -72
       },
       "p": 1,
       "fase": "isometrico"
@@ -213,17 +288,31 @@
     {
       "t": 2.4,
       "art": {
-        "hombro_abd.R": -72,
-        "hombro_flex.R": 9
+        "hombro_abd.R": -72
       },
       "p": 1,
       "fase": "excentrico"
     },
     {
+      "t": 3.0,
+      "art": {
+        "hombro_abd.R": -48
+      },
+      "p": 0.66,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.5,
+      "art": {
+        "hombro_abd.R": -24
+      },
+      "p": 0.33,
+      "fase": "excentrico"
+    },
+    {
       "t": 4.0,
       "art": {
-        "hombro_abd.R": 0,
-        "hombro_flex.R": 0
+        "hombro_abd.R": 0
       },
       "p": 0,
       "fase": "concentrico"
@@ -231,8 +320,7 @@
     {
       "t": 5.0,
       "art": {
-        "hombro_abd.R": 0,
-        "hombro_flex.R": 0
+        "hombro_abd.R": 0
       },
       "p": 0,
       "fase": "concentrico"

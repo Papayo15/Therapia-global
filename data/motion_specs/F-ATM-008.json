@@ -116,11 +116,16 @@
       "hueso": "jaw"
     }
   ],
-  "props": [],
+  "props": [
+    {
+      "tipo": "depresor_lingual",
+      "uso": "en_boca"
+    }
+  ],
   "variantes": [
     "gym"
   ],
-  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "nota_variantes": "Mismo video para gym y casa (en casa: palito de helado).",
   "fps": 24,
   "resolucion": [
     1280,

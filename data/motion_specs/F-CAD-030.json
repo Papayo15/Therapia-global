@@ -1,0 +1,152 @@
+{
+  "id": "F-CAD-030",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 80,
+      "hombro_abd.R": 80,
+      "@pitch": 55,
+      "cadera_flex.L": 58,
+      "cadera_flex.R": -2,
+      "rodilla_flex.L": 12,
+      "cervical_flex": -25
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.6,
+      0.35
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "reapoyar": {
+    "grupos": [
+      "foot.L"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "@yaw": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "@yaw": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "@yaw": 28
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "@yaw": 28
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.3,
+      "art": {
+        "@yaw": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "@yaw": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "piriformis",
+        "lado": "L"
+      },
+      {
+        "id": "obturator_internus",
+        "lado": "L"
+      },
+      {
+        "id": "obturator_externus",
+        "lado": "L"
+      },
+      {
+        "id": "gemellus_superior",
+        "lado": "L"
+      },
+      {
+        "id": "gemellus_inferior",
+        "lado": "L"
+      },
+      {
+        "id": "quadratus_femoris",
+        "lado": "L"
+      },
+      {
+        "id": "gluteus_maximus",
+        "lado": "L"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "gluteus_medius",
+        "lado": "L"
+      },
+      {
+        "id": "gluteus_minimus",
+        "lado": "L"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.L"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Avión de cadera (hip airplane) en apoyo unipodal"
+}

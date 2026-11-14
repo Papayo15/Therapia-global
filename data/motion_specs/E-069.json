@@ -149,6 +149,19 @@
         "id": "semimembranosus",
         "lado": "R"
       }
+    ],
+    "sostienen": [
+      {
+        "id": "biceps_brachii"
+      },
+      {
+        "id": "rectus_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "vastus_lateralis",
+        "lado": "R"
+      }
     ]
   },
   "articulacion_resaltada": [

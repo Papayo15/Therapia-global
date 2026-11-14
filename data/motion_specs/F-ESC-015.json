@@ -295,6 +295,14 @@
       {
         "id": "trapezius_middle"
       }
+    ],
+    "estabilizan": [
+      {
+        "id": "rectus_abdominis"
+      },
+      {
+        "id": "external_oblique"
+      }
     ]
   },
   "articulacion_resaltada": [

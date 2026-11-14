@@ -168,23 +168,31 @@
     "elongan": [
       {
         "id": "scalene_anterior",
-        "lado": "L"
+        "lado": "R"
       },
       {
         "id": "scalene_middle",
-        "lado": "L"
+        "lado": "R"
       },
       {
         "id": "scalene_posterior",
-        "lado": "L"
+        "lado": "R"
       },
       {
         "id": "trapezius_upper",
-        "lado": "L"
+        "lado": "R"
       },
       {
         "id": "levator_scapulae",
-        "lado": "L"
+        "lado": "R"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "gluteus_medius"
       }
     ]
   },

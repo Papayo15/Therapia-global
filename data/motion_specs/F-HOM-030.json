@@ -1,0 +1,159 @@
+{
+  "id": "F-HOM-030",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 90,
+      "codo_flex.R": 90,
+      "hombro_re.R": 80,
+      "mano_cerrar.R": 35
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.15,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.45,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0.2,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.7,
+      "art": {
+        "hombro_re.R": -35
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.0499999999999998,
+      "art": {
+        "hombro_re.R": -35
+      },
+      "p": 0.6,
+      "fase": "excentrico"
+    },
+    {
+      "t": 1.5,
+      "art": {
+        "hombro_re.R": 8
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0.3,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "infraspinatus",
+        "lado": "R"
+      },
+      {
+        "id": "teres_minor",
+        "lado": "R"
+      },
+      {
+        "id": "deltoid_posterior",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "subscapularis",
+        "lado": "R"
+      },
+      {
+        "id": "pectoralis_major",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "balon",
+      "uso": "balon_vuelo",
+      "manos": [
+        "R"
+      ],
+      "r": 0.06,
+      "vuelo": {
+        "suelta": 0.7,
+        "atrapa": 1.5,
+        "pared": [
+          0,
+          -1.3,
+          0.1
+        ]
+      }
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Mismo video para gym y casa (pelota pequeña y pared).",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Atrapes pliométricos en 90/90 con balón"
+}

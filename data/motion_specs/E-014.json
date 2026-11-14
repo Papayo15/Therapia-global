@@ -122,6 +122,11 @@
         "id": "obliquus_capitis_inferior",
         "lado": "R"
       }
+    ],
+    "sostienen": [
+      {
+        "id": "longus_colli"
+      }
     ]
   },
   "articulacion_resaltada": [

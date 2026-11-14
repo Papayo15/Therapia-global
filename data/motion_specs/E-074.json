@@ -11,7 +11,8 @@
       "@pitch": 10,
       "rodilla_flex.L": 25,
       "rodilla_flex.R": 25
-    }
+    },
+    "elevar": -0.14
   },
   "ik": [
     {
@@ -28,7 +29,7 @@
       "pie_plano": true,
       "objetivo_rel": [
         0,
-        0.24,
+        0.18,
         0
       ]
     },
@@ -92,8 +93,8 @@
       "fase": "isometrico",
       "raiz": [
         0,
-        -0.04,
-        -0.03
+        -0.02,
+        -0.04
       ]
     },
     {
@@ -103,8 +104,8 @@
       "fase": "excentrico",
       "raiz": [
         0,
-        -0.04,
-        -0.03
+        -0.02,
+        -0.04
       ]
     },
     {

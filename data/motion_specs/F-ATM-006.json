@@ -70,8 +70,8 @@
     {
       "t": 1.5,
       "art": {
-        "atm_lateral": -8,
-        "atm_apertura": 4
+        "atm_lateral": -5,
+        "atm_apertura": 3
       },
       "p": 1,
       "fase": "isometrico"
@@ -79,8 +79,8 @@
     {
       "t": 2.3,
       "art": {
-        "atm_lateral": -8,
-        "atm_apertura": 4
+        "atm_lateral": -5,
+        "atm_apertura": 3
       },
       "p": 1,
       "fase": "excentrico"
@@ -107,18 +107,22 @@
   "musculos": {
     "activos": [
       {
-        "id": "lateral_pterygoid"
+        "id": "lateral_pterygoid",
+        "lado": "R"
       },
       {
-        "id": "medial_pterygoid"
+        "id": "medial_pterygoid",
+        "lado": "R"
       }
     ],
     "elongan": [
       {
-        "id": "lateral_pterygoid"
+        "id": "lateral_pterygoid",
+        "lado": "L"
       },
       {
-        "id": "medial_pterygoid"
+        "id": "medial_pterygoid",
+        "lado": "L"
       }
     ]
   },
@@ -131,7 +135,7 @@
   "variantes": [
     "gym"
   ],
-  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "nota_variantes": "Mismo video para gym y casa (en casa: palito de helado).",
   "fps": 24,
   "resolucion": [
     1280,

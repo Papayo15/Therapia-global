@@ -153,23 +153,23 @@
     "elongan": [
       {
         "id": "scalene_anterior",
-        "lado": "R"
+        "lado": "L"
       },
       {
         "id": "scalene_middle",
-        "lado": "R"
+        "lado": "L"
       },
       {
         "id": "scalene_posterior",
-        "lado": "R"
+        "lado": "L"
       },
       {
         "id": "trapezius_upper",
-        "lado": "R"
+        "lado": "L"
       },
       {
         "id": "levator_scapulae",
-        "lado": "R"
+        "lado": "L"
       }
     ]
   },

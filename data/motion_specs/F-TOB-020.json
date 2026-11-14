@@ -1,0 +1,282 @@
+{
+  "id": "F-TOB-020",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 15,
+      "hombro_abd.R": 15,
+      "cadera_flex.R": 30,
+      "rodilla_flex.R": 70
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L",
+      "hasta": 0.45
+    },
+    {
+      "grupo": "foot.L",
+      "desde": 0.88,
+      "hasta": 1.75
+    },
+    {
+      "grupo": "foot.L",
+      "desde": 2.18
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {
+        "tobillo_dorsi.L": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_dorsi.L": 0
+      },
+      "p": 0.5,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        -0.06
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 0.65,
+      "art": {
+        "tobillo_dorsi.L": -25
+      },
+      "p": 1,
+      "fase": "concentrico",
+      "raiz": [
+        0.12,
+        0,
+        0.1
+      ],
+      "ik": {
+        "pierna.L": [
+          0.12,
+          0,
+          0.09
+        ]
+      }
+    },
+    {
+      "t": 0.9,
+      "art": {
+        "tobillo_dorsi.L": 0
+      },
+      "p": 0.8,
+      "fase": "excentrico",
+      "raiz": [
+        0.25,
+        0,
+        -0.06
+      ],
+      "ik": {
+        "pierna.L": [
+          0.25,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.3,
+      "art": {
+        "tobillo_dorsi.L": 0
+      },
+      "p": 0.4,
+      "fase": "isometrico",
+      "raiz": [
+        0.25,
+        0,
+        0
+      ],
+      "ik": {
+        "pierna.L": [
+          0.25,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "tobillo_dorsi.L": 0
+      },
+      "p": 0.5,
+      "fase": "concentrico",
+      "raiz": [
+        0.25,
+        0,
+        -0.06
+      ],
+      "ik": {
+        "pierna.L": [
+          0.25,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.95,
+      "art": {
+        "tobillo_dorsi.L": -25
+      },
+      "p": 1,
+      "fase": "concentrico",
+      "raiz": [
+        0.13,
+        0,
+        0.1
+      ],
+      "ik": {
+        "pierna.L": [
+          0.12,
+          0,
+          0.09
+        ]
+      }
+    },
+    {
+      "t": 2.2,
+      "art": {
+        "tobillo_dorsi.L": 0
+      },
+      "p": 0.8,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0,
+        -0.06
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "tobillo_dorsi.L": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "tobillo_dorsi.L": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "fibularis_longus",
+        "lado": "L"
+      },
+      {
+        "id": "fibularis_brevis",
+        "lado": "L"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "tibialis_posterior",
+        "lado": "L"
+      },
+      {
+        "id": "tibialis_anterior",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.L"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Saltos laterales unipodales"
+}

@@ -129,6 +129,10 @@
       {
         "id": "tensor_fasciae_latae",
         "lado": "R"
+      },
+      {
+        "id": "iliotibial_band",
+        "lado": "R"
       }
     ]
   },

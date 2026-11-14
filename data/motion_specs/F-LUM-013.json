@@ -156,15 +156,20 @@
     "elongan": [
       {
         "id": "quadratus_lumborum",
-        "lado": "L"
+        "lado": "R"
       },
       {
         "id": "external_oblique",
-        "lado": "L"
+        "lado": "R"
       },
       {
         "id": "internal_oblique",
-        "lado": "L"
+        "lado": "R"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "gluteus_medius"
       }
     ]
   },

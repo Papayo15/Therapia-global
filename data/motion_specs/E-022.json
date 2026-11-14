@@ -5,22 +5,74 @@
     "orientacion": "cuadrupedia",
     "colchoneta": true,
     "angulos": {
-      "cadera_flex.L": 90,
-      "cadera_flex.R": 90,
-      "rodilla_flex.L": 90,
-      "rodilla_flex.R": 90,
+      "cadera_flex.L": 125,
+      "cadera_flex.R": 125,
+      "rodilla_flex.L": 155,
+      "rodilla_flex.R": 155,
       "tobillo_dorsi.L": -45,
       "tobillo_dorsi.R": -45,
-      "hombro_flex.L": 120,
-      "hombro_flex.R": 120,
-      "muneca_ext.L": 75,
-      "muneca_ext.R": 75,
+      "hombro_flex.L": 160,
+      "hombro_flex.R": 160,
       "antebrazo_prono.L": 80,
-      "antebrazo_prono.R": 80
+      "antebrazo_prono.R": 80,
+      "lumbar_flex": 35,
+      "toracica_flex": 15,
+      "cervical_flex": 10,
+      "cervical_rot": 0
     },
+    "suelo": [
+      "lowerleg01.L",
+      "lowerleg02.L",
+      "lowerleg01.R",
+      "lowerleg02.R"
+    ],
     "asentar": [
       {
         "art": "@pitch",
+        "grupo": [
+          "foot.L",
+          "toenails",
+          "toe1-1.L",
+          "toe1-2.L",
+          "toe1-3.L",
+          "toe2-1.L",
+          "toe2-2.L",
+          "toe2-3.L",
+          "toe3-1.L",
+          "toe3-2.L",
+          "toe3-3.L",
+          "toe4-1.L",
+          "toe4-2.L",
+          "toe4-3.L",
+          "toe5-1.L",
+          "toe5-2.L",
+          "toe5-3.L",
+          "foot.R",
+          "toenails",
+          "toe1-1.R",
+          "toe1-2.R",
+          "toe1-3.R",
+          "toe2-1.R",
+          "toe2-2.R",
+          "toe2-3.R",
+          "toe3-1.R",
+          "toe3-2.R",
+          "toe3-3.R",
+          "toe4-1.R",
+          "toe4-2.R",
+          "toe4-3.R",
+          "toe5-1.R",
+          "toe5-2.R",
+          "toe5-3.R"
+        ],
+        "rango": [
+          -40,
+          40
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "hombro_flex.L",
         "grupo": [
           "lowerarm02.L",
           "wrist.L",
@@ -42,7 +94,16 @@
           "metacarpal1.L",
           "metacarpal2.L",
           "metacarpal3.L",
-          "metacarpal4.L",
+          "metacarpal4.L"
+        ],
+        "rango": [
+          -60,
+          25
+        ]
+      },
+      {
+        "art": "hombro_flex.R",
+        "grupo": [
           "lowerarm02.R",
           "wrist.R",
           "finger1-1.R",
@@ -66,8 +127,17 @@
           "metacarpal4.R"
         ],
         "rango": [
-          -25,
+          -60,
           25
+        ]
+      },
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "z": 0.035,
+        "rango": [
+          -60,
+          20
         ]
       }
     ]
@@ -75,26 +145,73 @@
   "ik": [
     {
       "cadena": "brazo.L",
-      "al_suelo": 0.03
+      "al_suelo": true
     },
     {
       "cadena": "brazo.R",
-      "al_suelo": 0.03
-    },
-    {
-      "cadena": "pierna.L"
-    },
-    {
-      "cadena": "pierna.R"
+      "al_suelo": true
     }
   ],
+  "reapoyar": {
+    "grupos": [
+      "lowerleg01.L",
+      "lowerleg02.L",
+      "lowerleg01.R",
+      "lowerleg02.R"
+    ]
+  },
+  "rom_pasivo": {
+    "rodilla_flex+": 165,
+    "cadera_flex+": 135
+  },
   "contactos": [
     {
       "grupo": [
         "lowerleg01.L",
-        "lowerleg02.L"
+        "lowerleg02.L",
+        "lowerleg01.R",
+        "lowerleg02.R"
       ],
-      "tol_cm": 3
+      "tol_cm": 2
+    },
+    {
+      "grupo": [
+        "foot.L",
+        "toenails",
+        "toe1-1.L",
+        "toe1-2.L",
+        "toe1-3.L",
+        "toe2-1.L",
+        "toe2-2.L",
+        "toe2-3.L",
+        "toe3-1.L",
+        "toe3-2.L",
+        "toe3-3.L",
+        "toe4-1.L",
+        "toe4-2.L",
+        "toe4-3.L",
+        "toe5-1.L",
+        "toe5-2.L",
+        "toe5-3.L",
+        "foot.R",
+        "toenails",
+        "toe1-1.R",
+        "toe1-2.R",
+        "toe1-3.R",
+        "toe2-1.R",
+        "toe2-2.R",
+        "toe2-3.R",
+        "toe3-1.R",
+        "toe3-2.R",
+        "toe3-3.R",
+        "toe4-1.R",
+        "toe4-2.R",
+        "toe4-3.R",
+        "toe5-1.R",
+        "toe5-2.R",
+        "toe5-3.R"
+      ],
+      "tol_cm": 2.5
     },
     {
       "grupo": [
@@ -141,7 +258,7 @@
         "metacarpal3.R",
         "metacarpal4.R"
       ],
-      "tol_cm": 2.5
+      "tol_cm": 2
     }
   ],
   "camara": {
@@ -157,80 +274,74 @@
     {
       "t": 0,
       "art": {
-        "lumbar_flex": 0
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0,
+        "rodilla_flex.L": 0,
+        "rodilla_flex.R": 0,
+        "cervical_flex": 0
       },
       "p": 0,
-      "fase": "concentrico",
-      "raiz": [
-        0,
-        0.0,
-        -0.0
-      ]
+      "fase": "concentrico"
     },
     {
       "t": 0.4,
       "art": {
-        "lumbar_flex": 0
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0,
+        "rodilla_flex.L": 0,
+        "rodilla_flex.R": 0,
+        "cervical_flex": 0
       },
       "p": 0,
-      "fase": "concentrico",
-      "raiz": [
-        0,
-        0.0,
-        -0.0
-      ]
+      "fase": "concentrico"
     },
     {
       "t": 1.9,
       "art": {
-        "lumbar_flex": 15
+        "cadera_flex.L": 5,
+        "cadera_flex.R": 5,
+        "rodilla_flex.L": 5,
+        "rodilla_flex.R": 5,
+        "cervical_flex": -6
       },
       "p": 1,
-      "fase": "isometrico",
-      "raiz": [
-        0,
-        0.22,
-        -0.18
-      ]
+      "fase": "isometrico"
     },
     {
       "t": 4.9,
       "art": {
-        "lumbar_flex": 15
+        "cadera_flex.L": 5,
+        "cadera_flex.R": 5,
+        "rodilla_flex.L": 5,
+        "rodilla_flex.R": 5,
+        "cervical_flex": -6
       },
       "p": 1,
-      "fase": "excentrico",
-      "raiz": [
-        0,
-        0.22,
-        -0.18
-      ]
+      "fase": "excentrico"
     },
     {
       "t": 6.4,
       "art": {
-        "lumbar_flex": 0
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0,
+        "rodilla_flex.L": 0,
+        "rodilla_flex.R": 0,
+        "cervical_flex": 0
       },
       "p": 0,
-      "fase": "concentrico",
-      "raiz": [
-        0,
-        0.0,
-        -0.0
-      ]
+      "fase": "concentrico"
     },
     {
       "t": 6.8,
       "art": {
-        "lumbar_flex": 0
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0,
+        "rodilla_flex.L": 0,
+        "rodilla_flex.R": 0,
+        "cervical_flex": 0
       },
       "p": 0,
-      "fase": "concentrico",
-      "raiz": [
-        0,
-        0.0,
-        -0.0
-      ]
+      "fase": "concentrico"
     }
   ],
   "musculos": {

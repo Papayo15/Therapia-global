@@ -7,19 +7,18 @@ Convención: el lado que trabaja es el derecho (R). Los ángulos de 'peak' son d
 sobre la posición base. Ejercicios marcados PENDIENTE requieren locomoción o
 posiciones de suelo complejas y se documentan en vez de generarse.
 """
+import math
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import FOOT, bipedo, cuadrupedia, iso, lateral, musculos, prono, rep, sedente, supino, write  # noqa: E402
+from common import FOOT, hand, plancha_lateral, keys_custom, bipedo, cuadrupedia, iso, lateral, musculos, prono, rep, sedente, supino, write  # noqa: E402
 
 PENDIENTES = {
-    "F-CAD-014": "Monster walk: locomoción lateral con banda (requiere ciclo de pasos con doble apoyo).",
-    "F-CAD-019": "Plancha Copenhagen corta: plancha lateral con rodilla sobre banco (posición de suelo compleja).",
-    "F-CAD-020": "Plancha Copenhagen larga: ídem con pie sobre banco.",
+    "F-CAD-019": "Plancha Copenhagen corta: requiere que el cuerpo cuelgue BAJO la pierna de arriba apoyada en el banco (apoyo superior + antebrazo); el asentado actual no converge.",
+    "F-CAD-020": "Plancha Copenhagen larga: ídem con el pie en el banco.",
     "F-CAD-024": "Rotación interna activa en 90/90: sedestación en suelo 90/90.",
     "F-CAD-025": "Transiciones 90/90 sin manos: cambio de lado continuo.",
-    "F-CAD-030": "Avión de cadera: equilibrio unipodal con rotación pélvica completa.",
 }
 
 
@@ -194,6 +193,52 @@ b["contactos"] = b["contactos"] + [{"grupo": "lowerleg01.R", "desde": 0, "hasta"
 hecho.append(spec("F-CAD-029", b, rep({"cadera_abd.R": 40}, up=1.3, hold=1.0, down=1.6), camara=[0.6, -1, 0.6]))
 
 print(f"Generadas {len(hecho)} fichas de cadera (+ F-CAD-007 ya existente).")
+# 030 Avión de cadera: apoyo unipodal izquierdo (IK), tronco inclinado y pierna derecha atrás; la pelvis rota abriéndose
+# (rotación externa de la cadera de apoyo) y vuelve. Brazos en cruz.
+b = bipedo(extra={"@pitch": 55, "cadera_flex.L": 58, "cadera_flex.R": -2, "rodilla_flex.L": 12, "hombro_abd.L": 80, "hombro_abd.R": 80,
+                  "cervical_flex": -25}, camara=(-1, -0.6, 0.35))
+b["ik"] = [{"cadena": "pierna.L", "pie_plano": True}]
+b["reapoyar"] = {"grupos": ["foot.L"]}
+b["contactos"] = [{"grupo": "foot.L"}]
+spec("F-CAD-030", b, rep({"@yaw": 28}, up=1.5, hold=0.8, down=1.6), lado="L", resaltar=("upperleg01.L",))
+
+# 014 Monster walk: semisentadilla con banda sobre las rodillas, pasos laterales a la derecha (sale el pie derecho,
+# sigue el izquierdo sin juntar los pies). 2 pares de pasos por ciclo; la cámara acompaña (loop exacto).
+W, T, H_ = 0.22, 1.25, 0.05
+b = bipedo(extra={"cadera_abd.L": 6, "cadera_abd.R": 6, "@pitch": 12, "hombro_flex.L": 25, "hombro_flex.R": 25,
+                  "codo_flex.L": 70, "codo_flex.R": 70}, camara=(0, -1, 0.25))
+b["ik"] = [{"cadena": "pierna.L", "pie_plano": True}, {"cadena": "pierna.R", "pie_plano": True}]
+b["contactos"] = [{"grupo": FOOT("L") + FOOT("R")}]
+pos = {"L": 0.0, "R": 0.0}
+ks, t = [], 0.0
+def kk(t, sw=None, fr=0.0):
+    ik = {}
+    for sd in ("L", "R"):
+        x = pos[sd] - (W * fr if sd == sw else 0)
+        z = H_ * math.sin(math.pi * fr) if sd == sw else 0.0
+        ik[f"pierna.{sd}"] = [round(x, 4), 0, round(z, 4)]
+    mid = (ik["pierna.L"][0] + ik["pierna.R"][0]) / 2
+    rx = [round(mid, 4), 0, -0.07]
+    ks.append({"t": round(t, 3), "raiz": rx, "ik": ik, "art": {}, "p": 0.8, "fase": "concentrico",
+               "polo": {"pierna.L": [rx[0], 0, 0], "pierna.R": [rx[0], 0, 0]}})
+kk(0.0)
+for sd in ("R", "L", "R", "L"):
+    kk(t + 0.5 * T * 0.8, sd, 0.5)
+    kk(t + T * 0.8, sd, 1.0)
+    pos[sd] -= W
+    t += T
+first = ks[0]
+adv = [-2 * W, 0, 0]
+last = {"t": round(4 * T, 3), "art": {}, "p": 0.8, "fase": "concentrico",
+        "raiz": [round(first["raiz"][0] + adv[0], 4), 0, first["raiz"][2]],
+        "ik": {c: [round(o[0] + adv[0], 4), 0, o[2]] for c, o in first["ik"].items()},
+        "polo": {c: [round(o[0] + adv[0], 4), 0, 0] for c, o in first["polo"].items()}}
+ks = [k for k in ks if k["t"] < last["t"] - 1e-6] + [last]
+s_ = {"id": "F-CAD-014", "duracion_s": last["t"], **b, "keys": ks, "avance": adv, "musculos": musculos("F-CAD-014", "R"),
+      "articulacion_resaltada": [{"hueso": "upperleg01.R"}],
+      "props": [{"tipo": "banda_elastica", "uso": "lazo_rodillas", "hueso": "upperleg02", "t": 0.85}], "variantes": ["gym", "casa"]}
+write(s_)
+
 print("Pendientes documentadas:", ", ".join(PENDIENTES))
 (Path(__file__).resolve().parents[3] / "data/motion_specs/_pendientes_cadera.json").write_text(
     json.dumps(PENDIENTES, ensure_ascii=False, indent=2))

@@ -10,10 +10,12 @@
       "antebrazo_prono.R": -80,
       "tobillo_dorsi.L": -30,
       "tobillo_dorsi.R": -30,
-      "hombro_flex.L": 80,
-      "hombro_flex.R": 80,
-      "codo_flex.L": 90,
-      "codo_flex.R": 90
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 95,
+      "codo_flex.R": 95,
+      "hombro_abd.L": 10,
+      "hombro_abd.R": 10
     },
     "asentar": [
       {
@@ -57,6 +59,14 @@
           30
         ]
       }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "pelvis.R",
+      "upperleg01.L",
+      "upperleg01.R",
+      "upperleg02.L",
+      "upperleg02.R"
     ]
   },
   "ik": [],
@@ -86,11 +96,35 @@
     "lente": 50,
     "margen": 1.1
   },
+  "resolver": {
+    "art": "@pitch",
+    "a": [
+      "lowerarm01.L",
+      "lowerarm02.L",
+      "lowerarm01.R",
+      "lowerarm02.R"
+    ],
+    "b": [
+      "pelvis.L",
+      "pelvis.R",
+      "upperleg02.L",
+      "upperleg02.R"
+    ],
+    "compensar": {
+      "cadera_flex.L": 1,
+      "cadera_flex.R": 1
+    },
+    "rango": [
+      -12,
+      12
+    ]
+  },
   "keys": [
     {
       "t": 0,
       "art": {
-        "lumbar_flex": 0
+        "lumbar_flex": 0,
+        "toracica_flex": 0
       },
       "p": 0,
       "fase": "concentrico"
@@ -98,7 +132,8 @@
     {
       "t": 0.4,
       "art": {
-        "lumbar_flex": 0
+        "lumbar_flex": 0,
+        "toracica_flex": 0
       },
       "p": 0,
       "fase": "concentrico"
@@ -106,7 +141,8 @@
     {
       "t": 1.9,
       "art": {
-        "lumbar_flex": -6
+        "lumbar_flex": -7,
+        "toracica_flex": 4
       },
       "p": 1,
       "fase": "isometrico"
@@ -114,7 +150,8 @@
     {
       "t": 4.9,
       "art": {
-        "lumbar_flex": -6
+        "lumbar_flex": -7,
+        "toracica_flex": 4
       },
       "p": 1,
       "fase": "excentrico"
@@ -122,7 +159,8 @@
     {
       "t": 6.4,
       "art": {
-        "lumbar_flex": 0
+        "lumbar_flex": 0,
+        "toracica_flex": 0
       },
       "p": 0,
       "fase": "concentrico"
@@ -130,7 +168,8 @@
     {
       "t": 6.8,
       "art": {
-        "lumbar_flex": 0
+        "lumbar_flex": 0,
+        "toracica_flex": 0
       },
       "p": 0,
       "fase": "concentrico"

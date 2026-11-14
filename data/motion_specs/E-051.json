@@ -145,6 +145,15 @@
         "id": "iliopsoas",
         "lado": "R"
       }
+    ],
+    "sostienen": [
+      {
+        "id": "gluteus_maximus",
+        "lado": "R"
+      },
+      {
+        "id": "rectus_abdominis"
+      }
     ]
   },
   "articulacion_resaltada": [],

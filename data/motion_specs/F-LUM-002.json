@@ -5,8 +5,8 @@
     "orientacion": "supino",
     "colchoneta": true,
     "angulos": {
-      "cadera_abd.L": 3,
-      "cadera_abd.R": 3,
+      "cadera_abd.L": -2,
+      "cadera_abd.R": -2,
       "antebrazo_prono.L": 80,
       "antebrazo_prono.R": 80,
       "cadera_flex.L": 50,

@@ -1,5 +1,6 @@
 """Plantillas compartidas para generar fichas de movimiento (data/motion_specs/*.json)."""
 import json
+import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -139,19 +140,67 @@ def iso(hold=3.0):
     return dur, [{"t": ti, "p": q, "fase": "isometrico"} for ti, q in zip(t, ps)]
 
 
-def musculos(item_id, lado=None, lado_elongan=None):
+# Sinergistas/estabilizadores que la biblioteca no lista y que SÍ trabajan (revisión clínica 2026-11-13).
+# "activos+" se suman a los activos (color por fase); "estabilizan" = isométricos (siempre rojo, menor intensidad).
+EXTRA_MUSCULOS = {
+    "F-ROD-005": {"estabilizan": ["rectus_abdominis", "gluteus_maximus", "erector_spinae_lumbar"]},
+    "F-ESC-020": {"activos+": ["latissimus_dorsi", "biceps_brachii", "deltoid_posterior"],
+                  "estabilizan": ["gluteus_maximus", "rectus_abdominis"]},
+    "F-HOM-040": {"activos+": ["triceps_brachii", "serratus_anterior"], "estabilizan": ["rectus_abdominis", "external_oblique"]},
+    "F-HOM-038": {"activos+": ["triceps_brachii"], "estabilizan": ["rectus_abdominis"]},
+    "F-ESC-015": {"estabilizan": ["rectus_abdominis", "external_oblique"]},
+    "F-HOM-020": {"activos+": ["biceps_brachii"], "estabilizan": ["rectus_abdominis"]},
+    "F-CAD-010": {"estabilizan": ["erector_spinae_lumbar", "gluteus_medius"]},
+    "F-LUM-010": {"estabilizan": ["rectus_abdominis"]},
+    "F-CER-015": {"estabilizan": ["external_oblique", "gluteus_medius"]},
+    "F-LUM-012": {"estabilizan": ["gluteus_medius"]},
+    "F-LUM-013": {"estabilizan": ["gluteus_medius"]},
+    "F-ROD-009": {"activos+": ["gluteus_maximus"], "estabilizan": ["erector_spinae_lumbar"]},
+    "F-LUM-007": {"estabilizan": ["rectus_abdominis", "external_oblique"]},
+}
+
+
+def musculos(item_id, lado=None, lado_elongan=None, sostienen=None):
+    """Roles musculares de la ficha. Reglas (para que los colores NUNCA se encimen):
+    - un músculo que está en activos NO puede estar en elongan del mismo lado: si hay lado, el elongado pasa al
+      lado opuesto (p.ej. inclinación lateral: trabaja el derecho, se estira el izquierdo); si es bilateral, se
+      quita de elongan (queda sólo en rojo).
+    - estabilizan/sostienen: isométricos en rojo suave."""
     it = BIB[item_id]
     out = {}
+    opp = {"L": "R", "R": "L"}
+    activos = set()
+    for rol, lista in it["musculos"].items():
+        if rol != "activos":
+            continue
+        for m in lista:
+            activos.update(m["ids"])
+    extra = EXTRA_MUSCULOS.get(item_id, {})
     for rol, lista in it["musculos"].items():
         sd = lado if rol != "elongan" else (lado_elongan or lado)
         seen, arr = set(), []
         for m in lista:
             for mid in m["ids"]:
-                if mid not in seen and not mid.startswith(("glenohumeral_capsule", "plantar_fascia", "iliotibial_band")):
-                    seen.add(mid)
-                    arr.append({"id": mid, "lado": sd} if sd else {"id": mid})
+                if mid in seen or mid.startswith(("glenohumeral_capsule", "plantar_fascia")):
+                    continue
+                seen.add(mid)
+                if rol == "elongan" and mid in activos:
+                    if lado in opp:                       # trabaja un lado → se estira el contrario
+                        arr.append({"id": mid, "lado": opp[lado] if sd in (None, lado) else sd})
+                    continue                              # bilateral: queda sólo como activo
+                arr.append({"id": mid, "lado": sd} if sd else {"id": mid})
         out[rol] = arr
-    return out
+    if extra.get("activos+"):
+        have = {m["id"] for m in out.get("activos", [])}
+        out.setdefault("activos", []).extend({"id": m, "lado": lado} if lado else {"id": m} for m in extra["activos+"] if m not in have)
+    used = {m["id"] for v in out.values() for m in v}
+    est = [m for m in extra.get("estabilizan", []) if m not in used]
+    if est:
+        out["estabilizan"] = [{"id": m} for m in est]
+    if sostienen:
+        out["sostienen"] = [m if isinstance(m, dict) else {"id": m} for m in sostienen
+                            if (m if isinstance(m, str) else m["id"]) not in used]
+    return {k: v for k, v in out.items() if v}
 
 
 UPPER_CAM = ["head", "neck01", "neck02", "neck03", "jaw", "spine01", "spine02", "clavicle.L", "clavicle.R",
@@ -239,3 +288,52 @@ def plancha_lateral(rodillas=False):
                      "asentar": [{"art": "@roll", "grupo": apoyo, "rango": [-35, 35], "reapoyar": True}]},
             "ik": [], "contactos": [{"grupo": antebrazo}, {"grupo": apoyo, "tol_cm": 2}],
             "camara": {"dir": [0.1, -1, 0.3], "lente": 50, "margen": 1.1}}
+
+
+def caminar(L=0.36, T=1.25, pasos=4, alto=0.07, brazos=15, pie_plano=True, extra_art=None, lateral=False):
+    """Ciclo de marcha en loop (avance por ciclo = pasos·L). Pies con IK: el de apoyo queda fijo, el que oscila se
+    levanta 'alto' y avanza 2L. Devuelve (plantilla_ik, keys, avance). Dirección: hacia −Y (adelante)."""
+    dur = round(pasos * T, 3)
+    adv = pasos * L
+    ax = 0 if lateral else 1
+    def vec(v):
+        return [v, 0, 0] if lateral else [0, -v, 0]
+    pos = {"R": -L, "L": 0.0}                # posiciones (en metros de avance) de cada pie; R empieza atrás
+    keys = []
+    order = ["R", "L"] * (pasos // 2)
+    def key(t, swing=None, frac=0.0, p_=0.6, fase="concentrico"):
+        ik = {}
+        for s in ("L", "R"):
+            d = pos[s]
+            z = 0.0
+            if s == swing:
+                d = pos[s] + 2 * L * frac
+                z = alto * math.sin(math.pi * frac)
+            v = vec(d)
+            v[2] = z
+            ik[f"pierna.{s}"] = [round(x, 4) for x in v]
+        root = vec(-L / 2 + adv * (t / dur))
+        root[2] = round(0.012 * math.sin(2 * math.pi * t / T * 1.0 - math.pi / 2) if swing else 0.0, 4)
+        sw = 1 if swing == "L" else -1
+        art = {"hombro_flex.L": -sw * brazos * math.sin(math.pi * frac) if swing else 0,
+               "hombro_flex.R": sw * brazos * math.sin(math.pi * frac) if swing else 0}
+        art.update(extra_art or {})
+        rxy = [round(root[0], 4), round(root[1], 4), 0.0]
+        keys.append({"t": round(t, 3), "raiz": [round(x, 4) for x in root], "ik": ik, "art": art, "p": p_, "fase": fase,
+                     "polo": {"pierna.L": rxy, "pierna.R": rxy}})
+    t = 0.0
+    for s in order:
+        for frac in (0.0, 0.5, 1.0) if not keys else (0.5, 1.0):
+            key(t + T * frac * 0.85, s, frac)
+        pos[s] += 2 * L if False else 0
+        pos[s] = pos[s] + 2 * L
+        t += T
+    # última key = primera desplazada en 'adv' (loop exacto)
+    first = keys[0]
+    last = {"t": dur, "art": dict(first["art"]), "p": first["p"], "fase": first["fase"],
+            "raiz": [round(a + b, 4) for a, b in zip(first["raiz"], vec(adv))],
+            "ik": {c: [round(a + b, 4) for a, b in zip(o, vec(adv))] for c, o in first["ik"].items()},
+            "polo": {c: [round(a + b, 4) for a, b in zip(o, vec(adv))] for c, o in first["polo"].items()}}
+    keys = [k for k in keys if k["t"] < dur - 1e-6] + [last]
+    ik = [{"cadena": "pierna.L", "pie_plano": pie_plano}, {"cadena": "pierna.R", "pie_plano": pie_plano}]
+    return ik, keys, vec(adv)

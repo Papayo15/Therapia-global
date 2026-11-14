@@ -5,8 +5,8 @@
     "orientacion": "prono",
     "colchoneta": true,
     "angulos": {
-      "hombro_flex.L": 90,
-      "hombro_flex.R": 90,
+      "hombro_flex.L": 78,
+      "hombro_flex.R": 78,
       "codo_flex.L": 0,
       "codo_flex.R": 0,
       "antebrazo_prono.L": 80,
@@ -14,10 +14,12 @@
       "tobillo_dorsi.L": 25,
       "tobillo_dorsi.R": 25,
       "cervical_rot": 0,
-      "hombro_abd.L": 15,
-      "hombro_abd.R": 15,
-      "muneca_ext.L": 75,
-      "muneca_ext.R": 75
+      "hombro_abd.L": 12,
+      "hombro_abd.R": 12,
+      "muneca_ext.L": 80,
+      "muneca_ext.R": 80,
+      "dedos_ext.L": 12,
+      "dedos_ext.R": 12
     },
     "suelo": [
       "lowerarm02.L",
@@ -105,6 +107,28 @@
         "rango": [
           -25,
           25
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "muneca_ext.L",
+        "grupo": [
+          "wrist.L"
+        ],
+        "rango": [
+          -25,
+          15
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "muneca_ext.R",
+        "grupo": [
+          "wrist.R"
+        ],
+        "rango": [
+          -25,
+          15
         ],
         "reapoyar": true
       }
@@ -274,6 +298,12 @@
       },
       {
         "id": "coracobrachialis"
+      },
+      {
+        "id": "triceps_brachii"
+      },
+      {
+        "id": "serratus_anterior"
       }
     ],
     "elongan": [
@@ -288,6 +318,14 @@
       },
       {
         "id": "infraspinatus"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "rectus_abdominis"
+      },
+      {
+        "id": "external_oblique"
       }
     ]
   },

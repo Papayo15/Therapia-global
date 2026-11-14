@@ -551,6 +551,8 @@ def muscle_weight(rol, mid):
         return 1.0
     if rol == "elongan":
         return 0.6
+    if rol in ("estabilizan", "sostienen"):
+        return 0.5
     return 1.0 if mid == _principal else 0.45
 
 
@@ -885,6 +887,10 @@ def prop_kind(p, override=None):
     return override or EQUIV.get(p, {}).get("casa", p)
 
 
+def hand_groups(s_):
+    return [f"wrist.{s_}"] + [f"finger{n}-{k}.{s_}" for n in range(1, 6) for k in (1, 2, 3)] + [f"metacarpal{n}.{s_}" for n in range(1, 5)]
+
+
 def bone_point(bone, offset, side=None):
     e = bpy.data.objects.new(f"P_{bone}", None)
     scene.collection.objects.link(e)
@@ -912,6 +918,10 @@ def strap(name, ea, eb, kind):
 
 
 STRAPS = []
+BALLS = []
+BENCH_TOPS = {}
+HEAD_BAND_T = 0.62
+HEAD_RING = []          # (aro, [puntos de su línea media en coordenadas del objeto])      # altura de la banda en la cabeza (frente, por encima de las cejas)
 HEAD_BANDS = []   # (anclaje, empty, índice): la banda rodea la cabeza y sale por las tangentes
 GRIP = []      # (empty_objetivo_mano, función_posición(t))
 for pr in SPEC.get("props", []):
@@ -954,7 +964,26 @@ for pr in SPEC.get("props", []):
         elif ax.z < 0.5:                      # anclaje bajo → pata de mesa
             add_box("Pata_mesa", (0.06, 0.06, 0.74), (ax.x, ax.y, 0.37), (0.62, 0.48, 0.34))
         else:
-            add_box("Mueble", (0.5, 0.4, 0.75), (ax.x, ax.y + 0.2 * (1 if pr["anclaje_rel"][1] > 0 else -1), 0.375), (0.70, 0.60, 0.48))
+            dh = Vector((pr["anclaje_rel"][0], pr["anclaje_rel"][1], 0))
+            dh = dh.normalized() if dh.length > 1e-6 else Vector((0, 1, 0))
+            yaw = math.atan2(dh.y, dh.x)
+            if ax.z >= 1.6:
+                # anclaje sobre la cabeza → MARCO DE PUERTA que enmarca a la persona: dintel a la altura del anclaje
+                # (la banda se engancha arriba) y jambas a los lados; nunca tapa el cuerpo.
+                if "Marco_dintel" not in bpy.data.objects:           # un solo marco aunque haya dos bandas
+                    cx, cy = float(eval_coords()[BODY_MASK][:, 0].mean()), ax.y
+                    add_box("Marco_dintel", (1.6, 0.10, 0.08), (cx, cy, ax.z + 0.04), (0.78, 0.70, 0.60))
+                    for jx in (-0.76, 0.76):
+                        add_box("Marco_jamba", (0.08, 0.10, ax.z + 0.08), (cx + jx, cy, (ax.z + 0.08) / 2), (0.78, 0.70, 0.60))
+            else:
+                # anclaje medio → PUERTA detrás del anclaje, de cara a la persona: la banda sale de la manija
+                ctr = ax + dh * 0.03
+                bpy.ops.mesh.primitive_cube_add(size=1, location=(ctr.x, ctr.y, 2.05 / 2), rotation=(0, 0, yaw))
+                door = bpy.context.active_object
+                door.name, door.scale, door.color = "Puerta", (0.04, 0.85, 2.05), (0.78, 0.70, 0.60, 1)
+                bpy.ops.mesh.primitive_cube_add(size=1, location=(ax.x, ax.y, ax.z), rotation=(0, 0, yaw))
+                h = bpy.context.active_object
+                h.name, h.scale, h.color = "Manija", (0.06, 0.12, 0.02), (0.55, 0.55, 0.55, 1)
     elif pr["uso"] == "lazo_rodillas":
         # banda/cinturón alrededor de los muslos, justo encima de las rodillas
         pts = []
@@ -1055,8 +1084,8 @@ for pr in SPEC.get("props", []):
         b = rig.pose.bones[pr["hueso"]]
         pt = rig.matrix_world @ b.head.lerp(b.tail, pr.get("t", 1.0))
         r = pr.get("r", 0.07)
-        bpy.ops.mesh.primitive_cylinder_add(radius=r, depth=0.42, location=(pt.x, pt.y, SURF + r),
-                                            rotation=(0, math.radians(90), 0))
+        rot_ = (math.radians(90), 0, 0) if pr.get("eje") == "y" else (0, math.radians(90), 0)
+        bpy.ops.mesh.primitive_cylinder_add(radius=r, depth=0.42, location=(pt.x, pt.y, SURF + r), rotation=rot_)
         bpy.context.active_object.name = "Rollo"
         bpy.context.active_object.color = (0.92, 0.88, 0.80, 1) if kind.startswith("toalla") else (0.45, 0.50, 0.58, 1)
     elif pr["uso"] == "bajo_pie":
@@ -1086,17 +1115,31 @@ for pr in SPEC.get("props", []):
     elif pr["uso"] == "mesa_antebrazo":
         co_ = eval_coords()
         s_ = pr["lado"]
-        idx = [i for g in (f"lowerarm01.{s_}", f"lowerarm02.{s_}") for i in _GROUP_VERTS[g]]
+        grp = [f"lowerarm01.{s_}", f"lowerarm02.{s_}"]
+        if pr.get("mano_apoyada"):                # ejercicios de dedos: la palma descansa SOBRE la mesa
+            grp += [f"wrist.{s_}"] + [f"metacarpal{n}.{s_}" for n in range(1, 5)]
+        idx = [i for g in grp for i in _GROUP_VERTS.get(g, [])]
         top = float(co_[idx, 2].min())
         wr = rig.matrix_world @ rig.pose.bones[f"lowerarm02.{s_}"].tail
         el = rig.matrix_world @ rig.pose.bones[f"lowerarm01.{s_}"].head
         y_edge = wr.y + 0.02                      # borde de la mesa justo en la muñeca: la mano queda libre
-        add_box("Mesa", (0.9, 0.6, 0.04), (wr.x, y_edge + 0.30, top - 0.02), (0.70, 0.58, 0.44))
+        if pr.get("mano_apoyada"):
+            idx_h = [i for g in hand_groups(s_) for i in _GROUP_VERTS.get(g, [])]
+            y_edge = float(co_[idx_h, 1].min()) - 0.12
+        # mesa angosta y corrida hacia afuera del lado que trabaja: el otro brazo (colgando) no la atraviesa
+        mx = wr.x + (0.12 if wr.x > 0 else -0.12)
+        add_box("Mesa", (0.55, 0.6, 0.04), (mx, y_edge + 0.30, top - 0.02), (0.70, 0.58, 0.44))
         for lx in (-1, 1):
-            add_box("Mesa_pata", (0.05, 0.05, top - 0.04), (wr.x + lx * 0.40, y_edge + 0.55, (top - 0.04) / 2), (0.62, 0.50, 0.38))
+            add_box("Mesa_pata", (0.05, 0.05, top - 0.04), (mx + lx * 0.23, y_edge + 0.55, (top - 0.04) / 2), (0.62, 0.50, 0.38))
     elif pr["uso"] == "barra_manos":
-        a = rig.matrix_world @ rig.pose.bones["wrist.L"].tail
-        b = rig.matrix_world @ rig.pose.bones["wrist.R"].tail
+        # la barra pasa por DENTRO del puño (centro de nudillos + primeras falanges), no por la muñeca
+        co_ = eval_coords()
+        fist = {}
+        for s_ in ("L", "R"):
+            gi = [i for g in [f"metacarpal{n}.{s_}" for n in range(1, 5)] + [f"finger{n}-{k}.{s_}" for n in range(2, 6) for k in (1, 2)]
+                  for i in _GROUP_VERTS.get(g, [])]
+            fist[s_] = Vector(co_[gi].mean(0).tolist())
+        a, b = fist["L"], fist["R"]
         c = (a + b) / 2
         bpy.ops.mesh.primitive_cylinder_add(radius=0.016, depth=1.4, location=c, rotation=(0, math.radians(90), 0))
         bpy.context.active_object.name, bpy.context.active_object.color = "Barra", (0.40, 0.40, 0.42, 1)
@@ -1143,7 +1186,7 @@ for pr in SPEC.get("props", []):
         # banda que rodea la cabeza: dos tramos desde puntos de la piel hasta el anclaje
         bvh_c = _bvh_now()
         hb = rig.pose.bones["head"]
-        hc = rig.matrix_world @ hb.head.lerp(hb.tail, 0.45)
+        hc = rig.matrix_world @ hb.head.lerp(hb.tail, HEAD_BAND_T)
         anchor = bpy.data.objects.new("Anclaje", None)
         scene.collection.objects.link(anchor)
         anchor.location = hc + Vector(pr["anclaje_rel"])
@@ -1155,6 +1198,43 @@ for pr in SPEC.get("props", []):
             e.location = (hit[0] if hit[0] else hc) + dirw * 0.01   # provisional; se recalcula por frame (tangentes)
             strap(f"Banda_{n}", e, anchor, kind)
             HEAD_BANDS.append((anchor, e, n))
+        # aro de la banda alrededor de la cabeza (sigue a la cabeza): sin él sólo se veían dos tramos sueltos
+        _ax = (rig.matrix_world.to_3x3() @ (hb.tail - hb.head)).normalized()
+        _u = _ax.orthogonal().normalized()
+        _v = _ax.cross(_u)
+        w_, th_, col_ = PROP_STYLE.get(kind, PROP_STYLE["banda_elastica"])
+        ring_v, ring_f, NR = [], [], 72
+        # contorno real del cráneo a esa altura: vértices de piel de la cabeza en una franja de ±1,2 cm
+        _co = eval_coords()
+        _hi = np.array([i for i in _GROUP_VERTS["head"] if BODY_MASK[i]])
+        _rel = _co[_hi] - np.array(hc)
+        _h = _rel @ np.array(_ax)
+        _sl = _rel[np.abs(_h) < 0.012]
+        _ang = np.arctan2(_sl @ np.array(_v), _sl @ np.array(_u))
+        _rad = np.linalg.norm(_sl - np.outer(_sl @ np.array(_ax), np.array(_ax)), axis=1)
+        _bins = np.full(NR, np.nan)
+        for a__, r__ in zip(((_ang + math.pi) / (2 * math.pi) * NR).astype(int) % NR, _rad):
+            _bins[a__] = r__ if np.isnan(_bins[a__]) else max(_bins[a__], r__)
+        _ok = ~np.isnan(_bins)
+        _bins = np.interp(np.arange(NR), np.arange(NR)[_ok], _bins[_ok], period=NR)
+        for k_ in range(NR):
+            a_ = 2 * math.pi * k_ / NR - math.pi
+            d_ = _u * math.cos(a_) + _v * math.sin(a_)
+            p_ = hc + d_ * (float(_bins[k_]) + 0.012)
+            ring_v += [p_ - _ax * (w_ / 2), p_ + _ax * (w_ / 2)]
+        for k_ in range(NR):
+            a0, a1 = 2 * k_, 2 * ((k_ + 1) % NR)
+            ring_f.append((a0, a1, a1 + 1, a0 + 1))
+        _me = bpy.data.meshes.new("Banda_aro")
+        _me.from_pydata([tuple(v) for v in ring_v], [], ring_f)
+        aro = bpy.data.objects.new("Banda_aro", _me)
+        scene.collection.objects.link(aro)
+        aro.color = (*col_, 1)
+        aro.modifiers.new("Grosor", "SOLIDIFY").thickness = max(th_, 0.003)
+        aro.parent, aro.parent_type, aro.parent_bone = rig, "BONE", "head"
+        update()
+        aro.matrix_parent_inverse = (rig.matrix_world @ rig.pose.bones["head"].matrix @ Matrix.Translation((0, rig.pose.bones["head"].length, 0))).inverted()
+        HEAD_RING.append((aro, [(ring_v[2 * k_] + ring_v[2 * k_ + 1]) / 2 for k_ in range(NR)]))
         ax = anchor.location
         if args.variant == "gym":
             bpy.ops.mesh.primitive_cylinder_add(radius=0.03, depth=2.2, location=(ax.x, ax.y, 1.1))
@@ -1162,26 +1242,108 @@ for pr in SPEC.get("props", []):
         else:
             add_box("Puerta", (0.85, 0.04, 2.05) if abs(pr["anclaje_rel"][1]) > abs(pr["anclaje_rel"][0]) else (0.04, 0.85, 2.05),
                     (ax.x, ax.y, 1.025), (0.78, 0.70, 0.60))
+    elif pr["uso"] == "en_boca":
+        # depresor lingual entre los incisivos: sale hacia delante de la boca y sigue a la mandíbula
+        co_ = eval_coords()
+        li = [i for g in ("lips", "teeth", "tongue") for i in _GROUP_VERTS.get(g, [])] or _GROUP_VERTS["jaw"]
+        pts_ = co_[li]
+        front = pts_[pts_[:, 1].argmin()]                 # punto más anterior de la boca (la cara mira a −Y)
+        mouth = pts_.mean(0)
+        bpy.ops.mesh.primitive_cube_add(size=1)
+        dep = bpy.context.active_object
+        L_ = 0.15
+        for v in dep.data.vertices:
+            v.co = Vector((v.co.x * 0.018, v.co.y * L_, v.co.z * 0.002))
+        dep.name, dep.color = "Depresor", (0.85, 0.75, 0.55, 1)
+        dep.parent, dep.parent_type, dep.parent_bone = rig, "BONE", "jaw"
+        update()
+        dep.matrix_world = Matrix.Translation(Vector((float(mouth[0]), float(front[1]) - L_ / 2 + 0.03, float(mouth[2]))))
+    elif pr["uso"] == "banco_bajo_pie":
+        # banco/silla bajo el empeine (o la planta) del pie indicado, a la altura que deja la pose base
+        co_ = eval_coords()
+        g_ = pr.get("grupo") or ([f"foot.{pr['lado']}"] + [f"toe{n}-1.{pr['lado']}" for n in range(1, 6)])
+        idx = [i for g in g_ for i in _GROUP_VERTS.get(g, [])]
+        top = float(co_[idx, 2].min())
+        fx, fy = float(co_[idx, 0].mean()), float(co_[idx, 1].mean())
+        BENCH_TOPS[pr["lado"]] = top
+        add_box("Banco", (0.40, pr.get("largo", 0.40), top), (fx, fy + pr.get("dy", 0.08), top / 2), (0.30, 0.30, 0.34))
+    elif pr["uso"] == "arroz_mano":
+        # recipiente con arroz alrededor de la mano apoyada: el arroz cubre hasta media altura de los dedos
+        co_ = eval_coords()
+        s_ = pr.get("lado", "R")
+        idx = [i for g in hand_groups(s_) if not g.startswith("wrist") for i in _GROUP_VERTS.get(g, [])]
+        pts_ = co_[idx]
+        cx, cy = float(pts_[:, 0].mean()), float(pts_[:, 1].mean())
+        z0 = float(pts_[:, 2].min()) - 0.004
+        zt = z0 + float(np.ptp(pts_[:, 2])) * 0.6
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.15, depth=zt - z0 + 0.02, location=(cx, cy, (z0 + zt + 0.02) / 2))
+        bowl = bpy.context.active_object
+        bowl.name, bowl.color = "Recipiente", (0.85, 0.85, 0.88, 1)
+        sol = bowl.modifiers.new("Pared", "SOLIDIFY")
+        sol.thickness = 0.008
+        bpy.ops.object.mode_set(mode="EDIT")
+        import bmesh as _bm
+        bmx = _bm.from_edit_mesh(bowl.data)
+        for f_ in [f for f in bmx.faces if f.normal.z > 0.9]:
+            bmx.faces.remove(f_)
+        _bm.update_edit_mesh(bowl.data)
+        bpy.ops.object.mode_set(mode="OBJECT")
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.142, depth=0.004, location=(cx, cy, zt))
+        rice = bpy.context.active_object
+        rice.name, rice.color = "Arroz", (0.95, 0.93, 0.85, 1)
+    elif pr["uso"] == "balon_vuelo":
+        # balón en la(s) mano(s); se suelta, va a la pared (rebote) y vuelve a la mano: se anima después de las keys
+        bpy.ops.mesh.primitive_uv_sphere_add(radius=pr.get("r", 0.1))
+        ball = bpy.context.active_object
+        ball.name, ball.color = "Balon", (0.55, 0.30, 0.25, 1)
+        cs = []
+        for s_, inf in zip(pr["manos"], (1.0, 0.5)):
+            c = ball.constraints.new("COPY_LOCATION")
+            c.target, c.subtarget, c.head_tail, c.influence = rig, f"wrist.{s_}", 1.0, inf
+            cs.append(c)
+        BALLS.append((ball, cs, pr))
     elif pr["uso"] == "caja":
         add_box(pr.get("nombre", "Caja"), pr["tam"], pr["pos"], tuple(pr.get("color", (0.55, 0.55, 0.58))))
     elif pr["uso"] == "rollo_codo":
         o_bone = f"lowerarm01.{pr['lado']}"
-        bpy.ops.mesh.primitive_cylinder_add(radius=0.035, depth=0.16)
+        # toalla DOBLADA (no un cilindro): 4 cm de grosor entre codo y costado, bordes redondeados
+        bpy.ops.mesh.primitive_cube_add(size=1)
         roll = bpy.context.active_object
+        for v in roll.data.vertices:
+            v.co = Vector((v.co.x * 0.045, v.co.y * 0.13, v.co.z * 0.17))
+        bv = roll.modifiers.new("Bisel", "BEVEL")
+        bv.width, bv.segments = 0.015, 4
         roll.name, roll.color = "Rollo_toalla", (0.92, 0.88, 0.80, 1)
         roll.rotation_euler = (math.radians(90), 0, 0)
         roll.parent, roll.parent_type, roll.parent_bone = rig, "BONE", o_bone
         update()
         hp = rig.matrix_world @ rig.pose.bones[o_bone].head
         sx = 1 if pr["lado"] == "L" else -1
-        roll.matrix_world = Matrix.Translation(hp + Vector((-sx * 0.05, 0, 0))) @ Matrix.Rotation(math.radians(90), 4, "X")
+        roll.matrix_world = Matrix.Translation(hp + Vector((-sx * 0.045, 0, 0.04)))
 
 # ─── Animación ───────────────────────────────────────────────────────────────
 BASE_LOC = rig.location.copy()
 keys = SPEC["keys"]
+RESOLVER_REF = {}
 assert keys[0]["t"] == 0 and abs(keys[-1]["t"] - DUR) < 1e-6, "keys debe cubrir 0..duracion"
+AVANCE = Vector(SPEC.get("avance", (0, 0, 0)))   # locomoción: desplazamiento por ciclo (la cámara acompaña)
+
+
+def _menos_avance(v, k_):
+    if v is None or not SPEC.get("avance"):
+        return v
+    if k_ == "raiz":
+        return [round(a - b, 6) for a, b in zip(v, AVANCE)]
+    if k_ in ("ik", "polo"):
+        return {c: [round(a - b, 6) for a, b in zip(o, AVANCE)] for c, o in v.items()}
+    return v
+
+
 for k in ("art", "pivote_x", "p", "raiz", "ik", "polo"):
-    assert keys[0].get(k) == keys[-1].get(k), f"Loop: la primera y la última key deben coincidir en '{k}'"
+    a0 = keys[0].get(k)
+    a1 = _menos_avance(keys[-1].get(k), k)
+    assert (a0 == a1) or (SPEC.get("avance") and k in ("raiz", "ik", "polo") and json.dumps(a0) == json.dumps(a1)), \
+        f"Loop: la primera y la última key deben coincidir en '{k}'"
 
 for k in keys:
     fr = frame_of(k["t"])
@@ -1200,12 +1362,86 @@ for k in keys:
             if py else Matrix.Identity(3)
         for bname in ([cr] if isinstance(cr, str) else (cr or [])):
             EXTRA_ROT[bname] = Matrix.Rotation(math.radians(-px), 3, "X") @ inv
+    if SPEC.get("resolver"):
+        # Por key: se busca x (grados de @pitch/@roll) con articulaciones compensadas (p.ej. cadera −x para que los
+        # muslos no cambien de dirección) tal que los apoyos "a" y "b" toquen a la vez; "b" no se desliza.
+        rv = SPEC["resolver"]
+        comp = rv.get("compensar", {})
+        idx_b = np.array(sorted({i for g in rv["b"] for i in _GROUP_VERTS[g]}))
+
+        def _pose_x(x):
+            a2 = dict(ang)
+            a2[rv.get("art", "@pitch")] = a2.get(rv.get("art", "@pitch"), 0) + x
+            for j, fac in comp.items():
+                a2[j] = a2.get(j, 0) + fac * x
+            apply_pose(a2)
+            rig.location = BASE_LOC.copy()
+            update()
+            co_ = eval_coords()
+            rig.location.z += rv.get("zb", SURF) - group_min_z(co_, rv["b"])
+            if RESOLVER_REF.get("b") is not None:
+                cb = co_[idx_b, :2].mean(0)
+                rig.location.x += float(RESOLVER_REF["b"][0] - cb[0])
+                rig.location.y += float(RESOLVER_REF["b"][1] - cb[1])
+            update()
+            co_ = eval_coords()
+            return a2, (group_min_z(co_, rv["a"]) - rv.get("za", SURF))
+
+        lo, hi = rv.get("rango", [-25, 25])
+        flo, fhi = _pose_x(lo)[1], _pose_x(hi)[1]
+        if flo * fhi > 0:
+            xs = lo if abs(flo) < abs(fhi) else hi
+        else:
+            for _ in range(20):
+                mid = (lo + hi) / 2
+                fm = _pose_x(mid)[1]
+                if fm * flo > 0:
+                    lo, flo = mid, fm
+                else:
+                    hi = mid
+            xs = (lo + hi) / 2
+        ang, _ = _pose_x(xs)
+        if RESOLVER_REF.get("b") is None:
+            RESOLVER_REF["b"] = eval_coords()[idx_b, :2].mean(0)
+        k["_resuelto"] = round(xs, 2)
+        rig.keyframe_insert("location", frame=fr)
+        rig.keyframe_insert("rotation_euler", frame=fr)
+    for ak in SPEC.get("asentar_keys", []):
+        # Por key: corrige UNA articulación para que un grupo siga tocando la superficie (p.ej. la mano que se
+        # desliza por la colchoneta durante un arco de aducción).
+        if not SPEC.get("resolver"):
+            rig.location = BASE_LOC + Vector(k.get("raiz", (0, 0, 0)))
+        grp_ = ak["grupo"] if isinstance(ak["grupo"], list) else [ak["grupo"]]
+
+        def _fa(x):
+            a2 = dict(ang)
+            a2[ak["art"]] = a2.get(ak["art"], 0) + x
+            apply_pose(a2)
+            update()
+            return group_min_z(eval_coords(), grp_) - ak.get("z", SURF)
+
+        lo, hi = ak.get("rango", [-20, 20])
+        if ak.get("solo_bajo") and _fa(0) >= 0:      # sólo corrige si el grupo ATRAVIESA la superficie
+            continue
+        flo, fhi = _fa(lo), _fa(hi)
+        if flo * fhi > 0:
+            xa = lo if abs(flo) < abs(fhi) else hi
+        else:
+            for _ in range(18):
+                mid = (lo + hi) / 2
+                fm = _fa(mid)
+                if fm * flo > 0:
+                    lo, flo = mid, fm
+                else:
+                    hi = mid
+            xa = (lo + hi) / 2
+        ang[ak["art"]] = ang.get(ak["art"], 0) + xa
     apply_pose(ang)
     for pb in rig.pose.bones:
         pb.keyframe_insert("rotation_quaternion", frame=fr)
         if pb.name == "jaw":
             pb.keyframe_insert("location", frame=fr)
-    if "raiz" in k or any(j.startswith("@") for j in k.get("art", {})) or SPEC.get("reapoyar"):
+    if not SPEC.get("resolver") and ("raiz" in k or any(j.startswith("@") for j in k.get("art", {})) or SPEC.get("reapoyar")):
         rig.location = BASE_LOC + Vector(k.get("raiz", (0, 0, 0)))
         if SPEC.get("reapoyar"):
             update()
@@ -1234,7 +1470,8 @@ for k in keys:
     p = k["p"]
     fase = k.get("fase", "concentrico")
     for obj, rol in MUSCLE_OBJS:
-        col = COLORS["elongacion"] if rol in ("elongan", "estirados") else COLORS[fase]
+        col = COLORS["elongacion"] if rol in ("elongan", "estirados") else \
+            COLORS["isometrico"] if rol in ("estabilizan", "sostienen") else COLORS[fase]
         w = p * MUSCLE_INFO[obj]["peso"]
         obj.color = (col[0] * w, col[1] * w, col[2] * w, 1)
         obj.keyframe_insert("color", frame=fr)
@@ -1252,6 +1489,33 @@ if SPEC.get("reapoyar"):
         rig.location.z += ra.get("z", SURF) - group_min_z(eval_coords(), ra["grupos"])
         rig.keyframe_insert("location", frame=fr)
 
+# Balón en vuelo: sujeto a la mano salvo entre 'suelta' y 'atrapa'; en el vuelo va en línea a la pared y vuelve.
+for ball, cs, pr in BALLS:
+    v = pr["vuelo"]
+    f0, f1 = frame_of(v["suelta"]), frame_of(v["atrapa"])
+    fm = (f0 + f1) // 2
+    scene.frame_set(f0)
+    p0 = ball.matrix_world.translation.copy()
+    scene.frame_set(f1)
+    p1 = ball.matrix_world.translation.copy()
+    pw = p0 + Vector(v["pared"])
+    for c in cs:
+        w = c.influence
+        for fr, val in ((1, w), (f0, w), (f0 + 1, 0.0), (f1 - 1, 0.0), (f1, w), (FRAME_END + 1, w)):
+            c.influence = val
+            c.keyframe_insert("influence", frame=fr)
+    for fr, loc in ((f0 + 1, p0), (fm, pw), (f1 - 1, p1)):
+        ball.location = loc
+        ball.keyframe_insert("location", frame=fr)
+    for fc in ball.animation_data.action.fcurves:
+        for kp in fc.keyframe_points:
+            kp.interpolation = "LINEAR" if fc.data_path == "location" else "CONSTANT"
+    if pr.get("pared_visible", True):
+        add_box("Pared_rebote", (1.6, 0.06, 2.4) if abs(v["pared"][1]) >= abs(v["pared"][0]) else (0.06, 1.6, 2.4),
+                (pw.x + (0.06 if v["pared"][0] > 0 else -0.06) * (abs(v["pared"][0]) > abs(v["pared"][1])),
+                 pw.y + (0.06 if v["pared"][1] > 0 else -0.06) * (abs(v["pared"][1]) >= abs(v["pared"][0])), 1.2),
+                (0.86, 0.86, 0.84))
+
 # Interpolación suave tipo "ease" (sin rebotes) en todas las curvas.
 for ob in [rig, pivot] + [o for o, _ in MUSCLE_OBJS] + JOINT_OBJS + list(IK_TARGETS.values()) + [p for p, _ in POLES.values()]:
     if ob and ob.animation_data and ob.animation_data.action:
@@ -1260,36 +1524,87 @@ for ob in [rig, pivot] + [o for o, _ in MUSCLE_OBJS] + JOINT_OBJS + list(IK_TARG
                 kp.interpolation = "BEZIER"
                 kp.handle_left_type = kp.handle_right_type = "AUTO_CLAMPED"
 
+# Apoyo doble: en cada frame se inclina el cuerpo entero (eje @pitch/@roll) hasta que DOS apoyos toquen a la vez
+# (p.ej. manos y rodillas en gato-camello, antebrazos y pelvis en esfinge). El apoyo "b" queda fijo en el suelo
+# (no se desliza): la rotación pivota sobre él.
+if SPEC.get("apoyo_doble"):
+    ad = SPEC["apoyo_doble"]
+    ax_i = {"@pitch": 0, "@roll": 1, "@yaw": 2}[ad.get("eje", "@pitch")]
+    ga, gb = ad["a"], ad["b"]
+    za, zb = ad.get("za", SURF), ad.get("zb", SURF)
+    lo0, hi0 = ad.get("rango", [-20, 20])
+    idx_b = np.array(sorted({i for g in gb for i in _GROUP_VERTS[g]}))
+    ref_b = None
+    rig.rotation_mode = "XYZ"
+    for fr in list(range(1, FRAME_END + 1, 2)) + [FRAME_END + 1]:
+        scene.frame_set(fr)
+        r0 = rig.rotation_euler[ax_i]
+
+        def g_(x):
+            rig.rotation_euler[ax_i] = r0 + math.radians(x)
+            update()
+            co_ = eval_coords()
+            return (group_min_z(co_, ga) - za) - (group_min_z(co_, gb) - zb)
+
+        lo, hi = lo0, hi0
+        flo, fhi = g_(lo), g_(hi)
+        if flo * fhi > 0:
+            x = lo if abs(flo) < abs(fhi) else hi
+        else:
+            for _ in range(20):
+                mid = (lo + hi) / 2
+                fm = g_(mid)
+                if fm * flo > 0:
+                    lo, flo = mid, fm
+                else:
+                    hi = mid
+            x = (lo + hi) / 2
+        g_(x)
+        co_ = eval_coords()
+        rig.location.z += zb - group_min_z(co_, gb)
+        cb = co_[idx_b, :2].mean(0)
+        if ref_b is None:
+            ref_b = cb.copy()
+        rig.location.x += float(ref_b[0] - cb[0])
+        rig.location.y += float(ref_b[1] - cb[1])
+        rig.keyframe_insert("location", frame=fr)
+        rig.keyframe_insert("rotation_euler", frame=fr)
+    for fc in rig.animation_data.action.fcurves:
+        if fc.data_path in ("location", "rotation_euler"):
+            for kp in fc.keyframe_points:
+                kp.interpolation = "LINEAR"
+
 # Bandas de cabeza: en cada frame los tramos salen de los puntos TANGENTES de la cabeza vistos desde
 # el anclaje (la banda envuelve el lado opuesto, como en la realidad) → nunca cruzan la cabeza.
+HB_PTS = {}
 if HEAD_BANDS:
     for fr in list(range(1, FRAME_END + 1, 2)) + [FRAME_END + 1]:
         scene.frame_set(fr)
-        bvh_t = _bvh_now()
         hb = rig.pose.bones["head"]
         M = rig.matrix_world
-        hc = M @ hb.head.lerp(hb.tail, 0.45)
+        hc = M @ hb.head.lerp(hb.tail, HEAD_BAND_T)
         ax = (M.to_3x3() @ (hb.tail - hb.head)).normalized()
+        ring_w = [aro_.matrix_world @ c_ for aro_, cl_ in HEAD_RING for c_ in cl_]   # línea media del aro, en el mundo
         for anchor, e, n in HEAD_BANDS:
             A = anchor.matrix_world.translation
             d = A - hc
             dn = (d - ax * d.dot(ax)).normalized()
             perp = ax.cross(dn).normalized()
             best = None
-            for k in range(96):
-                a_ = 2 * math.pi * k / 96
-                dirw = dn * math.cos(a_) + perp * math.sin(a_)
-                hit = bvh_t.ray_cast(hc + dirw * 0.35, -dirw)
-                if hit[0] is None:
-                    continue
-                pt = hit[0] + dirw * 0.008
+            for pt in ring_w:                         # tangente al ARO visto desde el anclaje
                 v = pt - A
                 ang = math.atan2(v.dot(perp), v.dot(-dn)) * (1 if n == 0 else -1)
                 if best is None or ang > best[0]:
                     best = (ang, pt)
             if best:
-                e.location = best[1]
-                e.keyframe_insert("location", frame=fr)
+                HB_PTS.setdefault(n, []).append((fr, best[1].copy()))
+    # suavizado temporal (ventana 7 frames): el punto tangente salta entre vértices de la malla → la banda "temblaba"
+    for (anchor, e, n) in HEAD_BANDS:
+        pts = HB_PTS.get(n, [])
+        for i, (fr, _) in enumerate(pts):
+            win = [pts[i][1]]
+            e.location = sum(win, Vector((0, 0, 0))) / len(win)
+            e.keyframe_insert("location", frame=fr)
     for _, e, _ in HEAD_BANDS:
         for fc in e.animation_data.action.fcurves:
             for kp in fc.keyframe_points:
@@ -1322,7 +1637,7 @@ for fr in list(range(1, FRAME_END + 1, 2)) + [FRAME_END + 1]:
         if not (c.get("desde", 0) - 1e-6 <= t_now <= c.get("hasta", DUR) + 1e-6):
             continue
         g = c["grupo"] if isinstance(c["grupo"], list) else [c["grupo"]]
-        surf = SEAT_Z if c.get("superficie") == "silla" else c.get("z", SURF)
+        surf = SEAT_Z if c.get("superficie") == "silla" else BENCH_TOPS.get(c.get("banco"), c.get("z", SURF))
         gz = group_min_z(co, g) - surf
         worst[cname(c)] = max(worst[cname(c)], abs(gz))
     if STRAPS:
@@ -1350,18 +1665,20 @@ for fr in list(range(1, FRAME_END + 1, 2)) + [FRAME_END + 1]:
                     g_ = VERT_GROUP[vi_]
                     if g_.startswith(("finger", "metacarpal", "wrist", "hand")):   # la banda pasa por el puño que la sujeta
                         continue
+                    if name.startswith("Banda_") and g_.startswith(("ear", "scalp")):   # aplasta oreja/pelo
+                        continue
                     if inside[i] > hits.get(name, 0):
                         hits_info[name] = {"grupo": g_, "t": round(t_now, 2), "pos_banda": round(i / 40, 2)}
                     hits[name] = max(hits.get(name, 0), inside[i])
     if fr == 1:
         loop_ref = co.copy()
     if fr == FRAME_END + 1:
-        loop_err = float(np.linalg.norm(co - loop_ref, axis=1).max())
+        loop_err = float(np.linalg.norm(co - np.array(AVANCE) - loop_ref, axis=1).max())
 
 TOL_CONTACT, TOL_PEN, TOL_LOOP = 0.015, 0.015, 0.003   # 1,5 cm ≈ compresión real del tejido blando
 report["checks"]["contactos"] = {g: {"error_max_cm": round(e * 100, 2), "ok": e <= TOL[g]} for g, e in worst.items()}
 report["checks"]["penetracion_suelo"] = {"z_min_cm": round((min_z - SURF) * 100, 2), "ok": (min_z - SURF) >= -TOL_PEN, **pen_info}
-report["checks"]["props_atraviesan_cuerpo"] = {"max_cm": {k: round(v * 100, 1) for k, v in hits.items()}, "ok": all(v <= 0.015 for v in hits.values()), "donde": hits_info}   # 1,5 cm: la banda se apoya sobre ropa/tejido
+report["checks"]["props_atraviesan_cuerpo"] = {"max_cm": {k: round(v * 100, 1) for k, v in hits.items()}, "ok": all(v <= (0.02 if k.startswith("Banda_") else 0.015) for k, v in hits.items()), "donde": hits_info}   # 1,5 cm: la banda se apoya sobre ropa/tejido
 report["checks"]["loop"] = {"error_max_mm": round(loop_err * 1000, 2), "ok": loop_err <= TOL_LOOP}
 
 rom = []
@@ -1372,7 +1689,10 @@ for k in keys:
         pos_key, neg_key = ROM_KEYS.get(joint, (None, None))
         key = pos_key if val >= 0 else (neg_key or pos_key)
         if key:
-            ok = abs(val) <= max(abs(x) for x in ROM[key]["range"])
+            lim = max(abs(x) for x in ROM[key]["range"])
+            # rango PASIVO declarado en la ficha (p.ej. sentarse sobre los talones: rodilla ~155°, cargada por el peso)
+            lim = max(lim, abs(SPEC.get("rom_pasivo", {}).get(joint + ("+" if val >= 0 else "-"), 0)))
+            ok = abs(val) <= lim
         else:
             ok = val >= 0 or joint not in ROM_KEYS
         if not ok:
@@ -1390,10 +1710,15 @@ pts = []
 _cam_idx = None
 if cam_spec.get("grupos"):
     _cam_idx = np.array(sorted({i for g in cam_spec["grupos"] for i in _GROUP_VERTS.get(g, [])}))
+def _avance_en(fr):
+    return np.array(AVANCE) * ((fr - 1) / FRAME_END)
+
+
 for fr in range(1, FRAME_END + 1, 6):
     scene.frame_set(fr)
     co = eval_coords()
     co = co[_cam_idx] if _cam_idx is not None else co[BODY_MASK]
+    co = co - _avance_en(fr)                       # encuadre relativo al avance (la cámara acompaña)
     pts.append(co.min(0))
     pts.append(co.max(0))
 pts = np.array(pts)
@@ -1418,6 +1743,15 @@ D = max(max((c - center).dot(fwd) + abs((c - center).dot(right)) * margin / th,
             (c - center).dot(fwd) + abs((c - center).dot(up)) * margin / tv) for c in corners)
 cam.location = center - fwd * D
 cam.rotation_euler = fwd.to_track_quat("-Z", "Y").to_euler()
+if SPEC.get("avance"):                             # travelling lineal que acompaña el avance del ciclo
+    _c0 = cam.location.copy()
+    for fr in (1, FRAME_END + 1):
+        cam.location = _c0 + Vector(_avance_en(fr).tolist())
+        cam.keyframe_insert("location", frame=fr)
+    for fc in cam.animation_data.action.fcurves:
+        for kp in fc.keyframe_points:
+            kp.interpolation = "LINEAR"
+    floor.scale = (60, 60, 0.02)
 scene.frame_set(1)
 
 # A) Lado visible: de cada músculo bilateral se dibuja sólo el lado más cercano a la cámara.
@@ -1432,6 +1766,33 @@ for objs in _pairs.values():
     if len(objs) == 2:
         d = [(o.matrix_world.translation - cam.location).length for o in objs]
         _hidden_far.add(objs[0] if d[0] > d[1] else objs[1])
+
+# B) Profundos del lado LEJANO a la cámara (p.ej. pectoral menor visto desde la espalda) no se dibujan: en rayos X
+# se verían a través del tronco y confundirían el lado que trabaja.
+_bvh_c = _bvh_now()
+_far_deep = set()
+for o, info in MUSCLE_INFO.items():
+    if not info["profundo"] or o in _hidden_far:
+        continue
+    _me = o.evaluated_get(deps()).to_mesh()
+    _pts = [o.matrix_world @ v.co for v in _me.vertices]
+    o.to_mesh_clear()
+    if not _pts:
+        continue
+    _c = sum(_pts, Vector((0, 0, 0))) / len(_pts)
+    _dv = (_c - cam.location)
+    _dist = _dv.length
+    _dv.normalize()
+    _hit_in = _bvh_c.ray_cast(cam.location, _dv)
+    _hit_out = _bvh_c.ray_cast(_c + _dv * 2.0, -_dv)
+    if _hit_in[0] is None or _hit_out[0] is None:
+        continue
+    d_in = (_hit_in[0] - cam.location).length
+    d_out = (_hit_out[0] - cam.location).length
+    if d_out > d_in and (_dist - d_in) / (d_out - d_in) > 0.55:
+        _far_deep.add(o)
+_hidden_far |= _far_deep
+print("PROFUNDOS_LEJANOS", sorted({MUSCLE_INFO[o]["id"] for o in _far_deep}))
 
 # Oclusor: copia del cuerpo encogida 1,5 cm. Tapa lo profundo; lo superficial aflora con su forma sobre la piel.
 occluder = body.copy()
@@ -1512,8 +1873,12 @@ if args.still:
     sys.exit(0)
 if not args.solo_mascara:
     render_pass("gris", [body] + props, "STUDIO", False)
-render_pass("mascara", sup_muscles + [occluder], "FLAT", True)
-render_pass("mascara_prof", deep_muscles or [occluder], "FLAT", True)
+# Los objetos (caja, mesa, banco, barra, puerta…) TAPAN la capa muscular: se pintan negros (= transparentes en la composición).
+mask_props = [o for o in props if o.name.split(".")[0] not in ("Suelo", "Colchoneta")]
+for o in mask_props:
+    o.color = (0, 0, 0, 1)
+render_pass("mascara", sup_muscles + [occluder] + mask_props, "FLAT", True)
+render_pass("mascara_prof", (deep_muscles or [occluder]) + mask_props, "FLAT", True)
 body.color = (1, 1, 1, 1)
 for o in wear:
     o.color = (1, 1, 1, 1)

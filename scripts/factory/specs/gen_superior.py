@@ -5,16 +5,10 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import bipedo, cuadrupedia, hand, iso, keys_custom, lateral, musculos, prono, rep, sedente, supino, write  # noqa: E402
+from common import FOOT, caminar, bipedo, cuadrupedia, hand, iso, keys_custom, lateral, musculos, prono, rep, sedente, supino, write  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[3]
 PENDIENTES = {
-    "F-ESC-005": "Caminata de granjero: locomoción.",
-    "F-ESC-009": "Fondos escapulares en silla: apoyo de manos detrás con pelvis suspendida.",
-    "F-COD-010": "Fondos en banco: apoyo de manos detrás con pelvis suspendida.",
-    "F-HOM-025": "Rotación interna pliométrica con balón: lanzamiento.",
-    "F-HOM-030": "Atrapes pliométricos 90/90: lanzamiento/recepción.",
-    "F-MAN-010": "Abrir dedos dentro de arroz: el contenido del recipiente oculta la mano.",
 }
 HEAD_CAM = {"grupos": ["head", "neck01", "neck02", "neck03", "jaw"], "margen": 1.6}
 HAND_CAM = lambda s="R": {"grupos": [g for g in hand(s)] + [f"lowerarm01.{s}"], "margen": 1.5}  # noqa: E731
@@ -112,12 +106,17 @@ H.append(spec("F-ATM-003", ik_hand(sedente(), "R", "jaw", "anterior+inferior", t
               lado=None, resaltar=JAW, camara=[-0.4, -1, 0.1], cam_extra=HEAD_CAM))
 for id_, extra in (("F-ATM-004", "guia"), ("F-ATM-005", "depresor"), ("F-ATM-006", "resistencia")):
     pl = ik_hand(sedente(), "R", "jaw", "lateral", t=0.6, sep=0.02) if extra != "depresor" else sedente()
-    H.append(spec(id_, pl, rep({"atm_lateral": -8, "atm_apertura": 4}, up=1.1, hold=0.8, down=1.3), lado=None, resaltar=JAW,
-                  camara=[-0.2, -1, 0.1], cam_extra=HEAD_CAM))
+    # lateralidad fisiológica: ~8–10 mm en el mentón (5°); trabaja el pterigoideo lateral CONTRALATERAL (derecho)
+    H.append(spec(id_, pl, rep({"atm_lateral": -5, "atm_apertura": 3}, up=1.1, hold=0.8, down=1.3), lado="R", resaltar=JAW,
+                  camara=[-0.2, -1, 0.1], cam_extra=HEAD_CAM,
+                  props=[{"tipo": "depresor_lingual", "uso": "en_boca"}] if extra == "depresor" else None,
+                  variantes=["gym"], nota="Mismo video para gym y casa (en casa: palito de helado)."))
 for id_ in ("F-ATM-007", "F-ATM-008", "F-ATM-009"):
     pl = ik_hand(sedente(), "R", "jaw", "anterior", t=0.95, sep=0.02) if id_ == "F-ATM-009" else sedente()
     H.append(spec(id_, pl, rep({"atm_protrusion": 6, "atm_apertura": 3}, up=1.1, hold=0.8, down=1.3), lado=None, resaltar=JAW,
-                  camara=[-1, -0.5, 0.1], cam_extra=HEAD_CAM))
+                  camara=[-1, -0.5, 0.1], cam_extra=HEAD_CAM,
+                  props=[{"tipo": "depresor_lingual", "uso": "en_boca"}] if id_ == "F-ATM-008" else None, variantes=["gym"],
+                  nota="Mismo video para gym y casa (en casa: palito de helado)."))
 
 # ─── ESCÁPULA ─────────────────────────────────────────────────────────────────
 SC = ("clavicle.L", "clavicle.R")
@@ -167,11 +166,11 @@ b["base"].update({"colchoneta": False, "asentar": [], "suelo": ["foot.L", "foot.
 b = grip(pinned_hands(b), ("L", "R"))
 b["pivote"] = {"hueso": "foot.L"}
 b["contactos"] = [{"grupo": "foot.L", "tol_cm": 2.5}]
-sp = spec("F-ESC-020", b, rep({}, up=1.3, hold=0.8, down=1.7), lado=None, resaltar=SC, camara=[-1, 0.1, 0.25],
+sp = spec("F-ESC-020", b, rep({}, up=1.3, hold=0.8, down=1.7), lado=None, resaltar=SC, camara=[-1, -0.55, 0.35],
           props=[{"tipo": "barra", "uso": "barra_manos", "soportes": True}], variantes=["gym"], nota="En casa: borde de una mesa firme (mismo video).")
 d = json.loads(sp.read_text())
 for k in d["keys"]:
-    k["pivote_x"] = -16 * k["p"]
+    k["pivote_x"] = 12 * k["p"]          # colgada con brazos extendidos (p=0) → pecho hacia la barra (p=1)
 sp.write_text(json.dumps(d, ensure_ascii=False, indent=2))
 H.append(sp)
 b = pinned_hands(bipedo(extra={"hombro_flex.L": 90, "hombro_flex.R": 90, "codo_flex.L": 90, "codo_flex.R": 90, "hombro_abd.L": 30, "hombro_abd.R": 30},
@@ -235,9 +234,16 @@ H.append(spec("F-HOM-015", b, rep({"hombro_flex.R": 85, "codo_flex.R": -95}, up=
               props=[{"tipo": "barra", "uso": "banda_anclada_hueso", "hueso": "wrist.R", "anclaje_rel": [0.1, -1.1, -0.95]}]))
 H.append(spec("F-HOM-016", bipedo(camara=(-0.6, -1, 0.2)), iso(3.0), resaltar=SH, props=[{"tipo": "toalla", "uso": "rollo_codo", "lado": "R"}]))
 b = supino(extra={"hombro_abd.R": 80})
-b["base"]["asentar"] = [a for a in b["base"]["asentar"] if a["art"] != "hombro_flex.R"] + [{"art": "hombro_flex.R", "grupo": hand("R"), "rango": [-15, 10]}]
+b["base"]["asentar"] = [a for a in b["base"]["asentar"] if a["art"] != "hombro_flex.R"] + [{"art": "hombro_abd_h.R", "grupo": hand("R"), "rango": [-30, 30]}]
 b["contactos"] = [c if c["grupo"] != hand("R") else {"grupo": hand("R"), "tol_cm": 4} for c in b["contactos"]]
-H.append(spec("F-HOM-017", b, rep({"hombro_abd.R": -72, "hombro_flex.R": 9}, up=1.4, hold=0.6, down=1.6), resaltar=SH, camara=[0, 0.2, 1]))
+# la mano DESLIZA por la colchoneta: en cada key la flexión del hombro se corrige para que siga apoyada
+b["asentar_keys"] = [{"art": "hombro_abd_h.R", "grupo": hand("R"), "rango": [-30, 30]},
+                     {"art": "hombro_flex.R", "grupo": hand("R"), "rango": [-30, 30]}]
+b["contactos"] = [c if c["grupo"] != hand("R") else {"grupo": hand("R"), "tol_cm": 2} for c in b["contactos"]]
+_seq = [(0, 0, 0), (0.4, 0, 0), (0.85, -24, 0.33), (1.3, -48, 0.66), (1.8, -72, 1), (2.4, -72, 1), (3.0, -48, 0.66),
+        (3.5, -24, 0.33), (4.0, 0, 0), (5.0, 0, 0)]
+_f = ["concentrico"] * 4 + ["isometrico", "excentrico", "excentrico", "excentrico", "concentrico", "concentrico"]
+H.append(spec("F-HOM-017", b, keys_custom([(t, {"hombro_abd.R": a}, p_) for t, a, p_ in _seq], _f), resaltar=SH, camara=[0, 0.2, 1]))
 b = grip(bipedo(extra={"hombro_abd.R": 60}, camara=(0, -1, 0.2)))
 H.append(spec("F-HOM-018", b, rep({"hombro_abd.R": -55}, up=1.3, hold=0.8, down=1.6), resaltar=SH,
               props=bands_from_wrists([-0.7, 0, 0.5], sides=("R",))))
@@ -312,8 +318,11 @@ H.append(spec("F-HOM-039", b, keys_custom([(0, {"hombro_re.L": 0, "hombro_re.R":
               lado=None, resaltar=("upperarm01.L", "upperarm01.R"), camara=[-1, 0.1, 0.3], props=dumbbells(("L", "R"))))
 from common import plancha, FOOT  # noqa: E402
 b = plancha()
-b["base"]["angulos"].update({"codo_flex.L": 0, "codo_flex.R": 0, "hombro_abd.L": 15, "hombro_abd.R": 15, "muneca_ext.L": 75, "muneca_ext.R": 75})
+b["base"]["angulos"].update({"codo_flex.L": 0, "codo_flex.R": 0, "hombro_abd.L": 12, "hombro_abd.R": 12, "hombro_flex.L": 78,
+                            "hombro_flex.R": 78, "muneca_ext.L": 80, "muneca_ext.R": 80, "dedos_ext.L": 12, "dedos_ext.R": 12})
 b["base"]["suelo"] = hand("L") + hand("R")
+# palma PLANA: la muñeca se extiende hasta que el talón de la mano y los dedos apoyan a la vez
+b["base"]["asentar"] += [{"art": f"muneca_ext.{s}", "grupo": [f"wrist.{s}"], "rango": [-25, 15], "reapoyar": True} for s in ("L", "R")]
 b = pinned_hands(b)
 b["contactos"] = [{"grupo": hand("L") + hand("R"), "tol_cm": 2.5}, {"grupo": FOOT("L") + FOOT("R"), "tol_cm": 3}]
 # el cuerpo rígido pivota sobre las puntas de los pies (no baja en bloque: los pies no se hunden)
@@ -348,6 +357,47 @@ b = grip(bipedo(extra={"hombro_flex.R": -30, "codo_flex.R": 95, "lumbar_flex": 2
 H.append(spec("F-COD-008", b, rep({"codo_flex.R": -90}, up=1.1, hold=0.8, down=1.5), resaltar=EL,
               props=bands_from_wrists([0, -0.5, -0.4], sides=("R",))))
 b = grip(bipedo(extra={"hombro_flex.R": 170, "codo_flex.R": 120}, camara=(-1, 0.3, 0.2)))
+# Fondos con apoyo de manos DETRÁS (banco/silla): pies apoyados delante (IK), manos fijas en el borde del asiento
+# (IK con la palma bloqueada); la pelvis suspendida baja (codos) o sólo los hombros bajan/suben (escapular).
+def fondos():
+    b = bipedo(extra={"cadera_flex.L": 80, "cadera_flex.R": 80, "rodilla_flex.L": 85, "rodilla_flex.R": 85, "hombro_flex.L": -35,
+                      "hombro_flex.R": -35, "hombro_abd.L": 8, "hombro_abd.R": 8, "muneca_ext.L": 70, "muneca_ext.R": 70,
+                      "antebrazo_prono.L": 10, "antebrazo_prono.R": 10}, camara=(-1, -0.35, 0.25))
+    b["ik"] = [{"cadena": "pierna.L", "pie_plano": True}, {"cadena": "pierna.R", "pie_plano": True},
+               {"cadena": "brazo.L", "orientacion_fija": True}, {"cadena": "brazo.R", "orientacion_fija": True}]
+    b["props"] = [{"tipo": "banco", "uso": "superficie_manos", "dy": 0.22}]
+    b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R"}]
+    return b
+
+
+# 005 Caminata de granjero: mancuerna pesada en cada mano, hombros abajo y atrás; ciclo de 4 pasos con la cámara
+# acompañando (loop exacto: el ciclo avanza 1,44 m).
+b = grip(bipedo(extra={"hombro_abd.L": 6, "hombro_abd.R": 6, "escapula_elev.L": -5, "escapula_elev.R": -5},
+                camara=(-1, -0.45, 0.2)), ("L", "R"))
+ik_, keys_, adv_ = caminar(brazos=4)
+b["ik"] = ik_
+b["contactos"] = [{"grupo": FOOT("L") + FOOT("R")}]
+s_ = {"id": "F-ESC-005", "duracion_s": keys_[-1]["t"], **b, "keys": keys_, "avance": adv_, "musculos": musculos("F-ESC-005", None),
+      "articulacion_resaltada": [{"hueso": "clavicle.L"}, {"hueso": "clavicle.R"}], "props": dumbbells(("L", "R")),
+      "variantes": ["gym", "casa"]}
+H.append(write(s_))
+# 025 / 030 Pliometría de rotadores en 90/90 de pie: el balón sale de la mano hacia la pared (rotación interna
+# explosiva), rebota y se atrapa frenando en rotación externa (excéntrico). 030 = atrapes cortos y rápidos.
+for id_, ir, t_s, t_a in (("F-HOM-025", -75, 0.85, 1.85), ("F-HOM-030", -35, 0.7, 1.5)):
+    b = bipedo(extra={"hombro_abd.R": 90, "codo_flex.R": 90, "hombro_re.R": 80, "mano_cerrar.R": 35}, camara=(-1, 0.15, 0.25))
+    b["ik"] = [{"cadena": "pierna.L", "pie_plano": True}, {"cadena": "pierna.R", "pie_plano": True}]
+    b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R"}]
+    kd = keys_custom([(0, {"hombro_re.R": 0}, 0), (0.45, {"hombro_re.R": 0}, 0.2), (t_s, {"hombro_re.R": ir}, 1),
+                      (t_s + 0.35, {"hombro_re.R": ir}, 0.6), (t_a, {"hombro_re.R": 8}, 1), (t_a + 0.5, {"hombro_re.R": 0}, 0.3),
+                      (5.0, {"hombro_re.R": 0}, 0)],
+                     ["concentrico", "concentrico", "isometrico", "excentrico", "excentrico", "concentrico", "concentrico"])
+    H.append(spec(id_, b, kd, resaltar=("upperarm01.R",), variantes=["gym"], nota="Mismo video para gym y casa (pelota pequeña y pared).",
+                  props=[{"tipo": "balon", "uso": "balon_vuelo", "manos": ["R"], "r": 0.06,
+                          "vuelo": {"suelta": t_s, "atrapa": t_a, "pared": [0, -1.3, 0.1]}}]))
+H.append(spec("F-COD-010", fondos(), rep({}, up=1.4, hold=0.5, down=1.6, campos={"raiz": [0, 0.03, -0.16]}), lado=None,
+              resaltar=("lowerarm01.L", "lowerarm01.R"), variantes=["gym", "casa"]))
+H.append(spec("F-ESC-009", fondos(), rep({"escapula_elev.L": 12, "escapula_elev.R": 12}, up=1.1, hold=0.8, down=1.4,
+                                         campos={"raiz": [0, 0, -0.045]}), lado=None, resaltar=SC, variantes=["gym", "casa"]))
 H.append(spec("F-COD-009", b, rep({"codo_flex.R": -115}, up=1.2, hold=0.6, down=1.6), resaltar=EL, props=dumbbells()))
 
 # ─── ANTEBRAZO / MUÑECA / MANO (sentada, antebrazo sobre la mesa) ─────────────
@@ -416,8 +466,19 @@ MAN = [("F-MAN-001", {"mano_cerrar.R": 85}, None), ("F-MAN-002", {"mano_cerrar.R
        ("F-MAN-021", {"pulgar_oposicion.R": 55}, None), ("F-MAN-022", {"pulgar_oposicion.R": 45, "mano_cerrar.R": 25}, None),
        ("F-MAN-023", {"pulgar_oposicion.R": 45, "mano_cerrar.R": 25}, "masilla"), ("F-MAN-024", {"pulgar_oposicion.R": 45, "mano_cerrar.R": 25}, "pinza_ropa"),
        ("F-MAN-025", {"pulgar_oposicion.R": 45, "mano_cerrar.R": 30}, "monedas")]
+# 010 Abrir los dedos dentro de un recipiente con arroz (la mano apoyada; el arroz cubre media altura de los dedos)
+b = mesa(extra={"antebrazo_prono.R": 80, "muneca_flex.R": 0})
+b["props"][0]["mano_apoyada"] = True
+b["props"].append({"tipo": "arroz", "uso": "arroz_mano", "lado": "R"})
+H.append(spec("F-MAN-010", b, rep({"dedos_separar.R": 18, "dedos_ext.R": 15}, up=1.0, hold=1.0, down=1.3, post=1.7),
+              resaltar=("metacarpal3.R",), cam_extra=HAND_CAM(), variantes=["gym"],
+              nota="Mismo video para gym y casa (recipiente con arroz o legumbres)."))
 for id_, peak, obj in MAN:
     b = mesa(extra={"antebrazo_prono.R": 80, "muneca_flex.R": -10})
+    if not any(j.startswith(("mano_cerrar", "pulgar")) for j in peak) and obj is None:
+        # dedos (extensión/separación/aducción): la palma descansa plana SOBRE la mesa
+        b["base"]["angulos"]["muneca_flex.R"] = 0
+        b["props"][0]["mano_apoyada"] = True
     pr = [{"tipo": obj, "uso": "en_mano", "manos": ["R"]}] if obj in ("esponja", "masilla", "hand_grip", "pinza_ropa") else []
     H.append(spec(id_, b, rep(peak, up=1.0, hold=1.0, down=1.3, post=1.7), resaltar=("metacarpal3.R",), props=pr,
                   cam_extra=HAND_CAM(), variantes=["gym", "casa"] if pr else None))

@@ -145,6 +145,17 @@
       {
         "id": "vastus_intermedius"
       }
+    ],
+    "estabilizan": [
+      {
+        "id": "rectus_abdominis"
+      },
+      {
+        "id": "gluteus_maximus"
+      },
+      {
+        "id": "erector_spinae_lumbar"
+      }
     ]
   },
   "articulacion_resaltada": [

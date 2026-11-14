@@ -117,6 +117,12 @@
         "id": "pectoralis_minor",
         "lado": "R"
       }
+    ],
+    "sostienen": [
+      {
+        "id": "trapezius_middle",
+        "lado": "R"
+      }
     ]
   },
   "articulacion_resaltada": [],
