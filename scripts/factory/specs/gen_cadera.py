@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from common import sedente_suelo, FOOT, hand, plancha_lateral, keys_custom, bipedo, cuadrupedia, iso, lateral, musculos, prono, rep, sedente, supino, write  # noqa: E402
 
 PENDIENTES = {
+    "F-CAD-025": "Transiciones 90/90 sin manos: las poses 90/90 izquierda/derecha están resueltas (F-CAD-024), pero la transición por rodillas arriba hace que la pierna de atrás atraviese el suelo; requiere trayectoria de pie por IK en el suelo.",
 }
 
 
@@ -243,13 +244,15 @@ def noventa():
     b = sedente_suelo(manos="libres", extra={"hombro_flex.L": 35, "hombro_flex.R": 35, "codo_flex.L": 80, "codo_flex.R": 80,
                                              "hombro_abd.L": 15, "hombro_abd.R": 15,
                                              "cadera_flex.L": 90, "cadera_abd.L": 40, "cadera_re.L": 90, "rodilla_flex.L": 90,
-                                             "cadera_flex.R": 25, "cadera_abd.R": 60, "cadera_re.R": -30, "rodilla_flex.R": 90,
-                                             "tobillo_dorsi.L": -10, "tobillo_dorsi.R": -25, "lumbar_flex": 0})
-    b["base"]["asentar"] = [
-        {"art": "cadera_flex.L", "grupo": ["lowerleg01.L", "lowerleg02.L", "foot.L"], "rango": [-25, 25]},
-        {"art": "cadera_abd.R", "grupo": ["lowerleg01.R", "lowerleg02.R", "foot.R"], "rango": [-20, 20]}]
-    b["contactos"] = [b["contactos"][0], {"grupo": ["lowerleg01.L", "lowerleg02.L", "foot.L"], "tol_cm": 2.5}]
-    b["rom_pasivo"] = {"cadera_re+": 90}
+                                             "cadera_flex.R": 0, "cadera_abd.R": 82, "cadera_re.R": 0, "rodilla_flex.R": 90,
+                                             "tobillo_dorsi.L": -10, "tobillo_dorsi.R": -45, "lumbar_flex": 0})
+    # sentada SOBRE LOS GLÚTEOS: muslos horizontales (el de atrás en flexión 90 + abducción 75 = al costado)
+    b["base"]["asentar"] = [{"art": "cadera_abd.R", "grupo": ["lowerleg01.R", "lowerleg02.R"], "rango": [-15, 15]},
+                            {"art": "cadera_flex.L", "grupo": ["lowerleg01.L", "lowerleg02.L", "foot.L"], "rango": [-15, 15]}]
+    b["contactos"] = [{"grupo": ["Delete.female_sportsuit01", "pelvis.L", "pelvis.R"]}, {"grupo": ["lowerleg01.L", "lowerleg02.L", "foot.L"], "tol_cm": 2.5},
+                      {"grupo": ["lowerleg01.R", "lowerleg02.R", "foot.R"], "tol_cm": 2.5}]
+    b["rom_pasivo"] = {"cadera_re+": 90, "cadera_re-": 40, "cadera_abd+": 97}
+    b["base"]["suelo"] = ["pelvis.L", "pelvis.R", "Delete.female_sportsuit01"]                # se apoya en los glúteos, no en los muslos
     b["camara"] = {"dir": [-0.15, -0.7, 1.2], "lente": 50, "margen": 1.1}
     return b
 
@@ -273,24 +276,35 @@ hecho.append(spec("F-CAD-024", _b, rep({"cadera_re.R": -15}, up=1.3, hold=1.0, d
                   resaltar=("upperleg01.R",)))
 # 025 Transiciones 90/90 sin manos: 90/90 izquierda → rodillas arriba (pies apoyados) → 90/90 derecha → vuelta.
 _A = {"cadera_flex.L": 90, "cadera_abd.L": 40, "cadera_re.L": 90, "rodilla_flex.L": 90, "tobillo_dorsi.L": -10,
-      "cadera_flex.R": 25, "cadera_abd.R": 60, "cadera_re.R": -30, "rodilla_flex.R": 90, "tobillo_dorsi.R": -25}
+      "cadera_flex.R": 0, "cadera_abd.R": 70, "cadera_re.R": 0, "rodilla_flex.R": 90, "tobillo_dorsi.R": -45}
 _B = {k[:-1] + ("R" if k.endswith("L") else "L"): v for k, v in _A.items()}
-_M = {f"{j}.{sd}": v for sd in "LR" for j, v in (("cadera_flex", 105), ("cadera_abd", 20), ("cadera_re", 0),
-                                                 ("rodilla_flex", 115), ("tobillo_dorsi", 10))}
+_M = {f"{j}.{sd}": v for sd in "LR" for j, v in (("cadera_flex", 110), ("cadera_abd", 20), ("cadera_re", 0),
+                                                 ("rodilla_flex", 125), ("tobillo_dorsi", 15))}
 # intermedios: primero sube la rodilla (flexión) manteniendo la rotación a medias, luego gira la pierna
-_IA = {**_A, **{k: (_A[k] + _M[k]) / 2 for k in _A}, "cadera_flex.L": 108, "cadera_flex.R": 100, "rodilla_flex.R": 100}
-_IB = {**_B, **{k: (_B[k] + _M[k]) / 2 for k in _B}, "cadera_flex.R": 108, "cadera_flex.L": 100, "rodilla_flex.L": 100}
+_IA = {**_A, **{k: (_A[k] + _M[k]) / 2 for k in _A}, "cadera_flex.L": 105}
+_IB = {**_B, **{k: (_B[k] + _M[k]) / 2 for k in _B}, "cadera_flex.R": 105}
 _d = lambda T: {k: round(T[k] - _A[k], 1) for k in _A}
 _b = noventa()
 _b["base"]["asentar"] = []
-_b["contactos"] = [{**_b["contactos"][0], "tol_cm": 5}]
-_b["rom_pasivo"] = {"cadera_re+": 90, "cadera_abd+": 60}
+# la raíz no se mueve (queda sentada como en la 90/90 base); el grupo "pelvis" de la malla queda ~12 cm sobre el
+# suelo por la forma de la malla, así que el contacto se vigila con tolerancia amplia y la penetración con el check de suelo
+_b["contactos"] = [{"grupo": ["pelvis.L", "pelvis.R"], "tol_cm": 14}]
+_b["rom_pasivo"] = {"cadera_re+": 90, "cadera_re-": 40, "cadera_abd+": 97, "rodilla_flex+": 135}
 _seq = [(0, _d(_A), 0), (0.4, _d(_A), 0), (1.2, _d(_IA), 0.4), (2.0, _d(_M), 0.6), (2.8, _d(_IB), 0.8), (3.6, _d(_B), 1),
         (4.1, _d(_B), 1), (4.9, _d(_IB), 0.8), (5.7, _d(_M), 0.6), (6.5, _d(_IA), 0.4), (7.3, _d(_A), 0), (7.6, _d(_A), 0)]
-hecho.append(spec("F-CAD-025", _b, keys_custom(_seq, ["concentrico"] * 5 + ["isometrico"] + ["concentrico"] * 6),
+# keys densas (cada ~0,2 s) para que el asentado por key evite que pies/muslos crucen el suelo entre keys
+_fases = ["concentrico"] * 5 + ["isometrico"] + ["concentrico"] * 6
+_dense = []
+for (t0, a0, p0), (t1, a1, p1), f_ in zip(_seq, _seq[1:], _fases):
+    n_ = max(1, round((t1 - t0) / 0.2))
+    for i_ in range(n_):
+        u = i_ / n_
+        _dense.append((round(t0 + (t1 - t0) * u, 3), {k: round(a0[k] + (a1[k] - a0[k]) * u, 2) for k in a0}, round(p0 + (p1 - p0) * u, 3), f_))
+_dense.append((*_seq[-1], _fases[-1]))
+_s025 = None and (spec("F-CAD-025", _b, keys_custom([d[:3] for d in _dense], [d[3] for d in _dense]),
                   lado=None, resaltar=("upperleg01.L", "upperleg01.R"),
-                  asentar_keys=[{"art": f"cadera_flex.{sd}", "grupo": FOOT(sd) + [f"lowerleg02.{sd}"], "rango": [0, 45],
-                                 "solo_bajo": True, "z": 0.0} for sd in "LR"]))
+                  asentar_keys=[{"art": f"cadera_abd.{sd}", "grupo": FOOT(sd) + [f"lowerleg01.{sd}", f"lowerleg02.{sd}", f"upperleg02.{sd}"],
+                                 "rango": [-30, 30], "solo_bajo": True, "z": 0.0} for sd in "LR"]))
 
 for _id, _l in (("F-CAD-019", False), ("F-CAD-020", True)):
     _b = copenhagen(_l)

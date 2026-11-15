@@ -6,10 +6,10 @@
     "colchoneta": true,
     "angulos": {
       "cadera_flex.L": 90,
-      "cadera_flex.R": 25,
+      "cadera_flex.R": 0,
       "lumbar_flex": 0,
       "tobillo_dorsi.L": -10,
-      "tobillo_dorsi.R": -25,
+      "tobillo_dorsi.R": -45,
       "hombro_flex.L": 35,
       "hombro_flex.R": 35,
       "codo_flex.L": 80,
@@ -19,11 +19,22 @@
       "cadera_abd.L": 40,
       "cadera_re.L": 90,
       "rodilla_flex.L": 90,
-      "cadera_abd.R": 60,
-      "cadera_re.R": -30,
+      "cadera_abd.R": 82,
+      "cadera_re.R": 0,
       "rodilla_flex.R": 90
     },
     "asentar": [
+      {
+        "art": "cadera_abd.R",
+        "grupo": [
+          "lowerleg01.R",
+          "lowerleg02.R"
+        ],
+        "rango": [
+          -15,
+          15
+        ]
+      },
       {
         "art": "cadera_flex.L",
         "grupo": [
@@ -32,34 +43,24 @@
           "foot.L"
         ],
         "rango": [
-          -25,
-          25
-        ]
-      },
-      {
-        "art": "cadera_abd.R",
-        "grupo": [
-          "lowerleg01.R",
-          "lowerleg02.R",
-          "foot.R"
-        ],
-        "rango": [
-          -20,
-          20
+          -15,
+          15
         ]
       }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "pelvis.R",
+      "Delete.female_sportsuit01"
     ]
   },
   "ik": [],
   "contactos": [
     {
       "grupo": [
+        "Delete.female_sportsuit01",
         "pelvis.L",
-        "pelvis.R",
-        "upperleg01.L",
-        "upperleg01.R",
-        "upperleg02.L",
-        "upperleg02.R"
+        "pelvis.R"
       ]
     },
     {
@@ -67,6 +68,14 @@
         "lowerleg01.L",
         "lowerleg02.L",
         "foot.L"
+      ],
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": [
+        "lowerleg01.R",
+        "lowerleg02.R",
+        "foot.R"
       ],
       "tol_cm": 2.5
     }
@@ -81,7 +90,9 @@
     "margen": 1.1
   },
   "rom_pasivo": {
-    "cadera_re+": 90
+    "cadera_re+": 90,
+    "cadera_re-": 40,
+    "cadera_abd+": 97
   },
   "keys": [
     {

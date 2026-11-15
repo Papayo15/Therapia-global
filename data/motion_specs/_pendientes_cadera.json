@@ -1,1 +1,3 @@
-{}
+{
+  "F-CAD-025": "Transiciones 90/90 sin manos: las poses 90/90 izquierda/derecha están resueltas (F-CAD-024), pero la transición por rodillas arriba hace que la pierna de atrás atraviese el suelo; requiere trayectoria de pie por IK en el suelo."
+}
