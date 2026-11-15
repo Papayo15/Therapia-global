@@ -1850,6 +1850,12 @@ for o, info in MUSCLE_INFO.items():
     d_out = (_hit_out[0] - cam.location).length
     if d_out > d_in and (_dist - d_in) / (d_out - d_in) > 0.55:
         _far_deep.add(o)
+# …salvo que sean los ÚNICOS de su color (cuadrado lumbar, piriforme, pterigoideos): entonces se dibujan igual.
+_BLUE_R = ("elongan", "estirados")
+for _azul in (True, False):
+    _grupo = [o for o, rol in MUSCLE_OBJS if (rol in _BLUE_R) == _azul]
+    if _grupo and all(o in _hidden_far or o in _far_deep for o in _grupo):
+        _far_deep -= set(_grupo)
 _hidden_far |= _far_deep
 print("PROFUNDOS_LEJANOS", sorted({MUSCLE_INFO[o]["id"] for o in _far_deep}))
 
