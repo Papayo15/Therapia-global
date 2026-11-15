@@ -1345,6 +1345,7 @@ for k in ("art", "pivote_x", "p", "raiz", "ik", "polo"):
     assert (a0 == a1) or (SPEC.get("avance") and k in ("raiz", "ik", "polo") and json.dumps(a0) == json.dumps(a1)), \
         f"Loop: la primera y la última key deben coincidir en '{k}'"
 
+_prev_fase, _prev_fr = None, -1
 for k in keys:
     fr = frame_of(k["t"])
     scene.frame_set(fr)
@@ -1470,11 +1471,19 @@ for k in keys:
     p = k["p"]
     fase = k.get("fase", "concentrico")
     for obj, rol in MUSCLE_OBJS:
-        col = COLORS["elongacion"] if rol in ("elongan", "estirados") else \
-            COLORS["isometrico"] if rol in ("estabilizan", "sostienen") else COLORS[fase]
+        def _col(f_):
+            return COLORS["elongacion"] if rol in ("elongan", "estirados") else \
+                COLORS["isometrico"] if rol in ("estabilizan", "sostienen") else COLORS[f_]
         w = p * MUSCLE_INFO[obj]["peso"]
+        # el TONO de un tramo es el de la fase que lo inicia (sin fundido rojo→naranja); sólo la intensidad se interpola
+        if _prev_fase is not None and fr - 1 > _prev_fr:
+            c0 = _col(_prev_fase)
+            obj.color = (c0[0] * w, c0[1] * w, c0[2] * w, 1)
+            obj.keyframe_insert("color", frame=fr - 1)
+        col = _col(fase)
         obj.color = (col[0] * w, col[1] * w, col[2] * w, 1)
         obj.keyframe_insert("color", frame=fr)
+    _prev_fase, _prev_fr = fase, fr
     for o in JOINT_OBJS:
         c = COLORS["hueso"]
         jp = k.get("p_articulacion", p)
@@ -1886,7 +1895,8 @@ scene.render.image_settings.color_mode = "RGBA"
 sh = scene.display.shading
 muscles = [o for o, _ in MUSCLE_OBJS] + JOINT_OBJS
 props = [o for o in scene.objects if o.type == "MESH" and o not in muscles and o is not body and o is not occluder]
-sup_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and not MUSCLE_INFO[o]["profundo"]] + JOINT_OBJS
+# (el disco de "articulación resaltada" ya no se dibuja: sobre la piel se leía como una mancha blanca)
+sup_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and not MUSCLE_INFO[o]["profundo"]]
 deep_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and MUSCLE_INFO[o]["profundo"]]
 wear = list(WEAR.values())
 
