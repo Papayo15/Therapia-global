@@ -1,0 +1,153 @@
+{
+  "id": "F-LUM-015",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 5,
+      "hombro_abd.R": 5,
+      "@roll": 45,
+      "hombro_flex.L": 15,
+      "hombro_flex.R": 15,
+      "codo_flex.L": 125,
+      "codo_flex.R": 125,
+      "hombro_re.L": -75,
+      "hombro_re.R": -75,
+      "mano_cerrar.L": 30,
+      "mano_cerrar.R": 30,
+      "cadera_abd.R": -4,
+      "cadera_flex.R": 12,
+      "cadera_flex.L": -6
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L",
+      "tol_cm": 3.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.1,
+      -1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "props": [
+    {
+      "tipo": "banco_romano",
+      "uso": "banco_bajo_pie",
+      "lado": "R",
+      "grupo": [
+        "pelvis.L",
+        "upperleg01.L"
+      ],
+      "dy": 0.0,
+      "largo": 0.3
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_incl": 20,
+        "toracica_incl": 12.0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_incl": 20,
+        "toracica_incl": 12.0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "lumbar_incl": -6,
+        "toracica_incl": -3.5999999999999996
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "lumbar_incl": -6,
+        "toracica_incl": -3.5999999999999996
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.3,
+      "art": {
+        "lumbar_incl": 20,
+        "toracica_incl": 12.0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "lumbar_incl": 20,
+        "toracica_incl": 12.0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "quadratus_lumborum",
+        "lado": "R"
+      },
+      {
+        "id": "external_oblique",
+        "lado": "R"
+      },
+      {
+        "id": "internal_oblique",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "quadratus_lumborum",
+        "lado": "L"
+      },
+      {
+        "id": "external_oblique",
+        "lado": "L"
+      },
+      {
+        "id": "internal_oblique",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Inclinación lateral en banco romano a 45°"
+}

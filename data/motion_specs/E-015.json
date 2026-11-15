@@ -9,10 +9,12 @@
       "cadera_flex.R": 90,
       "rodilla_flex.L": 90,
       "rodilla_flex.R": 90,
-      "hombro_flex.L": 70,
-      "hombro_flex.R": 70,
-      "codo_flex.L": 110,
-      "codo_flex.R": 110
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 130,
+      "codo_flex.R": 130,
+      "hombro_abd.R": 120,
+      "hombro_abd.L": 120
     }
   },
   "ik": [

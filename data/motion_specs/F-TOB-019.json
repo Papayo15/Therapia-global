@@ -1,0 +1,159 @@
+{
+  "id": "F-TOB-019",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 4,
+      "hombro_abd.R": 4,
+      "cadera_abd.R": 4
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R",
+      "tol_cm": 2
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.35,
+      -1,
+      0.35
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "tobillo_inv.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_inv.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "tobillo_inv.R": -14
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "tobillo_inv.R": -14
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "tobillo_inv.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "tobillo_inv.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "fibularis_longus",
+        "lado": "R"
+      },
+      {
+        "id": "fibularis_brevis",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "tibialis_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "tibialis_anterior",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada_hueso",
+      "hueso": "foot.R",
+      "anclaje_rel": [
+        0.45,
+        -0.45,
+        0.0
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "asentar_keys": [
+    {
+      "art": "cadera_abd.R",
+      "grupo": [
+        "foot.R",
+        "toenails",
+        "toe1-1.R",
+        "toe1-2.R",
+        "toe1-3.R",
+        "toe2-1.R",
+        "toe2-2.R",
+        "toe2-3.R",
+        "toe3-1.R",
+        "toe3-2.R",
+        "toe3-3.R",
+        "toe4-1.R",
+        "toe4-2.R",
+        "toe4-3.R",
+        "toe5-1.R",
+        "toe5-2.R",
+        "toe5-3.R"
+      ],
+      "rango": [
+        -6,
+        6
+      ],
+      "solo_bajo": true
+    }
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Eversión con banda en carga (de pie)"
+}

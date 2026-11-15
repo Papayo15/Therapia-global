@@ -12,13 +12,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import FOOT, hand, plancha_lateral, keys_custom, bipedo, cuadrupedia, iso, lateral, musculos, prono, rep, sedente, supino, write  # noqa: E402
+from common import sedente_suelo, FOOT, hand, plancha_lateral, keys_custom, bipedo, cuadrupedia, iso, lateral, musculos, prono, rep, sedente, supino, write  # noqa: E402
 
 PENDIENTES = {
-    "F-CAD-019": "Plancha Copenhagen corta: requiere que el cuerpo cuelgue BAJO la pierna de arriba apoyada en el banco (apoyo superior + antebrazo); el asentado actual no converge.",
-    "F-CAD-020": "Plancha Copenhagen larga: ídem con el pie en el banco.",
-    "F-CAD-024": "Rotación interna activa en 90/90: sedestación en suelo 90/90.",
-    "F-CAD-025": "Transiciones 90/90 sin manos: cambio de lado continuo.",
 }
 
 
@@ -238,6 +234,69 @@ s_ = {"id": "F-CAD-014", "duracion_s": last["t"], **b, "keys": ks, "avance": adv
       "articulacion_resaltada": [{"hueso": "upperleg01.R"}],
       "props": [{"tipo": "banda_elastica", "uso": "lazo_rodillas", "hueso": "upperleg02", "t": 0.85}], "variantes": ["gym", "casa"]}
 write(s_)
+
+
+# 90/90 en el suelo: pierna IZQUIERDA delante en rotación externa (muslo al frente, tibia cruzada delante),
+# pierna DERECHA detrás en rotación interna (muslo al lado, tibia hacia atrás); manos apoyadas detrás.
+def noventa():
+    # ángulos medidos con sonda (eje: +re = rotación externa; adelante = −y)
+    b = sedente_suelo(manos="libres", extra={"hombro_flex.L": 35, "hombro_flex.R": 35, "codo_flex.L": 80, "codo_flex.R": 80,
+                                             "hombro_abd.L": 15, "hombro_abd.R": 15,
+                                             "cadera_flex.L": 90, "cadera_abd.L": 40, "cadera_re.L": 90, "rodilla_flex.L": 90,
+                                             "cadera_flex.R": 25, "cadera_abd.R": 60, "cadera_re.R": -30, "rodilla_flex.R": 90,
+                                             "tobillo_dorsi.L": -10, "tobillo_dorsi.R": -25, "lumbar_flex": 0})
+    b["base"]["asentar"] = [
+        {"art": "cadera_flex.L", "grupo": ["lowerleg01.L", "lowerleg02.L", "foot.L"], "rango": [-25, 25]},
+        {"art": "cadera_abd.R", "grupo": ["lowerleg01.R", "lowerleg02.R", "foot.R"], "rango": [-20, 20]}]
+    b["contactos"] = [b["contactos"][0], {"grupo": ["lowerleg01.L", "lowerleg02.L", "foot.L"], "tol_cm": 2.5}]
+    b["rom_pasivo"] = {"cadera_re+": 90}
+    b["camara"] = {"dir": [-0.15, -0.7, 1.2], "lente": 50, "margen": 1.1}
+    return b
+
+
+# Copenhagen: plancha lateral sobre el antebrazo izquierdo; la pierna de ARRIBA (R) apoyada en un banco
+# (rodilla = corta, tobillo = larga). El @roll lleva el apoyo de la pierna a la altura del banco (0,40 m).
+def copenhagen(larga):
+    b = plancha_lateral()
+    g = ["lowerleg02.R", "foot.R"] if larga else ["lowerleg01.R", "upperleg02.R"]
+    b["base"]["angulos"].update({"cadera_flex.L": 20, "rodilla_flex.L": 70, "cadera_abd.R": 6})
+    b["base"]["asentar"] = [{"art": "@roll", "grupo": g, "z": 0.40, "rango": [-60, 60], "reapoyar": True}]
+    b["contactos"] = [b["contactos"][0], {"grupo": g, "banco": "R", "tol_cm": 2}]
+    b["props"] = [{"tipo": "banco", "uso": "banco_bajo_pie", "lado": "R", "grupo": g, "largo": 0.40, "dy": 0.0}]
+    # por key: el cuerpo gira (@roll) para que la pierna siga sobre el banco y el antebrazo en el suelo
+    b["resolver"] = {"art": "@roll", "a": g, "za": 0.40, "b": b["contactos"][0]["grupo"], "rango": [-30, 30]}
+    return b
+
+
+_b = noventa()
+hecho.append(spec("F-CAD-024", _b, rep({"cadera_re.R": -15}, up=1.3, hold=1.0, down=1.6), lado="R",
+                  resaltar=("upperleg01.R",)))
+# 025 Transiciones 90/90 sin manos: 90/90 izquierda → rodillas arriba (pies apoyados) → 90/90 derecha → vuelta.
+_A = {"cadera_flex.L": 90, "cadera_abd.L": 40, "cadera_re.L": 90, "rodilla_flex.L": 90, "tobillo_dorsi.L": -10,
+      "cadera_flex.R": 25, "cadera_abd.R": 60, "cadera_re.R": -30, "rodilla_flex.R": 90, "tobillo_dorsi.R": -25}
+_B = {k[:-1] + ("R" if k.endswith("L") else "L"): v for k, v in _A.items()}
+_M = {f"{j}.{sd}": v for sd in "LR" for j, v in (("cadera_flex", 105), ("cadera_abd", 20), ("cadera_re", 0),
+                                                 ("rodilla_flex", 115), ("tobillo_dorsi", 10))}
+# intermedios: primero sube la rodilla (flexión) manteniendo la rotación a medias, luego gira la pierna
+_IA = {**_A, **{k: (_A[k] + _M[k]) / 2 for k in _A}, "cadera_flex.L": 108, "cadera_flex.R": 100, "rodilla_flex.R": 100}
+_IB = {**_B, **{k: (_B[k] + _M[k]) / 2 for k in _B}, "cadera_flex.R": 108, "cadera_flex.L": 100, "rodilla_flex.L": 100}
+_d = lambda T: {k: round(T[k] - _A[k], 1) for k in _A}
+_b = noventa()
+_b["base"]["asentar"] = []
+_b["contactos"] = [{**_b["contactos"][0], "tol_cm": 5}]
+_b["rom_pasivo"] = {"cadera_re+": 90, "cadera_abd+": 60}
+_seq = [(0, _d(_A), 0), (0.4, _d(_A), 0), (1.2, _d(_IA), 0.4), (2.0, _d(_M), 0.6), (2.8, _d(_IB), 0.8), (3.6, _d(_B), 1),
+        (4.1, _d(_B), 1), (4.9, _d(_IB), 0.8), (5.7, _d(_M), 0.6), (6.5, _d(_IA), 0.4), (7.3, _d(_A), 0), (7.6, _d(_A), 0)]
+hecho.append(spec("F-CAD-025", _b, keys_custom(_seq, ["concentrico"] * 5 + ["isometrico"] + ["concentrico"] * 6),
+                  lado=None, resaltar=("upperleg01.L", "upperleg01.R"),
+                  asentar_keys=[{"art": f"cadera_flex.{sd}", "grupo": FOOT(sd) + [f"lowerleg02.{sd}"], "rango": [0, 45],
+                                 "solo_bajo": True, "z": 0.0} for sd in "LR"]))
+
+for _id, _l in (("F-CAD-019", False), ("F-CAD-020", True)):
+    _b = copenhagen(_l)
+    _p = _b.pop("props")
+    hecho.append(spec(_id, _b, rep({"cadera_abd.R": -14}, up=1.2, hold=1.2, down=1.6), props=_p,
+                      resaltar=("upperleg01.R",), variantes=["gym", "casa"]))
 
 print("Pendientes documentadas:", ", ".join(PENDIENTES))
 (Path(__file__).resolve().parents[3] / "data/motion_specs/_pendientes_cadera.json").write_text(

@@ -188,7 +188,7 @@
       "uso": "banda_anclada_hueso",
       "hueso": "foot.R",
       "anclaje_rel": [
-        0.55,
+        -0.55,
         -0.15,
         0.0
       ]

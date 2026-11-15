@@ -10,7 +10,6 @@ from common import (caminar, FOOT, bipedo, rollo_pantorrillas, iso, keys_custom,
 
 ROOT = Path(__file__).resolve().parents[3]
 PENDIENTES = {
-    "F-TOB-019": "Eversión con banda en carga: requiere apoyo parcial del antepié.",
 }
 TOES = lambda s: FOOT(s)          # noqa: E731
 
@@ -251,13 +250,22 @@ for id_, art, extra_props in (("F-TOB-011", None, None), ("F-TOB-016", None, Non
 b = rollo_pantorrillas(sedente_suelo(), lados=("R",))
 hecho.append(spec("F-TOB-012", b, rep({"tobillo_inv.R": 25}, up=1.2, hold=1.0, down=1.6), resaltar=("foot.R",), camara=[-0.5, -1, 0.6]))
 hecho.append(spec("F-TOB-013", rollo_pantorrillas(sedente_suelo(), lados=("R",)), rep({"tobillo_inv.R": 25}, up=1.2, hold=1.0, down=1.6), resaltar=("foot.R",),
-                  camara=[-0.5, -1, 0.6],
-                  props=[{"tipo": "banda_elastica", "uso": "banda_anclada_hueso", "hueso": "foot.R", "anclaje_rel": [0.55, -0.15, 0.0]}]))
+                  camara=[-0.5, -1, 0.6],   # inversión: banda anclada por FUERA (el pie derecho tira hacia dentro)
+                  props=[{"tipo": "banda_elastica", "uso": "banda_anclada_hueso", "hueso": "foot.R", "anclaje_rel": [-0.55, -0.15, 0.0]}]))
 hecho.append(spec("F-TOB-017", rollo_pantorrillas(sedente_suelo(), lados=("R",)), rep({"tobillo_inv.R": -15}, up=1.2, hold=1.0, down=1.6), resaltar=("foot.R",),
                   camara=[-0.5, -1, 0.6]))
 hecho.append(spec("F-TOB-018", rollo_pantorrillas(sedente_suelo(), lados=("R",)), rep({"tobillo_inv.R": -15}, up=1.2, hold=1.0, down=1.6), resaltar=("foot.R",),
-                  camara=[-0.5, -1, 0.6],
-                  props=[{"tipo": "banda_elastica", "uso": "banda_anclada_hueso", "hueso": "foot.R", "anclaje_rel": [-0.55, -0.15, 0.0]}]))
+                  camara=[-0.5, -1, 0.6],   # eversión: banda anclada por DENTRO, por delante del otro pie
+                  props=[{"tipo": "banda_elastica", "uso": "banda_anclada_hueso", "hueso": "foot.R", "anclaje_rel": [0.55, -0.35, 0.0]}]))
+
+# 019 Eversión con banda EN CARGA (de pie): banda en el antepié derecho anclada abajo y por delante-medial;
+# el pie derecho (con algo de carga) lleva el antepié hacia fuera levantando el borde externo; el talón no se despega.
+b = bipedo(extra={"hombro_abd.L": 4, "hombro_abd.R": 4, "cadera_abd.R": 4}, camara=(-0.35, -1, 0.35))
+b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R", "tol_cm": 2}]
+_s19 = spec("F-TOB-019", b, rep({"tobillo_inv.R": -14}, up=1.2, hold=1.0, down=1.6), resaltar=("foot.R",),
+            props=[{"tipo": "banda_elastica", "uso": "banda_anclada_hueso", "hueso": "foot.R", "anclaje_rel": [0.45, -0.45, 0.0]}],
+            asentar_keys=[{"art": "cadera_abd.R", "grupo": FOOT("R"), "rango": [-6, 6], "solo_bajo": True}])
+hecho.append(_s19)
 
 # 014 Elevación de talones con pelota entre los talones.
 b = bipedo(extra={"cadera_abd.L": -1, "cadera_abd.R": -1}, camara=(-0.4, 1, 0.25))

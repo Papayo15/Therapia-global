@@ -1867,6 +1867,9 @@ scene.collection.objects.link(occluder)
 for m in list(occluder.modifiers):
     if m.type == "SUBSURF":
         occluder.modifiers.remove(m)
+for m in list(occluder.modifiers):          # piel COMPLETA: sin recortes bajo la ropa (si no, por el hueco se ve
+    if m.type == "MASK" and m.name != "Hide helpers":   # la espalda a través del pecho)
+        occluder.modifiers.remove(m)
 dsp = occluder.modifiers.new("Encoger", "DISPLACE")
 dsp.strength, dsp.mid_level = -0.015, 0.0
 occluder.color = (0, 0, 0, 1)

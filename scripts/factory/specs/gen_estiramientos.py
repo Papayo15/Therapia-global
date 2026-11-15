@@ -60,7 +60,10 @@ def spec(id_, plantilla, kd, props=None, lado="R", resaltar=None, camara=None, v
 def ikh(pl, side, hueso, d, t=0.5, sep=0.03, lado_dir=None):
     pl["ik"] = pl.get("ik", []) + [{"cadena": f"brazo.{side}", "a_hueso": {"hueso": hueso, "dir": d, "t": t, "sep": sep,
                                                                              "lado": lado_dir or side}}]
-    pl["base"]["angulos"].update({f"hombro_flex.{side}": 70, f"codo_flex.{side}": 110})
+    if hueso == "head":      # mano a la cabeza: el codo va ARRIBA y afuera (si va al frente, el antebrazo cruza la cara)
+        pl["base"]["angulos"].update({f"hombro_abd.{side}": 120, f"hombro_flex.{side}": 25, f"codo_flex.{side}": 130})
+    else:
+        pl["base"]["angulos"].update({f"hombro_flex.{side}": 70, f"codo_flex.{side}": 110})
     return pl
 
 

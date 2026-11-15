@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Genera fichas de COLUMNA TORÁCICA (F-TOR), LUMBAR/CORE (F-LUM) y las planchas pendientes (F-CER-015, F-ESC-015)."""
 import json
+LUM15 = 20
 import sys
 from pathlib import Path
 
@@ -10,7 +11,6 @@ from common import (caminar, FOOT, bipedo, cuadrupedia, hand, iso, keys_custom, 
 
 ROOT = Path(__file__).resolve().parents[3]
 PENDIENTES = {
-    "F-LUM-015": "Inclinación lateral en banco romano a 45°: el pivote lateral con compensación de abducción no mantiene los pies fijos; falta un pivote alrededor del eje antero-posterior de la cadera.",
 }
 SP = ("spine03",)
 
@@ -107,6 +107,21 @@ for k in d["keys"]:
     q = 1 - k["p"]                                   # p=1 (pico) = tronco alineado; p=0 = tronco abajo
     k["pivote_x"] = 45 * q
     k["art"] = {"cadera_flex.L": 45 * q, "cadera_flex.R": 45 * q}
+sp.write_text(json.dumps(d, ensure_ascii=False, indent=2))
+H.append(sp)
+# 015 Inclinación lateral en banco romano a 45°: cuerpo de lado inclinado 45° (@roll), cadera sobre el cojín y pies
+# fijos; sólo se mueve la columna (inclinación lumbar + torácica): baja hacia el suelo y sube hasta la línea.
+b = bipedo(extra={"@roll": 45, "hombro_flex.L": 15, "hombro_flex.R": 15, "codo_flex.L": 125, "codo_flex.R": 125,
+                  "hombro_abd.L": 5, "hombro_abd.R": 5, "hombro_re.L": -75, "hombro_re.R": -75, "mano_cerrar.L": 30, "mano_cerrar.R": 30,
+                  "cadera_abd.R": -4, "cadera_flex.R": 12, "cadera_flex.L": -6}, camara=(0.1, -1, 0.25))
+b["props"] = [{"tipo": "banco_romano", "uso": "banco_bajo_pie", "lado": "R", "grupo": ["pelvis.L", "upperleg01.L"],
+               "dy": 0.0, "largo": 0.30}]
+b["contactos"] = [{"grupo": "foot.L", "tol_cm": 3.5}]          # pie de abajo en la plataforma; el de arriba, bajo el rodillo
+sp = spec("F-LUM-015", b, rep({"lumbar_incl": 0}, up=1.5, hold=0.8, down=1.6), lado="R", resaltar=("spine03",))
+d = json.loads(sp.read_text())
+for k in d["keys"]:
+    q = 1 - k["p"]
+    k["art"] = {"lumbar_incl": LUM15 * q - 6 * k["p"], "toracica_incl": (LUM15 * q - 6 * k["p"]) * 0.6}
 sp.write_text(json.dumps(d, ensure_ascii=False, indent=2))
 H.append(sp)
 # 014 Caminata con carga unilateral (maleta): mancuerna en la mano derecha, tronco erguido sin inclinarse.
