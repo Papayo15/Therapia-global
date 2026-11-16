@@ -52,11 +52,12 @@ ff("-framerate", str(fps), "-i", src_mask,
    "[mg]format=rgba,alphaextract[ma];"
    "[ma][sa]blend=all_mode=multiply,gblur=sigma=1.2[a];"
    # color PURO (rojo/naranja/azul saturados): la intensidad ya va en la transparencia; si se deja el color
+   # oscurecido, sobre la piel gris (lo casi negro queda negro: si no, el ruido se vuelve color y el ProRes pesa 5x)
    # oscurecido, sobre la piel gris el rojo se ve café/beige y el azul gris
    "[mg]format=rgb24,geq="
-   "r='r(X,Y)*255/max(1,max(max(r(X,Y),g(X,Y)),b(X,Y)))':"
-   "g='g(X,Y)*255/max(1,max(max(r(X,Y),g(X,Y)),b(X,Y)))':"
-   "b='b(X,Y)*255/max(1,max(max(r(X,Y),g(X,Y)),b(X,Y)))'[rgb];"
+   "r='if(gt(max(max(r(X,Y),g(X,Y)),b(X,Y)),10),r(X,Y)*255/max(max(r(X,Y),g(X,Y)),b(X,Y)),0)':"
+   "g='if(gt(max(max(r(X,Y),g(X,Y)),b(X,Y)),10),g(X,Y)*255/max(max(r(X,Y),g(X,Y)),b(X,Y)),0)':"
+   "b='if(gt(max(max(r(X,Y),g(X,Y)),b(X,Y)),10),b(X,Y)*255/max(max(r(X,Y),g(X,Y)),b(X,Y)),0)'[rgb];"
    "[rgb][a]alphamerge[out]",
    "-map", "[out]", "-c:v", "prores_ks", "-profile:v", "4444", "-pix_fmt", "yuva444p10le",
    str(d / "capa_muscular.mov"))

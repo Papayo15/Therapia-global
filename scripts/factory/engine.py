@@ -1884,7 +1884,7 @@ dsp.strength, dsp.mid_level = -0.015, 0.0
 occluder.color = (0, 0, 0, 1)
 occluder.hide_render = True
 
-bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.abspath(args.out), "escena.blend"))
+bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.abspath(args.out), "escena.blend"), compress=True)
 if args.no_render:
     sys.exit(0)
 
