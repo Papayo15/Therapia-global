@@ -1763,7 +1763,12 @@ _skip_occ = {o for o, _ in MUSCLE_OBJS} | set(JOINT_OBJS) | set(WEAR.values()) |
 _occ_props = [o for o in scene.objects if o.type == "MESH" and o not in _skip_occ
               and o.name.split(".")[0] not in ("Suelo", "Colchoneta")]
 _occ_samples = []
-if _occ_props and not args.solo_mascara:            # (en solo-máscara el gris ya existe: la cámara no puede cambiar)
+# En solo-máscara la cámara debe ser la MISMA del gris ya existente: el giro existe desde la fase 3
+# (14-nov-2026 08:00 CST); los gris anteriores se renderizaron sin giro.
+_T_GIRO = 1794664857
+_gris_mp4 = os.path.join(os.path.abspath(args.out), "gris.mp4")
+_giro_ok = not args.solo_mascara or (os.path.exists(_gris_mp4) and os.path.getmtime(_gris_mp4) > _T_GIRO)
+if _occ_props and _giro_ok:
     _rng = np.random.default_rng(1)
     for fr in (1, FRAME_END // 2):
         scene.frame_set(fr)
@@ -1868,6 +1873,42 @@ for _azul in (True, False):
 _hidden_far |= _far_deep
 print("PROFUNDOS_LEJANOS", sorted({MUSCLE_INFO[o]["id"] for o in _far_deep}))
 
+# C) Superficiales TAPADOS por la propia piel desde esta cámara (trapecio superior visto de frente, dorsal visto de
+# lado…): si son los únicos de su color, se pasan a rayos X; si no, el video quedaría sin ese color.
+_kp = max(keys, key=lambda k: k.get("p", 0))
+scene.frame_set(int(round(_kp["t"] * FPS)) + 1)
+update()
+_bvh_p = _bvh_now()
+_tapado = set()
+for o, info in MUSCLE_INFO.items():
+    if info["profundo"] or o in _hidden_far:
+        continue
+    _me = o.evaluated_get(deps()).to_mesh()
+    _vs = [o.matrix_world @ v.co for v in _me.vertices]
+    o.to_mesh_clear()
+    _vs = _vs[::max(1, len(_vs) // 300)]
+    if not _vs:
+        continue
+    _vis = 0
+    for p_ in _vs:
+        _dv = p_ - cam.location
+        _dd = _dv.length
+        _h = _bvh_p.ray_cast(cam.location, _dv.normalized(), _dd)
+        if _h[0] is None or (_h[0] - cam.location).length > _dd - 0.015:
+            _vis += 1
+    print("VISIBLE", MUSCLE_INFO[o]["id"], round(_vis / len(_vs), 3))
+    if _vis / len(_vs) < 0.30:
+        _tapado.add(o)
+_rayosx = set()
+for _azul in (True, False):
+    _grupo = [o for o, rol in MUSCLE_OBJS if (rol in _BLUE_R) == _azul and o not in _hidden_far]
+    _verdes = [o for o in _grupo if MUSCLE_INFO[o]["profundo"] or o not in _tapado]
+    if _grupo and not _verdes:
+        _rayosx |= set(_grupo) & _tapado
+print("TAPADOS_A_RAYOSX", sorted({MUSCLE_INFO[o]["id"] for o in _rayosx}))
+scene.frame_set(1)
+update()
+
 # Oclusor: copia del cuerpo encogida 1,5 cm. Tapa lo profundo; lo superficial aflora con su forma sobre la piel.
 occluder = body.copy()
 occluder.data = body.data
@@ -1896,8 +1937,8 @@ sh = scene.display.shading
 muscles = [o for o, _ in MUSCLE_OBJS] + JOINT_OBJS
 props = [o for o in scene.objects if o.type == "MESH" and o not in muscles and o is not body and o is not occluder]
 # (el disco de "articulación resaltada" ya no se dibuja: sobre la piel se leía como una mancha blanca)
-sup_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and not MUSCLE_INFO[o]["profundo"]]
-deep_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and MUSCLE_INFO[o]["profundo"]]
+sup_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and not MUSCLE_INFO[o]["profundo"] and o not in _rayosx]
+deep_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and (MUSCLE_INFO[o]["profundo"] or o in _rayosx)]
 wear = list(WEAR.values())
 
 
