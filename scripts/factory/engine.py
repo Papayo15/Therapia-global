@@ -1853,15 +1853,17 @@ for o, info in MUSCLE_INFO.items():
     if not _pts:
         continue
     _c = sum(_pts, Vector((0, 0, 0))) / len(_pts)
-    _dv = (_c - cam.location)
+    _inv = body.matrix_world.inverted()          # el BVH está en coordenadas LOCALES del cuerpo
+    _cl, _c = _inv @ cam.location, _inv @ _c
+    _dv = (_c - _cl)
     _dist = _dv.length
     _dv.normalize()
-    _hit_in = _bvh_c.ray_cast(cam.location, _dv)
+    _hit_in = _bvh_c.ray_cast(_cl, _dv)
     _hit_out = _bvh_c.ray_cast(_c + _dv * 2.0, -_dv)
     if _hit_in[0] is None or _hit_out[0] is None:
         continue
-    d_in = (_hit_in[0] - cam.location).length
-    d_out = (_hit_out[0] - cam.location).length
+    d_in = (_hit_in[0] - _cl).length
+    d_out = (_hit_out[0] - _cl).length
     if d_out > d_in and (_dist - d_in) / (d_out - d_in) > 0.55:
         _far_deep.add(o)
 # …salvo que sean los ÚNICOS de su color (cuadrado lumbar, piriforme, pterigoideos): entonces se dibujan igual.
@@ -1890,11 +1892,13 @@ for o, info in MUSCLE_INFO.items():
     if not _vs:
         continue
     _vis = 0
+    _inv = body.matrix_world.inverted()          # el BVH está en coordenadas LOCALES del cuerpo
+    _cl = _inv @ cam.location
     for p_ in _vs:
-        _dv = p_ - cam.location
+        _dv = _inv @ p_ - _cl
         _dd = _dv.length
-        _h = _bvh_p.ray_cast(cam.location, _dv.normalized(), _dd)
-        if _h[0] is None or (_h[0] - cam.location).length > _dd - 0.015:
+        _h = _bvh_p.ray_cast(_cl, _dv.normalized(), _dd)
+        if _h[0] is None or (_h[0] - _cl).length > _dd - 0.015:
             _vis += 1
     print("VISIBLE", MUSCLE_INFO[o]["id"], round(_vis / len(_vs), 3))
     if _vis / len(_vs) < 0.30:

@@ -103,7 +103,14 @@
       }
     }
   ],
-  "musculos": {},
+  "musculos": {
+    "estirados": [
+      {
+        "id": "flexor_digitorum_brevis",
+        "lado": "R"
+      }
+    ]
+  },
   "articulacion_resaltada": [
     {
       "hueso": "foot.R"

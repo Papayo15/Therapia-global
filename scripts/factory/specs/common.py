@@ -181,7 +181,9 @@ def musculos(item_id, lado=None, lado_elongan=None, sostienen=None):
         seen, arr = set(), []
         for m in lista:
             for mid in m["ids"]:
-                if mid in seen or mid.startswith(("glenohumeral_capsule", "plantar_fascia")):
+                if mid == "plantar_fascia":       # tejido no muscular: se dibuja el flexor corto de los dedos,
+                    mid = "flexor_digitorum_brevis"   # que está justo bajo la aponeurosis plantar
+                if mid in seen or mid.startswith("glenohumeral_capsule"):
                     continue
                 seen.add(mid)
                 if rol == "elongan" and mid in activos:
