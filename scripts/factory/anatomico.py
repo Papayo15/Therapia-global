@@ -83,12 +83,31 @@ for fr in range(1, FRAME_END + 2):
     cam.keyframe_insert("location", frame=fr)
     cam.keyframe_insert("rotation_euler", frame=fr)
 
+# los rayos de scene.ray_cast ven lo visible en el VISOR, no en el render: la ropa, la piel completa, etc. (ocultas
+# en el render) tapaban a todos los músculos → se igualan las dos visibilidades antes de cada pasada de rayos
+def _rayos_como_render(visibles):
+    for o in scene.objects:
+        if o.type == "MESH":
+            o.hide_viewport = o not in visibles
+    update()
+
+
+def _visor_normal():
+    for o in scene.objects:
+        if o.type == "MESH":
+            o.hide_viewport = False
+    update()
+
+
+_PROPS_VIS = [o for o in props if o not in wear and o not in WEAR.values()]
+
 # ── 4) músculos neutros que TAPAN a un músculo profundo que trabaja: se ocultan (como quitar una capa) ──
 _deep_act = [o for o, _ in MUSCLE_OBJS if MUSCLE_INFO[o]["profundo"]]
 if _deep_act:
     _kp = max(keys, key=lambda k: k.get("p", 0))
     for o in NEUTROS:
         o.hide_render = False
+    _rayos_como_render(set(NEUTROS) | {o for o, _ in MUSCLE_OBJS} | {body} | set(_PROPS_VIS))
     for fr in (frame_of(_kp["t"]), max(1, frame_of(_kp["t"]) - FRAME_END // 4), min(FRAME_END, frame_of(_kp["t"]) + FRAME_END // 4)):
         scene.frame_set(fr)
         dg = deps()
@@ -112,6 +131,7 @@ if _deep_act:
                         obo.hide_render = True
                         obo["_quitado"] = True
                     org = hit + dv.normalized() * 0.001
+    _visor_normal()
     print("NEUTROS_QUITADOS", sum(1 for o in NEUTROS if o.get("_quitado")))
 
 # ── 5) render ──
@@ -174,8 +194,10 @@ if os.environ.get("ANAT_STILL"):
     scene.render.filepath = os.path.join(OUTD, f"anat_{os.environ['ANAT_STILL']}.png")
     bpy.ops.render.render(write_still=True)
     raise SystemExit(0)
-scene.render.filepath = os.path.join(OUTD, "anat", "f_")
-bpy.ops.render.render(animation=True)
+if not os.environ.get("ANAT_SOLO_ETIQUETAS"):                # recalcular sólo etiquetas.json (sin volver a renderizar)
+    scene.render.filepath = os.path.join(OUTD, "anat", "f_")
+    bpy.ops.render.render(animation=True)
+_rayos_como_render({o for o in scene.objects if o.type == "MESH" and not o.hide_render})
 
 # ── 6) etiquetas: posición en pantalla de cada músculo trabajado, cuadro a cuadro ──
 _grupos = {}
