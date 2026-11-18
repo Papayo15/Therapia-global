@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Play, Loader2, VideoOff } from "lucide-react";
+import { AnatomyLabels } from "./AnatomyLabels";
 
 // ─── ExerciseAnimationPlayer ───────────────────────────────────────────────────
 // Video player for exercise and osteopathy demonstrations.
@@ -18,6 +19,8 @@ export interface ExerciseAnimationPlayerProps {
   autoPlay?: boolean;
   loop?: boolean;
   muted?: boolean;
+  /** etiquetas.json de la vista anatómica: nombres de los músculos que trabajan, en el idioma del paciente */
+  labels?: string;
 }
 
 type PlayerState = "loading" | "ready" | "paused" | "error";
@@ -30,6 +33,7 @@ export function ExerciseAnimationPlayer({
   autoPlay = true,
   loop = true,
   muted = true,
+  labels,
 }: ExerciseAnimationPlayerProps) {
   const t = useTranslations("exercises");
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -135,6 +139,7 @@ export function ExerciseAnimationPlayer({
       >
         <source src={safeVideo} type="video/mp4" />
       </video>
+      {labels && state !== "loading" && <AnatomyLabels videoRef={videoRef} src={labels} fit="cover" />}
       {state === "paused" && (
         <button
           onClick={togglePlayPause}
