@@ -136,7 +136,7 @@ def split_joint(name):
 
 # ─── Carga del avatar ────────────────────────────────────────────────────────
 if args.anatomico and args.avatar.endswith("avatar_f40.blend"):
-    args.avatar = args.avatar.replace("avatar_f40.blend", "avatar_f40_anat.blend")   # + resto de músculos y esqueleto
+    args.avatar = args.avatar.replace("avatar_f40.blend", os.environ.get("ANAT_AVATAR", "avatar_f40_anat_lite.blend"))   # + resto de músculos y esqueleto
 bpy.ops.wm.open_mainfile(filepath=args.avatar)
 scene = bpy.context.scene
 rig = bpy.data.objects["Paciente_Rig"]

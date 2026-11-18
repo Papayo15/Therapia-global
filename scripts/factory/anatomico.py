@@ -135,6 +135,32 @@ sh.show_specular_highlight = True
 scene.render.film_transparent = False
 scene.world.color = BG
 scene.display.render_aa = "5"                               # suficiente a 720p y ~40 % más rápido que 8
+if os.environ.get("ANAT_PROF"):
+    import time
+    for fr in (10, 11, 12):
+        t0 = time.time(); scene.frame_set(fr); deps(); t1 = time.time()
+        print(f"PROF frame_set {t1 - t0:.2f}s")
+    for aa in ("OFF", "5"):
+        scene.display.render_aa = aa
+        scene.render.filepath = os.path.join(OUTD, f"prof_{aa}.png")
+        t0 = time.time(); bpy.ops.render.render(write_still=True); print(f"PROF render aa={aa} {time.time() - t0:.2f}s")
+    for fr in (20, 21):
+        scene.frame_set(fr)
+        scene.render.filepath = os.path.join(OUTD, f"prof_gl{fr}.png")
+        t0 = time.time()
+        try:
+            bpy.ops.render.opengl(write_still=True)
+            print(f"PROF opengl {time.time() - t0:.2f}s")
+        except Exception as e:
+            print("PROF opengl ERROR", e)
+    mods = {}
+    for o in scene.objects:
+        if o.type == "MESH" and not o.hide_render:
+            for m in o.modifiers:
+                if m.show_render:
+                    mods[m.type] = mods.get(m.type, 0) + 1
+    print("PROF mods", mods, "verts", sum(len(o.data.vertices) for o in scene.objects if o.type == "MESH" and not o.hide_render))
+    raise SystemExit(0)
 if os.environ.get("ANAT_STILL"):
     scene.frame_set(int(os.environ["ANAT_STILL"]))
     scene.render.filepath = os.path.join(OUTD, f"anat_{os.environ['ANAT_STILL']}.png")
