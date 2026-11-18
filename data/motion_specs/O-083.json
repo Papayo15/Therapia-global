@@ -1,0 +1,239 @@
+{
+  "id": "O-083",
+  "duracion_s": 6.0,
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": false,
+    "angulos": {
+      "cadera_abd.L": 3,
+      "cadera_abd.R": 3,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80,
+      "cadera_flex.L": 50,
+      "rodilla_flex.L": 95,
+      "cadera_flex.R": 50,
+      "rodilla_flex.R": 95
+    },
+    "asentar": [
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "rango": [
+          -25,
+          25
+        ]
+      },
+      {
+        "art": "hombro_flex.L",
+        "grupo": [
+          "lowerarm02.L",
+          "wrist.L",
+          "finger1-1.L",
+          "finger1-2.L",
+          "finger1-3.L",
+          "finger2-1.L",
+          "finger2-2.L",
+          "finger2-3.L",
+          "finger3-1.L",
+          "finger3-2.L",
+          "finger3-3.L",
+          "finger4-1.L",
+          "finger4-2.L",
+          "finger4-3.L",
+          "finger5-1.L",
+          "finger5-2.L",
+          "finger5-3.L",
+          "metacarpal1.L",
+          "metacarpal2.L",
+          "metacarpal3.L",
+          "metacarpal4.L"
+        ],
+        "rango": [
+          -35,
+          15
+        ]
+      },
+      {
+        "art": "hombro_flex.R",
+        "grupo": [
+          "lowerarm02.R",
+          "wrist.R",
+          "finger1-1.R",
+          "finger1-2.R",
+          "finger1-3.R",
+          "finger2-1.R",
+          "finger2-2.R",
+          "finger2-3.R",
+          "finger3-1.R",
+          "finger3-2.R",
+          "finger3-3.R",
+          "finger4-1.R",
+          "finger4-2.R",
+          "finger4-3.R",
+          "finger5-1.R",
+          "finger5-2.R",
+          "finger5-3.R",
+          "metacarpal1.R",
+          "metacarpal2.R",
+          "metacarpal3.R",
+          "metacarpal4.R"
+        ],
+        "rango": [
+          -35,
+          15
+        ]
+      }
+    ],
+    "camilla": true
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "head"
+    },
+    {
+      "grupo": "spine01",
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": [
+        "lowerarm02.L",
+        "wrist.L",
+        "finger1-1.L",
+        "finger1-2.L",
+        "finger1-3.L",
+        "finger2-1.L",
+        "finger2-2.L",
+        "finger2-3.L",
+        "finger3-1.L",
+        "finger3-2.L",
+        "finger3-3.L",
+        "finger4-1.L",
+        "finger4-2.L",
+        "finger4-3.L",
+        "finger5-1.L",
+        "finger5-2.L",
+        "finger5-3.L",
+        "metacarpal1.L",
+        "metacarpal2.L",
+        "metacarpal3.L",
+        "metacarpal4.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerarm02.R",
+        "wrist.R",
+        "finger1-1.R",
+        "finger1-2.R",
+        "finger1-3.R",
+        "finger2-1.R",
+        "finger2-2.R",
+        "finger2-3.R",
+        "finger3-1.R",
+        "finger3-2.R",
+        "finger3-3.R",
+        "finger4-1.R",
+        "finger4-2.R",
+        "finger4-3.R",
+        "finger5-1.R",
+        "finger5-2.R",
+        "finger5-3.R",
+        "metacarpal1.R",
+        "metacarpal2.R",
+        "metacarpal3.R",
+        "metacarpal4.R"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      -0.35,
+      0.8
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.5,
+      "art": {},
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 4.5,
+      "art": {},
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {},
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Consultorio: un solo video (camilla + terapeuta).",
+  "terapeuta": {
+    "lado": "x-",
+    "manos": {
+      "R": {
+        "hueso": "spine04",
+        "a": 0.5,
+        "desde": [
+          0.2,
+          0,
+          1
+        ]
+      },
+      "L": {
+        "hueso": "spine04",
+        "a": 0.5,
+        "desde": [
+          -0.4,
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Liberación de la raíz del mesenterio"
+}

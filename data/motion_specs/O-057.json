@@ -1,0 +1,285 @@
+{
+  "id": "O-057",
+  "duracion_s": 6.0,
+  "base": {
+    "orientacion": "prono",
+    "colchoneta": false,
+    "angulos": {
+      "cervical_rot": 70,
+      "antebrazo_prono.L": -80,
+      "antebrazo_prono.R": -80,
+      "tobillo_dorsi.L": -30,
+      "tobillo_dorsi.R": -30
+    },
+    "asentar": [
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "rango": [
+          -30,
+          30
+        ]
+      },
+      {
+        "art": "cadera_flex.L",
+        "grupo": [
+          "foot.L",
+          "toenails",
+          "toe1-1.L",
+          "toe1-2.L",
+          "toe1-3.L",
+          "toe2-1.L",
+          "toe2-2.L",
+          "toe2-3.L",
+          "toe3-1.L",
+          "toe3-2.L",
+          "toe3-3.L",
+          "toe4-1.L",
+          "toe4-2.L",
+          "toe4-3.L",
+          "toe5-1.L",
+          "toe5-2.L",
+          "toe5-3.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      },
+      {
+        "art": "cadera_flex.R",
+        "grupo": [
+          "foot.R",
+          "toenails",
+          "toe1-1.R",
+          "toe1-2.R",
+          "toe1-3.R",
+          "toe2-1.R",
+          "toe2-2.R",
+          "toe2-3.R",
+          "toe3-1.R",
+          "toe3-2.R",
+          "toe3-3.R",
+          "toe4-1.R",
+          "toe4-2.R",
+          "toe4-3.R",
+          "toe5-1.R",
+          "toe5-2.R",
+          "toe5-3.R"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      },
+      {
+        "art": "hombro_flex.L",
+        "grupo": [
+          "lowerarm02.L",
+          "wrist.L",
+          "finger1-1.L",
+          "finger1-2.L",
+          "finger1-3.L",
+          "finger2-1.L",
+          "finger2-2.L",
+          "finger2-3.L",
+          "finger3-1.L",
+          "finger3-2.L",
+          "finger3-3.L",
+          "finger4-1.L",
+          "finger4-2.L",
+          "finger4-3.L",
+          "finger5-1.L",
+          "finger5-2.L",
+          "finger5-3.L",
+          "metacarpal1.L",
+          "metacarpal2.L",
+          "metacarpal3.L",
+          "metacarpal4.L"
+        ],
+        "rango": [
+          -20,
+          30
+        ]
+      },
+      {
+        "art": "hombro_flex.R",
+        "grupo": [
+          "lowerarm02.R",
+          "wrist.R",
+          "finger1-1.R",
+          "finger1-2.R",
+          "finger1-3.R",
+          "finger2-1.R",
+          "finger2-2.R",
+          "finger2-3.R",
+          "finger3-1.R",
+          "finger3-2.R",
+          "finger3-3.R",
+          "finger4-1.R",
+          "finger4-2.R",
+          "finger4-3.R",
+          "finger5-1.R",
+          "finger5-2.R",
+          "finger5-3.R",
+          "metacarpal1.R",
+          "metacarpal2.R",
+          "metacarpal3.R",
+          "metacarpal4.R"
+        ],
+        "rango": [
+          -20,
+          30
+        ]
+      }
+    ],
+    "camilla": true
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "head"
+    },
+    {
+      "grupo": "spine02",
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": [
+        "lowerarm02.L",
+        "wrist.L",
+        "finger1-1.L",
+        "finger1-2.L",
+        "finger1-3.L",
+        "finger2-1.L",
+        "finger2-2.L",
+        "finger2-3.L",
+        "finger3-1.L",
+        "finger3-2.L",
+        "finger3-3.L",
+        "finger4-1.L",
+        "finger4-2.L",
+        "finger4-3.L",
+        "finger5-1.L",
+        "finger5-2.L",
+        "finger5-3.L",
+        "metacarpal1.L",
+        "metacarpal2.L",
+        "metacarpal3.L",
+        "metacarpal4.L"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      -0.3,
+      0.9
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.0,
+      "art": {
+        "lumbar_flex": 3
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "lumbar_flex": 0.75
+      },
+      "p": 0.25,
+      "fase": "concentrico"
+    },
+    {
+      "t": 3.0,
+      "art": {
+        "lumbar_flex": 3
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 4.0,
+      "art": {
+        "lumbar_flex": 0.75
+      },
+      "p": 0.25,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "lumbar_flex": 3
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.0,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "elongan": [
+      {
+        "id": "multifidus"
+      },
+      {
+        "id": "gluteus_maximus"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Consultorio: un solo video (camilla + terapeuta).",
+  "terapeuta": {
+    "lado": "x-",
+    "manos": {
+      "R": {
+        "hueso": "spine05",
+        "a": 0.9,
+        "desde": [
+          0,
+          0,
+          1
+        ]
+      },
+      "L": {
+        "hueso": "spine04",
+        "a": 0.5,
+        "desde": [
+          0,
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Técnica de bombeo / oscilación sacra"
+}

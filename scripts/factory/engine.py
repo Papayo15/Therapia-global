@@ -673,6 +673,20 @@ if base.get("colchoneta"):
     _ext = np.ptp(_co, axis=0)
     _size = (1.85, 0.66, SURF) if _ext[0] > _ext[1] else (0.66, 1.85, SURF)
     add_box("Colchoneta", _size, (float(_co[:, 0].mean()), float(_co[:, 1].mean()), SURF / 2), (0.60, 0.66, 0.72))
+if base.get("camilla"):                        # osteopatía: camilla de consultorio; el suelo baja a su altura
+    _co = eval_coords()[BODY_MASK]
+    _H = base.get("altura_camilla", 0.72)
+    _cx, _cy = float(_co[:, 0].mean()), float(_co[:, 1].mean())
+    _lx = max(0.70, float(np.ptp(_co[:, 0])) * 0.7)
+    _ly = max(1.90, float(np.ptp(_co[:, 1])) + 0.25)
+    if np.ptp(_co[:, 0]) > np.ptp(_co[:, 1]):     # decúbito lateral: el cuerpo va a lo largo de X
+        _lx, _ly = max(1.90, float(np.ptp(_co[:, 0])) + 0.25), max(0.70, float(np.ptp(_co[:, 1])) * 0.7)
+    add_box("Camilla", (_lx, _ly, 0.09), (_cx, _cy, SURF - 0.045), (0.36, 0.42, 0.48))
+    for _sx in (-1, 1):
+        for _sy in (-1, 1):
+            add_box("Camilla_pata", (0.05, 0.05, _H - 0.09), (_cx + _sx * (_lx / 2 - 0.08), _cy + _sy * (_ly / 2 - 0.1),
+                                                              SURF - 0.09 - (_H - 0.09) / 2), (0.55, 0.56, 0.58))
+    floor.location.z = SURF - _H - 0.01
 
 # Asentar: resuelve un ángulo para que un grupo toque la superficie (evita extremidades flotando).
 ASENTADOS = []
@@ -1730,6 +1744,10 @@ for fr in range(1, FRAME_END + 1, 6):
     co = co - _avance_en(fr)                       # encuadre relativo al avance (la cámara acompaña)
     pts.append(co.min(0))
     pts.append(co.max(0))
+T_OBJS = []
+if SPEC.get("terapeuta"):                      # osteopatía: terapeuta con las manos sobre la paciente
+    exec(open(os.path.join(ROOT, "scripts/factory/terapeuta.py"), encoding="utf-8").read())
+    pts = [np.array(list(p_)) for p_ in terapeuta_puntos()]      # encuadre: zona tratada + terapeuta
 pts = np.array(pts)
 lo, hi = pts.min(0), pts.max(0)
 center = Vector(((lo + hi) / 2).tolist())
@@ -1759,7 +1777,7 @@ def _encuadre(dirv):
 
 # Ningún objeto (pared, silla, banco, columna…) puede tapar a la paciente: si tapa >8 % del cuerpo se gira la
 # cámara alrededor del eje vertical y se elige el ángulo menos tapado y más cercano al pedido por la ficha.
-_skip_occ = {o for o, _ in MUSCLE_OBJS} | set(JOINT_OBJS) | set(WEAR.values()) | {body}
+_skip_occ = {o for o, _ in MUSCLE_OBJS} | set(JOINT_OBJS) | set(WEAR.values()) | {body} | set(T_OBJS)
 _occ_props = [o for o in scene.objects if o.type == "MESH" and o not in _skip_occ
               and o.name.split(".")[0] not in ("Suelo", "Colchoneta")]
 _occ_samples = []
@@ -1998,7 +2016,7 @@ if not args.solo_mascara:
     render_pass("gris", [body] + props, "STUDIO", False)
 # Los objetos (caja, mesa, banco, barra, puerta…) TAPAN la capa muscular: se pintan negros (= transparentes en la composición).
 # (la ropa, el pelo y las cejas NO son objetos: si se pintan negros tapan toda la capa bajo la ropa)
-mask_props = [o for o in props if o.name.split(".")[0] not in ("Suelo", "Colchoneta") and o not in wear]
+mask_props = [o for o in props if o.name.split(".")[0] not in ("Suelo", "Colchoneta") and o not in wear and o not in T_OBJS]
 for o in mask_props:
     o.color = (0, 0, 0, 1)
 render_pass("mascara", sup_muscles + [occluder] + mask_props, "FLAT", True)

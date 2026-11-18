@@ -1,0 +1,133 @@
+{
+  "id": "O-041",
+  "duracion_s": 6.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    },
+    "asentar": []
+  },
+  "ik": [],
+  "contactos": [],
+  "camara": {
+    "dir": [
+      -0.8,
+      -1,
+      0.4
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.0,
+      "art": {
+        "toracica_rot": 15
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "toracica_rot": 3.75
+      },
+      "p": 0.25,
+      "fase": "concentrico"
+    },
+    {
+      "t": 3.0,
+      "art": {
+        "toracica_rot": 15
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 4.0,
+      "art": {
+        "toracica_rot": 3.75
+      },
+      "p": 0.25,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "toracica_rot": 15
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.0,
+      "art": {
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "elongan": [
+      {
+        "id": "erector_spinae_thoracic"
+      },
+      {
+        "id": "multifidus"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Consultorio: un solo video (camilla + terapeuta).",
+  "terapeuta": {
+    "lado": "y+",
+    "manos": {
+      "R": {
+        "hueso": "spine01",
+        "a": 0.5,
+        "desde": [
+          0,
+          1,
+          0.1
+        ]
+      },
+      "L": {
+        "hueso": "shoulder01.L",
+        "a": 0.4,
+        "desde": [
+          0,
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Técnica articulatoria torácica en sedente"
+}
