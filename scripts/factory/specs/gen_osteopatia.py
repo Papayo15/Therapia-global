@@ -269,9 +269,9 @@ O = {
     "O-049": (sup(), osc({"cervical_incl": 8}), T("y+", {"R": mano("clavicle.R", 0.35, (0, 0.5, 1)), "L": mano("head", 0.35, (1, 0.2, 0.2))}),
               mus(azul=["scalene_anterior", "scalene_middle"], lado="R"), CAB),
     # ─── Lumbar ───
-    "O-050": (lat(), osc({"lumbar_rot": 10}), T("y-", {"R": mano("pelvis.R", 0.5, (0, -0.3, 1)), "L": mano("spine03", 0.5, (0, 1, 0.5))}),
+    "O-050": (lat(), osc({"lumbar_rot": -10}), T("y-", {"R": mano("pelvis.R", 0.5, (0, -0.3, 1)), "L": mano("spine03", 0.5, (0, 1, 0.5))}),
               mus(azul=["multifidus", "erector_spinae_lumbar"]), {"dir": [0.3, 1, 0.9]}),
-    "O-051": (lat(), tem({"lumbar_rot": 12}), T("y-", {"R": mano("pelvis.R", 0.5, (0, -0.3, 1)), "L": mano("spine03", 0.5, (0, 1, 0.5))}),
+    "O-051": (lat(), tem({"lumbar_rot": -12}), T("y-", {"R": mano("pelvis.R", 0.5, (0, -0.3, 1)), "L": mano("spine03", 0.5, (0, 1, 0.5))}),
               mus(rojo=["multifidus", "erector_spinae_lumbar"]), {"dir": [0.3, 1, 0.9]}),
     "O-052": (sup_g(), quieto(), T("x-", {"R": mano("spine05", 0.5, (-0.6, 0, 1)), "L": mano("pelvis.R", 0.5, UP)}),
               mus(azul=["iliopsoas", "quadratus_lumborum"], lado="R"), DER),

@@ -109,7 +109,7 @@
     {
       "t": 1.2,
       "art": {
-        "lumbar_rot": 12
+        "lumbar_rot": -12
       },
       "p": 0.3,
       "fase": "isometrico"
@@ -117,7 +117,7 @@
     {
       "t": 1.6,
       "art": {
-        "lumbar_rot": 12
+        "lumbar_rot": -12
       },
       "p": 1,
       "fase": "isometrico"
@@ -125,7 +125,7 @@
     {
       "t": 4.4,
       "art": {
-        "lumbar_rot": 12
+        "lumbar_rot": -12
       },
       "p": 1,
       "fase": "elongacion"
@@ -133,7 +133,7 @@
     {
       "t": 5.0,
       "art": {
-        "lumbar_rot": 13.799999999999999
+        "lumbar_rot": -13.799999999999999
       },
       "p": 0.6,
       "fase": "elongacion"

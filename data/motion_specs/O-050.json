@@ -109,7 +109,7 @@
     {
       "t": 1.0,
       "art": {
-        "lumbar_rot": 10
+        "lumbar_rot": -10
       },
       "p": 1,
       "fase": "concentrico"
@@ -117,7 +117,7 @@
     {
       "t": 2.0,
       "art": {
-        "lumbar_rot": 2.5
+        "lumbar_rot": -2.5
       },
       "p": 0.25,
       "fase": "concentrico"
@@ -125,7 +125,7 @@
     {
       "t": 3.0,
       "art": {
-        "lumbar_rot": 10
+        "lumbar_rot": -10
       },
       "p": 1,
       "fase": "concentrico"
@@ -133,7 +133,7 @@
     {
       "t": 4.0,
       "art": {
-        "lumbar_rot": 2.5
+        "lumbar_rot": -2.5
       },
       "p": 0.25,
       "fase": "concentrico"
@@ -141,7 +141,7 @@
     {
       "t": 5.0,
       "art": {
-        "lumbar_rot": 10
+        "lumbar_rot": -10
       },
       "p": 1,
       "fase": "concentrico"
