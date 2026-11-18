@@ -138,11 +138,12 @@
   "ik": [],
   "contactos": [
     {
-      "grupo": "head"
+      "grupo": "head",
+      "tol_cm": 3.5
     },
     {
       "grupo": "spine02",
-      "tol_cm": 2.5
+      "tol_cm": 3.5
     },
     {
       "grupo": [
@@ -167,7 +168,8 @@
         "metacarpal2.L",
         "metacarpal3.L",
         "metacarpal4.L"
-      ]
+      ],
+      "tol_cm": 3.5
     }
   ],
   "camara": {

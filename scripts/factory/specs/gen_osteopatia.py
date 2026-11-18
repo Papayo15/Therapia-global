@@ -62,9 +62,31 @@ def mus(azul=(), rojo=(), lado=None):
     return out
 
 
+def _tolerante(pl, keys):
+    """En osteopatía el terapeuta SOSTIENE el segmento: los apoyos toleran 3,5 cm y la cabeza que él mueve no cuenta."""
+    mueve = {a.split(".")[0] for k in keys for a in k.get("art", {})}
+    cabeza = bool(mueve & {"cervical_flex", "cervical_rot", "cervical_incl", "atm_apertura"})
+    arts = {a for k in keys for a in k.get("art", {})}
+    def _mueve(c):
+        g = c["grupo"] if isinstance(c["grupo"], list) else [c["grupo"]]
+        for s_ in ("L", "R"):
+            brazo = any(a.endswith("." + s_) and a.split(".")[0] in ("hombro_flex", "hombro_abd", "hombro_re", "codo_flex",
+                        "escapula_prot", "escapula_elev", "antebrazo_prono", "muneca_flex", "muneca_ext") for a in arts)
+            pierna = any(a.endswith("." + s_) and a.split(".")[0] in ("cadera_flex", "cadera_abd", "cadera_re", "rodilla_flex",
+                         "tobillo_dorsi", "tobillo_inv") for a in arts)
+            if brazo and any(x.endswith("." + s_) and x.startswith(("lowerarm", "wrist", "finger", "metacarpal")) for x in g):
+                return True
+            if pierna and any(x.endswith("." + s_) and x.startswith(("foot", "toe", "lowerleg")) for x in g):
+                return True
+        return cabeza and "head" in g
+    pl["contactos"] = [{**c, "tol_cm": max(c.get("tol_cm", 0), 3.5)} for c in pl["contactos"] if not _mueve(c)]
+    return pl
+
+
 def ost(id_, pl, kd, ter, musculos, camara=None, **kw):
     dur, keys = kd
     camilla(pl)
+    _tolerante(pl, keys)
     s = {"id": id_, "duracion_s": round(dur, 2), **pl, "keys": keys, "musculos": musculos,
          "articulacion_resaltada": [], "props": pl.get("props", []), "variantes": ["gym"], "nota_variantes": NOTA,
          "terapeuta": ter}
@@ -357,6 +379,7 @@ for id_, (pl, kd, ter, m, cam) in O.items():
         continue
     pl = _fix_angles(pl)
     if pl["base"]["orientacion"] == "sedente":
+        _tolerante(pl, kd[1])
         H.append(write({"id": id_, "duracion_s": round(kd[0], 2), **pl, "keys": kd[1], "musculos": m, "articulacion_resaltada": [],
                         "props": [], "variantes": ["gym"], "nota_variantes": NOTA, "terapeuta": ter,
                         "camara": {**pl["camara"], **cam}}))

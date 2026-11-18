@@ -109,17 +109,20 @@
   "ik": [],
   "contactos": [
     {
-      "grupo": "head"
+      "grupo": "head",
+      "tol_cm": 3.5
     },
     {
       "grupo": "spine01",
-      "tol_cm": 2.5
+      "tol_cm": 3.5
     },
     {
-      "grupo": "foot.L"
+      "grupo": "foot.L",
+      "tol_cm": 3.5
     },
     {
-      "grupo": "foot.R"
+      "grupo": "foot.R",
+      "tol_cm": 3.5
     },
     {
       "grupo": [
@@ -144,32 +147,8 @@
         "metacarpal2.L",
         "metacarpal3.L",
         "metacarpal4.L"
-      ]
-    },
-    {
-      "grupo": [
-        "lowerarm02.R",
-        "wrist.R",
-        "finger1-1.R",
-        "finger1-2.R",
-        "finger1-3.R",
-        "finger2-1.R",
-        "finger2-2.R",
-        "finger2-3.R",
-        "finger3-1.R",
-        "finger3-2.R",
-        "finger3-3.R",
-        "finger4-1.R",
-        "finger4-2.R",
-        "finger4-3.R",
-        "finger5-1.R",
-        "finger5-2.R",
-        "finger5-3.R",
-        "metacarpal1.R",
-        "metacarpal2.R",
-        "metacarpal3.R",
-        "metacarpal4.R"
-      ]
+      ],
+      "tol_cm": 3.5
     }
   ],
   "camara": {

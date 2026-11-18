@@ -84,7 +84,8 @@
         "pelvis.L",
         "upperleg01.L",
         "upperleg02.L"
-      ]
+      ],
+      "tol_cm": 3.5
     }
   ],
   "camara": {

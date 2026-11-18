@@ -104,14 +104,16 @@
   "ik": [],
   "contactos": [
     {
-      "grupo": "head"
+      "grupo": "head",
+      "tol_cm": 3.5
     },
     {
       "grupo": "spine01",
-      "tol_cm": 2.5
+      "tol_cm": 3.5
     },
     {
-      "grupo": "foot.L"
+      "grupo": "foot.L",
+      "tol_cm": 3.5
     },
     {
       "grupo": [
@@ -136,7 +138,8 @@
         "metacarpal2.L",
         "metacarpal3.L",
         "metacarpal4.L"
-      ]
+      ],
+      "tol_cm": 3.5
     },
     {
       "grupo": [
@@ -161,7 +164,8 @@
         "metacarpal2.R",
         "metacarpal3.R",
         "metacarpal4.R"
-      ]
+      ],
+      "tol_cm": 3.5
     }
   ],
   "camara": {

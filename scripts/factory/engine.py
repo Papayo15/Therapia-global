@@ -39,6 +39,8 @@ ap.add_argument("--solo-mascara", action="store_true", help="Re-renderiza sólo 
 ap.add_argument("--capa", choices=["atlas", "propia", "capsulas"], help="Capa muscular (por defecto: la de la ficha o 'propia')")
 ap.add_argument("--still-capa", type=int, help="Foto de la capa muscular sobre el cuerpo en este frame (comparaciones)")
 ap.add_argument("--still", type=int, help="Renderiza solo este frame del pase gris (pruebas rápidas)")
+ap.add_argument("--anatomico", action="store_true",
+                help="Vista anatómica: figura muscular completa (neutra) + músculos que trabajan en color, cámara en vaivén, etiquetas")
 args = ap.parse_args(argv)
 
 SPEC = json.load(open(args.spec, encoding="utf-8"))
@@ -133,6 +135,8 @@ def split_joint(name):
 
 
 # ─── Carga del avatar ────────────────────────────────────────────────────────
+if args.anatomico and args.avatar.endswith("avatar_f40.blend"):
+    args.avatar = args.avatar.replace("avatar_f40.blend", "avatar_f40_anat.blend")   # + resto de músculos y esqueleto
 bpy.ops.wm.open_mainfile(filepath=args.avatar)
 scene = bpy.context.scene
 rig = bpy.data.objects["Paciente_Rig"]
@@ -598,9 +602,16 @@ for rol, lista in SPEC["musculos"].items():
                 MUSCLE_INFO[obj] = {"id": mid, "lado": sd, "parte": k, "peso": muscle_weight(rol, mid),
                                     "profundo": mid in DEEP, "bilateral": not side}
 
-for _n, _o in list(ATLAS_OBJS.items()):           # los músculos del atlas no usados se eliminan
+NEUTROS = [o for o in bpy.data.objects if o.name.startswith(("ATN::", "HUE::"))]
+for _o in NEUTROS:
+    _o.hide_render = True
+for _n, _o in list(ATLAS_OBJS.items()):           # los músculos del atlas no usados se eliminan (en vista anatómica: neutros)
     if _o not in MUSCLE_INFO:
-        bpy.data.objects.remove(_o, do_unlink=True)
+        if args.anatomico:
+            NEUTROS.append(_o)
+            _o.hide_render = True
+        else:
+            bpy.data.objects.remove(_o, do_unlink=True)
 
 JOINT_OBJS = []
 for jh in SPEC.get("articulacion_resaltada", []):
@@ -1724,7 +1735,7 @@ report["checks"]["rom"] = {"fuera_de_rango": rom, "ok": not rom}
 report["ok"] = all(v["ok"] for v in [report["checks"]["penetracion_suelo"], report["checks"]["loop"], report["checks"]["rom"],
                                      report["checks"]["props_atraviesan_cuerpo"]]) \
     and all(v["ok"] for v in report["checks"]["contactos"].values())
-json.dump(report, open(os.path.join(args.out, "reporte.json"), "w"), ensure_ascii=False, indent=2)
+json.dump(report, open(os.path.join(args.out, "reporte_anat.json" if args.anatomico else "reporte.json"), "w"), ensure_ascii=False, indent=2)
 print("REPORTE", json.dumps(report, ensure_ascii=False))
 
 # ─── Cámara fija con encuadre automático ─────────────────────────────────────
@@ -1777,7 +1788,7 @@ def _encuadre(dirv):
 
 # Ningún objeto (pared, silla, banco, columna…) puede tapar a la paciente: si tapa >8 % del cuerpo se gira la
 # cámara alrededor del eje vertical y se elige el ángulo menos tapado y más cercano al pedido por la ficha.
-_skip_occ = {o for o, _ in MUSCLE_OBJS} | set(JOINT_OBJS) | set(WEAR.values()) | {body} | set(T_OBJS)
+_skip_occ = {o for o, _ in MUSCLE_OBJS} | set(JOINT_OBJS) | set(WEAR.values()) | {body} | set(T_OBJS) | set(NEUTROS)
 _occ_props = [o for o in scene.objects if o.type == "MESH" and o not in _skip_occ
               and o.name.split(".")[0] not in ("Suelo", "Colchoneta")]
 _occ_samples = []
@@ -1829,7 +1840,7 @@ if _occ_props and _giro_ok:
         print("CAMARA_OCLUIDA", round(_occ0, 2), "-> giro", _best[1], "ocl", round(_best[0], 2))
         cam_spec = dict(cam_spec, dir=list(_best[2]))
         report["camara_giro"] = {"ocl_original": round(_occ0, 2), "giro_deg": _best[1], "ocl": round(_best[0], 2)}
-        json.dump(report, open(os.path.join(args.out, "reporte.json"), "w"), ensure_ascii=False, indent=2)
+        json.dump(report, open(os.path.join(args.out, "reporte_anat.json" if args.anatomico else "reporte.json"), "w"), ensure_ascii=False, indent=2)
 cam.location, fwd = _encuadre(cam_spec["dir"])
 right = fwd.cross(Vector((0, 0, 1))).normalized()
 up = right.cross(fwd)
@@ -1947,7 +1958,8 @@ dsp.strength, dsp.mid_level = -0.015, 0.0
 occluder.color = (0, 0, 0, 1)
 occluder.hide_render = True
 
-bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.abspath(args.out), "escena.blend"), compress=True)
+if not args.anatomico:
+    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.abspath(args.out), "escena.blend"), compress=True)
 if args.no_render:
     sys.exit(0)
 
@@ -1957,7 +1969,8 @@ scene.render.image_settings.file_format = "PNG"
 scene.render.image_settings.color_mode = "RGBA"
 sh = scene.display.shading
 muscles = [o for o, _ in MUSCLE_OBJS] + JOINT_OBJS
-props = [o for o in scene.objects if o.type == "MESH" and o not in muscles and o is not body and o is not occluder]
+props = [o for o in scene.objects if o.type == "MESH" and o not in muscles and o is not body and o is not occluder
+         and o not in NEUTROS]
 # (el disco de "articulación resaltada" ya no se dibuja: sobre la piel se leía como una mancha blanca)
 sup_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and not MUSCLE_INFO[o]["profundo"] and o not in _rayosx]
 deep_muscles = [o for o, _ in MUSCLE_OBJS if o not in _hidden_far and (MUSCLE_INFO[o]["profundo"] or o in _rayosx)]
@@ -2011,6 +2024,9 @@ if args.still:
     scene.frame_set(args.still)
     scene.render.filepath = os.path.join(os.path.abspath(args.out), f"still_{args.still}.png")
     bpy.ops.render.render(write_still=True)
+    sys.exit(0)
+if args.anatomico:
+    exec(open(os.path.join(ROOT, "scripts/factory/anatomico.py"), encoding="utf-8").read())
     sys.exit(0)
 if not args.solo_mascara:
     render_pass("gris", [body] + props, "STUDIO", False)

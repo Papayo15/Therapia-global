@@ -25,8 +25,9 @@ WANTED = {n for v in MAP.values() for n in v}
 
 rig = bpy.data.objects["Paciente_Rig"]
 body = bpy.data.objects["Paciente"]
+ANAT = os.environ.get("ATLAS_ANAT") == "1"     # vista anatómica: + resto de músculos (ATN::) + esqueleto rígido (HUE::)
 old = bpy.data.collections.get("Atlas")
-if old:
+if old and not ANAT:
     for o in list(old.objects):
         bpy.data.objects.remove(o, do_unlink=True)
     bpy.data.collections.remove(old)
@@ -189,7 +190,7 @@ kept = 0
 for f in sorted(glob.glob(os.path.join(ATLAS, "muscular-*.glb"))):
     for o in import_glb(f):
         base = o.name.rsplit(".", 1)[0] if o.name.endswith((".l", ".r")) else o.name
-        if o.type != "MESH" or base not in WANTED:
+        if o.type != "MESH" or (base not in WANTED) != ANAT:
             bpy.data.objects.remove(o, do_unlink=True)
             continue
         side = o.name.rsplit(".", 1)[1] if o.name.endswith((".l", ".r")) else "c"
@@ -223,7 +224,7 @@ for f in sorted(glob.glob(os.path.join(ATLAS, "muscular-*.glb"))):
         mod.object = rig
         o.parent = rig
         o.matrix_parent_inverse = rig.matrix_world.inverted()
-        o.name = f"ATL::{base}.{side}"
+        o.name = f"{'ATN' if ANAT else 'ATL'}::{base}.{side}"
         o["atlas"] = base
         o["lado"] = {"l": "L", "r": "R"}.get(side, "C")
         for c in o.users_collection:
@@ -235,4 +236,61 @@ for o in [o for o in bpy.data.objects if o.type == "EMPTY" and not o.users_colle
     bpy.data.objects.remove(o, do_unlink=True)
 col.hide_render = False
 print(f"ATLAS_OK músculos ajustados: {kept}")
-bpy.ops.wm.save_mainfile()
+if not ANAT:
+    bpy.ops.wm.save_mainfile()
+    raise SystemExit(0)
+
+# ─── 4. (vista anatómica) Esqueleto: cada hueso RÍGIDO al hueso del rig que más lo mueve ───
+nb = 0
+for o in import_glb(os.path.join(ATLAS, "skeletal.glb")):
+    if o.type != "MESH":
+        bpy.data.objects.remove(o, do_unlink=True)
+        continue
+    if o.data.users > 1:
+        o.data = o.data.copy()
+    wv = warp(wverts(o))
+    o.parent = None
+    o.matrix_world = rig.matrix_world.copy()
+    loc = (wv - np.array(rig.matrix_world)[:3, 3]) @ np.linalg.inv(np.array(rig.matrix_world)[:3, :3]).T
+    o.data.vertices.foreach_set("co", loc.ravel())
+    o.data.update()
+    # hueso del rig cuyo SEGMENTO (cabeza→cola) pasa más cerca del centro del hueso anatómico
+    c_ = loc.mean(0)
+    best, g = 1e9, None
+    for b in rig.data.bones:
+        if not b.use_deform or b.name.startswith(("oculi", "orbicularis", "levator", "risorius", "temporalis", "special",
+                                                  "tongue", "breast", "toe", "finger", "metacarpal")):
+            continue
+        a_, b_ = np.array(b.head_local), np.array(b.tail_local)
+        ab = b_ - a_
+        t = np.clip(np.dot(c_ - a_, ab) / max(1e-9, np.dot(ab, ab)), 0, 1)
+        dd = np.linalg.norm(c_ - (a_ + t * ab))
+        if dd < best:
+            best, g = dd, b.name
+    # dedos de manos y pies: al hueso más cercano entre TODOS (falanges pequeñas)
+    if best > 0.03:
+        for b in rig.data.bones:
+            if not b.use_deform:
+                continue
+            a_, b_ = np.array(b.head_local), np.array(b.tail_local)
+            ab = b_ - a_
+            t = np.clip(np.dot(c_ - a_, ab) / max(1e-9, np.dot(ab, ab)), 0, 1)
+            dd = np.linalg.norm(c_ - (a_ + t * ab))
+            if dd < best:
+                best, g = dd, b.name
+    vg = o.vertex_groups.new(name=g)
+    vg.add(list(range(len(loc))), 1.0, "REPLACE")
+    mod = o.modifiers.new("Armature", "ARMATURE")
+    mod.object = rig
+    o.parent = rig
+    o.matrix_parent_inverse = rig.matrix_world.inverted()
+    o.name = f"HUE::{o.name}"
+    for c in o.users_collection:
+        c.objects.unlink(o)
+    col.objects.link(o)
+    o.hide_render = True
+    nb += 1
+for o in [o for o in bpy.data.objects if o.type == "EMPTY" and not o.users_collection]:
+    bpy.data.objects.remove(o, do_unlink=True)
+print(f"ESQUELETO_OK huesos: {nb}")
+bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT, "assets/rigs/avatar_f40_anat.blend"), compress=True)
