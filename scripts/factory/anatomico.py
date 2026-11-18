@@ -134,6 +134,7 @@ sh.cavity_type = "BOTH"
 sh.show_specular_highlight = True
 scene.render.film_transparent = False
 scene.world.color = BG
+scene.display.render_aa = "5"                               # suficiente a 720p y ~40 % más rápido que 8
 if os.environ.get("ANAT_STILL"):
     scene.frame_set(int(os.environ["ANAT_STILL"]))
     scene.render.filepath = os.path.join(OUTD, f"anat_{os.environ['ANAT_STILL']}.png")
