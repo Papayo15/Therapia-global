@@ -140,10 +140,11 @@ if os.environ.get("ANAT_PROF"):
     for fr in (10, 11, 12):
         t0 = time.time(); scene.frame_set(fr); deps(); t1 = time.time()
         print(f"PROF frame_set {t1 - t0:.2f}s")
-    for aa in ("OFF", "5"):
+    for aa, shd, cav in (("5", True, True), ("5", False, True), ("5", True, False), ("5", False, False), ("OFF", False, False)):
         scene.display.render_aa = aa
-        scene.render.filepath = os.path.join(OUTD, f"prof_{aa}.png")
-        t0 = time.time(); bpy.ops.render.render(write_still=True); print(f"PROF render aa={aa} {time.time() - t0:.2f}s")
+        sh.show_shadows, sh.show_cavity = shd, cav
+        scene.render.filepath = os.path.join(OUTD, f"prof_{aa}_{shd}_{cav}.png")
+        t0 = time.time(); bpy.ops.render.render(write_still=True); print(f"PROF render aa={aa} sombras={shd} cavidad={cav} {time.time() - t0:.2f}s")
     for fr in (20, 21):
         scene.frame_set(fr)
         scene.render.filepath = os.path.join(OUTD, f"prof_gl{fr}.png")
@@ -153,6 +154,13 @@ if os.environ.get("ANAT_PROF"):
             print(f"PROF opengl {time.time() - t0:.2f}s")
         except Exception as e:
             print("PROF opengl ERROR", e)
+    _h = [o for o in NEUTROS if not o.hide_render]
+    for o in _h:
+        o.hide_render = True
+    scene.render.filepath = os.path.join(OUTD, "prof_sin_neutros.png")
+    t0 = time.time(); bpy.ops.render.render(write_still=True); print(f"PROF render sin {len(_h)} neutros {time.time() - t0:.2f}s")
+    for o in _h:
+        o.hide_render = False
     mods = {}
     for o in scene.objects:
         if o.type == "MESH" and not o.hide_render:

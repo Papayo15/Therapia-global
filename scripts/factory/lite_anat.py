@@ -25,7 +25,7 @@ for o in list(bpy.data.objects):
         continue
     n0 += len(o.data.vertices)
     r = R_HUE if o.name.startswith("HUE::") else R_MUS
-    if len(o.data.vertices) > 300 and not bpy.data.filepath.endswith("_lite.blend"):   # ya ligero: sólo re-emparentar
+    if len(o.data.vertices) > 300 and "_lite" not in bpy.data.filepath:   # ya ligero: sólo re-emparentar
         if o.data.users > 1:
             o.data = o.data.copy()
         d = o.modifiers.new("Dec", "DECIMATE")
@@ -76,4 +76,4 @@ for o in bpy.data.objects:
         o.matrix_world = mw
         nfix += 1
 print("LITE axial reasignados", nfix)
-bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT, "assets/rigs/avatar_f40_anat_lite.blend"), compress=True)
+bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT, "assets/rigs", argv[2] if len(argv) > 2 else "avatar_f40_anat_lite.blend"), compress=True)
