@@ -58,7 +58,15 @@ _hand_ids = {"abductor_digiti_minimi_hand", "abductor_pollicis_brevis", "adducto
              "lumbricals_hand", "opponens_pollicis", "flexor_pollicis_brevis"}
 _foot_ids = {"flexor_digitorum_brevis", "extensor_digitorum_brevis", "lumbricals_foot"}
 _act_ids = {MUSCLE_INFO[o]["id"] for o, _ in MUSCLE_OBJS}
+_neck_ids = {"trapezius_upper", "sternocleidomastoid", "scalene_anterior", "scalene_middle", "scalene_posterior", "levator_scapulae",
+             "splenius_capitis", "splenius_cervicis", "semispinalis_capitis", "suboccipitals", "longus_colli", "longus_capitis",
+             "rectus_capitis_posterior_major", "obliquus_capitis_inferior", "platysma", "digastric", "omohyoid"}
+_head_ids = {"temporalis", "masseter", "pterygoid_lateral", "pterygoid_medial", "frontalis", "occipitalis"}
 _pref = ["head", "jaw", "eye", "tongue", "teeth", "neck03"]
+if _act_ids & _neck_ids:                                     # la piel del cuello taparía justo lo que trabaja
+    _pref.remove("neck03")
+if _act_ids & _head_ids:                                     # ídem cráneo/mandíbula: sólo ojos visibles
+    _pref = [p for p in _pref if p not in ("head", "jaw")]
 if not _act_ids & _hand_ids:
     _pref += ["wrist", "finger", "metacarpal"]
 if not _act_ids & _foot_ids:
@@ -99,20 +107,98 @@ def _visor_normal():
     update()
 
 
-_PROPS_VIS = [o for o in props if o not in wear and o not in WEAR.values()]
+_PELO = WEAR.get("Pelo") if not (_act_ids & _neck_ids) else None   # el pelo tapa la nuca: fuera si trabaja el cuello
+_PROPS_VIS = [o for o in props if o not in wear and o not in WEAR.values()] + ([_PELO] if _PELO else [])
 
-# ── 4) músculos neutros que TAPAN a un músculo profundo que trabaja: se ocultan (como quitar una capa) ──
-_deep_act = [o for o, _ in MUSCLE_OBJS if MUSCLE_INFO[o]["profundo"]]
-if _deep_act:
+# ── 3b) ángulo de cámara: el que MÁS deja ver los músculos que trabajan (un trapecio o un glúteo se ven desde atrás) ──
+def _vis_desde(loc, pts_, dg, objs):
+    n = 0
+    for p_ in pts_:
+        dv = p_ - loc
+        ok, hit, _n, _i, ob, _m = scene.ray_cast(dg, loc, dv.normalized(), distance=dv.length + 0.01)
+        obo = ob.original if (ok and hasattr(ob, "original")) else ob
+        n += bool(ok and obo in objs)
+    return n / max(1, len(pts_))
+
+
+_act_objs = {o for o, _ in MUSCLE_OBJS}
+if _act_objs and not SPEC.get("camara", {}).get("fija_anat"):
     _kp = max(keys, key=lambda k: k.get("p", 0))
-    for o in NEUTROS:
-        o.hide_render = False
-    _rayos_como_render(set(NEUTROS) | {o for o, _ in MUSCLE_OBJS} | {body} | set(_PROPS_VIS))
+    scene.frame_set(frame_of(_kp["t"]))
+    _rayos_como_render(set(NEUTROS) | _act_objs | {body} | set(_PROPS_VIS) | set(T_OBJS if "T_OBJS" in globals() else []))
+    dg = deps()
+    _pts = []
+    for o in _act_objs:
+        me = o.evaluated_get(dg).to_mesh()
+        _pts += [o.matrix_world @ me.vertices[i].co for i in range(0, len(me.vertices), max(1, len(me.vertices) // 40))]
+        o.to_mesh_clear()
+    _mejor = None
+    for yaw_ in (0, 45, -45, 90, -90, 135, -135, 180):
+        dv = Matrix.Rotation(math.radians(yaw_), 3, "Z") @ _d0
+        loc, _f = _encuadre(dv)
+        sc = _vis_desde(loc, _pts, dg, _act_objs) - 0.08 * abs(yaw_) / 180   # leve preferencia por la cámara de la ficha
+        if _mejor is None or sc > _mejor[0] + 1e-6:
+            _mejor = (sc, yaw_)
+    _visor_normal()
+    print("CAMARA_ANAT yaw", _mejor[1], "puntaje", round(_mejor[0], 2))
+    if _mejor[1]:
+        _d0 = Matrix.Rotation(math.radians(_mejor[1]), 3, "Z") @ _d0
+        cam.animation_data_clear()
+        for fr in range(1, FRAME_END + 2):
+            yaw = math.radians(A_SWING) * math.sin(2 * math.pi * (fr - 1) / FRAME_END)
+            dv = Matrix.Rotation(yaw, 3, "Z") @ _d0
+            loc, f_ = _encuadre(dv)
+            cam.location = loc
+            cam.rotation_euler = f_.to_track_quat("-Z", "Y").to_euler()
+            cam.keyframe_insert("location", frame=fr)
+            cam.keyframe_insert("rotation_euler", frame=fr)
+
+# ── 4a) músculos neutros mal deformados: vértices con pesos mezclados (brazo + columna/cadera en la pose A de reposo)
+#        al subir el brazo se estiran como hilos. Se detectan por ARISTAS estiradas respecto de la malla en reposo ──
+import numpy as _np
+_rest = {}
+for o in NEUTROS:
+    if o.name.startswith("HUE::") or len(o.data.edges) == 0:
+        continue
+    _c = _np.empty(len(o.data.vertices) * 3, dtype=_np.float32); o.data.vertices.foreach_get("co", _c)
+    _e = _np.empty(len(o.data.edges) * 2, dtype=_np.int32); o.data.edges.foreach_get("vertices", _e)
+    _e = _e.reshape(-1, 2); _c = _c.reshape(-1, 3)
+    _L = _np.linalg.norm(_c[_e[:, 0]] - _c[_e[:, 1]], axis=1)
+    _ok = _L > 1e-4
+    _rest[o] = (_e[_ok], _L[_ok], len(o.data.vertices))
+_estirados = set()
+_stat = {}
+for fr in range(1, FRAME_END + 1, max(1, FRAME_END // 10)):
+    scene.frame_set(fr)
+    dg = deps()
+    for o, (E, L0, nv) in _rest.items():
+        if o in _estirados:
+            continue
+        me = o.evaluated_get(dg).to_mesh()
+        if len(me.vertices) == nv:
+            co = _np.empty(nv * 3, dtype=_np.float32); me.vertices.foreach_get("co", co); co = co.reshape(-1, 3)
+            d = _np.linalg.norm(co[E[:, 0]] - co[E[:, 1]], axis=1) - L0
+            f = float(_np.mean(d > 0.03))                     # aristas que crecieron más de 3 cm: un músculo no hace eso
+            _stat[o.name] = max(_stat.get(o.name, 0), f)
+            if f > 0.05:
+                _estirados.add(o)
+        o.to_mesh_clear()
+for o in _estirados:
+    o["_quitado"] = True
+print("NEUTROS_ESTIRADOS", len(_estirados), sorted(_stat.items(), key=lambda x: -x[1])[:14])
+
+# ── 4b) músculos neutros que TAPAN a un músculo que trabaja: se ocultan (como quitar una capa).
+#        Profundo: todo lo que esté delante. Superficial: sólo lo pegado encima (<3 cm: duplicados del atlas, platisma…) ──
+_act = [o for o, _ in MUSCLE_OBJS if MUSCLE_INFO[o]["profundo"]]   # sólo los profundos (lo superficial ya se ve)
+if _act:
+    _kp = max(keys, key=lambda k: k.get("p", 0))
+    _rayos_como_render(set(NEUTROS) | set(_act) | {body} | set(_PROPS_VIS))
+    _neu = set(NEUTROS)
     for fr in (frame_of(_kp["t"]), max(1, frame_of(_kp["t"]) - FRAME_END // 4), min(FRAME_END, frame_of(_kp["t"]) + FRAME_END // 4)):
         scene.frame_set(fr)
         dg = deps()
-        _neu = set(NEUTROS)
-        for o in _deep_act:
+        for o in _act:
+            deep = MUSCLE_INFO[o]["profundo"]
             me = o.evaluated_get(dg).to_mesh()
             pts_ = [o.matrix_world @ me.vertices[i].co for i in range(0, len(me.vertices), max(1, len(me.vertices) // 120))]
             o.to_mesh_clear()
@@ -127,12 +213,13 @@ if _deep_act:
                     if not ok:
                         break
                     obo = ob.original if hasattr(ob, "original") else ob
-                    if obo in _neu and obo.hide_render is False:
-                        obo.hide_render = True
+                    if obo in _neu and not obo.get("_quitado") and (p_ - hit).length < 0.08:   # sólo la capa que lo cubre, no el miembro entero
                         obo["_quitado"] = True
+                    if not deep and obo not in _neu:
+                        break
                     org = hit + dv.normalized() * 0.001
     _visor_normal()
-    print("NEUTROS_QUITADOS", sum(1 for o in NEUTROS if o.get("_quitado")))
+print("NEUTROS_QUITADOS", sum(1 for o in NEUTROS if o.get("_quitado")), sorted(o.name for o in NEUTROS if o.get("_quitado"))[:80], "PROFUNDOS_ACT", [o.name for o in _act])
 
 # ── 5) render ──
 _vis = set([o for o, _ in MUSCLE_OBJS] + [o for o in NEUTROS if not o.get("_quitado")] + [body]
@@ -142,8 +229,8 @@ for o in scene.objects:
         o.hide_render = o not in _vis
 for o in WEAR.values():
     o.hide_render = True
-if "Pelo" in WEAR:                                           # el pelo sí (cabeza reconocible)
-    WEAR["Pelo"].hide_render = False
+if _PELO:                                                    # el pelo sí (cabeza reconocible), salvo si tapa el cuello
+    _PELO.hide_render = False
 floor.color = (0.20, 0.21, 0.23, 1)
 for o in scene.objects:
     if o.name.startswith("Colchoneta"):
@@ -188,6 +275,24 @@ if os.environ.get("ANAT_PROF"):
                 if m.show_render:
                     mods[m.type] = mods.get(m.type, 0) + 1
     print("PROF mods", mods, "verts", sum(len(o.data.vertices) for o in scene.objects if o.type == "MESH" and not o.hide_render))
+    raise SystemExit(0)
+if os.environ.get("ANAT_PICK"):                              # depuración: qué objeto hay en el píxel (x,y en 0..1)
+    scene.frame_set(int(os.environ.get("ANAT_STILL", "1")))
+    _rayos_como_render({o for o in scene.objects if o.type == "MESH" and not o.hide_render})
+    fr_ = [cam.matrix_world @ v for v in cam.data.view_frame(scene=scene)]   # sup-der, inf-der, inf-izq, sup-izq
+    for xy in os.environ["ANAT_PICK"].split(";"):
+        x, y = map(float, xy.split(","))
+        top = fr_[3].lerp(fr_[0], x); bot = fr_[2].lerp(fr_[1], x); tgt = top.lerp(bot, y)
+        org = cam.matrix_world.translation
+        ok, hit, _n, _i, ob, _m = scene.ray_cast(deps(), org, (tgt - org).normalized())
+        obo = ob.original if (ok and hasattr(ob, "original")) else ob
+        print("PICK", xy, obo.name if ok else None, [m.type for m in obo.modifiers] if ok else "", obo.parent_bone if ok else "")
+    for o, rol in MUSCLE_OBJS:
+        me = o.evaluated_get(deps()).to_mesh()
+        cen = o.matrix_world @ (sum((v.co for v in me.vertices), Vector()) / max(1, len(me.vertices)))
+        nv = len(me.vertices); o.to_mesh_clear()
+        v = world_to_camera_view(scene, cam, cen)
+        print("ACTIVO", o.name, rol, "hide", o.hide_render, "verts", nv, "pantalla", round(v.x, 3), round(1 - v.y, 3), "color", tuple(round(c, 2) for c in o.color))
     raise SystemExit(0)
 if os.environ.get("ANAT_STILL"):
     scene.frame_set(int(os.environ["ANAT_STILL"]))

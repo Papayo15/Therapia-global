@@ -14,10 +14,12 @@ ap.add_argument("carpetas", nargs="+")
 ap.add_argument("-j", type=int, default=3)
 ap.add_argument("--ids")
 ap.add_argument("--rehacer", action="store_true")
+ap.add_argument("--antes-de", type=float, help="rehacer también los hechos antes de este instante (epoch): arreglos del motor")
 a = ap.parse_args()
 # una vista anatómica por FICHA (la de gym o "ambos"): la app la muestra una vez por ejercicio
 dirs = [d for c in a.carpetas for d in sorted(Path(c).iterdir()) if d.is_dir() and d.name.endswith(("--gym", "--ambos"))
-        and (a.rehacer or not (d / "anatomico.mp4").exists())
+        and (a.rehacer or not (d / "anatomico.mp4").exists()
+             or (a.antes_de and (d / "reporte_anat.json").exists() and (d / "reporte_anat.json").stat().st_mtime < a.antes_de))
         and (not a.ids or d.name.split("--")[0] in a.ids.split(","))]
 
 

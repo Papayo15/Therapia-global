@@ -76,4 +76,51 @@ for o in bpy.data.objects:
         o.matrix_world = mw
         nfix += 1
 print("LITE axial reasignados", nfix)
-bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT, "assets/rigs", argv[2] if len(argv) > 2 else "avatar_f40_anat_lite.blend"), compress=True)
+
+# pesos cruzados: en la pose A la mano descansa junto al muslo → músculos del muslo con vértices pesados a la mano
+# (y al revés). Al levantar el brazo se estiraban como hilos. Cada músculo conserva sólo los pesos de su región.
+ARM = ("upperarm", "lowerarm", "wrist", "finger", "metacarpal")
+LEG = ("upperleg", "lowerleg", "foot", "toe")
+def _clase(n):
+    return "arm" if n.startswith(ARM) else "leg" if n.startswith(LEG) else "tronco"
+nlimp = 0
+for o in bpy.data.objects:
+    if o.type != "MESH" or not o.name.startswith(("ATL::", "ATN::")) or not o.vertex_groups:
+        continue
+    gname = {g.index: g.name for g in o.vertex_groups}
+    tot = {}
+    for v in o.data.vertices:
+        for g in v.groups:
+            c = _clase(gname[g.group]); tot[c] = tot.get(c, 0) + g.weight
+    if not tot:
+        continue
+    T = sum(tot.values())
+    malas = set()
+    if tot.get("arm", 0) / T < 0.25:
+        malas.add("arm")
+    if tot.get("leg", 0) / T < 0.25:
+        malas.add("leg")
+    if not malas or not any(tot.get(c, 0) for c in malas):
+        continue
+    # grupo dominante entre los buenos (para vértices que se queden sin peso)
+    gt = {}
+    for v in o.data.vertices:
+        for g in v.groups:
+            if _clase(gname[g.group]) not in malas:
+                gt[g.group] = gt.get(g.group, 0) + g.weight
+    if not gt:
+        continue
+    dom = o.vertex_groups[max(gt, key=gt.get)]
+    for v in o.data.vertices:
+        bad = [g.group for g in v.groups if _clase(gname[g.group]) in malas and g.weight > 0]
+        if not bad:
+            continue
+        for gi in bad:
+            o.vertex_groups[gi].remove([v.index])
+        if not any(g.weight > 0 for g in v.groups):
+            dom.add([v.index], 1.0, "REPLACE")
+    nlimp += 1
+print("LITE pesos cruzados limpiados en", nlimp, "músculos")
+_out = os.path.join(ROOT, "assets/rigs", argv[2] if len(argv) > 2 else "avatar_f40_anat_lite.blend")
+bpy.ops.wm.save_as_mainfile(filepath=_out + ".tmp.blend", compress=True)
+os.replace(_out + ".tmp.blend", _out)                       # reemplazo atómico: el lote puede estar leyéndolo
