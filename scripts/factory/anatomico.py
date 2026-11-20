@@ -81,6 +81,33 @@ mk.vertex_group = "ANAT_PIEL"
 body.color = (0.42, 0.43, 0.46, 1)
 
 # ── 3) cámara en vaivén ──
+# encuadre por PUNTOS REALES del cuerpo (no por las 8 esquinas de la caja): con la cámara girada 45-135° la diagonal
+# de la caja inflaba la distancia y la figura quedaba chica (sobre todo con los brazos abiertos).
+# Osteopatía: aquí el terapeuta es sólo manos sobre la paciente → se encuadra a la paciente (centro incluido)
+if True:
+    _rng_e = np.random.default_rng(2)
+    _P = []
+    mk.show_viewport = False                                   # la máscara de piel cambia el n.º de vértices
+    for fr in range(1, FRAME_END + 1, 6):
+        scene.frame_set(fr)
+        _co = eval_coords()
+        _co = (_co[_cam_idx] if _cam_idx is not None else _co[BODY_MASK]) - _avance_en(fr)
+        _P.append(_co[_rng_e.choice(len(_co), min(len(_co), 500), replace=False)])
+        _P.append(_co[list(_co.argmin(0)) + list(_co.argmax(0))])      # extremos (yemas, pies, cabeza)
+    mk.show_viewport = True
+    _P = np.concatenate(_P)
+    if SPEC.get("terapeuta"):
+        center = Vector(((_P.min(0) + _P.max(0)) / 2).tolist())
+    _P = _P - np.array(center)
+
+    def _encuadre(dirv):
+        f = -Vector(dirv).normalized()
+        r = f.cross(Vector((0, 0, 1))).normalized()
+        u = r.cross(f)
+        dz = _P @ np.array(f)
+        d = max((dz + np.abs(_P @ np.array(r)) * margin / th).max(), (dz + np.abs(_P @ np.array(u)) * margin / tv).max())
+        return center - f * float(d), f
+    scene.frame_set(1)
 _d0 = cam.location - center
 for fr in range(1, FRAME_END + 2):
     yaw = math.radians(A_SWING) * math.sin(2 * math.pi * (fr - 1) / FRAME_END)
@@ -106,6 +133,34 @@ def _visor_normal():
             o.hide_viewport = False
     update()
 
+
+# terapeuta (osteopatía): en la vista anatómica sólo antebrazos y manos, como en las láminas — su cuerpo tapaba
+# justo la zona tratada
+_T_VIS = []
+if "T_OBJS" in globals() and T_OBJS:
+    _TMANO = ("lowerarm", "wrist", "finger", "metacarpal")
+    for _o in T_OBJS:
+        if _o.type != "MESH":
+            continue
+        if _o is tbody:
+            _gn = {g.index: g.name for g in _o.vertex_groups}
+            _sel = []
+            for v in _o.data.vertices:
+                if v.groups:
+                    g = max(v.groups, key=lambda g: g.weight)
+                    if _gn[g.group].startswith(_TMANO):
+                        _sel.append(v.index)
+            _vg = _o.vertex_groups.new(name="ANAT_MANOS")
+            _vg.add(_sel, 1.0, "REPLACE")
+            _mm = _o.modifiers.new("Anat_manos", "MASK")
+            _mm.vertex_group = "ANAT_MANOS"
+            _o.color = (0.80, 0.78, 0.76, 1)
+            _T_VIS.append(_o)
+        else:
+            _o.hide_render = True
+            if _o in props:
+                props.remove(_o)
+    update()
 
 _PELO = WEAR.get("Pelo") if not (_act_ids & _neck_ids) else None   # el pelo tapa la nuca: fuera si trabaja el cuello
 _PROPS_VIS = [o for o in props if o not in wear and o not in WEAR.values()] + ([_PELO] if _PELO else [])
@@ -134,18 +189,48 @@ _act_objs = {o for o, _ in MUSCLE_OBJS}
 if _act_objs and not SPEC.get("camara", {}).get("fija_anat"):
     _kp = max(keys, key=lambda k: k.get("p", 0))
     scene.frame_set(frame_of(_kp["t"]))
-    _rayos_como_render(set(NEUTROS) | _act_objs | {body} | set(_PROPS_VIS) | set(T_OBJS if "T_OBJS" in globals() else []))
+    _rayos_como_render(set(NEUTROS) | _act_objs | {body} | set(_PROPS_VIS) | set(_T_VIS))
     dg = deps()
     _pts = []
     for o in _act_objs:
         me = o.evaluated_get(dg).to_mesh()
         _pts += [o.matrix_world @ me.vertices[i].co for i in range(0, len(me.vertices), max(1, len(me.vertices) // 40))]
         o.to_mesh_clear()
+    # barra, poste, silla… delante del cuerpo: se penaliza el ángulo según cuánto cuerpo tapan
+    _occ_vis = (set(_occ_props) & set(_PROPS_VIS)) | set(_T_VIS)   # el terapeuta también tapa
+    _bpts = []
+    if _occ_vis:
+        mk.show_viewport = False
+        _cb = eval_coords()
+        _cb = _cb[_cam_idx] if _cam_idx is not None else _cb[BODY_MASK]
+        mk.show_viewport = True
+        update()
+        dg = deps()
+        _bpts = [Vector(p.tolist()) for p in _cb[np.random.default_rng(3).choice(len(_cb), 150, replace=False)]]
+
+    def _tapa_prop(loc):
+        n = 0
+        for p_ in _bpts:
+            dv = p_ - loc
+            dn = dv.normalized()
+            org = loc
+            for _ in range(6):
+                ok, hit, _n, _i, ob, _m = scene.ray_cast(dg, org, dn, distance=max(0.0, (p_ - org).length - 0.01))
+                if not ok:
+                    break
+                if (ob.original if hasattr(ob, "original") else ob) in _occ_vis:
+                    n += 1
+                    break
+                org = hit + dn * 0.003
+        return n / max(1, len(_bpts))
+
     _mejor = None
     for yaw_ in (0, 45, -45, 90, -90, 135, -135, 180):
         dv = Matrix.Rotation(math.radians(yaw_), 3, "Z") @ _d0
         loc, _f = _encuadre(dv)
         sc = _vis_desde(loc, _pts, dg, _act_objs) - 0.08 * abs(yaw_) / 180   # leve preferencia por la cámara de la ficha
+        if _bpts:
+            sc -= 1.0 * _tapa_prop(loc)
         if _mejor is None or sc > _mejor[0] + 1e-6:
             _mejor = (sc, yaw_)
     _visor_normal()
@@ -361,7 +446,7 @@ for fr in range(1, FRAME_END + 1, _STEP):
         # punto del músculo más cercano al centro que se VEA desde la cámara
         org = cam.matrix_world.translation
         best = None
-        for p_ in sorted(pts_, key=lambda q: (q - cen).length)[:12]:
+        for p_ in sorted(pts_, key=lambda q: (q - cen).length)[:80]:       # el más central que se vea (un músculo fino asoma sólo por un borde)
             dv = p_ - org
             ok, hit, _n, _i, ob, _m = scene.ray_cast(dg, org, dv.normalized(), distance=dv.length + 0.01)
             obo = ob.original if (ok and hasattr(ob, "original")) else ob
