@@ -111,13 +111,22 @@ _PELO = WEAR.get("Pelo") if not (_act_ids & _neck_ids) else None   # el pelo tap
 _PROPS_VIS = [o for o in props if o not in wear and o not in WEAR.values()] + ([_PELO] if _PELO else [])
 
 # ── 3b) ángulo de cámara: el que MÁS deja ver los músculos que trabajan (un trapecio o un glúteo se ven desde atrás) ──
-def _vis_desde(loc, pts_, dg, objs):
+def _vis_desde(loc, pts_, dg, objs, capa=0.08):
+    """Fracción de puntos visibles desde loc. Lo neutro a < capa del punto no cuenta (esa capa se quita luego)."""
+    _neu_ = set(NEUTROS)
     n = 0
     for p_ in pts_:
-        dv = p_ - loc
-        ok, hit, _n, _i, ob, _m = scene.ray_cast(dg, loc, dv.normalized(), distance=dv.length + 0.01)
-        obo = ob.original if (ok and hasattr(ob, "original")) else ob
-        n += bool(ok and obo in objs)
+        org = loc
+        for _ in range(4):
+            dv = p_ - org
+            ok, hit, _n, _i, ob, _m = scene.ray_cast(dg, org, dv.normalized(), distance=dv.length + 0.01)
+            obo = ob.original if (ok and hasattr(ob, "original")) else ob
+            if ok and obo in objs:
+                n += 1
+                break
+            if not ok or obo not in _neu_ or (p_ - hit).length >= capa:
+                break
+            org = hit + dv.normalized() * 0.001
     return n / max(1, len(pts_))
 
 
@@ -189,7 +198,24 @@ print("NEUTROS_ESTIRADOS", len(_estirados), sorted(_stat.items(), key=lambda x: 
 
 # ── 4b) músculos neutros que TAPAN a un músculo que trabaja: se ocultan (como quitar una capa).
 #        Profundo: todo lo que esté delante. Superficial: sólo lo pegado encima (<3 cm: duplicados del atlas, platisma…) ──
-_act = [o for o, _ in MUSCLE_OBJS if MUSCLE_INFO[o]["profundo"]]   # sólo los profundos (lo superficial ya se ve)
+# los profundos + los que, desde la cámara elegida, casi no se ven (tapados por otra capa: elevador bajo el trapecio…)
+_act = [o for o, _ in MUSCLE_OBJS if MUSCLE_INFO[o]["profundo"]]
+if _act_objs:
+    _kp0 = max(keys, key=lambda k: k.get("p", 0))
+    scene.frame_set(frame_of(_kp0["t"]))
+    _rayos_como_render(set(NEUTROS) | _act_objs | {body} | set(_PROPS_VIS))
+    _dg0 = deps()
+    _loc0 = cam.matrix_world.translation.copy()
+    for o in _act_objs:
+        if o in _act:
+            continue
+        me = o.evaluated_get(_dg0).to_mesh()
+        _p = [o.matrix_world @ me.vertices[i].co for i in range(0, len(me.vertices), max(1, len(me.vertices) // 40))]
+        o.to_mesh_clear()
+        if _vis_desde(_loc0, _p, _dg0, {o}, capa=0) < 0.08:
+            _act.append(o)
+    _visor_normal()
+    print("TAPADOS_COMO_PROFUNDOS", [o.name for o in _act if not MUSCLE_INFO[o]["profundo"]])
 if _act:
     _kp = max(keys, key=lambda k: k.get("p", 0))
     _rayos_como_render(set(NEUTROS) | set(_act) | {body} | set(_PROPS_VIS))
