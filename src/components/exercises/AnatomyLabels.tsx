@@ -24,6 +24,8 @@ interface LabelData {
   resolucion: [number, number];
   musculos: LabelMuscle[];
   pos: ([number, number, number, number] | null)[][];
+  /** calculado al cargar: el músculo se ve en algún cuadro del clip */
+  everVisible?: boolean[];
 }
 
 const BLUE_ROLES = new Set(["elongan", "estirados"]);
@@ -83,10 +85,12 @@ export function AnatomyLabels({
   const fontPx = Math.max(10, Math.min(15, W / 48));
   const lineH = fontPx * 1.7;
 
+  // músculos que nunca quedan a la vista (detrás del cuerpo, contra la camilla): igual se nombran, con línea punteada
   const items = data.musculos
-    .map((m, j) => ({ m, p: row[j] }))
-    .filter((it): it is { m: LabelMuscle; p: [number, number, number, number] } => !!it.p && it.p[2] * it.p[3] > 0.12)
-    .map(({ m, p }) => ({ m, x: ox + p[0] * vw * s, y: oy + p[1] * vh * s, a: Math.min(1, p[3] * 1.4) }))
+    .map((m, j) => ({ m, j, p: row[j] }))
+    .filter((it): it is { m: LabelMuscle; j: number; p: [number, number, number, number] } =>
+      !!it.p && (it.p[2] > 0 || !data.everVisible?.[it.j]) && it.p[3] > 0.12)
+    .map(({ m, p }) => ({ m, x: ox + p[0] * vw * s, y: oy + p[1] * vh * s, a: Math.min(1, p[3] * 1.4), behind: p[2] === 0 }))
     .filter((it) => it.x >= 0 && it.x <= W && it.y >= 0 && it.y <= H)
     .sort((a, b) => a.y - b.y);
 
@@ -111,8 +115,8 @@ export function AnatomyLabels({
           const ax = right ? tx - estimateWidth(name(it.m), fontPx) - 6 : tx + estimateWidth(name(it.m), fontPx) + 6;
           return (
             <g key={it.m.id + (it.m.lado ?? "")} opacity={it.a}>
-              <line x1={it.x} y1={it.y} x2={ax} y2={ty} stroke={col} strokeWidth={1.5} />
-              <circle cx={it.x} cy={it.y} r={3.5} fill={col} />
+              <line x1={it.x} y1={it.y} x2={ax} y2={ty} stroke={col} strokeWidth={1.5} strokeDasharray={it.behind ? "4 3" : undefined} />
+              <circle cx={it.x} cy={it.y} r={3.5} fill={it.behind ? "none" : col} stroke={col} strokeWidth={1.5} />
             </g>
           );
         })}
@@ -155,5 +159,6 @@ function mergeBilateral(d: LabelData): LabelData {
       pos[i].push(c.length ? c.reduce((a, b) => (b[2] > a[2] || (b[2] === a[2] && b[3] > a[3]) ? b : a)) : null);
     });
   }
-  return { ...d, musculos, pos };
+  const everVisible = musculos.map((_, j) => pos.some((r) => !!r[j] && r[j]![2] > 0));
+  return { ...d, musculos, pos, everVisible };
 }
