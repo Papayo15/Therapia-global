@@ -26,7 +26,7 @@
       }
     ],
     "superficie_banco": 0.62,
-    "banco_largo": true,
+    "banco_largo": "tronco",
     "suelo": [
       "spine02",
       "spine03",

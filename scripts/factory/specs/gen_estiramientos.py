@@ -11,8 +11,6 @@ from common import (FOOT, bipedo, cuadrupedia, hand, keys_custom, lateral, muscu
 
 ROOT = Path(__file__).resolve().parents[3]
 PENDIENTES = {
-    "E-057": "Postura de la paloma: el asentado por inclinación global no apoya a la vez la tibia delantera y la pierna trasera; requiere solver multi-apoyo de suelo.",
-    "E-060": "Paloma con rotación: ídem E-057.",
     "E-043": "Decúbito lateral sobre rollo: falta modelar el tronco arqueado SOBRE el rollo (cintura elevada, hombro y pelvis apoyados); con la pose lateral actual la cabeza/mano atraviesan el suelo.",
 }
 NO_SOBREESCRIBIR = {"E-067"}          # ficha piloto escrita a mano
@@ -245,7 +243,7 @@ H.append(spec("E-048", b, est({"lumbar_flex": -15, "toracica_flex": -8, "cervica
 
 # ─── CADERA ───────────────────────────────────────────────────────────────────
 b = supino(rectas=False)
-b["base"].update({"colchoneta": False, "superficie_banco": 0.62, "banco_largo": True, "suelo": ["spine02", "spine03", "pelvis.L", "pelvis.R"],
+b["base"].update({"colchoneta": False, "superficie_banco": 0.62, "banco_largo": "tronco", "suelo": ["spine02", "spine03", "pelvis.L", "pelvis.R"],
                   "asentar": [{"art": "cervical_flex", "grupo": "head", "z": 0.62, "rango": [-25, 25]}]})
 b["base"]["angulos"].update({"cadera_flex.L": 110, "rodilla_flex.L": 120, "cadera_flex.R": -10, "rodilla_flex.R": 80})
 b["ik"] = [{"cadena": f"brazo.{s}", "a_hueso": {"hueso": "lowerleg01.L", "dir": "anterior", "t": 0.1, "sep": 0.03, "lado": s}} for s in ("L", "R")]
@@ -299,6 +297,44 @@ b["ik"] = [{"cadena": "pierna.R", "a_hueso": {"hueso": "upperleg02.L", "dir": "s
             "polo_manual": True, "polo": [-0.6, 0, 0.2]}]
 b["contactos"] = [{"grupo": "foot.L"}]
 H.append(spec("E-059", b, est({"lumbar_flex": 18, "toracica_flex": 8}), camara=[-0.6, -1, 0.3]))
+
+
+# Paloma (multi-apoyo): desde cuadrupedia con el tronco erguido (@pitch −55°). Pierna DERECHA delante, plegada
+# (flexión + abducción + rotación externa) con la tibia apoyada; pierna IZQUIERDA extendida atrás sobre el muslo y
+# el empeine; manos al suelo delante. Cada apoyo se asienta con su propia articulación, en orden: pierna de atrás,
+# rodilla y tibia de delante, tronco (para que las manos lleguen) y hombros. Las manos quedan fijas (IK) en el movimiento.
+def paloma():
+    toes_l = ["foot.L"] + [f"toe{n}-{k}.L" for n in range(1, 6) for k in (1, 2, 3)]
+    ang = {"@pitch": -55,
+           "cadera_flex.R": 115, "cadera_abd.R": 45, "cadera_re.R": 90, "rodilla_flex.R": 90, "tobillo_dorsi.R": -20,
+           "cadera_flex.L": 0, "rodilla_flex.L": 0, "tobillo_dorsi.L": -85,
+           "hombro_flex.L": 55, "hombro_flex.R": 55, "hombro_abd.L": 10, "hombro_abd.R": 10,
+           "muneca_ext.L": 75, "muneca_ext.R": 75, "antebrazo_prono.L": 80, "antebrazo_prono.R": 80, "cervical_flex": -20}
+    b = {"base": {"orientacion": "cuadrupedia", "colchoneta": True, "angulos": ang,
+                  "suelo": ["lowerleg01.R", "lowerleg02.R", "upperleg02.L", "lowerleg01.L"],
+                  "asentar": [{"art": "cadera_flex.L", "grupo": ["lowerleg02.L", "foot.L"], "rango": [-40, 40]},
+                              {"art": "tobillo_dorsi.L", "grupo": toes_l, "rango": [-25, 25]},
+                              {"art": "cadera_abd.R", "grupo": ["lowerleg01.R"], "rango": [-25, 25]},
+                              {"art": "cadera_re.R", "grupo": ["lowerleg02.R", "foot.R"], "rango": [-35, 25]},
+                              {"art": "lumbar_flex", "grupo": hand("L") + hand("R"), "rango": [-10, 35]},
+                              {"art": "hombro_flex.L", "grupo": hand("L"), "rango": [-25, 25]},
+                              {"art": "hombro_flex.R", "grupo": hand("R"), "rango": [-25, 25]},
+                              {"art": "tobillo_dorsi.R", "grupo": ["foot.R"] + [f"toe{n}-{k}.R" for n in range(1, 6) for k in (1, 2, 3)],
+                               "rango": [-25, 25]},
+                              {"art": "cadera_flex.L", "grupo": ["lowerleg02.L"] + toes_l, "rango": [-8, 8]}],
+                  "iter_asentar": 5},
+         "ik": [], "contactos": [{"grupo": ["lowerleg01.R", "lowerleg02.R"], "tol_cm": 3.5},
+                                 {"grupo": ["upperleg02.L", "lowerleg01.L"], "tol_cm": 5},       # rodilla atrás: el empeine queda más bajo
+                                 {"grupo": hand("L") + hand("R"), "tol_cm": 2.5}],
+         "camara": {"dir": [1, -0.25, 0.3], "lente": 50, "margen": 1.1}}
+    return pinned(b)
+
+
+# E-057: se inclina sobre la pierna de delante (glúteo mayor derecho en elongación)
+H.append(spec("E-057", paloma(), est({"lumbar_flex": 12, "toracica_flex": 12, "cervical_flex": 8}), resaltar=["upperleg01.R"]))
+# E-060: además gira el tronco hacia la pierna de delante (piriforme)
+H.append(spec("E-060", paloma(), est({"lumbar_flex": 8, "toracica_flex": 6, "toracica_rot": 18, "lumbar_rot": 8}),
+              resaltar=["upperleg01.R"]))
 b = no_hands(supino(rectas=False, extra={"cadera_flex.L": 60, "cadera_flex.R": 60, "rodilla_flex.L": 110, "rodilla_flex.R": 110,
                                          "cadera_abd.L": 30, "cadera_abd.R": 30, "cadera_re.L": 40, "cadera_re.R": 40}))
 b["contactos"] = [{"grupo": "head"}, {"grupo": "spine01", "tol_cm": 3}]

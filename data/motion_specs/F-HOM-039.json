@@ -30,7 +30,7 @@
       }
     ],
     "superficie_banco": 0.42,
-    "banco_largo": true
+    "banco_largo": "tronco"
   },
   "ik": [
     {

@@ -124,7 +124,7 @@ hecho.append(spec("F-CAD-011", supino(gancho=("L", "R")), iso(3.0), lado=None,
                   props=[{"tipo": "correa", "uso": "lazo_rodillas"}], resaltar=("upperleg01.L", "upperleg01.R")))
 
 # 012 Abducción en decúbito lateral (pierna de arriba recta).
-hecho.append(spec("F-CAD-012", lateral(), rep({"cadera_abd.R": 35}, up=1.4, hold=1.0, down=1.8)))
+hecho.append(spec("F-CAD-012", lateral(), rep({"cadera_abd.R": 25}, up=1.4, hold=1.0, down=1.8)))
 
 # 013 Abducción de pie con banda alrededor de los tobillos.
 b = bipedo(camara=(0, -1, 0.2))

@@ -701,7 +701,7 @@ if base.get("camilla"):                        # osteopatía: camilla de consult
 
 # Asentar: resuelve un ángulo para que un grupo toque la superficie (evita extremidades flotando).
 ASENTADOS = []
-for a in base.get("asentar", []) * 2:
+for a in base.get("asentar", []) * base.get("iter_asentar", 2):        # multi-apoyo: varias vueltas hasta converger
     joint = a["art"]
     grupo = a["grupo"] if isinstance(a["grupo"], list) else [a["grupo"]]
     lo, hi = a.get("rango", [-30, 30])
@@ -749,9 +749,16 @@ if base.get("superficie_banco"):
                                             rotation=(0, math.radians(90), 0))
         bpy.context.active_object.name, bpy.context.active_object.color = "Rodillo", (0.45, 0.50, 0.58, 1)
     elif base.get("banco_largo"):
-        tor = [i for g in TORSO if not g.startswith(("neck", "head")) for i in _GROUP_VERTS[g]]
+        # El banco SOSTIENE el cuerpo como uno real: True = de la cabeza a los pies (en prono las piernas no pueden
+        # quedar flotando en el aire); "tronco" = cabeza + tronco hasta la pelvis (las piernas cuelgan del borde o
+        # apoyan los pies en el suelo, p.ej. test de Thomas, pullover).
+        if base["banco_largo"] == "tronco":
+            grp = [g for g in TORSO] + [g for g in _GROUP_VERTS if g.startswith("upperleg01")]
+        else:
+            grp = [g for g in _GROUP_VERTS if g.startswith(("spine", "pelvis", "upperleg", "lowerleg", "foot"))]   # la cara queda libre fuera del borde
+        tor = [i for g in grp for i in _GROUP_VERTS[g]]
         y0, y1 = float(_co[tor, 1].min()), float(_co[tor, 1].max())
-        add_box("Banco", (0.40, y1 - y0 + 0.1, GROUND_Z), (0, (y0 + y1) / 2, GROUND_Z / 2), (0.30, 0.30, 0.34))
+        add_box("Banco", (0.40, y1 - y0 + 0.06, GROUND_Z), (0, (y0 + y1) / 2, GROUND_Z / 2), (0.30, 0.30, 0.34))
     else:
         add_box("Banco", (0.42, 0.45, GROUND_Z), (0, by + 0.20, GROUND_Z / 2), (0.30, 0.30, 0.34))   # bajo omóplatos
 if base.get("almohada"):

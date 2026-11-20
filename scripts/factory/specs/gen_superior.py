@@ -279,7 +279,7 @@ H.append(spec("F-HOM-024", b, rep({"hombro_re.R": -60}, up=1.2, hold=0.8, down=1
 H.append(spec("F-HOM-029", json.loads(json.dumps(b)), rep({"hombro_re.R": 40}, up=1.2, hold=0.8, down=1.6), resaltar=SH,
               props=bands_from_wrists([0, -0.8, -0.1], sides=("R",))))
 b = sedente(extra={"hombro_flex.R": 90, "hombro_re.R": 0, "antebrazo_prono.R": -60})
-H.append(spec("F-HOM-031", b, rep({"hombro_re.R": 75}, up=1.3, hold=0.8, down=1.6), resaltar=SH, camara=[0, 0.2, 1.4]))
+H.append(spec("F-HOM-031", b, rep({"hombro_re.R": 75}, up=1.3, hold=0.8, down=1.6), resaltar=SH, camara=[-0.5, -1, 0.8]))
 b = grip(bipedo(extra={"hombro_flex.L": 90, "hombro_flex.R": 90}, camara=(0, -1, 0.35)), ("L", "R"))
 H.append(spec("F-HOM-032", b, rep({"hombro_re.L": 70, "hombro_re.R": 70}, up=1.2, hold=0.8, down=1.6), lado=None,
               resaltar=("upperarm01.L", "upperarm01.R"), props=[{"tipo": "banda_elastica", "uso": "baston_manos"}]))
@@ -298,12 +298,12 @@ b = bipedo(extra={"hombro_flex.L": 70, "hombro_flex.R": 70, "hombro_re.L": 70, "
            camara=(-0.6, -1, 0.2))
 H.append(spec("F-HOM-036", b, iso(3.0), lado=None, resaltar=("upperarm01.L", "upperarm01.R")))
 b = sedente(extra={"hombro_flex.R": 90, "hombro_re.R": 75, "antebrazo_prono.R": -60})
-H.append(spec("F-HOM-037", b, rep({"hombro_re.R": -80}, up=1.3, hold=0.8, down=1.6), resaltar=SH, camara=[0, 0.2, 1.4]))
+H.append(spec("F-HOM-037", b, rep({"hombro_re.R": -80}, up=1.3, hold=0.8, down=1.6), resaltar=SH, camara=[-0.5, -1, 0.8]))
 b = pinned_hands(bipedo(extra={"hombro_flex.L": 85, "hombro_flex.R": 85, "hombro_abd.L": 20, "hombro_abd.R": 20, "@pitch": 12}, camara=(-1, -0.3, 0.25)))
 H.append(spec("F-HOM-038", b, rep({}, up=1.4, hold=0.6, down=1.4, campos={"raiz": [0, -0.16, 0]}), lado=None,
               resaltar=("upperarm01.L", "upperarm01.R"), props=[{"tipo": "pared", "uso": "pared_manos"}]))
 b = grip(supino(rectas=False, gancho=("L", "R"), extra={"hombro_flex.L": 90, "hombro_flex.R": 90}), ("L", "R"))
-b["base"].update({"superficie_banco": 0.42, "banco_largo": True, "colchoneta": False,
+b["base"].update({"superficie_banco": 0.42, "banco_largo": "tronco", "colchoneta": False,
                   "asentar": [{"art": "cervical_flex", "grupo": "head", "z": 0.42, "rango": [-25, 25]}]})
 for i in b["ik"]:
     i["z_suelo"] = 0.0

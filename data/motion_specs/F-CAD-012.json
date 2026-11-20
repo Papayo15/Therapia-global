@@ -93,7 +93,7 @@
     {
       "t": 1.8,
       "art": {
-        "cadera_abd.R": 35
+        "cadera_abd.R": 25
       },
       "p": 1,
       "fase": "isometrico"
@@ -101,7 +101,7 @@
     {
       "t": 2.8,
       "art": {
-        "cadera_abd.R": 35
+        "cadera_abd.R": 25
       },
       "p": 1,
       "fase": "excentrico"
