@@ -9,20 +9,52 @@
       "codo_flex.L": 90,
       "codo_flex.R": 90,
       "hombro_re.L": 85,
-      "hombro_re.R": 85
+      "hombro_re.R": 85,
+      "hombro_abd_h.L": -35,
+      "hombro_abd_h.R": -35
     }
   },
-  "ik": [],
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "orientacion_fija": true
+    },
+    {
+      "cadena": "brazo.R",
+      "orientacion_fija": true
+    },
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    }
+  ],
   "contactos": [
     {
       "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
     }
   ],
   "camara": {
     "dir": [
-      -0.3,
-      -1,
-      0.4
+      0.45,
+      1,
+      0.55
     ],
     "lente": 50,
     "margen": 1.05
@@ -30,10 +62,7 @@
   "keys": [
     {
       "t": 0,
-      "art": {
-        "hombro_abd_h.L": 0,
-        "hombro_abd_h.R": 0
-      },
+      "art": {},
       "p": 0,
       "fase": "concentrico",
       "raiz": [
@@ -44,10 +73,7 @@
     },
     {
       "t": 0.4,
-      "art": {
-        "hombro_abd_h.L": 0,
-        "hombro_abd_h.R": 0
-      },
+      "art": {},
       "p": 0,
       "fase": "concentrico",
       "raiz": [
@@ -58,38 +84,29 @@
     },
     {
       "t": 1.9,
-      "art": {
-        "hombro_abd_h.L": 20,
-        "hombro_abd_h.R": 20
-      },
+      "art": {},
       "p": 1,
       "fase": "isometrico",
       "raiz": [
         0,
-        -0.08,
+        -0.1,
         0
       ]
     },
     {
       "t": 4.9,
-      "art": {
-        "hombro_abd_h.L": 20,
-        "hombro_abd_h.R": 20
-      },
+      "art": {},
       "p": 1,
       "fase": "excentrico",
       "raiz": [
         0,
-        -0.08,
+        -0.1,
         0
       ]
     },
     {
       "t": 6.4,
-      "art": {
-        "hombro_abd_h.L": 0,
-        "hombro_abd_h.R": 0
-      },
+      "art": {},
       "p": 0,
       "fase": "concentrico",
       "raiz": [
@@ -100,10 +117,7 @@
     },
     {
       "t": 6.8,
-      "art": {
-        "hombro_abd_h.L": 0,
-        "hombro_abd_h.R": 0
-      },
+      "art": {},
       "p": 0,
       "fase": "concentrico",
       "raiz": [
@@ -121,11 +135,16 @@
     ]
   },
   "articulacion_resaltada": [],
-  "props": [],
-  "variantes": [
-    "gym"
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "esquina"
+    }
   ],
-  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "variantes": [
+    "gym",
+    "casa"
+  ],
   "fps": 24,
   "resolucion": [
     1280,

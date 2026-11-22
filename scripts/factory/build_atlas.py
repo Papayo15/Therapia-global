@@ -89,6 +89,24 @@ A["c7"] = S["Vertebra C7"].mean(0)
 par = np.vstack([v for n, v in S.items() if n.startswith("Parietal bone")])
 A["skull"] = np.array([0.0, par[:, 1].mean(), par[:, 2].max()])
 A["sacrum"] = S["Sacrum"].mean(0)
+# pelvis: el "sacrum" del atlas (centro del sacro, 6 cm sobre las caderas y atrás) NO equivale a la cabeza de "root" del
+# rig (a la altura de las caderas): emparejarlos estiraba la pelvis al doble de ancho (cresta ilíaca a 28 cm del eje,
+# trocánteres y glúteos 12 cm fuera de la piel). La columna se ancla al punto medio entre caderas en ambos, y la forma de
+# la pelvis se fija con puntos propios (ver más abajo).
+A["pelvis_mid"] = (A["hip.L"] + A["hip.R"]) / 2
+_hb = {s: S[f"Hip bone.{sl}"] for s, sl in (("L", "l"), ("R", "r"))}
+_fe = {s: S[f"Femur.{sl}"] for s, sl in (("L", "l"), ("R", "r"))}
+PELV_A = {}
+for s in ("L", "R"):
+    sg = 1 if s == "L" else -1
+    hb, fe = _hb[s], _fe[s]
+    PELV_A[f"cresta.{s}"] = hb[np.argmax(sg * hb[:, 0] + 0.5 * hb[:, 2])]               # cresta ilíaca lateral-alta
+    PELV_A[f"eias.{s}"] = hb[np.argmin(hb[:, 1] - 0.3 * hb[:, 2])]                       # espina ilíaca antero-superior
+    top = fe[fe[:, 2] > fe[:, 2].max() - 0.08]
+    PELV_A[f"trocanter.{s}"] = top[np.argmax(sg * top[:, 0])]                             # trocánter mayor
+    PELV_A[f"isquion.{s}"] = hb[np.argmin(hb[:, 2])]                                      # tuberosidad isquiática
+_both = np.vstack([_hb["L"], _hb["R"]])
+PELV_A["pubis"] = _both[np.argmin(_both[:, 1] + 2 * np.abs(_both[:, 0]) - 0.0 * _both[:, 2])]
 for o in skel:
     bpy.data.objects.remove(o, do_unlink=True)
 
@@ -117,13 +135,39 @@ for s in ("L", "R"):
 R["c7"] = rp(B["neck01"].head_local)
 R["skull"] = rp(B["head"].tail_local)
 R["sacrum"] = rp(B["root"].head_local)
+R["pelvis_mid"] = (R["hip.L"] + R["hip.R"]) / 2
+
+# puntos de la pelvis en la paciente: la pelvis del atlas escalada por la distancia entre caderas (ancho) y por la
+# longitud del tronco (alto), y nunca más afuera que la piel menos el tejido blando típico
+_sx = np.linalg.norm(R["hip.L"] - R["hip.R"]) / np.linalg.norm(A["hip.L"] - A["hip.R"])
+_sz = (R["c7"][2] - R["pelvis_mid"][2]) / (A["c7"][2] - A["pelvis_mid"][2])
+_gi = body.vertex_groups["body"].index
+_SK = np.array([tuple(body.matrix_world @ v.co) for v in body.data.vertices
+                if any(g.group == _gi and g.weight > 0.5 for g in v.groups)])
+TEJIDO = {"cresta": 0.025, "eias": 0.015, "trocanter": 0.035, "isquion": 0.03, "pubis": 0.02}
+
+
+def _piel_x(z, y):
+    s_ = _SK[(np.abs(_SK[:, 2] - z) < 0.015) & (np.abs(_SK[:, 0]) < 0.30) & (np.abs(_SK[:, 1] - y) < 0.06)]
+    return np.abs(s_[:, 0]).max() if len(s_) else 1.0
+
+
+PELV_R = {}
+for k, p in PELV_A.items():
+    d = p - A["pelvis_mid"]
+    q = R["pelvis_mid"] + np.array([d[0] * _sx, d[1] * _sx, d[2] * _sz])
+    lim = _piel_x(q[2], q[1]) - TEJIDO[k.split(".")[0]]
+    if abs(q[0]) > lim:
+        q[0] = np.sign(q[0]) * lim
+    PELV_R[k] = q
+    print("PELVIS", k, np.round(p, 3), "→", np.round(q, 3))
 
 # ─── 2. Puntos de control: centros + marco de cada segmento ──────────────────
 SEGS = []
 for s in ("L", "R"):
     SEGS += [(f"hip.{s}", f"knee.{s}", "ant"), (f"knee.{s}", f"ankle.{s}", "ant"), (f"ankle.{s}", f"toe.{s}", "up"),
              (f"shoulder.{s}", f"elbow.{s}", "ant"), (f"elbow.{s}", f"wrist.{s}", f"rad.{s}"), (f"wrist.{s}", f"hand.{s}", f"rad.{s}")]
-SEGS += [("sacrum", "c7", "ant"), ("c7", "skull", "ant")]
+SEGS += [("pelvis_mid", "c7", "ant"), ("c7", "skull", "ant")]
 
 
 def frame(D, p, d, kind):
@@ -142,13 +186,17 @@ def frame(D, p, d, kind):
     v /= np.linalg.norm(v)
     w = np.cross(u, v)
     M = (P + Q) / 2
-    return [P, Q, M + v * 0.25 * L, M + w * 0.25 * L, M - v * 0.25 * L]
+    # marco simétrico (±v, ±w): con un solo lado el TPS extrapolaba el otro (muslo 8 cm fuera de la piel por fuera)
+    return [P, Q, M + v * 0.25 * L, M + w * 0.25 * L, M - v * 0.25 * L, M - w * 0.25 * L]
 
 
 src, dst = [], []
 for p, d, kind in SEGS:
     src += frame(A, p, d, kind)
     dst += frame(R, p, d, kind)
+for k in PELV_A:
+    src.append(PELV_A[k])
+    dst.append(PELV_R[k])
 src, dst = np.array(src), np.array(dst)
 _, keep = np.unique(np.round(src, 4), axis=0, return_index=True)
 src, dst = src[sorted(keep)], dst[sorted(keep)]

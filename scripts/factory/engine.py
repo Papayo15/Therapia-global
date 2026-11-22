@@ -1178,6 +1178,40 @@ for pr in SPEC.get("props", []):
         if pr.get("soportes"):
             for x in (-0.7, 0.7):
                 add_box("Soporte", (0.05, 0.05, c.z), (c.x + x, c.y, c.z / 2), (0.35, 0.35, 0.38))
+    elif pr["uso"] == "jamba":
+        # estiramiento en marco de puerta: el antebrazo/palma se APOYA en el marco, que queda DELANTE de él; el resto
+        # de la pared sigue hacia afuera (la paciente está en el vano). Con IK la mano queda fija en el marco y el cuerpo
+        # avanza: es lo que hace el paciente, y el antebrazo nunca se separa del marco.
+        s_ = pr["lado"]
+        sx = 1 if s_ == "L" else -1
+        co_ = eval_coords()
+        idx = [i for g in (f"lowerarm01.{s_}", f"lowerarm02.{s_}", f"wrist.{s_}") for i in _GROUP_VERTS.get(g, [])]
+        pts = co_[idx]
+        yf = float(pts[:, 1].min())                # cara anterior del antebrazo/mano
+        xc = float(pts[:, 0].mean())
+        T = 0.12
+        add_box("Marco", (0.09, T, 2.2), (xc, yf - T / 2 - 0.004, 1.1), (0.78, 0.70, 0.58))
+        add_box("Pared", (1.4, T, 2.4), (xc + sx * (0.045 + 0.7), yf - T / 2 - 0.004, 1.2), (0.86, 0.86, 0.84))
+    elif pr["uso"] == "esquina":
+        # esquina de la habitación (90°) delante de la paciente: cada antebrazo apoyado en una de las dos paredes
+        co_ = eval_coords()
+        T = 0.10
+        P = {}
+        for s_ in ("L", "R"):
+            idx = [i for g in (f"lowerarm01.{s_}", f"lowerarm02.{s_}", f"wrist.{s_}") for i in _GROUP_VERTS.get(g, [])]
+            pts = co_[idx]
+            P[s_] = pts[np.argmin(pts[:, 1] + (-1 if s_ == "L" else 1) * pts[:, 0])]   # punto más "metido" hacia la pared
+        # vértice de la esquina en x=0: las paredes van a ±45° y cada una pasa por el antebrazo de su lado
+        ya = min(P["R"][1] + P["R"][0], P["L"][1] - P["L"][0]) - 0.004 * math.sqrt(2)
+        print("ESQUINA P", {k: [round(float(x), 3) for x in v] for k, v in P.items()}, "apice_y", round(float(ya), 3))
+        for s_, ang_ in (("R", 135), ("L", 45)):
+            d_ = Vector((math.cos(math.radians(ang_)), math.sin(math.radians(ang_)), 0))
+            n_ = Vector((-d_.y, d_.x, 0)) if s_ == "L" else Vector((d_.y, -d_.x, 0))   # normal hacia la habitación
+            if n_.y < 0:
+                n_ = -n_
+            c_ = Vector((0, ya, 1.2)) + d_ * 0.9 - n_ * (T / 2)
+            w_ = add_box("Pared", (1.8, T, 2.4), tuple(c_), (0.86, 0.86, 0.84))
+            w_.rotation_euler = (0, 0, math.radians(ang_))
     elif pr["uso"] == "pared_manos":
         if pr.get("lateral"):                      # pared al costado de la mano indicada
             s_ = pr["lateral"]

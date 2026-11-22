@@ -1,0 +1,74 @@
+# clave | en | pt | fr | de | ru | ar | ja | zh | hi   (fuente: español)
+OBJ:Aductores | Adductors | Adutores | Adducteurs | Adduktoren | Приводящие мышцы | العضلات المقربة | 内転筋群 | 内收肌群 | अभिवर्तनी मांसपेशियाँ
+OBJ:Bíceps | Biceps | Bíceps | Biceps | Bizeps | Бицепс | العضلة ذات الرأسين | 上腕二頭筋 | 肱二头肌 | बाइसेप्स
+OBJ:Cuadrado lumbar | Quadratus lumborum | Quadrado lombar | Carré des lombes | Quadratus lumborum | Квадратная мышца поясницы | العضلة المربعة القطنية | 腰方形筋 | 腰方肌 | क्वाड्रेटस लम्बोरम
+OBJ:Cápsula posterior / rotadores externos | Posterior capsule / external rotators | Cápsula posterior / rotadores externos | Capsule postérieure / rotateurs externes | Hintere Kapsel / Außenrotatoren | Задняя капсула / наружные ротаторы | المحفظة الخلفية / الدوارات الخارجية | 後方関節包／外旋筋群 | 后关节囊／外旋肌 | पश्च कैप्सूल / बाहरी घूर्णक
+OBJ:Dorsal ancho | Latissimus dorsi | Grande dorsal | Grand dorsal | Breiter Rückenmuskel | Широчайшая мышца спины | العضلة الظهرية العريضة | 広背筋 | 背阔肌 | लैटिसिमस डॉर्सी
+OBJ:Elevador de la escápula | Levator scapulae | Levantador da escápula | Élévateur de la scapula | Schulterblattheber | Мышца, поднимающая лопатку | الرافعة الكتفية | 肩甲挙筋 | 肩胛提肌 | लेवेटर स्कैपुली
+OBJ:Erectores lumbares | Lumbar erectors | Eretores lombares | Érecteurs lombaires | Lumbale Rückenstrecker | Поясничные разгибатели | الناصبات القطنية | 腰部脊柱起立筋 | 腰部竖脊肌 | कटि इरेक्टर
+OBJ:Escalenos | Scalenes | Escalenos | Scalènes | Skalenusmuskeln | Лестничные мышцы | العضلات الأخمعية | 斜角筋 | 斜角肌 | स्केलीन
+OBJ:Esternocleidomastoideo (ECM) | Sternocleidomastoid (SCM) | Esternocleidomastóideo (ECM) | Sterno-cléido-mastoïdien (SCM) | Kopfwender (SCM) | Грудино-ключично-сосцевидная мышца | القصية الترقوية الخشائية | 胸鎖乳突筋 | 胸锁乳突肌 | स्टर्नोक्लाइडोमैस्टॉइड
+OBJ:Extensores de muñeca | Wrist extensors | Extensores do punho | Extenseurs du poignet | Handgelenkstrecker | Разгибатели запястья | باسطات الرسغ | 手関節伸筋群 | 腕伸肌 | कलाई के एक्सटेंसर
+OBJ:Fascia plantar | Plantar fascia | Fáscia plantar | Fascia plantaire | Plantarfaszie | Подошвенная фасция | اللفافة الأخمصية | 足底腱膜 | 足底筋膜 | प्लांटर फेशिया
+OBJ:Flexores de muñeca | Wrist flexors | Flexores do punho | Fléchisseurs du poignet | Handgelenkbeuger | Сгибатели запястья | قابضات الرسغ | 手関節屈筋群 | 腕屈肌 | कलाई के फ्लेक्सर
+OBJ:Gastrocnemio | Gastrocnemius | Gastrocnêmio | Gastrocnémien | Wadenmuskel (Gastrocnemius) | Икроножная мышца | العضلة التوأمية | 腓腹筋 | 腓肠肌 | गैस्ट्रोक्नेमियस
+OBJ:Glúteo mayor | Gluteus maximus | Glúteo máximo | Grand fessier | Großer Gesäßmuskel | Большая ягодичная мышца | الألوية الكبرى | 大殿筋 | 臀大肌 | ग्लूटियस मैक्सिमस
+OBJ:Iliopsoas | Iliopsoas | Iliopsoas | Iliopsoas | Iliopsoas | Подвздошно-поясничная мышца | العضلة الحرقفية القطنية | 腸腰筋 | 髂腰肌 | इलियोप्सोआस
+OBJ:Isquiotibiales | Hamstrings | Isquiotibiais | Ischio-jambiers | Ischiocrurale Muskulatur | Задняя группа бедра | أوتار الركبة | ハムストリングス | 腘绳肌 | हैमस्ट्रिंग
+OBJ:Pectoral mayor | Pectoralis major | Peitoral maior | Grand pectoral | Großer Brustmuskel | Большая грудная мышца | الصدرية الكبرى | 大胸筋 | 胸大肌 | पेक्टोरलिस मेजर
+OBJ:Pectoral menor | Pectoralis minor | Peitoral menor | Petit pectoral | Kleiner Brustmuskel | Малая грудная мышца | الصدرية الصغرى | 小胸筋 | 胸小肌 | पेक्टोरलिस माइनर
+OBJ:Piriforme | Piriformis | Piriforme | Piriforme | Piriformis | Грушевидная мышца | الكمثرية | 梨状筋 | 梨状肌 | पिरिफॉर्मिस
+OBJ:Recto abdominal / flexores del tronco | Rectus abdominis / trunk flexors | Reto abdominal / flexores do tronco | Grand droit / fléchisseurs du tronc | Gerader Bauchmuskel / Rumpfbeuger | Прямая мышца живота / сгибатели туловища | المستقيمة البطنية / قابضات الجذع | 腹直筋／体幹屈筋群 | 腹直肌／躯干屈肌 | रेक्टस एब्डोमिनिस / धड़ के फ्लेक्सर
+OBJ:Recto femoral | Rectus femoris | Reto femoral | Droit fémoral | Gerader Oberschenkelmuskel | Прямая мышца бедра | المستقيمة الفخذية | 大腿直筋 | 股直肌 | रेक्टस फेमोरिस
+OBJ:Suboccipitales | Suboccipitals | Suboccipitais | Sous-occipitaux | Subokzipitale Muskeln | Подзатылочные мышцы | العضلات تحت القذالية | 後頭下筋群 | 枕下肌群 | सबऑक्सिपिटल
+OBJ:Sóleo | Soleus | Sóleo | Soléaire | Schollenmuskel | Камбаловидная мышца | العضلة النعلية | ヒラメ筋 | 比目鱼肌 | सोलियस
+OBJ:Tensor de la fascia lata / banda iliotibial | Tensor fasciae latae / IT band | Tensor da fáscia lata / banda iliotibial | Tenseur du fascia lata / bandelette ilio-tibiale | Tensor fasciae latae / Tractus iliotibialis | Напрягатель широкой фасции / ПБТ | الموترة للفافة العريضة / الشريط الحرقفي الظنبوبي | 大腿筋膜張筋／腸脛靭帯 | 阔筋膜张肌／髂胫束 | टेंसर फेशिया लैटी / आईटी बैंड
+OBJ:Tibial anterior | Tibialis anterior | Tibial anterior | Tibial antérieur | Vorderer Schienbeinmuskel | Передняя большеберцовая мышца | الظنبوبية الأمامية | 前脛骨筋 | 胫骨前肌 | टिबियालिस एंटीरियर
+OBJ:Trapecio superior | Upper trapezius | Trapézio superior | Trapèze supérieur | Oberer Trapezmuskel | Верхняя трапециевидная | شبه المنحرفة العلوية | 僧帽筋上部 | 上斜方肌 | ऊपरी ट्रेपेज़ियस
+OBJ:Tríceps | Triceps | Tríceps | Triceps | Trizeps | Трицепс | ثلاثية الرؤوس | 上腕三頭筋 | 肱三头肌 | ट्राइसेप्स
+REG:ATM (mandíbula) | TMJ (jaw) | ATM (mandíbula) | ATM (mâchoire) | Kiefergelenk | ВНЧС (челюсть) | المفصل الفكي | 顎関節 | 颞下颌关节 | जबड़े का जोड़
+REG:Antebrazo | Forearm | Antebraço | Avant-bras | Unterarm | Предплечье | الساعد | 前腕 | 前臂 | अग्रबाहु
+REG:Antebrazo (radiocubital) | Forearm (radioulnar) | Antebraço (radioulnar) | Avant-bras (radio-ulnaire) | Unterarm (radioulnar) | Предплечье (лучелоктевой) | الساعد (الكعبري الزندي) | 前腕（橈尺関節） | 前臂（桡尺关节） | अग्रबाहु (रेडियो-अल्नर)
+REG:Cadera | Hip | Quadril | Hanche | Hüfte | Тазобедренный сустав | الورك | 股関節 | 髋 | कूल्हा
+REG:Cervical | Neck | Cervical | Cervical | Halswirbelsäule | Шейный отдел | الرقبة | 頸部 | 颈部 | गर्दन
+REG:Cervical alta (occipitoatloidea / C1-C2) | Upper cervical (C0-C2) | Cervical alta (C0-C2) | Cervical haut (C0-C2) | Obere HWS (C0-C2) | Верхнешейный отдел (C0-C2) | العنق العلوي (C0-C2) | 上位頸椎（C0-C2） | 上颈椎（C0-C2） | ऊपरी ग्रीवा (C0-C2)
+REG:Cervical media e inferior (C2-C7) | Mid & lower cervical (C2-C7) | Cervical média e inferior (C2-C7) | Cervical moyen et bas (C2-C7) | Mittlere und untere HWS (C2-C7) | Средне- и нижнешейный (C2-C7) | العنق الأوسط والسفلي (C2-C7) | 中下位頸椎（C2-C7） | 中下颈椎（C2-C7） | मध्य और निचली ग्रीवा (C2-C7)
+REG:Codo | Elbow | Cotovelo | Coude | Ellenbogen | Локоть | المرفق | 肘 | 肘 | कोहनी
+REG:Columna lumbar | Lumbar spine | Coluna lombar | Rachis lombaire | Lendenwirbelsäule | Поясничный отдел | العمود القطني | 腰椎 | 腰椎 | कटि रीढ़
+REG:Columna lumbar / core | Lumbar spine / core | Coluna lombar / core | Rachis lombaire / gainage | Lendenwirbelsäule / Rumpf | Поясница / кор | العمود القطني / الجذع | 腰椎／体幹 | 腰椎／核心 | कटि रीढ़ / कोर
+REG:Columna torácica | Thoracic spine | Coluna torácica | Rachis thoracique | Brustwirbelsäule | Грудной отдел | العمود الصدري | 胸椎 | 胸椎 | वक्षीय रीढ़
+REG:Costillas | Ribs | Costelas | Côtes | Rippen | Рёбра | الأضلاع | 肋骨 | 肋骨 | पसलियाँ
+REG:Craneal | Cranial | Craniana | Crânien | Kranial | Краниальная | القحف | 頭蓋 | 颅骨 | कपाल
+REG:Escapulotorácica | Scapulothoracic | Escapulotorácica | Scapulo-thoracique | Skapulothorakal | Лопаточно-грудное | الكتفي الصدري | 肩甲胸郭 | 肩胛胸壁 | स्कैपुलोथोरेसिक
+REG:Escápula | Shoulder blade | Escápula | Omoplate | Schulterblatt | Лопатка | لوح الكتف | 肩甲骨 | 肩胛骨 | कंधे की हड्डी
+REG:Esternoclavicular y acromioclavicular | Sternoclavicular & acromioclavicular | Esternoclavicular e acromioclavicular | Sterno-claviculaire et acromio-claviculaire | Sternoklavikular- und Akromioklavikulargelenk | Грудино-ключичный и акромиально-ключичный | القصي الترقوي والأخرمي الترقوي | 胸鎖・肩鎖関節 | 胸锁与肩锁关节 | स्टर्नोक्लेविकुलर और एक्रोमियोक्लेविकुलर
+REG:Hombro (glenohumeral) | Shoulder (glenohumeral) | Ombro (glenoumeral) | Épaule (gléno-humérale) | Schulter (glenohumeral) | Плечо (плечевой сустав) | الكتف (الحقاني العضدي) | 肩（肩甲上腕関節） | 肩（盂肱关节） | कंधा (ग्लेनोह्यूमरल)
+REG:Hombro / tórax | Shoulder / chest | Ombro / tórax | Épaule / thorax | Schulter / Brustkorb | Плечо / грудная клетка | الكتف / الصدر | 肩／胸郭 | 肩／胸廓 | कंधा / छाती
+REG:Mano y dedos | Hand & fingers | Mão e dedos | Main et doigts | Hand und Finger | Кисть и пальцы | اليد والأصابع | 手と指 | 手与手指 | हाथ और उँगलियाँ
+REG:Muñeca | Wrist | Punho | Poignet | Handgelenk | Запястье | الرسغ | 手首 | 腕 | कलाई
+REG:Pie | Foot | Pé | Pied | Fuß | Стопа | القدم | 足 | 足 | पैर
+REG:Pierna y pie | Leg & foot | Perna e pé | Jambe et pied | Unterschenkel und Fuß | Голень и стопа | الساق والقدم | 下腿と足 | 小腿与足 | पिंडली और पैर
+REG:Rodilla | Knee | Joelho | Genou | Knie | Колено | الركبة | 膝 | 膝 | घुटना
+REG:Sacroilíaca y pelvis | Sacroiliac & pelvis | Sacroilíaca e pelve | Sacro-iliaque et bassin | Iliosakralgelenk und Becken | Крестцово-подвздошный сустав и таз | العجزي الحرقفي والحوض | 仙腸関節と骨盤 | 骶髂关节与骨盆 | सैक्रोइलियक और श्रोणि
+REG:Tibioperonea | Tibiofibular | Tibiofibular | Tibio-fibulaire | Tibiofibulargelenk | Межберцовое | الظنبوبي الشظوي | 脛腓関節 | 胫腓关节 | टिबियोफिबुलर
+REG:Tobillo | Ankle | Tornozelo | Cheville | Sprunggelenk | Голеностоп | الكاحل | 足首 | 踝 | टखना
+REG:Tronco | Trunk | Tronco | Tronc | Rumpf | Туловище | الجذع | 体幹 | 躯干 | धड़
+REG:Visceral | Visceral | Visceral | Viscéral | Viszeral | Висцеральная | حشوي | 内臓 | 内脏 | आंत्र
+NIV:Activo estático | Active static | Ativo estático | Actif statique | Aktiv-statisch | Активная статическая | ثابت نشط | 静的アクティブ | 主动静态 | सक्रिय स्थिर
+NIV:Activo sin carga | Active, no load | Ativo sem carga | Actif sans charge | Aktiv ohne Last | Активно без нагрузки | نشط بدون حمل | 負荷なしアクティブ | 主动无负荷 | बिना भार सक्रिय
+NIV:Carga progresiva | Progressive load | Carga progressiva | Charge progressive | Progressive Belastung | Прогрессирующая нагрузка | حمل تدريجي | 漸増負荷 | 渐进负荷 | क्रमिक भार
+NIV:Dinámico / FNP | Dynamic / PNF | Dinâmico / FNP | Dynamique / FNP | Dynamisch / PNF | Динамическая / ПНФ | ديناميكي / التسهيل العصبي العضلي | ダイナミック／PNF | 动态／PNF | गतिशील / पीएनएफ
+NIV:Funcional / avanzado | Functional / advanced | Funcional / avançado | Fonctionnel / avancé | Funktionell / fortgeschritten | Функциональный / продвинутый | وظيفي / متقدم | 機能的／上級 | 功能性／进阶 | कार्यात्मक / उन्नत
+NIV:Pasivo / asistido | Passive / assisted | Passivo / assistido | Passif / assisté | Passiv / assistiert | Пассивная / с помощью | سلبي / بمساعدة | パッシブ／補助 | 被动／辅助 | निष्क्रिय / सहायता से
+NIV:Protección (isométrico / asistido) | Protection (isometric / assisted) | Proteção (isométrico / assistido) | Protection (isométrique / assisté) | Schutz (isometrisch / assistiert) | Защита (изометрия / с помощью) | حماية (ثابت / بمساعدة) | 保護（等尺性／補助） | 保护（等长／辅助） | सुरक्षा (आइसोमेट्रिक / सहायता से)
+NIV:Resistencia ligera | Light resistance | Resistência leve | Résistance légère | Leichter Widerstand | Лёгкое сопротивление | مقاومة خفيفة | 軽い抵抗 | 轻阻力 | हल्का प्रतिरोध
+TIPO:Articulatoria | Articulatory | Articulatória | Articulatoire | Artikulatorisch | Артикуляционная | مفصلية | アーティキュラトリー | 关节松动 | आर्टिकुलेटरी
+TIPO:Contratensión | Counterstrain | Contratensão | Contre-tension (strain-counterstrain) | Counterstrain | Контрнапряжение | الشد المعاكس | カウンターストレイン | 摆位放松 | काउंटरस्ट्रेन
+TIPO:Craneal | Cranial | Craniana | Crânien | Kranial | Краниальная | قحفية | 頭蓋 | 颅骨 | कपाल
+TIPO:Energía muscular | Muscle energy | Energia muscular | Énergie musculaire | Muskelenergietechnik | Мышечно-энергетическая | طاقة العضلات | マッスルエナジー | 肌肉能量 | मसल एनर्जी
+TIPO:Funcional / balance ligamentoso | Functional / ligamentous balance | Funcional / equilíbrio ligamentar | Fonctionnel / équilibre ligamentaire | Funktionell / ligamentäre Balance | Функциональная / связочный баланс | وظيفي / توازن رباطي | 機能的／靭帯性バランス | 功能性／韧带平衡 | कार्यात्मक / लिगामेंटस संतुलन
+TIPO:Liberación posicional | Positional release | Liberação posicional | Relâchement positionnel | Positionelle Entspannung | Позиционное расслабление | التحرير الوضعي | ポジショナルリリース | 体位放松 | पोज़िशनल रिलीज़
+TIPO:Miofascial | Myofascial | Miofascial | Myofascial | Myofaszial | Миофасциальная | لفافية عضلية | 筋膜 | 肌筋膜 | मायोफेशियल
+TIPO:Movilización articular | Joint mobilization | Mobilização articular | Mobilisation articulaire | Gelenkmobilisation | Мобилизация сустава | تحريك المفصل | 関節モビライゼーション | 关节松动术 | जोड़ गतिशीलता
+TIPO:Tejidos blandos | Soft tissue | Tecidos moles | Tissus mous | Weichteiltechnik | Мягкие ткани | الأنسجة الرخوة | 軟部組織 | 软组织 | नरम ऊतक
+TIPO:Visceral | Visceral | Visceral | Viscéral | Viszeral | Висцеральная | حشوية | 内臓 | 内脏 | आंत्र

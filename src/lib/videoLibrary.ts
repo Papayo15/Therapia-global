@@ -21,6 +21,8 @@ export interface LibraryItem {
   categoria: LibraryCategory;
   region: string;
   nombre: string;
+  /** músculo objetivo de los estiramientos (su nombre corto no siempre lo dice) */
+  objetivo: string | null;
   nivel: number | null;
   nivel_nombre: string | null;
   movimiento: string | null;
@@ -63,4 +65,14 @@ export function regionGroup(item: Pick<LibraryItem, "region">): string {
 
 export function regionColor(key: string) {
   return REGION_GROUPS.find((r) => r.key === key)?.color ?? "#64748b";
+}
+
+/** Clave de término traducible (región, nivel, tipo, músculo objetivo); igual a slug() en build_library_i18n.py. */
+export function termKey(s: string) {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "");
 }

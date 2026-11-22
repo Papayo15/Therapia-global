@@ -15,6 +15,7 @@ import {
   videoUrl,
 } from "@/lib/videoLibrary";
 import { LibraryPlayerModal } from "./LibraryPlayerModal";
+import { useLibraryText } from "@/lib/useLibraryText";
 
 // ─── ClinicalLibrary ──────────────────────────────────────────────────────────
 // Galería de la biblioteca clínica producida por la fábrica de video
@@ -37,6 +38,7 @@ export function ClinicalLibrary({
 }) {
   const t = useTranslations("library");
   const tm = useTranslations("muscles");
+  const lt = useLibraryText();
   const [cat, setCat] = useState<LibraryCategory | "all">(initialCategory);
   const [group, setGroup] = useState("all");
   const [search, setSearch] = useState("");
@@ -54,9 +56,9 @@ export function ClinicalLibrary({
       if (group !== "all" && regionGroup(i) !== group) return false;
       if (!q) return true;
       const muscles = [...i.musculos.activos, ...i.musculos.elongan].map((m) => (tm.has(m) ? tm(m) : m));
-      return [i.nombre, i.id, i.region, i.tipo ?? "", ...muscles].some((s) => norm(s).includes(q));
+      return [lt.name(i), i.nombre, i.id, lt.region(i), lt.type(i), ...muscles].some((s) => norm(s).includes(q));
     });
-  }, [byCat, group, search, tm]);
+  }, [byCat, group, search, tm, lt]);
 
   const groups = REGION_GROUPS.map((g) => ({ ...g, n: byCat.filter((i) => regionGroup(i) === g.key).length })).filter((g) => g.n > 0);
   const item = open !== null ? filtered[open] : null;
@@ -109,7 +111,7 @@ export function ClinicalLibrary({
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {filtered.map((i, idx) => (
-            <Card key={i.id} item={i} onClick={() => setOpen(idx)} label={t(`category.${i.categoria}`)} />
+            <Card key={i.id} item={i} onClick={() => setOpen(idx)} label={t(`category.${i.categoria}`)} name={lt.name(i)} region={lt.region(i)} />
           ))}
         </div>
       )}
@@ -127,7 +129,7 @@ export function ClinicalLibrary({
   );
 }
 
-function Card({ item, onClick, label }: { item: LibraryItem; onClick: () => void; label: string }) {
+function Card({ item, onClick, label, name, region }: { item: LibraryItem; onClick: () => void; label: string; name: string; region: string }) {
   const color = regionColor(regionGroup(item));
   return (
     <button
@@ -147,8 +149,8 @@ function Card({ item, onClick, label }: { item: LibraryItem; onClick: () => void
         </span>
       </div>
       <div className="p-3">
-        <p className="line-clamp-2 text-sm font-semibold leading-snug text-slate-800">{item.nombre}</p>
-        <p className="mt-1 truncate text-[11px] text-slate-400">{item.region}</p>
+        <p className="line-clamp-2 text-sm font-semibold leading-snug text-slate-800">{name}</p>
+        <p className="mt-1 truncate text-[11px] text-slate-400">{region}</p>
       </div>
     </button>
   );

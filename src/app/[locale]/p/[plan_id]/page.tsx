@@ -4,6 +4,7 @@ import { useEffect, useState, use } from "react";
 import { supabase, RoutinePlan, PlanExercise } from "@/lib/supabase";
 import { PlanExerciseVideo } from "@/components/library/PlanExerciseVideo";
 import { LIBRARY_BY_ID } from "@/lib/videoLibrary";
+import { useLibraryText } from "@/lib/useLibraryText";
 
 interface Props {
   params: Promise<{ plan_id: string; locale: string }>;
@@ -16,6 +17,7 @@ export default function PatientPlanPage({ params }: Props) {
   const [restTimer, setRestTimer] = useState<number | null>(null);
   const [completed, setCompleted] = useState<Set<number>>(new Set());
   const [loading, setLoading] = useState(true);
+  const lt = useLibraryText();
 
   useEffect(() => {
     async function fetchPlan() {
@@ -161,7 +163,7 @@ export default function PatientPlanPage({ params }: Props) {
                   {isDone ? "✓" : idx + 1}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-slate-800 text-sm truncate">{ex.nombre_display}</p>
+                  <p className="font-semibold text-slate-800 text-sm truncate">{LIBRARY_BY_ID.has(ex.exercise_id) ? lt.name(LIBRARY_BY_ID.get(ex.exercise_id)!) : ex.nombre_display}</p>
                   <p className="text-xs text-slate-500">{ex.sets} series · {ex.reps} reps · {ex.rest_seconds}s descanso</p>
                 </div>
                 <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${

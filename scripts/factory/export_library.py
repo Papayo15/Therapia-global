@@ -92,6 +92,7 @@ def main():
             "categoria": it["categoria"],
             "region": it["region"],
             "nombre": it["nombre"],
+            "objetivo": it.get("musculo_objetivo"),
             "nivel": it.get("nivel"),
             "nivel_nombre": it.get("nivel_nombre"),
             "movimiento": it.get("movimiento"),

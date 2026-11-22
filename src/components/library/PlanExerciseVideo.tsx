@@ -5,11 +5,13 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { ExerciseAnimationPlayer } from "@/components/exercises/ExerciseAnimationPlayer";
 import { type LibraryItem, videoUrl } from "@/lib/videoLibrary";
+import { useLibraryText } from "@/lib/useLibraryText";
 
 // Video de la biblioteca clínica dentro del plan del paciente:
 // el movimiento tal cual debe hacerlo y, si quiere, la vista de los músculos que trabajan.
 export function PlanExerciseVideo({ item, variante }: { item: LibraryItem; variante?: string }) {
   const t = useTranslations("library");
+  const lt = useLibraryText();
   const [anat, setAnat] = useState(false);
   const v = item.variantes.find((x) => x.variante === variante) ?? item.variantes[0];
   const showAnat = anat && !!item.anatomico;
@@ -22,7 +24,7 @@ export function PlanExerciseVideo({ item, variante }: { item: LibraryItem; varia
           video={videoUrl(showAnat ? item.anatomico!.video : v.video)}
           poster={showAnat ? undefined : videoUrl(v.poster)}
           labels={showAnat ? videoUrl(item.anatomico!.etiquetas) : undefined}
-          exerciseName={item.nombre}
+          exerciseName={lt.name(item)}
           fit="contain"
           accentColor="#0ea5e9"
           className="absolute inset-0"

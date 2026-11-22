@@ -109,17 +109,32 @@ b = no_hands(supino(rectas=False, gancho=("L", "R"), extra={"hombro_abd.L": 75, 
                                                            "hombro_re.L": 80, "hombro_re.R": 80}))
 b["contactos"] = [c if c["grupo"] != "spine01" else {"grupo": "spine01", "tol_cm": 3} for c in b["contactos"]]
 H.append(spec("E-016", b, est({"hombro_abd_h.L": 8, "hombro_abd_h.R": 8}), lado=None, camara=[0, 0.3, 1]))
-door = bipedo(extra={"hombro_abd.R": 90, "codo_flex.R": 90, "hombro_re.R": 85}, camara=(-0.3, -1, 0.4))
-H.append(spec("E-017", json.loads(json.dumps(door)), est({"hombro_abd_h.R": 25, "toracica_rot": 12}, campos={"raiz": [0, -0.06, 0]}),
-              props=[{"tipo": "marco_puerta", "uso": "pared_manos", "lateral": "R", "sep": 0.25}]))
-b = bipedo(extra={"hombro_abd.L": 90, "hombro_abd.R": 90, "codo_flex.L": 90, "codo_flex.R": 90, "hombro_re.L": 85, "hombro_re.R": 85}, camara=(-0.3, -1, 0.4))
-H.append(spec("E-018", b, est({"hombro_abd_h.L": 20, "hombro_abd_h.R": 20}, campos={"raiz": [0, -0.08, 0]}), lado=None))
+# marco de puerta / esquina: el antebrazo se APOYA delante (jamba) y queda fijo (IK); el estiramiento lo produce el
+# cuerpo que avanza por el vano y gira levemente, como lo hace el paciente (antes el brazo se movía en el aire).
+# Cámara en 3/4 desde atrás del lado del brazo: de frente la pared tapa el apoyo.
+def _brazo_fijo(b, lados):
+    b = json.loads(json.dumps(b))
+    b["ik"] = b.get("ik", []) + [{"cadena": f"brazo.{s}", "orientacion_fija": True} for s in lados]
+    # pies quietos en el suelo: el cuerpo se inclina hacia el vano (no se desliza)
+    b["ik"] += [{"cadena": f"pierna.{s}", "pie_plano": True, "polo": [0, -0.3, 0.6]} for s in ("L", "R")]
+    b["contactos"] = [{"grupo": "foot.L"}, {"grupo": "foot.R"}]
+    return b
+
+
+door = _brazo_fijo(bipedo(extra={"hombro_abd.R": 90, "codo_flex.R": 90, "hombro_re.R": 85}, camara=(-0.75, 0.9, 0.4)), "R")
+H.append(spec("E-017", json.loads(json.dumps(door)), est({"toracica_rot": 8}, campos={"raiz": [0, -0.10, 0]}),
+              props=[{"tipo": "marco_puerta", "uso": "jamba", "lado": "R"}]))
+# esquina: brazos 35° hacia delante (siguen a las paredes a 45°) para que los antebrazos apoyen planos en ellas
+b = _brazo_fijo(bipedo(extra={"hombro_abd.L": 90, "hombro_abd.R": 90, "codo_flex.L": 90, "codo_flex.R": 90, "hombro_re.L": 85,
+                              "hombro_re.R": 85, "hombro_abd_h.L": -35, "hombro_abd_h.R": -35}, camara=(0.45, 1, 0.55)), "LR")
+H.append(spec("E-018", b, est({}, campos={"raiz": [0, -0.10, 0]}), lado=None,
+              props=[{"tipo": "pared", "uso": "esquina"}]))
 H.append(spec("E-019", supino(), est({"escapula_prot.L": -8, "escapula_prot.R": -8}), lado=None))
-door2 = bipedo(extra={"hombro_abd.R": 135, "codo_flex.R": 60, "hombro_re.R": 60}, camara=(-0.3, -1, 0.4))
-H.append(spec("E-020", door2, est({"hombro_abd_h.R": 20, "toracica_rot": 10}, campos={"raiz": [0, -0.06, 0]}),
-              props=[{"tipo": "marco_puerta", "uso": "pared_manos", "lateral": "R", "sep": 0.25}]))
-H.append(spec("E-021", json.loads(json.dumps(door)), est({"hombro_abd_h.R": 20, "escapula_prot.R": -12}, campos={"raiz": [0, -0.05, 0]}),
-              props=[{"tipo": "marco_puerta", "uso": "pared_manos", "lateral": "R", "sep": 0.25}]))
+door2 = _brazo_fijo(bipedo(extra={"hombro_abd.R": 135, "codo_flex.R": 60, "hombro_re.R": 60}, camara=(-0.75, 0.9, 0.4)), "R")
+H.append(spec("E-020", door2, est({"toracica_rot": 8}, campos={"raiz": [0, -0.09, 0]}),
+              props=[{"tipo": "marco_puerta", "uso": "jamba", "lado": "R"}]))
+H.append(spec("E-021", json.loads(json.dumps(door)), est({"escapula_prot.R": -12}, campos={"raiz": [0, -0.06, 0]}),
+              props=[{"tipo": "marco_puerta", "uso": "jamba", "lado": "R"}]))
 def nino(rodilla=155, cadera=125):
     """Postura del niño: sentada sobre los talones, tronco plegado sobre los muslos, brazos al frente en el suelo.
     Pose FK resuelta por asentado (espinillas y empeines planos, manos y frente al suelo). El estiramiento hunde la

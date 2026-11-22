@@ -59,8 +59,8 @@ const EXERCISE_LIBRARY = LIBRARY_ITEMS.filter((i) => i.categoria !== "osteopatia
   const nivel = i.nivel ?? 1;
   return {
     id: i.id,
-    nameLocal: i.nombre,
-    name: i.nombre,
+    nameLocal: i.objetivo ? `${i.objetivo} · ${i.nombre}` : i.nombre,
+    name: i.objetivo ? `${i.objetivo} · ${i.nombre}` : i.nombre,
     region: regionGroup(i),
     equipment: i.props.length ? PROP_LABEL[i.props[0]] ?? i.props[0] : BODYWEIGHT,
     difficulty: nivel <= 2 ? "beginner" : nivel === 3 ? "intermediate" : "advanced",

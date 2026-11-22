@@ -21,3 +21,9 @@ renders/
 renders_*.log
 *.blend1
 assets/rigs/avatar_f40.blend
+
+# Fábrica: respaldos de avatares y marcas de lote
+assets/rigs/_respaldo*/
+assets/rigs/*.blend1
+.corte_*
+.marca_*

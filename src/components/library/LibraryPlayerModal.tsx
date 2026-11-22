@@ -6,6 +6,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ExerciseAnimationPlayer } from "@/components/exercises/ExerciseAnimationPlayer";
 import { type LibraryItem, videoUrl, regionGroup, regionColor } from "@/lib/videoLibrary";
+import { useLibraryText } from "@/lib/useLibraryText";
 
 // ─── LibraryPlayerModal ───────────────────────────────────────────────────────
 // Video de la biblioteca clínica en grande, con dos vistas:
@@ -30,6 +31,8 @@ export function LibraryPlayerModal({
 }) {
   const t = useTranslations("library");
   const tm = useTranslations("muscles");
+  const lt = useLibraryText();
+  const name = lt.name(item);
   const [view, setView] = useState<View>(initialView ?? "exercise");
   const [variant, setVariant] = useState(item.variantes[0].variante);
 
@@ -60,7 +63,7 @@ export function LibraryPlayerModal({
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
-        aria-label={item.nombre}
+        aria-label={name}
       >
         {/* Cabecera */}
         <div className="flex items-start gap-3 border-b border-slate-100 px-4 py-3">
@@ -69,11 +72,11 @@ export function LibraryPlayerModal({
               <span className="rounded-full px-2 py-0.5 text-white" style={{ background: color }}>
                 {t(`category.${item.categoria}`)}
               </span>
-              <span className="text-slate-500">{item.region}</span>
+              <span className="text-slate-500">{lt.region(item)}</span>
               <span className="text-slate-300">·</span>
               <span className="font-mono text-slate-400">{item.id}</span>
             </div>
-            <h2 className="mt-1 text-lg font-bold leading-snug text-slate-900">{item.nombre}</h2>
+            <h2 className="mt-1 text-lg font-bold leading-snug text-slate-900">{name}</h2>
           </div>
           <div className="flex items-center gap-1">
             <button onClick={onPrev} disabled={!onPrev} className="rounded-lg p-2 text-slate-500 hover:bg-slate-100 disabled:opacity-30" aria-label={t("prev")}>
@@ -95,7 +98,7 @@ export function LibraryPlayerModal({
               key={`anat-${item.id}`}
               video={videoUrl(item.anatomico!.video)}
               labels={videoUrl(item.anatomico!.etiquetas)}
-              exerciseName={item.nombre}
+              exerciseName={name}
               accentColor={color}
               fit="contain"
               className="absolute inset-0"
@@ -105,7 +108,7 @@ export function LibraryPlayerModal({
               key={`ej-${item.id}-${v.variante}`}
               video={videoUrl(v.video)}
               poster={videoUrl(v.poster)}
-              exerciseName={item.nombre}
+              exerciseName={name}
               accentColor={color}
               fit="contain"
               className="absolute inset-0"
@@ -135,10 +138,10 @@ export function LibraryPlayerModal({
             )}
             {item.nivel_nombre && (
               <span className="rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
-                {t("level", { n: item.nivel ?? 0 })} · {item.nivel_nombre}
+                {t("level", { n: item.nivel ?? 0 })} · {lt.level(item)}
               </span>
             )}
-            {item.tipo && <span className="rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">{item.tipo}</span>}
+            {item.tipo && <span className="rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">{lt.type(item)}</span>}
           </div>
 
           <Legend />
