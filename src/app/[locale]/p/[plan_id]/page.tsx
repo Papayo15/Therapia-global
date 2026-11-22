@@ -2,6 +2,8 @@
 
 import { useEffect, useState, use } from "react";
 import { supabase, RoutinePlan, PlanExercise } from "@/lib/supabase";
+import { PlanExerciseVideo } from "@/components/library/PlanExerciseVideo";
+import { LIBRARY_BY_ID } from "@/lib/videoLibrary";
 
 interface Props {
   params: Promise<{ plan_id: string; locale: string }>;
@@ -175,7 +177,9 @@ export default function PatientPlanPage({ params }: Props) {
               {isActive && (
                 <div className="border-t border-sky-100 px-4 pb-4">
                   {/* YouTube embed */}
-                  {youtubeUrl(ex) ? (
+                  {LIBRARY_BY_ID.has(ex.exercise_id) ? (
+                    <PlanExerciseVideo item={LIBRARY_BY_ID.get(ex.exercise_id)!} variante={ex.variante} />
+                  ) : youtubeUrl(ex) ? (
                     <div className="mt-3 rounded-xl overflow-hidden aspect-video bg-slate-900">
                       <iframe
                         src={youtubeUrl(ex)!}
@@ -253,8 +257,8 @@ const DEMO_PLAN: RoutinePlan = {
     },
     exercises: [
       {
-        exercise_id: "A_HOM_001",
-        nombre_display: "Elevación de hombro con liga",
+        exercise_id: "F-HOM-003",
+        nombre_display: "Flexión de hombro con banda elástica de pie",
         youtube_id: "",
         youtube_start_seconds: 0,
         sets: 3,
@@ -272,8 +276,8 @@ const DEMO_PLAN: RoutinePlan = {
         order: 1,
       },
       {
-        exercise_id: "A_LUM_001",
-        nombre_display: "Gato y vaca (lumbar)",
+        exercise_id: "E-042",
+        nombre_display: "Gato-camello dinámico",
         youtube_id: "",
         youtube_start_seconds: 0,
         sets: 3,

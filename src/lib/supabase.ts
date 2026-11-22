@@ -64,6 +64,8 @@ export interface PlanExercise {
   note_from_therapist: string;
   instructions_eli5: string[];
   order: number;
+  /** variante del video de la biblioteca clínica (gym / casa / ambos) */
+  variante?: string;
 }
 
 export interface RoutinePlan {

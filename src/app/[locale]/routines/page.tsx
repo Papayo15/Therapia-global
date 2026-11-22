@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { generateRoutinePDF } from "@/lib/generatePDF";
 import masterRegistry from "@data/master-registry.json";
+import { useTranslations } from "next-intl";
+import { LIBRARY_ITEMS, REGION_GROUPS, regionGroup, videoUrl } from "@/lib/videoLibrary";
 
 const _cdnReg = masterRegistry as Record<string, { video_url?: string; cloudflare_id?: string }>;
 
@@ -27,6 +29,7 @@ interface RoutineExercise {
   restSeconds: number;
   frequencyPerWeek: number;
   notes: string;
+  poster?: string;
 }
 
 interface SavedRoutine {
@@ -37,65 +40,40 @@ interface SavedRoutine {
   sentTo?: string;
 }
 
-// ─── Biblioteca del builder ───────────────────────────────────────────────────
-const EXERCISE_LIBRARY = [
-  // Peso corporal
-  { id:"glute-bridge",    nameLocal:"Puente de Glúteos",      name:"Glute Bridge",            region:"Glúteo",   equipment:"Peso corporal", difficulty:"beginner",     sets:3, reps:12, restSeconds:30 },
-  { id:"bird-dog",        nameLocal:"Pájaro-Perro",           name:"Bird Dog",                region:"Lumbar",   equipment:"Peso corporal", difficulty:"beginner",     sets:3, reps:10, restSeconds:30 },
-  { id:"dead-bug",        nameLocal:"Bicho Muerto",           name:"Dead Bug",                region:"Core",     equipment:"Peso corporal", difficulty:"intermediate", sets:3, reps:8,  restSeconds:45 },
-  { id:"plank",           nameLocal:"Plancha",                name:"Plank",                   region:"Core",     equipment:"Peso corporal", difficulty:"beginner",     sets:3, reps:0,  restSeconds:45 },
-  { id:"cat-cow",         nameLocal:"Gato-Vaca",              name:"Cat-Cow",                 region:"Lumbar",   equipment:"Peso corporal", difficulty:"beginner",     sets:2, reps:10, restSeconds:20 },
-  { id:"lunge",           nameLocal:"Zancada",                name:"Lunge",                   region:"Rodilla",  equipment:"Peso corporal", difficulty:"intermediate", sets:3, reps:10, restSeconds:45 },
-  { id:"wall-sit",        nameLocal:"Sentadilla en Pared",    name:"Wall Sit",                region:"Rodilla",  equipment:"Peso corporal", difficulty:"beginner",     sets:3, reps:0,  restSeconds:45 },
-  { id:"pelvic-tilt",     nameLocal:"Retroversión Pélvica",   name:"Pelvic Tilt",             region:"Lumbar",   equipment:"Peso corporal", difficulty:"beginner",     sets:3, reps:15, restSeconds:20 },
-  { id:"knee-to-chest",   nameLocal:"Rodilla al Pecho",       name:"Knee to Chest",           region:"Lumbar",   equipment:"Peso corporal", difficulty:"beginner",     sets:2, reps:0,  restSeconds:15 },
-  { id:"lumbar-rotation", nameLocal:"Rotación Lumbar",        name:"Lumbar Rotation Stretch", region:"Lumbar",   equipment:"Peso corporal", difficulty:"beginner",     sets:2, reps:0,  restSeconds:15 },
-  { id:"prone-hip-ext",   nameLocal:"Extensión Cadera Prono", name:"Prone Hip Extension",     region:"Glúteo",   equipment:"Peso corporal", difficulty:"beginner",     sets:3, reps:12, restSeconds:25 },
-  { id:"ankle-pumps",     nameLocal:"Bombeos de Tobillo",     name:"Ankle Pumps",             region:"Tobillo",  equipment:"Peso corporal", difficulty:"beginner",     sets:2, reps:20, restSeconds:15 },
-  { id:"cervical-ret",    nameLocal:"Retracción Cervical",    name:"Cervical Retraction",     region:"Cervical", equipment:"Peso corporal", difficulty:"beginner",     sets:3, reps:10, restSeconds:20 },
-  { id:"mckenzie-press",  nameLocal:"McKenzie Press-Up",      name:"McKenzie Press-Up",       region:"Lumbar",   equipment:"Peso corporal", difficulty:"beginner",     sets:3, reps:10, restSeconds:30 },
-  { id:"nerve-flossing",  nameLocal:"Deslizamiento Neural",   name:"Nerve Flossing",          region:"Nervio",   equipment:"Peso corporal", difficulty:"beginner",     sets:2, reps:15, restSeconds:20 },
-  { id:"childs-pose",     nameLocal:"Postura del Niño",       name:"Child's Pose",            region:"Lumbar",   equipment:"Peso corporal", difficulty:"beginner",     sets:2, reps:0,  restSeconds:15 },
-  // Mancuernas
-  { id:"rdl",             nameLocal:"Peso Muerto Rumano",     name:"Romanian Deadlift",       region:"Lumbar",   equipment:"Mancuernas",    difficulty:"intermediate", sets:3, reps:10, restSeconds:60 },
-  { id:"shoulder-press",  nameLocal:"Press de Hombro",        name:"Shoulder Press",          region:"Hombro",   equipment:"Mancuernas",    difficulty:"intermediate", sets:3, reps:10, restSeconds:60 },
-  { id:"lateral-raise",   nameLocal:"Elevación Lateral",      name:"Lateral Raise",           region:"Hombro",   equipment:"Mancuernas",    difficulty:"beginner",     sets:3, reps:12, restSeconds:30 },
-  { id:"bicep-curl",      nameLocal:"Curl de Bíceps",         name:"Bicep Curl",              region:"Codo",     equipment:"Mancuernas",    difficulty:"beginner",     sets:3, reps:12, restSeconds:30 },
-  { id:"goblet-squat",    nameLocal:"Sentadilla Goblet",      name:"Goblet Squat",            region:"Rodilla",  equipment:"Mancuernas",    difficulty:"intermediate", sets:3, reps:10, restSeconds:45 },
-  { id:"bent-row",        nameLocal:"Remo Inclinado",         name:"Bent Over Row",           region:"Hombro",   equipment:"Mancuernas",    difficulty:"intermediate", sets:3, reps:10, restSeconds:45 },
-  { id:"tricep-ext",      nameLocal:"Extensión de Tríceps",   name:"Tricep Extension",        region:"Codo",     equipment:"Mancuernas",    difficulty:"beginner",     sets:3, reps:12, restSeconds:30 },
-  // Ligas
-  { id:"band-row",        nameLocal:"Remo con Banda",         name:"Band Row",                region:"Hombro",   equipment:"Ligas / Bandas", difficulty:"beginner",    sets:3, reps:12, restSeconds:30 },
-  { id:"shldr-ext-rot",   nameLocal:"Rotación Externa Hombro",name:"Shoulder Ext. Rotation",  region:"Hombro",   equipment:"Ligas / Bandas", difficulty:"beginner",    sets:3, reps:15, restSeconds:30 },
-  { id:"band-hip-abd",    nameLocal:"Abducción Cadera Banda", name:"Band Hip Abduction",      region:"Cadera",   equipment:"Ligas / Bandas", difficulty:"beginner",    sets:3, reps:15, restSeconds:30 },
-  { id:"band-pull-apart", nameLocal:"Separación de Banda",    name:"Band Pull Apart",         region:"Hombro",   equipment:"Ligas / Bandas", difficulty:"beginner",    sets:3, reps:15, restSeconds:20 },
-  { id:"band-calf-raise", nameLocal:"Elevación de Talones",   name:"Band Calf Raise",         region:"Tobillo",  equipment:"Ligas / Bandas", difficulty:"beginner",    sets:3, reps:15, restSeconds:20 },
-  { id:"band-glute-kick", nameLocal:"Patada de Glúteo",       name:"Band Glute Kickback",     region:"Glúteo",   equipment:"Ligas / Bandas", difficulty:"beginner",    sets:3, reps:15, restSeconds:20 },
-  // Pelota terapéutica
-  { id:"ball-bridge",     nameLocal:"Puente con Pelota",      name:"Ball Bridge",             region:"Glúteo",   equipment:"Pelota",        difficulty:"intermediate", sets:3, reps:12, restSeconds:30 },
-  { id:"ball-hamcurl",    nameLocal:"Curl Isquiotibiales",    name:"Ball Hamstring Curl",     region:"Rodilla",  equipment:"Pelota",        difficulty:"intermediate", sets:3, reps:10, restSeconds:45 },
-  { id:"ball-squat",      nameLocal:"Sentadilla en Pared",    name:"Ball Wall Squat",         region:"Rodilla",  equipment:"Pelota",        difficulty:"beginner",     sets:3, reps:12, restSeconds:30 },
-  { id:"ball-lumbar-ext", nameLocal:"Extensión Lumbar",       name:"Ball Lumbar Extension",   region:"Lumbar",   equipment:"Pelota",        difficulty:"beginner",     sets:3, reps:10, restSeconds:30 },
-  // Foam Roller
-  { id:"foam-thoracic",   nameLocal:"Extensión Torácica",     name:"Thoracic Extension FR",   region:"Torácica", equipment:"Foam Roller",   difficulty:"beginner",     sets:2, reps:8,  restSeconds:30 },
-  { id:"foam-it-band",    nameLocal:"IT Band / Lateral muslo",name:"IT Band Release FR",      region:"Rodilla",  equipment:"Foam Roller",   difficulty:"beginner",     sets:2, reps:0,  restSeconds:30 },
-  { id:"foam-calf",       nameLocal:"Pantorrilla",            name:"Calf Release FR",         region:"Tobillo",  equipment:"Foam Roller",   difficulty:"beginner",     sets:2, reps:0,  restSeconds:20 },
-  // BOSU
-  { id:"bosu-squat",      nameLocal:"Sentadilla BOSU",        name:"BOSU Squat",              region:"Rodilla",  equipment:"BOSU",          difficulty:"intermediate", sets:3, reps:10, restSeconds:45 },
-  { id:"bosu-balance",    nameLocal:"Equilibrio BOSU",        name:"BOSU Balance",            region:"Tobillo",  equipment:"BOSU",          difficulty:"intermediate", sets:3, reps:0,  restSeconds:30 },
-  { id:"bosu-plank",      nameLocal:"Plancha BOSU",           name:"BOSU Plank",              region:"Core",     equipment:"BOSU",          difficulty:"advanced",     sets:3, reps:0,  restSeconds:45 },
-  { id:"bosu-hiphinge",   nameLocal:"Bisagra de Cadera BOSU", name:"BOSU Hip Hinge",          region:"Lumbar",   equipment:"BOSU",          difficulty:"intermediate", sets:3, reps:10, restSeconds:40 },
-  // Kettlebell
-  { id:"kb-swing",        nameLocal:"Swing Kettlebell",       name:"Kettlebell Swing",        region:"Lumbar",   equipment:"Kettlebell",    difficulty:"intermediate", sets:4, reps:12, restSeconds:60 },
-  { id:"kb-goblet",       nameLocal:"Sentadilla Goblet KB",   name:"Kettlebell Goblet Squat", region:"Rodilla",  equipment:"Kettlebell",    difficulty:"intermediate", sets:3, reps:10, restSeconds:45 },
-  // Peso tobillo
-  { id:"knee-ext-seated", nameLocal:"Extensión de Rodilla",   name:"Seated Knee Extension",   region:"Rodilla",  equipment:"Peso tobillo",  difficulty:"beginner",     sets:3, reps:15, restSeconds:30 },
-  { id:"hip-abd-sidelying",nameLocal:"Abducción de Cadera",   name:"Side-Lying Hip Abduction",region:"Cadera",   equipment:"Peso tobillo",  difficulty:"beginner",     sets:3, reps:15, restSeconds:25 },
-  { id:"prone-hip-ext-wt",nameLocal:"Extensión Cadera Prono w/Peso",name:"Prone Hip Extension w/Weight",region:"Glúteo",equipment:"Peso tobillo",difficulty:"beginner",sets:3, reps:12, restSeconds:25 },
-];
+// ─── Biblioteca del builder: técnicas con video de la fábrica (data/video-library.json) ──
+const PROP_LABEL: Record<string, string> = {
+  banda_elastica: "Banda elástica", mancuerna: "Mancuerna", pared: "Pared", toalla: "Toalla", martillo: "Martillo",
+  barra: "Barra", silla: "Silla", escalon: "Escalón", marco_puerta: "Marco de puerta", masilla: "Masilla",
+  pelota_pequena: "Pelota pequeña", polea: "Polea", banco: "Banco", mesa: "Mesa", camilla: "Camilla",
+  foam_roller: "Foam roller", balon_medicinal: "Balón medicinal", barra_flexible: "Barra flexible", correa: "Correa",
+  depresor_lingual: "Depresor lingual", baston: "Bastón", banco_romano: "Banco romano", tobillera: "Tobillera",
+  espejo: "Espejo", trx: "TRX", kettlebell: "Kettlebell", esponja: "Esponja", hand_grip: "Hand grip",
+  recipiente_arroz: "Recipiente con arroz", papel: "Papel", pinza_ropa: "Pinza de ropa", monedas: "Monedas",
+  fitball: "Fitball", deslizadores: "Deslizadores", rodillo: "Rodillo", cojin_inestable: "Cojín inestable",
+  canicas: "Canicas", rollo: "Rollo",
+};
+const BODYWEIGHT = "Peso corporal";
 
-const REGIONS = ["Todos", "Hombro", "Cervical", "Torácica", "Lumbar", "Core", "Cadera", "Glúteo", "Rodilla", "Tobillo", "Codo", "Muñeca/Mano", "Nervio"];
-const EQUIPMENTS = ["Todos", "Peso corporal", "Mancuernas", "Ligas / Bandas", "Pelota", "Foam Roller", "BOSU", "Kettlebell", "Peso tobillo"];
+const EXERCISE_LIBRARY = LIBRARY_ITEMS.filter((i) => i.categoria !== "osteopatia").map((i) => {
+  const stretch = i.categoria === "estiramiento";
+  const nivel = i.nivel ?? 1;
+  return {
+    id: i.id,
+    nameLocal: i.nombre,
+    name: i.nombre,
+    region: regionGroup(i),
+    equipment: i.props.length ? PROP_LABEL[i.props[0]] ?? i.props[0] : BODYWEIGHT,
+    difficulty: nivel <= 2 ? "beginner" : nivel === 3 ? "intermediate" : "advanced",
+    // valores de partida que el terapeuta ajusta; estiramientos: mantener (reps 0 = sostener)
+    sets: stretch ? 2 : 3,
+    reps: stretch ? 0 : 10,
+    restSeconds: stretch ? 20 : 45,
+    poster: videoUrl(i.variantes[0].poster),
+  };
+});
+
+const REGIONS = ["Todos", ...REGION_GROUPS.map((g) => g.key).filter((k) => EXERCISE_LIBRARY.some((e) => e.region === k))];
+const EQUIPMENTS = ["Todos", BODYWEIGHT, ...[...new Set(EXERCISE_LIBRARY.map((e) => e.equipment))].filter((e) => e !== BODYWEIGHT).sort()];
 
 const DIFFICULTY_COLOR: Record<string, string> = {
   beginner:     "text-clinical-700 bg-clinical-500/10",
@@ -453,6 +431,7 @@ function SendModal({ isOpen, onClose, routineName, exerciseCount, exercises }: {
 
 // ─── Página principal ─────────────────────────────────────────────────────────
 export default function RoutinesPage() {
+  const tl = useTranslations("library");
   const [routineName, setRoutineName] = useState("Nueva rutina");
   const [exercises, setExercises] = useState<RoutineExercise[]>([]);
   const [search, setSearch] = useState("");
@@ -470,7 +449,7 @@ export default function RoutinesPage() {
 
   const filteredLib = EXERCISE_LIBRARY.filter((ex) => {
     const q = search.toLowerCase();
-    const matchQ = !search || ex.nameLocal.toLowerCase().includes(q) || ex.name.toLowerCase().includes(q) || ex.region.toLowerCase().includes(q);
+    const matchQ = !search || ex.nameLocal.toLowerCase().includes(q) || ex.name.toLowerCase().includes(q) || ex.region.toLowerCase().includes(q) || ex.id.toLowerCase().includes(q);
     const matchR = regionFilter === "Todos" || ex.region === regionFilter;
     const matchE = equipFilter === "Todos" || ex.equipment === equipFilter;
     return matchQ && matchR && matchE;
@@ -525,7 +504,7 @@ export default function RoutinesPage() {
               <div className="flex gap-1.5">
                 <select value={regionFilter} onChange={(e) => setRegionFilter(e.target.value)}
                   className="flex-1 h-7 rounded-lg border border-surface-200 bg-surface-50 text-xs text-surface-600 px-2 focus:outline-none">
-                  {REGIONS.map((r) => <option key={r}>{r}</option>)}
+                  {REGIONS.map((r) => <option key={r} value={r}>{r === "Todos" ? r : tl(`region.${r}`)}</option>)}
                 </select>
                 <select value={equipFilter} onChange={(e) => setEquipFilter(e.target.value)}
                   className="flex-1 h-7 rounded-lg border border-surface-200 bg-surface-50 text-xs text-surface-600 px-2 focus:outline-none">
@@ -546,8 +525,10 @@ export default function RoutinesPage() {
                     )}>
                       {isAdded ? <CheckCircle2 className="h-3 w-3" /> : <Plus className="h-3 w-3" />}
                     </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={ex.poster} alt="" loading="lazy" className="h-9 w-14 shrink-0 rounded-md object-cover bg-surface-100" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold text-surface-800 truncate">{ex.nameLocal}</p>
+                      <p className="text-xs font-semibold text-surface-800 line-clamp-2 leading-snug">{ex.nameLocal}</p>
                       <p className="text-[10px] text-surface-400">{ex.equipment} · {DIFFICULTY_LABEL[ex.difficulty]}</p>
                     </div>
                     <span className="text-[10px] text-surface-400 shrink-0">{ex.sets}×{ex.reps || "—"}</span>
