@@ -368,5 +368,61 @@
     "vastus_intermedius": "Vastus intermedius",
     "vastus_lateralis": "Vastus lateralis",
     "vastus_medialis": "Vastus medialis"
+  },
+  "library": {
+    "title": "Technique library",
+    "subtitle": "Every technique with a movement video and an anatomical view of the working muscles",
+    "sourceLibrary": "Clinical video library",
+    "sourceLegacy": "Previous catalog",
+    "all": "All",
+    "search": "Search by name, muscle or region…",
+    "allRegions": "All regions",
+    "count": "{n} techniques",
+    "noResults": "No results. Try another search or region.",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "level": "Level {n}",
+    "works": "Working",
+    "stretches": "Stretching",
+    "structures": "Structures",
+    "category": {
+      "fortalecimiento": "Strengthening",
+      "estiramiento": "Stretch",
+      "osteopatia": "Osteopathy"
+    },
+    "categoryPlural": {
+      "fortalecimiento": "Strengthening",
+      "estiramiento": "Stretches",
+      "osteopatia": "Osteopathy"
+    },
+    "view": {
+      "exercise": "Exercise",
+      "anatomy": "Anatomy"
+    },
+    "variant": {
+      "gym": "Gym",
+      "casa": "Home",
+      "ambos": "Exercise"
+    },
+    "legend": {
+      "concentric": "Contraction (concentric / isometric)",
+      "eccentric": "Braking (eccentric)",
+      "stretch": "Stretch"
+    },
+    "region": {
+      "craneal": "Cranial",
+      "cervical": "Cervical",
+      "atm": "TMJ",
+      "hombro": "Shoulder & scapula",
+      "codo": "Elbow & forearm",
+      "muneca": "Wrist & hand",
+      "toracica": "Thoracic & ribs",
+      "lumbar": "Lumbar & pelvis",
+      "visceral": "Visceral",
+      "cadera": "Hip",
+      "rodilla": "Knee",
+      "tobillo": "Ankle & foot"
+    }
   }
 }

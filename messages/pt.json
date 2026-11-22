@@ -368,5 +368,61 @@
     "vastus_intermedius": "Vasto intermédio",
     "vastus_lateralis": "Vasto lateral",
     "vastus_medialis": "Vasto medial"
+  },
+  "library": {
+    "title": "Biblioteca de técnicas",
+    "subtitle": "Cada técnica com vídeo do movimento e vista anatômica dos músculos que trabalham",
+    "sourceLibrary": "Biblioteca clínica com vídeo",
+    "sourceLegacy": "Catálogo anterior",
+    "all": "Tudo",
+    "search": "Buscar por nome, músculo ou região…",
+    "allRegions": "Todas as regiões",
+    "count": "{n} técnicas",
+    "noResults": "Sem resultados. Tente outra busca ou região.",
+    "close": "Fechar",
+    "prev": "Anterior",
+    "next": "Próximo",
+    "level": "Nível {n}",
+    "works": "Trabalham",
+    "stretches": "Alongam",
+    "structures": "Estruturas",
+    "category": {
+      "fortalecimiento": "Fortalecimento",
+      "estiramiento": "Alongamento",
+      "osteopatia": "Osteopatia"
+    },
+    "categoryPlural": {
+      "fortalecimiento": "Fortalecimento",
+      "estiramiento": "Alongamentos",
+      "osteopatia": "Osteopatia"
+    },
+    "view": {
+      "exercise": "Exercício",
+      "anatomy": "Anatomia"
+    },
+    "variant": {
+      "gym": "Academia",
+      "casa": "Casa",
+      "ambos": "Exercício"
+    },
+    "legend": {
+      "concentric": "Contração (concêntrica / isométrica)",
+      "eccentric": "Frenagem (excêntrica)",
+      "stretch": "Alongamento"
+    },
+    "region": {
+      "craneal": "Craniana",
+      "cervical": "Cervical",
+      "atm": "ATM",
+      "hombro": "Ombro e escápula",
+      "codo": "Cotovelo e antebraço",
+      "muneca": "Punho e mão",
+      "toracica": "Torácica e costelas",
+      "lumbar": "Lombar e pelve",
+      "visceral": "Visceral",
+      "cadera": "Quadril",
+      "rodilla": "Joelho",
+      "tobillo": "Tornozelo e pé"
+    }
   }
 }

@@ -94,10 +94,18 @@ export function AnatomyLabels({
     .filter((it) => it.x >= 0 && it.x <= W && it.y >= 0 && it.y <= H)
     .sort((a, b) => a.y - b.y);
 
+  // lado de cada nombre: el más cercano al músculo, pero repartiendo para que no se amontonen todos en un lado
+  const byX = [...items].sort((a, b) => a.x - b.x);
+  let nLeft = byX.filter((i) => i.x < W / 2).length;
+  const target = Math.ceil(items.length / 2);
+  if (nLeft > target + 1) nLeft = target;
+  else if (items.length - nLeft > target + 1) nLeft = items.length - target;
+  const leftSet = new Set(byX.slice(0, nLeft));
+
   const placed: { it: (typeof items)[number]; tx: number; ty: number; right: boolean }[] = [];
   for (const right of [false, true]) {
     const used: number[] = [];
-    for (const it of items.filter((i) => i.x >= W / 2 === right)) {
+    for (const it of items.filter((i) => leftSet.has(i) !== right)) {
       let ty = it.y;
       for (const u of used) if (Math.abs(ty - u) < lineH) ty = u + lineH;
       used.push(ty);

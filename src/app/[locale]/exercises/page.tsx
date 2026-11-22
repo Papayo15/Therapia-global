@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Search, Play, Dumbbell, ChevronDown } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -8,6 +8,9 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
 import { type AnimData } from "@/components/exercises/Nike3DAnimatedViewer";
+import { ClinicalLibrary } from "@/components/library/ClinicalLibrary";
+import { type LibraryCategory } from "@/lib/videoLibrary";
+import { useTranslations } from "next-intl";
 import masterRegistry from "../../../../data/master-registry.json";
 import canalAAnims from "../../../../data/canal-a-animations.json";
 import canalCAnims from "../../../../data/canal-c-animations.json";
@@ -175,6 +178,17 @@ function ExerciseCard({ entry, onClick }: { entry: RegistryEntry; onClick: () =>
 
 // ─── Main Page ─────────────────────────────────────────────────────────────────
 export default function ExercisesPage() {
+  const t = useTranslations("library");
+  // Biblioteca clínica con video (fábrica) primero; el catálogo anterior queda en su propia pestaña
+  const [source, setSource] = useState<"library" | "legacy">("library");
+  const [libCat, setLibCat] = useState<LibraryCategory | "all" | null>(null);
+  const [libOpen, setLibOpen] = useState<{ id?: string; view?: "exercise" | "anatomy" }>({});
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const c = q.get("cat") ?? (q.get("canal") === "B" ? "osteopatia" : null);
+    setLibCat(c === "fortalecimiento" || c === "estiramiento" || c === "osteopatia" ? c : "all");
+    setLibOpen({ id: q.get("id") ?? undefined, view: q.get("view") === "anatomy" ? "anatomy" : undefined });
+  }, []);
   const [canal, setCanal] = useState<Canal>("all");
   const [grupo, setGrupo] = useState<string>("all");
   const [search, setSearch] = useState("");
@@ -220,12 +234,31 @@ export default function ExercisesPage() {
 
             {/* ── Page header ───────────────────────────────────────────── */}
             <div>
-              <h1 className="text-2xl font-bold text-slate-900">Biblioteca de Técnicas</h1>
+              <h1 className="text-2xl font-bold text-slate-900">{t("title")}</h1>
               <p className="text-slate-500 mt-1">
-                {countA} ejercicios · {countC} estiramientos · {countB} osteopatía
+                {source === "library" ? t("subtitle") : `${countA} · ${countC} · ${countB}`}
               </p>
             </div>
 
+            {/* ── Fuente: biblioteca clínica (video) / catálogo anterior ─── */}
+            <div className="flex gap-6 border-b border-slate-200">
+              {(["library", "legacy"] as const).map((k) => (
+                <button
+                  key={k}
+                  onClick={() => setSource(k)}
+                  className={cn(
+                    "-mb-px border-b-2 pb-2 text-sm font-semibold transition-colors",
+                    source === k ? "border-blue-600 text-blue-700" : "border-transparent text-slate-500 hover:text-slate-700"
+                  )}
+                >
+                  {t(k === "library" ? "sourceLibrary" : "sourceLegacy")}
+                </button>
+              ))}
+            </div>
+
+            {source === "library" ? (
+              libCat && <ClinicalLibrary initialCategory={libCat} initialId={libOpen.id} initialView={libOpen.view} />
+            ) : (<>
             {/* ── Canal tabs ────────────────────────────────────────────── */}
             <div className="flex gap-1 p-1 bg-white border border-slate-200 rounded-xl w-fit">
               {[
@@ -338,6 +371,7 @@ export default function ExercisesPage() {
                 ))}
               </div>
             )}
+            </>)}
           </div>
         </main>
       </div>

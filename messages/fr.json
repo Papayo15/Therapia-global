@@ -368,5 +368,61 @@
     "vastus_intermedius": "Vaste intermédiaire",
     "vastus_lateralis": "Vaste latéral",
     "vastus_medialis": "Vaste médial"
+  },
+  "library": {
+    "title": "Bibliothèque de techniques",
+    "subtitle": "Chaque technique avec une vidéo du mouvement et une vue anatomique des muscles sollicités",
+    "sourceLibrary": "Bibliothèque clinique vidéo",
+    "sourceLegacy": "Ancien catalogue",
+    "all": "Tout",
+    "search": "Rechercher par nom, muscle ou région…",
+    "allRegions": "Toutes les régions",
+    "count": "{n} techniques",
+    "noResults": "Aucun résultat. Essayez une autre recherche ou région.",
+    "close": "Fermer",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "level": "Niveau {n}",
+    "works": "Travaillent",
+    "stretches": "S’étirent",
+    "structures": "Structures",
+    "category": {
+      "fortalecimiento": "Renforcement",
+      "estiramiento": "Étirement",
+      "osteopatia": "Ostéopathie"
+    },
+    "categoryPlural": {
+      "fortalecimiento": "Renforcement",
+      "estiramiento": "Étirements",
+      "osteopatia": "Ostéopathie"
+    },
+    "view": {
+      "exercise": "Exercice",
+      "anatomy": "Anatomie"
+    },
+    "variant": {
+      "gym": "Salle de sport",
+      "casa": "Maison",
+      "ambos": "Exercice"
+    },
+    "legend": {
+      "concentric": "Contraction (concentrique / isométrique)",
+      "eccentric": "Freinage (excentrique)",
+      "stretch": "Étirement"
+    },
+    "region": {
+      "craneal": "Crânien",
+      "cervical": "Cervical",
+      "atm": "ATM",
+      "hombro": "Épaule et omoplate",
+      "codo": "Coude et avant-bras",
+      "muneca": "Poignet et main",
+      "toracica": "Thoracique et côtes",
+      "lumbar": "Lombaire et bassin",
+      "visceral": "Viscéral",
+      "cadera": "Hanche",
+      "rodilla": "Genou",
+      "tobillo": "Cheville et pied"
+    }
   }
 }

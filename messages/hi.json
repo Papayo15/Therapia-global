@@ -368,5 +368,61 @@
     "vastus_intermedius": "मध्यवर्ती वैस्टस",
     "vastus_lateralis": "पार्श्व वैस्टस",
     "vastus_medialis": "मध्य वैस्टस"
+  },
+  "library": {
+    "title": "तकनीक लाइब्रेरी",
+    "subtitle": "हर तकनीक के साथ गति का वीडियो और काम करने वाली मांसपेशियों का शारीरिक दृश्य",
+    "sourceLibrary": "क्लिनिकल वीडियो लाइब्रेरी",
+    "sourceLegacy": "पिछला कैटलॉग",
+    "all": "सभी",
+    "search": "नाम, मांसपेशी या क्षेत्र से खोजें…",
+    "allRegions": "सभी क्षेत्र",
+    "count": "{n} तकनीकें",
+    "noResults": "कोई परिणाम नहीं। दूसरी खोज या क्षेत्र आज़माएँ।",
+    "close": "बंद करें",
+    "prev": "पिछला",
+    "next": "अगला",
+    "level": "स्तर {n}",
+    "works": "काम करती हैं",
+    "stretches": "खिंचती हैं",
+    "structures": "संरचनाएँ",
+    "category": {
+      "fortalecimiento": "मज़बूती",
+      "estiramiento": "स्ट्रेच",
+      "osteopatia": "ऑस्टियोपैथी"
+    },
+    "categoryPlural": {
+      "fortalecimiento": "मज़बूती",
+      "estiramiento": "स्ट्रेच",
+      "osteopatia": "ऑस्टियोपैथी"
+    },
+    "view": {
+      "exercise": "व्यायाम",
+      "anatomy": "शरीर रचना"
+    },
+    "variant": {
+      "gym": "जिम",
+      "casa": "घर",
+      "ambos": "व्यायाम"
+    },
+    "legend": {
+      "concentric": "संकुचन (कॉन्सेंट्रिक / आइसोमेट्रिक)",
+      "eccentric": "ब्रेकिंग (एक्सेंट्रिक)",
+      "stretch": "खिंचाव"
+    },
+    "region": {
+      "craneal": "कपाल",
+      "cervical": "ग्रीवा",
+      "atm": "जबड़े का जोड़",
+      "hombro": "कंधा और स्कैपुला",
+      "codo": "कोहनी और अग्रबाहु",
+      "muneca": "कलाई और हाथ",
+      "toracica": "वक्षीय और पसलियाँ",
+      "lumbar": "कटि और श्रोणि",
+      "visceral": "आंत्र",
+      "cadera": "कूल्हा",
+      "rodilla": "घुटना",
+      "tobillo": "टखना और पैर"
+    }
   }
 }

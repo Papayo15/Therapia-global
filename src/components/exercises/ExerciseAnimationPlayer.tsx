@@ -21,6 +21,9 @@ export interface ExerciseAnimationPlayerProps {
   muted?: boolean;
   /** etiquetas.json de la vista anatómica: nombres de los músculos que trabajan, en el idioma del paciente */
   labels?: string;
+  /** cómo se ajusta el video al recuadro; "contain" no recorta (útil para la vista anatómica con nombres) */
+  fit?: "cover" | "contain";
+  poster?: string;
 }
 
 type PlayerState = "loading" | "ready" | "paused" | "error";
@@ -34,6 +37,8 @@ export function ExerciseAnimationPlayer({
   loop = true,
   muted = true,
   labels,
+  fit = "cover",
+  poster,
 }: ExerciseAnimationPlayerProps) {
   const t = useTranslations("exercises");
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -124,8 +129,10 @@ export function ExerciseAnimationPlayer({
         </div>
       )}
       <video
+        key={safeVideo}
         ref={videoRef}
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${fit === "contain" ? "object-contain" : "object-cover"}`}
+        poster={poster}
         autoPlay={autoPlay}
         loop={loop}
         muted={muted}
@@ -139,7 +146,7 @@ export function ExerciseAnimationPlayer({
       >
         <source src={safeVideo} type="video/mp4" />
       </video>
-      {labels && state !== "loading" && <AnatomyLabels videoRef={videoRef} src={labels} fit="cover" />}
+      {labels && state !== "loading" && <AnatomyLabels videoRef={videoRef} src={labels} fit={fit} />}
       {state === "paused" && (
         <button
           onClick={togglePlayPause}

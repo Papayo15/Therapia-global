@@ -368,5 +368,61 @@
     "vastus_intermedius": "المتسعة المتوسطة",
     "vastus_lateralis": "المتسعة الوحشية",
     "vastus_medialis": "المتسعة الإنسية"
+  },
+  "library": {
+    "title": "مكتبة التقنيات",
+    "subtitle": "كل تقنية مع فيديو للحركة وعرض تشريحي للعضلات العاملة",
+    "sourceLibrary": "المكتبة السريرية بالفيديو",
+    "sourceLegacy": "الكتالوج السابق",
+    "all": "الكل",
+    "search": "ابحث بالاسم أو العضلة أو المنطقة…",
+    "allRegions": "كل المناطق",
+    "count": "{n} تقنية",
+    "noResults": "لا توجد نتائج. جرّب بحثًا أو منطقة أخرى.",
+    "close": "إغلاق",
+    "prev": "السابق",
+    "next": "التالي",
+    "level": "المستوى {n}",
+    "works": "تعمل",
+    "stretches": "تتمدد",
+    "structures": "البنى",
+    "category": {
+      "fortalecimiento": "تقوية",
+      "estiramiento": "تمديد",
+      "osteopatia": "تقويم العظام"
+    },
+    "categoryPlural": {
+      "fortalecimiento": "تقوية",
+      "estiramiento": "تمارين التمديد",
+      "osteopatia": "تقويم العظام"
+    },
+    "view": {
+      "exercise": "التمرين",
+      "anatomy": "التشريح"
+    },
+    "variant": {
+      "gym": "النادي",
+      "casa": "المنزل",
+      "ambos": "التمرين"
+    },
+    "legend": {
+      "concentric": "انقباض (مركزي / ثابت)",
+      "eccentric": "كبح (لامركزي)",
+      "stretch": "تمدد"
+    },
+    "region": {
+      "craneal": "قحفي",
+      "cervical": "عنقي",
+      "atm": "المفصل الفكي",
+      "hombro": "الكتف ولوح الكتف",
+      "codo": "المرفق والساعد",
+      "muneca": "الرسغ واليد",
+      "toracica": "الصدر والأضلاع",
+      "lumbar": "القطني والحوض",
+      "visceral": "حشوي",
+      "cadera": "الورك",
+      "rodilla": "الركبة",
+      "tobillo": "الكاحل والقدم"
+    }
   }
 }

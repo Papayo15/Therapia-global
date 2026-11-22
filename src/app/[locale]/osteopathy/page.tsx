@@ -8,7 +8,7 @@ export default function OsteopathyPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/exercises?canal=B");
+    router.replace("/exercises?cat=osteopatia");
   }, [router]);
 
   return (

@@ -368,5 +368,61 @@
     "vastus_intermedius": "股中间肌",
     "vastus_lateralis": "股外侧肌",
     "vastus_medialis": "股内侧肌"
+  },
+  "library": {
+    "title": "技术库",
+    "subtitle": "每项技术都配有动作视频和工作肌肉的解剖视图",
+    "sourceLibrary": "临床视频库",
+    "sourceLegacy": "旧目录",
+    "all": "全部",
+    "search": "按名称、肌肉或部位搜索…",
+    "allRegions": "所有部位",
+    "count": "{n} 项技术",
+    "noResults": "没有结果。请尝试其他搜索或部位。",
+    "close": "关闭",
+    "prev": "上一个",
+    "next": "下一个",
+    "level": "等级 {n}",
+    "works": "发力肌肉",
+    "stretches": "拉伸肌肉",
+    "structures": "结构",
+    "category": {
+      "fortalecimiento": "力量训练",
+      "estiramiento": "拉伸",
+      "osteopatia": "整骨疗法"
+    },
+    "categoryPlural": {
+      "fortalecimiento": "力量训练",
+      "estiramiento": "拉伸",
+      "osteopatia": "整骨疗法"
+    },
+    "view": {
+      "exercise": "练习",
+      "anatomy": "解剖"
+    },
+    "variant": {
+      "gym": "健身房",
+      "casa": "居家",
+      "ambos": "练习"
+    },
+    "legend": {
+      "concentric": "收缩（向心 / 等长）",
+      "eccentric": "制动（离心）",
+      "stretch": "拉伸"
+    },
+    "region": {
+      "craneal": "颅骨",
+      "cervical": "颈部",
+      "atm": "颞下颌关节",
+      "hombro": "肩与肩胛",
+      "codo": "肘与前臂",
+      "muneca": "腕与手",
+      "toracica": "胸椎与肋骨",
+      "lumbar": "腰椎与骨盆",
+      "visceral": "内脏",
+      "cadera": "髋",
+      "rodilla": "膝",
+      "tobillo": "踝与足"
+    }
   }
 }

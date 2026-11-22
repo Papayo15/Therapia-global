@@ -368,5 +368,61 @@
     "vastus_intermedius": "中間広筋",
     "vastus_lateralis": "外側広筋",
     "vastus_medialis": "内側広筋"
+  },
+  "library": {
+    "title": "テクニックライブラリ",
+    "subtitle": "すべてのテクニックに動作動画と働く筋肉の解剖ビュー付き",
+    "sourceLibrary": "臨床ビデオライブラリ",
+    "sourceLegacy": "以前のカタログ",
+    "all": "すべて",
+    "search": "名前・筋肉・部位で検索…",
+    "allRegions": "すべての部位",
+    "count": "{n} 件",
+    "noResults": "該当なし。別の検索語や部位をお試しください。",
+    "close": "閉じる",
+    "prev": "前へ",
+    "next": "次へ",
+    "level": "レベル {n}",
+    "works": "働く筋肉",
+    "stretches": "伸びる筋肉",
+    "structures": "構造",
+    "category": {
+      "fortalecimiento": "筋力強化",
+      "estiramiento": "ストレッチ",
+      "osteopatia": "オステオパシー"
+    },
+    "categoryPlural": {
+      "fortalecimiento": "筋力強化",
+      "estiramiento": "ストレッチ",
+      "osteopatia": "オステオパシー"
+    },
+    "view": {
+      "exercise": "エクササイズ",
+      "anatomy": "解剖"
+    },
+    "variant": {
+      "gym": "ジム",
+      "casa": "自宅",
+      "ambos": "エクササイズ"
+    },
+    "legend": {
+      "concentric": "収縮（求心性／等尺性）",
+      "eccentric": "ブレーキ（遠心性）",
+      "stretch": "ストレッチ"
+    },
+    "region": {
+      "craneal": "頭蓋",
+      "cervical": "頸部",
+      "atm": "顎関節",
+      "hombro": "肩・肩甲骨",
+      "codo": "肘・前腕",
+      "muneca": "手首・手",
+      "toracica": "胸椎・肋骨",
+      "lumbar": "腰椎・骨盤",
+      "visceral": "内臓",
+      "cadera": "股関節",
+      "rodilla": "膝",
+      "tobillo": "足首・足"
+    }
   }
 }

@@ -368,5 +368,61 @@
     "vastus_intermedius": "Mittlerer Schenkelmuskel",
     "vastus_lateralis": "Äußerer Schenkelmuskel",
     "vastus_medialis": "Innerer Schenkelmuskel"
+  },
+  "library": {
+    "title": "Technikbibliothek",
+    "subtitle": "Jede Technik mit Bewegungsvideo und anatomischer Ansicht der arbeitenden Muskeln",
+    "sourceLibrary": "Klinische Videobibliothek",
+    "sourceLegacy": "Bisheriger Katalog",
+    "all": "Alle",
+    "search": "Nach Name, Muskel oder Region suchen…",
+    "allRegions": "Alle Regionen",
+    "count": "{n} Techniken",
+    "noResults": "Keine Ergebnisse. Andere Suche oder Region versuchen.",
+    "close": "Schließen",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "level": "Stufe {n}",
+    "works": "Arbeiten",
+    "stretches": "Werden gedehnt",
+    "structures": "Strukturen",
+    "category": {
+      "fortalecimiento": "Kräftigung",
+      "estiramiento": "Dehnung",
+      "osteopatia": "Osteopathie"
+    },
+    "categoryPlural": {
+      "fortalecimiento": "Kräftigung",
+      "estiramiento": "Dehnungen",
+      "osteopatia": "Osteopathie"
+    },
+    "view": {
+      "exercise": "Übung",
+      "anatomy": "Anatomie"
+    },
+    "variant": {
+      "gym": "Studio",
+      "casa": "Zuhause",
+      "ambos": "Übung"
+    },
+    "legend": {
+      "concentric": "Kontraktion (konzentrisch / isometrisch)",
+      "eccentric": "Bremsen (exzentrisch)",
+      "stretch": "Dehnung"
+    },
+    "region": {
+      "craneal": "Kranial",
+      "cervical": "Zervikal",
+      "atm": "Kiefergelenk",
+      "hombro": "Schulter & Schulterblatt",
+      "codo": "Ellenbogen & Unterarm",
+      "muneca": "Handgelenk & Hand",
+      "toracica": "Brustwirbelsäule & Rippen",
+      "lumbar": "Lendenwirbelsäule & Becken",
+      "visceral": "Viszeral",
+      "cadera": "Hüfte",
+      "rodilla": "Knie",
+      "tobillo": "Sprunggelenk & Fuß"
+    }
   }
 }
