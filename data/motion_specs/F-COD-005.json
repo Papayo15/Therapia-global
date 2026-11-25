@@ -1,0 +1,121 @@
+{
+  "id": "F-COD-005",
+  "duracion_s": 6.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "antebrazo_prono.R": -70,
+      "codo_flex.R": 125,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "codo_flex.R": 0
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "codo_flex.R": 0
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.4,
+      "art": {
+        "codo_flex.R": -120
+      },
+      "p": 0.3,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.8,
+      "art": {
+        "codo_flex.R": -120
+      },
+      "p": 0.3,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.0,
+      "art": {
+        "codo_flex.R": 0
+      },
+      "p": 1,
+      "fase": "excentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "biceps_brachii",
+        "lado": "R"
+      },
+      {
+        "id": "brachialis",
+        "lado": "R"
+      },
+      {
+        "id": "brachioradialis",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "triceps_brachii",
+        "lado": "R"
+      },
+      {
+        "id": "anconeus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "mancuerna",
+      "uso": "en_mano",
+      "manos": [
+        "R"
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Curl excéntrico lento (3–5 s)"
+}

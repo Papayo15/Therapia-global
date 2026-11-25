@@ -1,0 +1,138 @@
+{
+  "id": "E-061",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_abd.L": 30,
+      "cadera_abd.R": 30,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80,
+      "cadera_flex.L": 60,
+      "cadera_flex.R": 60,
+      "rodilla_flex.L": 110,
+      "rodilla_flex.R": 110,
+      "cadera_re.L": 40,
+      "cadera_re.R": 40
+    },
+    "asentar": [
+      {
+        "art": "lumbar_flex",
+        "grupo": "spine01",
+        "rango": [
+          -15,
+          25
+        ]
+      },
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "rango": [
+          -25,
+          25
+        ]
+      }
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "head"
+    },
+    {
+      "grupo": "spine01",
+      "tol_cm": 3
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.9
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_abd.L": 0,
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_abd.L": 0,
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "cadera_abd.L": 15,
+        "cadera_abd.R": 15
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "cadera_abd.L": 15,
+        "cadera_abd.R": 15
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "cadera_abd.L": 0,
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "cadera_abd.L": 0,
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "adductor_longus"
+      },
+      {
+        "id": "adductor_brevis"
+      },
+      {
+        "id": "adductor_magnus"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Mariposa en supino"
+}

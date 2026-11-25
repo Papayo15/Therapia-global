@@ -1,0 +1,185 @@
+{
+  "id": "E-069",
+  "nombre": "Contracción-relajación (FNP) — isquiotibiales",
+  "duracion_s": 6.0,
+  "fps": 24,
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.R": 0,
+      "rodilla_flex.R": 0,
+      "tobillo_dorsi.R": 5,
+      "cadera_abd.L": 3,
+      "cadera_abd.R": 3,
+      "mano_cerrar.L": 70,
+      "mano_cerrar.R": 70
+    },
+    "asentar": [
+      {
+        "art": "lumbar_flex",
+        "grupo": "spine01",
+        "rango": [
+          -15,
+          25
+        ]
+      },
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          -20,
+          15
+        ]
+      },
+      {
+        "art": "cadera_flex.R",
+        "grupo": "foot.R",
+        "rango": [
+          -20,
+          15
+        ]
+      },
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "rango": [
+          -25,
+          25
+        ]
+      }
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "polo": [
+        0.5,
+        0,
+        -0.4
+      ]
+    },
+    {
+      "cadena": "brazo.R",
+      "polo": [
+        -0.5,
+        0,
+        -0.4
+      ]
+    }
+  ],
+  "props": [
+    {
+      "tipo": "correa",
+      "uso": "correa_pie_manos",
+      "pie": "R",
+      "fraccion": 0.5
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "head"
+    },
+    {
+      "grupo": "spine01"
+    },
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0.0
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0.0
+    },
+    {
+      "t": 1.8,
+      "art": {
+        "cadera_flex.R": 70
+      },
+      "p": 1.0
+    },
+    {
+      "t": 4.8,
+      "art": {
+        "cadera_flex.R": 70
+      },
+      "p": 1.0
+    },
+    {
+      "t": 5.8,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0.0
+    },
+    {
+      "t": 6.0,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0.0
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "biceps_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "semitendinosus",
+        "lado": "R"
+      },
+      {
+        "id": "semimembranosus",
+        "lado": "R"
+      }
+    ],
+    "sostienen": [
+      {
+        "id": "biceps_brachii"
+      },
+      {
+        "id": "rectus_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "vastus_lateralis",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.12
+  },
+  "resolucion": [
+    1280,
+    720
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "id": "F-CAD-017",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "decubito_lateral_L",
+    "colchoneta": true,
+    "almohada": true,
+    "angulos": {
+      "cadera_flex.L": 0,
+      "rodilla_flex.L": 0,
+      "hombro_flex.L": 90,
+      "codo_flex.L": 70,
+      "hombro_abd.R": -6,
+      "mano_cerrar.R": 15,
+      "cadera_flex.R": 70,
+      "rodilla_flex.R": 90
+    },
+    "asentar": [
+      {
+        "art": "@roll",
+        "grupo": [
+          "shoulder01.L",
+          "upperarm01.L",
+          "clavicle.L"
+        ],
+        "rango": [
+          -15,
+          15
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "cadera_abd.L",
+        "grupo": [
+          "lowerleg01.L",
+          "foot.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      },
+      {
+        "art": "cadera_abd.R",
+        "grupo": [
+          "foot.R",
+          "toenails",
+          "toe1-1.R",
+          "toe1-2.R",
+          "toe1-3.R",
+          "toe2-1.R",
+          "toe2-2.R",
+          "toe2-3.R",
+          "toe3-1.R",
+          "toe3-2.R",
+          "toe3-3.R",
+          "toe4-1.R",
+          "toe4-2.R",
+          "toe4-3.R",
+          "toe5-1.R",
+          "toe5-2.R",
+          "toe5-3.R"
+        ],
+        "rango": [
+          -50,
+          10
+        ]
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "upperleg01.L",
+      "upperleg02.L",
+      "spine03",
+      "spine02",
+      "shoulder01.L"
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "foot.R",
+        "toenails",
+        "toe1-1.R",
+        "toe1-2.R",
+        "toe1-3.R",
+        "toe2-1.R",
+        "toe2-2.R",
+        "toe2-3.R",
+        "toe3-1.R",
+        "toe3-2.R",
+        "toe3-3.R",
+        "toe4-1.R",
+        "toe4-2.R",
+        "toe4-3.R",
+        "toe5-1.R",
+        "toe5-2.R",
+        "toe5-3.R"
+      ],
+      "tol_cm": 2
+    },
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "foot.L"
+      ],
+      "desde": 0,
+      "hasta": 0.4,
+      "tol_cm": 2
+    },
+    {
+      "grupo": [
+        "pelvis.L",
+        "upperleg01.L"
+      ],
+      "tol_cm": 2.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.15,
+      -1,
+      0.55
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_abd.L": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_abd.L": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "cadera_abd.L": -22
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "cadera_abd.L": -22
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.4,
+      "art": {
+        "cadera_abd.L": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cadera_abd.L": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "adductor_longus",
+        "lado": "L"
+      },
+      {
+        "id": "adductor_brevis",
+        "lado": "L"
+      },
+      {
+        "id": "adductor_magnus",
+        "lado": "L"
+      },
+      {
+        "id": "pectineus",
+        "lado": "L"
+      },
+      {
+        "id": "gracilis",
+        "lado": "L"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "gluteus_medius",
+        "lado": "L"
+      },
+      {
+        "id": "gluteus_minimus",
+        "lado": "L"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.L"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Aducción en decúbito lateral (pierna de abajo)"
+}

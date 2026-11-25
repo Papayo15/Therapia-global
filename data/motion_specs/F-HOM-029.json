@@ -1,0 +1,132 @@
+{
+  "id": "F-HOM-029",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 88,
+      "codo_flex.R": 90,
+      "hombro_re.R": 45,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.6,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "hombro_re.R": 40
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "hombro_re.R": 40
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.0,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "infraspinatus",
+        "lado": "R"
+      },
+      {
+        "id": "teres_minor",
+        "lado": "R"
+      },
+      {
+        "id": "deltoid_posterior",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "subscapularis",
+        "lado": "R"
+      },
+      {
+        "id": "pectoralis_major",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.R",
+      "anclaje_rel": [
+        0,
+        -0.8,
+        -0.1
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Rotación externa 90/90 con banda"
+}

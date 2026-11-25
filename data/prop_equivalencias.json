@@ -1,0 +1,164 @@
+{
+  "version": "1.0",
+  "descripcion": "Equivalencias de material para la variante CASA de cada video. La variante GYM usa el prop original. 'casa' = objeto doméstico que se modela/renderiza en su lugar; 'nota_paciente' se muestra en la app.",
+  "equivalencias": {
+    "mancuerna": {
+      "casa": "botella_agua_1_5l",
+      "nota_paciente": "Botella de agua o leche llena (1–1,5 kg). Para más carga, usa arena."
+    },
+    "kettlebell": {
+      "casa": "bolsa_compras_cargada",
+      "nota_paciente": "Bolsa de tela con libros o paquetes de arroz, sujeta por las asas."
+    },
+    "barra": {
+      "casa": "palo_escoba",
+      "nota_paciente": "Palo de escoba. Para colgarse: solo si tienes una barra de puerta segura."
+    },
+    "baston": {
+      "casa": "palo_escoba",
+      "nota_paciente": "Palo de escoba o mango de fregona."
+    },
+    "barra_flexible": {
+      "casa": "toalla_enrollada",
+      "nota_paciente": "Toalla enrollada y torcida con ambas manos."
+    },
+    "banda_elastica": {
+      "casa": "medias_nylon",
+      "nota_paciente": "Medias de nylon (pantis) viejas: son elásticas. Anúdalas a la manija de una puerta cerrada o pisa un extremo."
+    },
+    "polea": {
+      "casa": "toalla_en_puerta",
+      "nota_paciente": "Toalla anudada a la manija de una puerta cerrada."
+    },
+    "trx": {
+      "casa": "mesa_firme",
+      "nota_paciente": "Agárrate del borde de una mesa sólida y pesada."
+    },
+    "foam_roller": {
+      "casa": "toalla_enrollada",
+      "nota_paciente": "Toalla grande enrollada y apretada con cinta."
+    },
+    "rodillo": {
+      "casa": "toalla_enrollada",
+      "nota_paciente": "Toalla enrollada."
+    },
+    "rollo": {
+      "casa": "toalla_enrollada",
+      "nota_paciente": "Toalla enrollada."
+    },
+    "fitball": {
+      "casa": "silla",
+      "nota_paciente": "Silla estable apoyada contra la pared (versión más estable)."
+    },
+    "balon_medicinal": {
+      "casa": "bolsa_arroz_2kg",
+      "nota_paciente": "Paquete de arroz o legumbres de 1–2 kg."
+    },
+    "pelota_pequena": {
+      "casa": "calcetines_enrollados",
+      "nota_paciente": "Par de calcetines enrollados o pelota de tenis."
+    },
+    "camilla": {
+      "casa": "cama",
+      "nota_paciente": "Borde de tu cama."
+    },
+    "banco": {
+      "casa": "silla",
+      "nota_paciente": "Silla firme sin ruedas, apoyada contra la pared."
+    },
+    "banco_romano": {
+      "casa": "cama_con_ayudante",
+      "nota_paciente": "Cadera en el borde de la cama y alguien sujetando los tobillos."
+    },
+    "escalon": {
+      "casa": "escalon_escalera",
+      "nota_paciente": "Primer escalón de la escalera, sujetándote de la baranda."
+    },
+    "correa": {
+      "casa": "toalla",
+      "nota_paciente": "Toalla, cinturón o bufanda."
+    },
+    "tobillera": {
+      "casa": "bolsa_arroz_tobillo",
+      "nota_paciente": "Bolsa de arroz atada al tobillo con una media."
+    },
+    "deslizadores": {
+      "casa": "pano_cocina",
+      "nota_paciente": "Paños de cocina sobre suelo liso o platos de plástico sobre alfombra."
+    },
+    "hand_grip": {
+      "casa": "pelota_tenis",
+      "nota_paciente": "Pelota de tenis o calcetines enrollados."
+    },
+    "masilla": {
+      "casa": "plastilina",
+      "nota_paciente": "Plastilina o masa de harina y agua."
+    },
+    "cojin_inestable": {
+      "casa": "cojin_sofa",
+      "nota_paciente": "Cojín del sofá doblado, cerca de una pared."
+    },
+    "martillo": {
+      "casa": "martillo",
+      "nota_paciente": "Martillo de casa o botella sujeta por el cuello."
+    },
+    "depresor_lingual": {
+      "casa": "palito_helado",
+      "nota_paciente": "Palito de helado limpio."
+    },
+    "silla": {
+      "casa": "silla",
+      "nota_paciente": "Silla firme sin ruedas."
+    },
+    "pared": {
+      "casa": "pared",
+      "nota_paciente": "Cualquier pared libre."
+    },
+    "marco_puerta": {
+      "casa": "marco_puerta",
+      "nota_paciente": "Marco de una puerta."
+    },
+    "mesa": {
+      "casa": "mesa",
+      "nota_paciente": "Mesa de la cocina."
+    },
+    "toalla": {
+      "casa": "toalla",
+      "nota_paciente": "Toalla."
+    },
+    "esponja": {
+      "casa": "esponja",
+      "nota_paciente": "Esponja de cocina."
+    },
+    "canicas": {
+      "casa": "canicas",
+      "nota_paciente": "Canicas, tapones o lápices."
+    },
+    "papel": {
+      "casa": "papel",
+      "nota_paciente": "Hoja de papel."
+    },
+    "pinza_ropa": {
+      "casa": "pinza_ropa",
+      "nota_paciente": "Pinza de tender la ropa."
+    },
+    "monedas": {
+      "casa": "monedas",
+      "nota_paciente": "Monedas o botones."
+    },
+    "recipiente_arroz": {
+      "casa": "recipiente_arroz",
+      "nota_paciente": "Bol con arroz o lentejas."
+    },
+    "espejo": {
+      "casa": "espejo",
+      "nota_paciente": "Espejo del baño."
+    }
+  },
+  "solo_gym": [
+    "polea",
+    "banco_romano",
+    "trx"
+  ],
+  "regla": "Si TODOS los props del ejercicio son iguales en gym y casa, se genera un solo video (variante 'ambos'). Si alguno cambia, se generan dos videos: {slug}--gym y {slug}--casa."
+}

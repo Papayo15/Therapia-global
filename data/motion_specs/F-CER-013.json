@@ -1,0 +1,192 @@
+{
+  "id": "F-CER-013",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "decubito_lateral_L",
+    "colchoneta": true,
+    "almohada": true,
+    "angulos": {
+      "cadera_flex.L": 40,
+      "rodilla_flex.L": 70,
+      "hombro_flex.L": 90,
+      "codo_flex.L": 70,
+      "hombro_abd.R": -6,
+      "mano_cerrar.R": 15
+    },
+    "asentar": [
+      {
+        "art": "@roll",
+        "grupo": [
+          "shoulder01.L",
+          "upperarm01.L",
+          "clavicle.L"
+        ],
+        "rango": [
+          -15,
+          15
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "cadera_abd.L",
+        "grupo": [
+          "lowerleg01.L",
+          "foot.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "upperleg01.L",
+      "upperleg02.L",
+      "spine03",
+      "spine02",
+      "shoulder01.L"
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "upperleg01.L",
+        "upperleg02.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "foot.L"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.1,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cervical_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cervical_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "cervical_incl": -25
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "cervical_incl": -25
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.3,
+      "art": {
+        "cervical_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cervical_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "scalene_anterior",
+        "lado": "R"
+      },
+      {
+        "id": "scalene_middle",
+        "lado": "R"
+      },
+      {
+        "id": "scalene_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "sternocleidomastoid",
+        "lado": "R"
+      },
+      {
+        "id": "trapezius_upper",
+        "lado": "R"
+      },
+      {
+        "id": "levator_scapulae",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "scalene_anterior",
+        "lado": "L"
+      },
+      {
+        "id": "scalene_middle",
+        "lado": "L"
+      },
+      {
+        "id": "scalene_posterior",
+        "lado": "L"
+      },
+      {
+        "id": "trapezius_upper",
+        "lado": "L"
+      },
+      {
+        "id": "levator_scapulae",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "neck02"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Inclinación lateral contra gravedad en decúbito lateral"
+}

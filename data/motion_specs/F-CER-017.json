@@ -1,0 +1,146 @@
+{
+  "id": "F-CER-017",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.35,
+    "grupos": [
+      "head",
+      "neck01",
+      "neck02",
+      "neck03",
+      "jaw",
+      "spine01",
+      "spine02",
+      "clavicle.L",
+      "clavicle.R",
+      "shoulder01.L",
+      "shoulder01.R"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.8,
+      "art": {
+        "cervical_rot": -60
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "cervical_rot": -60
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cervical_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "sternocleidomastoid",
+        "lado": "R"
+      },
+      {
+        "id": "splenius_capitis",
+        "lado": "R"
+      },
+      {
+        "id": "splenius_cervicis",
+        "lado": "R"
+      },
+      {
+        "id": "obliquus_capitis_inferior",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "sternocleidomastoid",
+        "lado": "L"
+      },
+      {
+        "id": "splenius_capitis",
+        "lado": "L"
+      },
+      {
+        "id": "splenius_cervicis",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "neck02"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Rotación activa en sedente"
+}

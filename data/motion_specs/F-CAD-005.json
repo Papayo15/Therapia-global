@@ -1,0 +1,170 @@
+{
+  "id": "F-CAD-005",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R",
+      "desde": 0,
+      "hasta": 1.0
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.2,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_flex.R": 0,
+        "rodilla_flex.R": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "codo_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.0,
+      "art": {
+        "cadera_flex.R": 0,
+        "rodilla_flex.R": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "codo_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "cadera_flex.R": 85,
+        "rodilla_flex.R": 95,
+        "tobillo_dorsi.R": 10,
+        "hombro_flex.L": 35,
+        "codo_flex.L": 80,
+        "hombro_flex.R": -20,
+        "codo_flex.R": 60
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "cadera_flex.R": 85,
+        "rodilla_flex.R": 95,
+        "tobillo_dorsi.R": 10,
+        "hombro_flex.L": 35,
+        "codo_flex.L": 80,
+        "hombro_flex.R": -20,
+        "codo_flex.R": 60
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.7,
+      "art": {
+        "cadera_flex.R": 0,
+        "rodilla_flex.R": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "codo_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cadera_flex.R": 0,
+        "rodilla_flex.R": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "codo_flex.L": 0,
+        "hombro_flex.R": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "iliopsoas",
+        "lado": "R"
+      },
+      {
+        "id": "rectus_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "sartorius",
+        "lado": "R"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "gluteus_maximus",
+        "lado": "R"
+      },
+      {
+        "id": "biceps_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "semitendinosus",
+        "lado": "R"
+      },
+      {
+        "id": "semimembranosus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Marcha alta / skipping"
+}

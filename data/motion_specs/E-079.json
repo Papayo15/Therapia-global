@@ -1,0 +1,113 @@
+{
+  "id": "E-079",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 60,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.8,
+      -1,
+      0.5
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "dedos_flex.R": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "dedos_flex.R": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "dedos_flex.R": -45,
+        "tobillo_dorsi.R": 10
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "dedos_flex.R": -45,
+        "tobillo_dorsi.R": 10
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "dedos_flex.R": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "dedos_flex.R": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "flexor_digitorum_brevis",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión pasiva de dedos en sedente"
+}

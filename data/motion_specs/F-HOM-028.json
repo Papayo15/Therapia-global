@@ -1,0 +1,144 @@
+{
+  "id": "F-HOM-028",
+  "nombre": "Rotación externa con banda (codo pegado, toalla)",
+  "duracion_s": 5.0,
+  "fps": 24,
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "codo_flex.R": 90,
+      "hombro_abd.R": 2,
+      "antebrazo_prono.R": 0,
+      "codo_flex.L": 5,
+      "mano_cerrar.R": 70,
+      "mano_cerrar.L": 20
+    }
+  },
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada",
+      "mano": "R",
+      "anclaje": [
+        0.75,
+        0,
+        0
+      ]
+    },
+    {
+      "tipo": "toalla",
+      "uso": "rollo_codo",
+      "lado": "R"
+    }
+  ],
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {
+        "hombro_re.R": -15
+      },
+      "p": 0.0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.5,
+      "art": {
+        "hombro_re.R": -15
+      },
+      "p": 0.0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "hombro_re.R": 50
+      },
+      "p": 1.0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "hombro_re.R": 50
+      },
+      "p": 1.0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.4,
+      "art": {
+        "hombro_re.R": -15
+      },
+      "p": 0.0,
+      "fase": "excentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_re.R": -15
+      },
+      "p": 0.0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "infraspinatus",
+        "lado": "R"
+      },
+      {
+        "id": "teres_minor",
+        "lado": "R"
+      },
+      {
+        "id": "deltoid_posterior",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "subscapularis",
+        "lado": "R"
+      },
+      {
+        "id": "pectoralis_major",
+        "lado": "R"
+      },
+      {
+        "id": "glenohumeral_capsule_anterior",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.55,
+      -1,
+      0.35
+    ],
+    "lente": 50,
+    "margen": 1.12
+  },
+  "resolucion": [
+    1280,
+    720
+  ]
+}

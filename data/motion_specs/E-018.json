@@ -1,0 +1,154 @@
+{
+  "id": "E-018",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 90,
+      "hombro_abd.R": 90,
+      "codo_flex.L": 90,
+      "codo_flex.R": 90,
+      "hombro_re.L": 85,
+      "hombro_re.R": 85,
+      "hombro_abd_h.L": -35,
+      "hombro_abd_h.R": -35
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "orientacion_fija": true
+    },
+    {
+      "cadena": "brazo.R",
+      "orientacion_fija": true
+    },
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.45,
+      1,
+      0.55
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.1,
+        0
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.1,
+        0
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "pectoralis_major"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "esquina"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "En esquina con FNP"
+}

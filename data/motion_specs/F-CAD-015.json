@@ -1,0 +1,199 @@
+{
+  "id": "F-CAD-015",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2
+    },
+    "elevar": 0.18
+  },
+  "ik": [
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "z_suelo": 0.18,
+      "polo": [
+        0,
+        -0.6,
+        0
+      ]
+    }
+  ],
+  "contactos": [],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.15
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_flex.R": 0,
+        "cadera_flex.L": 0,
+        "lumbar_flex": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_flex.R": 0,
+        "cadera_flex.L": 0,
+        "lumbar_flex": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "cadera_flex.R": 25,
+        "cadera_flex.L": 10,
+        "lumbar_flex": 12,
+        "hombro_flex.L": 40,
+        "hombro_flex.R": 40
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        0.04,
+        -0.1
+      ]
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "cadera_flex.R": 25,
+        "cadera_flex.L": 10,
+        "lumbar_flex": 12,
+        "hombro_flex.L": 40,
+        "hombro_flex.R": 40
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0.04,
+        -0.1
+      ]
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "cadera_flex.R": 0,
+        "cadera_flex.L": 0,
+        "lumbar_flex": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cadera_flex.R": 0,
+        "cadera_flex.L": 0,
+        "lumbar_flex": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gluteus_medius",
+        "lado": "R"
+      },
+      {
+        "id": "gluteus_minimus",
+        "lado": "R"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "adductor_longus",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_brevis",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_magnus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "escalon",
+      "uso": "caja",
+      "tam": [
+        0.4,
+        0.35,
+        0.18
+      ],
+      "pos": [
+        -0.1,
+        -0.05,
+        0.09
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Step-down lateral / sentadilla unipodal"
+}

@@ -1,0 +1,359 @@
+{
+  "id": "F-TOB-010",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 0,
+      "hombro_abd.R": 0,
+      "cadera_abd.L": 4,
+      "cadera_abd.R": 4
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L",
+      "hasta": 1.3
+    },
+    {
+      "grupo": "foot.L",
+      "desde": 1.8
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "@pitch": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "@pitch": 0
+      },
+      "p": 0,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0,
+        0
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.0,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": -35,
+        "hombro_flex.R": -35,
+        "@pitch": 14
+      },
+      "p": 0.6,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.1,
+        -0.2
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.3,
+      "art": {
+        "tobillo_dorsi.L": -30,
+        "tobillo_dorsi.R": -30,
+        "hombro_flex.L": 140,
+        "hombro_flex.R": 140,
+        "@pitch": 0
+      },
+      "p": 1,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.02
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.55,
+      "art": {
+        "tobillo_dorsi.L": -30,
+        "tobillo_dorsi.R": -30,
+        "hombro_flex.L": 140,
+        "hombro_flex.R": 140,
+        "@pitch": 0
+      },
+      "p": 1,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.2
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0.17
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0.17
+        ]
+      }
+    },
+    {
+      "t": 1.8,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "@pitch": 0
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0,
+        0.02
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 2.2,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": -35,
+        "hombro_flex.R": -35,
+        "@pitch": 14
+      },
+      "p": 0.6,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0.1,
+        -0.2
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 3.0,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "@pitch": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "@pitch": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0
+      ],
+      "ik": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gastrocnemius"
+      },
+      {
+        "id": "soleus"
+      },
+      {
+        "id": "tibialis_posterior"
+      },
+      {
+        "id": "fibularis_longus"
+      },
+      {
+        "id": "fibularis_brevis"
+      },
+      {
+        "id": "flexor_digitorum_longus"
+      },
+      {
+        "id": "flexor_hallucis_longus"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "tibialis_anterior"
+      },
+      {
+        "id": "extensor_digitorum_longus"
+      },
+      {
+        "id": "extensor_digitorum_brevis"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.L"
+    },
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Saltos pliométricos (pogo jumps)"
+}

@@ -1,0 +1,128 @@
+{
+  "id": "F-LUM-011",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.8,
+      "art": {
+        "lumbar_incl": -20,
+        "toracica_incl": -15
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "lumbar_incl": -20,
+        "toracica_incl": -15
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "lumbar_incl": 0,
+        "toracica_incl": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "quadratus_lumborum",
+        "lado": "R"
+      },
+      {
+        "id": "external_oblique",
+        "lado": "R"
+      },
+      {
+        "id": "internal_oblique",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "quadratus_lumborum",
+        "lado": "L"
+      },
+      {
+        "id": "external_oblique",
+        "lado": "L"
+      },
+      {
+        "id": "internal_oblique",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Inclinación lateral activa de pie"
+}

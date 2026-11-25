@@ -1,0 +1,137 @@
+{
+  "id": "E-080",
+  "duracion_s": 6.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "z_suelo": 0.065
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.8,
+      -1,
+      0.5
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "ik": {
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.5,
+      "art": {},
+      "p": 1,
+      "fase": "concentrico",
+      "ik": {
+        "pierna.R": [
+          0,
+          -0.06,
+          0
+        ]
+      }
+    },
+    {
+      "t": 3.0,
+      "art": {},
+      "p": 1,
+      "fase": "concentrico",
+      "ik": {
+        "pierna.R": [
+          0,
+          0.06,
+          0
+        ]
+      }
+    },
+    {
+      "t": 4.5,
+      "art": {},
+      "p": 1,
+      "fase": "concentrico",
+      "ik": {
+        "pierna.R": [
+          0,
+          -0.06,
+          0
+        ]
+      }
+    },
+    {
+      "t": 6.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "ik": {
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "flexor_digitorum_brevis",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "pelota_pequena",
+      "uso": "apoyo_pie",
+      "lado": "R",
+      "alto": 0.065
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Rodar pelota bajo el pie"
+}

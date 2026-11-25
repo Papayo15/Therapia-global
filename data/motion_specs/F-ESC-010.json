@@ -1,0 +1,162 @@
+{
+  "id": "F-ESC-010",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 12,
+      "hombro_abd.R": 12,
+      "hombro_flex.L": 172,
+      "hombro_flex.R": 172,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    },
+    "elevar": 0.25
+  },
+  "ik": [],
+  "contactos": [],
+  "camara": {
+    "dir": [
+      -0.6,
+      1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "t": 1.4,
+      "art": {
+        "escapula_elev.L": -15,
+        "escapula_elev.R": -15
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        0,
+        0.05
+      ]
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "escapula_elev.L": -15,
+        "escapula_elev.R": -15
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0,
+        0.05
+      ]
+    },
+    {
+      "t": 3.9,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "escapula_elev.L": 0,
+        "escapula_elev.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0,
+        0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "trapezius_lower"
+      },
+      {
+        "id": "pectoralis_minor"
+      },
+      {
+        "id": "latissimus_dorsi"
+      },
+      {
+        "id": "serratus_anterior"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "trapezius_upper"
+      },
+      {
+        "id": "levator_scapulae"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "clavicle.L"
+    },
+    {
+      "hueso": "clavicle.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "barra",
+      "uso": "barra_manos",
+      "soportes": true
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "En casa: solo con barra de puerta segura (mismo video).",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Suspensión activa en barra (scapular pull-up)"
+}

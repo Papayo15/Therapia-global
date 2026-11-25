@@ -1,0 +1,120 @@
+{
+  "id": "F-PIE-010",
+  "duracion_s": 5.4,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "rodilla_flex.L": 70,
+      "cadera_flex.L": 15
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.6,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hallux_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hallux_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.3,
+      "art": {
+        "hallux_flex.R": -30
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.3,
+      "art": {
+        "hallux_flex.R": -30
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.5,
+      "art": {
+        "hallux_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.4,
+      "art": {
+        "hallux_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "extensor_digitorum_longus",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_digitorum_brevis",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_hallucis_longus",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "flexor_digitorum_longus",
+        "lado": "R"
+      },
+      {
+        "id": "flexor_digitorum_brevis",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Toe yoga en apoyo unipodal"
+}

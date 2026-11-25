@@ -1,0 +1,143 @@
+{
+  "id": "F-ROD-008",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "rodilla_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "rodilla_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.8,
+      "art": {
+        "rodilla_flex.R": -85
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.8,
+      "art": {
+        "rodilla_flex.R": -85
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.6,
+      "art": {
+        "rodilla_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "rodilla_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "rectus_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "vastus_medialis",
+        "lado": "R"
+      },
+      {
+        "id": "vastus_lateralis",
+        "lado": "R"
+      },
+      {
+        "id": "vastus_intermedius",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "biceps_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "semitendinosus",
+        "lado": "R"
+      },
+      {
+        "id": "semimembranosus",
+        "lado": "R"
+      },
+      {
+        "id": "gastrocnemius",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerleg01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "tobillera",
+      "uso": "tobillera",
+      "lado": "R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión sentado con tobillera (arco largo)"
+}

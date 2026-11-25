@@ -1,0 +1,172 @@
+[
+  {
+    "id": "C_CER_001",
+    "nombre_es": "Estiramiento de Trapecio Superior",
+    "nombre_en": "Upper Trapezius Stretch",
+    "titulo": "Estiramiento del Trapecio",
+    "difficulty": "beginner",
+    "youtube_id": "0pkjSBFkA0g",
+    "youtube_start_seconds": 30,
+    "ejecucion_tecnica": "Sedestación con depresión activa del hombro ipsilateral. Inclinación lateral cervical contralateral hasta tensión en la fosa supraclavicular. Mano libre sobre el parietal contralateral para asistir. Mantener 30–45 s.",
+    "fisiologia_basica": "Estira selectivamente el trapecio superior, principal generador de cefaleas tensionales cervicogénicas. La depresión activa del hombro impide el compensatorio de elevación.",
+    "instructions_eli5": [
+      "Siéntate derecho, empuja el hombro derecho hacia abajo — como si quisieras que se aleje de tu oreja",
+      "Inclina la cabeza hacia el lado contrario, como si quisieras tocar el hombro izquierdo con la oreja",
+      "Aguanta 30 segundos sintiendo el estiramiento en el cuello — respira tranquilo y cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_002",
+    "nombre_es": "Estiramiento del Esternocleidomastoideo",
+    "nombre_en": "SCM Stretch",
+    "titulo": "Estiramiento del ECOM",
+    "difficulty": "beginner",
+    "youtube_id": "K-Qb7BbELYg",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Rotación cervical ipsilateral + extensión cervical leve + inclinación contralateral. Componente triple para aislar el ECOM. Mano estabiliza el esternón para aumentar la tensión. 30 s × 2–3 reps.",
+    "fisiologia_basica": "El ECOM es el principal músculo involucrado en torticolis y dolor referido temporal y retroocular. Su estiramiento reduce la compresión del plexo braquial superficial.",
+    "instructions_eli5": [
+      "Gira la cabeza hacia la derecha y mírala ligeramente hacia arriba — como si vieras un pájaro volando",
+      "Con la mano izquierda, empuja suave el cuello hacia la derecha para sentir más estiramiento",
+      "Aguanta 30 segundos y cambia — vas a sentir el estiramiento en la parte frontal del cuello"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_003",
+    "nombre_es": "Estiramiento de Escalenos",
+    "nombre_en": "Scalene Stretch",
+    "titulo": "Estiramiento de Escalenos",
+    "difficulty": "beginner",
+    "youtube_id": "PV7gSEE2ZnE",
+    "youtube_start_seconds": 20,
+    "ejecucion_tecnica": "Depresión de la primera costilla (mano ipsilateral sostiene el borde de la silla), inclinación cervical contralateral con rotación leve. Los tres escalenos se estiran en secuencia según el grado de rotación.",
+    "fisiologia_basica": "Los escalenos comprimidos causan síndrome del desfiladero torácico y parestesias en el brazo. Este estiramiento descomprime el paquete neurovascular braquial.",
+    "instructions_eli5": [
+      "Agarra el borde de la silla con la mano derecha y jálala suave hacia abajo",
+      "Inclina la cabeza hacia la izquierda y gírala un poco — como si quisieras mirar tus costillas izquierdas",
+      "Aguanta 30 segundos — sientes el estiramiento en el cuello yendo hasta el hombro — cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_004",
+    "nombre_es": "Estiramiento del Elevador de la Escápula",
+    "nombre_en": "Levator Scapulae Stretch",
+    "titulo": "Levator Scapulae",
+    "difficulty": "beginner",
+    "youtube_id": "8I0PatTDFtg",
+    "youtube_start_seconds": 45,
+    "ejecucion_tecnica": "Rotación cervical ipsilateral 45°, flexión cervical anterior y lateral. Mano sobre el occipucio para asistir la tracción. Hombro deprimido activamente. ROM objetivo: llevar la nariz hacia la axila.",
+    "fisiologia_basica": "El elevador de la escápula es el segundo músculo más afectado en trabajadores de oficina (después del trapecio superior). Origen en apófisis transversas C1-C4.",
+    "instructions_eli5": [
+      "Gira la cabeza 45° a la derecha y baja la barbilla hacia tu axila derecha",
+      "Pon la mano izquierda en la parte de atrás de la cabeza y aplica una presión suave hacia abajo",
+      "Aguanta 30 segundos — sientes un estiramiento profundo entre el cuello y el hombro — cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_005",
+    "nombre_es": "Flexión Cervical Libre (Chin-to-Chest)",
+    "nombre_en": "Cervical Flexion Stretch",
+    "titulo": "Estiramiento de Flexión Cervical",
+    "difficulty": "beginner",
+    "youtube_id": "dqA3FKMcZq8",
+    "youtube_start_seconds": 40,
+    "ejecucion_tecnica": "Flexión cervical gravitacional asistida con manos entrelazadas sobre el occipucio. Llevar el mentón al pecho. Sin tracción activa de brazos, solo peso de los codos. ROM normal: 80–90°.",
+    "fisiologia_basica": "Estira los extensores cervicales profundos y superficiales. Descomprime los discos intervertebrales cervicales. Contraindicado en mielopatía cervical.",
+    "instructions_eli5": [
+      "Entrelaza los dedos detrás de la cabeza y siéntate relajado",
+      "Deja que el peso de tus codos hale la cabeza hacia abajo suavemente — no jales, solo déjala caer",
+      "Aguanta 20 segundos sintiendo el estiramiento en la nuca — respira y sube despacio"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_006",
+    "nombre_es": "Estiramiento Suboccipital",
+    "nombre_en": "Suboccipital Release",
+    "titulo": "Liberación Suboccipital",
+    "difficulty": "beginner",
+    "youtube_id": "HUNHuuPoU6M",
+    "youtube_start_seconds": 30,
+    "ejecucion_tecnica": "Decúbito supino con los pulgares bilaterales en el borde inferior del occipucio (compresión suboccipital). Leve flexión de la columna cervical alta (C0-C1). Presión sostenida 60–90 s hasta ceder la tensión.",
+    "fisiologia_basica": "Los suboccipitales hipertónicos son la causa principal de cefaleas tensionales. Contienen la mayor densidad de husos musculares del cuerpo. La presión sostenida inhibe el reflejo tónico.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba y pon los pulgares en la base del cráneo — donde termina el hueso y empieza el cuello",
+      "Aplica una presión suave hacia arriba y adentro — como si quisieras levantar ligeramente la cabeza con los pulgares",
+      "Aguanta 60 segundos respirando — vas a sentir que la tensión cede sola, sin hacer nada"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_007",
+    "nombre_es": "Rotación Cervical con Asistencia de Toalla",
+    "nombre_en": "Towel-Assisted Cervical Rotation",
+    "titulo": "Rotación Cervical con Toalla",
+    "difficulty": "beginner",
+    "youtube_id": "PIjEeHyFDCg",
+    "youtube_start_seconds": 15,
+    "ejecucion_tecnica": "Toalla enrollada en la nuca, extremos en cada mano. Rotación cervical con tracción unilateral asistida por la toalla al final del rango. Fuerza de tracción: 2–3 kg. Sin dolor.",
+    "fisiologia_basica": "La tracción asistida con toalla descomprime las facetas articulares ipsilaterales y estira la cápsula articular. Útil en artrosis cervical grado I–II y limitación de rotación postural.",
+    "instructions_eli5": [
+      "Enrolla una toalla y ponla detrás del cuello — agarra un extremo con cada mano",
+      "Gira la cabeza hacia la derecha y jala el extremo izquierdo de la toalla suavemente para ayudar",
+      "Aguanta 15 segundos al final del movimiento — sin dolor — y cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_008",
+    "nombre_es": "Estiramiento Angular de Trapecio Superior con Pared",
+    "nombre_en": "Wall-Assisted Upper Trapezius Stretch",
+    "titulo": "Trapecio Superior con Pared",
+    "difficulty": "beginner",
+    "youtube_id": "lqI-T4UFZJE",
+    "youtube_start_seconds": 10,
+    "ejecucion_tecnica": "Bípedo lateral a la pared, mano ipsilateral apoya en la pared a altura del hombro (depresión pasiva del hombro). Inclinación lateral cervical contralateral máxima. Mayor amplitud que el estiramiento sedente.",
+    "fisiologia_basica": "La pared garantiza una depresión consistente del hombro ipsilateral, eliminando la compensación. Permite alcanzar el rango completo del trapecio superior (C3-C4).",
+    "instructions_eli5": [
+      "Párate junto a la pared y apoya el dorso de la mano derecha en ella a la altura del hombro",
+      "Inclina la cabeza hacia el lado izquierdo — la pared evita que el hombro suba y hace el estiramiento más fuerte",
+      "Aguanta 30 segundos — sientes el estiramiento desde el cuello hasta el hombro — cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_009",
+    "nombre_es": "Movilización Cervical en Decúbito Lateral",
+    "nombre_en": "Side-Lying Cervical Mobilization",
+    "titulo": "Movilización Cervical Lateral",
+    "difficulty": "beginner",
+    "youtube_id": "jQ5objYi_IA",
+    "youtube_start_seconds": 20,
+    "ejecucion_tecnica": "Decúbito lateral con almohada que mantiene el cuello en neutro. Flexión lateral cervical repetida hacia el suelo con el peso de la gravedad. 10 repeticiones lentas. Estiramiento dinámico de escalenos y trapecio superior contralaterales.",
+    "fisiologia_basica": "La posición lateral elimina el componente de carga axial, permitiendo mayor amplitud de movimiento con menos dolor. Útil en pacientes con hernia cervical que limita el movimiento en carga.",
+    "instructions_eli5": [
+      "Acuéstate de lado con una almohada bajo la cabeza para que el cuello quede horizontal",
+      "Baja la cabeza hacia el suelo lentamente — dejándola caer con gravedad, sin forzar",
+      "Sube de regreso y repite 10 veces — es suave, como si el cuello estuviera flotando"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "C_CER_010",
+    "nombre_es": "Estiramiento Angular Complejo Cervical",
+    "nombre_en": "Complex Cervical Angular Stretch",
+    "titulo": "Estiramiento Cervical Complejo",
+    "difficulty": "intermediate",
+    "youtube_id": "wiFNA3sqjCA",
+    "youtube_start_seconds": 25,
+    "ejecucion_tecnica": "Secuencia: flexión + inclinación + rotación contralateral. Movimiento en los 3 planos simultáneamente para maximizar la tensión sobre el trapecio superior y esternocleidomastoideo en una sola posición. 30 s × ambos lados.",
+    "fisiologia_basica": "La combinación de tres planos aísla el músculo diana con mayor precisión que los estiramientos uniplanares. Técnica avanzada post-resolución del dolor agudo.",
+    "instructions_eli5": [
+      "Baja la barbilla ligeramente, inclina la cabeza a la izquierda y gírala un poco hacia la derecha",
+      "Es como si quisieras mirar tu hombro derecho con el ojo izquierdo — un poco raro pero efectivo",
+      "Aguanta 30 segundos sintiendo dónde jala — cambia de lado y repite"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  }
+]

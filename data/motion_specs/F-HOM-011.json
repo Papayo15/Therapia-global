@@ -1,0 +1,106 @@
+{
+  "id": "F-HOM-011",
+  "duracion_s": 5.6,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.3,
+      -1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 0.6,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.8,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 5.6,
+      "p": 0,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "deltoid_middle",
+        "lado": "R"
+      },
+      {
+        "id": "supraspinatus",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "pectoralis_major",
+        "lado": "R"
+      },
+      {
+        "id": "latissimus_dorsi",
+        "lado": "R"
+      },
+      {
+        "id": "teres_major",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "pared_manos",
+      "lateral": "R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Isométrico de abducción contra la pared"
+}

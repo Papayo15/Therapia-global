@@ -1,0 +1,161 @@
+{
+  "id": "F-TOR-005",
+  "duracion_s": 5.4,
+  "base": {
+    "orientacion": "sedente_suelo",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 95,
+      "cadera_flex.R": 95,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 80,
+      "hombro_flex.R": 80,
+      "lumbar_flex": 10
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    }
+  ],
+  "reapoyar": {
+    "grupos": [
+      "pelvis.L",
+      "pelvis.R",
+      "spine05",
+      "spine04"
+    ],
+    "z": 0.006
+  },
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "@pitch": 0,
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "@pitch": 0,
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "@pitch": -38,
+        "lumbar_flex": 25,
+        "toracica_flex": 10
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 3.0,
+      "art": {
+        "@pitch": -38,
+        "lumbar_flex": 25,
+        "toracica_flex": 10
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "@pitch": 0,
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.4,
+      "art": {
+        "@pitch": 0,
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "rectus_abdominis"
+      },
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "internal_oblique"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "erector_spinae_thoracic"
+      },
+      {
+        "id": "trapezius_middle"
+      },
+      {
+        "id": "trapezius_lower"
+      },
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Roll-down / roll-back controlado"
+}

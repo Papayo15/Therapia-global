@@ -1,0 +1,131 @@
+{
+  "id": "F-TOR-015",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "hombro_flex.L": 85,
+      "hombro_flex.R": 85,
+      "hombro_abd_h.L": -40,
+      "hombro_abd_h.R": 40,
+      "mano_cerrar.L": 70,
+      "mano_cerrar.R": 70
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.5
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "toracica_rot": 0,
+        "lumbar_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "toracica_rot": 0,
+        "lumbar_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.8,
+      "art": {
+        "toracica_rot": -40,
+        "lumbar_rot": -10
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "toracica_rot": -40,
+        "lumbar_rot": -10
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "toracica_rot": 0,
+        "lumbar_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "toracica_rot": 0,
+        "lumbar_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "internal_oblique"
+      },
+      {
+        "id": "multifidus"
+      },
+      {
+        "id": "rotatores"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "polea",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.R",
+      "anclaje_rel": [
+        0.9,
+        -0.2,
+        0
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Rotación con polea (cable rotation)"
+}

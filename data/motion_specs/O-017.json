@@ -1,0 +1,216 @@
+{
+  "id": "O-017",
+  "duracion_s": 6.0,
+  "base": {
+    "orientacion": "decubito_lateral_L",
+    "colchoneta": false,
+    "almohada": true,
+    "angulos": {
+      "cadera_flex.L": 40,
+      "rodilla_flex.L": 70,
+      "hombro_flex.L": 90,
+      "codo_flex.L": 70,
+      "hombro_abd.R": -6,
+      "mano_cerrar.R": 15,
+      "cadera_flex.R": 70,
+      "rodilla_flex.R": 90
+    },
+    "asentar": [
+      {
+        "art": "@roll",
+        "grupo": [
+          "shoulder01.L",
+          "upperarm01.L",
+          "clavicle.L"
+        ],
+        "rango": [
+          -15,
+          15
+        ],
+        "reapoyar": true
+      },
+      {
+        "art": "cadera_abd.L",
+        "grupo": [
+          "lowerleg01.L",
+          "foot.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      },
+      {
+        "art": "cadera_abd.R",
+        "grupo": [
+          "foot.R",
+          "toenails",
+          "toe1-1.R",
+          "toe1-2.R",
+          "toe1-3.R",
+          "toe2-1.R",
+          "toe2-2.R",
+          "toe2-3.R",
+          "toe3-1.R",
+          "toe3-2.R",
+          "toe3-3.R",
+          "toe4-1.R",
+          "toe4-2.R",
+          "toe4-3.R",
+          "toe5-1.R",
+          "toe5-2.R",
+          "toe5-3.R"
+        ],
+        "rango": [
+          -50,
+          10
+        ]
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "upperleg01.L",
+      "upperleg02.L",
+      "spine03",
+      "spine02",
+      "shoulder01.L"
+    ],
+    "camilla": true
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "upperleg01.L",
+        "upperleg02.L"
+      ],
+      "tol_cm": 3.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.25,
+      -1,
+      0.9
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {
+        "escapula_elev.R": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.0,
+      "art": {
+        "escapula_elev.R": 10,
+        "escapula_prot.R": 10
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "escapula_elev.R": 2.5,
+        "escapula_prot.R": 2.5
+      },
+      "p": 0.25,
+      "fase": "concentrico"
+    },
+    {
+      "t": 3.0,
+      "art": {
+        "escapula_elev.R": 10,
+        "escapula_prot.R": 10
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 4.0,
+      "art": {
+        "escapula_elev.R": 2.5,
+        "escapula_prot.R": 2.5
+      },
+      "p": 0.25,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "escapula_elev.R": 10,
+        "escapula_prot.R": 10
+      },
+      "p": 1,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.0,
+      "art": {
+        "escapula_elev.R": 0,
+        "escapula_prot.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "elongan": [
+      {
+        "id": "rhomboid_major",
+        "lado": "R"
+      },
+      {
+        "id": "trapezius_middle",
+        "lado": "R"
+      },
+      {
+        "id": "serratus_anterior",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Consultorio: un solo video (camilla + terapeuta).",
+  "terapeuta": {
+    "lado": "y+",
+    "manos": {
+      "R": {
+        "hueso": "shoulder01.R",
+        "a": 0.5,
+        "desde": [
+          0,
+          0.6,
+          1
+        ]
+      },
+      "L": {
+        "hueso": "spine02",
+        "a": 0.5,
+        "desde": [
+          0.2,
+          1,
+          0.6
+        ]
+      }
+    }
+  },
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Movilización escapulotorácica en decúbito lateral"
+}

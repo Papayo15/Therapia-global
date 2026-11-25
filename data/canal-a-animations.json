@@ -1,0 +1,5407 @@
+{
+  "version": "1.0",
+  "canal": "A",
+  "total": 180,
+  "animations": [
+    {
+      "id": "A_EMP_001",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_002",
+      "anim": {
+        "camera_target": "THORAX_ANT",
+        "camera_offset": [
+          0,
+          80,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_003",
+      "anim": {
+        "camera_target": "THORAX_ANT",
+        "camera_offset": [
+          0,
+          80,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_004",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_005",
+      "anim": {
+        "camera_target": "THORAX_ANT",
+        "camera_offset": [
+          0,
+          80,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_006",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_007",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_008",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_009",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -66,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -66,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_010",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_011",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -51,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -51,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_012",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_013",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_014",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_015",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_016",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -51,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -51,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_017",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_018",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_019",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_020",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_021",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_022",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_023",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_024",
+      "anim": {
+        "camera_target": "THORAX_ANT",
+        "camera_offset": [
+          0,
+          80,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -51,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -51,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_025",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_026",
+      "anim": {
+        "camera_target": "THORAX_ANT",
+        "camera_offset": [
+          0,
+          80,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_027",
+      "anim": {
+        "camera_target": "THORAX_ANT",
+        "camera_offset": [
+          0,
+          80,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_028",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_029",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_EMP_030",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -60,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -60,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_031",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_032",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_033",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_034",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_035",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_036",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_037",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_038",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_039",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_040",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_041",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_042",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_043",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_044",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_045",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_046",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_047",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_048",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_049",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_050",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_051",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_052",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_053",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_054",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_055",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_056",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_057",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_058",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_059",
+      "anim": {
+        "camera_target": "ARM_R",
+        "camera_offset": [
+          70,
+          0,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 42.5,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 42.5,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_TRA_060",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": 50,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": 50,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_061",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.68
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_062",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.68
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_063",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_064",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_065",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 0.9
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_066",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -49.5,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -49.5,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_067",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.68
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_068",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_069",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_070",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_071",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.68
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_072",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_073",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_074",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.68
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_075",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 0.9
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_076",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_077",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 0.9
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_078",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 0.9
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_079",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 0.9
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_080",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_081",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.68
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_082",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_083",
+      "anim": {
+        "camera_target": "THORAX_POST",
+        "camera_offset": [
+          0,
+          80,
+          -400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_084",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.68
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_085",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_086",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 0.9
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_087",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_088",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_089",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 1.2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_CAD_090",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 0.9
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_091",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_092",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_093",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_094",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_095",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_096",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -99,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -99,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_097",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_098",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_099",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_100",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_101",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_102",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_103",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_104",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_105",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_106",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -76.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -76.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_107",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_108",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -76.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -76.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_109",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -76.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -76.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_110",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_111",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_112",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_113",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_114",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_115",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -99,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -99,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_116",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -76.5,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -76.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_117",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_118",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 1.88
+          },
+          "hold": {
+            "duration": 0.3
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_119",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 3.5
+          },
+          "hold": {
+            "duration": 0.56
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_ROD_120",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -90,
+            "duration": 2.5
+          },
+          "hold": {
+            "duration": 0.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -90,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_121",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_122",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_123",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 33,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 33,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_124",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_125",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_126",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_127",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_128",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_129",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_130",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_131",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_132",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 25.5,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 25.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_133",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_134",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_135",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_136",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_137",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_138",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_139",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_140",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 25.5,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 25.5,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_141",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_142",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_143",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_144",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2.8
+          },
+          "hold": {
+            "duration": 0.7
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 2.1
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_145",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_146",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_147",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_148",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_149",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 1.5
+          },
+          "hold": {
+            "duration": 0.38
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.13
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_COR_150",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "Z",
+            "from_deg": 0,
+            "to_deg": 30,
+            "duration": 2
+          },
+          "hold": {
+            "duration": 0.5
+          },
+          "concentric": {
+            "axis": "Z",
+            "from_deg": 30,
+            "to_deg": 0,
+            "duration": 1.5
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_151",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_152",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_153",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_154",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_155",
+      "anim": {
+        "camera_target": "CERVICAL",
+        "camera_offset": [
+          0,
+          40,
+          350
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_156",
+      "anim": {
+        "camera_target": "FOREARM_R",
+        "camera_offset": [
+          70,
+          -30,
+          300
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 3
+          },
+          "hold": {
+            "duration": 1
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_157",
+      "anim": {
+        "camera_target": "FOREARM_R",
+        "camera_offset": [
+          70,
+          -30,
+          300
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 3
+          },
+          "hold": {
+            "duration": 1
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_158",
+      "anim": {
+        "camera_target": "FOREARM_R",
+        "camera_offset": [
+          70,
+          -30,
+          300
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_159",
+      "anim": {
+        "camera_target": "FOREARM_R",
+        "camera_offset": [
+          70,
+          -30,
+          300
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 3
+          },
+          "hold": {
+            "duration": 1
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_160",
+      "anim": {
+        "camera_target": "FOREARM_R",
+        "camera_offset": [
+          70,
+          -30,
+          300
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_161",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_162",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_163",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_164",
+      "anim": {
+        "camera_target": "LOWER_LEG",
+        "camera_offset": [
+          0,
+          -200,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_165",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_166",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_167",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_168",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_169",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_170",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_171",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_172",
+      "anim": {
+        "camera_target": "SHOULDER_L",
+        "camera_offset": [
+          -80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_173",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_174",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_175",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 3
+          },
+          "hold": {
+            "duration": 1
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_176",
+      "anim": {
+        "camera_target": "KNEE",
+        "camera_offset": [
+          0,
+          -150,
+          400
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_177",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_178",
+      "anim": {
+        "camera_target": "LUMBAR_CORE",
+        "camera_offset": [
+          0,
+          0,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_179",
+      "anim": {
+        "camera_target": "PELVIS_HIP",
+        "camera_offset": [
+          0,
+          -40,
+          450
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -45,
+            "duration": 4.2
+          },
+          "hold": {
+            "duration": 1.4
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -45,
+            "to_deg": 0,
+            "duration": 2.8
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    },
+    {
+      "id": "A_MOV_180",
+      "anim": {
+        "camera_target": "SHOULDER_R",
+        "camera_offset": [
+          80,
+          30,
+          380
+        ],
+        "phases": {
+          "eccentric": {
+            "axis": "X",
+            "from_deg": 0,
+            "to_deg": -38.3,
+            "duration": 3
+          },
+          "hold": {
+            "duration": 1
+          },
+          "concentric": {
+            "axis": "X",
+            "from_deg": -38.3,
+            "to_deg": 0,
+            "duration": 2
+          }
+        },
+        "idle_amplitude": 0.015,
+        "highlight_on_phase": "concentric"
+      }
+    }
+  ]
+}

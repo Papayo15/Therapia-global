@@ -1,0 +1,172 @@
+[
+  {
+    "id": "A_LUM_001",
+    "nombre_es": "Puente de Glúteos",
+    "nombre_en": "Glute Bridge",
+    "titulo": "Puente de Glúteos",
+    "difficulty": "beginner",
+    "youtube_id": "wiFNA3sqjCA",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Decúbito supino, rodillas flexionadas 90°, pies planos. Extensión de cadera bilateral activando glúteo mayor y bisinales. Pelvis neutra en la cima. Evitar hiperextensión lumbar. 3 s concéntrico, 1 s isométrico, 3 s excéntrico.",
+    "fisiologia_basica": "Activa el glúteo mayor (principal estabilizador lumbo-pélvico) y los isquiotibiales. Estabiliza el núcleo de carga L4-L5 y S1-S2. Primera línea en lumbalgias mecánicas y disfunción del suelo pélvico.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba con las rodillas dobladas y los pies planos en el suelo",
+      "Empuja los talones contra el suelo y sube las nalgas hasta que tu cuerpo forme una línea recta — como un puente",
+      "Aguanta 3 segundos arriba, baja despacio y repite — aprieta las nalgas en la parte de arriba"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_002",
+    "nombre_es": "Pájaro-Perro (Bird Dog)",
+    "nombre_en": "Bird Dog",
+    "titulo": "Ejercicio Pájaro-Perro",
+    "difficulty": "beginner",
+    "youtube_id": "wiFNA3sqjCA",
+    "youtube_start_seconds": 45,
+    "ejecucion_tecnica": "Cuadrupedia con columna en neutro. Extensión simultánea de brazo contralateral y pierna contralateral. Mantener pelvis horizontal sin rotación. ROM: brazo y pierna paralelos al suelo. 5 s isométrico por repetición.",
+    "fisiologia_basica": "Activa simultáneamente el multífido lumbar, el transverso abdominal y el glúteo mayor. La diagonal contralateral es el patrón motor más estabilizador de la columna. Indicado en lumbalgia crónica y rehabilitación post-discal.",
+    "instructions_eli5": [
+      "Ponte en cuatro patas — manos bajo los hombros, rodillas bajo las caderas",
+      "Estira el brazo derecho hacia adelante y la pierna izquierda hacia atrás al mismo tiempo — como Superman volando",
+      "Aguanta 5 segundos sin que la espalda se tuerza, baja y cambia de lado"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_003",
+    "nombre_es": "Bicho Muerto (Dead Bug)",
+    "nombre_en": "Dead Bug",
+    "titulo": "Bicho Muerto",
+    "difficulty": "intermediate",
+    "youtube_id": "4XLEnwUr1d8",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Decúbito supino, caderas y rodillas a 90°, brazos extendidos verticales. Extensión simultánea de brazo contralateral y pierna contralateral manteniendo la zona lumbar pegada al suelo (imprint). Exhalar al descender.",
+    "fisiologia_basica": "Activa el transverso abdominal y el recto abdominal manteniendo la columna en posición neutra bajo carga. Más efectivo que el crunch clásico para estabilización sin carga discal.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba y levanta los brazos hacia el techo y las piernas dobladas en el aire — como un bicho al revés",
+      "Baja el brazo derecho y la pierna izquierda lentamente sin que la espalda se separe del suelo",
+      "Regresa al inicio y cambia de lado — si la espalda se arquea, no bajes tanto"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_004",
+    "nombre_es": "Plancha Abdominal",
+    "nombre_en": "Plank",
+    "titulo": "Plancha",
+    "difficulty": "beginner",
+    "youtube_id": "pSHjTRCQxIw",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Posición prona en antebrazos y puntas de pies. Columna alineada (cabeza-cadera-talones). Activación de transverso abdominal, glúteos y cuádriceps. Respiración continua. Progresión: 20 s → 60 s → 90 s.",
+    "fisiologia_basica": "Activa todos los músculos del core simultáneamente con mínima compresión discal intervertebral. Produce mayor activación del transverso abdominal que los ejercicios clásicos de abdomen.",
+    "instructions_eli5": [
+      "Apóyate en los antebrazos y las puntas de los pies — como si fueras a hacer una lagartija pero descansando",
+      "Mantén el cuerpo recto como una tabla — sin dejar caer la cadera ni subirla",
+      "Aguanta el tiempo que puedas sin que nada se mueva — respira normal"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_005",
+    "nombre_es": "Retroversión Pélvica (Pelvic Tilt)",
+    "nombre_en": "Pelvic Tilt",
+    "titulo": "Retroversión Pélvica",
+    "difficulty": "beginner",
+    "youtube_id": "lvot9L_Fepw",
+    "youtube_start_seconds": 0,
+    "ejecucion_tecnica": "Decúbito supino. Aplanar la curva lumbar contra el suelo mediante contracción de abdominales y glúteos. Sin levantar la cabera. ROM: pequeño movimiento pélvico. 5 s isométrico × 15 reps.",
+    "fisiologia_basica": "Activa el transverso abdominal y reduce la hiperlordosis lumbar. Primer ejercicio indicado en lumbalgia aguda por su bajo impacto y alta efectividad para el reclutamiento muscular profundo.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba con rodillas dobladas — sientes la curva de la espalda baja levantada",
+      "Aprieta el abdomen y las nalgas suavemente para que la espalda baja se pegue al suelo",
+      "Aguanta 5 segundos, suelta y repite — es un movimiento pequeño pero muy importante"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_006",
+    "nombre_es": "Extensión Lumbar en Prono (McKenzie Press-Up)",
+    "nombre_en": "McKenzie Press-Up",
+    "titulo": "McKenzie Press-Up",
+    "difficulty": "beginner",
+    "youtube_id": "KuDX2fKzPjg",
+    "youtube_start_seconds": 40,
+    "ejecucion_tecnica": "Decúbito prono, manos a nivel de los hombros. Extensión de codos progresiva manteniendo la pelvis en contacto con la camilla. ROM: hasta el límite del dolor o 30° de extensión lumbar. 10 reps × 3 series.",
+    "fisiologia_basica": "Centraliza el material discal en hernias posterolaterales L4-L5 y L5-S1. El mecanismo de centrización de McKenzie reduce la radiculopatía lumbar. Primera línea para dolor de espalda con irradiación.",
+    "instructions_eli5": [
+      "Acuéstate boca abajo y pon las manos a los lados del pecho — como si fueras a hacer una lagartija",
+      "Empuja con los brazos para levantar el pecho pero deja que la cadera se quede en el suelo",
+      "Sube hasta donde sea cómodo, aguanta 2 segundos y baja — siente cómo la espalda se abre"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_007",
+    "nombre_es": "Sentadilla con Pared (Wall Squat)",
+    "nombre_en": "Wall Squat",
+    "titulo": "Sentadilla en Pared",
+    "difficulty": "beginner",
+    "youtube_id": "pSHjTRCQxIw",
+    "youtube_start_seconds": 30,
+    "ejecucion_tecnica": "Espalda apoyada en la pared, pies a 45 cm. Deslizar hacia abajo hasta rodillas a 90° manteniendo espalda plana. Isométrico 30–60 s. Activa cuádriceps y glúteos sin carga axial lumbar.",
+    "fisiologia_basica": "Activa cuádriceps y glúteos con compresión lumbar mínima (posición horizontal). Útil en pacientes con lumbalgia que no toleran la carga vertical pero requieren fortalecimiento de piernas.",
+    "instructions_eli5": [
+      "Párate con la espalda pegada a la pared y los pies a medio metro de distancia",
+      "Desliza la espalda hacia abajo hasta que las rodillas queden dobladas — como si estuvieras sentado en una silla invisible",
+      "Aguanta el tiempo que puedas — sientes el calor en los muslos — sube despacio"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_008",
+    "nombre_es": "Curl Abdominal Corto",
+    "nombre_en": "Short Crunch",
+    "titulo": "Curl Abdominal",
+    "difficulty": "beginner",
+    "youtube_id": "lvot9L_Fepw",
+    "youtube_start_seconds": 30,
+    "ejecucion_tecnica": "Decúbito supino, rodillas flexionadas. Flexión de tronco hasta despegar apenas los hombros del suelo (30°). Cuello en posición neutra. Exhalación en la concéntrica. Retorno lento. Sin tirar del cuello.",
+    "fisiologia_basica": "Los primeros 30° de flexión de tronco activan el recto abdominal y el oblicuo externo con mínima compresión discal. Más allá de 30°, el psoas toma control y aumenta la carga lumbar.",
+    "instructions_eli5": [
+      "Acuéstate boca arriba con rodillas dobladas y los brazos cruzados en el pecho",
+      "Levanta los hombros del suelo apenas lo suficiente para ver tus rodillas — no te levantes todo",
+      "Baja despacio sin que la cabeza caiga — exhala al subir, inhala al bajar"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_009",
+    "nombre_es": "Puente de Glúteos Unilateral",
+    "nombre_en": "Single-Leg Glute Bridge",
+    "titulo": "Puente Unilateral",
+    "difficulty": "intermediate",
+    "youtube_id": "4XLEnwUr1d8",
+    "youtube_start_seconds": 30,
+    "ejecucion_tecnica": "Como el puente bilateral pero con una pierna extendida. La pierna apoyada realiza toda la extensión de cadera. Exige mayor activación del glúteo mayor ipsilateral y mayor estabilización del core contralateral. Progresión del puente básico.",
+    "fisiologia_basica": "Produce 40% más activación del glúteo mayor que el bilateral. Detecta y corrige asimetrías glúteas, factor de riesgo para lumbalgia recurrente y lesiones de isquiotibiales.",
+    "instructions_eli5": [
+      "Haz el puente normal pero levanta una pierna y extiéndela — solo un pie en el suelo",
+      "Sube las nalgas con esa sola pierna — sientes que ese glúteo trabaja el doble",
+      "Aguanta 3 segundos arriba, baja y repite — luego cambia de pierna"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  },
+  {
+    "id": "A_LUM_010",
+    "nombre_es": "Superman Prono",
+    "nombre_en": "Prone Superman",
+    "titulo": "Superman",
+    "difficulty": "beginner",
+    "youtube_id": "KuDX2fKzPjg",
+    "youtube_start_seconds": 60,
+    "ejecucion_tecnica": "Decúbito prono, brazos extendidos. Extensión simultánea de brazos y piernas contra la gravedad. Mantener cabeza neutra (sin hiperextensión cervical). Isométrico 3–5 s. Activación de toda la cadena posterior.",
+    "fisiologia_basica": "Activa la musculatura extensora completa (multífidos, erectores, glúteos, isquiotibiales). Fortalece la cadena posterior para contrarrestar la flexión sostenida del trabajo de escritorio.",
+    "instructions_eli5": [
+      "Acuéstate boca abajo con los brazos estirados hacia adelante — como si volaras",
+      "Levanta los brazos, el pecho y las piernas del suelo al mismo tiempo — como Superman",
+      "Aguanta 3 segundos mirando al suelo (sin subir el cuello), baja y repite"
+    ],
+    "equipo_alternativa": ["peso corporal"]
+  }
+]

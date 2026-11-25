@@ -1,0 +1,141 @@
+{
+  "id": "F-COD-009",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 90,
+      "codo_flex.R": 90,
+      "hombro_re.R": 80,
+      "mano_cerrar.R": 35
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.15,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "codo_flex.R": -115
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.2,
+      "art": {
+        "codo_flex.R": -115
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.8,
+      "art": {
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "triceps_brachii",
+        "lado": "R"
+      },
+      {
+        "id": "anconeus",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "biceps_brachii",
+        "lado": "R"
+      },
+      {
+        "id": "brachialis",
+        "lado": "R"
+      },
+      {
+        "id": "brachioradialis",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "mancuerna",
+      "uso": "en_mano",
+      "manos": [
+        "R"
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión por encima de la cabeza con mancuerna"
+}

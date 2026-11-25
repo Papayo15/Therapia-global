@@ -1,0 +1,165 @@
+{
+  "id": "F-ROD-003",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R",
+      "desde": 0,
+      "hasta": 0.4
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.2,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "rodilla_flex.R": 0,
+        "cadera_flex.R": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "rodilla_flex.R": 0,
+        "cadera_flex.R": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "rodilla_flex.R": 90,
+        "cadera_flex.R": 8,
+        "tobillo_dorsi.R": 12
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "rodilla_flex.R": 90,
+        "cadera_flex.R": 8,
+        "tobillo_dorsi.R": 12
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "rodilla_flex.R": 0,
+        "cadera_flex.R": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "rodilla_flex.R": 0,
+        "cadera_flex.R": 0,
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "biceps_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "semitendinosus",
+        "lado": "R"
+      },
+      {
+        "id": "semimembranosus",
+        "lado": "R"
+      },
+      {
+        "id": "gastrocnemius",
+        "lado": "R"
+      },
+      {
+        "id": "popliteus",
+        "lado": "R"
+      },
+      {
+        "id": "gracilis",
+        "lado": "R"
+      },
+      {
+        "id": "sartorius",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "rectus_femoris",
+        "lado": "R"
+      },
+      {
+        "id": "vastus_medialis",
+        "lado": "R"
+      },
+      {
+        "id": "vastus_lateralis",
+        "lado": "R"
+      },
+      {
+        "id": "vastus_intermedius",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerleg01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "tobillera",
+      "uso": "tobillera",
+      "lado": "R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Curl de pie con banda o tobillera"
+}

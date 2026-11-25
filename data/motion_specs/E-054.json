@@ -1,0 +1,162 @@
+{
+  "id": "E-054",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "rodillas",
+    "colchoneta": true,
+    "angulos": {
+      "rodilla_flex.R": 150,
+      "tobillo_dorsi.R": -40,
+      "cadera_flex.L": 90,
+      "rodilla_flex.L": 90
+    },
+    "suelo": [
+      "lowerleg01.R"
+    ],
+    "asentar": [
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          -25,
+          25
+        ]
+      }
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "lowerleg01.R"
+      ],
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "rom_pasivo": {
+    "rodilla_flex+": 160
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "lumbar_flex": 6
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.05,
+        -0.015
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "lumbar_flex": 6
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.05,
+        -0.015
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "rectus_femoris",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "pared_manos",
+      "detras": true
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Mismo video para gym y casa (pared o sofá).",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Couch stretch (rodilla en la pared)"
+}

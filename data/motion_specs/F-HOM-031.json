@@ -1,0 +1,139 @@
+{
+  "id": "F-HOM-031",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 90,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50,
+      "hombro_re.R": 0,
+      "antebrazo_prono.R": -60
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.5,
+      -1,
+      0.8
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "hombro_re.R": 75
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "hombro_re.R": 75
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.1,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "deltoid_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "infraspinatus",
+        "lado": "R"
+      },
+      {
+        "id": "trapezius_middle",
+        "lado": "R"
+      },
+      {
+        "id": "rhomboid_major",
+        "lado": "R"
+      },
+      {
+        "id": "rhomboid_minor",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "pectoralis_major",
+        "lado": "R"
+      },
+      {
+        "id": "pectoralis_minor",
+        "lado": "R"
+      },
+      {
+        "id": "deltoid_anterior",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Abducción horizontal activa en sedente"
+}

@@ -1,0 +1,318 @@
+OK   E-001
+OK   E-002
+OK   E-003
+OK   E-004
+OK   E-005
+OK   E-006
+OK   E-007
+OK   E-008
+OK   E-009
+OK   E-010
+OK   E-011
+OK   E-012
+OK   E-013
+OK   E-014
+OK   E-015
+OK   E-016
+OK   E-017
+OK   E-018
+OK   E-019
+OK   E-020
+OK   E-021
+MAL  E-022  {"lowerleg01.L+lowerleg02.L": {"error_max_cm": 9.12, "ok": false}, "lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+met
+MAL  E-023  {"lowerleg01.L+lowerleg02.L": {"error_max_cm": 9.12, "ok": false}, "lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+met
+OK   E-024
+OK   E-025
+OK   E-026
+OK   E-027
+OK   E-028
+OK   E-029
+OK   E-030
+OK   E-031
+OK   E-032
+OK   E-033
+OK   E-034
+OK   E-035
+MAL  E-036  {"lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+metacarpal3.L+metacarpal4.L+lowerarm02.R+wrist.R+finger1-1.R+finger1-
+OK   E-037
+OK   E-038
+OK   E-040
+MAL  E-041  {"lowerleg01.L+lowerleg02.L": {"error_max_cm": 9.12, "ok": false}, "lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+met
+MAL  E-042  {"lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+metacarpal3.L+metacarpal4.L+lowerarm02.R+wrist.R+finger1-1.R+finger1-
+MAL  E-043  {"penetracion_suelo": {"z_min_cm": -13.14, "ok": false, "grupo": "finger2-3.L", "t": 1.92}}
+OK   E-044
+MAL  E-046  {"lowerarm01.L+lowerarm02.L": {"error_max_cm": 5.07, "ok": false}}
+MAL  E-047  {"penetracion_suelo": {"z_min_cm": -7.03, "ok": false, "grupo": "finger4-3.R", "t": 1.92}}
+OK   E-048
+OK   E-049
+OK   E-050
+OK   E-051
+OK   E-052
+OK   E-053
+OK   E-055
+OK   E-056
+OK   E-059
+OK   E-061
+OK   E-062
+OK   E-063
+OK   E-064
+OK   E-065
+OK   E-066
+OK   E-067
+OK   E-068
+OK   E-069
+OK   E-070
+MAL  E-071  {"foot.R": {"error_max_cm": 14.08, "ok": false}}
+OK   E-072
+OK   E-073
+MAL  E-074  {"foot.R": {"error_max_cm": 16.18, "ok": false}}
+OK   E-075
+OK   E-076
+MAL  E-077  {"lowerleg01.L+lowerleg02.L": {"error_max_cm": 20.26, "ok": false}, "penetracion_suelo": {"z_min_cm": -16.65, "ok": false, "grupo": "Delete.female_sportsuit01", "t": 1.92}}
+OK   E-078
+OK   E-079
+OK   E-080
+OK   E-081
+OK   F-ANT-001
+OK   F-ANT-002
+OK   F-ANT-003
+OK   F-ANT-004
+OK   F-ANT-005
+OK   F-ANT-006
+OK   F-ANT-007
+OK   F-ANT-008
+OK   F-ANT-009
+OK   F-ANT-010
+OK   F-ATM-001
+OK   F-ATM-002
+OK   F-ATM-003
+OK   F-ATM-004
+OK   F-ATM-005
+OK   F-ATM-006
+OK   F-ATM-007
+OK   F-ATM-008
+OK   F-ATM-009
+OK   F-CAD-001
+OK   F-CAD-002
+OK   F-CAD-003
+OK   F-CAD-004
+OK   F-CAD-005
+OK   F-CAD-006
+OK   F-CAD-007
+OK   F-CAD-008
+OK   F-CAD-009
+OK   F-CAD-010
+OK   F-CAD-011
+OK   F-CAD-012
+OK   F-CAD-013
+OK   F-CAD-015
+OK   F-CAD-016
+OK   F-CAD-017
+OK   F-CAD-018
+OK   F-CAD-021
+OK   F-CAD-022
+OK   F-CAD-023
+OK   F-CAD-026
+OK   F-CAD-027
+OK   F-CAD-028
+OK   F-CAD-029
+OK   F-CER-001
+OK   F-CER-002
+OK   F-CER-003
+MAL  F-CER-004  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 7.4}, "ok": false}}
+OK   F-CER-005
+OK   F-CER-006
+OK   F-CER-007
+OK   F-CER-008
+MAL  F-CER-009  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 8.3}, "ok": false}}
+OK   F-CER-010
+OK   F-CER-011
+OK   F-CER-012
+OK   F-CER-013
+MAL  F-CER-014  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 8.5}, "ok": false}}
+OK   F-CER-015
+OK   F-CER-016
+OK   F-CER-017
+OK   F-CER-018
+MAL  F-CER-019  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 2.6}, "ok": false}}
+OK   F-CER-020
+OK   F-COD-001
+OK   F-COD-002
+OK   F-COD-003
+OK   F-COD-004
+OK   F-COD-005
+OK   F-COD-006
+OK   F-COD-007
+MAL  F-COD-008  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 1.1}, "ok": false}}
+OK   F-COD-009
+OK   F-ESC-001
+OK   F-ESC-002
+OK   F-ESC-003
+OK   F-ESC-004
+OK   F-ESC-006
+OK   F-ESC-007
+OK   F-ESC-008
+OK   F-ESC-010
+OK   F-ESC-011
+OK   F-ESC-012
+OK   F-ESC-013
+MAL  F-ESC-014  {"lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+metacarpal3.L+metacarpal4.L+lowerarm02.R+wrist.R+finger1-1.R+finger1-
+MAL  F-ESC-015  {"lowerarm01.L+lowerarm01.R+lowerarm02.L+lowerarm02.R+lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+metacarpal3.L+met
+OK   F-ESC-016
+OK   F-ESC-017
+OK   F-ESC-018
+OK   F-ESC-019
+OK   F-ESC-020
+OK   F-ESC-021
+OK   F-ESC-022
+OK   F-ESC-023
+OK   F-ESC-024
+OK   F-ESC-025
+OK   F-HOM-001
+OK   F-HOM-002
+OK   F-HOM-003
+OK   F-HOM-004
+OK   F-HOM-005
+OK   F-HOM-006
+OK   F-HOM-007
+OK   F-HOM-008
+OK   F-HOM-009
+OK   F-HOM-010
+OK   F-HOM-011
+OK   F-HOM-012
+MAL  F-HOM-013  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 3.1}, "ok": false}}
+OK   F-HOM-014
+OK   F-HOM-015
+OK   F-HOM-016
+MAL  F-HOM-017  {"lowerarm02.R+wrist.R+finger1-1.R+finger1-2.R+finger1-3.R+finger2-1.R+finger2-2.R+finger2-3.R+finger3-1.R+finger3-2.R+finger3-3.R+finger4-1.R+finger4-2.R+finger4-3.R+finger5-1.R+finger5-2.R+finger5-3.R+metacarpal1.R+metacarpal2.R+metacarpal3.R+metacarpal4.R": {"error_max_cm": 45.8, "ok": false}, "p
+OK   F-HOM-018
+MAL  F-HOM-019  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 2.1}, "ok": false}}
+OK   F-HOM-020
+OK   F-HOM-021
+OK   F-HOM-022
+OK   F-HOM-023
+OK   F-HOM-024
+OK   F-HOM-026
+OK   F-HOM-027
+OK   F-HOM-028
+OK   F-HOM-029
+OK   F-HOM-031
+OK   F-HOM-032
+OK   F-HOM-033
+OK   F-HOM-034
+OK   F-HOM-035
+OK   F-HOM-036
+OK   F-HOM-037
+OK   F-HOM-038
+OK   F-HOM-039
+MAL  F-HOM-040  {"lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+metacarpal3.L+metacarpal4.L+lowerarm02.R+wrist.R+finger1-1.R+finger1-
+OK   F-LUM-001
+OK   F-LUM-002
+OK   F-LUM-003
+OK   F-LUM-004
+OK   F-LUM-005
+OK   F-LUM-006
+MAL  F-LUM-007  {"lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+metacarpal3.L+metacarpal4.L+lowerarm02.R+wrist.R+finger1-1.R+finger1-
+OK   F-LUM-008
+OK   F-LUM-009
+OK   F-LUM-010
+OK   F-LUM-011
+MAL  F-LUM-012  {"penetracion_suelo": {"z_min_cm": -2.03, "ok": false, "grupo": "toe5-3.L", "t": 0.0}}
+OK   F-LUM-013
+MAL  F-LUM-016  {"head": {"error_max_cm": 1.77, "ok": false}, "spine01": {"error_max_cm": 3.57, "ok": false}, "lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+meta
+OK   F-LUM-017
+OK   F-LUM-018
+OK   F-LUM-019
+OK   F-MAN-001
+OK   F-MAN-002
+OK   F-MAN-003
+OK   F-MAN-004
+OK   F-MAN-005
+OK   F-MAN-006
+OK   F-MAN-007
+OK   F-MAN-008
+OK   F-MAN-009
+OK   F-MAN-011
+OK   F-MAN-012
+OK   F-MAN-013
+OK   F-MAN-014
+OK   F-MAN-015
+OK   F-MAN-016
+OK   F-MAN-017
+OK   F-MAN-018
+OK   F-MAN-019
+OK   F-MAN-020
+OK   F-MAN-021
+OK   F-MAN-022
+OK   F-MAN-023
+OK   F-MAN-024
+OK   F-MAN-025
+OK   F-MUN-001
+OK   F-MUN-002
+OK   F-MUN-003
+OK   F-MUN-004
+OK   F-MUN-005
+OK   F-MUN-006
+OK   F-MUN-007
+OK   F-MUN-008
+OK   F-MUN-009
+OK   F-MUN-010
+OK   F-MUN-011
+OK   F-MUN-012
+OK   F-MUN-013
+MAL  F-MUN-014  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 1.5}, "ok": false}}
+OK   F-MUN-015
+OK   F-MUN-016
+OK   F-MUN-017
+OK   F-MUN-018
+MAL  F-MUN-019  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 1.3}, "ok": false}}
+OK   F-MUN-020
+OK   F-PIE-001
+OK   F-PIE-002
+OK   F-PIE-003
+OK   F-PIE-004
+OK   F-PIE-005
+OK   F-PIE-006
+OK   F-PIE-007
+OK   F-PIE-008
+OK   F-PIE-010
+OK   F-ROD-001
+OK   F-ROD-002
+OK   F-ROD-003
+OK   F-ROD-004
+OK   F-ROD-005
+OK   F-ROD-006
+OK   F-ROD-007
+OK   F-ROD-008
+OK   F-ROD-009
+OK   F-TOB-001
+OK   F-TOB-002
+OK   F-TOB-003
+OK   F-TOB-005
+OK   F-TOB-006
+OK   F-TOB-007
+OK   F-TOB-008
+OK   F-TOB-009
+OK   F-TOB-011
+OK   F-TOB-012
+OK   F-TOB-013
+OK   F-TOB-014
+OK   F-TOB-015
+OK   F-TOB-016
+OK   F-TOB-017
+OK   F-TOB-018
+MAL  F-TOR-001  {"lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+metacarpal3.L+metacarpal4.L+lowerarm02.R+wrist.R+finger1-1.R+finger1-
+OK   F-TOR-002
+OK   F-TOR-003
+OK   F-TOR-004
+OK   F-TOR-005
+OK   F-TOR-006
+OK   F-TOR-007
+MAL  F-TOR-008  {"penetracion_suelo": {"z_min_cm": -8.1, "ok": false, "grupo": "finger4-3.R", "t": 1.92}}
+MAL  F-TOR-009  {"penetracion_suelo": {"z_min_cm": -25.16, "ok": false, "grupo": "finger3-3.R", "t": 0.0}}
+OK   F-TOR-011
+MAL  F-TOR-012  {"lowerarm02.L+wrist.L+finger1-1.L+finger1-2.L+finger1-3.L+finger2-1.L+finger2-2.L+finger2-3.L+finger3-1.L+finger3-2.L+finger3-3.L+finger4-1.L+finger4-2.L+finger4-3.L+finger5-1.L+finger5-2.L+finger5-3.L+metacarpal1.L+metacarpal2.L+metacarpal3.L+metacarpal4.L+lowerarm02.R+wrist.R+finger1-1.R+finger1-
+OK   F-TOR-013
+MAL  F-TOR-014  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 1.3}, "ok": false}}
+MAL  F-TOR-015  {"props_atraviesan_cuerpo": {"max_cm": {"Banda": 1.3}, "ok": false}}
+284/317 válidas

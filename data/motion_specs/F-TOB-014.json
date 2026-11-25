@@ -1,0 +1,219 @@
+{
+  "id": "F-TOB-014",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "cadera_abd.L": -1,
+      "cadera_abd.R": -1
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "foot.L",
+        "toenails",
+        "toe1-1.L",
+        "toe1-2.L",
+        "toe1-3.L",
+        "toe2-1.L",
+        "toe2-2.L",
+        "toe2-3.L",
+        "toe3-1.L",
+        "toe3-2.L",
+        "toe3-3.L",
+        "toe4-1.L",
+        "toe4-2.L",
+        "toe4-3.L",
+        "toe5-1.L",
+        "toe5-2.L",
+        "toe5-3.L"
+      ]
+    },
+    {
+      "grupo": [
+        "foot.R",
+        "toenails",
+        "toe1-1.R",
+        "toe1-2.R",
+        "toe1-3.R",
+        "toe2-1.R",
+        "toe2-2.R",
+        "toe2-3.R",
+        "toe3-1.R",
+        "toe3-2.R",
+        "toe3-3.R",
+        "toe4-1.R",
+        "toe4-2.R",
+        "toe4-3.R",
+        "toe5-1.R",
+        "toe5-2.R",
+        "toe5-3.R"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.4,
+      1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "reapoyar": {
+    "grupos": [
+      "foot.L",
+      "toenails",
+      "toe1-1.L",
+      "toe1-2.L",
+      "toe1-3.L",
+      "toe2-1.L",
+      "toe2-2.L",
+      "toe2-3.L",
+      "toe3-1.L",
+      "toe3-2.L",
+      "toe3-3.L",
+      "toe4-1.L",
+      "toe4-2.L",
+      "toe4-3.L",
+      "toe5-1.L",
+      "toe5-2.L",
+      "toe5-3.L",
+      "foot.R",
+      "toenails",
+      "toe1-1.R",
+      "toe1-2.R",
+      "toe1-3.R",
+      "toe2-1.R",
+      "toe2-2.R",
+      "toe2-3.R",
+      "toe3-1.R",
+      "toe3-2.R",
+      "toe3-3.R",
+      "toe4-1.R",
+      "toe4-2.R",
+      "toe4-3.R",
+      "toe5-1.R",
+      "toe5-2.R",
+      "toe5-3.R"
+    ],
+    "z": 0.0
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "dedos_flex.L": 0,
+        "dedos_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "dedos_flex.L": 0,
+        "dedos_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.5,
+      "art": {
+        "tobillo_dorsi.L": -30,
+        "tobillo_dorsi.R": -30,
+        "dedos_flex.L": -28,
+        "dedos_flex.R": -28
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "tobillo_dorsi.L": -30,
+        "tobillo_dorsi.R": -30,
+        "dedos_flex.L": -28,
+        "dedos_flex.R": -28
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.1,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "dedos_flex.L": 0,
+        "dedos_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "tobillo_dorsi.L": 0,
+        "tobillo_dorsi.R": 0,
+        "dedos_flex.L": 0,
+        "dedos_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "tibialis_posterior"
+      },
+      {
+        "id": "tibialis_anterior"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "fibularis_longus"
+      },
+      {
+        "id": "fibularis_brevis"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.L"
+    },
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "pelota_pequena",
+      "uso": "pelota_rodillas",
+      "hueso": "lowerleg02",
+      "t": 1.0,
+      "r": 0.033
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Elevación de talones con pelota entre los talones"
+}

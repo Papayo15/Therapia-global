@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   },
   description: "The global standard for physical therapists, osteopaths and health students.",
   metadataBase: new URL("https://therapia.global"),
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Therapia Global",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,0 +1,119 @@
+{
+  "id": "F-LUM-017",
+  "duracion_s": 6.1,
+  "base": {
+    "orientacion": "rodillas",
+    "colchoneta": true,
+    "angulos": {
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "tobillo_dorsi.L": -40,
+      "tobillo_dorsi.R": -40,
+      "hombro_flex.L": 90,
+      "hombro_flex.R": 90,
+      "hombro_abd_h.L": -20,
+      "hombro_abd_h.R": 20,
+      "mano_cerrar.L": 70,
+      "mano_cerrar.R": 70
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "lowerleg02.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerleg01.R",
+        "lowerleg02.R"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 0.6,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.7,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 5.3,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 6.1,
+      "p": 0,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "internal_oblique"
+      },
+      {
+        "id": "multifidus"
+      },
+      {
+        "id": "transversus_abdominis"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.R",
+      "anclaje_rel": [
+        0.9,
+        0.3,
+        0
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Pallof press isométrico de rodillas"
+}

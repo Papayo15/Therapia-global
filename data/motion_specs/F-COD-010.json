@@ -1,0 +1,170 @@
+{
+  "id": "F-COD-010",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 8,
+      "hombro_abd.R": 8,
+      "cadera_flex.L": 80,
+      "cadera_flex.R": 80,
+      "rodilla_flex.L": 85,
+      "rodilla_flex.R": 85,
+      "hombro_flex.L": -35,
+      "hombro_flex.R": -35,
+      "muneca_ext.L": 70,
+      "muneca_ext.R": 70,
+      "antebrazo_prono.L": 10,
+      "antebrazo_prono.R": 10
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    },
+    {
+      "cadena": "brazo.L",
+      "orientacion_fija": true
+    },
+    {
+      "cadena": "brazo.R",
+      "orientacion_fija": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.35,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "props": [
+    {
+      "tipo": "banco",
+      "uso": "superficie_manos",
+      "dy": 0.22
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 1.8,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        0.03,
+        -0.16
+      ]
+    },
+    {
+      "t": 2.3,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0.03,
+        -0.16
+      ]
+    },
+    {
+      "t": 3.9,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 5.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "triceps_brachii"
+      },
+      {
+        "id": "anconeus"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "biceps_brachii"
+      },
+      {
+        "id": "brachialis"
+      },
+      {
+        "id": "brachioradialis"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerarm01.L"
+    },
+    {
+      "hueso": "lowerarm01.R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Fondos en banco (bench dips)"
+}

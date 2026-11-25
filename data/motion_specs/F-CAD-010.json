@@ -1,0 +1,174 @@
+{
+  "id": "F-CAD-010",
+  "duracion_s": 5.2,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "rodilla_flex.L": 12,
+      "mano_cerrar.L": 70,
+      "mano_cerrar.R": 70
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R",
+      "desde": 0,
+      "hasta": 0.4,
+      "tol_cm": 2.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      -0.3,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "pivote": {
+    "hueso": "upperleg01.L",
+    "contrarrotar": "upperleg01.L"
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 2.2,
+      "art": {
+        "hombro_flex.L": 60,
+        "hombro_flex.R": 60,
+        "cadera_flex.R": -8
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "pivote_x": 62
+    },
+    {
+      "t": 3.0,
+      "art": {
+        "hombro_flex.L": 60,
+        "hombro_flex.R": 60,
+        "cadera_flex.R": -8
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "pivote_x": 62
+    },
+    {
+      "t": 4.8,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 5.2,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0,
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gluteus_maximus",
+        "lado": "L"
+      },
+      {
+        "id": "biceps_femoris",
+        "lado": "L"
+      },
+      {
+        "id": "semitendinosus",
+        "lado": "L"
+      },
+      {
+        "id": "semimembranosus",
+        "lado": "L"
+      },
+      {
+        "id": "adductor_magnus",
+        "lado": "L"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "iliopsoas",
+        "lado": "L"
+      },
+      {
+        "id": "rectus_femoris",
+        "lado": "L"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "erector_spinae_lumbar"
+      },
+      {
+        "id": "gluteus_medius"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.L"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "mancuerna",
+      "uso": "en_mano",
+      "manos": [
+        "L",
+        "R"
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Peso muerto rumano unipodal"
+}

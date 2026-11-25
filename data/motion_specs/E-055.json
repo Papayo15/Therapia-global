@@ -1,0 +1,169 @@
+{
+  "id": "E-055",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_abd.L": 3,
+      "cadera_abd.R": 3,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80,
+      "cadera_flex.R": 95,
+      "rodilla_flex.R": 110
+    },
+    "asentar": [
+      {
+        "art": "lumbar_flex",
+        "grupo": "spine01",
+        "rango": [
+          -15,
+          25
+        ]
+      },
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          -20,
+          15
+        ]
+      },
+      {
+        "art": "cadera_flex.R",
+        "grupo": "foot.R",
+        "rango": [
+          -20,
+          15
+        ]
+      },
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "rango": [
+          -25,
+          25
+        ]
+      }
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "a_hueso": {
+        "hueso": "lowerleg01.R",
+        "dir": "anterior",
+        "t": 0.1,
+        "sep": 0.03,
+        "lado": "L"
+      }
+    },
+    {
+      "cadena": "brazo.R",
+      "a_hueso": {
+        "hueso": "lowerleg01.R",
+        "dir": "anterior",
+        "t": 0.1,
+        "sep": 0.03,
+        "lado": "R"
+      }
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "head"
+    },
+    {
+      "grupo": "spine01",
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.15,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_flex.R": 0,
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_flex.R": 0,
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "cadera_flex.R": 20,
+        "cadera_abd.R": -20
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "cadera_flex.R": 20,
+        "cadera_abd.R": -20
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "cadera_flex.R": 0,
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "cadera_flex.R": 0,
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "gluteus_maximus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Rodilla al hombro opuesto en supino"
+}

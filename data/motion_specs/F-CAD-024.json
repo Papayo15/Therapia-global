@@ -1,0 +1,216 @@
+{
+  "id": "F-CAD-024",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente_suelo",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 0,
+      "lumbar_flex": 0,
+      "tobillo_dorsi.L": -10,
+      "tobillo_dorsi.R": -45,
+      "hombro_flex.L": 35,
+      "hombro_flex.R": 35,
+      "codo_flex.L": 80,
+      "codo_flex.R": 80,
+      "hombro_abd.L": 15,
+      "hombro_abd.R": 15,
+      "cadera_abd.L": 40,
+      "cadera_re.L": 90,
+      "rodilla_flex.L": 90,
+      "cadera_abd.R": 82,
+      "cadera_re.R": 0,
+      "rodilla_flex.R": 90
+    },
+    "asentar": [
+      {
+        "art": "cadera_abd.R",
+        "grupo": [
+          "lowerleg01.R",
+          "lowerleg02.R"
+        ],
+        "rango": [
+          -15,
+          15
+        ]
+      },
+      {
+        "art": "cadera_flex.L",
+        "grupo": [
+          "lowerleg01.L",
+          "lowerleg02.L",
+          "foot.L"
+        ],
+        "rango": [
+          -15,
+          15
+        ]
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "pelvis.R",
+      "Delete.female_sportsuit01"
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "Delete.female_sportsuit01",
+        "pelvis.L",
+        "pelvis.R"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "lowerleg02.L",
+        "foot.L"
+      ],
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": [
+        "lowerleg01.R",
+        "lowerleg02.R",
+        "foot.R"
+      ],
+      "tol_cm": 2.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.15,
+      -0.7,
+      1.2
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "rom_pasivo": {
+    "cadera_re+": 90,
+    "cadera_re-": 40,
+    "cadera_abd+": 97
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "cadera_re.R": -15
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "cadera_re.R": -15
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.3,
+      "art": {
+        "cadera_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cadera_re.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gluteus_medius",
+        "lado": "R"
+      },
+      {
+        "id": "gluteus_minimus",
+        "lado": "R"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_longus",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_brevis",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_magnus",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "piriformis",
+        "lado": "R"
+      },
+      {
+        "id": "gemellus_superior",
+        "lado": "R"
+      },
+      {
+        "id": "gemellus_inferior",
+        "lado": "R"
+      },
+      {
+        "id": "obturator_internus",
+        "lado": "R"
+      },
+      {
+        "id": "obturator_externus",
+        "lado": "R"
+      },
+      {
+        "id": "quadratus_femoris",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Rotación interna activa en 90/90"
+}

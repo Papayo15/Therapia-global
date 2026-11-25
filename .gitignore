@@ -15,3 +15,19 @@ pipeline/compressed/
 pipeline/thumbnails/
 pipeline/.env
 pipeline/generation_status.json
+
+# Fábrica de video: renders y binarios pesados (se regeneran con scripts/factory)
+renders/
+renders_*.log
+*.blend1
+assets/rigs/avatar_f40.blend
+
+# Fábrica: respaldos de avatares y marcas de lote
+assets/rigs/_respaldo*/
+assets/rigs/*.blend1
+.corte_*
+.marca_*
+
+# avatares anatómicos: se regeneran con build_atlas.py + lite_anat.py + fit_atlas_inside.py (80 MB, no van a git)
+assets/rigs/avatar_f40_anat.blend
+assets/rigs/avatar_f40_anat_lite.blend

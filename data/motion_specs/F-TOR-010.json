@@ -1,0 +1,156 @@
+{
+  "id": "F-TOR-010",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 40,
+      "hombro_abd.R": 40,
+      "@pitch": 45,
+      "hombro_flex.L": 0,
+      "hombro_flex.R": 0,
+      "codo_flex.L": 120,
+      "codo_flex.R": 120
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L",
+      "tol_cm": 3.5
+    },
+    {
+      "grupo": "foot.R",
+      "tol_cm": 3.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.2,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "pivote": {
+    "hueso": "upperleg01.L"
+  },
+  "props": [
+    {
+      "tipo": "banco_romano",
+      "uso": "banco_bajo_pie",
+      "lado": "R",
+      "grupo": [
+        "upperleg01.L",
+        "upperleg01.R"
+      ],
+      "dy": 0.0,
+      "largo": 0.3
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_flex.L": 45,
+        "cadera_flex.R": 45
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 45
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_flex.L": 45,
+        "cadera_flex.R": 45
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 45
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "cadera_flex.L": 0,
+        "cadera_flex.R": 0
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 4.3,
+      "art": {
+        "cadera_flex.L": 45,
+        "cadera_flex.R": 45
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 45
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cadera_flex.L": 45,
+        "cadera_flex.R": 45
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 45
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "erector_spinae_thoracic"
+      },
+      {
+        "id": "multifidus"
+      },
+      {
+        "id": "trapezius_middle"
+      },
+      {
+        "id": "trapezius_lower"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "rectus_abdominis"
+      },
+      {
+        "id": "pectoralis_major"
+      },
+      {
+        "id": "pectoralis_minor"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión en banco romano"
+}

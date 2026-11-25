@@ -1,0 +1,163 @@
+{
+  "id": "F-HOM-038",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 20,
+      "hombro_abd.R": 20,
+      "hombro_flex.L": 85,
+      "hombro_flex.R": 85,
+      "@pitch": 12
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L"
+    },
+    {
+      "cadena": "brazo.R"
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 1.8,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.16,
+        0
+      ]
+    },
+    {
+      "t": 2.4,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.16,
+        0
+      ]
+    },
+    {
+      "t": 3.8,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 5.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "pectoralis_major"
+      },
+      {
+        "id": "deltoid_anterior"
+      },
+      {
+        "id": "coracobrachialis"
+      },
+      {
+        "id": "triceps_brachii"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "deltoid_posterior"
+      },
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      },
+      {
+        "id": "infraspinatus"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "rectus_abdominis"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.L"
+    },
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "pared",
+      "uso": "pared_manos"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Flexión de brazos en pared (push-up en pared)"
+}

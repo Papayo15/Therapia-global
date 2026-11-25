@@ -1,0 +1,107 @@
+{
+  "id": "F-COD-001",
+  "duracion_s": 5.6,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 0,
+      "codo_flex.L": 50,
+      "codo_flex.R": 90
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 0.6,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 1.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.2,
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.8,
+      "p": 0,
+      "fase": "isometrico"
+    },
+    {
+      "t": 5.6,
+      "p": 0,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "biceps_brachii",
+        "lado": "R"
+      },
+      {
+        "id": "brachialis",
+        "lado": "R"
+      },
+      {
+        "id": "brachioradialis",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "triceps_brachii",
+        "lado": "R"
+      },
+      {
+        "id": "anconeus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerarm01.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Isométrico de flexión de codo"
+}

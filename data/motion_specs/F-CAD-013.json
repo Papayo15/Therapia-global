@@ -1,0 +1,134 @@
+{
+  "id": "F-CAD-013",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R",
+      "desde": 0,
+      "hasta": 0.4
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "cadera_abd.R": 25
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "cadera_abd.R": 25
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.0,
+      "art": {
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gluteus_medius",
+        "lado": "R"
+      },
+      {
+        "id": "gluteus_minimus",
+        "lado": "R"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "adductor_longus",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_brevis",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_magnus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "lazo_rodillas",
+      "hueso": "lowerleg02",
+      "t": 0.75
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Abducción de pie con banda"
+}

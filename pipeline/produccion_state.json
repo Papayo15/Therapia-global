@@ -1,0 +1,23 @@
+{
+  "CANAL_C_ESTIRAMIENTO": {
+    "ray_id": "9a24359b-ca4f-4fb0-8b5c-1af120bd8fdf",
+    "state": "completed",
+    "downloaded": true,
+    "tecnica": "Standing cervical spine side bend stretch, focusing on cian muscle shading of trapezius",
+    "video_url": "https://storage.cdn-luma.com/dream_machine/83729d9d-0dad-4d28-9f3c-412c41a44049/d029f3cc-a4d0-4a35-8602-ab2c5c24344f_output_3b3e574308352c8c.mp4"
+  },
+  "CANAL_B_OSTEOPATIA": {
+    "ray_id": "c60e6854-ed55-42a0-94d6-cc854cb7c3c1",
+    "state": "completed",
+    "downloaded": true,
+    "tecnica": "Cervical spine HVLA mobilization, showing exact hand placement on atlas and thrust motion",
+    "video_url": "https://storage.cdn-luma.com/dream_machine/ec024f9b-a671-4ba7-a4e7-731fe0b9d985/3945f700-6c92-47f2-bab5-96288ace9a81_output_e0509b3c1d3f0b0a.mp4"
+  },
+  "CANAL_A_EJERCICIO": {
+    "ray_id": "ce6d39fb-e1c5-45fb-9dcb-e82fde674f0a",
+    "state": "completed",
+    "downloaded": true,
+    "tecnica": "Full-body burpee on BOSU with dumbbells.",
+    "video_url": "https://storage.cdn-luma.com/dream_machine/865737de-c68e-4a73-9723-73e557430040/78779797-1c60-40f0-b116-8c313f07c076_output_15ef22058f849075.mp4"
+  }
+}

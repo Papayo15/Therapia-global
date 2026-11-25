@@ -1,0 +1,129 @@
+{
+  "id": "F-TOB-002",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 65,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.3,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "tobillo_dorsi.R": 18
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "tobillo_dorsi.R": 18
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "tibialis_anterior",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_digitorum_longus",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_digitorum_brevis",
+        "lado": "R"
+      },
+      {
+        "id": "fibularis_tertius",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "gastrocnemius",
+        "lado": "R"
+      },
+      {
+        "id": "soleus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Dorsiflexión activa en sedente"
+}

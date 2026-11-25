@@ -1,0 +1,323 @@
+{
+  "id": "F-CAD-025",
+  "duracion_s": 7.4,
+  "base": {
+    "orientacion": "sedente_suelo",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 120,
+      "cadera_flex.R": 120,
+      "lumbar_flex": 0,
+      "tobillo_dorsi.L": 5,
+      "tobillo_dorsi.R": 5,
+      "rodilla_flex.L": 80,
+      "rodilla_flex.R": 80,
+      "cadera_abd.L": 22,
+      "cadera_abd.R": 22,
+      "hombro_flex.L": 95,
+      "hombro_flex.R": 95,
+      "codo_flex.L": 10,
+      "codo_flex.R": 10
+    },
+    "asentar": [
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          80,
+          140
+        ],
+        "abs": true
+      },
+      {
+        "art": "cadera_flex.R",
+        "grupo": "foot.R",
+        "rango": [
+          80,
+          140
+        ],
+        "abs": true
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "pelvis.R",
+      "Delete.female_sportsuit01"
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L"
+    },
+    {
+      "cadena": "pierna.R"
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "pelvis.R"
+      ],
+      "tol_cm": 14
+    },
+    {
+      "grupo": "foot.L",
+      "tol_cm": 3
+    },
+    {
+      "grupo": "foot.R",
+      "tol_cm": 3
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.05,
+      -1,
+      0.75
+    ],
+    "lente": 50,
+    "margen": 1.15
+  },
+  "rom_pasivo": {
+    "cadera_re+": 90,
+    "cadera_re-": 45,
+    "cadera_abd+": 97
+  },
+  "keys": [
+    {
+      "t": 0.0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 0.5,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "toracica_rot": 10,
+        "lumbar_incl": -3
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "polo": {
+        "pierna.L": [
+          -1.576,
+          0,
+          -0.931
+        ],
+        "pierna.R": [
+          -1.576,
+          0,
+          -0.931
+        ]
+      }
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "toracica_rot": 10,
+        "lumbar_incl": -3
+      },
+      "p": 1,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          -1.576,
+          0,
+          -0.931
+        ],
+        "pierna.R": [
+          -1.576,
+          0,
+          -0.931
+        ]
+      }
+    },
+    {
+      "t": 3.7,
+      "art": {},
+      "p": 0.3,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "toracica_rot": -10,
+        "lumbar_incl": 3
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "polo": {
+        "pierna.L": [
+          1.576,
+          0,
+          -0.931
+        ],
+        "pierna.R": [
+          1.576,
+          0,
+          -0.931
+        ]
+      }
+    },
+    {
+      "t": 5.7,
+      "art": {
+        "toracica_rot": -10,
+        "lumbar_incl": 3
+      },
+      "p": 1,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          1.576,
+          0,
+          -0.931
+        ],
+        "pierna.R": [
+          1.576,
+          0,
+          -0.931
+        ]
+      }
+    },
+    {
+      "t": 6.9,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 7.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "polo": {
+        "pierna.L": [
+          0,
+          0,
+          0
+        ],
+        "pierna.R": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gluteus_medius"
+      },
+      {
+        "id": "gluteus_minimus"
+      },
+      {
+        "id": "tensor_fasciae_latae"
+      },
+      {
+        "id": "adductor_longus"
+      },
+      {
+        "id": "adductor_brevis"
+      },
+      {
+        "id": "adductor_magnus"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "piriformis"
+      },
+      {
+        "id": "gemellus_superior"
+      },
+      {
+        "id": "gemellus_inferior"
+      },
+      {
+        "id": "obturator_internus"
+      },
+      {
+        "id": "obturator_externus"
+      },
+      {
+        "id": "quadratus_femoris"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.L"
+    },
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Transiciones 90/90 sin manos"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "E-053",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 30,
+      "hombro_abd.R": 2,
+      "rodilla_flex.R": 135,
+      "cadera_flex.R": -8
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.R",
+      "a_hueso": {
+        "hueso": "lowerleg02.R",
+        "dir": "anterior",
+        "t": 0.9,
+        "sep": 0.02,
+        "lado": "R"
+      }
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.1,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "cadera_flex.R": -8
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "cadera_flex.R": -8
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "cadera_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "rectus_femoris",
+        "lado": "R"
+      }
+    ],
+    "sostienen": [
+      {
+        "id": "gluteus_medius",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "De pie tomando el tobillo"
+}

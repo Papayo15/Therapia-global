@@ -1,0 +1,209 @@
+{
+  "id": "F-ROD-010",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 0,
+      "hombro_abd.R": 0,
+      "cadera_flex.R": -18,
+      "rodilla_flex.R": 85,
+      "tobillo_dorsi.R": -45,
+      "cadera_flex.L": 12,
+      "rodilla_flex.L": 12
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "objetivo_rel": [
+        0,
+        -0.12,
+        0
+      ]
+    },
+    {
+      "cadena": "pierna.R",
+      "orientacion_fija": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": [
+        "foot.R",
+        "toe1-1.R",
+        "toe2-1.R",
+        "toe3-1.R",
+        "toe4-1.R",
+        "toe5-1.R"
+      ],
+      "banco": "R",
+      "tol_cm": 2
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.15,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "props": [
+    {
+      "tipo": "banco",
+      "uso": "banco_bajo_pie",
+      "lado": "R"
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "@pitch": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "@pitch": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 2.0,
+      "art": {
+        "@pitch": 12,
+        "hombro_flex.L": 20,
+        "hombro_flex.R": 20
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        0.06,
+        -0.24
+      ]
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "@pitch": 12,
+        "hombro_flex.L": 20,
+        "hombro_flex.R": 20
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        0.06,
+        -0.24
+      ]
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "@pitch": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "@pitch": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "rectus_femoris",
+        "lado": "L"
+      },
+      {
+        "id": "vastus_medialis",
+        "lado": "L"
+      },
+      {
+        "id": "vastus_lateralis",
+        "lado": "L"
+      },
+      {
+        "id": "vastus_intermedius",
+        "lado": "L"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "biceps_femoris",
+        "lado": "L"
+      },
+      {
+        "id": "semitendinosus",
+        "lado": "L"
+      },
+      {
+        "id": "semimembranosus",
+        "lado": "L"
+      },
+      {
+        "id": "gastrocnemius",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerleg01.L"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Sentadilla búlgara / step-down"
+}

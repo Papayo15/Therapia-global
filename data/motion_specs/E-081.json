@@ -1,0 +1,142 @@
+{
+  "id": "E-081",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "tobillo_dorsi.R": 10,
+      "dedos_flex.R": -40
+    }
+  },
+  "ik": [
+    {
+      "cadena": "pierna.R",
+      "pie_plano": false,
+      "objetivo_rel": [
+        0,
+        -0.15,
+        0.02
+      ]
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.2,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "tobillo_dorsi.R": 8
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.04,
+        0
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "tobillo_dorsi.R": 8
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.04,
+        0
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "flexor_digitorum_brevis",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "En pared con dedos extendidos"
+}

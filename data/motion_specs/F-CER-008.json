@@ -1,0 +1,206 @@
+{
+  "id": "F-CER-008",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "prono",
+    "colchoneta": true,
+    "angulos": {
+      "cervical_rot": 0,
+      "antebrazo_prono.L": -80,
+      "antebrazo_prono.R": -80,
+      "tobillo_dorsi.L": -30,
+      "tobillo_dorsi.R": -30,
+      "hombro_flex.L": 150,
+      "hombro_flex.R": 150,
+      "codo_flex.L": 110,
+      "codo_flex.R": 110
+    },
+    "asentar": [
+      {
+        "art": "cadera_flex.L",
+        "grupo": [
+          "foot.L",
+          "toenails",
+          "toe1-1.L",
+          "toe1-2.L",
+          "toe1-3.L",
+          "toe2-1.L",
+          "toe2-2.L",
+          "toe2-3.L",
+          "toe3-1.L",
+          "toe3-2.L",
+          "toe3-3.L",
+          "toe4-1.L",
+          "toe4-2.L",
+          "toe4-3.L",
+          "toe5-1.L",
+          "toe5-2.L",
+          "toe5-3.L"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      },
+      {
+        "art": "cadera_flex.R",
+        "grupo": [
+          "foot.R",
+          "toenails",
+          "toe1-1.R",
+          "toe1-2.R",
+          "toe1-3.R",
+          "toe2-1.R",
+          "toe2-2.R",
+          "toe2-3.R",
+          "toe3-1.R",
+          "toe3-2.R",
+          "toe3-3.R",
+          "toe4-1.R",
+          "toe4-2.R",
+          "toe4-3.R",
+          "toe5-1.R",
+          "toe5-2.R",
+          "toe5-3.R"
+        ],
+        "rango": [
+          -20,
+          20
+        ]
+      }
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "spine02",
+      "tol_cm": 2.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      0.2,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "cervical_flex": -28
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.7,
+      "art": {
+        "cervical_flex": -28
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.3,
+      "art": {
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cervical_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "splenius_capitis"
+      },
+      {
+        "id": "splenius_cervicis"
+      },
+      {
+        "id": "semispinalis_capitis"
+      },
+      {
+        "id": "semispinalis_cervicis"
+      },
+      {
+        "id": "erector_spinae_cervical"
+      },
+      {
+        "id": "rectus_capitis_posterior_major"
+      },
+      {
+        "id": "rectus_capitis_posterior_minor"
+      },
+      {
+        "id": "obliquus_capitis_superior"
+      },
+      {
+        "id": "obliquus_capitis_inferior"
+      },
+      {
+        "id": "trapezius_upper"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "sternocleidomastoid"
+      },
+      {
+        "id": "longus_colli"
+      },
+      {
+        "id": "scalene_anterior"
+      },
+      {
+        "id": "scalene_middle"
+      },
+      {
+        "id": "scalene_posterior"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "neck02"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión cervical en prono (cabeza fuera de camilla)"
+}

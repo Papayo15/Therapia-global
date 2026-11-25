@@ -1,0 +1,162 @@
+{
+  "id": "F-MAN-009",
+  "duracion_s": 5.4,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 20,
+      "codo_flex.L": 50,
+      "codo_flex.R": 75,
+      "antebrazo_prono.R": 80,
+      "muneca_flex.R": 0
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.7,
+      -1,
+      0.6
+    ],
+    "lente": 50,
+    "margen": 1.5,
+    "grupos": [
+      "lowerarm02.R",
+      "wrist.R",
+      "finger1-1.R",
+      "finger1-2.R",
+      "finger1-3.R",
+      "finger2-1.R",
+      "finger2-2.R",
+      "finger2-3.R",
+      "finger3-1.R",
+      "finger3-2.R",
+      "finger3-3.R",
+      "finger4-1.R",
+      "finger4-2.R",
+      "finger4-3.R",
+      "finger5-1.R",
+      "finger5-2.R",
+      "finger5-3.R",
+      "metacarpal1.R",
+      "metacarpal2.R",
+      "metacarpal3.R",
+      "metacarpal4.R",
+      "lowerarm01.R"
+    ]
+  },
+  "props": [
+    {
+      "tipo": "mesa",
+      "uso": "mesa_antebrazo",
+      "lado": "R",
+      "mano_apoyada": true
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "dedos_ext.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "dedos_ext.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.4,
+      "art": {
+        "dedos_ext.R": 30
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "dedos_ext.R": 30
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.7,
+      "art": {
+        "dedos_ext.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.4,
+      "art": {
+        "dedos_ext.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "extensor_digitorum",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_indicis",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_digiti_minimi",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_pollicis_longus",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "flexor_digitorum_superficialis",
+        "lado": "R"
+      },
+      {
+        "id": "flexor_digitorum_profundus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "metacarpal3.R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión contra liga de mayor resistencia"
+}

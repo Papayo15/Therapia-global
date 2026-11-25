@@ -1,0 +1,197 @@
+{
+  "id": "F-HOM-039",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "supino",
+    "colchoneta": false,
+    "angulos": {
+      "cadera_abd.L": 3,
+      "cadera_abd.R": 3,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80,
+      "cadera_flex.L": 50,
+      "rodilla_flex.L": 95,
+      "cadera_flex.R": 50,
+      "rodilla_flex.R": 95,
+      "hombro_flex.L": 90,
+      "hombro_flex.R": 90,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    },
+    "asentar": [
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "z": 0.42,
+        "rango": [
+          -25,
+          25
+        ]
+      }
+    ],
+    "superficie_banco": 0.42,
+    "banco_largo": "tronco"
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ],
+      "z_suelo": 0.0
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ],
+      "z_suelo": 0.0
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      0.1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 2.2,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0,
+        "codo_flex.L": 95,
+        "codo_flex.R": 95
+      },
+      "p": 0.2,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0,
+        "codo_flex.L": 95,
+        "codo_flex.R": 95
+      },
+      "p": 0.2,
+      "fase": "concentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_re.L": 0,
+        "hombro_re.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 1,
+      "fase": "isometrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "pectoralis_major"
+      },
+      {
+        "id": "deltoid_anterior"
+      },
+      {
+        "id": "coracobrachialis"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "deltoid_posterior"
+      },
+      {
+        "id": "rhomboid_major"
+      },
+      {
+        "id": "rhomboid_minor"
+      },
+      {
+        "id": "infraspinatus"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.L"
+    },
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "mancuerna",
+      "uso": "en_mano",
+      "manos": [
+        "L",
+        "R"
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Press / aperturas con mancuernas en banco"
+}

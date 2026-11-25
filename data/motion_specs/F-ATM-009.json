@@ -1,0 +1,141 @@
+{
+  "id": "F-ATM-009",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 60,
+      "codo_flex.L": 50,
+      "codo_flex.R": 110
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.R",
+      "a_hueso": {
+        "hueso": "jaw",
+        "dir": "anterior",
+        "t": 0.95,
+        "sep": 0.02,
+        "lado": "R"
+      }
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.5,
+      0.1
+    ],
+    "lente": 50,
+    "margen": 1.6,
+    "grupos": [
+      "head",
+      "neck01",
+      "neck02",
+      "neck03",
+      "jaw"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "atm_protrusion": 0,
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "atm_protrusion": 0,
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.5,
+      "art": {
+        "atm_protrusion": 6,
+        "atm_apertura": 3
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.3,
+      "art": {
+        "atm_protrusion": 6,
+        "atm_apertura": 3
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.6,
+      "art": {
+        "atm_protrusion": 0,
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "atm_protrusion": 0,
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "lateral_pterygoid"
+      },
+      {
+        "id": "medial_pterygoid"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "temporalis"
+      },
+      {
+        "id": "digastric_posterior_belly"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "jaw"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Mismo video para gym y casa (en casa: palito de helado).",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Protrusión con resistencia ligera"
+}

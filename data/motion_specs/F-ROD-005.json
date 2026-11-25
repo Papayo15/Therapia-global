@@ -1,0 +1,180 @@
+{
+  "id": "F-ROD-005",
+  "duracion_s": 5.2,
+  "base": {
+    "orientacion": "rodillas",
+    "colchoneta": true,
+    "angulos": {
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "tobillo_dorsi.L": -40,
+      "tobillo_dorsi.R": -40,
+      "hombro_flex.L": 20,
+      "hombro_flex.R": 20,
+      "codo_flex.L": 100,
+      "codo_flex.R": 100
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "lowerleg01.L",
+        "lowerleg02.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerleg01.R",
+        "lowerleg02.R"
+      ]
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "pivote": {
+    "hueso": "lowerleg01.L",
+    "contrarrotar": [
+      "lowerleg01.L",
+      "lowerleg01.R"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "excentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "excentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "hombro_flex.L": 40,
+        "hombro_flex.R": 40
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "pivote_x": 38
+    },
+    {
+      "t": 3.2,
+      "art": {
+        "hombro_flex.L": 40,
+        "hombro_flex.R": 40
+      },
+      "p": 1,
+      "fase": "concentrico",
+      "pivote_x": 38
+    },
+    {
+      "t": 4.8,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "pivote_x": 0
+    },
+    {
+      "t": 5.2,
+      "art": {
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "excentrico",
+      "pivote_x": 0
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "biceps_femoris"
+      },
+      {
+        "id": "semitendinosus"
+      },
+      {
+        "id": "semimembranosus"
+      },
+      {
+        "id": "gastrocnemius"
+      },
+      {
+        "id": "popliteus"
+      },
+      {
+        "id": "gracilis"
+      },
+      {
+        "id": "sartorius"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "rectus_femoris"
+      },
+      {
+        "id": "vastus_medialis"
+      },
+      {
+        "id": "vastus_lateralis"
+      },
+      {
+        "id": "vastus_intermedius"
+      }
+    ],
+    "estabilizan": [
+      {
+        "id": "rectus_abdominis"
+      },
+      {
+        "id": "gluteus_maximus"
+      },
+      {
+        "id": "erector_spinae_lumbar"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "lowerleg01.L"
+    },
+    {
+      "hueso": "lowerleg01.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Curl nórdico asistido"
+}

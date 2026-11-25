@@ -1,0 +1,160 @@
+{
+  "id": "E-020",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 135,
+      "codo_flex.R": 60,
+      "hombro_re.R": 60
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.R",
+      "orientacion_fija": true
+    },
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true,
+      "polo": [
+        0,
+        -0.3,
+        0.6
+      ]
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.75,
+      0.9,
+      0.4
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "toracica_rot": 8
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.09,
+        0
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "toracica_rot": 8
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.09,
+        0
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "toracica_rot": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "pectoralis_minor",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [
+    {
+      "tipo": "marco_puerta",
+      "uso": "jamba",
+      "lado": "R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Marco de puerta con brazo alto (135°)"
+}

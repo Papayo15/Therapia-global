@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "preset_estudio_mujer40": {
+    "sujeto": "a 40-year-old woman with a natural athletic build, hair tied back in a low bun, no jewelry, calm focused expression",
+    "vestuario": "fitted heather-grey long-sleeve top and fitted heather-grey full-length leggings, plain grey training socks, no logos, no text",
+    "entorno": {
+      "gym": "minimalist bright physiotherapy studio, matte off-white walls, light grey floor, clean and uncluttered",
+      "casa": "minimalist bright living room, white walls, light oak floor, soft daylight from a window, tidy and uncluttered"
+    },
+    "luz": "soft natural side light from the left, gentle fill, realistic soft shadows on the floor",
+    "camara": "locked-off static camera, no camera movement, no zoom, no cuts, 4K, sharp focus, realistic proportions"
+  },
+  "reglas_fijas": "Follow the reference video EXACTLY: same body position, same joint angles, same timing, same contact points with the floor, mat and objects. Do not add or remove movements. Hands and feet stay exactly where the reference shows them. Single continuous shot.",
+  "negativo": "extra limbs, missing limbs, fused fingers, deformed hands, floating limbs, levitating body, body merging with objects, objects passing through the body, gymnastic bridge, back bend, inverted pose, distorted spine, x-ray, internal anatomy, skeleton, muscles drawn on skin, text, subtitles, watermark, logo, camera shake, camera cut, scene change, second person, mirror reflection",
+  "objetos_en_ingles": {
+    "banda_elastica": "a red flat latex resistance band",
+    "medias_nylon": "a pair of beige nylon tights used as an elastic band, tied to the door handle",
+    "correa": "a navy blue cotton yoga strap",
+    "toalla": "a cream-colored cotton bath towel",
+    "foam_roller": "a grey foam roller",
+    "toalla_enrollada": "a tightly rolled cream bath towel",
+    "mancuerna": "a pair of light grey hexagonal dumbbells",
+    "botella_agua_1_5l": "a full 1.5-liter plastic water bottle held by the neck",
+    "palo_escoba": "a plain wooden broomstick without the brush",
+    "baston": "a light wooden dowel rod",
+    "silla": "a sturdy wooden chair without wheels",
+    "colchoneta": "a slim grey-blue exercise mat",
+    "pared": "a plain wall",
+    "marco_puerta": "a white interior door frame",
+    "poste": "a vertical steel post of a gym rack",
+    "puerta": "a closed white interior door with a metal handle"
+  }
+}

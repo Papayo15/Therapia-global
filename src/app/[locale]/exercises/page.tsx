@@ -1,16 +1,28 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Search, Play, Dumbbell, ChevronDown } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ExercisePlayer, type ExerciseData } from "@/components/exercises/ExercisePlayer";
+import { type AnimData } from "@/components/exercises/Nike3DAnimatedViewer";
+import { ClinicalLibrary } from "@/components/library/ClinicalLibrary";
+import { type LibraryCategory } from "@/lib/videoLibrary";
+import { useTranslations } from "next-intl";
 import masterRegistry from "../../../../data/master-registry.json";
+import canalAAnims from "../../../../data/canal-a-animations.json";
+import canalCAnims from "../../../../data/canal-c-animations.json";
+
+// ─── Animation lookup: exerciseId → AnimData ───────────────────────────────────
+const ANIM_LOOKUP = new Map<string, AnimData>();
+for (const entry of [...canalAAnims.animations, ...canalCAnims.animations]) {
+  ANIM_LOOKUP.set(entry.id, entry.anim as unknown as AnimData);
+}
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
-type Canal = "A" | "B" | "all";
+type Canal = "A" | "B" | "C" | "all";
 
 interface RegistryEntry {
   id: string;
@@ -21,14 +33,23 @@ interface RegistryEntry {
   grupo_label: string;
   nombre_es: string;
   nombre_en: string;
+  titulo: string;
   equipo: string[];
   difficulty: string;
+  setup_paciente: string;
+  setup_terapeuta: string;
+  contacto_manos: string;
   ejecucion_tecnica: string;
   fisiologia_basica: string;
   pasos: string[];
-  visual_pixar: string;
+  visual_pixar_prompt: string;
   video_url: string;
   cloudflare_id: string;
+  // ── Campos 3D (Canal A y C) ─────────────────────────────────────────────
+  mesh_id_nike3d?:   string | string[] | null;
+  glb_region?:       string | string[] | null;
+  bilateral?:        boolean;
+  patologias_clave?: string[];
 }
 
 const ALL_ENTRIES = Object.values(masterRegistry) as RegistryEntry[];
@@ -85,6 +106,13 @@ function toExerciseData(entry: RegistryEntry): ExerciseData {
     ejecucion_tecnica: entry.ejecucion_tecnica,
     fisiologia_basica: entry.fisiologia_basica,
     pasos: entry.pasos,
+    titulo: entry.titulo,
+    setup_paciente: entry.setup_paciente,
+    setup_terapeuta: entry.setup_terapeuta,
+    contacto_manos: entry.contacto_manos,
+    glb_region: entry.glb_region ?? undefined,
+    bilateral: entry.bilateral,
+    anim: ANIM_LOOKUP.get(entry.id),
   };
 }
 
@@ -119,7 +147,7 @@ function ExerciseCard({ entry, onClick }: { entry: RegistryEntry; onClick: () =>
           className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded-full text-white"
           style={{ background: color }}
         >
-          {entry.canal === "A" ? "Activo" : entry.tipo_osteopatia ?? "Osteopatía"}
+          {entry.canal === "A" ? "Activo" : entry.canal === "C" ? "Estiramiento" : entry.tipo_osteopatia ?? "Osteopatía"}
         </span>
 
         {/* Difficulty badge */}
@@ -150,6 +178,17 @@ function ExerciseCard({ entry, onClick }: { entry: RegistryEntry; onClick: () =>
 
 // ─── Main Page ─────────────────────────────────────────────────────────────────
 export default function ExercisesPage() {
+  const t = useTranslations("library");
+  // Biblioteca clínica con video (fábrica) primero; el catálogo anterior queda en su propia pestaña
+  const [source, setSource] = useState<"library" | "legacy">("library");
+  const [libCat, setLibCat] = useState<LibraryCategory | "all" | null>(null);
+  const [libOpen, setLibOpen] = useState<{ id?: string; view?: "exercise" | "anatomy" }>({});
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const c = q.get("cat") ?? (q.get("canal") === "B" ? "osteopatia" : null);
+    setLibCat(c === "fortalecimiento" || c === "estiramiento" || c === "osteopatia" ? c : "all");
+    setLibOpen({ id: q.get("id") ?? undefined, view: q.get("view") === "anatomy" ? "anatomy" : undefined });
+  }, []);
   const [canal, setCanal] = useState<Canal>("all");
   const [grupo, setGrupo] = useState<string>("all");
   const [search, setSearch] = useState("");
@@ -183,6 +222,7 @@ export default function ExercisesPage() {
 
   const countA = ALL_ENTRIES.filter((e) => e.canal === "A").length;
   const countB = ALL_ENTRIES.filter((e) => e.canal === "B").length;
+  const countC = ALL_ENTRIES.filter((e) => e.canal === "C").length;
 
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden">
@@ -194,17 +234,37 @@ export default function ExercisesPage() {
 
             {/* ── Page header ───────────────────────────────────────────── */}
             <div>
-              <h1 className="text-2xl font-bold text-slate-900">Biblioteca de Técnicas</h1>
+              <h1 className="text-2xl font-bold text-slate-900">{t("title")}</h1>
               <p className="text-slate-500 mt-1">
-                {ALL_ENTRIES.length} técnicas · {countA} ejercicios activos · {countB} osteopatía
+                {source === "library" ? t("subtitle") : `${countA} · ${countC} · ${countB}`}
               </p>
             </div>
 
+            {/* ── Fuente: biblioteca clínica (video) / catálogo anterior ─── */}
+            <div className="flex gap-6 border-b border-slate-200">
+              {(["library", "legacy"] as const).map((k) => (
+                <button
+                  key={k}
+                  onClick={() => setSource(k)}
+                  className={cn(
+                    "-mb-px border-b-2 pb-2 text-sm font-semibold transition-colors",
+                    source === k ? "border-blue-600 text-blue-700" : "border-transparent text-slate-500 hover:text-slate-700"
+                  )}
+                >
+                  {t(k === "library" ? "sourceLibrary" : "sourceLegacy")}
+                </button>
+              ))}
+            </div>
+
+            {source === "library" ? (
+              libCat && <ClinicalLibrary initialCategory={libCat} initialId={libOpen.id} initialView={libOpen.view} />
+            ) : (<>
             {/* ── Canal tabs ────────────────────────────────────────────── */}
             <div className="flex gap-1 p-1 bg-white border border-slate-200 rounded-xl w-fit">
               {[
                 { key: "all", label: "Todos" },
-                { key: "A",   label: `Canal A — Activo (${countA})` },
+                { key: "A",   label: `Canal A — Ejercicios (${countA})` },
+                { key: "C",   label: `Canal C — Estiramientos (${countC})` },
                 { key: "B",   label: `Canal B — Osteopatía (${countB})` },
               ].map(({ key, label }) => (
                 <button
@@ -311,6 +371,7 @@ export default function ExercisesPage() {
                 ))}
               </div>
             )}
+            </>)}
           </div>
         </main>
       </div>

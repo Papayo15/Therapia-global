@@ -1,0 +1,166 @@
+{
+  "id": "F-HOM-019",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 10,
+      "codo_flex.R": 10,
+      "hombro_abd.L": 160,
+      "hombro_abd.R": 160,
+      "mano_cerrar.L": 75,
+      "mano_cerrar.R": 75
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.4,
+      1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "hombro_abd.L": 0,
+        "hombro_abd.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "hombro_abd.L": 0,
+        "hombro_abd.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.7,
+      "art": {
+        "hombro_abd.L": -110,
+        "hombro_abd.R": -110,
+        "codo_flex.L": 95,
+        "codo_flex.R": 95
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.5,
+      "art": {
+        "hombro_abd.L": -110,
+        "hombro_abd.R": -110,
+        "codo_flex.L": 95,
+        "codo_flex.R": 95
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "hombro_abd.L": 0,
+        "hombro_abd.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "hombro_abd.L": 0,
+        "hombro_abd.R": 0,
+        "codo_flex.L": 0,
+        "codo_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "pectoralis_major"
+      },
+      {
+        "id": "latissimus_dorsi"
+      },
+      {
+        "id": "teres_major"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "deltoid_middle"
+      },
+      {
+        "id": "supraspinatus"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperarm01.L"
+    },
+    {
+      "hueso": "upperarm01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "polea",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.L",
+      "anclaje_rel": [
+        -0.2,
+        0.05,
+        0.9
+      ]
+    },
+    {
+      "tipo": "polea",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.R",
+      "anclaje_rel": [
+        0.2,
+        0.05,
+        0.9
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Jalón al pecho en polea"
+}

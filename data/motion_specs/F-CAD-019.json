@@ -1,0 +1,257 @@
+{
+  "id": "F-CAD-019",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "decubito_lateral_L",
+    "colchoneta": true,
+    "angulos": {
+      "hombro_abd.L": 90,
+      "codo_flex.L": 90,
+      "antebrazo_prono.L": 60,
+      "hombro_abd.R": 0,
+      "cadera_flex.L": 20,
+      "rodilla_flex.L": 70,
+      "cadera_abd.R": 6
+    },
+    "suelo": [
+      "lowerarm01.L",
+      "lowerarm02.L",
+      "lowerarm02.L",
+      "wrist.L",
+      "finger1-1.L",
+      "finger1-2.L",
+      "finger1-3.L",
+      "finger2-1.L",
+      "finger2-2.L",
+      "finger2-3.L",
+      "finger3-1.L",
+      "finger3-2.L",
+      "finger3-3.L",
+      "finger4-1.L",
+      "finger4-2.L",
+      "finger4-3.L",
+      "finger5-1.L",
+      "finger5-2.L",
+      "finger5-3.L",
+      "metacarpal1.L",
+      "metacarpal2.L",
+      "metacarpal3.L",
+      "metacarpal4.L"
+    ],
+    "asentar": [
+      {
+        "art": "@roll",
+        "grupo": [
+          "lowerleg01.R",
+          "upperleg02.R"
+        ],
+        "z": 0.4,
+        "rango": [
+          -60,
+          60
+        ],
+        "reapoyar": true
+      }
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "lowerarm01.L",
+        "lowerarm02.L",
+        "lowerarm02.L",
+        "wrist.L",
+        "finger1-1.L",
+        "finger1-2.L",
+        "finger1-3.L",
+        "finger2-1.L",
+        "finger2-2.L",
+        "finger2-3.L",
+        "finger3-1.L",
+        "finger3-2.L",
+        "finger3-3.L",
+        "finger4-1.L",
+        "finger4-2.L",
+        "finger4-3.L",
+        "finger5-1.L",
+        "finger5-2.L",
+        "finger5-3.L",
+        "metacarpal1.L",
+        "metacarpal2.L",
+        "metacarpal3.L",
+        "metacarpal4.L"
+      ]
+    },
+    {
+      "grupo": [
+        "lowerleg01.R",
+        "upperleg02.R"
+      ],
+      "banco": "R",
+      "tol_cm": 2
+    }
+  ],
+  "camara": {
+    "dir": [
+      0.1,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "resolver": {
+    "art": "@roll",
+    "a": [
+      "lowerleg01.R",
+      "upperleg02.R"
+    ],
+    "za": 0.4,
+    "b": [
+      "lowerarm01.L",
+      "lowerarm02.L",
+      "lowerarm02.L",
+      "wrist.L",
+      "finger1-1.L",
+      "finger1-2.L",
+      "finger1-3.L",
+      "finger2-1.L",
+      "finger2-2.L",
+      "finger2-3.L",
+      "finger3-1.L",
+      "finger3-2.L",
+      "finger3-3.L",
+      "finger4-1.L",
+      "finger4-2.L",
+      "finger4-3.L",
+      "finger5-1.L",
+      "finger5-2.L",
+      "finger5-3.L",
+      "metacarpal1.L",
+      "metacarpal2.L",
+      "metacarpal3.L",
+      "metacarpal4.L"
+    ],
+    "rango": [
+      -30,
+      30
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "cadera_abd.R": -14
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.8,
+      "art": {
+        "cadera_abd.R": -14
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.4,
+      "art": {
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "cadera_abd.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "adductor_longus",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_brevis",
+        "lado": "R"
+      },
+      {
+        "id": "adductor_magnus",
+        "lado": "R"
+      },
+      {
+        "id": "pectineus",
+        "lado": "R"
+      },
+      {
+        "id": "gracilis",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "gluteus_medius",
+        "lado": "R"
+      },
+      {
+        "id": "gluteus_minimus",
+        "lado": "R"
+      },
+      {
+        "id": "tensor_fasciae_latae",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "upperleg01.R"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banco",
+      "uso": "banco_bajo_pie",
+      "lado": "R",
+      "grupo": [
+        "lowerleg01.R",
+        "upperleg02.R"
+      ],
+      "largo": 0.4,
+      "dy": 0.0
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Plancha Copenhagen corta (apoyo en rodilla)"
+}

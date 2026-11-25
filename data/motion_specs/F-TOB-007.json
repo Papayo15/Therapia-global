@@ -1,0 +1,209 @@
+{
+  "id": "F-TOB-007",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente_suelo",
+    "colchoneta": true,
+    "angulos": {
+      "cadera_flex.L": 85,
+      "cadera_flex.R": 85,
+      "lumbar_flex": 14,
+      "tobillo_dorsi.L": -10,
+      "tobillo_dorsi.R": -10,
+      "mano_cerrar.L": 70,
+      "mano_cerrar.R": 70
+    },
+    "asentar": [
+      {
+        "art": "cadera_flex.R",
+        "grupo": "lowerleg02.R",
+        "z": 0.10600000000000001,
+        "rango": [
+          -20,
+          40
+        ]
+      },
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          60,
+          110
+        ],
+        "abs": true
+      }
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "polo_manual": true,
+      "polo": [
+        0.5,
+        0.2,
+        -0.5
+      ]
+    },
+    {
+      "cadena": "brazo.R",
+      "polo_manual": true,
+      "polo": [
+        -0.5,
+        0.2,
+        -0.5
+      ]
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "pelvis.R",
+        "upperleg01.L",
+        "upperleg01.R",
+        "upperleg02.L",
+        "upperleg02.R"
+      ]
+    },
+    {
+      "grupo": "lowerleg02.R",
+      "z": 0.10600000000000001,
+      "tol_cm": 2
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.25,
+      0.35
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "props": [
+    {
+      "tipo": "rodillo",
+      "uso": "rollo_bajo_hueso",
+      "hueso": "lowerleg02.R",
+      "t": 0.55,
+      "r": 0.05
+    },
+    {
+      "tipo": "banda_elastica",
+      "uso": "correa_pie_manos",
+      "pie": "R",
+      "fraccion": 0.5
+    }
+  ],
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "tobillo_dorsi.R": -30
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "tobillo_dorsi.R": -30
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.2,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "tobillo_dorsi.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "gastrocnemius",
+        "lado": "R"
+      },
+      {
+        "id": "soleus",
+        "lado": "R"
+      },
+      {
+        "id": "tibialis_posterior",
+        "lado": "R"
+      },
+      {
+        "id": "fibularis_longus",
+        "lado": "R"
+      },
+      {
+        "id": "fibularis_brevis",
+        "lado": "R"
+      },
+      {
+        "id": "flexor_digitorum_longus",
+        "lado": "R"
+      },
+      {
+        "id": "flexor_hallucis_longus",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "tibialis_anterior",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_digitorum_longus",
+        "lado": "R"
+      },
+      {
+        "id": "extensor_digitorum_brevis",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "foot.R"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Plantiflexión con banda en sedente"
+}

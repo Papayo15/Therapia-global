@@ -1,0 +1,139 @@
+{
+  "id": "F-ATM-005",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.2,
+      -1,
+      0.1
+    ],
+    "lente": 50,
+    "margen": 1.6,
+    "grupos": [
+      "head",
+      "neck01",
+      "neck02",
+      "neck03",
+      "jaw"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "atm_lateral": 0,
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "atm_lateral": 0,
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.5,
+      "art": {
+        "atm_lateral": -5,
+        "atm_apertura": 3
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.3,
+      "art": {
+        "atm_lateral": -5,
+        "atm_apertura": 3
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.6,
+      "art": {
+        "atm_lateral": 0,
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "atm_lateral": 0,
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "lateral_pterygoid",
+        "lado": "R"
+      },
+      {
+        "id": "medial_pterygoid",
+        "lado": "R"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "lateral_pterygoid",
+        "lado": "L"
+      },
+      {
+        "id": "medial_pterygoid",
+        "lado": "L"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "jaw"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "depresor_lingual",
+      "uso": "en_boca"
+    }
+  ],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Mismo video para gym y casa (en casa: palito de helado).",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Lateralidad con depresor lingual entre incisivos"
+}

@@ -1,0 +1,164 @@
+{
+  "id": "E-050",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "rodillas",
+    "colchoneta": true,
+    "angulos": {
+      "rodilla_flex.R": 90,
+      "tobillo_dorsi.R": -50,
+      "cadera_flex.L": 90,
+      "rodilla_flex.L": 90
+    },
+    "suelo": [
+      "lowerleg01.R",
+      "lowerleg02.R"
+    ],
+    "asentar": [
+      {
+        "art": "cadera_flex.L",
+        "grupo": "foot.L",
+        "rango": [
+          -25,
+          25
+        ]
+      }
+    ]
+  },
+  "ik": [
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": [
+        "lowerleg01.R",
+        "lowerleg02.R"
+      ],
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.1,
+      0.25
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "lumbar_flex": 6
+      },
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.08,
+        -0.02
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "lumbar_flex": 6
+      },
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.08,
+        -0.02
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "lumbar_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "iliopsoas",
+        "lado": "R"
+      }
+    ],
+    "sostienen": [
+      {
+        "id": "gluteus_maximus",
+        "lado": "R"
+      },
+      {
+        "id": "rectus_abdominis"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Media rodilla (half-kneeling) con retroversión"
+}

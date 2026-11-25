@@ -1,0 +1,124 @@
+key	de	fr	pt	ru	ar	ja	zh	hi
+abductor_digiti_minimi_hand	Kleinfingerabspreizer	Abducteur du petit doigt	Abdutor do dedo mínimo	Мышца, отводящая мизинец	مبعدة الخنصر	小指外転筋	小指展肌	कनिष्ठिका अपवर्तनी
+abductor_pollicis_brevis	Kurzer Daumenabspreizer	Court abducteur du pouce	Abdutor curto do polegar	Короткая мышца, отводящая большой палец	المبعدة القصيرة للإبهام	短母指外転筋	拇短展肌	लघु अंगुष्ठ अपवर्तनी
+abductor_pollicis_longus	Langer Daumenabspreizer	Long abducteur du pouce	Abdutor longo do polegar	Длинная мышца, отводящая большой палец	المبعدة الطويلة للإبهام	長母指外転筋	拇长展肌	दीर्घ अंगुष्ठ अपवर्तनी
+adductor_brevis	Kurzer Oberschenkelanzieher	Court adducteur	Adutor curto	Короткая приводящая мышца	المقربة القصيرة	短内転筋	短收肌	लघु अभिवर्तनी
+adductor_longus	Langer Oberschenkelanzieher	Long adducteur	Adutor longo	Длинная приводящая мышца	المقربة الطويلة	長内転筋	长收肌	दीर्घ अभिवर्तनी
+adductor_magnus	Großer Oberschenkelanzieher	Grand adducteur	Adutor magno	Большая приводящая мышца	المقربة الكبيرة	大内転筋	大收肌	बृहत् अभिवर्तनी
+adductor_pollicis	Daumenanzieher	Adducteur du pouce	Adutor do polegar	Мышца, приводящая большой палец	مقربة الإبهام	母指内転筋	拇收肌	अंगुष्ठ अभिवर्तनी
+anconeus	Ellenbogenmuskel	Anconé	Ancôneo	Локтевая мышца	المرفقية	肘筋	肘肌	एंकोनियस
+biceps_brachii	Bizeps (Oberarm)	Biceps brachial	Bíceps braquial	Двуглавая мышца плеча	ذات الرأسين العضدية	上腕二頭筋	肱二头肌	द्विशिरस्क बाहु
+biceps_femoris	Zweiköpfiger Oberschenkelmuskel	Biceps fémoral	Bíceps femoral	Двуглавая мышца бедра	ذات الرأسين الفخذية	大腿二頭筋	股二头肌	द्विशिरस्क ऊरु
+brachialis	Oberarmmuskel	Brachial	Braquial	Плечевая мышца	العضدية	上腕筋	肱肌	बाहुपेशी (ब्रेकियलिस)
+brachioradialis	Oberarm-Speichen-Muskel	Brachioradial	Braquiorradial	Плечелучевая мышца	العضدية الكعبرية	腕橈骨筋	肱桡肌	बाहु-बहिःप्रकोष्ठिका
+coracobrachialis	Rabenschnabel-Oberarmmuskel	Coracobrachial	Coracobraquial	Клювовидно-плечевая мышца	الغرابية العضدية	烏口腕筋	喙肱肌	कोराकोब्रेकियलिस
+deltoid_anterior	Vorderer Deltamuskel	Deltoïde antérieur	Deltoide anterior	Передняя дельта	الدالية الأمامية	三角筋前部	三角肌前束	अग्र डेल्टॉइड
+deltoid_middle	Mittlerer Deltamuskel	Deltoïde moyen	Deltoide médio	Средняя дельта	الدالية الوسطى	三角筋中部	三角肌中束	मध्य डेल्टॉइड
+deltoid_posterior	Hinterer Deltamuskel	Deltoïde postérieur	Deltoide posterior	Задняя дельта	الدالية الخلفية	三角筋後部	三角肌后束	पश्च डेल्टॉइड
+digastric	Zweibäuchiger Muskel	Digastrique	Digástrico	Двубрюшная мышца	ذات البطنين	顎二腹筋	二腹肌	द्वितुंदी
+digastric_posterior_belly	Zweibäuchiger Muskel (hinterer Bauch)	Digastrique (ventre postérieur)	Digástrico (ventre posterior)	Двубрюшная мышца (заднее брюшко)	ذات البطنين (البطن الخلفي)	顎二腹筋（後腹）	二腹肌（后腹）	द्वितुंदी (पश्च तुंद)
+dorsal_interossei_hand	Dorsale Zwischenknochenmuskeln	Interosseux dorsaux	Interósseos dorsais	Тыльные межкостные мышцы	بين العظام الظهرية	背側骨間筋	骨间背侧肌	पृष्ठीय अंतरास्थि
+erector_spinae	Rückenstrecker	Érecteurs du rachis	Eretor da espinha	Мышца, выпрямляющая позвоночник	ناصبة الفقار	脊柱起立筋	竖脊肌	मेरुदंड उत्थापक
+erector_spinae_cervical	Rückenstrecker (Hals)	Érecteurs cervicaux	Eretor cervical	Разгибатели шеи	ناصبة الفقار العنقية	脊柱起立筋（頸部）	竖脊肌（颈段）	ग्रीवा मेरुदंड उत्थापक
+erector_spinae_lumbar	Rückenstrecker (Lende)	Érecteurs lombaires	Eretor lombar	Разгибатели поясницы	ناصبة الفقار القطنية	脊柱起立筋（腰部）	竖脊肌（腰段）	कटि मेरुदंड उत्थापक
+erector_spinae_thoracic	Rückenstrecker (Brust)	Érecteurs thoraciques	Eretor torácico	Грудные разгибатели спины	ناصبة الفقار الصدرية	脊柱起立筋（胸部）	竖脊肌（胸段）	वक्षीय मेरुदंड उत्थापक
+extensor_carpi_radialis_brevis	Kurzer speichenseitiger Handstrecker	Court extenseur radial du carpe	Extensor radial curto do carpo	Короткий лучевой разгибатель запястья	الباسطة الكعبرية القصيرة للرسغ	短橈側手根伸筋	桡侧腕短伸肌	लघु बहिःप्रकोष्ठिका मणिबंध प्रसारिणी
+extensor_carpi_radialis_longus	Langer speichenseitiger Handstrecker	Long extenseur radial du carpe	Extensor radial longo do carpo	Длинный лучевой разгибатель запястья	الباسطة الكعبرية الطويلة للرسغ	長橈側手根伸筋	桡侧腕长伸肌	दीर्घ बहिःप्रकोष्ठिका मणिबंध प्रसारिणी
+extensor_carpi_ulnaris	Ellenseitiger Handstrecker	Extenseur ulnaire du carpe	Extensor ulnar do carpo	Локтевой разгибатель запястья	الباسطة الزندية للرسغ	尺側手根伸筋	尺侧腕伸肌	अंतःप्रकोष्ठिका मणिबंध प्रसारिणी
+extensor_digiti_minimi	Kleinfingerstrecker	Extenseur du petit doigt	Extensor do dedo mínimo	Разгибатель мизинца	باسطة الخنصر	小指伸筋	小指伸肌	कनिष्ठिका प्रसारिणी
+extensor_digitorum	Fingerstrecker	Extenseur des doigts	Extensor dos dedos	Разгибатель пальцев	باسطة الأصابع	指伸筋	指伸肌	अंगुलि प्रसारिणी
+extensor_digitorum_brevis	Kurzer Zehenstrecker	Court extenseur des orteils	Extensor curto dos dedos	Короткий разгибатель пальцев стопы	الباسطة القصيرة للأصابع	短趾伸筋	趾短伸肌	लघु पादांगुलि प्रसारिणी
+extensor_digitorum_longus	Langer Zehenstrecker	Long extenseur des orteils	Extensor longo dos dedos	Длинный разгибатель пальцев стопы	الباسطة الطويلة للأصابع	長趾伸筋	趾长伸肌	दीर्घ पादांगुलि प्रसारिणी
+extensor_hallucis_longus	Langer Großzehenstrecker	Long extenseur de l'hallux	Extensor longo do hálux	Длинный разгибатель большого пальца стопы	الباسطة الطويلة لإبهام القدم	長母趾伸筋	拇长伸肌	दीर्घ पादांगुष्ठ प्रसारिणी
+extensor_indicis	Zeigefingerstrecker	Extenseur de l'index	Extensor do indicador	Разгибатель указательного пальца	باسطة السبابة	示指伸筋	示指伸肌	तर्जनी प्रसारिणी
+extensor_pollicis_longus	Langer Daumenstrecker	Long extenseur du pouce	Extensor longo do polegar	Длинный разгибатель большого пальца	الباسطة الطويلة للإبهام	長母指伸筋	拇长伸肌（手）	दीर्घ अंगुष्ठ प्रसारिणी
+external_oblique	Äußerer schräger Bauchmuskel	Oblique externe	Oblíquo externo	Наружная косая мышца живота	المائلة الظاهرة	外腹斜筋	腹外斜肌	बाह्य तिर्यक
+fibularis_brevis	Kurzer Wadenbeinmuskel	Court fibulaire	Fibular curto	Короткая малоберцовая мышца	الشظوية القصيرة	短腓骨筋	腓骨短肌	लघु अनुजंघिका
+fibularis_longus	Langer Wadenbeinmuskel	Long fibulaire	Fibular longo	Длинная малоберцовая мышца	الشظوية الطويلة	長腓骨筋	腓骨长肌	दीर्घ अनुजंघिका
+fibularis_tertius	Dritter Wadenbeinmuskel	Troisième fibulaire	Fibular terceiro	Третья малоберцовая мышца	الشظوية الثالثة	第三腓骨筋	第三腓骨肌	तृतीय अनुजंघिका
+flexor_carpi_radialis	Speichenseitiger Handbeuger	Fléchisseur radial du carpe	Flexor radial do carpo	Лучевой сгибатель запястья	القابضة الكعبرية للرسغ	橈側手根屈筋	桡侧腕屈肌	बहिःप्रकोष्ठिका मणिबंध आकुंचनी
+flexor_carpi_ulnaris	Ellenseitiger Handbeuger	Fléchisseur ulnaire du carpe	Flexor ulnar do carpo	Локтевой сгибатель запястья	القابضة الزندية للرسغ	尺側手根屈筋	尺侧腕屈肌	अंतःप्रकोष्ठिका मणिबंध आकुंचनी
+flexor_digitorum_brevis	Kurzer Zehenbeuger	Court fléchisseur des orteils	Flexor curto dos dedos	Короткий сгибатель пальцев стопы	القابضة القصيرة للأصابع	短趾屈筋	趾短屈肌	लघु पादांगुलि आकुंचनी
+flexor_digitorum_longus	Langer Zehenbeuger	Long fléchisseur des orteils	Flexor longo dos dedos	Длинный сгибатель пальцев стопы	القابضة الطويلة للأصابع	長趾屈筋	趾长屈肌	दीर्घ पादांगुलि आकुंचनी
+flexor_digitorum_profundus	Tiefer Fingerbeuger	Fléchisseur profond des doigts	Flexor profundo dos dedos	Глубокий сгибатель пальцев	القابضة العميقة للأصابع	深指屈筋	指深屈肌	गहन अंगुलि आकुंचनी
+flexor_digitorum_superficialis	Oberflächlicher Fingerbeuger	Fléchisseur superficiel des doigts	Flexor superficial dos dedos	Поверхностный сгибатель пальцев	القابضة السطحية للأصابع	浅指屈筋	指浅屈肌	सतही अंगुलि आकुंचनी
+flexor_hallucis_longus	Langer Großzehenbeuger	Long fléchisseur de l'hallux	Flexor longo do hálux	Длинный сгибатель большого пальца стопы	القابضة الطويلة لإبهام القدم	長母趾屈筋	拇长屈肌	दीर्घ पादांगुष्ठ आकुंचनी
+flexor_pollicis_brevis	Kurzer Daumenbeuger	Court fléchisseur du pouce	Flexor curto do polegar	Короткий сгибатель большого пальца	القابضة القصيرة للإبهام	短母指屈筋	拇短屈肌	लघु अंगुष्ठ आकुंचनी
+flexor_pollicis_longus	Langer Daumenbeuger	Long fléchisseur du pouce	Flexor longo do polegar	Длинный сгибатель большого пальца	القابضة الطويلة للإبهام	長母指屈筋	拇长屈肌（手）	दीर्घ अंगुष्ठ आकुंचनी
+gastrocnemius	Zwillingswadenmuskel	Gastrocnémien	Gastrocnêmio	Икроножная мышца	الساقية التوأمية	腓腹筋	腓肠肌	पिंडली पेशी (गैस्ट्रोक्नीमियस)
+gemellus_inferior	Unterer Zwillingsmuskel	Jumeau inférieur	Gêmeo inferior	Нижняя близнецовая мышца	التوأمية السفلية	下双子筋	下孖肌	अधो युग्मक
+gemellus_superior	Oberer Zwillingsmuskel	Jumeau supérieur	Gêmeo superior	Верхняя близнецовая мышца	التوأمية العلوية	上双子筋	上孖肌	ऊर्ध्व युग्मक
+gluteus_maximus	Großer Gesäßmuskel	Grand fessier	Glúteo máximo	Большая ягодичная мышца	الألوية الكبرى	大殿筋	臀大肌	बृहत् नितंब पेशी
+gluteus_medius	Mittlerer Gesäßmuskel	Moyen fessier	Glúteo médio	Средняя ягодичная мышца	الألوية الوسطى	中殿筋	臀中肌	मध्य नितंब पेशी
+gluteus_minimus	Kleiner Gesäßmuskel	Petit fessier	Glúteo mínimo	Малая ягодичная мышца	الألوية الصغرى	小殿筋	臀小肌	लघु नितंब पेशी
+gracilis	Schlankmuskel	Gracile	Grácil	Тонкая мышца	الناحلة	薄筋	股薄肌	ग्रेसिलिस
+iliopsoas	Hüftlendenmuskel	Ilio-psoas	Iliopsoas	Подвздошно-поясничная мышца	الحرقفية القطنية	腸腰筋	髂腰肌	इलियोसोआस
+iliotibial_band	Iliotibialer Trakt	Bandelette ilio-tibiale	Banda iliotibial	Подвздошно-большеберцовый тракт	الشريط الحرقفي الظنبوبي	腸脛靭帯	髂胫束	इलियोटिबियल पट्ट
+infraspinatus	Untergrätenmuskel	Infra-épineux	Infraespinal	Подостная мышца	تحت الشوكة	棘下筋	冈下肌	अधःकंटिका
+internal_oblique	Innerer schräger Bauchmuskel	Oblique interne	Oblíquo interno	Внутренняя косая мышца живота	المائلة الباطنة	内腹斜筋	腹内斜肌	आंतरिक तिर्यक
+lateral_pterygoid	Seitlicher Flügelmuskel	Ptérygoïdien latéral	Pterigóideo lateral	Латеральная крыловидная мышца	الجناحية الوحشية	外側翼突筋	翼外肌	पार्श्व पक्षाभ
+latissimus_dorsi	Breiter Rückenmuskel	Grand dorsal	Grande dorsal	Широчайшая мышца спины	الظهرية العريضة	広背筋	背阔肌	पृष्ठच्छदा (लैटिसिमस डॉर्सी)
+levator_scapulae	Schulterblattheber	Élévateur de la scapula	Levantador da escápula	Мышца, поднимающая лопатку	رافعة لوح الكتف	肩甲挙筋	肩胛提肌	स्कंधफलक उत्तोलक
+longus_capitis	Langer Kopfmuskel	Long de la tête	Longo da cabeça	Длинная мышца головы	الطويلة الرأسية	頭長筋	头长肌	दीर्घ शीर्ष पेशी
+longus_colli	Langer Halsmuskel	Long du cou	Longo do pescoço	Длинная мышца шеи	الطويلة العنقية	頸長筋	颈长肌	दीर्घ ग्रीवा पेशी
+lumbricals_foot	Spulwurmmuskeln (Fuß)	Lombricaux du pied	Lumbricais do pé	Червеобразные мышцы стопы	الدودية (القدم)	虫様筋（足）	蚓状肌（足）	लुम्ब्रिकल (पैर)
+lumbricals_hand	Spulwurmmuskeln (Hand)	Lombricaux de la main	Lumbricais da mão	Червеобразные мышцы кисти	الدودية (اليد)	虫様筋（手）	蚓状肌（手）	लुम्ब्रिकल (हाथ)
+masseter	Kaumuskel	Masséter	Masseter	Жевательная мышца	الماضغة	咬筋	咬肌	मैसेटर (चर्वणी)
+medial_pterygoid	Innerer Flügelmuskel	Ptérygoïdien médial	Pterigóideo medial	Медиальная крыловидная мышца	الجناحية الإنسية	内側翼突筋	翼内肌	मध्य पक्षाभ
+multifidus	Vielgespaltener Muskel	Multifide	Multífidos	Многораздельные мышцы	متعددة الأقسام	多裂筋	多裂肌	मल्टीफिडस
+obliquus_capitis_inferior	Unterer schräger Kopfmuskel	Oblique inférieur de la tête	Oblíquo inferior da cabeça	Нижняя косая мышца головы	المائلة الرأسية السفلية	下頭斜筋	头下斜肌	अधो तिर्यक शीर्ष
+obliquus_capitis_superior	Oberer schräger Kopfmuskel	Oblique supérieur de la tête	Oblíquo superior da cabeça	Верхняя косая мышца головы	المائلة الرأسية العلوية	上頭斜筋	头上斜肌	ऊर्ध्व तिर्यक शीर्ष
+obturator_externus	Äußerer Hüftlochmuskel	Obturateur externe	Obturador externo	Наружная запирательная мышца	السادة الظاهرة	外閉鎖筋	闭孔外肌	बाह्य ऑब्ट्यूरेटर
+obturator_internus	Innerer Hüftlochmuskel	Obturateur interne	Obturador interno	Внутренняя запирательная мышца	السادة الباطنة	内閉鎖筋	闭孔内肌	आंतरिक ऑब्ट्यूरेटर
+opponens_pollicis	Daumengegensteller	Opposant du pouce	Oponente do polegar	Мышца, противопоставляющая большой палец	المقابلة للإبهام	母指対立筋	拇对掌肌	अंगुष्ठ अभिमुखी
+palmar_interossei	Palmare Zwischenknochenmuskeln	Interosseux palmaires	Interósseos palmares	Ладонные межкостные мышцы	بين العظام الراحية	掌側骨間筋	骨间掌侧肌	करतलीय अंतरास्थि
+palmaris_longus	Langer Hohlhandmuskel	Long palmaire	Palmar longo	Длинная ладонная мышца	الراحية الطويلة	長掌筋	掌长肌	दीर्घ करतलिका
+pectineus	Kammmuskel	Pectiné	Pectíneo	Гребенчатая мышца	العانية	恥骨筋	耻骨肌	पेक्टिनियस
+pectoralis_major	Großer Brustmuskel	Grand pectoral	Peitoral maior	Большая грудная мышца	الصدرية الكبرى	大胸筋	胸大肌	बृहत् वक्षीय
+pectoralis_major_clavicular	Großer Brustmuskel (Schlüsselbeinteil)	Grand pectoral (faisceau claviculaire)	Peitoral maior (porção clavicular)	Большая грудная мышца (ключичная часть)	الصدرية الكبرى (الحزمة الترقوية)	大胸筋（鎖骨部）	胸大肌（锁骨部）	बृहत् वक्षीय (जत्रुक भाग)
+pectoralis_minor	Kleiner Brustmuskel	Petit pectoral	Peitoral menor	Малая грудная мышца	الصدرية الصغرى	小胸筋	胸小肌	लघु वक्षीय
+piriformis	Birnenförmiger Muskel	Piriforme	Piriforme	Грушевидная мышца	الكمثرية	梨状筋	梨状肌	पिरिफॉर्मिस
+popliteus	Kniekehlenmuskel	Poplité	Poplíteo	Подколенная мышца	المأبضية	膝窩筋	腘肌	पॉप्लिटियस
+pronator_quadratus	Viereckiger Einwärtsdreher	Carré pronateur	Pronador quadrado	Квадратный пронатор	الكابة المربعة	方形回内筋	旋前方肌	चतुर्भुज प्रोनेटर
+pronator_teres	Runder Einwärtsdreher	Rond pronateur	Pronador redondo	Круглый пронатор	الكابة المدورة	円回内筋	旋前圆肌	गोल प्रोनेटर
+quadratus_femoris	Viereckiger Oberschenkelmuskel	Carré fémoral	Quadrado femoral	Квадратная мышца бедра	المربعة الفخذية	大腿方形筋	股方肌	चतुर्भुज ऊरु
+quadratus_lumborum	Quadratischer Lendenmuskel	Carré des lombes	Quadrado lombar	Квадратная мышца поясницы	المربعة القطنية	腰方形筋	腰方肌	चतुर्भुज कटि
+rectus_abdominis	Gerader Bauchmuskel	Grand droit de l'abdomen	Reto abdominal	Прямая мышца живота	المستقيمة البطنية	腹直筋	腹直肌	उदर ऋजु पेशी
+rectus_capitis_posterior_major	Großer hinterer gerader Kopfmuskel	Grand droit postérieur de la tête	Reto posterior maior da cabeça	Большая задняя прямая мышца головы	المستقيمة الرأسية الخلفية الكبرى	大後頭直筋	头后大直肌	बृहत् पश्च शीर्ष ऋजु
+rectus_capitis_posterior_minor	Kleiner hinterer gerader Kopfmuskel	Petit droit postérieur de la tête	Reto posterior menor da cabeça	Малая задняя прямая мышца головы	المستقيمة الرأسية الخلفية الصغرى	小後頭直筋	头后小直肌	लघु पश्च शीर्ष ऋजु
+rectus_femoris	Gerader Oberschenkelmuskel	Droit fémoral	Reto femoral	Прямая мышца бедра	المستقيمة الفخذية	大腿直筋	股直肌	ऊरु ऋजु पेशी
+rhomboid_major	Großer Rautenmuskel	Grand rhomboïde	Romboide maior	Большая ромбовидная мышца	المعينية الكبرى	大菱形筋	大菱形肌	बृहत् रॉमबॉइड
+rhomboid_minor	Kleiner Rautenmuskel	Petit rhomboïde	Romboide menor	Малая ромбовидная мышца	المعينية الصغرى	小菱形筋	小菱形肌	लघु रॉमबॉइड
+rotatores	Drehmuskeln	Rotateurs	Rotadores	Мышцы-вращатели	المدورات	回旋筋	回旋肌	रोटेटोरेस
+sartorius	Schneidermuskel	Sartorius	Sartório	Портняжная мышца	الخياطية	縫工筋	缝匠肌	सार्टोरियस
+scalene_anterior	Vorderer Treppenmuskel	Scalène antérieur	Escaleno anterior	Передняя лестничная мышца	الأخمعية الأمامية	前斜角筋	前斜角肌	अग्र स्केलीन
+scalene_middle	Mittlerer Treppenmuskel	Scalène moyen	Escaleno médio	Средняя лестничная мышца	الأخمعية الوسطى	中斜角筋	中斜角肌	मध्य स्केलीन
+scalene_posterior	Hinterer Treppenmuskel	Scalène postérieur	Escaleno posterior	Задняя лестничная мышца	الأخمعية الخلفية	後斜角筋	后斜角肌	पश्च स्केलीन
+semimembranosus	Plattsehnenmuskel	Semi-membraneux	Semimembranoso	Полуперепончатая мышца	نصف الغشائية	半膜様筋	半膜肌	अर्धझिल्लीमय
+semispinalis_capitis	Halbdornmuskel des Kopfes	Semi-épineux de la tête	Semiespinal da cabeça	Полуостистая мышца головы	نصف الشوكية الرأسية	頭半棘筋	头半棘肌	शीर्ष अर्धकंटिका
+semispinalis_cervicis	Halbdornmuskel des Halses	Semi-épineux du cou	Semiespinal do pescoço	Полуостистая мышца шеи	نصف الشوكية العنقية	頸半棘筋	颈半棘肌	ग्रीवा अर्धकंटिका
+semitendinosus	Halbsehnenmuskel	Semi-tendineux	Semitendinoso	Полусухожильная мышца	نصف الوترية	半腱様筋	半腱肌	अर्धकंडरामय
+serratus_anterior	Vorderer Sägemuskel	Dentelé antérieur	Serrátil anterior	Передняя зубчатая мышца	المنشارية الأمامية	前鋸筋	前锯肌	अग्र दंतुर पेशी
+soleus	Schollenmuskel	Soléaire	Sóleo	Камбаловидная мышца	النعلية	ヒラメ筋	比目鱼肌	सोलियस
+splenius_capitis	Riemenmuskel des Kopfes	Splénius de la tête	Esplênio da cabeça	Ременная мышца головы	الطحالية الرأسية	頭板状筋	头夹肌	शीर्ष स्प्लीनियस
+splenius_cervicis	Riemenmuskel des Halses	Splénius du cou	Esplênio do pescoço	Ременная мышца шеи	الطحالية العنقية	頸板状筋	颈夹肌	ग्रीवा स्प्लीनियस
+sternocleidomastoid	Kopfwender	Sterno-cléido-mastoïdien	Esternocleidomastóideo	Грудино-ключично-сосцевидная мышца	القصية الترقوية الخشائية	胸鎖乳突筋	胸锁乳突肌	उरोजत्रुककर्णमूलिका
+subscapularis	Unterschulterblattmuskel	Subscapulaire	Subescapular	Подлопаточная мышца	تحت الكتف	肩甲下筋	肩胛下肌	अधःस्कंधफलकी
+supinator	Auswärtsdreher	Supinateur	Supinador	Супинатор	الباطحة	回外筋	旋后肌	सुपिनेटर
+suprahyoids	Obere Zungenbeinmuskeln	Muscles sus-hyoïdiens	Supra-hióideos	Надподъязычные мышцы	العضلات فوق اللامية	舌骨上筋群	舌骨上肌群	अधिकंठिका पेशियाँ
+supraspinatus	Obergrätenmuskel	Supra-épineux	Supraespinal	Надостная мышца	فوق الشوكة	棘上筋	冈上肌	अधिकंटिका
+temporalis	Schläfenmuskel	Temporal	Temporal	Височная мышца	الصدغية	側頭筋	颞肌	शंखपेशी (टेम्पोरलिस)
+tensor_fasciae_latae	Schenkelbindenspanner	Tenseur du fascia lata	Tensor da fáscia lata	Мышца, напрягающая широкую фасцию	موترة اللفافة العريضة	大腿筋膜張筋	阔筋膜张肌	टेन्सर फेशिया लेटी
+teres_major	Großer Rundmuskel	Grand rond	Redondo maior	Большая круглая мышца	المدورة الكبرى	大円筋	大圆肌	बृहत् गोल पेशी
+teres_minor	Kleiner Rundmuskel	Petit rond	Redondo menor	Малая круглая мышца	المدورة الصغرى	小円筋	小圆肌	लघु गोल पेशी
+tibialis_anterior	Vorderer Schienbeinmuskel	Tibial antérieur	Tibial anterior	Передняя большеберцовая мышца	الظنبوبية الأمامية	前脛骨筋	胫骨前肌	अग्र टिबियल
+tibialis_posterior	Hinterer Schienbeinmuskel	Tibial postérieur	Tibial posterior	Задняя большеберцовая мышца	الظنبوبية الخلفية	後脛骨筋	胫骨后肌	पश्च टिबियल
+transversus_abdominis	Querer Bauchmuskel	Transverse de l'abdomen	Transverso do abdome	Поперечная мышца живота	المستعرضة البطنية	腹横筋	腹横肌	अनुप्रस्थ उदर पेशी
+trapezius_lower	Unterer Trapezmuskel	Trapèze inférieur	Trapézio inferior	Нижняя часть трапеции	شبه المنحرفة السفلية	僧帽筋下部	斜方肌下束	अधो ट्रेपेज़ियस
+trapezius_middle	Mittlerer Trapezmuskel	Trapèze moyen	Trapézio médio	Средняя часть трапеции	شبه المنحرفة الوسطى	僧帽筋中部	斜方肌中束	मध्य ट्रेपेज़ियस
+trapezius_upper	Oberer Trapezmuskel	Trapèze supérieur	Trapézio superior	Верхняя часть трапеции	شبه المنحرفة العلوية	僧帽筋上部	斜方肌上束	ऊर्ध्व ट्रेपेज़ियस
+triceps_brachii	Trizeps (Oberarm)	Triceps brachial	Tríceps braquial	Трёхглавая мышца плеча	ثلاثية الرؤوس العضدية	上腕三頭筋	肱三头肌	त्रिशिरस्क बाहु
+triceps_brachii_long_head	Trizeps (langer Kopf)	Triceps (chef long)	Tríceps (cabeça longa)	Трёхглавая мышца (длинная головка)	ثلاثية الرؤوس (الرأس الطويل)	上腕三頭筋（長頭）	肱三头肌（长头）	त्रिशिरस्क (दीर्घ शिर)
+vastus_intermedius	Mittlerer Schenkelmuskel	Vaste intermédiaire	Vasto intermédio	Промежуточная широкая мышца бедра	المتسعة المتوسطة	中間広筋	股中间肌	मध्यवर्ती वैस्टस
+vastus_lateralis	Äußerer Schenkelmuskel	Vaste latéral	Vasto lateral	Латеральная широкая мышца бедра	المتسعة الوحشية	外側広筋	股外侧肌	पार्श्व वैस्टस
+vastus_medialis	Innerer Schenkelmuskel	Vaste médial	Vasto medial	Медиальная широкая мышца бедра	المتسعة الإنسية	内側広筋	股内侧肌	मध्य वैस्टस

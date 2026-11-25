@@ -1,0 +1,140 @@
+{
+  "id": "E-031",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "hombro_flex.L": -45,
+      "hombro_flex.R": -45,
+      "antebrazo_prono.L": 80,
+      "antebrazo_prono.R": 80
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L"
+    },
+    {
+      "cadena": "brazo.R"
+    },
+    {
+      "cadena": "pierna.L",
+      "pie_plano": true
+    },
+    {
+      "cadena": "pierna.R",
+      "pie_plano": true
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    },
+    {
+      "grupo": "foot.R"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -1,
+      -0.2,
+      0.2
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 0.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 1.9,
+      "art": {},
+      "p": 1,
+      "fase": "isometrico",
+      "raiz": [
+        0,
+        -0.04,
+        -0.12
+      ]
+    },
+    {
+      "t": 4.9,
+      "art": {},
+      "p": 1,
+      "fase": "excentrico",
+      "raiz": [
+        0,
+        -0.04,
+        -0.12
+      ]
+    },
+    {
+      "t": 6.4,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "t": 6.8,
+      "art": {},
+      "p": 0,
+      "fase": "concentrico",
+      "raiz": [
+        0,
+        -0.0,
+        -0.0
+      ]
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "biceps_brachii"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [
+    {
+      "tipo": "mesa",
+      "uso": "superficie_manos"
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Manos apoyadas atrás en la mesa"
+}

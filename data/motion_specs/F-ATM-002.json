@@ -1,0 +1,130 @@
+{
+  "id": "F-ATM-002",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 50,
+      "codo_flex.R": 50
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.4,
+      -1,
+      0.1
+    ],
+    "lente": 50,
+    "margen": 1.6,
+    "grupos": [
+      "head",
+      "neck01",
+      "neck02",
+      "neck03",
+      "jaw"
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "atm_apertura": 24
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.4,
+      "art": {
+        "atm_apertura": 24
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 3.8,
+      "art": {
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "atm_apertura": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "digastric"
+      },
+      {
+        "id": "lateral_pterygoid"
+      },
+      {
+        "id": "suprahyoids"
+      }
+    ],
+    "elongan": [
+      {
+        "id": "masseter"
+      },
+      {
+        "id": "temporalis"
+      },
+      {
+        "id": "medial_pterygoid"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "jaw"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Apertura frente al espejo sin desviación"
+}

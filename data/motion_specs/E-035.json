@@ -1,0 +1,128 @@
+{
+  "id": "E-035",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "sedente",
+    "silla": true,
+    "angulos": {
+      "cadera_flex.L": 90,
+      "cadera_flex.R": 90,
+      "rodilla_flex.L": 90,
+      "rodilla_flex.R": 90,
+      "hombro_flex.L": 70,
+      "hombro_flex.R": 90,
+      "codo_flex.L": 110,
+      "codo_flex.R": 0,
+      "antebrazo_prono.R": -80
+    }
+  },
+  "ik": [
+    {
+      "cadena": "brazo.L",
+      "a_hueso": {
+        "hueso": "metacarpal3.R",
+        "dir": "anterior",
+        "t": 0.9,
+        "sep": 0.02,
+        "lado": "L"
+      }
+    }
+  ],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      -0.6,
+      -1,
+      0.4
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "muneca_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "muneca_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "muneca_flex.R": -70
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "muneca_flex.R": -70
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "muneca_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "muneca_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "flexor_carpi_radialis",
+        "lado": "R"
+      },
+      {
+        "id": "flexor_carpi_ulnaris",
+        "lado": "R"
+      },
+      {
+        "id": "palmaris_longus",
+        "lado": "R"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "wrist.R"
+    }
+  ],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "camara_extra": null,
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Extensión pasiva con codo extendido"
+}

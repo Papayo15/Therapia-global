@@ -1,0 +1,203 @@
+{
+  "id": "E-046",
+  "duracion_s": 6.8,
+  "base": {
+    "orientacion": "prono",
+    "colchoneta": true,
+    "angulos": {
+      "cervical_rot": 0,
+      "antebrazo_prono.L": -80,
+      "antebrazo_prono.R": -80,
+      "tobillo_dorsi.L": -30,
+      "tobillo_dorsi.R": -30,
+      "hombro_flex.L": 25,
+      "hombro_flex.R": 25,
+      "codo_flex.L": 95,
+      "codo_flex.R": 95,
+      "hombro_abd.L": 10,
+      "hombro_abd.R": 10
+    },
+    "asentar": [
+      {
+        "art": "toracica_flex",
+        "grupo": [
+          "lowerarm01.L",
+          "lowerarm02.L",
+          "lowerarm02.L",
+          "wrist.L",
+          "finger1-1.L",
+          "finger1-2.L",
+          "finger1-3.L",
+          "finger2-1.L",
+          "finger2-2.L",
+          "finger2-3.L",
+          "finger3-1.L",
+          "finger3-2.L",
+          "finger3-3.L",
+          "finger4-1.L",
+          "finger4-2.L",
+          "finger4-3.L",
+          "finger5-1.L",
+          "finger5-2.L",
+          "finger5-3.L",
+          "metacarpal1.L",
+          "metacarpal2.L",
+          "metacarpal3.L",
+          "metacarpal4.L"
+        ],
+        "rango": [
+          -55,
+          10
+        ]
+      },
+      {
+        "art": "cervical_flex",
+        "grupo": "head",
+        "z": 0.25,
+        "rango": [
+          -30,
+          30
+        ]
+      }
+    ],
+    "suelo": [
+      "pelvis.L",
+      "pelvis.R",
+      "upperleg01.L",
+      "upperleg01.R",
+      "upperleg02.L",
+      "upperleg02.R"
+    ]
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": [
+        "pelvis.L",
+        "pelvis.R",
+        "spine05"
+      ],
+      "tol_cm": 2.5
+    },
+    {
+      "grupo": [
+        "lowerarm01.L",
+        "lowerarm02.L"
+      ],
+      "tol_cm": 2.5
+    }
+  ],
+  "camara": {
+    "dir": [
+      1,
+      0.1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.1
+  },
+  "resolver": {
+    "art": "@pitch",
+    "a": [
+      "lowerarm01.L",
+      "lowerarm02.L",
+      "lowerarm01.R",
+      "lowerarm02.R"
+    ],
+    "b": [
+      "pelvis.L",
+      "pelvis.R",
+      "upperleg02.L",
+      "upperleg02.R"
+    ],
+    "compensar": {
+      "cadera_flex.L": 1,
+      "cadera_flex.R": 1
+    },
+    "rango": [
+      -12,
+      12
+    ]
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.9,
+      "art": {
+        "lumbar_flex": -7,
+        "toracica_flex": 4
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 4.9,
+      "art": {
+        "lumbar_flex": -7,
+        "toracica_flex": 4
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 6.4,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 6.8,
+      "art": {
+        "lumbar_flex": 0,
+        "toracica_flex": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "estirados": [
+      {
+        "id": "rectus_abdominis"
+      },
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "internal_oblique"
+      }
+    ]
+  },
+  "articulacion_resaltada": [],
+  "props": [],
+  "variantes": [
+    "gym"
+  ],
+  "nota_variantes": "Sin material: un solo video sirve para gym y casa.",
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Prono sobre codos (esfinge)"
+}

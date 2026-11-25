@@ -1,0 +1,145 @@
+{
+  "id": "F-LUM-018",
+  "duracion_s": 5.0,
+  "base": {
+    "orientacion": "bipedo",
+    "angulos": {
+      "hombro_abd.L": 2,
+      "hombro_abd.R": 2,
+      "hombro_flex.L": 75,
+      "hombro_flex.R": 75,
+      "codo_flex.L": 85,
+      "codo_flex.R": 85,
+      "hombro_abd_h.L": -20,
+      "hombro_abd_h.R": 20,
+      "mano_cerrar.L": 70,
+      "mano_cerrar.R": 70
+    }
+  },
+  "ik": [],
+  "contactos": [
+    {
+      "grupo": "foot.L"
+    }
+  ],
+  "camara": {
+    "dir": [
+      0,
+      -1,
+      0.3
+    ],
+    "lente": 50,
+    "margen": 1.05
+  },
+  "keys": [
+    {
+      "t": 0,
+      "art": {
+        "codo_flex.L": 0,
+        "codo_flex.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 0.4,
+      "art": {
+        "codo_flex.L": 0,
+        "codo_flex.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 1.6,
+      "art": {
+        "codo_flex.L": -80,
+        "codo_flex.R": -80,
+        "hombro_flex.L": 15,
+        "hombro_flex.R": 15
+      },
+      "p": 1,
+      "fase": "isometrico"
+    },
+    {
+      "t": 2.6,
+      "art": {
+        "codo_flex.L": -80,
+        "codo_flex.R": -80,
+        "hombro_flex.L": 15,
+        "hombro_flex.R": 15
+      },
+      "p": 1,
+      "fase": "excentrico"
+    },
+    {
+      "t": 4.0,
+      "art": {
+        "codo_flex.L": 0,
+        "codo_flex.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    },
+    {
+      "t": 5.0,
+      "art": {
+        "codo_flex.L": 0,
+        "codo_flex.R": 0,
+        "hombro_flex.L": 0,
+        "hombro_flex.R": 0
+      },
+      "p": 0,
+      "fase": "concentrico"
+    }
+  ],
+  "musculos": {
+    "activos": [
+      {
+        "id": "external_oblique"
+      },
+      {
+        "id": "internal_oblique"
+      },
+      {
+        "id": "multifidus"
+      },
+      {
+        "id": "transversus_abdominis"
+      }
+    ]
+  },
+  "articulacion_resaltada": [
+    {
+      "hueso": "spine03"
+    }
+  ],
+  "props": [
+    {
+      "tipo": "banda_elastica",
+      "uso": "banda_anclada_hueso",
+      "hueso": "wrist.R",
+      "anclaje_rel": [
+        0.9,
+        0.3,
+        0
+      ]
+    }
+  ],
+  "variantes": [
+    "gym",
+    "casa"
+  ],
+  "fps": 24,
+  "resolucion": [
+    1280,
+    720
+  ],
+  "nombre": "Pallof press de pie"
+}

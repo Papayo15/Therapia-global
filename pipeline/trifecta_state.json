@@ -1,0 +1,18 @@
+{
+  "A": {
+    "ray_id": "f23b8e3e-e71a-4b87-b5b8-dc30cc55b345",
+    "state": "completed",
+    "downloaded": true,
+    "video_url": "https://storage.cdn-luma.com/dream_machine/63f26fdd-e3d7-40be-9fab-77e57a34dbe0/89e4db19-a8f5-44aa-8333-a2afb4473964_output_a220c62923d20002.mp4"
+  },
+  "B": {
+    "ray_id": "8a429442-c297-4b09-901b-91c00b108369",
+    "state": "failed",
+    "downloaded": true
+  },
+  "C": {
+    "ray_id": "a7e48f68-0f11-43ff-ab7a-7f49e8225c1e",
+    "state": "failed",
+    "downloaded": true
+  }
+}
