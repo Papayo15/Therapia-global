@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { generateRoutinePDF } from "@/lib/generatePDF";
 import { encodePlanId } from "@/lib/planLink";
-import { supabase, type PlanExercise } from "@/lib/supabase";
+import { supabase, type PlanExercise, type RoutineRow } from "@/lib/supabase";
 import { LIBRARY_ITEMS, REGION_GROUPS, regionGroup, videoUrl, type LibraryItem } from "@/lib/videoLibrary";
 import { useLibraryText } from "@/lib/useLibraryText";
 
@@ -69,20 +69,6 @@ const DIFFICULTY_COLOR: Record<Difficulty, string> = {
   intermediate: "text-amber-700 bg-amber-500/10",
   advanced: "text-orange-700 bg-orange-500/10",
 };
-
-const TPL_KEY = "tg_routine_templates";
-function loadTemplates(): Template[] {
-  try {
-    return JSON.parse(localStorage.getItem(TPL_KEY) || "[]");
-  } catch {
-    return [];
-  }
-}
-function storeTemplates(t: Template[]) {
-  try {
-    localStorage.setItem(TPL_KEY, JSON.stringify(t));
-  } catch { /* sin almacenamiento: plantillas solo en esta sesión */ }
-}
 
 function useNames() {
   const t = useTranslations("rb");
@@ -220,21 +206,36 @@ function RoutineItem({
 }
 
 // ─── Modal de envío ───────────────────────────────────────────────────────────
-function SendModal({ isOpen, onClose, routineName, exercises, initial }: {
+type Initial = { name: string; phone: string; dx: string; pid: string };
+type PatientOpt = { id: string; name: string; phone: string | null };
+
+function SendModal({ isOpen, onClose, routineName, exercises, initial, editId, onSaved }: {
   isOpen: boolean; onClose: () => void; routineName: string; exercises: RoutineExercise[];
-  initial: { name: string; phone: string; dx: string };
+  initial: Initial;
+  /** rutina ya enviada que se está editando: se actualiza y el link no cambia */
+  editId: string | null;
+  onSaved: (id: string) => void;
 }) {
   const locale = useLocale();
   const { t, name, prop } = useNames();
   const [patientName, setPatientName] = useState(initial.name);
   const [patientPhone, setPatientPhone] = useState(initial.phone);
   const [diagnosis, setDiagnosis] = useState(initial.dx);
+  const [patientId, setPatientId] = useState(initial.pid);
+  const [patients, setPatients] = useState<PatientOpt[]>([]);
   useEffect(() => {
     setPatientName(initial.name);
     setPatientPhone(initial.phone);
     setDiagnosis(initial.dx);
-  }, [initial.name, initial.phone, initial.dx]);
+    setPatientId(initial.pid);
+  }, [initial.name, initial.phone, initial.dx, initial.pid]);
+  useEffect(() => {
+    if (!isOpen) return;
+    supabase.from("patients").select("id, name, phone").is("deleted_at", null).order("name")
+      .then(({ data }) => setPatients((data as PatientOpt[]) ?? []));
+  }, [isOpen]);
   const [planLink, setPlanLink] = useState<string | null>(null);
+  const [wasEdit, setWasEdit] = useState(false);      // el link mostrado viene de editar una rutina ya enviada
   const [sending, setSending] = useState(false);
   const [copied, setCopied] = useState(false);
   const latin = ["es", "en", "pt", "fr", "de"].includes(locale);
@@ -248,7 +249,8 @@ function SendModal({ isOpen, onClose, routineName, exercises, initial }: {
 
   if (!isOpen) return null;
 
-  const meta = { diagnosis: diagnosis || routineName, phase: t("phase1"), frequency_per_week: 3, duration_weeks: 4 };
+  const freq = Math.max(1, ...exercises.map((e) => e.frequencyPerWeek || 3));
+  const meta = { diagnosis: diagnosis || routineName, phase: t("phase1"), frequency_per_week: freq, duration_weeks: 4 };
   const planExercises = () => toPlanExercises(exercises, name, prop);
 
   async function generatePlanLink() {
@@ -258,17 +260,21 @@ function SendModal({ isOpen, onClose, routineName, exercises, initial }: {
       patientName: pName, ...meta, exercises: planExercises(),
     })}`;
     try {
-      // se guarda en la cuenta del terapeuta → link corto /p/<id>; si falla, link autocontenido
-      const { data: saved, error } = await supabase
-        .from("routine_plans")
-        .insert({
-          patient_name: pName,
-          patient_phone: patientPhone || null,
-          diagnosis: meta.diagnosis,
-          plan_json: { meta, exercises: planExercises() },
-        })
-        .select("id")
-        .single();
+      // se guarda en la cuenta del terapeuta (ligada al paciente) → link corto /p/<id>; si falla, link autocontenido.
+      // Al editar una rutina ya enviada se actualiza la misma fila: el paciente sigue usando el mismo link.
+      const row = {
+        patient_id: patientId || null,
+        patient_name: pName,
+        patient_phone: patientPhone || null,
+        diagnosis: meta.diagnosis,
+        title: routineName,
+        plan_json: { meta, exercises: planExercises() },
+      };
+      const { data: saved, error } = editId
+        ? await supabase.from("routine_plans").update(row).eq("id", editId).select("id").single()
+        : await supabase.from("routine_plans").insert(row).select("id").single();
+      setWasEdit(!!editId);
+      if (!error && saved) onSaved(saved.id);
       setPlanLink(!error && saved ? `${window.location.origin}/${locale}/p/${saved.id}` : selfLink);
     } catch {
       setPlanLink(selfLink);
@@ -312,7 +318,7 @@ function SendModal({ isOpen, onClose, routineName, exercises, initial }: {
       <div className="w-full max-w-md bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden max-h-[92vh] overflow-y-auto">
         <div className="flex items-center justify-between px-5 py-4 border-b border-surface-100">
           <div className="min-w-0">
-            <h2 className="text-base font-bold text-surface-900">{t("send_title")}</h2>
+            <h2 className="text-base font-bold text-surface-900">{editId ? t("edit_title") : t("send_title")}</h2>
             <p className="text-xs text-surface-400 truncate">{routineName} · {t("exercises_n", { n: exercises.length })}</p>
           </div>
           <button onClick={onClose} aria-label={t("close")} className="p-1.5 rounded-lg text-surface-400 hover:bg-surface-100">
@@ -321,6 +327,20 @@ function SendModal({ isOpen, onClose, routineName, exercises, initial }: {
         </div>
 
         <div className="p-5 space-y-3">
+          {patients.length > 0 && (
+            <div>
+              <label className="text-[11px] text-surface-500 font-semibold block mb-1">{t("link_patient")}</label>
+              <select value={patientId} onChange={(e) => {
+                  const p = patients.find((x) => x.id === e.target.value);
+                  setPatientId(e.target.value);
+                  if (p) { setPatientName(p.name); setPatientPhone(p.phone ?? ""); }
+                }}
+                className="w-full h-9 rounded-lg border border-surface-200 bg-white px-2 text-sm text-surface-800 focus:outline-none focus:ring-1 focus:ring-brand-500">
+                <option value="">{t("no_patient_link")}</option>
+                {patients.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+              </select>
+            </div>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <div>
               <label className="text-[11px] text-surface-500 font-semibold block mb-1">{t("patient_name")}</label>
@@ -341,12 +361,12 @@ function SendModal({ isOpen, onClose, routineName, exercises, initial }: {
               className="w-full h-11 bg-brand-600 hover:bg-brand-500 disabled:opacity-60 text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-colors">
               {sending
                 ? <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> {t("generating")}</>
-                : <><Share2 className="h-4 w-4" /> {t("generate_link")}</>}
+                : <><Share2 className="h-4 w-4" /> {editId ? t("save_changes") : t("generate_link")}</>}
             </button>
           ) : (
             <>
               <div className="bg-clinical-50 border border-clinical-200 rounded-xl p-3">
-                <p className="text-[11px] text-clinical-600 font-semibold mb-1">✅ {t("link_ready")}</p>
+                <p className="text-[11px] text-clinical-600 font-semibold mb-1">✅ {wasEdit ? t("changes_saved") : t("link_ready")}</p>
                 <div className="flex items-center gap-2">
                   <p className="text-xs text-clinical-700 truncate flex-1" dir="ltr">{planLink}</p>
                   <button onClick={() => { navigator.clipboard?.writeText(planLink); setCopied(true); }} aria-label={t("copy")}
@@ -407,13 +427,39 @@ export default function RoutinesPage() {
   const [tab, setTab] = useState<"lib" | "routine" | "saved">("lib");      // solo celular
   const [justAdded, setJustAdded] = useState<string | null>(null);
 
-  const [initial, setInitial] = useState({ name: "", phone: "", dx: "" });
+  const [initial, setInitial] = useState<Initial>({ name: "", phone: "", dx: "", pid: "" });
+  const [editId, setEditId] = useState<string | null>(null);
+  const loadTemplates = () =>
+    supabase.from("routine_templates").select("*").order("created_at", { ascending: false })
+      .then(({ data }) => setTemplates(((data as { id: string; name: string; created_at: string; exercises: RoutineExercise[] }[]) ?? [])
+        .map((x) => ({ id: x.id, name: x.name, createdAt: x.created_at, exercises: x.exercises }))));
   useEffect(() => {
-    setTemplates(loadTemplates());
+    loadTemplates();
     const q = new URLSearchParams(window.location.search);     // viene de la ficha del paciente
-    const init = { name: q.get("p") ?? "", phone: q.get("tel") ?? "", dx: q.get("dx") ?? "" };
+    const init = { name: q.get("p") ?? "", phone: q.get("tel") ?? "", dx: q.get("dx") ?? "", pid: q.get("pid") ?? "" };
     setInitial(init);
     if (init.dx || init.name) setRoutineName(init.dx || init.name);
+    // editar una rutina ya enviada (?edit=<id>): se carga tal cual y al guardar se actualiza la misma
+    const edit = q.get("edit");
+    if (edit) {
+      supabase.from("routine_plans").select("*").eq("id", edit).single().then(({ data }) => {
+        const row = data as RoutineRow | null;
+        if (!row) return;
+        setEditId(row.id);
+        setRoutineName(row.title || row.diagnosis || "");
+        setInitial({ name: row.patient_name, phone: row.patient_phone ?? "", dx: row.diagnosis ?? "", pid: row.patient_id ?? "" });
+        setExercises(row.plan_json.exercises.map((e, i) => {
+          const lib = EXERCISE_LIBRARY.find((x) => x.id === e.exercise_id);
+          return {
+            ...(lib ?? { id: e.exercise_id, region: "", prop: "", difficulty: "beginner" as Difficulty, poster: "" }),
+            uid: `${e.exercise_id}-${Date.now()}-${i}`,
+            sets: e.sets, reps: e.reps, restSeconds: e.rest_seconds, frequencyPerWeek: e.frequency_per_week ?? 3,
+            notes: e.note_from_therapist ?? "",
+          } as RoutineExercise;
+        }));
+        setTab("routine");
+      });
+    }
   }, []);
   useEffect(() => {
     if (!justAdded) return;
@@ -451,15 +497,13 @@ export default function RoutinesPage() {
   const updateEx = (uid: string, field: keyof RoutineExercise, value: string | number) =>
     setExercises((prev) => prev.map((e) => (e.uid === uid ? { ...e, [field]: value } : e)));
 
-  function saveTemplate() {
-    const next = [{ id: `t${Date.now()}`, name: title, createdAt: new Date().toISOString(), exercises }, ...templates];
-    setTemplates(next);
-    storeTemplates(next);
+  async function saveTemplate() {
+    await supabase.from("routine_templates").insert({ name: title, exercises });
+    loadTemplates();
   }
-  function deleteTemplate(id: string) {
-    const next = templates.filter((x) => x.id !== id);
-    setTemplates(next);
-    storeTemplates(next);
+  async function deleteTemplate(id: string) {
+    setTemplates((prev) => prev.filter((x) => x.id !== id));
+    await supabase.from("routine_templates").delete().eq("id", id);
   }
   function loadTemplate(tp: Template) {
     setRoutineName(tp.name);
@@ -559,6 +603,13 @@ export default function RoutinesPage() {
           {/* ── Rutina (centro) ─────────────────────────────────────────── */}
           <div className={cn("flex-1 min-w-0 bg-white border-e border-surface-200 flex-col overflow-hidden",
             tab === "routine" ? "flex" : "hidden md:flex")}>
+            {editId && (
+              <div className="flex items-center justify-between gap-2 bg-amber-50 border-b border-amber-100 px-5 py-2 text-xs text-amber-800">
+                <span>{t("editing_sent")}</span>
+                <button onClick={() => { setEditId(null); setExercises([]); setRoutineName(""); setInitial({ name: "", phone: "", dx: "", pid: "" }); }}
+                  className="font-semibold underline">{t("start_new")}</button>
+              </div>
+            )}
             <div className="px-5 pt-4 pb-3 border-b border-surface-100">
               <Input value={routineName} onChange={(e) => setRoutineName(e.target.value)} placeholder={t("name_ph")}
                 className="text-base font-semibold border-0 border-b border-surface-200 rounded-none px-0 focus-visible:ring-0 focus-visible:border-brand-500" />
@@ -608,7 +659,7 @@ export default function RoutinesPage() {
                 </button>
                 <button onClick={() => setSendOpen(true)}
                   className="flex-1 h-10 bg-brand-600 hover:bg-brand-500 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-1.5 transition-colors">
-                  <Send className="h-4 w-4" /> {t("send")}
+                  <Send className="h-4 w-4" /> {editId ? t("save_changes") : t("send")}
                 </button>
               </div>
             )}
@@ -647,7 +698,8 @@ export default function RoutinesPage() {
         </div>
       </div>
 
-      <SendModal isOpen={sendOpen} onClose={() => setSendOpen(false)} routineName={title} exercises={exercises} initial={initial} />
+      <SendModal isOpen={sendOpen} onClose={() => setSendOpen(false)} routineName={title} exercises={exercises} initial={initial}
+        editId={editId} onSaved={(id) => setEditId(id)} />
     </div>
   );
 }

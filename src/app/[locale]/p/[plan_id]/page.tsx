@@ -19,6 +19,9 @@ export default function PatientPlanPage({ params }: Props) {
   const [restTimer, setRestTimer] = useState<number | null>(null);
   const [completed, setCompleted] = useState<Set<number>>(new Set());
   const [loading, setLoading] = useState(true);
+  const [finishing, setFinishing] = useState(false);      // "terminé por hoy" antes de completar todo
+  const [fb, setFb] = useState<{ pain: number | null; difficulty: number | null; comment: string }>({ pain: null, difficulty: null, comment: "" });
+  const [fbState, setFbState] = useState<"idle" | "sending" | "sent">("idle");
   const lt = useLibraryText();
   const t = useTranslations("pv");
 
@@ -98,19 +101,77 @@ export default function PatientPlanPage({ params }: Props) {
     return base + t;
   }
 
-  if (completed.size === exercises.length) {
+  // seguimiento: solo las rutinas guardadas (id uuid) registran sesiones para el terapeuta
+  const trackable = /^[0-9a-f-]{36}$/i.test(plan_id);
+  async function sendFeedback() {
+    setFbState("sending");
+    const { error } = await supabase.rpc("log_routine_session", {
+      plan_id, done: completed.size, total: exercises.length,
+      pain: fb.pain, difficulty: fb.difficulty, comment: fb.comment || null,
+    });
+    setFbState(error ? "idle" : "sent");
+  }
+  function restart() {
+    setCompleted(new Set()); setActiveIdx(0); setFinishing(false);
+    setFb({ pain: null, difficulty: null, comment: "" }); setFbState("idle");
+  }
+
+  if (completed.size === exercises.length || finishing) {
+    const all = completed.size === exercises.length;
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white px-6">
-        <div className="text-center">
-          <div className="text-6xl mb-6">🎉</div>
-          <h1 className="text-2xl font-bold text-slate-800 mb-2">{t("done_title")}</h1>
-          <p className="text-slate-500 mb-6">{t("done_text")}</p>
-          <button
-            onClick={() => { setCompleted(new Set()); setActiveIdx(0); }}
-            className="px-6 py-3 bg-sky-500 text-white rounded-xl font-medium"
-          >
-            {t("repeat")}
-          </button>
+      <div className="min-h-screen flex items-center justify-center bg-white px-6 py-10">
+        <div className="w-full max-w-sm text-center">
+          <div className="text-6xl mb-4">{all ? "🎉" : "👏"}</div>
+          <h1 className="text-2xl font-bold text-slate-800 mb-2">{all ? t("done_title") : t("partial_title")}</h1>
+          <p className="text-slate-500 mb-6">{all ? t("done_text") : t("progress", { done: completed.size, total: exercises.length })}</p>
+
+          {trackable && fbState !== "sent" && (
+            <div className="space-y-5 rounded-2xl border border-slate-200 p-4 text-start">
+              <div>
+                <p className="text-sm font-semibold text-slate-800">{t("fb_pain")}</p>
+                <div className="mt-2 grid grid-cols-11 gap-1">
+                  {Array.from({ length: 11 }, (_, n) => (
+                    <button key={n} onClick={() => setFb((f) => ({ ...f, pain: n }))}
+                      className={`h-9 rounded-lg text-xs font-bold ${fb.pain === n ? "bg-sky-500 text-white" : n <= 3 ? "bg-emerald-50 text-emerald-700" : n <= 6 ? "bg-amber-50 text-amber-700" : "bg-red-50 text-red-700"}`}>
+                      {n}
+                    </button>
+                  ))}
+                </div>
+                <div className="mt-1 flex justify-between text-[10px] text-slate-400"><span>{t("fb_pain_0")}</span><span>{t("fb_pain_10")}</span></div>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-slate-800">{t("fb_difficulty")}</p>
+                <div className="mt-2 grid grid-cols-5 gap-1">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <button key={n} onClick={() => setFb((f) => ({ ...f, difficulty: n }))}
+                      className={`rounded-lg px-1 py-2 text-[11px] font-medium leading-tight ${fb.difficulty === n ? "bg-sky-500 text-white" : "bg-slate-100 text-slate-600"}`}>
+                      {t(`fb_d${n}`)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-slate-800">{t("fb_comment")}</p>
+                <textarea value={fb.comment} onChange={(e) => setFb((f) => ({ ...f, comment: e.target.value }))} maxLength={1000} rows={3}
+                  placeholder={t("fb_comment_ph")}
+                  className="mt-2 w-full rounded-xl border border-slate-200 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300" />
+              </div>
+              <button onClick={sendFeedback} disabled={fbState === "sending"}
+                className="w-full py-3 bg-sky-500 hover:bg-sky-600 disabled:opacity-60 text-white rounded-xl font-semibold text-sm">
+                {fbState === "sending" ? t("fb_sending") : t("fb_send")}
+              </button>
+            </div>
+          )}
+          {fbState === "sent" && <p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700">✓ {t("fb_sent")}</p>}
+
+          <div className="mt-6 flex flex-col gap-2">
+            {!all && (
+              <button onClick={() => setFinishing(false)} className="px-6 py-3 border border-slate-200 text-slate-700 rounded-xl font-medium">
+                {t("continue")}
+              </button>
+            )}
+            <button onClick={restart} className="px-6 py-3 text-sky-600 font-medium">{t("repeat")}</button>
+          </div>
         </div>
       </div>
     );
@@ -128,7 +189,11 @@ export default function PatientPlanPage({ params }: Props) {
         {/* Progress */}
         <div className="mt-3">
           <div className="flex justify-between text-xs text-slate-400 mb-1">
-            <span>{t("progress", { done: completed.size, total: exercises.length })}</span>
+            <span>{t("progress", { done: completed.size, total: exercises.length })}
+              {completed.size > 0 && (
+                <button onClick={() => setFinishing(true)} className="ms-2 font-semibold text-sky-600 underline">{t("finish_today")}</button>
+              )}
+            </span>
             <span>{progress}%</span>
           </div>
           <div className="w-full bg-slate-100 rounded-full h-1.5">

@@ -25,6 +25,7 @@ export function PatientList({ onSelectPatient, onNewPatient }: PatientListProps)
       const { data, error } = await supabase
         .from("patients")
         .select("*")
+        .is("deleted_at", null)
         .order("created_at", { ascending: false });
       if (!error && data) setPatients(data);
       setLoading(false);

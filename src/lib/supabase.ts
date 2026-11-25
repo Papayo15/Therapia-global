@@ -14,7 +14,10 @@ export interface Patient {
   phone?: string;
   email?: string;
   doctor_id: string;
+  notes?: string | null;
   created_at: string;
+  updated_at?: string | null;
+  deleted_at?: string | null;
 }
 
 export interface SoapNote {
@@ -27,6 +30,34 @@ export interface SoapNote {
   plan: string;
   doctor: string;
   created_at: string;
+  updated_at?: string | null;
+  deleted_at?: string | null;
+}
+
+/** Sesión completada por el paciente (seguimiento de adherencia) */
+export interface RoutineSession {
+  id: string;
+  plan_id: string;
+  completed_at: string;
+  exercises_done: number;
+  exercises_total: number;
+  pain: number | null;
+  difficulty: number | null;
+  comment: string | null;
+}
+
+/** Rutina enviada (fila de routine_plans vista por el terapeuta) */
+export interface RoutineRow {
+  id: string;
+  patient_id: string | null;
+  patient_name: string;
+  patient_phone: string | null;
+  diagnosis: string | null;
+  title: string | null;
+  plan_json: { meta: RoutinePlan["plan_json"]["meta"]; exercises: PlanExercise[] };
+  created_at: string;
+  updated_at: string | null;
+  expires_at: string;
 }
 
 export interface TreatmentPlan {

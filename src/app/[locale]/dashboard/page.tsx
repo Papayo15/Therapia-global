@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { Users, ClipboardList, CalendarDays, Plus, BookOpen, ArrowRight, Send, UserPlus } from "lucide-react";
+import { Users, ClipboardList, CalendarDays, Plus, BookOpen, ArrowRight, Send, UserPlus, Activity } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Header } from "@/components/layout/Header";
@@ -14,6 +14,8 @@ import { LIBRARY_ITEMS } from "@/lib/videoLibrary";
 import { cn } from "@/lib/utils";
 
 type RoutineRow = { id: string; patient_name: string; diagnosis: string | null; created_at: string };
+type ActivityRow = { id: string; completed_at: string; exercises_done: number; exercises_total: number; pain: number | null; comment: string | null;
+  routine_plans: { patient_name: string; patient_id: string | null } | null };
 
 interface StatCardProps {
   title: string;
@@ -50,13 +52,14 @@ export default function DashboardPage() {
   const [routines, setRoutines] = useState<RoutineRow[] | null>(null);
   const [routineCount, setRoutineCount] = useState(0);
   const [weekCount, setWeekCount] = useState(0);
+  const [activity, setActivity] = useState<ActivityRow[] | null>(null);
 
   useEffect(() => {
     if (!user) return;
     const weekAgo = new Date(Date.now() - 7 * 864e5).toISOString();
     (async () => {
       const [p, r, w] = await Promise.all([
-        supabase.from("patients").select("*", { count: "exact" }).order("created_at", { ascending: false }).limit(5),
+        supabase.from("patients").select("*", { count: "exact" }).is("deleted_at", null).order("created_at", { ascending: false }).limit(5),
         supabase.from("routine_plans").select("id, patient_name, diagnosis, created_at", { count: "exact" })
           .order("created_at", { ascending: false }).limit(5),
         supabase.from("routine_plans").select("id", { count: "exact", head: true }).gte("created_at", weekAgo),
@@ -66,6 +69,10 @@ export default function DashboardPage() {
       setRoutines((r.data as RoutineRow[]) ?? []);
       setRoutineCount(r.count ?? 0);
       setWeekCount(w.count ?? 0);
+      const { data: a } = await supabase.from("routine_sessions")
+        .select("id, completed_at, exercises_done, exercises_total, pain, comment, routine_plans(patient_name, patient_id)")
+        .order("completed_at", { ascending: false }).limit(8);
+      setActivity((a as unknown as ActivityRow[]) ?? []);
     })();
   }, [user]);
 
@@ -157,6 +164,40 @@ export default function DashboardPage() {
                 </CardContent>
               </Card>
             </div>
+
+            <Card>
+              <CardHeader className="pb-4">
+                <CardTitle>{t("activity")}</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                {activity && activity.length === 0 && <p className="px-6 pb-6 text-sm text-surface-400">{t("no_activity_yet")}</p>}
+                <div className="divide-y divide-surface-100">
+                  {(activity ?? []).map((a) => {
+                    const pid = a.routine_plans?.patient_id;
+                    const body = (
+                      <>
+                        <Activity className="h-4 w-4 shrink-0 text-brand-600" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-surface-800 truncate">
+                            {a.routine_plans?.patient_name ?? "—"}
+                            <span className="font-normal text-surface-500"> · {t("did_n", { done: a.exercises_done, total: a.exercises_total })}</span>
+                          </p>
+                          <p className="text-xs text-surface-400 mt-0.5 truncate">
+                            {fmt(a.completed_at)}{a.pain !== null ? ` · ${t("pain_n", { n: a.pain })}` : ""}{a.comment ? ` · “${a.comment}”` : ""}
+                          </p>
+                        </div>
+                        {a.pain !== null && a.pain >= 7 && <span className="rounded-full bg-red-50 px-2 py-0.5 text-[11px] font-semibold text-red-600">{t("high_pain")}</span>}
+                      </>
+                    );
+                    return pid ? (
+                      <Link key={a.id} href={`/${locale}/clinical/patients/${pid}`} className="flex items-center gap-4 px-6 py-3.5 hover:bg-surface-50">{body}</Link>
+                    ) : (
+                      <div key={a.id} className="flex items-center gap-4 px-6 py-3.5">{body}</div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
 
             <Card>
               <CardHeader className="pb-4">
