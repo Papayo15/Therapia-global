@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { generateRoutinePDF } from "@/lib/generatePDF";
+import { encodePlanId } from "@/lib/planLink";
+import type { PlanExercise } from "@/lib/supabase";
 import masterRegistry from "@data/master-registry.json";
 import { useTranslations } from "next-intl";
 import { LIBRARY_ITEMS, REGION_GROUPS, regionGroup, videoUrl } from "@/lib/videoLibrary";
@@ -232,13 +234,28 @@ function SendModal({ isOpen, onClose, routineName, exerciseCount, exercises }: {
           order: i + 1,
         })),
       };
-      const res = await fetch("/api/routines/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-      setPlanLink(data.share_url);
+      // link autocontenido (la rutina va dentro del link): funciona aunque no haya base de datos
+      const locale = window.location.pathname.split("/")[1] || "es";
+      const selfLink = `${window.location.origin}/${locale}/p/${encodePlanId({
+        patientName: payload.patient.name,
+        diagnosis: payload.meta.diagnosis,
+        phase: payload.meta.phase,
+        frequency_per_week: payload.meta.frequency_per_week,
+        duration_weeks: payload.meta.duration_weeks,
+        exercises: payload.exercises as unknown as PlanExercise[],
+      })}`;
+      try {
+        const res = await fetch("/api/routines/send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        // guardada en la base de datos → link corto; si no (modo demo / sin base) → link autocontenido
+        setPlanLink(data.share_url && !data.warning && !String(data.plan_id ?? "").startsWith("demo-") ? data.share_url : selfLink);
+      } catch {
+        setPlanLink(selfLink);
+      }
     } catch {
       setPlanLink(`${window.location.origin}/es/p/demo-${Date.now()}`);
     }

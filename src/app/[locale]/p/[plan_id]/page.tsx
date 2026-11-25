@@ -5,6 +5,7 @@ import { supabase, RoutinePlan, PlanExercise } from "@/lib/supabase";
 import { PlanExerciseVideo } from "@/components/library/PlanExerciseVideo";
 import { LIBRARY_BY_ID } from "@/lib/videoLibrary";
 import { useLibraryText } from "@/lib/useLibraryText";
+import { decodePlanId } from "@/lib/planLink";
 
 interface Props {
   params: Promise<{ plan_id: string; locale: string }>;
@@ -21,6 +22,12 @@ export default function PatientPlanPage({ params }: Props) {
 
   useEffect(() => {
     async function fetchPlan() {
+      const fromLink = decodePlanId(plan_id);     // rutina codificada en el propio link (sin base de datos)
+      if (fromLink) {
+        setPlan(fromLink);
+        setLoading(false);
+        return;
+      }
       if (plan_id.startsWith("demo-")) {
         // Demo fallback
         setPlan(DEMO_PLAN);
