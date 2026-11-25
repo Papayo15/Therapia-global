@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function PatientPlanPage({ params }: Props) {
-  const { plan_id } = use(params);
+  const { plan_id, locale } = use(params);
   const [plan, setPlan] = useState<RoutinePlan | null>(null);
   const [activeIdx, setActiveIdx] = useState(0);
   const [restTimer, setRestTimer] = useState<number | null>(null);
@@ -24,6 +24,7 @@ export default function PatientPlanPage({ params }: Props) {
   const [fbState, setFbState] = useState<"idle" | "sending" | "sent">("idle");
   const lt = useLibraryText();
   const t = useTranslations("pv");
+  const tl = useTranslations("legal");
 
   useEffect(() => {
     async function fetchPlan() {
@@ -160,6 +161,10 @@ export default function PatientPlanPage({ params }: Props) {
                 className="w-full py-3 bg-sky-500 hover:bg-sky-600 disabled:opacity-60 text-white rounded-xl font-semibold text-sm">
                 {fbState === "sending" ? t("fb_sending") : t("fb_send")}
               </button>
+              <p className="text-center text-[11px] text-slate-400">
+                {tl("patient_notice")}{" "}
+                <a href={`/${locale}/privacy`} target="_blank" rel="noreferrer" className="underline">{tl("footer_privacy")}</a>
+              </p>
             </div>
           )}
           {fbState === "sent" && <p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700">✓ {t("fb_sent")}</p>}
@@ -311,7 +316,9 @@ export default function PatientPlanPage({ params }: Props) {
         })}
       </div>
 
-      <div className="h-8" />
+      <p className="px-4 pt-6 pb-8 text-center text-[11px] text-slate-400">
+        <a href={`/${locale}/privacy`} target="_blank" rel="noreferrer" className="underline">{tl("footer_privacy")}</a>
+      </p>
     </div>
   );
 }

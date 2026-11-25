@@ -1289,5 +1289,15 @@
     "library": "Bibliothek",
     "routines": "Programme",
     "patients": "Patienten"
+  },
+  "legal": {
+    "privacy_title": "Datenschutzhinweis",
+    "official_es": "Dieser Hinweis unterliegt mexikanischem Recht; rechtsverbindlich ist der spanische Text unten.",
+    "footer_privacy": "Datenschutz",
+    "accept_prefix": "Ich habe gelesen und akzeptiere den",
+    "accept_link": "Datenschutzhinweis",
+    "accept_required": "Sie müssen den Datenschutzhinweis akzeptieren, um ein Konto zu erstellen.",
+    "patient_notice": "Nur Ihre Therapeutin oder Ihr Therapeut sieht, was Sie senden.",
+    "patient_consent_hint": "Gesundheitsdaten nur mit ausdrücklicher Einwilligung des Patienten erfassen."
   }
 }

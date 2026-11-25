@@ -16,6 +16,7 @@ from strings_fr_de_ru import FR, DE, RU  # noqa: E402
 from strings_ar_ja import AR, JA  # noqa: E402
 from strings_zh_hi import ZH, HI  # noqa: E402
 from strings_v2 import V2  # noqa: E402
+from strings_legal import LEGAL  # noqa: E402
 
 LANGS = {"es": ES, "en": EN, "pt": PT, "fr": FR, "de": DE, "ru": RU, "ar": AR, "ja": JA, "zh": ZH, "hi": HI}
 
@@ -30,7 +31,9 @@ def _deep(a, b):
 
 for _l, _d in V2.items():          # textos v2 (expediente editable + seguimiento) sobre los de base
     _deep(LANGS[_l], _d)
-REPLACE = {"auth", "rb", "pv", "st", "clin", "nf"}
+for _l, _d in LEGAL.items():       # aviso de privacidad
+    LANGS[_l]["legal"] = _d
+REPLACE = {"auth", "rb", "pv", "st", "clin", "nf", "legal"}
 
 
 def keys(d, p=""):

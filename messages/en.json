@@ -1289,5 +1289,15 @@
     "library": "Library",
     "routines": "Routines",
     "patients": "Patients"
+  },
+  "legal": {
+    "privacy_title": "Privacy notice",
+    "official_es": "This notice is governed by Mexican law; the legally valid version is the Spanish text below.",
+    "footer_privacy": "Privacy notice",
+    "accept_prefix": "I have read and accept the",
+    "accept_link": "privacy notice",
+    "accept_required": "You must accept the privacy notice to create your account.",
+    "patient_notice": "Only your therapist will see what you send.",
+    "patient_consent_hint": "Only record health data with your patient's express consent."
   }
 }
