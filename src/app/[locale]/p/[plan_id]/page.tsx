@@ -6,6 +6,7 @@ import { PlanExerciseVideo } from "@/components/library/PlanExerciseVideo";
 import { LIBRARY_BY_ID } from "@/lib/videoLibrary";
 import { useLibraryText } from "@/lib/useLibraryText";
 import { decodePlanId } from "@/lib/planLink";
+import { useTranslations } from "next-intl";
 
 interface Props {
   params: Promise<{ plan_id: string; locale: string }>;
@@ -19,6 +20,7 @@ export default function PatientPlanPage({ params }: Props) {
   const [completed, setCompleted] = useState<Set<number>>(new Set());
   const [loading, setLoading] = useState(true);
   const lt = useLibraryText();
+  const t = useTranslations("pv");
 
   useEffect(() => {
     async function fetchPlan() {
@@ -34,16 +36,18 @@ export default function PatientPlanPage({ params }: Props) {
         setLoading(false);
         return;
       }
-      const { data, error } = await supabase
-        .from("routine_plans")
-        .select("*")
-        .eq("id", plan_id)
-        .single();
-      if (!error && data) setPlan(data as RoutinePlan);
+      // rutina guardada: se lee con la función get_routine_plan (solo por id exacto, sin datos privados)
+      const { data, error } = await supabase.rpc("get_routine_plan", { plan_id });
+      const row = Array.isArray(data) ? data[0] : data;
+      if (!error && row) setPlan({ ...row, therapist_id: "", patient_phone: "" } as RoutinePlan);
       setLoading(false);
     }
     fetchPlan();
   }, [plan_id]);
+
+  useEffect(() => {
+    if (plan) document.title = `${plan.plan_json.meta.diagnosis} · Therapia Global`;
+  }, [plan]);
 
   // Rest timer countdown
   useEffect(() => {
@@ -57,7 +61,7 @@ export default function PatientPlanPage({ params }: Props) {
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-sky-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-slate-500 text-sm">Cargando tu programa...</p>
+          <p className="text-slate-500 text-sm">{t("loading")}</p>
         </div>
       </div>
     );
@@ -68,8 +72,8 @@ export default function PatientPlanPage({ params }: Props) {
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center px-6">
           <div className="text-4xl mb-4">🔗</div>
-          <h1 className="text-xl font-semibold text-slate-800 mb-2">Link no encontrado</h1>
-          <p className="text-slate-500 text-sm">Este link puede haber expirado. Pide a tu terapeuta que lo reenvíe.</p>
+          <h1 className="text-xl font-semibold text-slate-800 mb-2">{t("not_found")}</h1>
+          <p className="text-slate-500 text-sm">{t("not_found_hint")}</p>
         </div>
       </div>
     );
@@ -99,13 +103,13 @@ export default function PatientPlanPage({ params }: Props) {
       <div className="min-h-screen flex items-center justify-center bg-white px-6">
         <div className="text-center">
           <div className="text-6xl mb-6">🎉</div>
-          <h1 className="text-2xl font-bold text-slate-800 mb-2">¡Rutina completada!</h1>
-          <p className="text-slate-500 mb-6">Excelente trabajo. Tu terapeuta estará orgulloso.</p>
+          <h1 className="text-2xl font-bold text-slate-800 mb-2">{t("done_title")}</h1>
+          <p className="text-slate-500 mb-6">{t("done_text")}</p>
           <button
             onClick={() => { setCompleted(new Set()); setActiveIdx(0); }}
             className="px-6 py-3 bg-sky-500 text-white rounded-xl font-medium"
           >
-            Repetir rutina
+            {t("repeat")}
           </button>
         </div>
       </div>
@@ -120,11 +124,11 @@ export default function PatientPlanPage({ params }: Props) {
           <span className="text-xs font-semibold text-sky-600 uppercase tracking-wide">Therapia Global</span>
         </div>
         <h1 className="text-lg font-bold text-slate-900 leading-tight">{meta.diagnosis}</h1>
-        <p className="text-sm text-slate-500">{meta.phase} · {meta.frequency_per_week}x semana</p>
+        <p className="text-sm text-slate-500">{plan.patient_name ? `${plan.patient_name} · ` : ""}{t("per_week", { n: meta.frequency_per_week })}</p>
         {/* Progress */}
         <div className="mt-3">
           <div className="flex justify-between text-xs text-slate-400 mb-1">
-            <span>{completed.size}/{exercises.length} ejercicios</span>
+            <span>{t("progress", { done: completed.size, total: exercises.length })}</span>
             <span>{progress}%</span>
           </div>
           <div className="w-full bg-slate-100 rounded-full h-1.5">
@@ -136,10 +140,10 @@ export default function PatientPlanPage({ params }: Props) {
       {/* Rest timer banner */}
       {restTimer !== null && restTimer > 0 && (
         <div className="mx-4 mt-4 bg-amber-50 border border-amber-200 rounded-2xl p-4 text-center">
-          <p className="text-sm text-amber-700 font-medium mb-1">⏱ Descansando...</p>
+          <p className="text-sm text-amber-700 font-medium mb-1">⏱ {t("resting")}</p>
           <p className="text-3xl font-bold text-amber-600">{restTimer}s</p>
           <button onClick={() => setRestTimer(null)} className="mt-2 text-xs text-amber-500 underline">
-            Saltar descanso
+            {t("skip_rest")}
           </button>
         </div>
       )}
@@ -170,16 +174,14 @@ export default function PatientPlanPage({ params }: Props) {
                   {isDone ? "✓" : idx + 1}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-slate-800 text-sm truncate">{LIBRARY_BY_ID.has(ex.exercise_id) ? lt.name(LIBRARY_BY_ID.get(ex.exercise_id)!) : ex.nombre_display}</p>
-                  <p className="text-xs text-slate-500">{ex.sets} series · {ex.reps} reps · {ex.rest_seconds}s descanso</p>
+                  <p className="font-semibold text-slate-800 text-sm line-clamp-2">{LIBRARY_BY_ID.has(ex.exercise_id) ? lt.name(LIBRARY_BY_ID.get(ex.exercise_id)!) : ex.nombre_display}</p>
+                  <p className="text-xs text-slate-500">{t("sets_n", { n: ex.sets })} · {ex.reps > 0 ? t("reps_n", { n: ex.reps }) : t("hold")} · {t("rest_n", { n: ex.rest_seconds })}</p>
                 </div>
-                <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                  ex.equipment_used === "peso corporal"
-                    ? "bg-slate-100 text-slate-600"
-                    : "bg-sky-100 text-sky-700"
-                }`}>
-                  {ex.equipment_used}
-                </span>
+                {ex.equipment_used && (
+                  <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full font-medium bg-sky-100 text-sky-700 shrink-0">
+                    {ex.equipment_used}
+                  </span>
+                )}
               </div>
 
               {/* Expanded content when active */}
@@ -199,14 +201,14 @@ export default function PatientPlanPage({ params }: Props) {
                     </div>
                   ) : (
                     <div className="mt-3 rounded-xl bg-slate-100 aspect-video flex items-center justify-center">
-                      <p className="text-slate-400 text-sm">Video próximamente</p>
+                      <p className="text-slate-400 text-sm">{t("video_soon")}</p>
                     </div>
                   )}
 
                   {/* Therapist note */}
                   {ex.note_from_therapist && (
                     <div className="mt-3 bg-amber-50 border border-amber-100 rounded-xl p-3">
-                      <p className="text-xs font-semibold text-amber-700 mb-1">📋 Nota de tu terapeuta</p>
+                      <p className="text-xs font-semibold text-amber-700 mb-1">📋 {t("note")}</p>
                       <p className="text-sm text-amber-800">{ex.note_from_therapist}</p>
                     </div>
                   )}
@@ -226,8 +228,7 @@ export default function PatientPlanPage({ params }: Props) {
                   {/* Equipment alternative */}
                   {ex.equipment_alternative && ex.equipment_alternative !== ex.equipment_used && (
                     <p className="mt-3 text-xs text-slate-400">
-                      ¿No tienes {ex.equipment_used}? Puedes usar{" "}
-                      <span className="font-medium text-slate-600">{ex.equipment_alternative}</span>
+                      {t("alt", { a: ex.equipment_used, b: ex.equipment_alternative })}
                     </p>
                   )}
 
@@ -236,7 +237,7 @@ export default function PatientPlanPage({ params }: Props) {
                     onClick={(e) => { e.stopPropagation(); markDone(idx); if (idx < exercises.length - 1) setActiveIdx(idx + 1); }}
                     className="mt-4 w-full py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-xl font-semibold text-sm transition-colors"
                   >
-                    ✓ Ejercicio completado
+                    ✓ {t("mark_done")}
                   </button>
                 </div>
               )}

@@ -3,28 +3,24 @@
 import { useState, useEffect } from "react";
 import { FileText, ChevronDown, ChevronUp, Clock } from "lucide-react";
 import { supabase, type SoapNote } from "@/lib/supabase";
+import { useLocale, useTranslations } from "next-intl";
 
 interface SoapHistoryProps {
   patientId: string;
   onCreateTreatment?: (note: SoapNote) => void;
 }
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("es-MX", {
+function formatDate(iso: string, locale: string) {
+  return new Date(iso).toLocaleDateString(locale, {
     day: "numeric", month: "short", year: "numeric",
     hour: "2-digit", minute: "2-digit",
   });
 }
 
-const SOAP_LABELS: Record<string, string> = {
-  subjective: "Subjetivo",
-  objective: "Objetivo",
-  assessment: "Análisis",
-  diagnosis: "Diagnóstico",
-  plan: "Plan",
-};
 
 export function SoapHistory({ patientId, onCreateTreatment }: SoapHistoryProps) {
+  const t = useTranslations("clin");
+  const locale = useLocale();
   const [notes, setNotes] = useState<SoapNote[]>([]);
   const [loading, setLoading] = useState(true);
   const [openId, setOpenId] = useState<string | null>(null);
@@ -55,8 +51,8 @@ export function SoapHistory({ patientId, onCreateTreatment }: SoapHistoryProps) 
     return (
       <div className="text-center py-10 text-slate-500">
         <FileText className="h-8 w-8 mx-auto mb-2 text-slate-300" />
-        <p className="font-medium text-sm">Sin notas SOAP registradas</p>
-        <p className="text-xs mt-1">Crea la primera nota clínica para este paciente</p>
+        <p className="font-medium text-sm">{t("no_soap")}</p>
+        <p className="text-xs mt-1">{t("no_soap_hint")}</p>
       </div>
     );
   }
@@ -76,11 +72,11 @@ export function SoapHistory({ patientId, onCreateTreatment }: SoapHistoryProps) 
               </div>
               <div className="flex-1 min-w-0">
                 <p className="font-semibold text-sm text-slate-800 truncate">
-                  {note.diagnosis || "Nota clínica"}
+                  {note.diagnosis || t("clinical_note")}
                 </p>
                 <p className="flex items-center gap-1 text-xs text-slate-400 mt-0.5">
                   <Clock className="h-3 w-3" />
-                  {formatDate(note.created_at)} · {note.doctor}
+                  {formatDate(note.created_at, locale)} · {note.doctor}
                 </p>
               </div>
               {isOpen ? <ChevronUp className="h-4 w-4 text-slate-400 shrink-0" /> : <ChevronDown className="h-4 w-4 text-slate-400 shrink-0" />}
@@ -94,7 +90,7 @@ export function SoapHistory({ patientId, onCreateTreatment }: SoapHistoryProps) 
                   return (
                     <div key={field}>
                       <p className="text-xs font-bold text-slate-500 uppercase tracking-wide mb-1">
-                        {SOAP_LABELS[field]}
+                        {t(`soap_${field}`)}
                       </p>
                       <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">{val}</p>
                     </div>
@@ -105,7 +101,7 @@ export function SoapHistory({ patientId, onCreateTreatment }: SoapHistoryProps) 
                     onClick={() => onCreateTreatment(note)}
                     className="mt-2 w-full py-2 rounded-lg text-xs font-bold text-blue-600 border border-blue-200 hover:bg-blue-50 transition-colors"
                   >
-                    Generar plan de tratamiento con IA →
+                    {t("routine_from_note")} →
                   </button>
                 )}
               </div>

@@ -3,9 +3,9 @@
 
 export const FEATURES = {
   CERTIFICATIONS_ENABLED: false,   // ← Activar cuando sea el momento (Parte futura)
-  AI_RECOMMENDATIONS_ENABLED: true,
-  COMMUNITY_ENABLED: true,
-  ANATOMY_3D_ENABLED: true,        // ← Three.js R3F procedural viewer — activo
+  AI_RECOMMENDATIONS_ENABLED: false,  // ← Motor IA: activar al configurar ANTHROPIC_API_KEY (sin clave responde con ejemplos)
+  COMMUNITY_ENABLED: false,       // ← contenido de ejemplo: se activa cuando haya comunidad real
+  ANATOMY_3D_ENABLED: false,       // ← página Anatomía: solo en español; activar cuando esté traducida
   WHATSAPP_ENABLED: true,
   EMAIL_ENABLED: true,
 } as const;
@@ -102,12 +102,11 @@ export const NAV_ITEMS = [
   { key: "dashboard",    icon: "LayoutDashboard", href: "/dashboard",      alwaysVisible: true },
   { key: "exercises",    icon: "Dumbbell",        href: "/exercises",      alwaysVisible: true },
   { key: "routines",     icon: "ClipboardList",   href: "/routines",       alwaysVisible: true },
-  { key: "patients",     icon: "Users",           href: "/patients",       alwaysVisible: true },
+  { key: "patients",     icon: "Users",           href: "/clinical/patients", alwaysVisible: true },
   { key: "osteopathy",   icon: "Bone",            href: "/osteopathy",     alwaysVisible: true },
-  { key: "anatomy",      icon: "Scan",            href: "/anatomy",        alwaysVisible: true },
-  { key: "community",    icon: "Globe2",          href: "/community",      alwaysVisible: true },
-  { key: "ai",           icon: "Brain",           href: "/ai",             alwaysVisible: true },
-  { key: "clinical",    icon: "Stethoscope",     href: "/clinical/patients", alwaysVisible: true },
+  { key: "anatomy",      icon: "Scan",            href: "/anatomy",        alwaysVisible: false, featureFlag: "ANATOMY_3D_ENABLED" as keyof typeof FEATURES },
+  { key: "community",    icon: "Globe2",          href: "/community",      alwaysVisible: false, featureFlag: "COMMUNITY_ENABLED" as keyof typeof FEATURES },
+  { key: "ai",           icon: "Brain",           href: "/ai",             alwaysVisible: false, featureFlag: "AI_RECOMMENDATIONS_ENABLED" as keyof typeof FEATURES },
   {
     key: "certifications",
     icon: "Award",

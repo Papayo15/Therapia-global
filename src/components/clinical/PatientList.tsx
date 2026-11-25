@@ -5,6 +5,7 @@ import { Search, Plus, User, Phone, Mail, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { supabase, type Patient } from "@/lib/supabase";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 interface PatientListProps {
@@ -13,6 +14,7 @@ interface PatientListProps {
 }
 
 export function PatientList({ onSelectPatient, onNewPatient }: PatientListProps) {
+  const t = useTranslations("clin");
   const [patients, setPatients] = useState<Patient[]>([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
@@ -45,13 +47,13 @@ export function PatientList({ onSelectPatient, onNewPatient }: PatientListProps)
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Buscar paciente..."
+            placeholder={t("search")}
             className="ps-9"
           />
         </div>
         <Button onClick={onNewPatient} className="shrink-0 gap-1.5">
           <Plus className="h-4 w-4" />
-          Nuevo paciente
+          <span className="hidden sm:inline">{t("new_patient")}</span>
         </Button>
       </div>
 
@@ -62,8 +64,8 @@ export function PatientList({ onSelectPatient, onNewPatient }: PatientListProps)
       ) : filtered.length === 0 ? (
         <div className="text-center py-12 text-slate-500">
           <User className="h-10 w-10 mx-auto mb-3 text-slate-300" />
-          <p className="font-medium">Sin pacientes registrados</p>
-          <p className="text-sm mt-1">Crea el primer paciente para comenzar</p>
+          <p className="font-medium">{search ? t("no_results") : t("no_patients")}</p>
+          {!search && <p className="text-sm mt-1">{t("no_patients_hint")}</p>}
         </div>
       ) : (
         <div className="divide-y divide-slate-100 rounded-xl border border-slate-200 bg-white overflow-hidden">

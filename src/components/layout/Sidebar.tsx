@@ -11,7 +11,11 @@ import {
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS, FEATURES } from "@/lib/constants";
 import { isRTL, type Locale } from "@/i18n/routing";
-import { useState } from "react";
+import { signOut, useRequireUser } from "@/lib/auth";
+import { useEffect, useState } from "react";
+
+/** Abre/cierra el menú en el celular (lo dispara el botón ☰ del Header). */
+export const MENU_EVENT = "tg:menu";
 
 const ICON_MAP = {
   LayoutDashboard, Dumbbell, ClipboardList, Users,
@@ -28,6 +32,14 @@ export function Sidebar({ className }: SidebarProps) {
   const pathname = usePathname();
   const rtl = isRTL(locale);
   const [collapsed, setCollapsed] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  useRequireUser();          // páginas del terapeuta: sin sesión → /login
+  useEffect(() => {
+    const h = () => setMobileOpen((o) => !o);
+    window.addEventListener(MENU_EVENT, h);
+    return () => window.removeEventListener(MENU_EVENT, h);
+  }, []);
+  useEffect(() => setMobileOpen(false), [pathname]);
 
   const visibleItems = NAV_ITEMS.filter((item) => {
     if (!item.alwaysVisible && item.featureFlag) {
@@ -37,11 +49,18 @@ export function Sidebar({ className }: SidebarProps) {
   });
 
   return (
+    <>
+    {/* celular: el menú es un cajón que se abre con ☰; en pantallas medianas en adelante queda fijo al costado */}
+    {mobileOpen && (
+      <div className="fixed inset-0 z-40 bg-black/40 md:hidden" onClick={() => setMobileOpen(false)} aria-hidden />
+    )}
     <aside
       className={cn(
         "flex flex-col border-surface-200 bg-white transition-all duration-300",
         "border-e",
-        collapsed ? "w-16" : "w-64",
+        "fixed inset-y-0 start-0 z-50 w-64 md:static md:z-auto",
+        mobileOpen ? "translate-x-0" : rtl ? "translate-x-full md:translate-x-0" : "-translate-x-full md:translate-x-0",
+        collapsed ? "md:w-16" : "md:w-64",
         className
       )}
       dir={rtl ? "rtl" : "ltr"}
@@ -70,7 +89,7 @@ export function Sidebar({ className }: SidebarProps) {
           </Link>
         )}
         <button
-          onClick={() => setCollapsed(!collapsed)}
+          onClick={() => (window.innerWidth < 768 ? setMobileOpen(false) : setCollapsed(!collapsed))}
           className={cn(
             "flex h-6 w-6 items-center justify-center rounded-lg text-surface-400",
             "hover:bg-surface-100 hover:text-surface-700 transition-colors",
@@ -139,6 +158,7 @@ export function Sidebar({ className }: SidebarProps) {
           {!collapsed && <span>{t("settings")}</span>}
         </Link>
         <button
+          onClick={() => signOut(locale)}
           className={cn(
             "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium",
             "text-surface-600 hover:bg-red-50 hover:text-red-600 transition-colors",
@@ -150,5 +170,6 @@ export function Sidebar({ className }: SidebarProps) {
         </button>
       </div>
     </aside>
+    </>
   );
 }

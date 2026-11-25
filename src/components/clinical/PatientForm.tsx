@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase, type Patient } from "@/lib/supabase";
@@ -19,6 +20,7 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
     phone: patient?.phone ?? "",
     email: patient?.email ?? "",
   });
+  const t = useTranslations("clin");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -28,17 +30,19 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!form.name.trim()) { setError("El nombre es obligatorio"); return; }
+    if (!form.name.trim()) { setError(t("name_required")); return; }
     setLoading(true);
     setError("");
     try {
       const { data: { user } } = await supabase.auth.getUser();
-      if (!user) throw new Error("No autenticado");
+      if (!user) throw new Error(t("not_auth"));
+      // campos vacíos → null (la base rechaza "" en columnas de fecha)
+      const row = Object.fromEntries(Object.entries(form).map(([k, v]) => [k, typeof v === "string" && !v.trim() ? null : v]));
 
       if (patient?.id) {
         const { data, error: err } = await supabase
           .from("patients")
-          .update({ ...form })
+          .update(row)
           .eq("id", patient.id)
           .select()
           .single();
@@ -47,14 +51,15 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
       } else {
         const { data, error: err } = await supabase
           .from("patients")
-          .insert({ ...form, doctor_id: user.id })
+          .insert({ ...row, doctor_id: user.id })
           .select()
           .single();
         if (err) throw err;
         onSave(data);
       }
     } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Error al guardar paciente");
+      console.error("PatientForm", e);
+      setError(e instanceof Error && e.message === t("not_auth") ? e.message : t("save_error"));
     } finally {
       setLoading(false);
     }
@@ -65,18 +70,18 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
           <label className="text-sm font-semibold text-slate-700 mb-1 block">
-            Nombre completo *
+            {t("full_name")} *
           </label>
           <Input
             value={form.name}
             onChange={(e) => set("name", e.target.value)}
-            placeholder="Ej. María García López"
+            placeholder={t("name_ph")}
             required
           />
         </div>
         <div>
           <label className="text-sm font-semibold text-slate-700 mb-1 block">
-            Fecha de nacimiento
+            {t("birth_date")}
           </label>
           <Input
             type="date"
@@ -85,20 +90,20 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
           />
         </div>
         <div>
-          <label className="text-sm font-semibold text-slate-700 mb-1 block">Género</label>
+          <label className="text-sm font-semibold text-slate-700 mb-1 block">{t("gender")}</label>
           <select
             value={form.gender}
             onChange={(e) => set("gender", e.target.value)}
             className="w-full h-9 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-ring"
           >
-            <option value="">Sin especificar</option>
-            <option value="male">Masculino</option>
-            <option value="female">Femenino</option>
-            <option value="other">Otro</option>
+            <option value="">{t("unspecified")}</option>
+            <option value="male">{t("male")}</option>
+            <option value="female">{t("female")}</option>
+            <option value="other">{t("other")}</option>
           </select>
         </div>
         <div>
-          <label className="text-sm font-semibold text-slate-700 mb-1 block">Teléfono</label>
+          <label className="text-sm font-semibold text-slate-700 mb-1 block">{t("phone")}</label>
           <Input
             type="tel"
             value={form.phone}
@@ -107,12 +112,13 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
           />
         </div>
         <div>
-          <label className="text-sm font-semibold text-slate-700 mb-1 block">Email</label>
+          <label className="text-sm font-semibold text-slate-700 mb-1 block">{t("email")}</label>
           <Input
             type="email"
             value={form.email}
             onChange={(e) => set("email", e.target.value)}
-            placeholder="paciente@email.com"
+            placeholder="email@ejemplo.com"
+            dir="ltr"
           />
         </div>
       </div>
@@ -125,10 +131,10 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
 
       <div className="flex gap-3 pt-2">
         <Button type="button" variant="outline" onClick={onCancel} className="flex-1">
-          Cancelar
+          {t("cancel")}
         </Button>
         <Button type="submit" disabled={loading} className="flex-1">
-          {loading ? "Guardando..." : patient?.id ? "Actualizar" : "Crear paciente"}
+          {loading ? t("saving") : patient?.id ? t("update") : t("create_patient")}
         </Button>
       </div>
     </form>

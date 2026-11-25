@@ -10,7 +10,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { LanguageSwitcher } from "@/components/common/LanguageSwitcher";
-import { PLATFORM_STATS } from "@/lib/constants";
+import { LIBRARY_ITEMS } from "@/lib/videoLibrary";
+import { encodePlanId } from "@/lib/planLink";
+import type { PlanExercise } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
 
 // ─── Hero Section ─────────────────────────────────────────────────────────────
@@ -18,12 +20,19 @@ import { cn } from "@/lib/utils";
 function HeroSection({ locale }: { locale: string }) {
   const t = useTranslations("landing");
 
+  // cifras reales, calculadas de la biblioteca
   const stats = [
-    { value: PLATFORM_STATS.therapists, label: t("stats.therapists") },
-    { value: PLATFORM_STATS.exercises,  label: t("stats.exercises") },
-    { value: PLATFORM_STATS.languages,  label: t("stats.languages") },
-    { value: PLATFORM_STATS.countries,  label: t("stats.countries") },
+    { value: String(LIBRARY_ITEMS.length), label: t("stats.techniques") },
+    { value: String(LIBRARY_ITEMS.filter((i) => i.categoria === "osteopatia").length), label: t("stats.osteopathy") },
+    { value: "2", label: t("stats.views") },
+    { value: "10", label: t("stats.languages") },
   ];
+  // "Ver demo": una rutina real de ejemplo, tal como la recibe el paciente
+  const demoEx = ["F-CAD-007", "F-HOM-003", "E-043"].map((id, i) => ({
+    exercise_id: id, nombre_display: "", youtube_id: "", youtube_start_seconds: 0, sets: i === 2 ? 2 : 3, reps: i === 2 ? 0 : 10,
+    rest_seconds: 45, frequency_per_week: 3, equipment_used: "", equipment_alternative: "", note_from_therapist: "", instructions_eli5: [], order: i + 1,
+  })) as PlanExercise[];
+  const demoId = encodePlanId({ patientName: t("demo_patient"), diagnosis: t("demo_title"), phase: "", frequency_per_week: 3, duration_weeks: 4, exercises: demoEx });
 
   return (
     <section className="relative overflow-hidden bg-white">
@@ -68,7 +77,7 @@ function HeroSection({ locale }: { locale: string }) {
               {t("cta_primary")}
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href={`/${locale}/dashboard`}
+            <Link href={`/${locale}/p/${demoId}`}
               className="inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-semibold rounded-xl border border-surface-200 bg-transparent text-surface-700 hover:bg-surface-50 hover:border-surface-300 transition-all">
               <Play className="h-4 w-4" />
               {t("cta_secondary")}
@@ -77,7 +86,7 @@ function HeroSection({ locale }: { locale: string }) {
 
           {/* Trust indicators */}
           <p className="mt-4 text-xs text-surface-400">
-            Free forever for basic use · No credit card · Cancel anytime
+            {t("trust")}
           </p>
         </div>
 
@@ -125,12 +134,12 @@ function FeaturesSection() {
       color: "clinical",
     },
     {
-      key: "tracking",
+      key: "clinical",
       icon: UsersIcon,
       color: "brand",
     },
     {
-      key: "ai",
+      key: "whatsapp",
       icon: SparklesIcon,
       color: "clinical",
     },
@@ -178,72 +187,23 @@ function FeaturesSection() {
   );
 }
 
-// ─── Comparison Section ───────────────────────────────────────────────────────
+// ─── Cómo funciona ────────────────────────────────────────────────────────────
 
-function ComparisonSection() {
+function HowItWorksSection() {
   const t = useTranslations("landing");
-
-  const comparisons = [
-    { label: "Complete exercise library", other: false, therapia: true },
-    { label: "Osteopathy techniques", other: false, therapia: true },
-    { label: "Applied anatomy", other: false, therapia: true },
-    { label: "10 languages", other: false, therapia: true },
-    { label: "Arabic RTL support", other: false, therapia: true },
-    { label: "Clinical AI recommendations", other: false, therapia: true },
-    { label: "Professional network", other: false, therapia: true },
-    { label: "Certifications", other: false, therapia: true },
-    { label: "WhatsApp delivery", other: true, therapia: true },
-    { label: "Patient adherence tracking", other: true, therapia: true },
-    { label: "Unlimited content access", other: false, therapia: true },
-  ];
-
   return (
     <section className="bg-white py-20">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-surface-900 sm:text-4xl">
-            {t("comparison_title")}
-          </h2>
-        </div>
-
-        <div className="overflow-hidden rounded-2xl border border-surface-200 shadow-card">
-          <table className="w-full">
-            <thead>
-              <tr className="border-b border-surface-200 bg-surface-50">
-                <th className="px-6 py-4 text-start text-sm font-semibold text-surface-700 w-full">
-                  Feature
-                </th>
-                <th className="px-6 py-4 text-center text-sm font-semibold text-surface-400 whitespace-nowrap">
-                  Other platforms
-                </th>
-                <th className="px-6 py-4 text-center text-sm font-bold text-brand-600 whitespace-nowrap">
-                  Therapia Global
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-surface-100">
-              {comparisons.map((row, i) => (
-                <tr key={i} className="hover:bg-surface-50/50 transition-colors">
-                  <td className="px-6 py-3.5 text-sm text-surface-700">{row.label}</td>
-                  <td className="px-6 py-3.5 text-center">
-                    {row.other ? (
-                      <Check className="mx-auto h-4 w-4 text-surface-400" />
-                    ) : (
-                      <span className="text-surface-300">—</span>
-                    )}
-                  </td>
-                  <td className="px-6 py-3.5 text-center">
-                    {row.therapia ? (
-                      <Check className="mx-auto h-4 w-4 text-clinical-500" strokeWidth={2.5} />
-                    ) : (
-                      <span className="text-surface-300">—</span>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+      <div className="mx-auto max-w-5xl px-6">
+        <h2 className="mb-10 text-center text-3xl font-bold text-surface-900 sm:text-4xl">{t("how_title")}</h2>
+        <ol className="grid gap-4 sm:grid-cols-3">
+          {(["how1", "how2", "how3"] as const).map((k, i) => (
+            <li key={k} className="rounded-2xl border border-surface-200 bg-surface-50 p-6">
+              <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">{i + 1}</span>
+              <p className="font-semibold text-surface-900">{t(`${k}_title`)}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-surface-500">{t(`${k}_desc`)}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
@@ -262,7 +222,7 @@ function FooterCTA({ locale }: { locale: string }) {
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <Badge variant="dark" className="mb-6 border border-surface-700">
           <Globe className="h-3 w-3" />
-          Global Platform
+          {t("languages_badge")}
         </Badge>
         <h2 className="text-3xl font-bold text-white sm:text-4xl text-balance">
           {t("footer_cta")}
@@ -299,7 +259,7 @@ function LandingNav({ locale }: { locale: string }) {
           <LanguageSwitcher />
           <Link href={`/${locale}/login`}
             className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-xl text-surface-600 hover:bg-surface-100 hover:text-surface-800 transition-all">
-            Sign in
+            {t("sign_in")}
           </Link>
           <Link href={`/${locale}/signup`}
             className="inline-flex items-center h-8 px-3 text-sm font-semibold rounded-xl bg-brand-600 text-white hover:bg-brand-700 transition-all">
@@ -335,22 +295,23 @@ function SparklesIcon({ className }: { className?: string }) {
 
 export default async function LandingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "landing" });
   return (
     <div className="min-h-screen">
       <LandingNav locale={locale} />
       <main>
         <HeroSection locale={locale} />
         <FeaturesSection />
-        <ComparisonSection />
+        <HowItWorksSection />
         <FooterCTA locale={locale} />
       </main>
       <footer className="border-t border-surface-200 bg-white py-8">
         <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-surface-400">
-            © {new Date().getFullYear()} Therapia Global. All rights reserved.
+            © {new Date().getFullYear()} Therapia Global
           </p>
           <p className="text-xs text-surface-400">
-            Available in 10 languages · 80+ countries
+            {t("languages_badge")}
           </p>
         </div>
       </footer>
