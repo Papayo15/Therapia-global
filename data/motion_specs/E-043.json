@@ -10,10 +10,11 @@
       "rodilla_flex.L": 70,
       "hombro_flex.L": 90,
       "codo_flex.L": 70,
-      "hombro_abd.R": 135,
+      "hombro_abd.R": 172,
       "mano_cerrar.R": 15,
-      "cadera_flex.R": 30,
-      "rodilla_flex.R": 60
+      "codo_flex.R": 30,
+      "cadera_flex.R": -12,
+      "cadera_abd.R": -15
     },
     "asentar": [
       {
@@ -38,6 +39,32 @@
         "rango": [
           -20,
           20
+        ]
+      },
+      {
+        "art": "cadera_abd.R",
+        "grupo": [
+          "foot.R",
+          "toenails",
+          "toe1-1.R",
+          "toe1-2.R",
+          "toe1-3.R",
+          "toe2-1.R",
+          "toe2-2.R",
+          "toe2-3.R",
+          "toe3-1.R",
+          "toe3-2.R",
+          "toe3-3.R",
+          "toe4-1.R",
+          "toe4-2.R",
+          "toe4-3.R",
+          "toe5-1.R",
+          "toe5-2.R",
+          "toe5-3.R"
+        ],
+        "rango": [
+          -40,
+          10
         ]
       }
     ],
@@ -70,7 +97,7 @@
     "dir": [
       0.1,
       -1,
-      0.4
+      0.5
     ],
     "lente": 50,
     "margen": 1.1
@@ -79,7 +106,7 @@
     {
       "t": 0,
       "art": {
-        "lumbar_incl": 0,
+        "hombro_abd.R": 0,
         "toracica_incl": 0
       },
       "p": 0,
@@ -88,7 +115,7 @@
     {
       "t": 0.4,
       "art": {
-        "lumbar_incl": 0,
+        "hombro_abd.R": 0,
         "toracica_incl": 0
       },
       "p": 0,
@@ -97,8 +124,8 @@
     {
       "t": 1.9,
       "art": {
-        "lumbar_incl": 12,
-        "toracica_incl": 8
+        "hombro_abd.R": 6,
+        "toracica_incl": 4
       },
       "p": 1,
       "fase": "isometrico"
@@ -106,8 +133,8 @@
     {
       "t": 4.9,
       "art": {
-        "lumbar_incl": 12,
-        "toracica_incl": 8
+        "hombro_abd.R": 6,
+        "toracica_incl": 4
       },
       "p": 1,
       "fase": "excentrico"
@@ -115,7 +142,7 @@
     {
       "t": 6.4,
       "art": {
-        "lumbar_incl": 0,
+        "hombro_abd.R": 0,
         "toracica_incl": 0
       },
       "p": 0,
@@ -124,7 +151,7 @@
     {
       "t": 6.8,
       "art": {
-        "lumbar_incl": 0,
+        "hombro_abd.R": 0,
         "toracica_incl": 0
       },
       "p": 0,
@@ -140,7 +167,16 @@
     ]
   },
   "articulacion_resaltada": [],
-  "props": [],
+  "props": [
+    {
+      "tipo": "toalla",
+      "uso": "rollo_bajo_hueso",
+      "hueso": "spine01",
+      "t": 0.5,
+      "r": 0.045,
+      "eje": "x"
+    }
+  ],
   "variantes": [
     "gym"
   ],

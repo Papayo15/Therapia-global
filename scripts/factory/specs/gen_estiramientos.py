@@ -11,7 +11,6 @@ from common import (FOOT, bipedo, cuadrupedia, hand, keys_custom, lateral, muscu
 
 ROOT = Path(__file__).resolve().parents[3]
 PENDIENTES = {
-    "E-043": "Decúbito lateral sobre rollo: falta modelar el tronco arqueado SOBRE el rollo (cintura elevada, hombro y pelvis apoyados); con la pose lateral actual la cabeza/mano atraviesan el suelo.",
 }
 NO_SOBREESCRIBIR = {"E-067"}          # ficha piloto escrita a mano
 
@@ -220,9 +219,17 @@ H.append(spec("E-042", gc, keys_custom(
      (2.3, {"lumbar_flex": 22, "toracica_flex": 22, "cervical_flex": 25}, 1), (3.9, {"lumbar_flex": -18, "toracica_flex": -10, "cervical_flex": -20}, 0.5),
      (4.7, {"lumbar_flex": -18, "toracica_flex": -10, "cervical_flex": -20}, 0.5), (6.0, {"lumbar_flex": 0, "toracica_flex": 0, "cervical_flex": 0}, 0)],
     ["concentrico"] * 6), lado=None, camara=[1, 0.1, 0.3]))
+# E-043 v2: de lado sobre el lado izquierdo (postura lateral estándar, sin forzar) con una toalla enrollada en el
+# hueco natural de la cintura; el brazo de arriba sube por encima de la cabeza y la pierna de arriba se va un poco
+# atrás → el costado de arriba (cuadrado lumbar derecho) se alarga. Sin inclinaciones extremas del tronco.
 b = lateral()
-b["base"]["angulos"].update({"hombro_abd.R": 135, "cadera_flex.R": 30, "rodilla_flex.R": 60})
-H.append(spec("E-043", b, est({"lumbar_incl": 12, "toracica_incl": 8}), lado="R", camara=[0.1, -1, 0.4]))
+b["base"]["angulos"].update({"hombro_abd.R": 172, "codo_flex.R": 30, "cadera_flex.R": -12, "cadera_abd.R": -15})
+# la pierna de arriba cae por detrás de la de abajo hasta apoyar el pie en la colchoneta (no queda en el aire)
+b["base"]["asentar"].append({"art": "cadera_abd.R", "grupo": FOOT("R"), "rango": [-40, 10]})
+b["props"] = [{"tipo": "toalla", "uso": "rollo_bajo_hueso", "hueso": "spine01", "t": 0.5, "r": float(__import__("os").environ.get("E043_R", 0.045)),
+               "eje": __import__("os").environ.get("E043_EJE", "x")}]
+H.append(spec("E-043", b, est({"hombro_abd.R": 6, "toracica_incl": 4}), lado="R", camara=[0.1, -1, 0.5], variantes=["gym"],
+              props=b.pop("props")))
 # E-045 Mano derecha arriba sujeta al marco de la puerta (lado der.); la pelvis se desplaza a la izquierda → el
 # costado derecho (dorsal ancho) queda convexo y se estira. Mano y pies fijos (IK).
 b = bipedo(extra={"hombro_flex.R": 170, "mano_cerrar.R": 65, "hombro_abd.L": 10}, camara=(0, -1, 0.2))

@@ -306,6 +306,43 @@ _s025 = None and (spec("F-CAD-025", _b, keys_custom([d[:3] for d in _dense], [d[
                   asentar_keys=[{"art": f"cadera_abd.{sd}", "grupo": FOOT(sd) + [f"lowerleg01.{sd}", f"lowerleg02.{sd}", f"upperleg02.{sd}"],
                                  "rango": [-30, 30], "solo_bajo": True, "z": 0.0} for sd in "LR"]))
 
+# 025 v2 "limpiaparabrisas": sentada, pies PLANTADOS y separados (IK fijo en el suelo); las dos rodillas caen juntas
+# a un lado (90/90 izquierda: la de delante en rotación externa, la de atrás en interna), suben y caen al otro.
+# Los pies no se mueven → nada cruza el suelo; las rodillas giran alrededor del eje cadera-tobillo (polo animado).
+def _wiper():
+    b = sedente_suelo(manos="libres", extra={"cadera_flex.L": 120, "cadera_flex.R": 120, "rodilla_flex.L": 80,
+                                             "rodilla_flex.R": 80, "cadera_abd.L": 22, "cadera_abd.R": 22,
+                                             "tobillo_dorsi.L": 5, "tobillo_dorsi.R": 5, "lumbar_flex": 0,
+                                             "hombro_flex.L": 95, "hombro_flex.R": 95, "codo_flex.L": 10, "codo_flex.R": 10})
+    b["base"]["asentar"] = [{"art": f"cadera_flex.{s}", "grupo": f"foot.{s}", "rango": [80, 140], "abs": True} for s in "LR"]
+    b["base"]["suelo"] = ["pelvis.L", "pelvis.R", "Delete.female_sportsuit01"]
+    b["ik"] = [{"cadena": f"pierna.{s}"} for s in "LR"]
+    b["contactos"] = [{"grupo": ["pelvis.L", "pelvis.R"], "tol_cm": 14}, {"grupo": "foot.L", "tol_cm": 3}, {"grupo": "foot.R", "tol_cm": 3}]
+    b["rom_pasivo"] = {"cadera_re+": 90, "cadera_re-": 45, "cadera_abd+": 97}
+    b["camara"] = {"dir": [0.05, -1, 0.75], "lente": 50, "margen": 1.15}
+    return b
+
+
+_W = float(__import__("os").environ.get("WIPER_ANG", 80))
+_cs, _sn = math.cos(math.radians(_W)), math.sin(math.radians(_W))
+
+
+def _polo(lado):          # rodillas hacia el lado (−1 = izquierda); el polo base está ~0,6 m sobre la rodilla
+    return {f"pierna.{s}": [round(lado * 1.6 * _sn, 3), 0, round(-0.6 - 0.4 * (1 - _cs), 3)] for s in "LR"}
+
+
+_rot = lambda lado: {"toracica_rot": 10 * -lado, "lumbar_incl": 3 * lado}
+_c0 = {f"pierna.{s}": [0, 0, 0] for s in "LR"}
+_seq = [(0.0, {}, _c0, 0), (0.5, {}, _c0, 0), (1.7, _rot(-1), _polo(-1), 1), (2.5, _rot(-1), _polo(-1), 1),
+        (3.7, {}, _c0, 0.3), (4.9, _rot(1), _polo(1), 1), (5.7, _rot(1), _polo(1), 1), (6.9, {}, _c0, 0), (7.4, {}, _c0, 0)]
+_dur, _keys = keys_custom([(t, a, p) for t, a, _, p in _seq],
+                          ["concentrico", "concentrico", "isometrico", "concentrico", "concentrico", "isometrico",
+                           "concentrico", "concentrico", "concentrico"])
+for _k, (_t, _a, _pl, _p) in zip(_keys, _seq):
+    _k["polo"] = _pl
+hecho.append(spec("F-CAD-025", _wiper(), (_dur, _keys), lado=None, resaltar=("upperleg01.L", "upperleg01.R")))
+PENDIENTES.pop("F-CAD-025", None)
+
 for _id, _l in (("F-CAD-019", False), ("F-CAD-020", True)):
     _b = copenhagen(_l)
     _p = _b.pop("props")

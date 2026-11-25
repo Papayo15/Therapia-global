@@ -1,6 +1,6 @@
 {
  "version": 1,
- "total": 437,
+ "total": 439,
  "items": [
   {
    "id": "F-CER-001",
@@ -9053,6 +9053,49 @@
    }
   },
   {
+   "id": "F-CAD-025",
+   "slug": "f-cad-025-transiciones-90-90-sin-manos",
+   "categoria": "fortalecimiento",
+   "region": "Cadera",
+   "nombre": "Transiciones 90/90 sin manos",
+   "objetivo": null,
+   "nivel": 5,
+   "nivel_nombre": "Funcional / avanzado",
+   "movimiento": "Rotación interna",
+   "tipo": null,
+   "estructuras": null,
+   "props": [],
+   "musculos": {
+    "activos": [
+     "adductor_brevis",
+     "adductor_longus",
+     "adductor_magnus",
+     "gluteus_medius",
+     "gluteus_minimus",
+     "tensor_fasciae_latae"
+    ],
+    "elongan": [
+     "gemellus_inferior",
+     "gemellus_superior",
+     "obturator_externus",
+     "obturator_internus",
+     "piriformis",
+     "quadratus_femoris"
+    ]
+   },
+   "variantes": [
+    {
+     "variante": "ambos",
+     "video": "F-CAD-025/ambos.mp4",
+     "poster": "F-CAD-025/ambos.jpg"
+    }
+   ],
+   "anatomico": {
+    "video": "F-CAD-025/anatomico.mp4",
+    "etiquetas": "F-CAD-025/etiquetas.json"
+   }
+  },
+  {
    "id": "F-CAD-026",
    "slug": "f-cad-026-rotacion-externa-activa-en-sedente",
    "categoria": "fortalecimiento",
@@ -12316,6 +12359,39 @@
    "anatomico": {
     "video": "E-042/anatomico.mp4",
     "etiquetas": "E-042/etiquetas.json"
+   }
+  },
+  {
+   "id": "E-043",
+   "slug": "e-043-decubito-lateral-sobre-rollo",
+   "categoria": "estiramiento",
+   "region": "Tronco",
+   "nombre": "Decúbito lateral sobre rollo",
+   "objetivo": "Cuadrado lumbar",
+   "nivel": 1,
+   "nivel_nombre": "Pasivo / asistido",
+   "movimiento": null,
+   "tipo": null,
+   "estructuras": null,
+   "props": [
+    "rollo"
+   ],
+   "musculos": {
+    "activos": [],
+    "elongan": [
+     "quadratus_lumborum"
+    ]
+   },
+   "variantes": [
+    {
+     "variante": "ambos",
+     "video": "E-043/ambos.mp4",
+     "poster": "E-043/ambos.jpg"
+    }
+   ],
+   "anatomico": {
+    "video": "E-043/anatomico.mp4",
+    "etiquetas": "E-043/etiquetas.json"
    }
   },
   {
