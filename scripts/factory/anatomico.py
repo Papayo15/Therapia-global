@@ -301,6 +301,8 @@ if _act_objs:
             _act.append(o)
     _visor_normal()
     print("TAPADOS_COMO_PROFUNDOS", [o.name for o in _act if not MUSCLE_INFO[o]["profundo"]])
+_HUESO_FIJO = tuple(f"HUE::{n}" for n in ("Femur", "Tibia", "Fibula", "Patella", "Talus", "Calcaneus",
+                                                   "Humerus", "Radius", "Ulna"))
 if _act:
     _kp = max(keys, key=lambda k: k.get("p", 0))
     _rayos_como_render(set(NEUTROS) | set(_act) | {body} | set(_PROPS_VIS))
@@ -324,6 +326,13 @@ if _act:
                     if not ok:
                         break
                     obo = ob.original if hasattr(ob, "original") else ob
+                    # los huesos largos de los miembros nunca se quitan: sin tibia/fémur el pie queda "flotando" y asusta
+                    # (F-ROD-001: el poplíteo profundo hacía quitar tibia, peroné, fémur y toda la pantorrilla)
+                    if obo.name.startswith(_HUESO_FIJO):
+                        if not deep:
+                            break
+                        org = hit + dv.normalized() * 0.001
+                        continue
                     if obo in _neu and not obo.get("_quitado") and (p_ - hit).length < 0.08:   # sólo la capa que lo cubre, no el miembro entero
                         obo["_quitado"] = True
                     if not deep and obo not in _neu:

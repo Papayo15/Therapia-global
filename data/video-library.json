@@ -11493,6 +11493,16 @@
    },
    "variantes": [
     {
+     "variante": "gym",
+     "video": "E-018/gym.mp4",
+     "poster": "E-018/gym.jpg"
+    },
+    {
+     "variante": "casa",
+     "video": "E-018/casa.mp4",
+     "poster": "E-018/casa.jpg"
+    },
+    {
      "variante": "ambos",
      "video": "E-018/ambos.mp4",
      "poster": "E-018/ambos.jpg"
