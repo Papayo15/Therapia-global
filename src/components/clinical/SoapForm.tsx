@@ -9,19 +9,21 @@ import { Zap } from "lucide-react";
 
 interface SoapFormProps {
   patientId: string;
+  /** nota a editar (si falta, se crea una nueva) */
+  note?: SoapNote;
   onSave: (note: SoapNote) => void;
   onCancel: () => void;
 }
 
 const FIELDS = ["subjective", "objective", "assessment", "diagnosis", "plan"] as const;
 
-export function SoapForm({ patientId, onSave, onCancel }: SoapFormProps) {
+export function SoapForm({ patientId, note, onSave, onCancel }: SoapFormProps) {
   const [form, setForm] = useState({
-    subjective: "",
-    objective: "",
-    assessment: "",
-    diagnosis: "",
-    plan: "",
+    subjective: note?.subjective ?? "",
+    objective: note?.objective ?? "",
+    assessment: note?.assessment ?? "",
+    diagnosis: note?.diagnosis ?? "",
+    plan: note?.plan ?? "",
   });
   const t = useTranslations("clin");
   const [loading, setLoading] = useState(false);
@@ -38,18 +40,18 @@ export function SoapForm({ patientId, onSave, onCancel }: SoapFormProps) {
     setError("");
     try {
       const { data: { user } } = await supabase.auth.getUser();
-      const { data, error: err } = await supabase
-        .from("soap_notes")
-        .insert({
-          patient_id: patientId,
-          ...form,
-          doctor: displayName(user) || "—",
-        })
-        .select()
-        .single();
+      // al editar, la versión anterior queda en soap_note_history (trigger en la base)
+      const { data, error: err } = note
+        ? await supabase.from("soap_notes").update({ ...form }).eq("id", note.id).select().single()
+        : await supabase
+            .from("soap_notes")
+            .insert({ patient_id: patientId, ...form, doctor: displayName(user) || "—" })
+            .select()
+            .single();
       if (err) throw err;
       onSave(data);
     } catch (e: unknown) {
+      console.error("SoapForm", e);
       setError(t("save_error"));
     } finally {
       setLoading(false);
@@ -80,19 +82,19 @@ export function SoapForm({ patientId, onSave, onCancel }: SoapFormProps) {
         </p>
       )}
 
-      <div className="flex items-center gap-2 p-3 bg-blue-50 border border-blue-100 rounded-xl">
-        <Zap className="h-4 w-4 text-blue-600 shrink-0" />
-        <p className="text-xs text-blue-700">
-          {t("soap_after")}
-        </p>
-      </div>
+      {!note && (
+        <div className="flex items-center gap-2 p-3 bg-blue-50 border border-blue-100 rounded-xl">
+          <Zap className="h-4 w-4 text-blue-600 shrink-0" />
+          <p className="text-xs text-blue-700">{t("soap_after")}</p>
+        </div>
+      )}
 
       <div className="flex gap-3">
         <Button type="button" variant="outline" onClick={onCancel} className="flex-1">
           {t("cancel")}
         </Button>
         <Button type="submit" disabled={loading} className="flex-1">
-          {loading ? t("saving") : t("save_soap")}
+          {loading ? t("saving") : note ? t("save_changes") : t("save_soap")}
         </Button>
       </div>
     </form>

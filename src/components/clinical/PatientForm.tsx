@@ -19,6 +19,7 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
     gender: patient?.gender ?? "",
     phone: patient?.phone ?? "",
     email: patient?.email ?? "",
+    notes: patient?.notes ?? "",
   });
   const t = useTranslations("clin");
   const [loading, setLoading] = useState(false);
@@ -109,6 +110,7 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
             value={form.phone}
             onChange={(e) => set("phone", e.target.value)}
             placeholder="+52 55 1234 5678"
+            dir="ltr"
           />
         </div>
         <div>
@@ -119,6 +121,16 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
             onChange={(e) => set("email", e.target.value)}
             placeholder="email@ejemplo.com"
             dir="ltr"
+          />
+        </div>
+        <div className="sm:col-span-2">
+          <label className="text-sm font-semibold text-slate-700 mb-1 block">{t("patient_notes")}</label>
+          <textarea
+            value={form.notes}
+            onChange={(e) => set("notes", e.target.value)}
+            placeholder={t("patient_notes_ph")}
+            rows={2}
+            className="w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-ring resize-none"
           />
         </div>
       </div>
