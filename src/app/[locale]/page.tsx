@@ -296,6 +296,7 @@ function SparklesIcon({ className }: { className?: string }) {
 export default async function LandingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "landing" });
+  const tl = await getTranslations({ locale, namespace: "legal" });
   return (
     <div className="min-h-screen">
       <LandingNav locale={locale} />
@@ -310,9 +311,10 @@ export default async function LandingPage({ params }: { params: Promise<{ locale
           <p className="text-xs text-surface-400">
             © {new Date().getFullYear()} Therapia Global
           </p>
-          <p className="text-xs text-surface-400">
-            {t("languages_badge")}
-          </p>
+          <div className="flex items-center gap-4 text-xs text-surface-400">
+            <Link href={`/${locale}/privacy`} className="hover:text-surface-700 underline-offset-2 hover:underline">{tl("footer_privacy")}</Link>
+            <span>{t("languages_badge")}</span>
+          </div>
         </div>
       </footer>
     </div>

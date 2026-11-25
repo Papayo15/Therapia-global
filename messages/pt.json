@@ -1289,5 +1289,15 @@
     "library": "Biblioteca",
     "routines": "Rotinas",
     "patients": "Pacientes"
+  },
+  "legal": {
+    "privacy_title": "Aviso de privacidade",
+    "official_es": "Este aviso é regido pela lei mexicana; a versão válida é o texto em espanhol abaixo.",
+    "footer_privacy": "Aviso de privacidade",
+    "accept_prefix": "Li e aceito o",
+    "accept_link": "aviso de privacidade",
+    "accept_required": "Você precisa aceitar o aviso de privacidade para criar sua conta.",
+    "patient_notice": "Somente seu terapeuta verá o que você enviar.",
+    "patient_consent_hint": "Registre dados de saúde somente com o consentimento expresso do paciente."
   }
 }

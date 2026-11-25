@@ -13,6 +13,8 @@ const SPECIALTIES = ["physio", "osteo", "chiro", "sports", "rehab", "ot", "other
 export default function SignupPage() {
   const locale = useLocale();
   const t = useTranslations("auth");
+  const tl = useTranslations("legal");
+  const [accepted, setAccepted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", password: "", specialty: "" });
   const [showPw, setShowPw] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -23,13 +25,14 @@ export default function SignupPage() {
     e.preventDefault();
     if (!form.name || !form.email || !form.password) return setError(t("fillAll"));
     if (form.password.length < 8) return setError(t("passwordShort"));
+    if (!accepted) return setError(tl("accept_required"));
     setError(null);
     setLoading(true);
     const { data, error: err } = await supabase.auth.signUp({
       email: form.email.trim(),
       password: form.password,
       options: {
-        data: { full_name: form.name.trim(), specialty: form.specialty, locale },
+        data: { full_name: form.name.trim(), specialty: form.specialty, locale, privacy_accepted_at: new Date().toISOString() },
         emailRedirectTo: `${window.location.origin}/${locale}/dashboard`,
       },
     });
@@ -87,6 +90,14 @@ export default function SignupPage() {
             ))}
           </select>
         </div>
+        <label className="flex items-start gap-2.5 text-sm text-surface-600">
+          <input type="checkbox" checked={accepted} onChange={(e) => setAccepted(e.target.checked)}
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-surface-300 accent-brand-600" />
+          <span>
+            {tl("accept_prefix")}{" "}
+            <Link href={`/${locale}/privacy`} target="_blank" className="font-semibold text-brand-600 hover:text-brand-700">{tl("accept_link")}</Link>
+          </span>
+        </label>
         <AuthError msg={error} />
         <AuthOk msg={ok} />
         <button type="submit" disabled={loading || !!ok} className={authBtn}>
@@ -94,7 +105,6 @@ export default function SignupPage() {
           {loading ? t("creating") : t("createAccount")}
         </button>
       </form>
-      <p className="text-center text-[11px] text-surface-400">{t("terms")}</p>
     </AuthShell>
   );
 }

@@ -22,6 +22,7 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
     notes: patient?.notes ?? "",
   });
   const t = useTranslations("clin");
+  const tl = useTranslations("legal");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -140,6 +141,8 @@ export function PatientForm({ patient, onSave, onCancel }: PatientFormProps) {
           {error}
         </p>
       )}
+
+      {!patient?.id && <p className="text-xs text-slate-500">{tl("patient_consent_hint")}</p>}
 
       <div className="flex gap-3 pt-2">
         <Button type="button" variant="outline" onClick={onCancel} className="flex-1">

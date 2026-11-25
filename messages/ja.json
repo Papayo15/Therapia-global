@@ -1289,5 +1289,15 @@
     "library": "ライブラリ",
     "routines": "プログラム",
     "patients": "患者"
+  },
+  "legal": {
+    "privacy_title": "プライバシー通知",
+    "official_es": "本通知はメキシコ法に準拠し、法的に有効なのは以下のスペイン語版です。",
+    "footer_privacy": "プライバシー通知",
+    "accept_prefix": "以下を読み、同意します：",
+    "accept_link": "プライバシー通知",
+    "accept_required": "アカウントを作成するにはプライバシー通知への同意が必要です。",
+    "patient_notice": "送信内容はあなたのセラピストだけが見られます。",
+    "patient_consent_hint": "健康情報は患者の明示的な同意を得た場合のみ記録してください。"
   }
 }

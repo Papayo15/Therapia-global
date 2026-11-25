@@ -1289,5 +1289,15 @@
     "library": "视频库",
     "routines": "计划",
     "patients": "患者"
+  },
+  "legal": {
+    "privacy_title": "隐私声明",
+    "official_es": "本声明受墨西哥法律管辖；具有法律效力的是下方的西班牙语版本。",
+    "footer_privacy": "隐私声明",
+    "accept_prefix": "我已阅读并接受",
+    "accept_link": "隐私声明",
+    "accept_required": "您必须接受隐私声明才能创建账户。",
+    "patient_notice": "您发送的内容只有您的治疗师可以看到。",
+    "patient_consent_hint": "仅在获得患者明确同意后记录健康数据。"
   }
 }

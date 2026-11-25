@@ -1289,5 +1289,15 @@
     "library": "Bibliothèque",
     "routines": "Programmes",
     "patients": "Patients"
+  },
+  "legal": {
+    "privacy_title": "Avis de confidentialité",
+    "official_es": "Cet avis est régi par la loi mexicaine ; la version faisant foi est le texte espagnol ci-dessous.",
+    "footer_privacy": "Confidentialité",
+    "accept_prefix": "J'ai lu et j'accepte l'",
+    "accept_link": "avis de confidentialité",
+    "accept_required": "Vous devez accepter l'avis de confidentialité pour créer votre compte.",
+    "patient_notice": "Seul votre thérapeute verra ce que vous envoyez.",
+    "patient_consent_hint": "N'enregistrez des données de santé qu'avec le consentement exprès du patient."
   }
 }
