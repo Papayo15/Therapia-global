@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { PatientList } from "@/components/clinical/PatientList";
@@ -14,7 +14,11 @@ type View = "list" | "new-patient";
 
 export default function PatientsPage() {
   const [view, setView] = useState<View>("list");
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).has("nuevo")) setView("new-patient");
+  }, []);
   const router = useRouter();
+  const t = useTranslations("clin");
   const locale = useLocale();
 
   function handleSelectPatient(patient: Patient) {
@@ -29,9 +33,9 @@ export default function PatientsPage() {
     <div className="flex h-screen overflow-hidden bg-surface-50">
       <Sidebar />
       <div className="flex flex-1 flex-col overflow-hidden">
-        <Header title="Pacientes clínicos" />
+        <Header title={t("patients")} />
         <main className="flex-1 overflow-y-auto">
-          <div className="max-w-3xl mx-auto px-6 py-6">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
 
             {view === "list" && (
               <PatientList
@@ -43,12 +47,12 @@ export default function PatientsPage() {
             {view === "new-patient" && (
               <div>
                 <div className="flex items-center justify-between mb-5">
-                  <h2 className="text-lg font-bold text-slate-900">Nuevo paciente</h2>
+                  <h2 className="text-lg font-bold text-slate-900">{t("new_patient")}</h2>
                   <button onClick={() => setView("list")} className="p-2 rounded-lg hover:bg-slate-100 transition-colors">
                     <X className="h-5 w-5 text-slate-500" />
                   </button>
                 </div>
-                <div className="bg-white rounded-xl border border-slate-200 p-6">
+                <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-6">
                   <PatientForm
                     onSave={handlePatientSaved}
                     onCancel={() => setView("list")}

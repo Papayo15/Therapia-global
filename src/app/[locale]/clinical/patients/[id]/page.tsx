@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
-import { useLocale } from "next-intl";
-import { ArrowLeft, FileText, Plus } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { FEATURES } from "@/lib/constants";
+import { ArrowLeft, ClipboardList, FileText, Plus } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { SoapHistory } from "@/components/clinical/SoapHistory";
@@ -17,6 +18,7 @@ export default function PatientDetailPage() {
   const { id } = useParams<{ id: string }>();
   const locale = useLocale();
   const router = useRouter();
+  const t = useTranslations("clin");
   const [patient, setPatient] = useState<Patient | null>(null);
   const [loading, setLoading] = useState(true);
   const [view, setView] = useState<View>("overview");
@@ -35,13 +37,22 @@ export default function PatientDetailPage() {
     fetchPatient();
   }, [id]);
 
+  // rutina para el paciente: el constructor abre con su nombre y el diagnóstico de la nota
+  function routineUrl(note?: SoapNote) {
+    const q = new URLSearchParams({ p: patient?.name ?? "", ...(patient?.phone ? { tel: patient.phone } : {}),
+      ...(note?.diagnosis ? { dx: note.diagnosis } : {}) });
+    return `/${locale}/routines?${q}`;
+  }
+
   function handleSoapSaved(note: SoapNote) {
     setSelectedSoap(note);
-    router.push(`/${locale}/clinical/treatments/new?soap=${note.id}&patient=${id}`);
+    if (FEATURES.AI_RECOMMENDATIONS_ENABLED) router.push(`/${locale}/clinical/treatments/new?soap=${note.id}&patient=${id}`);
+    else setView("overview");
   }
 
   function handleCreateTreatment(note: SoapNote) {
-    router.push(`/${locale}/clinical/treatments/new?soap=${note.id}&patient=${id}`);
+    if (FEATURES.AI_RECOMMENDATIONS_ENABLED) router.push(`/${locale}/clinical/treatments/new?soap=${note.id}&patient=${id}`);
+    else router.push(routineUrl(note));
   }
 
   if (loading) {
@@ -49,7 +60,7 @@ export default function PatientDetailPage() {
       <div className="flex h-screen overflow-hidden bg-surface-50">
         <Sidebar />
         <div className="flex flex-1 flex-col overflow-hidden">
-          <Header title="Paciente" />
+          <Header title={t("patient")} />
           <main className="flex-1 flex items-center justify-center">
             <div className="h-8 w-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
           </main>
@@ -63,9 +74,9 @@ export default function PatientDetailPage() {
       <div className="flex h-screen overflow-hidden bg-surface-50">
         <Sidebar />
         <div className="flex flex-1 flex-col overflow-hidden">
-          <Header title="Paciente no encontrado" />
+          <Header title={t("patient_not_found")} />
           <main className="flex-1 flex items-center justify-center">
-            <p className="text-slate-500">Este paciente no existe o no tienes acceso.</p>
+            <p className="text-slate-500 px-6 text-center">{t("patient_not_found_hint")}</p>
           </main>
         </div>
       </div>
@@ -78,15 +89,15 @@ export default function PatientDetailPage() {
       <div className="flex flex-1 flex-col overflow-hidden">
         <Header title={patient.name} />
         <main className="flex-1 overflow-y-auto">
-          <div className="max-w-3xl mx-auto px-6 py-6 space-y-6">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 space-y-6">
 
             {/* Back */}
             <button
               onClick={() => router.push(`/${locale}/clinical/patients`)}
               className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800 transition-colors"
             >
-              <ArrowLeft className="h-4 w-4" />
-              Volver a pacientes
+              <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
+              {t("back_to_patients")}
             </button>
 
             {/* Patient info */}
@@ -102,7 +113,7 @@ export default function PatientDetailPage() {
                   <div className="flex flex-wrap gap-3 mt-1">
                     {patient.birth_date && (
                       <span className="text-xs text-slate-500">
-                        {new Date(patient.birth_date).toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" })}
+                        {new Date(patient.birth_date).toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" })}
                       </span>
                     )}
                     {patient.phone && <span className="text-xs text-slate-500">{patient.phone}</span>}
@@ -118,16 +129,18 @@ export default function PatientDetailPage() {
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-slate-800 flex items-center gap-2">
                     <FileText className="h-4 w-4 text-blue-600" />
-                    Notas SOAP
+                    {t("soap_notes")}
                   </h3>
-                  <Button
-                    onClick={() => setView("new-soap")}
-                    size="sm"
-                    className="gap-1.5"
-                  >
-                    <Plus className="h-3.5 w-3.5" />
-                    Nueva nota SOAP
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button onClick={() => router.push(routineUrl())} size="sm" variant="outline" className="gap-1.5">
+                      <ClipboardList className="h-3.5 w-3.5" />
+                      <span className="hidden sm:inline">{t("new_routine")}</span>
+                    </Button>
+                    <Button onClick={() => setView("new-soap")} size="sm" className="gap-1.5">
+                      <Plus className="h-3.5 w-3.5" />
+                      {t("new_soap")}
+                    </Button>
+                  </div>
                 </div>
                 <SoapHistory
                   patientId={id}
@@ -137,11 +150,11 @@ export default function PatientDetailPage() {
             )}
 
             {view === "new-soap" && (
-              <div className="bg-white rounded-xl border border-slate-200 p-6">
+              <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-5">
-                  <h3 className="font-bold text-slate-900">Nueva nota SOAP</h3>
+                  <h3 className="font-bold text-slate-900">{t("new_soap")}</h3>
                   <button onClick={() => setView("overview")} className="text-sm text-slate-500 hover:text-slate-800">
-                    Cancelar
+                    {t("cancel")}
                   </button>
                 </div>
                 <SoapForm

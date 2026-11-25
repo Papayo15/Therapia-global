@@ -17,6 +17,8 @@ export interface PDFPlanMeta {
   patient_name: string;
   diagnosis: string;
   plan_id?: string;
+  /** link de la rutina (QR); si falta se arma con plan_id */
+  share_url?: string;
   phase?: string;
   frequency_per_week?: number;
   duration_weeks?: number;
@@ -30,13 +32,25 @@ const LIGHT   = { r: 248, g: 250, b: 252 }; // slate-50
 const AMBER   = { r: 245, g: 158, b: 11  }; // amber-500
 const WHITE   = { r: 255, g: 255, b: 255 };
 
+/** Textos del PDF en el idioma del terapeuta (solo alfabeto latino: la fuente estándar de jsPDF no tiene otros). */
+export interface PDFLabels {
+  diagnosis: string; generated: string; exercises: string; sets: string; reps: string; hold: string;
+  rest: string; perWeek: string; scan: string; note: string; patient: string; locale: string;
+}
+const ES: PDFLabels = {
+  diagnosis: "Diagnóstico", generated: "Generado el", exercises: "ejercicios", sets: "series", reps: "reps", hold: "mantener",
+  rest: "descanso", perWeek: "días/semana", scan: "Escanea para ver la rutina", note: "Nota de tu terapeuta", patient: "Paciente",
+  locale: "es",
+};
+
 function rgb(c: { r: number; g: number; b: number }) {
   return [c.r, c.g, c.b] as [number, number, number];
 }
 
 export async function generateRoutinePDF(
   meta: PDFPlanMeta,
-  exercises: PDFExercise[]
+  exercises: PDFExercise[],
+  L: PDFLabels = ES
 ): Promise<void> {
   const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
   const W = 210;
@@ -45,13 +59,12 @@ export async function generateRoutinePDF(
   let y = 0;
 
   // ── Genera QR code (base64) ─────────────────────────────────────────────
-  const shareUrl = meta.plan_id
-    ? `${window.location.origin}/es/p/${meta.plan_id}`
-    : `${window.location.origin}/es/routines`;
+  const site = window.location.origin;
+  const shareUrl = meta.share_url ?? (meta.plan_id ? `${site}/${L.locale}/p/${meta.plan_id}` : null);
 
   let qrDataUrl: string | null = null;
   try {
-    qrDataUrl = await QRCode.toDataURL(shareUrl, { width: 200, margin: 1 });
+    if (shareUrl) qrDataUrl = await QRCode.toDataURL(shareUrl, { width: 200, margin: 1 });
   } catch { /* sin QR si falla */ }
 
   // ═══════════════════════════════════════════════════════════
@@ -68,7 +81,7 @@ export async function generateRoutinePDF(
   doc.text("THERAPIA GLOBAL", MARGIN, 9);
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8);
-  doc.text("therapia.global", MARGIN, 14.5);
+  doc.text(window.location.host, MARGIN, 14.5);
 
   // QR code en esquina superior derecha
   if (qrDataUrl) {
@@ -84,17 +97,16 @@ export async function generateRoutinePDF(
   doc.setFont("helvetica", "bold");
   doc.setFontSize(12);
   doc.setTextColor(...rgb(DARK));
-  doc.text(meta.patient_name || "Paciente", MARGIN + 4, y + 8);
+  doc.text(meta.patient_name || L.patient, MARGIN + 4, y + 8);
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8);
   doc.setTextColor(...rgb(GRAY));
-  doc.text(`Diagnóstico: ${meta.diagnosis || "—"}`, MARGIN + 4, y + 14);
+  doc.text(`${L.diagnosis}: ${meta.diagnosis || "-"}`, MARGIN + 4, y + 14);
 
   const infoRight = [];
   if (meta.phase) infoRight.push(meta.phase);
-  if (meta.frequency_per_week) infoRight.push(`${meta.frequency_per_week} días/semana`);
-  if (meta.duration_weeks) infoRight.push(`${meta.duration_weeks} semanas`);
+  if (meta.frequency_per_week) infoRight.push(`${meta.frequency_per_week} ${L.perWeek}`);
   if (infoRight.length) {
     doc.text(infoRight.join(" · "), MARGIN + 4, y + 19.5);
   }
@@ -103,7 +115,7 @@ export async function generateRoutinePDF(
   if (qrDataUrl) {
     doc.setFontSize(6);
     doc.setTextColor(...rgb(GRAY));
-    doc.text("Escanea para ver\nla rutina online", W - MARGIN - 18, y + 5, { align: "center", maxWidth: 22 });
+    doc.text(L.scan, W - MARGIN - 9, y - 4, { align: "center", maxWidth: 26 });
   }
 
   y += 28;
@@ -111,10 +123,10 @@ export async function generateRoutinePDF(
   // ── Fecha ──────────────────────────────────────────────────────────────
   doc.setFontSize(7);
   doc.setTextColor(...rgb(GRAY));
-  const fecha = new Date().toLocaleDateString("es-ES", {
+  const fecha = new Date().toLocaleDateString(L.locale, {
     day: "numeric", month: "long", year: "numeric",
   });
-  doc.text(`Generado el ${fecha} · ${exercises.length} ejercicio${exercises.length !== 1 ? "s" : ""}`, MARGIN, y);
+  doc.text(`${L.generated} ${fecha} · ${L.exercises}`, MARGIN, y);
   y += 6;
 
   // ═══════════════════════════════════════════════════════════
@@ -151,10 +163,10 @@ export async function generateRoutinePDF(
 
     // Stats pills
     const stats = [
-      `${ex.sets} series`,
-      ex.reps > 0 ? `${ex.reps} reps` : "Tiempo",
-      `${ex.rest_seconds}s desc.`,
-      `${ex.frequency_per_week ?? 3}×/sem`,
+      `${ex.sets} ${L.sets}`,
+      ex.reps > 0 ? `${ex.reps} ${L.reps}` : L.hold,
+      `${ex.rest_seconds}s ${L.rest}`,
+      `${ex.frequency_per_week ?? 3} ${L.perWeek}`,
     ];
     let px = MARGIN + 12;
     doc.setFontSize(7);
@@ -172,7 +184,7 @@ export async function generateRoutinePDF(
     if (ex.equipment_used) {
       doc.setFontSize(7);
       doc.setTextColor(...rgb(GRAY));
-      doc.text(`🏋 ${ex.equipment_used}`, MARGIN + 12, y + 18.5);
+      doc.text(ex.equipment_used, MARGIN + 12, y + 18.5);
     }
 
     let ey = y + 22;
@@ -189,7 +201,7 @@ export async function generateRoutinePDF(
       doc.setFontSize(8);
       doc.setTextColor(...rgb(DARK));
       for (let i = 0; i < ex.instructions_eli5.length; i++) {
-        const stepNum = ["①", "②", "③"][i] ?? `${i + 1}.`;
+        const stepNum = `${i + 1}.`;
         const lines = doc.splitTextToSize(ex.instructions_eli5[i], CONTENT_W - 14);
         doc.text(`${stepNum} ${lines[0]}`, MARGIN + 4, ey);
         for (let l = 1; l < lines.length; l++) {
@@ -208,7 +220,7 @@ export async function generateRoutinePDF(
       doc.setFont("helvetica", "bold");
       doc.setFontSize(7);
       doc.setTextColor(...rgb(AMBER));
-      doc.text("📝 Nota de tu Doctor:", MARGIN + 7, ey + 4);
+      doc.text(`${L.note}:`, MARGIN + 7, ey + 4);
       doc.setFont("helvetica", "normal");
       doc.setTextColor(120, 53, 15); // amber-900
       const noteLines2 = doc.splitTextToSize(ex.note_from_therapist, CONTENT_W - 18);
@@ -225,7 +237,7 @@ export async function generateRoutinePDF(
     doc.setFontSize(7);
     doc.setTextColor(...rgb(GRAY));
     doc.text(
-      `Therapia Global · therapia.global · Página ${p} de ${pageCount}`,
+      `Therapia Global · ${window.location.host} · ${p}/${pageCount}`,
       W / 2, 292, { align: "center" }
     );
   }
