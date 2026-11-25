@@ -41,7 +41,7 @@ const MOCK_AI_SUGGESTION = {
 interface StatCardProps {
   title: string;
   value: string | number;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   iconColor: string;
   iconBg: string;
   trend?: string;
