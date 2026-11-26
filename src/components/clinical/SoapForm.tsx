@@ -5,13 +5,15 @@ import { useTranslations } from "next-intl";
 import { displayName } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { supabase, type SoapNote } from "@/lib/supabase";
-import { Zap } from "lucide-react";
+import { Zap, Sparkles } from "lucide-react";
+import { buildBasePlan } from "@/lib/planBase";
 
 interface SoapFormProps {
   patientId: string;
   /** nota a editar (si falta, se crea una nueva) */
   note?: SoapNote;
-  onSave: (note: SoapNote) => void;
+  /** goPlan: el terapeuta pidió armar el plan de ejercicios con el diagnóstico */
+  onSave: (note: SoapNote, goPlan?: boolean) => void;
   onCancel: () => void;
 }
 
@@ -26,6 +28,10 @@ export function SoapForm({ patientId, note, onSave, onCancel }: SoapFormProps) {
     plan: note?.plan ?? "",
   });
   const t = useTranslations("clin");
+  const tr = useTranslations("rd");
+  const tl = useTranslations("library");
+  const plan = buildBasePlan(form.diagnosis);
+  const [goPlan, setGoPlan] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -49,7 +55,7 @@ export function SoapForm({ patientId, note, onSave, onCancel }: SoapFormProps) {
             .select()
             .single();
       if (err) throw err;
-      onSave(data);
+      onSave(data, goPlan);
     } catch (e: unknown) {
       console.error("SoapForm", e);
       setError(t("save_error"));
@@ -73,6 +79,17 @@ export function SoapForm({ patientId, note, onSave, onCancel }: SoapFormProps) {
             rows={key === "plan" ? 4 : 3}
             className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 resize-none transition-colors"
           />
+          {key === "diagnosis" && plan.ids.length > 0 && (
+            <div className="mt-2 flex flex-wrap items-center gap-1.5 rounded-lg bg-emerald-50 border border-emerald-100 px-3 py-2 text-xs text-emerald-800">
+              <Sparkles className="h-3.5 w-3.5 shrink-0" />
+              <span className="font-semibold">{tr("plan_preview", { n: plan.ids.length })}</span>
+              {plan.regions.map((r, i) => (
+                <span key={r} className={i === 0 ? "rounded-full bg-emerald-600 px-2 py-0.5 text-white" : "rounded-full bg-white px-2 py-0.5 border border-emerald-200"}>
+                  {tl(`region.${r}`)}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       ))}
 
@@ -93,10 +110,15 @@ export function SoapForm({ patientId, note, onSave, onCancel }: SoapFormProps) {
         <Button type="button" variant="outline" onClick={onCancel} className="flex-1">
           {t("cancel")}
         </Button>
-        <Button type="submit" disabled={loading} className="flex-1">
-          {loading ? t("saving") : note ? t("save_changes") : t("save_soap")}
+        <Button type="submit" disabled={loading} onClick={() => setGoPlan(false)} variant={plan.ids.length ? "outline" : "primary"} className="flex-1">
+          {loading && !goPlan ? t("saving") : note ? t("save_changes") : t("save_soap")}
         </Button>
       </div>
+      {plan.ids.length > 0 && (
+        <Button type="submit" disabled={loading} onClick={() => setGoPlan(true)} className="w-full gap-1.5 bg-emerald-600 hover:bg-emerald-700">
+          <Sparkles className="h-4 w-4" /> {loading && goPlan ? t("saving") : tr("save_and_plan")}
+        </Button>
+      )}
     </form>
   );
 }

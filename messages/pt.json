@@ -1315,6 +1315,17 @@
     "go": "Montar e enviar",
     "preview": "Ver vídeo",
     "lib_link": "Ver com vídeos",
-    "clear": "Esvaziar"
+    "clear": "Esvaziar",
+    "plan_preview": "Plano sugerido: {n} exercícios",
+    "save_and_plan": "Salvar e montar plano de exercícios",
+    "plan_from_note": "Plano de exercícios sugerido",
+    "suggested": "Sugeridos pelo diagnóstico",
+    "see_all": "Ver todos",
+    "see_suggested": "Só sugeridos",
+    "plan_banner": "Plano base para «{dx}». Revise e altere o que quiser:",
+    "plan_redo": "Refazer plano",
+    "swap": "Trocar exercício",
+    "swap_title": "Trocar por outro da mesma região",
+    "use_this": "Usar"
   }
 }

@@ -9,6 +9,9 @@ import {
 import Link from "next/link";
 import { LibraryPlayerModal } from "@/components/library/LibraryPlayerModal";
 import { readDraft, writeDraft, clearDraft } from "@/lib/routineDraft";
+import { buildBasePlan, alternativesFor } from "@/lib/planBase";
+import { regionsForDiagnosis } from "@/lib/dxRegions";
+import { Sparkles, Repeat } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Input } from "@/components/ui/input";
@@ -104,16 +107,18 @@ function toPlanExercises(exercises: RoutineExercise[], name: (id: string) => str
 
 // ─── Item de ejercicio en la rutina ───────────────────────────────────────────
 function RoutineItem({
-  exercise, index, onRemove, onUpdate, onMove, onDragStart, onDragEnter, onDragEnd,
+  exercise, index, onRemove, onSwap, onUpdate, onMove, onDragStart, onDragEnter, onDragEnd,
 }: {
   exercise: RoutineExercise; index: number;
   onRemove: () => void;
+  onSwap: () => void;
   onUpdate: (field: keyof RoutineExercise, value: string | number) => void;
   onMove: (dir: -1 | 1) => void;
   onDragStart: () => void; onDragEnter: () => void; onDragEnd: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   const { t, name, prop } = useNames();
+  const tr = useTranslations("rd");
   const tl = useTranslations("library");
 
   return (
@@ -149,6 +154,10 @@ function RoutineItem({
             onChange={(e) => onUpdate("reps", parseInt(e.target.value) || 0)}
             className="w-9 text-center text-xs font-bold border border-surface-200 rounded bg-surface-50 py-0.5" />
         </div>
+        <button onClick={onSwap} aria-label={tr("swap")} title={tr("swap")}
+          className="p-1 rounded text-surface-300 hover:text-brand-600 hover:bg-brand-50 transition-colors">
+          <Repeat className="h-3.5 w-3.5" />
+        </button>
         <button onClick={() => setExpanded(!expanded)} aria-label={t("details")}
           className="p-1 rounded text-surface-300 hover:text-surface-600 hover:bg-surface-50 transition-colors">
           {expanded ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
@@ -415,6 +424,17 @@ function SendModal({ isOpen, onClose, routineName, exercises, initial, editId, o
   );
 }
 
+// ─── Plan base desde el diagnóstico ───────────────────────────────────────────
+function libToRoutine(ex: LibEx, i = 0): RoutineExercise {
+  return { ...ex, uid: `${ex.id}-${Date.now()}-${i}`, notes: "", frequencyPerWeek: 3 };
+}
+function planExercises(dx: string): RoutineExercise[] {
+  return buildBasePlan(dx).ids.map((id, i) => {
+    const ex = EXERCISE_LIBRARY.find((x) => x.id === id);
+    return ex ? libToRoutine(ex, i) : null;
+  }).filter(Boolean) as RoutineExercise[];
+}
+
 // ─── Página principal ─────────────────────────────────────────────────────────
 export default function RoutinesPage() {
   const locale = useLocale();
@@ -431,6 +451,9 @@ export default function RoutinesPage() {
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [draftReady, setDraftReady] = useState(false);
+  const [swapUid, setSwapUid] = useState<string | null>(null);
+  const [planFor, setPlanFor] = useState<string | null>(null);     // diagnóstico con el que se armó el plan base
+  const [sugOnly, setSugOnly] = useState(true);
   const tr = useTranslations("rd");
 
   const [initial, setInitial] = useState<Initial>({ name: "", phone: "", dx: "", pid: "" });
@@ -451,9 +474,15 @@ export default function RoutinesPage() {
     // rutina en preparación: lo que ya estaba armado + lo agregado desde la Biblioteca
     const fromLib = draft.pending.map((id) => EXERCISE_LIBRARY.find((x) => x.id === id)).filter(Boolean)
       .map((ex, i) => ({ ...ex!, uid: `${ex!.id}-${Date.now()}-${i}`, notes: "", frequencyPerWeek: 3 }));
-    if (!q.get("edit")) {
-      setExercises([...draft.exercises, ...fromLib]);
-      if (fromLib.length) setTab("routine");
+    const fromLib2 = fromLib;
+    if (q.get("plan") === "1" && init.dx && !q.get("edit")) {
+      // plan base según el diagnóstico de la nota SOAP (reemplaza la rutina en preparación)
+      setExercises(planExercises(init.dx));
+      setPlanFor(init.dx);
+      setTab("routine");
+    } else if (!q.get("edit")) {
+      setExercises([...draft.exercises, ...fromLib2]);
+      if (fromLib2.length) setTab("routine");
     }
     setRoutineName((fromUrl ? init.dx || init.name : "") || draft.name || init.dx || init.name);
     setDraftReady(true);
@@ -495,13 +524,24 @@ export default function RoutinesPage() {
   const title = routineName || t("new_routine");
 
   const q = search.trim().toLowerCase();
+  const dxRegions = regionsForDiagnosis(initial.dx || routineName);
+  const useSug = sugOnly && dxRegions.length > 0 && !regionFilter;
   const filteredLib = EXERCISE_LIBRARY.filter((ex) => {
     const matchQ = !q || name(ex.id).toLowerCase().includes(q) || ex.id.toLowerCase().includes(q)
       || tl(`region.${ex.region}`).toLowerCase().includes(q);
-    const matchR = !regionFilter || ex.region === regionFilter;
+    const matchR = regionFilter ? ex.region === regionFilter : !useSug || dxRegions.includes(ex.region);
     const matchE = propFilter === "__all" || ex.prop === propFilter;
     return matchQ && matchR && matchE;
   });
+  if (useSug) filteredLib.sort((a, b) => dxRegions.indexOf(a.region) - dxRegions.indexOf(b.region));
+
+  function swapTo(uid: string, ex: LibEx) {
+    setExercises((prev) => prev.map((e) => (e.uid === uid
+      ? { ...e, id: ex.id, region: ex.region, prop: ex.prop, difficulty: ex.difficulty, poster: ex.poster, equipmentOverride: undefined }
+      : e)));
+    setSwapUid(null);
+  }
+  const swapping = exercises.find((e) => e.uid === swapUid);
 
   function addEx(ex: LibEx) {
     setExercises((prev) => [...prev, { ...ex, uid: `${ex.id}-${Date.now()}`, notes: "", frequencyPerWeek: 3 }]);
@@ -591,6 +631,15 @@ export default function RoutinesPage() {
                   {PROPS.map((p) => <option key={p} value={p}>{prop(p)}</option>)}
                 </select>
               </div>
+              {dxRegions.length > 0 && (
+                <div className="rounded-lg bg-emerald-50 border border-emerald-100 px-2.5 py-2 text-[11px] text-emerald-800">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="flex items-center gap-1 font-semibold"><Sparkles className="h-3 w-3" /> {tr("suggested")}</span>
+                    <button onClick={() => setSugOnly(!sugOnly)} className="font-semibold underline">{sugOnly ? tr("see_all") : tr("see_suggested")}</button>
+                  </div>
+                  <p className="mt-0.5">{dxRegions.map((r) => tl(`region.${r}`)).join(" · ")}</p>
+                </div>
+              )}
               <p className="text-[11px] text-surface-400">{t("results", { n: filteredLib.length })}</p>
             </div>
 
@@ -644,6 +693,13 @@ export default function RoutinesPage() {
                   className="font-semibold underline">{t("start_new")}</button>
               </div>
             )}
+            {planFor && (
+              <div className="flex flex-wrap items-center gap-2 bg-emerald-50 border-b border-emerald-100 px-5 py-2.5 text-xs text-emerald-800">
+                <Sparkles className="h-3.5 w-3.5 shrink-0" />
+                <span className="flex-1 min-w-[200px]">{tr("plan_banner", { dx: planFor })} <b>{regionsForDiagnosis(planFor).map((r) => tl(`region.${r}`)).join(" · ")}</b></span>
+                <button onClick={() => setExercises(planExercises(planFor))} className="font-semibold underline">{tr("plan_redo")}</button>
+              </div>
+            )}
             <div className="px-5 pt-4 pb-3 border-b border-surface-100">
               <Input value={routineName} onChange={(e) => setRoutineName(e.target.value)} placeholder={t("name_ph")}
                 className="text-base font-semibold border-0 border-b border-surface-200 rounded-none px-0 focus-visible:ring-0 focus-visible:border-brand-500" />
@@ -673,6 +729,7 @@ export default function RoutinesPage() {
               ) : exercises.map((ex, i) => (
                 <RoutineItem key={ex.uid} exercise={ex} index={i + 1}
                   onRemove={() => removeEx(ex.uid)}
+                  onSwap={() => setSwapUid(ex.uid)}
                   onUpdate={(f, v) => updateEx(ex.uid, f, v)}
                   onMove={(d) => reorderEx(i, i + d)}
                   onDragStart={() => { dragItem.current = i; }}
@@ -737,6 +794,39 @@ export default function RoutinesPage() {
 
       <SendModal isOpen={sendOpen} onClose={() => setSendOpen(false)} routineName={title} exercises={exercises} initial={initial}
         editId={editId} onSaved={(id) => { clearDraft(); setEditId(id); }} />
+      {swapping && (
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-slate-900/60 p-0 sm:p-4" onClick={() => setSwapUid(null)}>
+          <div className="w-full max-w-lg max-h-[85vh] flex flex-col bg-white rounded-t-2xl sm:rounded-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-start gap-3 border-b border-surface-100 px-4 py-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-surface-400">{tr("swap_title")}</p>
+                <p className="text-sm font-bold text-surface-900 truncate">{name(swapping.id)}</p>
+              </div>
+              <button onClick={() => setSwapUid(null)} className="p-1.5 rounded-lg text-surface-400 hover:bg-surface-100"><X className="h-4 w-4" /></button>
+            </div>
+            <div className="overflow-y-auto p-2 space-y-1">
+              {alternativesFor(swapping.id).map((alt) => {
+                const ex = EXERCISE_LIBRARY.find((x) => x.id === alt.id);
+                if (!ex) return null;
+                return (
+                  <div key={ex.id} className="flex items-center gap-2.5 rounded-xl px-2 py-1.5 hover:bg-brand-50">
+                    <button onClick={() => setPreview(ex.id)} className="relative h-12 w-20 shrink-0 overflow-hidden rounded-lg bg-surface-100" aria-label={tr("preview")}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={ex.poster} alt="" loading="lazy" className="h-full w-full object-cover" />
+                      <span className="absolute inset-0 flex items-center justify-center"><Play className="h-4 w-4 text-white drop-shadow" fill="currentColor" /></span>
+                    </button>
+                    <button onClick={() => swapTo(swapping.uid, ex)} className="flex-1 min-w-0 text-start">
+                      <p className="text-xs font-semibold text-surface-800 line-clamp-2">{name(ex.id)}</p>
+                      <p className="text-[10px] text-surface-400">{prop(ex.prop)} · {t(`diff.${ex.difficulty}`)}</p>
+                    </button>
+                    <button onClick={() => swapTo(swapping.uid, ex)} className="shrink-0 rounded-lg bg-brand-600 px-2.5 py-1.5 text-[11px] font-semibold text-white">{tr("use_this")}</button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
       {preview && ITEM_BY_ID.get(preview) && (
         <LibraryPlayerModal item={ITEM_BY_ID.get(preview)!} onClose={() => setPreview(null)}
           inRoutine={exercises.some((e) => e.id === preview)}

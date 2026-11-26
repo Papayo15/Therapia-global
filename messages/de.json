@@ -1315,6 +1315,17 @@
     "go": "Erstellen und senden",
     "preview": "Video ansehen",
     "lib_link": "Mit Videos ansehen",
-    "clear": "Leeren"
+    "clear": "Leeren",
+    "plan_preview": "Vorgeschlagenes Programm: {n} Übungen",
+    "save_and_plan": "Speichern und Übungsplan erstellen",
+    "plan_from_note": "Vorgeschlagener Übungsplan",
+    "suggested": "Passend zur Diagnose",
+    "see_all": "Alle zeigen",
+    "see_suggested": "Nur Vorschläge",
+    "plan_banner": "Basisplan für „{dx}“. Prüfen und beliebig ändern:",
+    "plan_redo": "Neu erstellen",
+    "swap": "Übung tauschen",
+    "swap_title": "Gegen eine andere der gleichen Region tauschen",
+    "use_this": "Nehmen"
   }
 }

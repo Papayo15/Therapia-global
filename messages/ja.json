@@ -1315,6 +1315,17 @@
     "go": "作成して送信",
     "preview": "動画を見る",
     "lib_link": "動画で見る",
-    "clear": "クリア"
+    "clear": "クリア",
+    "plan_preview": "提案プラン：{n}種目",
+    "save_and_plan": "保存して運動プランを作成",
+    "plan_from_note": "提案された運動プラン",
+    "suggested": "診断に基づく提案",
+    "see_all": "すべて表示",
+    "see_suggested": "提案のみ",
+    "plan_banner": "「{dx}」の基本プラン。確認して自由に変更してください：",
+    "plan_redo": "作り直す",
+    "swap": "運動を入れ替える",
+    "swap_title": "同じ部位の別の運動に替える",
+    "use_this": "使う"
   }
 }

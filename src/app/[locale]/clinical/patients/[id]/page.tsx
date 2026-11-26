@@ -45,7 +45,7 @@ export default function PatientDetailPage() {
   // rutina para el paciente: el constructor abre ligado a él, con su nombre y el diagnóstico de la nota
   function routineUrl(note?: SoapNote) {
     const q = new URLSearchParams({ pid: id, p: patient?.name ?? "", ...(patient?.phone ? { tel: patient.phone } : {}),
-      ...(note?.diagnosis ? { dx: note.diagnosis } : {}) });
+      ...(note?.diagnosis ? { dx: note.diagnosis, plan: "1" } : {}) });
     return `/${locale}/routines?${q}`;
   }
 
@@ -156,7 +156,10 @@ export default function PatientDetailPage() {
               key={editingNote?.id ?? "new"}
               patientId={id}
               note={editingNote}
-              onSave={() => { setView("overview"); setTab("soap"); setRefresh((r) => r + 1); }}
+              onSave={(n, goPlan) => {
+                if (goPlan) return router.push(routineUrl(n));
+                setView("overview"); setTab("soap"); setRefresh((r) => r + 1);
+              }}
               onCancel={() => setView("overview")}
             />
           </div>
