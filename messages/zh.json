@@ -1298,6 +1298,14 @@
     "accept_link": "隐私声明",
     "accept_required": "您必须接受隐私声明才能创建账户。",
     "patient_notice": "您发送的内容只有您的治疗师可以看到。",
-    "patient_consent_hint": "仅在获得患者明确同意后记录健康数据。"
+    "patient_consent_hint": "仅在获得患者明确同意后记录健康数据。",
+    "consent_doc": "同意书",
+    "consent_print": "打印或保存PDF",
+    "consent_mark": "标记为已签署",
+    "consent_unmark": "取消标记",
+    "consent_signed": "同意书已签署 {date}",
+    "consent_missing": "缺少已签署的同意书",
+    "consent_steps": "打印后请患者签字，并将原件保存在病历中，然后标记为已签署。",
+    "back_patient": "返回患者"
   }
 }

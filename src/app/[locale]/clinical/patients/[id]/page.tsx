@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowLeft, ClipboardList, FileText, Plus, Pencil, Trash2, Phone, Mail, Cake } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, ClipboardList, FileText, Plus, Pencil, Trash2, Phone, Mail, Cake, ShieldCheck, ShieldAlert } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { SoapHistory } from "@/components/clinical/SoapHistory";
@@ -23,6 +24,7 @@ export default function PatientDetailPage() {
   const locale = useLocale();
   const router = useRouter();
   const t = useTranslations("clin");
+  const tl = useTranslations("legal");
   const [patient, setPatient] = useState<Patient | null>(null);
   const [loading, setLoading] = useState(true);
   const [view, setView] = useState<View>("overview");
@@ -109,6 +111,14 @@ export default function PatientDetailPage() {
                   {patient.email && <span className="flex items-center gap-1 text-xs text-slate-500"><Mail className="h-3 w-3" />{patient.email}</span>}
                 </div>
                 {patient.notes && <p className="mt-2 text-sm text-slate-600 whitespace-pre-wrap">{patient.notes}</p>}
+                <Link href={`/${locale}/clinical/patients/${id}/consent`}
+                  className={cn("mt-2 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold",
+                    patient.consent_at ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700 hover:bg-amber-100")}>
+                  {patient.consent_at ? <ShieldCheck className="h-3 w-3" /> : <ShieldAlert className="h-3 w-3" />}
+                  {patient.consent_at
+                    ? tl("consent_signed", { date: new Date(patient.consent_at).toLocaleDateString(locale) })
+                    : tl("consent_missing")}
+                </Link>
               </div>
             </div>
             <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-100 pt-4">
@@ -116,6 +126,10 @@ export default function PatientDetailPage() {
                 className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50">
                 <Pencil className="h-3.5 w-3.5" /> {t("edit_patient")}
               </button>
+              <Link href={`/${locale}/clinical/patients/${id}/consent`}
+                className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50">
+                <ShieldCheck className="h-3.5 w-3.5" /> {tl("consent_doc")}
+              </Link>
               {confirmDelete ? (
                 <span className="flex flex-wrap items-center gap-2 rounded-lg bg-red-50 px-3 py-1.5 text-xs text-red-700">
                   {t("confirm_delete_patient")}
