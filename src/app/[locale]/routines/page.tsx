@@ -4,8 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
   Plus, Trash2, GripVertical, Send, Copy, Search, X, CheckCircle2, MessageCircle, Share2, Eye,
-  ChevronDown, ChevronUp, FileDown, Save, FolderOpen, BookOpen, ListChecks,
+  ChevronDown, ChevronUp, FileDown, Save, FolderOpen, BookOpen, ListChecks, Play,
 } from "lucide-react";
+import Link from "next/link";
+import { LibraryPlayerModal } from "@/components/library/LibraryPlayerModal";
+import { readDraft, writeDraft, clearDraft } from "@/lib/routineDraft";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Input } from "@/components/ui/input";
@@ -426,6 +429,9 @@ export default function RoutinesPage() {
   const [templates, setTemplates] = useState<Template[]>([]);
   const [tab, setTab] = useState<"lib" | "routine" | "saved">("lib");      // solo celular
   const [justAdded, setJustAdded] = useState<string | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+  const [draftReady, setDraftReady] = useState(false);
+  const tr = useTranslations("rd");
 
   const [initial, setInitial] = useState<Initial>({ name: "", phone: "", dx: "", pid: "" });
   const [editId, setEditId] = useState<string | null>(null);
@@ -436,9 +442,21 @@ export default function RoutinesPage() {
   useEffect(() => {
     loadTemplates();
     const q = new URLSearchParams(window.location.search);     // viene de la ficha del paciente
-    const init = { name: q.get("p") ?? "", phone: q.get("tel") ?? "", dx: q.get("dx") ?? "", pid: q.get("pid") ?? "" };
+    const fromUrl = q.has("pid") || q.has("p");
+    const draft = readDraft<RoutineExercise>();
+    const init = fromUrl
+      ? { name: q.get("p") ?? "", phone: q.get("tel") ?? "", dx: q.get("dx") ?? "", pid: q.get("pid") ?? "" }
+      : draft.initial ?? { name: "", phone: "", dx: "", pid: "" };
     setInitial(init);
-    if (init.dx || init.name) setRoutineName(init.dx || init.name);
+    // rutina en preparación: lo que ya estaba armado + lo agregado desde la Biblioteca
+    const fromLib = draft.pending.map((id) => EXERCISE_LIBRARY.find((x) => x.id === id)).filter(Boolean)
+      .map((ex, i) => ({ ...ex!, uid: `${ex!.id}-${Date.now()}-${i}`, notes: "", frequencyPerWeek: 3 }));
+    if (!q.get("edit")) {
+      setExercises([...draft.exercises, ...fromLib]);
+      if (fromLib.length) setTab("routine");
+    }
+    setRoutineName((fromUrl ? init.dx || init.name : "") || draft.name || init.dx || init.name);
+    setDraftReady(true);
     // editar una rutina ya enviada (?edit=<id>): se carga tal cual y al guardar se actualiza la misma
     const edit = q.get("edit");
     if (edit) {
@@ -461,6 +479,11 @@ export default function RoutinesPage() {
       });
     }
   }, []);
+  // guarda la rutina en preparación (no al editar una ya enviada)
+  useEffect(() => {
+    if (!draftReady || editId) return;
+    writeDraft({ exercises, pending: [], name: routineName, initial });
+  }, [draftReady, editId, exercises, routineName, initial]);
   useEffect(() => {
     if (!justAdded) return;
     const h = setTimeout(() => setJustAdded(null), 1200);
@@ -547,7 +570,10 @@ export default function RoutinesPage() {
           <div className={cn("w-full md:w-80 shrink-0 border-e border-surface-200 bg-white flex-col overflow-hidden",
             tab === "lib" ? "flex" : "hidden md:flex")}>
             <div className="px-4 pt-4 pb-3 border-b border-surface-100 space-y-2">
-              <p className="hidden md:block text-xs font-semibold text-surface-400 uppercase tracking-wider">{t("library")}</p>
+              <div className="hidden md:flex items-center justify-between">
+                <p className="text-xs font-semibold text-surface-400 uppercase tracking-wider">{t("library")}</p>
+                <Link href={`/${locale}/exercises`} className="text-[11px] font-semibold text-brand-600 hover:text-brand-700">{tr("lib_link")}</Link>
+              </div>
               <div className="relative">
                 <Search className="absolute start-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-surface-400" />
                 <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder={t("search")} className="ps-8 h-9 text-sm md:h-8 md:text-xs" />
@@ -572,22 +598,30 @@ export default function RoutinesPage() {
               {filteredLib.map((ex) => {
                 const count = exercises.filter((re) => re.id === ex.id).length;
                 return (
-                  <button key={ex.id} onClick={() => addEx(ex)}
-                    className={cn("w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl border transition-all text-start group",
+                  <div key={ex.id}
+                    className={cn("w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl border transition-all group",
                       justAdded === ex.id ? "bg-clinical-50 border-clinical-200" : "border-transparent hover:bg-brand-50 hover:border-brand-200")}>
-                    <div className={cn(
-                      "w-6 h-6 rounded-lg flex items-center justify-center shrink-0 transition-colors",
-                      count ? "bg-clinical-500/15 text-clinical-600" : "bg-surface-100 text-surface-400 group-hover:bg-brand-100 group-hover:text-brand-600"
-                    )}>
-                      {count ? <CheckCircle2 className="h-3 w-3" /> : <Plus className="h-3 w-3" />}
-                    </div>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={ex.poster} alt="" loading="lazy" className="h-10 w-16 md:h-9 md:w-14 shrink-0 rounded-md object-cover bg-surface-100" />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold text-surface-800 line-clamp-2 leading-snug">{name(ex.id)}</p>
-                      <p className="text-[10px] text-surface-400 truncate">{prop(ex.prop)} · {t(`diff.${ex.difficulty}`)}</p>
-                    </div>
-                  </button>
+                    <button onClick={() => setPreview(ex.id)} aria-label={tr("preview")}
+                      className="relative h-12 w-20 md:h-11 md:w-[72px] shrink-0 overflow-hidden rounded-lg bg-surface-100">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={ex.poster} alt="" loading="lazy" className="h-full w-full object-cover" />
+                      <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
+                        <Play className="h-4 w-4 text-white opacity-80 drop-shadow" fill="currentColor" />
+                      </span>
+                    </button>
+                    <button onClick={() => addEx(ex)} className="flex flex-1 min-w-0 items-center gap-2 text-start">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs font-semibold text-surface-800 line-clamp-2 leading-snug">{name(ex.id)}</p>
+                        <p className="text-[10px] text-surface-400 truncate">{prop(ex.prop)} · {t(`diff.${ex.difficulty}`)}</p>
+                      </div>
+                      <div className={cn(
+                        "w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                        count ? "bg-clinical-500/15 text-clinical-600" : "bg-surface-100 text-surface-400 group-hover:bg-brand-600 group-hover:text-white"
+                      )}>
+                        {count ? <CheckCircle2 className="h-3.5 w-3.5" /> : <Plus className="h-3.5 w-3.5" />}
+                      </div>
+                    </button>
+                  </div>
                 );
               })}
               {filteredLib.length === 0 && <p className="text-center py-8 text-xs text-surface-400">{tl("noResults")}</p>}
@@ -606,7 +640,7 @@ export default function RoutinesPage() {
             {editId && (
               <div className="flex items-center justify-between gap-2 bg-amber-50 border-b border-amber-100 px-5 py-2 text-xs text-amber-800">
                 <span>{t("editing_sent")}</span>
-                <button onClick={() => { setEditId(null); setExercises([]); setRoutineName(""); setInitial({ name: "", phone: "", dx: "", pid: "" }); }}
+                <button onClick={() => { clearDraft(); setEditId(null); setExercises([]); setRoutineName(""); setInitial({ name: "", phone: "", dx: "", pid: "" }); }}
                   className="font-semibold underline">{t("start_new")}</button>
               </div>
             )}
@@ -620,6 +654,9 @@ export default function RoutinesPage() {
                 <span className="text-xs text-surface-500">{t("exercises_n", { n: exercises.length })}</span>
                 <span className="text-xs text-surface-500">{t("sets_n", { n: totalSets })}</span>
                 <span className="text-xs text-surface-500">~{estMin} min</span>
+                {!editId && (
+                  <button onClick={() => setExercises([])} className="ms-auto text-xs font-medium text-surface-400 hover:text-red-600">{tr("clear")}</button>
+                )}
               </div>
             )}
 
@@ -699,7 +736,17 @@ export default function RoutinesPage() {
       </div>
 
       <SendModal isOpen={sendOpen} onClose={() => setSendOpen(false)} routineName={title} exercises={exercises} initial={initial}
-        editId={editId} onSaved={(id) => setEditId(id)} />
+        editId={editId} onSaved={(id) => { clearDraft(); setEditId(id); }} />
+      {preview && ITEM_BY_ID.get(preview) && (
+        <LibraryPlayerModal item={ITEM_BY_ID.get(preview)!} onClose={() => setPreview(null)}
+          inRoutine={exercises.some((e) => e.id === preview)}
+          onToggleRoutine={() => {
+            const ex = EXERCISE_LIBRARY.find((x) => x.id === preview);
+            if (!ex) return;
+            if (exercises.some((e) => e.id === ex.id)) setExercises((prev) => prev.filter((e) => e.id !== ex.id));
+            else addEx(ex);
+          }} />
+      )}
     </div>
   );
 }

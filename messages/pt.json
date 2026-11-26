@@ -1307,5 +1307,14 @@
     "consent_missing": "Falta consentimento assinado",
     "consent_steps": "Imprima, peça ao paciente que assine e guarde o original no prontuário. Depois marque como assinado.",
     "back_patient": "Voltar ao paciente"
+  },
+  "rd": {
+    "add": "Adicionar à rotina",
+    "added": "Na rotina",
+    "bar": "{n, plural, one {# exercício} other {# exercícios}} na sua rotina",
+    "go": "Montar e enviar",
+    "preview": "Ver vídeo",
+    "lib_link": "Ver com vídeos",
+    "clear": "Esvaziar"
   }
 }

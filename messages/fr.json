@@ -1307,5 +1307,14 @@
     "consent_missing": "Consentement signé manquant",
     "consent_steps": "Imprimez-le, faites-le signer par le patient et conservez l'original dans son dossier. Marquez-le ensuite comme signé.",
     "back_patient": "Retour au patient"
+  },
+  "rd": {
+    "add": "Ajouter au programme",
+    "added": "Dans le programme",
+    "bar": "{n, plural, one {# exercice} other {# exercices}} dans votre programme",
+    "go": "Préparer et envoyer",
+    "preview": "Voir la vidéo",
+    "lib_link": "Voir avec vidéos",
+    "clear": "Vider"
   }
 }

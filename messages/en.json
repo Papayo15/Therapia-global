@@ -1307,5 +1307,14 @@
     "consent_missing": "Signed consent missing",
     "consent_steps": "Print it, have your patient sign it and keep the original in their record. Then mark it as signed.",
     "back_patient": "Back to patient"
+  },
+  "rd": {
+    "add": "Add to routine",
+    "added": "In routine",
+    "bar": "{n, plural, one {# exercise} other {# exercises}} in your routine",
+    "go": "Build and send",
+    "preview": "Watch video",
+    "lib_link": "Browse with videos",
+    "clear": "Clear"
   }
 }
