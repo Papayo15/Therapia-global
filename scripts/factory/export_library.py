@@ -65,11 +65,13 @@ def main():
             if rep.exists() and not json.load(open(rep)).get("ok", True):
                 malos.append(d.name)
                 continue
-            enlazar(d / "preview.mp4", OUT_DIR / it["id"] / f"{v}.mp4")
+            # acabado "estudio" (fondo blanco, ropa de color) si ya existe; si no, el render gris original
+            src = d / "preview_estudio.mp4" if (d / "preview_estudio.mp4").exists() else d / "preview.mp4"
+            enlazar(src, OUT_DIR / it["id"] / f"{v}.mp4")
             vivos.add(f"{it['id']}/{v}.mp4")
             poster = OUT_DIR / it["id"] / f"{v}.jpg"
-            if not poster.exists() or poster.stat().st_mtime < (d / "preview.mp4").stat().st_mtime:
-                hacer_poster(d / "preview.mp4", poster)
+            if not poster.exists() or poster.stat().st_mtime < src.stat().st_mtime:
+                hacer_poster(src, poster)
             vivos.add(f"{it['id']}/{v}.jpg")
             variantes.append({"variante": v, "video": f"{it['id']}/{v}.mp4", "poster": f"{it['id']}/{v}.jpg"})
             if anat is None and (d / "anatomico.mp4").exists() and (d / "etiquetas.json").exists():
