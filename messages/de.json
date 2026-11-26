@@ -1307,5 +1307,14 @@
     "consent_missing": "Unterschriebene Einwilligung fehlt",
     "consent_steps": "Drucken, vom Patienten unterschreiben lassen und das Original in der Akte aufbewahren. Danach als unterschrieben markieren.",
     "back_patient": "Zurück zum Patienten"
+  },
+  "rd": {
+    "add": "Zum Programm",
+    "added": "Im Programm",
+    "bar": "{n, plural, one {# Übung} other {# Übungen}} in Ihrem Programm",
+    "go": "Erstellen und senden",
+    "preview": "Video ansehen",
+    "lib_link": "Mit Videos ansehen",
+    "clear": "Leeren"
   }
 }

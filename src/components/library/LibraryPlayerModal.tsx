@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Plus, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ExerciseAnimationPlayer } from "@/components/exercises/ExerciseAnimationPlayer";
 import { type LibraryItem, videoUrl, regionGroup, regionColor } from "@/lib/videoLibrary";
@@ -22,14 +22,20 @@ export function LibraryPlayerModal({
   onClose,
   onPrev,
   onNext,
+  inRoutine,
+  onToggleRoutine,
 }: {
   item: LibraryItem;
   initialView?: View;
   onClose: () => void;
   onPrev?: () => void;
   onNext?: () => void;
+  /** si se pasa, muestra el botón para agregar/quitar la técnica de la rutina en preparación */
+  inRoutine?: boolean;
+  onToggleRoutine?: () => void;
 }) {
   const t = useTranslations("library");
+  const tr = useTranslations("rd");
   const tm = useTranslations("muscles");
   const lt = useLibraryText();
   const name = lt.name(item);
@@ -78,6 +84,14 @@ export function LibraryPlayerModal({
             </div>
             <h2 className="mt-1 text-lg font-bold leading-snug text-slate-900">{name}</h2>
           </div>
+          {onToggleRoutine && (
+            <button onClick={onToggleRoutine}
+              className={cn("flex shrink-0 items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold transition-colors",
+                inRoutine ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100" : "bg-blue-600 text-white hover:bg-blue-700")}>
+              {inRoutine ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+              <span className="hidden sm:inline">{inRoutine ? tr("added") : tr("add")}</span>
+            </button>
+          )}
           <div className="flex items-center gap-1">
             <button onClick={onPrev} disabled={!onPrev} className="rounded-lg p-2 text-slate-500 hover:bg-slate-100 disabled:opacity-30" aria-label={t("prev")}>
               <ChevronLeft className="h-5 w-5 rtl:rotate-180" />

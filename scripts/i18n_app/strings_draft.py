@@ -1,0 +1,23 @@
+# Agregar ejercicios desde la Biblioteca a la rutina en preparación (namespace "rd").
+RD = {
+ "es": {"add": "Agregar a rutina", "added": "En la rutina", "bar": "{n, plural, one {# ejercicio} other {# ejercicios}} en tu rutina",
+        "go": "Armar y enviar", "preview": "Ver video", "lib_link": "Ver con videos", "clear": "Vaciar"},
+ "en": {"add": "Add to routine", "added": "In routine", "bar": "{n, plural, one {# exercise} other {# exercises}} in your routine",
+        "go": "Build and send", "preview": "Watch video", "lib_link": "Browse with videos", "clear": "Clear"},
+ "pt": {"add": "Adicionar à rotina", "added": "Na rotina", "bar": "{n, plural, one {# exercício} other {# exercícios}} na sua rotina",
+        "go": "Montar e enviar", "preview": "Ver vídeo", "lib_link": "Ver com vídeos", "clear": "Esvaziar"},
+ "fr": {"add": "Ajouter au programme", "added": "Dans le programme", "bar": "{n, plural, one {# exercice} other {# exercices}} dans votre programme",
+        "go": "Préparer et envoyer", "preview": "Voir la vidéo", "lib_link": "Voir avec vidéos", "clear": "Vider"},
+ "de": {"add": "Zum Programm", "added": "Im Programm", "bar": "{n, plural, one {# Übung} other {# Übungen}} in Ihrem Programm",
+        "go": "Erstellen und senden", "preview": "Video ansehen", "lib_link": "Mit Videos ansehen", "clear": "Leeren"},
+ "ru": {"add": "В программу", "added": "В программе", "bar": "Упражнений в программе: {n}",
+        "go": "Собрать и отправить", "preview": "Смотреть видео", "lib_link": "Смотреть с видео", "clear": "Очистить"},
+ "ar": {"add": "أضف إلى البرنامج", "added": "في البرنامج", "bar": "تمارين في برنامجك: {n}",
+        "go": "إعداد وإرسال", "preview": "شاهد الفيديو", "lib_link": "تصفح مع الفيديو", "clear": "إفراغ"},
+ "ja": {"add": "ルーティンに追加", "added": "追加済み", "bar": "ルーティンの運動：{n}件",
+        "go": "作成して送信", "preview": "動画を見る", "lib_link": "動画で見る", "clear": "クリア"},
+ "zh": {"add": "加入训练计划", "added": "已加入", "bar": "训练计划中有 {n} 个练习",
+        "go": "编排并发送", "preview": "观看视频", "lib_link": "带视频浏览", "clear": "清空"},
+ "hi": {"add": "रूटीन में जोड़ें", "added": "रूटीन में है", "bar": "आपके रूटीन में {n} व्यायाम",
+        "go": "बनाएँ और भेजें", "preview": "वीडियो देखें", "lib_link": "वीडियो के साथ देखें", "clear": "खाली करें"},
+}

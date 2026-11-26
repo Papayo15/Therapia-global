@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useTranslations } from "next-intl";
-import { Search, Video } from "lucide-react";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { Search, Video, Plus, Check, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import {
@@ -16,6 +17,7 @@ import {
 } from "@/lib/videoLibrary";
 import { LibraryPlayerModal } from "./LibraryPlayerModal";
 import { useLibraryText } from "@/lib/useLibraryText";
+import { toggleInDraft, useDraftIds } from "@/lib/routineDraft";
 
 // ─── ClinicalLibrary ──────────────────────────────────────────────────────────
 // Galería de la biblioteca clínica producida por la fábrica de video
@@ -39,6 +41,10 @@ export function ClinicalLibrary({
   const t = useTranslations("library");
   const tm = useTranslations("muscles");
   const lt = useLibraryText();
+  const tr = useTranslations("rd");
+  const locale = useLocale();
+  const draft = useDraftIds();
+  const canAdd = (i: LibraryItem) => i.categoria !== "osteopatia";   // la osteopatía la aplica el terapeuta, no va en rutinas
   const [cat, setCat] = useState<LibraryCategory | "all">(initialCategory);
   const [group, setGroup] = useState("all");
   const [search, setSearch] = useState("");
@@ -111,7 +117,8 @@ export function ClinicalLibrary({
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {filtered.map((i, idx) => (
-            <Card key={i.id} item={i} onClick={() => setOpen(idx)} label={t(`category.${i.categoria}`)} name={lt.name(i)} region={lt.region(i)} />
+            <Card key={i.id} item={i} onClick={() => setOpen(idx)} label={t(`category.${i.categoria}`)} name={lt.name(i)} region={lt.region(i)}
+              added={draft.includes(i.id)} onToggle={canAdd(i) ? () => toggleInDraft(i.id) : undefined} addLabel={tr("add")} addedLabel={tr("added")} />
           ))}
         </div>
       )}
@@ -123,19 +130,34 @@ export function ClinicalLibrary({
           onClose={() => setOpen(null)}
           onPrev={open! > 0 ? () => setOpen(open! - 1) : undefined}
           onNext={open! < filtered.length - 1 ? () => setOpen(open! + 1) : undefined}
+          inRoutine={draft.includes(item.id)}
+          onToggleRoutine={canAdd(item) ? () => toggleInDraft(item.id) : undefined}
         />
+      )}
+
+      {draft.length > 0 && (
+        <div className="sticky bottom-4 z-30 flex justify-center pt-2">
+          <Link href={`/${locale}/routines`}
+            className="flex items-center gap-3 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-xl hover:bg-slate-800">
+            <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-blue-500 px-2 text-xs">{draft.length}</span>
+            {tr("bar", { n: draft.length })}
+            <span className="flex items-center gap-1 text-blue-300">{tr("go")} <ArrowRight className="h-4 w-4 rtl:rotate-180" /></span>
+          </Link>
+        </div>
       )}
     </div>
   );
 }
 
-function Card({ item, onClick, label, name, region }: { item: LibraryItem; onClick: () => void; label: string; name: string; region: string }) {
+function Card({ item, onClick, label, name, region, added, onToggle, addLabel, addedLabel }: {
+  item: LibraryItem; onClick: () => void; label: string; name: string; region: string;
+  added: boolean; onToggle?: () => void; addLabel: string; addedLabel: string;
+}) {
   const color = regionColor(regionGroup(item));
   return (
-    <button
-      onClick={onClick}
-      className="group w-full overflow-hidden rounded-2xl border border-slate-100 bg-white text-start transition-all hover:border-blue-200 hover:shadow-md"
-    >
+    <div className={cn("group relative w-full overflow-hidden rounded-2xl border bg-white text-start transition-all hover:shadow-md",
+      added ? "border-emerald-300 ring-1 ring-emerald-200" : "border-slate-100 hover:border-blue-200")}>
+    <button onClick={onClick} className="block w-full text-start">
       <div className="relative aspect-video overflow-hidden bg-slate-200">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -144,7 +166,7 @@ function Card({ item, onClick, label, name, region }: { item: LibraryItem; onCli
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <span className="absolute start-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: color }}>
+        <span className="absolute start-2 bottom-2 rounded-full px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: color }}>
           {label}
         </span>
       </div>
@@ -153,6 +175,15 @@ function Card({ item, onClick, label, name, region }: { item: LibraryItem; onCli
         <p className="mt-1 truncate text-[11px] text-slate-400">{region}</p>
       </div>
     </button>
+    {onToggle && (
+      <button onClick={onToggle} aria-label={added ? addedLabel : addLabel}
+        className={cn("absolute end-2 top-2 flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-bold shadow-sm transition-colors",
+          added ? "bg-emerald-500 text-white" : "bg-white/95 text-blue-700 hover:bg-blue-600 hover:text-white")}>
+        {added ? <Check className="h-3.5 w-3.5" /> : <Plus className="h-3.5 w-3.5" />}
+        {added ? addedLabel : addLabel}
+      </button>
+    )}
+    </div>
   );
 }
 

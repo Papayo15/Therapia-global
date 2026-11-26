@@ -795,5 +795,14 @@
     "consent_missing": "Falta consentimiento firmado",
     "consent_steps": "Imprímelo, pide a tu paciente que lo firme y guarda el original en su expediente. Después márcalo como firmado.",
     "back_patient": "Volver al paciente"
+  },
+  "rd": {
+    "add": "Agregar a rutina",
+    "added": "En la rutina",
+    "bar": "{n, plural, one {# ejercicio} other {# ejercicios}} en tu rutina",
+    "go": "Armar y enviar",
+    "preview": "Ver video",
+    "lib_link": "Ver con videos",
+    "clear": "Vaciar"
   }
 }
