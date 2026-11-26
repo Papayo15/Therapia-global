@@ -24,6 +24,7 @@ const FIELDS = ["subjective", "objective", "assessment", "diagnosis", "plan"] as
 // México (NOM-004-SSA3-2012): el expediente se conserva; "eliminar" solo lo oculta y queda en la papelera.
 export function SoapHistory({ patientId, refreshKey = 0, onEdit, onCreateRoutine }: SoapHistoryProps) {
   const t = useTranslations("clin");
+  const tr = useTranslations("rd");
   const locale = useLocale();
   const [notes, setNotes] = useState<SoapNote[]>([]);
   const [loading, setLoading] = useState(true);
@@ -137,7 +138,7 @@ export function SoapHistory({ patientId, refreshKey = 0, onEdit, onCreateRoutine
                       {onCreateRoutine && (
                         <button onClick={() => onCreateRoutine(note)}
                           className="flex items-center gap-1.5 rounded-lg border border-blue-200 px-3 py-2 text-xs font-semibold text-blue-600 hover:bg-blue-50">
-                          <ClipboardList className="h-3.5 w-3.5" /> {t("routine_from_note")}
+                          <ClipboardList className="h-3.5 w-3.5" /> {note.diagnosis ? tr("plan_from_note") : t("routine_from_note")}
                         </button>
                       )}
                       {confirmId === note.id ? (

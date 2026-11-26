@@ -1315,6 +1315,17 @@
     "go": "编排并发送",
     "preview": "观看视频",
     "lib_link": "带视频浏览",
-    "clear": "清空"
+    "clear": "清空",
+    "plan_preview": "建议方案：{n} 个练习",
+    "save_and_plan": "保存并生成练习方案",
+    "plan_from_note": "建议的练习方案",
+    "suggested": "根据诊断推荐",
+    "see_all": "查看全部",
+    "see_suggested": "仅推荐",
+    "plan_banner": "“{dx}”的基础方案。请检查并按需修改：",
+    "plan_redo": "重新生成",
+    "swap": "更换练习",
+    "swap_title": "换成同一部位的其他练习",
+    "use_this": "使用"
   }
 }

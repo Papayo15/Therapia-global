@@ -1315,6 +1315,17 @@
     "go": "Préparer et envoyer",
     "preview": "Voir la vidéo",
     "lib_link": "Voir avec vidéos",
-    "clear": "Vider"
+    "clear": "Vider",
+    "plan_preview": "Programme suggéré : {n} exercices",
+    "save_and_plan": "Enregistrer et créer le programme",
+    "plan_from_note": "Programme d'exercices suggéré",
+    "suggested": "Suggérés selon le diagnostic",
+    "see_all": "Tout voir",
+    "see_suggested": "Suggérés seulement",
+    "plan_banner": "Programme de base pour « {dx} ». Vérifiez-le et modifiez ce que vous voulez :",
+    "plan_redo": "Refaire",
+    "swap": "Changer l'exercice",
+    "swap_title": "Remplacer par un autre de la même région",
+    "use_this": "Choisir"
   }
 }

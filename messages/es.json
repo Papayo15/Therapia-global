@@ -803,6 +803,17 @@
     "go": "Armar y enviar",
     "preview": "Ver video",
     "lib_link": "Ver con videos",
-    "clear": "Vaciar"
+    "clear": "Vaciar",
+    "plan_preview": "Plan sugerido: {n} ejercicios",
+    "save_and_plan": "Guardar y armar plan de ejercicios",
+    "plan_from_note": "Plan de ejercicios sugerido",
+    "suggested": "Sugeridos por el diagnóstico",
+    "see_all": "Ver todos",
+    "see_suggested": "Solo sugeridos",
+    "plan_banner": "Plan base para «{dx}». Revísalo y cambia lo que quieras:",
+    "plan_redo": "Rehacer plan",
+    "swap": "Cambiar ejercicio",
+    "swap_title": "Cambiar por otro de la misma región",
+    "use_this": "Usar"
   }
 }

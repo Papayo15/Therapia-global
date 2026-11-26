@@ -1315,6 +1315,17 @@
     "go": "Build and send",
     "preview": "Watch video",
     "lib_link": "Browse with videos",
-    "clear": "Clear"
+    "clear": "Clear",
+    "plan_preview": "Suggested plan: {n} exercises",
+    "save_and_plan": "Save and build exercise plan",
+    "plan_from_note": "Suggested exercise plan",
+    "suggested": "Suggested for the diagnosis",
+    "see_all": "See all",
+    "see_suggested": "Suggested only",
+    "plan_banner": "Base plan for “{dx}”. Review it and change anything:",
+    "plan_redo": "Rebuild plan",
+    "swap": "Swap exercise",
+    "swap_title": "Swap for another from the same region",
+    "use_this": "Use"
   }
 }
