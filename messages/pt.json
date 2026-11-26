@@ -1298,6 +1298,14 @@
     "accept_link": "aviso de privacidade",
     "accept_required": "Você precisa aceitar o aviso de privacidade para criar sua conta.",
     "patient_notice": "Somente seu terapeuta verá o que você enviar.",
-    "patient_consent_hint": "Registre dados de saúde somente com o consentimento expresso do paciente."
+    "patient_consent_hint": "Registre dados de saúde somente com o consentimento expresso do paciente.",
+    "consent_doc": "Termo de consentimento",
+    "consent_print": "Imprimir ou salvar PDF",
+    "consent_mark": "Marcar como assinado",
+    "consent_unmark": "Desmarcar",
+    "consent_signed": "Consentimento assinado {date}",
+    "consent_missing": "Falta consentimento assinado",
+    "consent_steps": "Imprima, peça ao paciente que assine e guarde o original no prontuário. Depois marque como assinado.",
+    "back_patient": "Voltar ao paciente"
   }
 }

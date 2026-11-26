@@ -13,7 +13,7 @@ const AVISO: Block[] = [
   {
     h: "1. Identidad y domicilio del responsable",
     p: [
-      "Juan Pablo Cevallos (en adelante, “Therapia Global”), con domicilio en Calle 37-A número 322, colonia Monte Albán, Mérida, Yucatán, México, es responsable del tratamiento de los datos personales que se recaban a través de la plataforma Therapia Global (therapiaglobal-app.netlify.app), conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y demás normativa aplicable.",
+      "Juan Pablo Cevallos (en adelante, “Therapia Global”), con domicilio en Calle 37-A número 322, colonia Monte Albán, código postal 97114, Mérida, Yucatán, México, es responsable del tratamiento de los datos personales que se recaban a través de la plataforma Therapia Global (therapiaglobal-app.netlify.app), conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y demás normativa aplicable.",
       `Medio de contacto para cualquier asunto relacionado con sus datos personales: ${CONTACT}.`,
     ],
   },

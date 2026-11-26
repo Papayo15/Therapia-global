@@ -1298,6 +1298,14 @@
     "accept_link": "プライバシー通知",
     "accept_required": "アカウントを作成するにはプライバシー通知への同意が必要です。",
     "patient_notice": "送信内容はあなたのセラピストだけが見られます。",
-    "patient_consent_hint": "健康情報は患者の明示的な同意を得た場合のみ記録してください。"
+    "patient_consent_hint": "健康情報は患者の明示的な同意を得た場合のみ記録してください。",
+    "consent_doc": "同意書",
+    "consent_print": "印刷またはPDF保存",
+    "consent_mark": "署名済みにする",
+    "consent_unmark": "取り消す",
+    "consent_signed": "同意書署名済み {date}",
+    "consent_missing": "署名済み同意書なし",
+    "consent_steps": "印刷して患者に署名してもらい、原本をカルテに保管してください。その後、署名済みにします。",
+    "back_patient": "患者に戻る"
   }
 }

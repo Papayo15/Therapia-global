@@ -15,6 +15,7 @@ export interface Patient {
   email?: string;
   doctor_id: string;
   notes?: string | null;
+  consent_at?: string | null;
   created_at: string;
   updated_at?: string | null;
   deleted_at?: string | null;

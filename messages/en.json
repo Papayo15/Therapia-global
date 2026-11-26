@@ -1298,6 +1298,14 @@
     "accept_link": "privacy notice",
     "accept_required": "You must accept the privacy notice to create your account.",
     "patient_notice": "Only your therapist will see what you send.",
-    "patient_consent_hint": "Only record health data with your patient's express consent."
+    "patient_consent_hint": "Only record health data with your patient's express consent.",
+    "consent_doc": "Consent form",
+    "consent_print": "Print or save PDF",
+    "consent_mark": "Mark as signed",
+    "consent_unmark": "Unmark",
+    "consent_signed": "Consent signed {date}",
+    "consent_missing": "Signed consent missing",
+    "consent_steps": "Print it, have your patient sign it and keep the original in their record. Then mark it as signed.",
+    "back_patient": "Back to patient"
   }
 }
